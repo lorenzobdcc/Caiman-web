@@ -45,3 +45,26 @@ Création des diférente pages et mise en place de bootstrap
 
 j'ai créer la base de donnée et le site web
 
+--------
+
+## 20.04.2021
+
+### 8h05
+
+je continue a créer le site web je crée les formulaires pour la connexion
+
+### 15h20
+
+J'ai implémenter la création de compte et la connexion le mail doit étre unique et le username aussi.
+
+j'ai selon les idication de M. Schmid utilisé les fonctions
+
+password_hash et password_verify de php.
+
+### 15h30
+
+j'ajoute des donnée a la main dans la bdd
+
+### 15h56
+
+aide de M.Schmid pour du sql
