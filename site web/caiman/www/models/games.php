@@ -9,9 +9,15 @@ class Games {
 
     private $psGameDetail;
 
-    private $psGameCategory;
+    private $psFavoriteGameOfUser;
 
-    private $psGameInCategory;
+    private $psGameInCategorie;
+
+    private $psAddGameToFavori;
+
+    private $psRemoveGameFromFavori;
+
+    private $psCheckIfFavoris;
 
 
    
@@ -38,20 +44,45 @@ class Games {
                 $this->psGameDetail = $this->dbh->prepare($sqlGameDetail);
                 $this->psGameDetail->setFetchMode(PDO::FETCH_ASSOC);
 
-                //get category of a game
-                $sqlGameCategory = "SELECT c.name FROM `gamehascategory` as ghc
-                LEFT JOIN category as c
-                ON ghc.idCategory = c.id
+                //add game to favoris
+                $sqlAddGameToFavoris = "INSERT INTO favoritegame  (idGame, idUser)
+                VALUES (:search_idGame, :search_idUser)";
+                $this->psAddGameToFavori = $this->dbh->prepare($sqlAddGameToFavoris);
+                $this->psAddGameToFavori->setFetchMode(PDO::FETCH_ASSOC);
+
+                //remove game to favoris
+                $sqlRemoveGameFormFavoris = "DELETE FROM favoritegame 
+                WHERE idUser = :search_idUser AND idGame = :search_idGame";
+                $this->psRemoveGameFromFavori = $this->dbh->prepare($sqlRemoveGameFormFavoris);
+                $this->psRemoveGameFromFavori->setFetchMode(PDO::FETCH_ASSOC);
+
+                //check if already in favoris
+                $sqlCheckIfAlreadyFavoris = "SELECT * FROM favoritegame 
+                WHERE iduser = :search_idUser AND idGame = :search_idGame";
+                $this->psCheckIfFavoris = $this->dbh->prepare($sqlCheckIfAlreadyFavoris);
+                $this->psCheckIfFavoris->setFetchMode(PDO::FETCH_ASSOC);
+
+                //get favorite game of user
+                $sqlFavoriteGameOfUser = "SELECT g.name, g.id, g.imageName FROM `favoritegame` as fg
+                LEFT JOIN game as g
+                ON fg.idGame = g.id
+                LEFT JOIN user as u
+                ON fg.iduser = u.id
+                WHERE iduser = :search_id";
+                $this->psFavoriteGameOfUser = $this->dbh->prepare($sqlFavoriteGameOfUser);
+                $this->psFavoriteGameOfUser->setFetchMode(PDO::FETCH_ASSOC);
+
+                
+
+                //get list of games in a categorie
+                $sqlGameInCategorie = "SELECT g.name, g.id, g.imageName FROM `gamehascategorie` as ghc
                 LEFT JOIN game as g
                 ON ghc.idGame = g.id
-                WHERE idGame = :search_id";
-                $this->psGameCategory = $this->dbh->prepare($sqlGameCategory);
-                $this->psGameCategory->setFetchMode(PDO::FETCH_ASSOC);
-
-                //get list of game in a category
-                $sqlGameInCategory = "SELECT * FROM game WHERE id = :search_id";
-                $this->psGameInCategory = $this->dbh->prepare($sqlGameInCategory);
-                $this->psGameInCategory->setFetchMode(PDO::FETCH_ASSOC);
+                LEFT JOIN categorie as c
+                ON ghc.idCategorie = c.id
+                WHERE idCategorie = :search_id";
+                $this->psGameInCategorie = $this->dbh->prepare($sqlGameInCategorie);
+                $this->psGameInCategorie->setFetchMode(PDO::FETCH_ASSOC);
 
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br>";
@@ -59,6 +90,7 @@ class Games {
             }
         }
     }
+    
     public function getAllGames()
     {
         
@@ -73,6 +105,7 @@ class Games {
         }
         return $result;
     }
+
     public function getRequestGames(string $gameName)
     {
 
@@ -103,11 +136,12 @@ class Games {
         return $result;
     }
 
-    public function getCategoryOfGame(int $idGame)
+
+    public function getGamesInCategorie(int $idCategorie)
     {
         try{
-            $this->psGameCategory->execute(array(':search_id' => $idGame));
-            $result = $this->psGameCategory->fetchAll();
+            $this->psGameInCategorie->execute(array(':search_id' => $idCategorie));
+            $result = $this->psGameInCategorie->fetchAll();
 
 
         }catch (PDOException $e) {
@@ -117,9 +151,63 @@ class Games {
         return $result;
     }
 
-    public function getGamesInCategory(int $idCategory)
+    public function getFavoriteGamesOfUser(int $idUser)
     {
+        try{
+            $this->psFavoriteGameOfUser->execute(array(':search_id' => $idUser));
+            $result = $this->psFavoriteGameOfUser->fetchAll();
 
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $result;
+    }
+
+    public function addGameToFavoris(int $idUser, int $idGame)
+    {
+        
+        try{
+            $this->psAddGameToFavori->execute(array(':search_idUser' => $idUser,':search_idGame' => $idGame));
+            $result = $this->psAddGameToFavori->fetchAll();
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $result;
+    }
+
+    public function removeGameFromFavoris(int $idUser, int $idGame)
+    {
+        
+        try{
+            $this->psRemoveGameFromFavori->execute(array(':search_idUser' => $idUser,':search_idGame' => $idGame));
+
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+    }
+
+    public function checkIfGameIsAlreadyInFavoris(int $idUser, int $idGame)
+    {
+        $boolResult = true;
+        
+        try{
+            $this->psCheckIfFavoris->execute(array(':search_idUser' => $idUser,':search_idGame' => $idGame));
+            $result = $this->psCheckIfFavoris->fetchAll();
+            if ($result != null) {
+                $boolResult = false;
+            }
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $boolResult;
     }
 
 }

@@ -8,4 +8,5 @@ include_once "games.php";
 include_once "dashboard.php";
 include_once "indexclass.php";
 include_once "download.php";
+include_once "categorie.php";
 ?>

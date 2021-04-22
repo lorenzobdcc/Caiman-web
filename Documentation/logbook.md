@@ -90,3 +90,46 @@ Ajout de champs dans la table game
 ### 15h00
 
 l'affichage de la recherche et du détail d'un jeu fonctionne mais n'est pas belle.
+
+------------
+
+## 22.04.2021
+
+### 8h05
+
+Ajout de laffichage des categories de chaque jeu
+
+### 9h00
+
+Affichage des jeux qui appartienne a une catégorie.
+
+### 10h20
+
+modification de l'interface de recherche
+
+### notes personnelles
+
+- je dois ajouter une table pour savoir le nombre d'heure de jeu de chaque utilisateurs
+- je dois ajouter une gestion des message d'erreurs.
+- je peux ajouter une photo de profil
+  
+
+### 11h0
+
+modification de l'interface de connexion et de d'inscription
+
+### 11h50
+
+supression de la page de création de compte
+
+### 12h40
+
+Ajout d'un jeux en favoris
+
+### 15h00
+
+suppresion d'un jeu en favoris
+
+### a faire demain
+
+- l'affichage des card dans le dashboard n'est pas bon

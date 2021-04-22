@@ -12,6 +12,8 @@ class Signin {
     public $insert_username = null;
 
     public $insert_password = null;
+
+    public $insert_password_repeat = null;
     
     public $insert_email = null;
 
@@ -49,6 +51,7 @@ class Signin {
    
     public function newUser()
     {
+     echo "je suis dans new user";   
         $errorCode = 0;
         if ($this->checkIfEmailAlreadyTaken() ) {
             $errorCode = 1;
@@ -56,11 +59,10 @@ class Signin {
         if ($this->checkifUsernameAlreadyTaken()) {
             $errorCode = 2;
         }
-        if ($errorCode = 0) {
-            echo "inscription";
+        echo $errorCode;
+        if ($errorCode == 0) {
         try{
             $this->psInsert->execute(array(':insert_username' => $this->insert_username,':insert_password' => password_hash($this->insert_password,PASSWORD_DEFAULT),':insert_email' => $this->insert_email ));
-            
         }catch (PDOException $e) {
             print "Erreur !: " . $e->getMessage() . "<br>";
             
@@ -77,7 +79,7 @@ class Signin {
         try{
             $this->psChechUsername->execute(array(':search_username' => $this->insert_username));
             $result = $this->psChechUsername->fetchAll();
-            if ($result != null) {
+            if ($result == null) {
                 $istaken = false;
             }
 
@@ -94,7 +96,7 @@ class Signin {
         try{
             $this->psCheckEmail->execute(array(':search_email' => $this->insert_email));
             $result = $this->psCheckEmail->fetchAll();
-            if ($result != null) {
+            if ($result == null) {
                 $istaken = false;
             }
 

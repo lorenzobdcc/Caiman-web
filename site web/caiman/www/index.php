@@ -7,7 +7,6 @@ session_start();
 
 if (!isset($_SESSION['user'])) {
    $_SESSION['user'] = new user("","","visitor","-1"); 
-   echo "reset user";
 }
 
 
@@ -29,9 +28,11 @@ switch ($r_page) {
     case "signin" : 
         $controller = new SigninController();
         break;
+
     case "login" : 
         $controller = new LoginController();
         break;
+
     case "logout" : 
             session_destroy();
             header('Location: index.php');
