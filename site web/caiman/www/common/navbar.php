@@ -1,4 +1,4 @@
-<header class="p-3 bg-dark text-white">
+<header class="p-2 bg-dark text-white">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -20,8 +20,8 @@
       ?>
       </ul>
 
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control form-control-dark" placeholder="Search...">
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="?r=games&e=requestGame" method="post">
+        <input type="search" class="form-control form-control-dark" placeholder="Search games" name="gameName">
       </form>
       <?php
       if ($_SESSION['user']->role == "visitor") {

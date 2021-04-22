@@ -9,7 +9,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="?r=login" method="post">
+            <form action="?r=login&e=login" method="post">
               <div class="form-group">
                 <label for="username">Username</label>
                 <input type="texte" name="username" class="form-control" id="username" aria-describedby="username" placeholder="Enter username">
@@ -39,7 +39,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="?r=signin" method="post">
+            <form action="?r=signin&e=signin" method="post">
               <div class="form-group">
                 <label for="username">Username</label>
                 <input type="texte" name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter username">

@@ -68,3 +68,25 @@ j'ajoute des donnée a la main dans la bdd
 ### 15h56
 
 aide de M.Schmid pour du sql
+
+-----------
+
+## 21.04.2021
+
+### 8h10
+
+Modification de la structure du site et ajout de l'update de mots de passe
+
+### 13h00
+
+l'affichage des jeux est disponible ainsi que une recherche sur les jeux grace a leurs noms.
+
+### 13h20
+
+Ajout de champs dans la table game
+- description
+- imageName
+
+### 15h00
+
+l'affichage de la recherche et du détail d'un jeu fonctionne mais n'est pas belle.
