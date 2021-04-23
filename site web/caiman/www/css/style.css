@@ -12,7 +12,10 @@ main{
 
 .imageCard{
     border-radius:5px;
+    max-height: 15rem;
+    
 }
+
 
 .detailImage{
     max-width:80%;
@@ -23,4 +26,23 @@ main{
     border: 3px solid #28a745;
     border-radius:10px;
 }
+
+.width100{
+    width:100%;
+}
+
+.btnCategorie{
+    margin-left: 5px;
+}
+
+.cardContent{
+    position:absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.cardBootstarp{
+    height: 25rem;
+}
+
 

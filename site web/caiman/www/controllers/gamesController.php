@@ -207,7 +207,7 @@ class GamesController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card" style=" max-width: 11rem; margin:10px;">
+        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body">
@@ -215,9 +215,9 @@ class GamesController
             ';
             if ($_SESSION['user']->idUser != -1) {
                 if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $game['id'])) {
-                    $html.= '<a class="btn btn-outline-success " href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button">Add to favorite</a>';
+                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';
                 }else {
-                    $html.= '<a class="btn btn-outline-warning " href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button">Remove favorite</a>';
+                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart"></i></a>';
                 }
             }
 
@@ -250,7 +250,7 @@ class GamesController
 
           ';
           foreach ($this->categorie->getListAllCategories() as $key => $cat) {
-              $html .= '<a class="btn btn-outline-success " href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '" role="button">'.$cat['name'].'</a>';
+              $html .= '<a class="btn btn-outline-success btnCategorie " href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '" role="button">'.$cat['name'].'</a>';
           }
           $html.= '
         </p>

@@ -133,3 +133,20 @@ suppresion d'un jeu en favoris
 ### a faire demain
 
 - l'affichage des card dans le dashboard n'est pas bon
+
+--------
+
+## 23.04.2021
+
+### 8h05
+
+modification de la l'interface du Dashboard
+
+### 8h40
+
+Ajout d'un champ dans la table utilisateur pour spécifier si l'utilisateur est privé ou non
+si l'utilisateur n'est pas privé tous le monde va pouvoir voir son profils
+
+### 9h30
+
+la modifivation du paramétre pour savoir si le compte est privé ou non

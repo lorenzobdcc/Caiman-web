@@ -17,16 +17,9 @@ class User
         $this->email = $emailp;
         $this->role = $idRolep;
         $this->idUser = $idUserp;
-
     }
 
-    public function printInfos()
-    {
-        echo "username: " . $this->username . "<br>";
-        echo "email: " . $this->email . "<br>";
-        echo "role: " . $this->role . "<br>";
-        echo "idUser: " . $this->idUser . "<br>";
-    }
+
 
     public function updatePassword(string $newPassword, string $newPasswordRepeat, string $oldPassword)
     {
@@ -40,8 +33,8 @@ class User
             try {
                 $sqlUpdatePassword = "UPDATE user  SET password = :update_password WHERE id = :id_user";
                 $psUpdatePassword = $dbh->prepare($sqlUpdatePassword);
-                $psUpdatePassword->execute(array(':update_password' => password_hash($newPassword,PASSWORD_DEFAULT), ':id_user' => $this->idUser));
-                
+                $psUpdatePassword->execute(array(':update_password' => password_hash($newPassword, PASSWORD_DEFAULT), ':id_user' => $this->idUser));
+
                 $hasBeenUpdated = 0;
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br>";
@@ -54,6 +47,51 @@ class User
         return $hasBeenUpdated;
     }
 
+    public function updatePrivateAccount()
+    {
+        $dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASSWORD, array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+            PDO::ATTR_PERSISTENT => true
+        ));
 
-    
+        $userisPrivate = $this->getPrivateAccount();
+
+        if ($userisPrivate == 0) {
+            $userSetPrivateTo = 1;
+        }else {
+            $userSetPrivateTo = 0;
+        }
+
+        try {
+            $sqlUpdatePrivateAccount = "UPDATE user  SET privateAccount = :update_private_account WHERE id = :id_user";
+            $psUpdatePrivateAccount = $dbh->prepare($sqlUpdatePrivateAccount);
+            $psUpdatePrivateAccount->execute(array(':update_private_account' => $userSetPrivateTo, ':id_user' => $this->idUser));
+
+        } catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+    }
+
+    public function getPrivateAccount()
+    {
+        $dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASSWORD, array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+            PDO::ATTR_PERSISTENT => true
+        ));
+
+        try {
+            $sqlGetPrivateAccount = "SELECT privateAccount FROM user WHERE id = :id_user";
+            $psGetPrivateAccount = $dbh->prepare($sqlGetPrivateAccount);
+            $psGetPrivateAccount->setFetchMode(PDO::FETCH_ASSOC);
+            $psGetPrivateAccount->execute(array(':id_user' => $this->idUser));
+            $result = $psGetPrivateAccount->fetchAll();
+
+        } catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+
+        return $result[0]['privateAccount'];
+    }
 }
