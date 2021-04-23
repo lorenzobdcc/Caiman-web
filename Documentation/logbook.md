@@ -150,3 +150,7 @@ si l'utilisateur n'est pas privé tous le monde va pouvoir voir son profils
 ### 9h30
 
 la modifivation du paramétre pour savoir si le compte est privé ou non
+
+### 12h20
+
+test de Git Hook
