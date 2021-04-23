@@ -30,7 +30,7 @@ class DashboardController
             }
             
             if (isset($oldPassword) && isset( $newPassword) && isset( $newPasswordRepeat)) {
-                echo"error: ".  $_SESSION['user']->updatePassword($newPassword,$newPasswordRepeat,$oldPassword);
+                $_SESSION['user']->updatePassword($newPassword,$newPasswordRepeat,$oldPassword);
             }
         }
 
@@ -50,28 +50,7 @@ class DashboardController
         $this->game = new Games();
     }
 
-    public function writeFormUpdatePassword()
-    {
-        $html = '
-        <form action="?r=dashboard&e=updatePassword" method="post">
-            <div class="form-group">
-                <label for="oldPassword">Old password</label>
-                <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Old password">
-            </div>
-            <div class="form-group">
-                <label for="newPassword">Password</label>
-                <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New password">
-            </div>
-            <div class="form-group">
-                <label for="newPasswordRepeat">Password</label>
-                <input type="password" class="form-control" id="newPasswordRepeat" name="newPasswordRepeat" placeholder="New password repeat">
-            </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>';
-        return $html;
-    }
-    
     public function printHTML()
     {
 
@@ -96,7 +75,7 @@ class DashboardController
     {
         $html = "";
 
-        $html .= '<div class="d-inline-flex p-2 jumbotron jumbotron-fluid width100">';
+        $html .= '<div class=" jumbotron DarkJumbotron width100" style="background-color: #161b22;">';
           
         $html .= '<div class="container">
         <div class="row"><h2>User\'s Informations</h2></div>
@@ -131,7 +110,7 @@ class DashboardController
 
     private function htmlFavoriteGames()
     {
-        $html = '<div class="d-inline-flex p-2 jumbotron jumbotron-fluid width100" >
+        $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
         <div class="container">
         <div class="row"><h2>User\'s favorites games</h2></div>
         <div class="row">
@@ -170,11 +149,11 @@ class DashboardController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px; padding:0;">
+        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body ">
-            <h5 class="card-title greenTexte ">' . $game['name'] . '</h5>
+        <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
             ';
 
                     $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
@@ -189,13 +168,13 @@ class DashboardController
 
     public function htmlFormUpdatePassword()
     {
-        $html = '<div class="d-inline-flex p-2 jumbotron jumbotron-fluid width100" >
+        $html = '<div class="d-inline-flex p-2 jumbotron  width100 DarkJumbotron " style="background-color: #161b22;" >
         <div class="container">
-        <div class="row"><h2>Update your\'r password</h2></div>
+        <div class="row"><h2>Update your password</h2></div>
         <div class="row">
         
         
-        <form action="?r=dashboard&e=updatepPassword" method="post">
+        <form action="?r=dashboard&e=updatePassword" method="post">
             <div class="form-group">
                 <label for="oldPassword">Old password</label>
                 <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Old password">

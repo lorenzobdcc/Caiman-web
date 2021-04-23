@@ -207,17 +207,17 @@ class GamesController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px;">
+        <div class="card cardBootstarp " style=" max-width: 11rem; margin:10px;     background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
-        <div class="card-body">
-            <h5 class="card-title greenTexte">' . $game['name'] . '</h5>
+        <div class="card-body darkContent">
+            <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
             ';
             if ($_SESSION['user']->idUser != -1) {
                 if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $game['id'])) {
-                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';
+                    $html.= '<a class="btn btn-outline-light cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';
                 }else {
-                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart"></i></a>';
+                    $html.= '<a class="btn btn-outline-light cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart"></i></a>';
                 }
             }
 
@@ -232,7 +232,7 @@ class GamesController
     {
         $html = "";
 
-        $html .= '<div class="jumbotron ">
+        $html .= '<div class="jumbotron DarkJumbotron " style="background-color: #161b22;">
         <div class="container">
           <h1 class="display-5">Recherche</h1>
           
@@ -264,8 +264,8 @@ class GamesController
     {
         $html = "";
 
-        $html .= '<div class="card">
-        <div class="card-body container">
+        $html .= '<div class="card DarkJumbotron " style="background-color: #161b22;">
+        <div class="card-body container DarkJumbotron">
           <h2 class="card-title ">Recherche</h2>
           
           <form class="row g-3" action="?r=games&e=requestGame" method="post">

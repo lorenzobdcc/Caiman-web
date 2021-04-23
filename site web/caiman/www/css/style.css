@@ -2,9 +2,17 @@ main{
     min-height: 700px;
 }
 
-.blueLink{
-    color:blue;
+#darkBody{
+
+    background-color: #0d1117;
+    color: #c9d1d9;
 }
+
+.darkContent{
+   background-color:  #161b22;
+   color:red;
+}
+
 
 .greenTexte{
     color: #28a745;
@@ -13,6 +21,7 @@ main{
 .imageCard{
     border-radius:5px;
     max-height: 15rem;
+    background-color:;
     
 }
 
@@ -25,6 +34,10 @@ main{
     display: block;
     border: 3px solid #28a745;
     border-radius:10px;
+    
+    background-color: #28a745;
+    
+    box-shadow: inset 0 -1px 0 #21262d;
 }
 
 .width100{
@@ -46,3 +59,12 @@ main{
 }
 
 
+.DarkJumbotron{
+    border-radius: 10px;
+    background-color: #161b22;
+    border:2px solid #28a745;
+}
+
+.whiteTexte{
+    color: #c9d1d9;
+}

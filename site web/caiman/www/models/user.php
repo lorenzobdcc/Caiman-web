@@ -29,6 +29,8 @@ class User
         ));
 
         $hasBeenUpdated = 1;
+        if (password_verify( $oldPassword,$this->getUserPassword())) {
+        
         if ($newPasswordRepeat == $newPassword) {
             try {
                 $sqlUpdatePassword = "UPDATE user  SET password = :update_password WHERE id = :id_user";
@@ -43,6 +45,9 @@ class User
         } else {
             $hasBeenUpdated = 2;
         }
+    }else {
+        $hasBeenUpdated = 4;
+    }
 
         return $hasBeenUpdated;
     }
@@ -93,5 +98,28 @@ class User
         }
 
         return $result[0]['privateAccount'];
+    }
+
+    Private function getUserPassword()
+    {
+        $dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASSWORD, array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+            PDO::ATTR_PERSISTENT => true
+        ));
+
+        try {
+            $sqlGetUserPassword = "SELECT password FROM user WHERE id = :id_user";
+            $psGetUserPassword = $dbh->prepare($sqlGetUserPassword);
+            $psGetUserPassword->setFetchMode(PDO::FETCH_ASSOC);
+            $psGetUserPassword->execute(array(':id_user' => $this->idUser));
+            $result = $psGetUserPassword->fetchAll();
+
+        } catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+
+        return $result[0]['password'];
+        
     }
 }

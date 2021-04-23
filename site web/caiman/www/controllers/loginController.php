@@ -32,7 +32,7 @@ class LoginController {
                 echo "username: ".$usersInfos[0]['username'];
             
                 $_SESSION['user'] = new User($usersInfos[0]['username'],$usersInfos[0]['email'],$usersInfos[0]['idRole'],$usersInfos[0]['id']);
-                header('Location: ?r=dashboard');
+                header('Location:'.$_SERVER['HTTP_REFERER']);
                 exit;
             }
             }
@@ -98,7 +98,7 @@ class LoginController {
     {
         $html = "";
 
-        $html .= '<div class="jumbotron jumbotron-fluid">
+        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
           
           $html .= '<div class="container">

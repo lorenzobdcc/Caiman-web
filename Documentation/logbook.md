@@ -154,3 +154,20 @@ la modifivation du paramétre pour savoir si le compte est privé ou non
 ### 12h20
 
 test de Git Hook
+
+### 13h30
+
+modification de l'interface theme blanc -> dark
+
+### 15h20
+
+test de téléchargement de fichiers deouis le poste utilisateur
+
+### notes pour la prochaine fois
+
+- Je dois créer la partie Administrateur du site
+- Je dois créer un une fonctionnalité qui me permet de gerer les messages d'erreurs
+- Je dois sécuriser l'acces au pages
+- je dois sécuriser les différents formulaires
+- je dois je dois me reinseigner comment uploader des gros fichier depuis un poste clients
+- je dois changer de navbar

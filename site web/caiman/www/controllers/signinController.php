@@ -33,20 +33,20 @@ class SigninController
             if (isset($this->signin->insert_password) && isset($this->signin->insert_username) && isset($this->signin->insert_password_repeat) && isset($this->signin->insert_email)) {
 
                 if ($this->signin->insert_password != $this->signin->insert_password_repeat) {
-                    //header('Location: ?r=signin&e=1');
-                    //exit;
+                    header('Location:'.$_SERVER['HTTP_REFERER']);
+                exit;
                     echo "les mots de passe sont dif";
                 }
 
 
                 $this->signin->newUser();
 
-                //header('Location: ?r=signin&e=0');
-                //exit;
+                header('Location:'.$_SERVER['HTTP_REFERER']);
+                exit;
             } else {
                 echo "champs non rempli";
-                //header('Location: ?r=signin&e=2');
-                //exit;
+                header('Location:'.$_SERVER['HTTP_REFERER']);
+                exit;
             }
         }
     }
