@@ -37,6 +37,9 @@ switch ($r_page) {
             session_destroy();
             header('Location: index.php');
             break;
+    case "administrator" : 
+        $controller = new AdministratorController();
+            break;
     default:
         $controller = new IndexController();
         break;

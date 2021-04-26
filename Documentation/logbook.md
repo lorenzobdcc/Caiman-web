@@ -171,3 +171,46 @@ test de téléchargement de fichiers deouis le poste utilisateur
 - je dois sécuriser les différents formulaires
 - je dois je dois me reinseigner comment uploader des gros fichier depuis un poste clients
 - je dois changer de navbar
+
+----------
+
+## 26.04.2021
+
+### 8h05
+
+notes personneles:
+
+- je dois ajouter la posibilité d'afficher la page d'un utilisateur
+- je dois corriger mon script d'export de base de données
+
+### 8h10
+
+Creation de la page dédie aux administrateurs.
+
+### 8h30 
+
+Ajout de catégorie
+
+### 9h00
+
+Ajout de jeu
+
+### notes personnels
+
+j'ai regarder plusieurs méthodes pour envoyer un fichier depuis un formulaire en php. Pour l'instant jutilise les fonctions de base de php et elle fonctionne donc je vais faire des tests une fois le site uploadé sur le Bunker.
+
+### 11h00 
+
+le fichier .iso est uploadé avec le bon nom mais pas encore dans la base de données
+
+### 15h00
+
+Le jeu est bien ajouté ave le bon nom ainsi que la bonne image.
+
+### 15h45
+
+il est maintenant possible de mettre a jour le nom, la description ou la console d'un jeu.
+
+### 15h50
+
+modification de la structure du git

@@ -24,6 +24,11 @@ class Categories {
                 $this->psGetAllCategories = $this->dbh->prepare($sqlGetAllCategories);
                 $this->psGetAllCategories->setFetchMode(PDO::FETCH_ASSOC);
 
+                //add categorie
+                $sqlAddCategorie = "INSERT INTO categorie (name) VALUES (:categorie_name)";
+                $this->psAddCategorie = $this->dbh->prepare($sqlAddCategorie);
+                $this->psAddCategorie->setFetchMode(PDO::FETCH_ASSOC);
+
                 //get categories of a game
                 $sqlGameCategorie = "SELECT c.name, c.id FROM `gamehascategorie` as ghc
                 LEFT JOIN categorie as c
@@ -62,6 +67,20 @@ class Categories {
         try{
             $this->psGameCategorie->execute(array(':search_id' => $idGame));
             $result = $this->psGameCategorie->fetchAll();
+
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $result;
+    }
+
+    public function addCategorie(string $categorieName)
+    {
+        try{
+            $this->psAddCategorie->execute(array(':categorie_name' => $categorieName));
+            $result = $this->psAddCategorie->fetchAll();
 
 
         }catch (PDOException $e) {

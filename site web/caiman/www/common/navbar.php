@@ -17,6 +17,11 @@
       echo'  <li><a href="?r=dashboard" class="nav-link px-2 text-white">Dashboard</a></li>';
     
       }
+      if ($_SESSION['user']->role == 1) {
+      
+        echo'  <li><a href="?r=administrator" class="nav-link px-2 text-white">Admin dashboard</a></li>';
+      
+        }
       ?>
       </ul>
 
@@ -32,6 +37,7 @@
         </div>
       <?php
       }else
+
       {
       ?>
         <div class="text-end">

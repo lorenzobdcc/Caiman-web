@@ -167,6 +167,10 @@ class GamesController
                     $html.= '<a class="btn btn-outline-warning " href="?r=games&e=removeFavoris&idGame=' . $gameDetail[0]['id'] . '" role="button">Remove favorite</a>';
                 }
             }
+            if ($_SESSION['user']->role == 1) {
+                    $html.= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=updateGame&id=' . $gameDetail[0]['id'] . '" role="button">Update game</a>';
+
+            }
 
             $html .= '</div>
                     <h3 class="card-title">Categories</h3>
@@ -282,4 +286,6 @@ class GamesController
 
       return $html;
     }
+
+
 }

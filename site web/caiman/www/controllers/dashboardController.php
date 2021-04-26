@@ -94,9 +94,10 @@ class DashboardController
             </ul>
           </div>
             <div class="col-sm">
-          ';
-          $html .= $this->htmlFormupdateUserinfo();
-          $html .='
+            <div style="width: 70%; margin: auto;">
+            <a href="?r=dashboard&e=updatePassword" class="btn btn-warning my-2">Update password</a>
+            <a href="?r=dashboard&e=updatePrivateAccount" class="btn btn-warning my-2">Update if account is private</a>
+          </div>
             </div>
         </div>';
 
