@@ -243,3 +243,17 @@ modification de l'interface pour que les jeux s'affiche correctement
 
 Le site est fonctionnel mais il manque des détail comme les message d'erreur et les droit sur les pages
 
+### notes personelles
+
+pour finir le site il me reste les choses suivante a faire:
+- Sécuriser les pages
+- afficher des messages d'erreur
+- suppresion de catégories
+- suppresion de jeu
+- mot de passe oublié
+- commenter mon code
+- pagination pout les recherches
+
+### 13h40
+
+documentation
