@@ -130,7 +130,7 @@ class GamesController
     public function getRequestedGames()
     {
 
-        $html = '<div class="row row-cols-3 row-cols-md-2 g-4">';
+        $html = '<div class="d-inline-flex p-2">';
         $listGamesBrut = $this->requestedgame;
 
         foreach ($listGamesBrut as $key => $games) {
@@ -169,6 +169,7 @@ class GamesController
             }
             if ($_SESSION['user']->role == 1) {
                     $html.= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=updateGame&id=' . $gameDetail[0]['id'] . '" role="button">Update game</a>';
+                    $html.= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=addGameCategorie&id=' . $gameDetail[0]['id'] . '" role="button">Update/add categories</a>';
 
             }
 
@@ -177,7 +178,7 @@ class GamesController
                     <div class="list-group">';
 
         foreach ($category as $key => $cat) {
-            $html .= '<a href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '"<button type="button" class="list-group-item list-group-item-action btn-success">' . $cat['name'] . '</button></a>';
+            $html .= '<a href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '"<button type="button" class="btn btn-outline-success btnCategorie margintop10">' . $cat['name'] . '</button></a>';
         }
 
         $html .= '  </div>
@@ -196,7 +197,7 @@ class GamesController
     public function getGamesFromCategorie()
     {
 
-        $html = '<div class="row row-cols-3 row-cols-md-2 g-4">';
+        $html = '<div class="d-inline-flex p-2">';
         $listGamesBrut = $this->requestedgame;
 
         foreach ($listGamesBrut as $key => $game) {
@@ -236,7 +237,7 @@ class GamesController
     {
         $html = "";
 
-        $html .= '<div class="jumbotron DarkJumbotron " style="background-color: #161b22;">
+        $html .= '<div class="jumbotron DarkJumbotron  " style="background-color: #161b22;">
         <div class="container">
           <h1 class="display-5">Recherche</h1>
           
@@ -268,7 +269,7 @@ class GamesController
     {
         $html = "";
 
-        $html .= '<div class="card DarkJumbotron " style="background-color: #161b22;">
+        $html .= '<div class="card  " style="background-color: #0d1117;">
         <div class="card-body container DarkJumbotron">
           <h2 class="card-title ">Recherche</h2>
           

@@ -68,3 +68,11 @@ main{
 .whiteTexte{
     color: #c9d1d9;
 }
+
+.margintop10{
+    margin-top: 10px;
+}
+
+.centerText{
+    text-align: center;
+}

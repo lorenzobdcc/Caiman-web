@@ -3,177 +3,223 @@
 include_once "./models/class.php";
 class AdministratorController
 {
-    public $administrator;
-    public $game;
-    public $categorie;
-    private $e = null;
-    private $idGameToUpdate;
+  public $administrator;
+  public $game;
+  public $categorie;
+  private $e = null;
+  private $idGameToUpdate;
 
 
-    public function formHandler()
-    {
-        $result = null;
+  public function formHandler()
+  {
+    $result = null;
 
-        if (isset($_GET['e'])) {
-            $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
-        }
-        // update game
-        if ($this->e == "updateGame") {
-            if (isset($_GET['id'])) {
-                $requestGame = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-                $this->idGameToUpdate = $requestGame;
-            }
-        }
-
-        // add game categorie
-        if ($this->e == "addGameCategorie") {
-            if (isset($_GET['id'])) {
-                $requestGame = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-                $this->idGameToUpdate = $requestGame;
-            }
-        }
-
-        //add game
-        if ($this->e == "addGameUpload") {
-            if (isset($_POST['name'])) {
-                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['description'])) {
-                $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['imageName'])) {
-                $imageName = filter_input(INPUT_POST, 'imageName', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['console'])) {
-                $consoleId = filter_input(INPUT_POST, 'console', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['gameFileName'])) {
-                $gameFileName = filter_input(INPUT_POST, 'gameFileName', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-
-            $this->administrator->addGame($name, $description, $imageName, $consoleId, $gameFileName);
-
-            header('Location:' . $_SERVER['HTTP_REFERER']);
-            exit;
-        }
-
-         //add game
-         if ($this->e == "updateGameUpdate") {
-            if (isset($_POST['name'])) {
-                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['description'])) {
-                $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['console'])) {
-                $consoleId = filter_input(INPUT_POST, 'console', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-            if (isset($_POST['idGame'])) {
-                $idGame = filter_input(INPUT_POST, 'idGame', FILTER_SANITIZE_STRING);
-            } else {
-                header('Location:' . $_SERVER['HTTP_REFERER']);
-                exit;
-            }
-
-
-            $this->administrator->updateGame($idGame, $name, $description, $consoleId);
-
-            header('Location:' . $_SERVER['HTTP_REFERER']);
-            exit;
-        }
-
-
-        if ($this->e == "addCategorie") {
-            if (isset($_POST['name'])) {
-                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-            }
-
-            if (isset($name)) {
-                $result = $this->categorie->addCategorie($name);
-            }
-        }
+    if (isset($_GET['e'])) {
+      $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
+    }
+    // update game
+    if ($this->e == "updateGame") {
+      if (isset($_GET['id'])) {
+        $requestGame = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+        $this->idGameToUpdate = $requestGame;
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
     }
 
-    public function __construct()
-    {
-        $this->administrator  = new Administrator();
-        $this->game = new Games();
-        $this->categorie = new Categories();
+    // add game categorie
+    if ($this->e == "addGameCategorie") {
+      if (isset($_GET['id'])) {
+        $requestGame = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+        $this->idGameToUpdate = $requestGame;
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+    }
+
+    // add categorie to game
+    if ($this->e == "addGameCategorieAdd") {
+      if (isset($_GET['idGame'])) {
+        $idGame = filter_input(INPUT_GET, 'idGame', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+      if (isset($_GET['idCategorie'])) {
+        $idCategorie = filter_input(INPUT_GET, 'idCategorie', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      $this->categorie->addCategorieToGame($idGame, $idCategorie);
+      header('Location:' . $_SERVER['HTTP_REFERER']);
+      exit;
+    }
+
+    // delete categorie from a game
+    if ($this->e == "delGameCategorie") {
+      if (isset($_GET['idGame'])) {
+        $idGame = filter_input(INPUT_GET, 'idGame', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+      if (isset($_GET['idCategorie'])) {
+        $idCategorie = filter_input(INPUT_GET, 'idCategorie', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      $this->categorie->delCategorieFromGame($idGame, $idCategorie);
+      header('Location:' . $_SERVER['HTTP_REFERER']);
+      exit;
+    }
+
+    //add game
+    if ($this->e == "addGameUpload") {
+      if (isset($_POST['name'])) {
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['description'])) {
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['imageName'])) {
+        $imageName = filter_input(INPUT_POST, 'imageName', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['console'])) {
+        $consoleId = filter_input(INPUT_POST, 'console', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['gameFileName'])) {
+        $gameFileName = filter_input(INPUT_POST, 'gameFileName', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+
+      $this->administrator->addGame($name, $description, $imageName, $consoleId, $gameFileName);
+
+      header('Location:' . $_SERVER['HTTP_REFERER']);
+      exit;
+    }
+
+    //add game
+    if ($this->e == "updateGameUpdate") {
+      if (isset($_POST['name'])) {
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['description'])) {
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['console'])) {
+        $consoleId = filter_input(INPUT_POST, 'console', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+      if (isset($_POST['idGame'])) {
+        $idGame = filter_input(INPUT_POST, 'idGame', FILTER_SANITIZE_STRING);
+      } else {
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        exit;
+      }
+
+
+      $this->administrator->updateGame($idGame, $name, $description, $consoleId);
+
+      header('Location:' . $_SERVER['HTTP_REFERER']);
+      exit;
     }
 
 
-    public function printHTML()
-    {
+    if ($this->e == "addCategorie") {
+      if (isset($_POST['name'])) {
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+      }
 
-        $html = '<main style="margin-top:20px">
+      if (isset($name)) {
+        $result = $this->categorie->addCategorie($name);
+      }
+    }
+  }
+
+  public function __construct()
+  {
+    $this->administrator  = new Administrator();
+    $this->game = new Games();
+    $this->categorie = new Categories();
+  }
+
+
+  public function printHTML()
+  {
+
+    $html = '<main style="margin-top:20px">
         <div class="container-md">';
 
-        if ($this->e == null) {
-            $html .= $this->htmlAdministratorHome();
-        }
-
-        if ($this->e == "addGame") {
-            $html .= $this->htmlNewGame();
-        }
-
-        if ($this->e == "updateGame") {
-            $html .= $this->htmlUpdateGame();
-        }
-
-        if ($this->e == "addCategorie") {
-            $html .= $this->htmlAddCategorie();
-        }
-
-        if ($this->e == "addGameCategorie") {
-            $html .= $this->htmlAddCategorieToGame();
-        }
-
-
-
-        $html .= "</div></main> ";
-        echo $html;
+    if ($this->e == null) {
+      $html .= $this->htmlAdministratorHome();
     }
 
-    private function htmlAdministratorHome()
-    {
+    if ($this->e == "addGame") {
+      $html .= $this->htmlNewGame();
+    }
 
-        $html = "";
+    if ($this->e == "updateGame") {
+      $html .= $this->htmlUpdateGame();
+    }
 
-        $html .= '<div class=" jumbotron DarkJumbotron width100" style="background-color: #161b22;">';
+    if ($this->e == "addCategorie") {
+      $html .= $this->htmlAddCategorie();
+    }
 
-        $html .= '<div class="container">
+    if ($this->e == "addGameCategorie") {
+      $html .= $this->htmlAddCategorieToGame();
+    }
+
+
+
+    $html .= "</div></main> ";
+    echo $html;
+  }
+
+  private function htmlAdministratorHome()
+  {
+
+    $html = "";
+
+    $html .= '<div class=" jumbotron DarkJumbotron width100" style="background-color: #161b22;">';
+
+    $html .= '<div class="container">
             <div class="row"><h2>Administrator pannel</h2></div>
             <div class="row">
               <div class="col-sm">
@@ -187,22 +233,22 @@ class AdministratorController
                 </div>
             </div>';
 
-        $html .= '
+    $html .= '
               
             </div>
           </div>';
 
-        return $html;
-    }
+    return $html;
+  }
 
-    private function htmlNewGame()
-    {
-        $html = "";
+  private function htmlNewGame()
+  {
+    $html = "";
 
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
 
-        $html .= '<div class="container">
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           <div style="width: 70%; margin: auto;">
@@ -229,8 +275,8 @@ class AdministratorController
                 <label for="file">Console</label>
                 <select class="form-control" name="console">
                     ';
-        $html .= $this->htmlgetListConsole();
-        $html .= '
+    $html .= $this->htmlgetListConsole();
+    $html .= '
                 </select>
               </div>
               <div class="form-group">
@@ -253,68 +299,76 @@ class AdministratorController
         </div>
       </div>';
 
-        $html .= '
+    $html .= '
           
         </div>
       </div>';
 
-        return $html;
-    }
+    return $html;
+  }
 
-    private function htmlAddCategorieToGame()
-    {
-        $gameData = $this->game->getGameDetail($this->idGameToUpdate);
-        $html = "";
+  private function htmlAddCategorieToGame()
+  {
+    $gameData = $this->game->getGameDetail($this->idGameToUpdate);
+    $gameCategorie = $this->categorie->getCategoriesOfGame($this->idGameToUpdate);
+    $allCategorie = $this->categorie->getListAllCategories();
+    $html = "";
 
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
-        <div class="container">';
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;">';
 
-        $html .= '<div class="container">
+    $html .= '<div class="container">
         <div class="row">
-          <div class="col-sm">
-          <div style="width: 70%; margin: auto;">
-        <h2>Update game</h2>
-        <form action="?r=administrator&e=updateGameUpdate" method="post" enctype="multipart/form-data">
-        <input id="idGame" name="idGame" type="hidden" value="' . $gameData[0]['id'] . '">
-              <div class="form-group">
-                <label for="name"></label>
-                <input type="texte" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter name" value="' . $gameData[0]['name'] . '">
-              </div>
-              <div class="form-group">
-                <label for="file">Console</label>
-                <select class="form-control" name="console">
-                    ';
-        $html .= $this->htmlgetListConsole();
-        $html .= '
-                </select>
-              </div>
-
-              <div class="form-group">
-              <button type="submit" class="btn btn-success">Update Game</button>
-            </div>          
-          </form>
-      </div>
-          </div>
-
+            <div style="width: 70%; margin: auto;">
+              <h2>Update ' . $gameData[0]['name'] . '</h2>
+            </div>
         </div>
+
+              <div class="row">
+              <div class="col-sm">
+                <div class="form-group">
+                  <h3 class="card-title centerText">Actual game\'s categories</h3>
+                  
+                  
+                    <div class="list-group">';
+
+    foreach ($gameCategorie as $key => $cat) {
+      $html .= '<a class="btn btn-outline-danger btnCategorie margintop10" href="?r=administrator&e=delGameCategorie&idCategorie=' . $cat['id'] . '&idGame=' . $gameData[0]['id'] . '" role="button">DELETE: ' . $cat['name'] . '</a>';
+    }
+
+    $html .= '      </div>
+                  </div> 
+                </div>     
+
+
+              <div class="col-sm">
+                <div class="form-group">
+                  <h3 class="card-title centerText">Add categories</h3>
+                    <div class="list-group">';
+
+    foreach ($allCategorie as $key => $cat) {
+      $html .= '<a class="btn btn-outline-success btnCategorie margintop10 " href="?r=administrator&e=addGameCategorieAdd&idCategorie=' . $cat['id'] . '&idGame=' . $gameData[0]['id'] . '" role="button">ADD: ' . $cat['name'] . '</a>';
+    }
+
+    $html .= '  </div>
+              </div>   
       </div>';
 
-        $html .= '
+    $html .= '
           
         </div>
       </div>';
 
-        return $html;
-    }
-    private function htmlUpdateGame()
-    {
-        $gameData = $this->game->getGameDetail($this->idGameToUpdate);
-        $html = "";
+    return $html;
+  }
+  private function htmlUpdateGame()
+  {
+    $gameData = $this->game->getGameDetail($this->idGameToUpdate);
+    $html = "";
 
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
 
-        $html .= '<div class="container">
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           <div style="width: 70%; margin: auto;">
@@ -333,8 +387,8 @@ class AdministratorController
                 <label for="file">Console</label>
                 <select class="form-control" name="console">
                     ';
-        $html .= $this->htmlgetListConsole();
-        $html .= '
+    $html .= $this->htmlgetListConsole();
+    $html .= '
                 </select>
               </div>
 
@@ -348,34 +402,34 @@ class AdministratorController
         </div>
       </div>';
 
-        $html .= '
+    $html .= '
           
         </div>
       </div>';
 
-        return $html;
+    return $html;
+  }
+
+  private function htmlgetListConsole()
+  {
+    $html = "";
+
+    foreach ($this->administrator->getListConsole() as $key => $console) {
+      $html .= '<option value="' . $console['id'] . '">' . $console['name'] . '</option>';
     }
 
-    private function htmlgetListConsole()
-    {
-        $html = "";
+    return $html;
+  }
 
-        foreach ($this->administrator->getListConsole() as $key => $console) {
-            $html .= '<option value="' . $console['id'] . '">' . $console['name'] . '</option>';
-        }
+  private function htmlAddCategorie()
+  {
 
-        return $html;
-    }
+    $html = "";
 
-    private function htmlAddCategorie()
-    {
-
-        $html = "";
-
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
 
-        $html .= '<div class="container">
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           <div style="width: 70%; margin: auto;">
@@ -398,11 +452,11 @@ class AdministratorController
         </div>
       </div>';
 
-        $html .= '
+    $html .= '
           
         </div>
       </div>';
 
-        return $html;
-    }
+    return $html;
+  }
 }

@@ -35,7 +35,7 @@ switch ($r_page) {
 
     case "logout" : 
             session_destroy();
-            header('Location: index.php');
+            header('Location:'.$_SERVER['HTTP_REFERER']);
             break;
     case "administrator" : 
         $controller = new AdministratorController();

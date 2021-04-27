@@ -214,3 +214,16 @@ il est maintenant possible de mettre a jour le nom, la description ou la console
 ### 15h50
 
 modification de la structure du git
+
+-----
+
+## 27.04.2021
+
+### 8h05
+
+ajout/ suppression de catégories a un jeu
+
+### 9h20 
+
+modification mineur de l'interface
+
