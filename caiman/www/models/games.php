@@ -19,6 +19,10 @@ class Games {
 
     private $psCheckIfFavoris;
 
+    private $psGetTimeInGame;
+
+    private $psGetGameWithTime;
+
 
    
     public function __construct()
@@ -38,6 +42,16 @@ class Games {
                 $sqlRequestGames = "SELECT * FROM game WHERE name LIKE :search_game";
                 $this->psRequestGames = $this->dbh->prepare($sqlRequestGames);
                 $this->psRequestGames->setFetchMode(PDO::FETCH_ASSOC);
+
+                //get Time in game user
+                $sqlTimeInGame = "SELECT * FROM timeingame WHERE idGame = :search_idGame AND idUser = :search_idUser";
+                $this->psGetTimeInGame = $this->dbh->prepare($sqlTimeInGame);
+                $this->psGetTimeInGame->setFetchMode(PDO::FETCH_ASSOC);
+
+                //get game with time user
+                $sqlGetGameWithTime = "SELECT * FROM timeingame WHERE idUser = :search_idUser";
+                $this->psGetGameWithTime = $this->dbh->prepare($sqlGetGameWithTime);
+                $this->psGetGameWithTime->setFetchMode(PDO::FETCH_ASSOC);
 
                 //get detail game
                 $sqlGameDetail = "SELECT * FROM game WHERE id = :search_id";
@@ -121,6 +135,32 @@ class Games {
         return $result;
     }
 
+    public function getTimeInGameUser(int $idUser,int $idGame)
+    {
+        try{
+            $this->psGetTimeInGame->execute(array(':search_idGame' => $idGame, ':search_idUser' => $idUser));
+            $result = $this->psGetTimeInGame->fetchAll();
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $result;
+    }
+
+    public function getListOfGameWithTimeUser(int $idUser)
+    {
+        try{
+            $this->psGetGameWithTime->execute(array(':search_idUser' => $idUser));
+            $result = $this->psGetGameWithTime->fetchAll();
+
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $result;
+    }
+
     public function getGameDetail(int $idGame)
     {
 
@@ -142,8 +182,6 @@ class Games {
         try{
             $this->psGameInCategorie->execute(array(':search_id' => $idCategorie));
             $result = $this->psGameInCategorie->fetchAll();
-
-
         }catch (PDOException $e) {
             print "Erreur !: " . $e->getMessage() . "<br>";
             die();

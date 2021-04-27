@@ -113,7 +113,7 @@ class GamesController
 
     public function getListAllGames()
     {
-        $html = '<div class="d-inline-flex p-2">';
+        $html = '<div class="cardGameBox box">';
 
         $listGamesBrut = $this->games->getAllGames();
 
@@ -130,7 +130,7 @@ class GamesController
     public function getRequestedGames()
     {
 
-        $html = '<div class="d-inline-flex p-2">';
+        $html = '<div class="cardGameBox box">';
         $listGamesBrut = $this->requestedgame;
 
         foreach ($listGamesBrut as $key => $games) {
@@ -197,7 +197,7 @@ class GamesController
     public function getGamesFromCategorie()
     {
 
-        $html = '<div class="d-inline-flex p-2">';
+        $html = '<div class="cardGameBox box">';
         $listGamesBrut = $this->requestedgame;
 
         foreach ($listGamesBrut as $key => $game) {
@@ -212,7 +212,7 @@ class GamesController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card cardBootstarp " style=" max-width: 11rem; margin:10px;     background-color: #161b22; border:2px solid #28a745;">
+        <div class="card cardBootstarp " style=" max-width: 11rem; margin:10px;  background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body darkContent">
@@ -239,7 +239,7 @@ class GamesController
 
         $html .= '<div class="jumbotron DarkJumbotron  " style="background-color: #161b22;">
         <div class="container">
-          <h1 class="display-5">Recherche</h1>
+          <h1 class="display-5">Research</h1>
           
           <form class="row g-3" action="?r=games&e=requestGame" method="post">
 
@@ -247,7 +247,7 @@ class GamesController
                 <input type="texte" class="form-control" id="gameName" name="gameName" placeholder="Mario">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-success mb-3">Recherche</button>
+                <button type="submit" class="btn btn-success mb-3">Research</button>
             </div>
           </form>
           <h4>Categories:</h4>
@@ -271,7 +271,7 @@ class GamesController
 
         $html .= '<div class="card  " style="background-color: #0d1117;">
         <div class="card-body container DarkJumbotron">
-          <h2 class="card-title ">Recherche</h2>
+          <h2 class="card-title ">Research</h2>
           
           <form class="row g-3" action="?r=games&e=requestGame" method="post">
 
@@ -279,7 +279,7 @@ class GamesController
                 <input type="texte" class="form-control" id="gameName" name="gameName" placeholder="Mario">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-success mb-3">Recherche</button>
+                <button type="submit" class="btn btn-success mb-3">Research</button>
             </div>
           </form>
           </div>

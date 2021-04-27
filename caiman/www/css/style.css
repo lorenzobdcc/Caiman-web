@@ -9,8 +9,6 @@ main{
 }
 
 .darkContent{
-   background-color:  #161b22;
-   color:red;
 }
 
 
@@ -21,10 +19,16 @@ main{
 .imageCard{
     border-radius:5px;
     max-height: 15rem;
-    background-color:;
+    background-color: #21262d;
     
 }
+.cardGameBox{
 
+    display: flex;
+    flex-wrap: wrap;
+    
+  justify-content: center;
+}
 
 .detailImage{
     max-width:80%;
@@ -45,10 +49,19 @@ main{
 }
 
 .btnCategorie{
+
     margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btnUser{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .cardContent{
+    
     position:absolute;
   bottom: 5px;
   right: 5px;
@@ -61,7 +74,7 @@ main{
 
 .DarkJumbotron{
     border-radius: 10px;
-    background-color: #161b22;
+    background-color: #21262d;
     border:2px solid #28a745;
 }
 

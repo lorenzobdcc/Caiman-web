@@ -138,7 +138,7 @@ class Administrator
         $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         
         //rename file
-        $newfilename =$imageFileName. '.' . $fileType;
+        $newfilename =$imageFileName;
 
         // Check if file already exists
         if (file_exists($target_file)) {

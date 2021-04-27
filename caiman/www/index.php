@@ -6,51 +6,53 @@ include_once "controllers/controllers.php";
 session_start();
 
 if (!isset($_SESSION['user'])) {
-   $_SESSION['user'] = new user("","","visitor","-1"); 
+    $_SESSION['user'] = new user("", "", "visitor", "-1");
 }
 
 
 $r_page = filter_input(INPUT_GET, 'r', FILTER_SANITIZE_SPECIAL_CHARS);
 
 switch ($r_page) {
-    case "games" : 
+    case "games":
         $controller = new GamesController();
         break;
 
-    case "download" : 
+    case "download":
         $controller = new DownloadController();
         break;
 
-    case "dashboard" : 
+    case "dashboard":
         $controller = new DashboardController();
         break;
 
-    case "signin" : 
+    case "signin":
         $controller = new SigninController();
         break;
 
-    case "login" : 
+    case "login":
         $controller = new LoginController();
         break;
 
-    case "logout" : 
-            session_destroy();
-            header('Location:'.$_SERVER['HTTP_REFERER']);
-            break;
-    case "administrator" : 
+    case "users":
+        $controller = new UsersController();
+        break;
+
+    case "logout":
+        session_destroy();
+        header('Location:' . $_SERVER['HTTP_REFERER']);
+        break;
+    case "administrator":
         $controller = new AdministratorController();
-            break;
+        break;
     default:
         $controller = new IndexController();
         break;
 }
 $controller->formHandler();
 
-$title="Caiman";
+$title = "Caiman";
 include "common/head.php";
 include "common/modal.php";
 include "common/navbar.php";
 $controller->printHTML();
 include "common/footer.php";
-
-?>

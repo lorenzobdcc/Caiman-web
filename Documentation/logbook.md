@@ -227,3 +227,19 @@ ajout/ suppression de catégories a un jeu
 
 modification mineur de l'interface
 
+### 10h05
+
+recherche d'un profil utilisateur
+
+### 12h15
+
+la recherche et l'affichage d'un profil utilisateur est fonctionnel
+
+### 13h00
+
+modification de l'interface pour que les jeux s'affiche correctement
+
+### 13h30
+
+Le site est fonctionnel mais il manque des détail comme les message d'erreur et les droit sur les pages
+

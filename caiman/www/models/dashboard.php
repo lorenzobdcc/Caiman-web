@@ -6,7 +6,5 @@ class Dashboard {
     {
         $_SESSION['user']->printInfos();
     }
-    function aMemberFunc() {
-        print 'Inside `aMemberFunc()`';
-    }
+
 }

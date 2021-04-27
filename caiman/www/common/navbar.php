@@ -11,6 +11,7 @@
         <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
         <li><a href="?r=games" class="nav-link px-2 text-white">Games</a></li>
         <li><a href="?r=download" class="nav-link px-2 text-white">Download</a></li>
+        <li><a href="?r=users" class="nav-link px-2 text-white">Users</a></li>
         <?php
       if ($_SESSION['user']->role != "visitor") {
       

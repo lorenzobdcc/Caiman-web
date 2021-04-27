@@ -60,6 +60,7 @@ class DashboardController
         if ($this->e == null) {
             $html .= $this->htmlFormHead();
             $html .= $this->htmlFavoriteGames();
+            $html .= $this->htmlGameTime();
         }
 
         if ($this->e == "updatePassword") {
@@ -114,7 +115,7 @@ class DashboardController
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
         <div class="container">
         <div class="row"><h2>User\'s favorites games</h2></div>
-        <div class="row">
+        <div class="row cardGameBox box">
         ';
 
         $listGamesBrut =  $this->game->getFavoriteGamesOfUser($_SESSION['user']->idUser);
@@ -131,17 +132,25 @@ class DashboardController
         return $html;
     }
 
-    private function htmlFormupdateUserinfo()
+    private function htmlGameTime()
     {
-        $html = "";
+        $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
+        <div class="container">
+        <div class="row"><h2>User\'s time in games</h2></div>
+        <div class="row cardGameBox box">
+        ';
 
-        $html = '
-        <div style="width: 70%; margin: auto;">
-        <a href="?r=dashboard&e=updatePassword" class="btn btn-warning my-2">Update password</a>
-        <a href="?r=dashboard&e=updatePrivateAccount" class="btn btn-warning my-2">Update if account is private</a>
-      </div>';
+        $listGamesBrut =  $this->game->getListOfGameWithTimeUser($_SESSION['user']->idUser);
+        foreach ($listGamesBrut as $key => $games) {
 
-      return $html;
+
+            $html .= $this->createCardHTMLTime($games['idGame']);
+        }
+
+        $html .= '</div>
+        </div>
+        </div>';
+        return $html;
     }
 
 
@@ -163,6 +172,30 @@ class DashboardController
             $html .= '
         </div>
         </a>
+        </div>';
+        return $html;
+    }
+
+    private function createCardHTMLTime($game)
+    {
+        $gameDetail = $this->game->getGameDetail($game);
+        $gameDetail = $gameDetail[0];
+        $gameTime = $this->game->getTimeInGameUser($_SESSION['user']->idUser, $game);
+        $html = '
+        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
+        <img src="./img/games/' . $gameDetail['imageName'] . '." class="card-img-top imageCard"  >
+        <div class="card-body ">
+        <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
+            <p class="greenTexte">';
+            $heure = ($gameTime[0]['timeInMinute']%60);
+            $minutes = (60% $gameTime[0]['timeInMinute']);
+            if ($minutes == 60) {
+                $heure ++;
+                $minutes = 0;
+            }
+            $html .= $heure. "H ".$minutes. " minutes";
+            $html .=' </p>
+        </div>
         </div>';
         return $html;
     }
