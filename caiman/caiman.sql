@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 26 avr. 2021 à 13:59
+-- Généré le : mer. 28 avr. 2021 à 13:54
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.11
 
@@ -37,6 +37,7 @@ CREATE TABLE `categorie` (
 --
 
 INSERT INTO `categorie` (`id`, `name`) VALUES
+(8, 'Dragon Ball'),
 (4, 'Fight'),
 (3, 'Kingdom Hearts'),
 (2, 'Mario'),
@@ -104,9 +105,14 @@ CREATE TABLE `favoritegame` (
 
 INSERT INTO `favoritegame` (`id`, `idGame`, `idUser`) VALUES
 (20, 5, 8),
-(35, 1, 8),
 (44, 6, 8),
-(45, 4, 8);
+(45, 4, 8),
+(47, 2, 9),
+(48, 15, 9),
+(49, 3, 8),
+(50, 2, 8),
+(51, 1, 8),
+(52, 18, 8);
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,9 @@ INSERT INTO `file` (`id`, `filename`, `dateUpdate`) VALUES
 (5, 'KINGDOM_HEARTS_II_FMX.iso', '2021-04-21'),
 (6, 'KINGDOM_HEARTS_FINAL_MIX.iso', '2021-04-21'),
 (7, 'SUPER_SMASH_BROS_MELEE.iso', '2021-04-21'),
-(18, 'DRAGON_BALL_Z_B_T_3.iso', '2021-04-26');
+(18, 'DRAGON_BALL_Z_B_T_3.iso', '2021-04-26'),
+(19, 'SUPER_MARIO_STRIKERS.iso', '2021-04-27'),
+(21, 'METROID_PRIME.iso', '2021-04-28');
 
 -- --------------------------------------------------------
 
@@ -172,7 +180,9 @@ INSERT INTO `game` (`id`, `name`, `description`, `imageName`, `idConsole`, `idFi
 (4, 'Kingdom Hearts 2 Final Mix', 'Kingdom Hearts II est un jeu vidéo d\'action-RPG développé par Square Enix et distribué par Buena Vista Games et Square Enix, en 2005 pour la PlayStation 2, console de jeux vidéo de Sony.', 'KINGDOM_HEARTS_IIFMX.png', 2, 5),
 (5, 'Kingdom Hearts Final Mix', 'Kingdom Hearts est une série de jeux vidéo d\'action-RPG développée et éditée par Square Enix, qui marque l\'association entre Disney Interactive Studios et l\'univers des jeux de Square sous la direction de Tetsuya Nomura. Kingdom Hearts est donc un crossover entre univers Square Enix et l\'univers Disney qui a lieu dans un monde parallèle créé spécialement pour la série. Dans chacun des opus, les voix des personnages de Disney sont interprétées par les mêmes célébrités que dans leur œuvre d\'origine.', 'KINGDOM_HEARTS_FINAL_MIx.png', 2, 6),
 (6, 'Super Smash Bros. Melee', 'Super Smash Bros. Melee is the second installment in the Super Smash Bros. series and the follow-up to the Nintendo 64 title. It includes all playable characters from the first game, and also adds characters from franchises such as Fire Emblem, of which no games had been released outside Japan at the time. Super Smash Bros. Melee builds on the first game by adding new gameplay features and playable characters: it\'s major focus is the multiplayer mode, while still offering a number of single-player modes.', 'SUPER_SMASH_BROS_MELEE.png', 1, 7),
-(15, 'Dragon Ball Z: Budokai Tenkaichi 3', 'Dragon Ball Z: Budokai Tenkaichi is a series of fighting games based on the anime and manga Dragon Ball by Akira Toriyama. Each installment was developed by Spike for the PlayStation 2, while they were published by Namco Bandai Games under the Bandai brand name in Japan and Europe and Atari in North America and Australia from 2005 to 2007. The second and third installments were also released for the Nintendo Wii. Atari&#39;s PAL distribution network was absorbed into Bandai Namco Partners and Bandai Namco has also handled publishing in North America for future Dragon Ball Z games since 2010, effectively ending Atari&#39;s involvement.[1] The trilogy was followed by Dragon Ball Z: Tenkaichi Tag Team, released in 2010 for the PlayStation Portable.', 'DRAGON_BALL_Z_B_T_3.png', 2, 18);
+(15, 'Dragon Ball Z: Budokai Tenkaichi 3', 'Dragon Ball Z: Budokai Tenkaichi is a series of fighting games based on the anime and manga Dragon Ball by Akira Toriyama. Each installment was developed by Spike for the PlayStation 2, while they were published by Namco Bandai Games under the Bandai brand name in Japan and Europe and Atari in North America and Australia from 2005 to 2007. The second and third installments were also released for the Nintendo Wii. Atari&#39;s PAL distribution network was absorbed into Bandai Namco Partners and Bandai Namco has also handled publishing in North America for future Dragon Ball Z games since 2010, effectively ending Atari&#39;s involvement.[1] The trilogy was followed by Dragon Ball Z: Tenkaichi Tag Team, released in 2010 for the PlayStation Portable.', 'DRAGON_BALL_Z_B_T_3.png', 2, 18),
+(16, 'Super Mario Strikers', 'Mario Smash Football est un jeu vidéo de football arcade développé par Next Level Games et édité par Nintendo sur GameCube. Il est sorti en Europe et en Amérique du Nord fin 2005 et au Japon et en Australie en 2006.', 'SUPER_MARIO_STRIKERS.jpg', 3, 19),
+(18, 'Metroid Prime', 'Metroid Prime est un jeu vidéo d&#39;action-aventure en vue à la première personne de la série Metroid, développé par Retro Studios en collaboration avec Nintendo et édité par ce dernier sur GameCube en novembre 2002 en Amérique du Nord, en février 2003 au Japon, puis en mars 2003 en Europe.', 'METROID_PRIME.png', 1, 21);
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,13 @@ INSERT INTO `gamehascategorie` (`id`, `idGame`, `idCategorie`) VALUES
 (5, 5, 3),
 (6, 6, 2),
 (7, 6, 5),
-(8, 6, 4);
+(8, 6, 4),
+(29, 2, 6),
+(30, 15, 4),
+(31, 15, 8),
+(32, 5, 6),
+(33, 16, 2),
+(34, 16, 7);
 
 -- --------------------------------------------------------
 
@@ -217,8 +233,29 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (`id`, `name`) VALUES
 (1, 'administrator'),
-(2, 'visitor'),
 (3, 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `timeingame`
+--
+
+CREATE TABLE `timeingame` (
+  `id` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `idGame` int(11) NOT NULL,
+  `timeInMinute` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `timeingame`
+--
+
+INSERT INTO `timeingame` (`id`, `idUser`, `idGame`, `timeInMinute`) VALUES
+(1, 8, 4, 1532),
+(2, 8, 6, 2000),
+(3, 9, 15, 500);
 
 -- --------------------------------------------------------
 
@@ -240,13 +277,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `privateAccount`, `idRole`) VALUES
-(1, 'lorenzo', 'Super2016', 'lorenzo@bdcc.ch', 0, 1),
+(1, 'lorenzo', 'Super2016', 'lorenzo@bdcc.ch', 1, 1),
 (4, 'test2', 'Super', 'test2@test2.test', 0, 3),
 (5, 'antoine', '$2y$10$RE9XFXe8Gu/pglsnSc4/5uP9R0XDA0w7QWms1ZUxiohybbMhYv8sS', 'antoine@eduge.ch', 0, 3),
 (6, 'test3', '$2y$10$Eov2ioucKZSe97q/0Gkco.1i0eN1Jw9PixyWAJK63AsXUZqxWsgPq', 'test2@test3.test', 0, 3),
 (8, 'lorenzo1227', '$2y$10$A4jZ2hPhxnadWFmPkUnI1..I7cpMQFj9bTjhGbLIGaV33xKeaHkIO', 'united4player@gmail.com', 0, 1),
 (9, 'aurelio1227', '$2y$10$snt0hwL6wFp1gUNzSlLxPO/mksgbCnXaZB7mgXGj2Y9kp.4B0kkDO', 'aurelio1227@gmail.com', 0, 3),
-(10, 'lorenzo12277', '$2y$10$ici/H5K1cqVG.sMkxH0yguGd1inB9SVxEX8IcrdvSqFASsL/Y8OFO', 'lorenzo12277@gmail.com', 0, 3);
+(10, 'lorenzo12277', '$2y$10$ici/H5K1cqVG.sMkxH0yguGd1inB9SVxEX8IcrdvSqFASsL/Y8OFO', 'lorenzo12277@gmail.com', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -321,13 +358,21 @@ ALTER TABLE `game`
 ALTER TABLE `gamehascategorie`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idGame` (`idGame`),
-  ADD KEY `idCategory` (`idCategorie`);
+  ADD KEY `idCategorie` (`idCategorie`) USING BTREE;
 
 --
 -- Index pour la table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `timeingame`
+--
+ALTER TABLE `timeingame`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idUser` (`idUser`),
+  ADD KEY `idGame` (`idGame`);
 
 --
 -- Index pour la table `user`
@@ -352,7 +397,7 @@ ALTER TABLE `userconfigfile`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `consol`
@@ -370,13 +415,13 @@ ALTER TABLE `emulator`
 -- AUTO_INCREMENT pour la table `favoritegame`
 --
 ALTER TABLE `favoritegame`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT pour la table `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `filesave`
@@ -388,13 +433,13 @@ ALTER TABLE `filesave`
 -- AUTO_INCREMENT pour la table `game`
 --
 ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `gamehascategorie`
 --
 ALTER TABLE `gamehascategorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT pour la table `role`
@@ -403,10 +448,16 @@ ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT pour la table `timeingame`
+--
+ALTER TABLE `timeingame`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `userconfigfile`
@@ -451,6 +502,13 @@ ALTER TABLE `game`
 ALTER TABLE `gamehascategorie`
   ADD CONSTRAINT `gamehascategorie_ibfk_1` FOREIGN KEY (`idCategorie`) REFERENCES `categorie` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `gamehascategorie_ibfk_2` FOREIGN KEY (`idGame`) REFERENCES `game` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `timeingame`
+--
+ALTER TABLE `timeingame`
+  ADD CONSTRAINT `timeingame_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `timeingame_ibfk_2` FOREIGN KEY (`idGame`) REFERENCES `game` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `userconfigfile`

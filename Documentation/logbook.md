@@ -273,3 +273,11 @@ correction d'un bogue sur le nombre d'heure de jeu et riage des jeux par heure d
 ### 11h00
 
 gestion des droit d'acces au page
+
+### 13h10
+
+modification de la navbar
+
+### 14h00
+
+gestion des erreurs de du login

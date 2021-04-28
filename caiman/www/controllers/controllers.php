@@ -1,5 +1,5 @@
 <?php 
-include_once "redirectionController.php";
+include_once "mainController.php";
 include_once "interfaceController.php";
 include_once "dashboardController.php";
 include_once "downloadController.php";

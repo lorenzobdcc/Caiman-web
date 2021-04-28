@@ -1,5 +1,5 @@
 <?php
-class GamesController implements iController
+class GamesController extends mainController implements iController
 {
     public $games;
     public $categorie;
@@ -64,6 +64,7 @@ class GamesController implements iController
             if (isset($idGame)) {
                 $result = $this->games->addGameToFavoris($_SESSION['user']->idUser,$idGame);
                 header('Location:'.$_SERVER['HTTP_REFERER']);
+                $_SESSION['error'] = "Favorite added";
             }
         }
 
@@ -75,6 +76,7 @@ class GamesController implements iController
             if (isset($idGame)) {
                 $result = $this->games->removeGameFromFavoris($_SESSION['user']->idUser,$idGame);
                 header('Location:'.$_SERVER['HTTP_REFERER']);
+                $_SESSION['error'] = "Favorite removed";
             }
         }
 
@@ -86,7 +88,7 @@ class GamesController implements iController
     {
         $html = '<main style="margin-top:20px">
         <div class="container-md">';
-
+        $html .= $this->errorHandler();
         if ($this->e == null) {
             $html .= $this->recherchFull();
             $html .= $this->getListAllGames();
@@ -132,7 +134,6 @@ class GamesController implements iController
 
         $html = '<div class="cardGameBox box">';
         $listGamesBrut = $this->requestedgame;
-
         foreach ($listGamesBrut as $key => $games) {
 
 
@@ -212,12 +213,14 @@ class GamesController implements iController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card cardBootstarp " style=" max-width: 11rem; margin:10px;  background-color: #161b22; border:2px solid #28a745;">
+        <div class="card cardBootstarp " style=" max-width: 15rem; margin:10px;  background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body darkContent">
             <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
-            ';
+            
+        </div>
+        <div class="card-body"> ';
             if ($_SESSION['user']->idUser != -1) {
                 if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $game['id'])) {
                     $html.= '<a class="btn btn-outline-light cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';

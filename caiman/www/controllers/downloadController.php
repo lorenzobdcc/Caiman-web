@@ -1,5 +1,5 @@
 <?php
-class DownloadController implements iController {
+class DownloadController extends mainController implements iController {
     public $download;
     private $e = null;
 
@@ -32,11 +32,13 @@ class DownloadController implements iController {
         }
     }
    
+
+
     public function printHTML()
     {
         $html = '<main style="margin-top:20px">
         <div class="container-md">';
-
+        $html .= $this->errorHandler();
         if ($this->e == "user") {
             $html .= $this->htmlUserDownload();
         }

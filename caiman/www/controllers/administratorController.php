@@ -1,7 +1,5 @@
 <?php
-
-include_once "./models/class.php";
-class AdministratorController extends RedirectionController
+class AdministratorController extends mainController implements iController
 {
   public $administrator;
   public $game;
@@ -175,6 +173,8 @@ class AdministratorController extends RedirectionController
     }
   }
 
+
+
   public function __construct()
   {
     $this->administrator  = new Administrator();
@@ -188,7 +188,7 @@ class AdministratorController extends RedirectionController
 
     $html = '<main style="margin-top:20px">
         <div class="container-md">';
-
+    $html .= $this->errorHandler();
     if ($this->e == null) {
       $html .= $this->htmlAdministratorHome();
     }

@@ -1,8 +1,9 @@
 <?php
-class LoginController implements iController
+class LoginController extends mainController implements iController
  {
     public $login;
     private $e = "";
+    private $errorMessage = null;
 
     public function __construct()
     {
@@ -30,8 +31,6 @@ class LoginController implements iController
                 $usersInfos = $this->login->checkLogin();
             
             if (isset($usersInfos)) {
-                echo "username: ".$usersInfos[0]['username'];
-            
                 $_SESSION['user'] = new User($usersInfos[0]['username'],$usersInfos[0]['email'],$usersInfos[0]['idRole'],$usersInfos[0]['id']);
                 header('Location:'.$_SERVER['HTTP_REFERER']);
                 exit;
@@ -39,18 +38,22 @@ class LoginController implements iController
             }
         }
     }
+
+
    
     public function printHTML()
     {
 
         $html = '<main  style="margin-top:20px ">
         <div class="container-md">';
+        $html .= $this->errorHandler();
         $html .= $this->htmlFormHead();
 
         $html .= "</div></main> ";
 
         echo $html;
     }
+
 
     private function htmlFormLogin()
     {

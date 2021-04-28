@@ -1,5 +1,5 @@
 <?php
-class IndexController implements iController
+class IndexController extends mainController implements iController
 {
   public $index;
 
@@ -12,11 +12,18 @@ class IndexController implements iController
   {
   }
 
+
   public function printHTML()
   {
-?>
+    $html = "";
+   
+
+    $html .= '
     <main style="margin-top:20px ">
       <div class="container-md">
+      ';
+      $html .= $this->errorHandler();
+      $html .= '
         <div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;">
             <div class="row py-lg-5">
               <div class="col-lg-6 col-md-8 mx-auto">
@@ -34,7 +41,7 @@ class IndexController implements iController
 
     </main>
 
-<?php
+';
+    echo $html;
   }
-
 }

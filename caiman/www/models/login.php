@@ -42,6 +42,10 @@ class Login {
             if ($result != null) {
                 if (password_verify( $this->search_password,$result[0]["password"])   ) {
                     $returnArray = $result;
+                    $_SESSION['error'] = "Welcome back: ". $result[0]['username'];
+                }else
+                {
+                    $_SESSION['error'] = "Invalid log in";
                 }
             }
 
@@ -50,11 +54,5 @@ class Login {
             die();
         }
         return $returnArray;
-    }
-
-
-    public function printHTML()
-    {
-        echo "Login";
     }
 }

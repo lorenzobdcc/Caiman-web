@@ -1,5 +1,5 @@
 <?php
-class SigninController implements iController
+class SigninController extends mainController implements iController
 {
     public $signin;
     private $e = null;
@@ -33,23 +33,24 @@ class SigninController implements iController
             if (isset($this->signin->insert_password) && isset($this->signin->insert_username) && isset($this->signin->insert_password_repeat) && isset($this->signin->insert_email)) {
 
                 if ($this->signin->insert_password != $this->signin->insert_password_repeat) {
-                    header('Location:'.$_SERVER['HTTP_REFERER']);
-                exit;
-                    echo "les mots de passe sont dif";
+                    $_SESSION['error'] = "Password does not match";
+                    header('Location:' . $_SERVER['HTTP_REFERER']);
+                    exit;
                 }
 
 
                 $this->signin->newUser();
 
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+                header('Location:' . $_SERVER['HTTP_REFERER']);
                 exit;
             } else {
-                echo "champs non rempli";
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+                $_SESSION['error'] = "form not completed";
+                header('Location:' . $_SERVER['HTTP_REFERER']);
                 exit;
             }
         }
     }
+
     public function printHTML()
     {
     }

@@ -35,6 +35,25 @@ class UsersController implements iController
         }
     }
 
+    public function errorHandler()
+    {
+        if (isset($_SESSion['error'])) {
+            switch ($i) {
+                case 0:
+                    echo "i égal 0";
+                    break;
+                case 1:
+                    echo "i égal 1";
+                    break;
+                case 2:
+                    echo "i égal 2";
+                    break;
+                default:
+                   echo "i n'est ni égal à 2, ni à 1, ni à 0.";
+            }
+        }
+    }
+
     public function __construct()
     {
         $this->userData = new UserData();
@@ -220,17 +239,19 @@ class UsersController implements iController
     private function createCardHTML($game)
     {
         $html = '
-        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
+        <div class="card cardBootstarp" style=" max-width: 15rem;  margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
         <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
+        <div class="card-body ">
             ';
 
                     $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
 
 
             $html .= '
+        </div>
         </div>
         </a>
         </div>';
@@ -243,7 +264,7 @@ class UsersController implements iController
         $gameDetail = $gameDetail[0];
         $gameTime = $this->game->getTimeInGameUser($this->idUser, $game);
         $html = '
-        <div class="card cardBootstarp" style=" max-width: 11rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
+        <div class="card cardBootstarp" style=" max-width: 15rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
         <img src="./img/games/' . $gameDetail['imageName'] . '." class="card-img-top imageCard"  >
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
