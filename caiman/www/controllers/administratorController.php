@@ -1,7 +1,7 @@
 <?php
 
 include_once "./models/class.php";
-class AdministratorController
+class AdministratorController extends RedirectionController
 {
   public $administrator;
   public $game;
@@ -14,8 +14,11 @@ class AdministratorController
   {
     $result = null;
 
+
     if (isset($_GET['e'])) {
       $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
+      //redirige l'utilisateur qui n'a pas les bon droits
+      $this->allowAccessTo(array(1));
     }
     // update game
     if ($this->e == "updateGame") {

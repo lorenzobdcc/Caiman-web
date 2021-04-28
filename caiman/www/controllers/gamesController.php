@@ -1,5 +1,5 @@
 <?php
-class GamesController
+class GamesController implements iController
 {
     public $games;
     public $categorie;

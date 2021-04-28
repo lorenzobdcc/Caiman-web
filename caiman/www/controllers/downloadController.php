@@ -1,5 +1,5 @@
 <?php
-class DownloadController {
+class DownloadController implements iController {
     public $download;
     private $e = null;
 

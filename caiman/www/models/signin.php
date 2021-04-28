@@ -50,8 +50,7 @@ class Signin {
     }
    
     public function newUser()
-    {
-     echo "je suis dans new user";   
+    {  
         $errorCode = 0;
         if ($this->checkIfEmailAlreadyTaken() ) {
             $errorCode = 1;

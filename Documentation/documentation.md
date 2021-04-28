@@ -34,16 +34,17 @@ Table des matières
   - [RetroArch](#retroarch)
   - [RomStation](#romstation)
   - [Steam](#steam)
-  - [Gog](#gog)
+  - [Conclusion de l’analyse de l'existant](#conclusion-de-lanalyse-de-lexistant)
 - [Analyse fonctionnelle](#analyse-fonctionnelle)
   - [Site web Caiman](#site-web-caiman)
     - [Création de compte](#création-de-compte)
     - [connexion](#connexion)
     - [modification des informations d’un utilisateur](#modification-des-informations-dun-utilisateur)
     - [affichage des jeux](#affichage-des-jeux)
-    - [affichage d’un profils utilisateur](#affichage-dun-profils-utilisateur)
+    - [affichage d’un profil utilisateur](#affichage-dun-profil-utilisateur)
     - [ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO](#ajout-dun-jeu-à-la-base-de-données--sur-le-bunker-pour-le-fichier-iso)
     - [modification d’un jeu](#modification-dun-jeu)
+    - [Administration](#administration)
     - [Téléchargement](#téléchargement)
   - [Application  Caiman C](#application--caiman-c)
     - [Connexion](#connexion-1)
@@ -226,14 +227,14 @@ Le travail est à exécuter soit en présentiel et en télétravail du lundi au 
 
 ## RetroPie
 
-![alt_text](images_documentation/retro_pie.jpg "image_tooltip")
+![alt_text](images_documentation/retro_pie.jpg "RetroPie")
 
 
 RetroPie est une distribution Linux prévue pour Raspberry et PC est un frontend pour pour jouer au jeux d’arcade, d’ancienne console et de jeu pc. Retropie est à la différence de Caiman un OS à part entière et chaque jeu doit être ajouté indépendamment par l’utilisateur sur le Rasberry/PC.
 
 ## RetroArch
 
-![alt_text](images_documentation/RetroArch.jpg "image_tooltip")
+![alt_text](images_documentation/RetroArch.jpg "RetroArch")
 
 
 RetroArch est un frontend pour émulateurs, moteur de jeu et media players. Il embarque un très grand nombre d’émulateurs et a l’avantage d'être disponible sur un très grand nombre de plateformes.
@@ -268,11 +269,24 @@ RetroArch est disponible sur:
 
 ## RomStation
 
+![alt_text](images_documentation/RomStation.png "RomStation")
+
+RomStation est un frontend pour émulateur facilitant l’émulation de nombreuses consoles. RomStation a la différence de RetroPie ou RetroArch l’utilisateur a la possibilité de  télécharger les des jeux directement depuis l’application. L’application a une formule payante qui permet d’améliorer la vitesse de téléchargement des jeux. RomStation est disponible sur Windows (x64)(x86), macOS.
+
 
 ## Steam
 
+![alt_text](images_documentation/Steam.png "Steam")
 
-## Gog
+Steam est une plateforme de distribution de jeux et d'applications en ligne. Steam est spécialisé dans les jeux vidéo à la différence des autres projets que j’ai cité plus haut c’est une application commercial à but lucratif.  
+
+Steam n’est pas directement liée à l’utilisation d'émulateurs mais j’ai décidé d’en parler parce que je m’inspire de son interface créée spécifiquement pour une utilisation à la manette et la gestion que fais steam dès sauvegardes des utilisateurs. 
+
+## Conclusion de l’analyse de l'existant
+
+Il existe un grand nombre de frontend pour émulateur permettant de simplifier l'utilisation pour l’utilisateur mais je n’en ai pas trouvé qui essaie d’atteindre le même but que moi. Le but de Caiman est de permettre de simplifier l’utilisation d'émulateurs et de permettre de synchroniser des sauvegardes tout en fournissant la possibilité de télécharger des jeux.
+
+Steam représente un niveau de finition dans son interface BigPicture que j’aimerais atteindre. La synchronisation des sauvegardes sur steam est peut être la plus performante si l’on compare avec d’autres boutiques comme l'Epic Game Store ou Origin.
 
 
 # Analyse fonctionnelle
@@ -283,27 +297,95 @@ RetroArch est disponible sur:
 
 ### Création de compte
 
+L’utilisateur du site a la possibilité de créer un compte qui sera commun au site et à l'application. La création de compte nécessite de renseigner son email, de donner un nom d’utilisateur ainsi que un mot de passe.
+
 
 ### connexion
+
+La connexion à son compte utilisateur permet de modifier nos informations de compte et d’ajouter ou de supprimer des jeux à la liste de favoris.
+
+Si l’utilisateur oublie son mot de passe il a la possibilité de le réinitialiser. L’utilisateur qui décide de réinitialiser son mot de passe reçoit un mail contenant un lien de réinitialisation.
 
 
 ### modification des informations d’un utilisateur
 
+Un utilisateur connecté a la possibilité de modifier ces informations:
+
+
+
+*   mot de passe
+*   liste de jeux favoris 
+*   la visibilité de son profils pour les autres utilisateur
+
 
 ### affichage des jeux
 
+Tous les utilisateurs ont la possibilité d’afficher la liste de jeux disponible. Il n’y a pas de restriction particulière. 
 
-### affichage d’un profils utilisateur
+Les information disponible pour chaque jeux sont les suivant:
+
+
+
+*   Nom
+*   Description
+*   Catégories du jeu
+
+
+### affichage d’un profil utilisateur
+
+Il est possible de consulter la page personnelle d'un utilisateur si celui-ci a rendu son compte publique. Les informations disponibles sont celle ci:
+
+
+
+*   Nom d’utilisateurs
+*   Jeux favoris
+*   Nombres d’heures de jeux sur chaque jeux
 
 
 ### ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO 
 
+L’ajout d’un jeu se fait grâce à un formulaire, plusieurs champ sont à renseigner:
+
+
+
+*   le nom du jeu
+*   une description
+*   une image
+*   la console du jeu qui est uploadé
+*   le nom que va porter le jeu sur le Bunker
+*   le fichier de base du jeu
+
+L’ajout à la base va créer deux entrées, une dans la table Game et une autre dans la table file. Après avoir été ajouté depuis le site web, le jeu devient accessible depuis l'application Caiman et le site web pour de la consultation.
+
+ 
+
 
 ### modification d’un jeu
+
+La modification d’un ne peut être faite que par un administrateur. Les modification possible sont les suivante:
+
+
+
+*   nom
+*   description
+*   console
+*   catégories
+
+
+### Administration
+
+Les administrateurs ont la possibilité de faire plusieurs choses je vais donc les lister ici il n’est pas nécessaire de les détailler.
+
+
+
+*   modifier un jeu
+*   ajouter des catégories
+*   ajouter ou supprimer des catégories a un jeu
 
 
 ### Téléchargement
 
+L’un des intérêts du site est de pouvoir télécharger l'application Caiman. Le téléchargement de Caiman nécessite d'être authentifié sur le site. Si un invité se rend sur la page de téléchargement sans être authentifié une invitation lui sera faite de s’authentifier ou de créer un compte.
 
 ## Application  Caiman C#
 

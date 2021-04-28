@@ -1,5 +1,5 @@
 <?php
-class SigninController
+class SigninController implements iController
 {
     public $signin;
     private $e = null;

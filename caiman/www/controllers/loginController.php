@@ -1,5 +1,6 @@
 <?php
-class LoginController {
+class LoginController implements iController
+ {
     public $login;
     private $e = "";
 

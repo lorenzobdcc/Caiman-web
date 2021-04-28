@@ -257,3 +257,19 @@ pour finir le site il me reste les choses suivante a faire:
 ### 13h40
 
 documentation
+
+------
+
+## 28.04.2021
+
+### 8h05
+
+documentation
+
+### 10h40
+
+correction d'un bogue sur le nombre d'heure de jeu et riage des jeux par heure de jeu
+
+### 11h00
+
+gestion des droit d'acces au page

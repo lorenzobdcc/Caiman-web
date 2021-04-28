@@ -1,7 +1,7 @@
 <?php
 
 include_once "./models/class.php";
-class UsersController
+class UsersController implements iController
 {
     public $userData;
     private $e = null;
@@ -149,7 +149,7 @@ class UsersController
           
         $html .= '<div class="container">
         <div class="row"><h2>User\'s Informations</h2></div>
-        <div class="row">
+        <div class="row ">
           <div class="col-sm">
             <ul class="list-group">';
                 $html .= '<li class="list-group-item">Username: '.$dataUser['username'].'</li>';
@@ -176,7 +176,7 @@ class UsersController
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
         <div class="container">
         <div class="row"><h2>User\'s favorites games</h2></div>
-        <div class="row">
+        <div class="row cardGameBox box">
         ';
 
         $listGamesBrut =  $this->game->getFavoriteGamesOfUser($this->idUser);
@@ -198,7 +198,7 @@ class UsersController
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
         <div class="container">
         <div class="row"><h2>User\'s time in games</h2></div>
-        <div class="row">
+        <div class="row cardGameBox box">
         ';
 
         $listGamesBrut =  $this->game->getListOfGameWithTimeUser($this->idUser);
@@ -248,13 +248,13 @@ class UsersController
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
             <p class="greenTexte">';
-            $heure = ($gameTime[0]['timeInMinute']%60);
-            $minutes = (60% $gameTime[0]['timeInMinute']);
+            $heure = (int)($gameTime[0]['timeInMinute'] / 60 );
+            $minutes = ( $gameTime[0]['timeInMinute'] % 60);
             if ($minutes == 60) {
                 $heure ++;
                 $minutes = 0;
             }
-            $html .= $heure. "H ".$minutes. " minutes";
+            $html .= $heure. "h".$minutes. " minutes";
             $html .=' </p>
         </div>
         </div>';

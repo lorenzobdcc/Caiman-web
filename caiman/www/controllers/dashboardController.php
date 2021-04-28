@@ -1,7 +1,7 @@
 <?php
 
 include_once "./models/class.php";
-class DashboardController
+class DashboardController extends RedirectionController implements iController
 {
     public $dashboard;
     public $game;
@@ -10,6 +10,8 @@ class DashboardController
 
     public function formHandler()
     {
+        $this->allowAccessTo(array(1,3));
+
         $oldPassword = null;
         $newPasswordRepeat = null;
         $newPassword = null;
@@ -87,9 +89,9 @@ class DashboardController
                 $html .= '<li class="list-group-item">Email: '.$_SESSION['user']->email.'</li>';
                 if ($_SESSION['user']->getPrivateAccount() == 1) {
                     
-                $html .= '<li class="list-group-item">Your account is visible for other users</li>';
+                $html .= '<li class="list-group-item">Your account is not visible for other users</li>';
                 }else {
-                    $html .= '<li class="list-group-item">Your account is not visible for other users</li>';
+                    $html .= '<li class="list-group-item">Your account is visible for other users</li>';
                 }
                 $html .='
             </ul>
@@ -187,13 +189,13 @@ class DashboardController
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
             <p class="greenTexte">';
-            $heure = ($gameTime[0]['timeInMinute']%60);
-            $minutes = (60% $gameTime[0]['timeInMinute']);
+            $heure = (int)($gameTime[0]['timeInMinute'] / 60 );
+            $minutes = ( $gameTime[0]['timeInMinute'] % 60);
             if ($minutes == 60) {
                 $heure ++;
                 $minutes = 0;
             }
-            $html .= $heure. "H ".$minutes. " minutes";
+            $html .= $heure. "h".$minutes. " minutes";
             $html .=' </p>
         </div>
         </div>';

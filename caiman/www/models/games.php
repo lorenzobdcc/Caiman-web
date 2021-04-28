@@ -44,12 +44,12 @@ class Games {
                 $this->psRequestGames->setFetchMode(PDO::FETCH_ASSOC);
 
                 //get Time in game user
-                $sqlTimeInGame = "SELECT * FROM timeingame WHERE idGame = :search_idGame AND idUser = :search_idUser";
+                $sqlTimeInGame = "SELECT * FROM timeingame WHERE idGame = :search_idGame AND idUser = :search_idUser ";
                 $this->psGetTimeInGame = $this->dbh->prepare($sqlTimeInGame);
                 $this->psGetTimeInGame->setFetchMode(PDO::FETCH_ASSOC);
 
                 //get game with time user
-                $sqlGetGameWithTime = "SELECT * FROM timeingame WHERE idUser = :search_idUser";
+                $sqlGetGameWithTime = "SELECT * FROM timeingame WHERE idUser = :search_idUser ORDER BY timeInMinute DESC";
                 $this->psGetGameWithTime = $this->dbh->prepare($sqlGetGameWithTime);
                 $this->psGetGameWithTime->setFetchMode(PDO::FETCH_ASSOC);
 

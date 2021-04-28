@@ -6,7 +6,7 @@ include_once "controllers/controllers.php";
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    $_SESSION['user'] = new user("", "", "visitor", "-1");
+    $_SESSION['user'] = new user("", "", -1, "-1");
 }
 
 

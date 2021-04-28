@@ -8,16 +8,12 @@
 
 ?>
 
-<footer class="text-muted">
+<footer class="text-muted footer">
       <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <span>Caiman the easiest way to use emulators.</span>
+        <span class="float-right">Want to contribute?<a href="https://github.com/lorenzobdcc/Caiman" class="greenTexte">  Git Caiman</a></span>
       </div>
     </footer>
-
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
