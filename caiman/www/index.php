@@ -1,4 +1,11 @@
 <?php
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : page faisant le lien entre toutes les page du site web
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 include_once "../HOST.php";
 include_once "models/class.php";
 include_once "controllers/controllers.php";

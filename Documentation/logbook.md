@@ -281,3 +281,19 @@ modification de la navbar
 ### 14h00
 
 gestion des erreurs de du login
+
+----------
+
+## 28.04.2021
+
+### 8h30
+
+Documentation
+
+### 10h20
+
+Mr. Garcia m'a aidé a mettre en place ma documentation doxyygen
+
+### 11h00
+
+documentation

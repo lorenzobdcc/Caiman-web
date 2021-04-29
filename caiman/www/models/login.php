@@ -1,4 +1,11 @@
 <?php
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to connect an user
+ */
 class Login {
 
     private $dbh = null;
@@ -32,7 +39,11 @@ class Login {
             }
         }
     }
-   
+    /**
+     * check if there is a match
+     *
+     * @return bool 
+     */
     public function checkLogin()
     {
         $returnArray = null;

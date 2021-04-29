@@ -1,4 +1,11 @@
 <?php 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : Sert a inlure tous les fichiers dans la vue
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 include_once "mainController.php";
 include_once "interfaceController.php";
 include_once "dashboardController.php";

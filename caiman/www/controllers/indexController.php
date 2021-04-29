@@ -1,12 +1,17 @@
 <?php
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : Sert a faire le lien entre l'affichage et le model index
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 class IndexController extends mainController implements iController
 {
-  public $index;
 
 
   public function __construct()
   {
-    $this->index  = new Index();
   }
   public function formHandler()
   {

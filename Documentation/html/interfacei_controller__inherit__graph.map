@@ -1,0 +1,11 @@
+<map id="iController" name="iController">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,85,209"/>
+<area shape="rect" id="node2" href="$class_administrator_controller.html" title=" " alt="" coords="133,5,288,32"/>
+<area shape="rect" id="node3" href="$class_dashboard_controller.html" title=" " alt="" coords="141,56,280,83"/>
+<area shape="rect" id="node4" href="$class_download_controller.html" title=" " alt="" coords="144,107,277,133"/>
+<area shape="rect" id="node5" href="$class_games_controller.html" title=" " alt="" coords="151,157,270,184"/>
+<area shape="rect" id="node6" href="$class_index_controller.html" title=" " alt="" coords="157,208,265,235"/>
+<area shape="rect" id="node7" href="$class_login_controller.html" title=" " alt="" coords="157,259,265,285"/>
+<area shape="rect" id="node8" href="$class_signin_controller.html" title=" " alt="" coords="154,309,267,336"/>
+<area shape="rect" id="node9" href="$class_users_controller.html" title=" " alt="" coords="155,360,266,387"/>
+</map>

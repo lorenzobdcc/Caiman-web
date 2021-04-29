@@ -1,9 +1,14 @@
 <?php
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : Sert a faire le lien entre l'affichage et le model dashboard
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 include_once "./models/class.php";
 class DashboardController extends mainController implements iController
 {
-    public $dashboard;
     public $game;
     private $e = null;
 
@@ -48,7 +53,6 @@ class DashboardController extends mainController implements iController
 
     public function __construct()
     {
-        $this->dashboard  = new Dashboard();
         $this->game = new Games();
     }
 

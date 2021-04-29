@@ -1,4 +1,11 @@
 <?php
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class servant a gerer les requetes en lien avec la table game
+ */
 class Games {
 
     private $dbh = null;
@@ -24,7 +31,9 @@ class Games {
     private $psGetGameWithTime;
 
 
-   
+   /**
+    * default contructor
+    */
     public function __construct()
     {
         if ($this->dbh == null) {
@@ -104,7 +113,11 @@ class Games {
             }
         }
     }
-    
+    /**
+     * returns all games from the database
+     *
+     * @return array of all games
+     */
     public function getAllGames()
     {
         
@@ -119,7 +132,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns games whose name matches the search
+     *
+     * @return array of games
+     */
     public function getRequestGames(string $gameName)
     {
 
@@ -134,7 +151,11 @@ class Games {
         }
         return $result;
     }
-
+        /**
+     * returns play time of a user for a specific game
+     *
+     * @return array time in game
+     */
     public function getTimeInGameUser(int $idUser,int $idGame)
     {
         try{
@@ -146,7 +167,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns returns the games the player has played
+     *
+     * @return array of games
+     */
     public function getListOfGameWithTimeUser(int $idUser)
     {
         try{
@@ -160,7 +185,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns details of a specif game
+     *
+     * @return array with game detail
+     */
     public function getGameDetail(int $idGame)
     {
 
@@ -176,7 +205,11 @@ class Games {
         return $result;
     }
 
-
+    /**
+     * returns games of a certain category
+     *
+     * @return array of games
+     */
     public function getGamesInCategorie(int $idCategorie)
     {
         try{
@@ -188,7 +221,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns the list of the favorite game of a user
+     *
+     * @return array of games
+     */
     public function getFavoriteGamesOfUser(int $idUser)
     {
         try{
@@ -202,7 +239,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns add a game to a user's favorites
+     *
+     * @return void
+     */
     public function addGameToFavoris(int $idUser, int $idGame)
     {
         
@@ -216,7 +257,11 @@ class Games {
         }
         return $result;
     }
-
+    /**
+     * returns remove a game to a user's favorites
+     *
+     * @return void
+     */
     public function removeGameFromFavoris(int $idUser, int $idGame)
     {
         
@@ -229,7 +274,11 @@ class Games {
             die();
         }
     }
-
+    /**
+     * returns if a game is already in favorite
+     *
+     * @return void
+     */
     public function checkIfGameIsAlreadyInFavoris(int $idUser, int $idGame)
     {
         $boolResult = true;

@@ -1,4 +1,11 @@
 <?php
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the administrator
+ */
 class Administrator
 {
 
@@ -18,7 +25,10 @@ class Administrator
 
     public $psUpdateGame = null;
 
-
+    /**
+     * default contructor
+     *
+     */
     public function __construct()
     {
         if ($this->dbh == null) {
@@ -53,18 +63,26 @@ class Administrator
                 $sqlGetNameConsoleFolder = "SELECT folderName FROM consol WHERE id = :console_id";
                 $this->psGetNameConsoleFolder = $this->dbh->prepare($sqlGetNameConsoleFolder);
                 $this->psGetNameConsoleFolder->setFetchMode(PDO::FETCH_ASSOC);
-
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br>";
                 die();
             }
         }
     }
-
+    /**
+     * add a game to the database
+     *
+     * @param string $name
+     * @param string $description
+     * @param string $imageName
+     * @param integer $consoleId
+     * @param [type] $gameFileName
+     * @return void
+     */
     public function addGame(string $name, string $description, string $imageName, int $consoleId, $gameFileName)
     {
 
-        if ($this->uploadGame($gameFileName,$consoleId) && $this->uploadGameImage($imageName)) {
+        if ($this->uploadGame($gameFileName, $consoleId) && $this->uploadGameImage($imageName)) {
             try {
                 $this->psUploadFile->execute(array(':insert_filename' => $gameFileName));
             } catch (PDOException $e) {
@@ -73,31 +91,32 @@ class Administrator
             }
             $lastInsertId = $this->dbh->lastInsertId();
             try {
-                $this->psUploadGame->execute(array(':insert_name' => $name , ':insert_description' => $description, ':insert_imageName' => $imageName, ':insert_idConsole' => $consoleId, ':insert_idFile' => $lastInsertId));
+                $this->psUploadGame->execute(array(':insert_name' => $name, ':insert_description' => $description, ':insert_imageName' => $imageName, ':insert_idConsole' => $consoleId, ':insert_idFile' => $lastInsertId));
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br>";
                 die();
             }
-
         }
-
-
-
-        
     }
-
-    public function uploadGame( $gameFileName, $consoleId)
+    /**
+     * upload a game 
+     *
+     * @param [type] $gameFileName
+     * @param [type] $consoleId
+     * @return void
+     */
+    public function uploadGame($gameFileName, $consoleId)
     {
         $uploadIsValid = false;
-        $target_dir = "../games/" . $this->getConsoleFolderName($consoleId)."/";
+        $target_dir = "../games/" . $this->getConsoleFolderName($consoleId) . "/";
 
         $target_file =  basename($_FILES["fileGame"]["name"]);
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         //rename file
-        $newfilename = $gameFileName. '.' . $fileType;
-        
+        $newfilename = $gameFileName . '.' . $fileType;
+
 
         // Check if file already exists
         if (file_exists($target_file)) {
@@ -116,10 +135,17 @@ class Administrator
         }
         return $uploadIsValid;
     }
-
-    public function updateGame($idGame , $name ,$description, $consoleId)
+/**
+ * update da of a game
+ *
+ * @param [type] $idGame
+ * @param [type] $name
+ * @param [type] $description
+ * @param [type] $consoleId
+ * @return void
+ */
+    public function updateGame($idGame, $name, $description, $consoleId)
     {
-        $returnArray = null;
         try {
             $this->psUpdateGame->execute(array(':update_name' => $name, ':update_description' => $description, ':update_idConsole' => $consoleId, ':update_id' => $idGame));
         } catch (PDOException $e) {
@@ -127,8 +153,13 @@ class Administrator
             die();
         }
     }
-
-    public function uploadGameImage( $imageFileName)
+/**
+ * upload an image
+ *
+ * @param [type] $imageFileName
+ * @return void
+ */
+    public function uploadGameImage($imageFileName)
     {
         $uploadIsValid = false;
         $target_dir = "img/games/";
@@ -136,9 +167,9 @@ class Administrator
         $target_file =  basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        
+
         //rename file
-        $newfilename =$imageFileName;
+        $newfilename = $imageFileName;
 
         // Check if file already exists
         if (file_exists($target_file)) {
@@ -157,7 +188,12 @@ class Administrator
         }
         return $uploadIsValid;
     }
-
+/**
+ * get the path name of an console
+ *
+ * @param [type] $id
+ * @return void
+ */
     public function getConsoleFolderName($id)
     {
         $returnArray = null;
@@ -170,7 +206,11 @@ class Administrator
         }
         return $returnArray[0]['folderName'];
     }
-
+/**
+ * returns list of all consoles
+ *
+ * @return void
+ */
     public function getListConsole()
     {
         $returnArray = null;

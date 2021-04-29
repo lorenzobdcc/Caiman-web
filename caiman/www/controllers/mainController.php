@@ -1,4 +1,11 @@
 <?php
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : Classe de base pour les controller sert a inclure diverse fonction commune a tous les controllers
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 class MainController {
 
     public function __construct()

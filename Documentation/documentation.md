@@ -36,6 +36,20 @@ Table des matières
   - [Steam](#steam)
   - [Conclusion de l’analyse de l'existant](#conclusion-de-lanalyse-de-lexistant)
 - [Analyse fonctionnelle](#analyse-fonctionnelle)
+  - [Base de données](#base-de-données)
+    - [Schéma](#schéma)
+    - [Table categorie](#table-categorie)
+    - [Table console](#table-console)
+    - [Table emulator](#table-emulator)
+    - [Table favoritegame](#table-favoritegame)
+    - [Table file](#table-file)
+    - [Table filesave](#table-filesave)
+    - [Table game](#table-game)
+    - [Table gamehascategorie](#table-gamehascategorie)
+    - [Table rôle](#table-rôle)
+    - [Table timeingame](#table-timeingame)
+    - [Table user](#table-user)
+    - [Table userconfigfile](#table-userconfigfile)
   - [Site web Caiman](#site-web-caiman)
     - [Création de compte](#création-de-compte)
     - [connexion](#connexion)
@@ -290,6 +304,73 @@ Steam représente un niveau de finition dans son interface BigPicture que j’ai
 
 
 # Analyse fonctionnelle
+
+## Base de données
+
+
+### Schéma
+
+Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l'application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.  
+
+
+### Table categorie
+
+Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.
+
+
+### Table console
+
+Cette table sert à stocker les différentes consoles prises en charge par l'application Caiman. Chaque console doit être reliée à un émulateur.
+
+
+### Table emulator
+
+La table émulateur sert à lister les différents émulateurs disponible pour l'application Ill est possible qu' un émulateur soit compatible avec plusieurs consoles.
+
+
+### Table favoritegame
+
+Sert à lister les jeux favoris des utilisateurs.
+
+
+### Table file
+
+La table file sert à lister le nom d’un fichier ca peut etre un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur. 
+
+
+### Table filesave
+
+Sert  faire le lien entre un jeu, un utilisateur, et un fichier de sauvegarde. Permet donc de connaître la sauvegarde d’un jeu particulier d'un utilisateur.
+
+
+### Table game
+
+Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console sert à faire savoir à l'application quel émulateur doit être utilisé. 
+
+
+### Table gamehascategorie
+
+Sert à assigner des catégorie a des jeux.
+
+
+### Table rôle
+
+Sert à lister les différents rôles (utilisateur, administrateur) ne sert que pour le site web sachant que toute la partie administration est sur le site.
+
+
+### Table timeingame
+
+Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu.
+
+
+### Table user
+
+Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l'application.
+
+
+### Table userconfigfile
+
+Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration 
 
 
 ## Site web Caiman

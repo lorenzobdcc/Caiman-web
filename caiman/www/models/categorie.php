@@ -1,4 +1,12 @@
 <?php
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the table categorie
+ */
 class Categories
 {
 
@@ -17,7 +25,9 @@ class Categories
 
 
 
-
+    /**
+     * default constructor
+     */
     public function __construct()
     {
         if ($this->dbh == null) {
@@ -64,7 +74,11 @@ class Categories
             }
         }
     }
-
+    /**
+     * returns list of all categories
+     *
+     * @return array with all list
+     */
     public function getListAllCategories()
     {
 
@@ -77,7 +91,12 @@ class Categories
         }
         return $result;
     }
-
+    /**
+     * get the categories of a game
+     *
+     * @param integer $idGame
+     * @return list of categories
+     */
     public function getCategoriesOfGame(int $idGame)
     {
         try {
@@ -89,7 +108,12 @@ class Categories
         }
         return $result;
     }
-
+    /**
+     * add a new categorie in the database
+     *
+     * @param string $categorieName
+     * @return void
+     */
     public function addCategorie(string $categorieName)
     {
         try {
@@ -101,7 +125,13 @@ class Categories
         }
         return $result;
     }
-
+    /**
+     * add a categorie to a game
+     *
+     * @param integer $idGame
+     * @param integer $idCategorie
+     * @return void
+     */
     public function addCategorieToGame(int $idGame, int $idCategorie)
     {
         $result = null;
@@ -121,7 +151,13 @@ class Categories
             }
         }
     }
-
+    /**
+     * delete a cotegorie of a game
+     *
+     * @param integer $idGame
+     * @param integer $idCategorie
+     * @return void
+     */
     public function delCategorieFromGame(int $idGame, int $idCategorie)
     {
         $result = null;
@@ -131,6 +167,5 @@ class Categories
             print "Erreur !: " . $e->getMessage() . "<br>";
             die();
         }
-        
     }
 }

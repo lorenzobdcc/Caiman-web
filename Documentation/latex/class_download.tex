@@ -1,0 +1,55 @@
+\hypertarget{class_download}{}\doxysection{Download Class Reference}
+\label{class_download}\index{Download@{Download}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{download\+Caiman}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_download_a758aee44381dbd73fccbca92bed55b04}\label{class_download_a758aee44381dbd73fccbca92bed55b04}} 
+{\bfseries \$a\+Member\+Var} = \textquotesingle{}a\+Member\+Var Member Variable\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_download_abb5cea847c3e627bc63d017f25ebc41e}\label{class_download_abb5cea847c3e627bc63d017f25ebc41e}} 
+{\bfseries \$a\+Func\+Name} = \textquotesingle{}a\+Member\+Func\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_download_a45580608c7d8ebb4fa0af5f375477b65}\label{class_download_a45580608c7d8ebb4fa0af5f375477b65}} 
+\index{Download@{Download}!downloadCaiman@{downloadCaiman}}
+\index{downloadCaiman@{downloadCaiman}!Download@{Download}}
+\doxysubsubsection{\texorpdfstring{downloadCaiman()}{downloadCaiman()}}
+{\footnotesize\ttfamily download\+Caiman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+used to download caiman
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
+\DoxyCodeLine{23         header(\textcolor{stringliteral}{'Pragma: public'});}
+\DoxyCodeLine{24         header(\textcolor{stringliteral}{'Expires: 0'});}
+\DoxyCodeLine{25         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
+\DoxyCodeLine{26         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
+\DoxyCodeLine{27         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
+\DoxyCodeLine{30         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
+\DoxyCodeLine{31         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         readfile(\$filename);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         exit;}
+\DoxyCodeLine{36     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+models/\mbox{\hyperlink{download_8php}{download.\+php}}\end{DoxyCompactItemize}

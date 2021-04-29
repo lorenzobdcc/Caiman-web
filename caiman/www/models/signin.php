@@ -1,4 +1,11 @@
 <?php
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to create a new user
+ */
 class Signin
 {
 
@@ -17,7 +24,9 @@ class Signin
     public $insert_password_repeat = null;
 
     public $insert_email = null;
-
+/**
+ * default constructor
+ */
     public function __construct()
     {
         if ($this->dbh == null) {
@@ -47,7 +56,11 @@ class Signin
             }
         }
     }
-
+/**
+ * add a mew user in the database
+ *
+ * @return void
+ */
     public function newUser()
     {
         $isValid = true;
@@ -71,7 +84,11 @@ class Signin
             }
         }
     }
-
+/**
+ * check that the username is not already taken
+ *
+ * @return void
+ */
     public function checkIfUsernameAlreadyTaken()
     {
         $istaken = true;
@@ -87,7 +104,11 @@ class Signin
         }
         return $istaken;
     }
-
+/**
+ * check that the email is not already taken
+ *
+ * @return void
+ */
     public function checkIfEmailAlreadyTaken()
     {
         $istaken = true;

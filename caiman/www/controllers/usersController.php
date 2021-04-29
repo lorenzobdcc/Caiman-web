@@ -1,5 +1,11 @@
 <?php
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Auteur  : Lorenzo Bauduccio
+ * Classe  : tech 2
+ * Version : 1.0
+ * Date    : 28.04.2021
+ * description : Sert a la gestion de l'utilisateur du site que ce soit un visiteur ou un utilisateur autentifié
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 include_once "./models/class.php";
 class UsersController implements iController
 {
