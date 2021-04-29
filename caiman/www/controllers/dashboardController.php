@@ -1,26 +1,31 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model dashboard
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the dashboard of the user
+ */
 include_once "./models/class.php";
 class DashboardController extends mainController implements iController
 {
     public $game;
     private $e = null;
 
-
+    /**
+     * used to handle if the user has resquest something
+     *
+     * @return void
+     */
     public function formHandler()
     {
-        $this->allowAccessTo(array(1,3));
+        $this->allowAccessTo(array(1, 3));
 
         $oldPassword = null;
         $newPasswordRepeat = null;
         $newPassword = null;
-        
+
         if (isset($_GET['e'])) {
             $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_SPECIAL_CHARS);
         }
@@ -35,9 +40,9 @@ class DashboardController extends mainController implements iController
             if (isset($_POST['newPasswordRepeat'])) {
                 $newPasswordRepeat = filter_input(INPUT_POST, 'newPasswordRepeat', FILTER_SANITIZE_STRING);
             }
-            
-            if (isset($oldPassword) && isset( $newPassword) && isset( $newPasswordRepeat)) {
-                $_SESSION['user']->updatePassword($newPassword,$newPasswordRepeat,$oldPassword);
+
+            if (isset($oldPassword) && isset($newPassword) && isset($newPasswordRepeat)) {
+                $_SESSION['user']->updatePassword($newPassword, $newPasswordRepeat, $oldPassword);
             }
         }
 
@@ -46,17 +51,25 @@ class DashboardController extends mainController implements iController
 
             if ($_SESSION['user']->idUser != -1) {
                 $_SESSION['user']->updatePrivateAccount();
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+                header('Location:' . $_SERVER['HTTP_REFERER']);
             }
         }
     }
 
+    /**
+     * default constructor
+     */
     public function __construct()
     {
         $this->game = new Games();
     }
 
-
+    /**
+     * print the html for the resquested content
+     * 
+     *
+     * @return void
+     */
     public function printHTML()
     {
 
@@ -80,26 +93,31 @@ class DashboardController extends mainController implements iController
         echo $html;
     }
 
+    /**
+     * create the html of the head of the dashboard
+     *
+     * @return void
+     */
     private function htmlFormHead()
     {
         $html = "";
 
         $html .= '<div class=" jumbotron DarkJumbotron width100" style="background-color: #161b22;">';
-          
+
         $html .= '<div class="container">
         <div class="row"><h2>User\'s Informations</h2></div>
         <div class="row">
           <div class="col-sm">
             <ul class="list-group">';
-                $html .= '<li class="list-group-item">Username: '.$_SESSION['user']->username.'</li>';
-                $html .= '<li class="list-group-item">Email: '.$_SESSION['user']->email.'</li>';
-                if ($_SESSION['user']->getPrivateAccount() == 1) {
-                    
-                $html .= '<li class="list-group-item">Your account is not visible for other users</li>';
-                }else {
-                    $html .= '<li class="list-group-item">Your account is visible for other users</li>';
-                }
-                $html .='
+        $html .= '<li class="list-group-item">Username: ' . $_SESSION['user']->username . '</li>';
+        $html .= '<li class="list-group-item">Email: ' . $_SESSION['user']->email . '</li>';
+        if ($_SESSION['user']->getPrivateAccount() == 1) {
+
+            $html .= '<li class="list-group-item">Your account is not visible for other users</li>';
+        } else {
+            $html .= '<li class="list-group-item">Your account is visible for other users</li>';
+        }
+        $html .= '
             </ul>
           </div>
             <div class="col-sm">
@@ -110,14 +128,19 @@ class DashboardController extends mainController implements iController
             </div>
         </div>';
 
-      $html.='
+        $html .= '
           
         </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
+    /**
+     * create the html of the favorite games of a user
+     *
+     * @return void
+     */
     private function htmlFavoriteGames()
     {
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
@@ -140,6 +163,11 @@ class DashboardController extends mainController implements iController
         return $html;
     }
 
+    /**
+     * create the html of the in game in time of each game the user has played
+     *
+     * @return void
+     */
     private function htmlGameTime()
     {
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
@@ -162,8 +190,12 @@ class DashboardController extends mainController implements iController
     }
 
 
-
-
+    /**
+     * create the view of a game
+     *
+     * @param int $game
+     * @return void
+     */
     private function createCardHTML($game)
     {
         $html = '
@@ -175,10 +207,10 @@ class DashboardController extends mainController implements iController
         <div class="card-body ">
             ';
 
-                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
+        $html .= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
 
 
-            $html .= '
+        $html .= '
         </div>
         </div>
         </a>
@@ -186,6 +218,12 @@ class DashboardController extends mainController implements iController
         return $html;
     }
 
+    /**
+     * create the view of a game with the display played by the user
+     *
+     * @param int $game
+     * @return void
+     */
     private function createCardHTMLTime($game)
     {
         $gameDetail = $this->game->getGameDetail($game);
@@ -197,19 +235,24 @@ class DashboardController extends mainController implements iController
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
             <p class="greenTexte">';
-            $heure = (int)($gameTime[0]['timeInMinute'] / 60 );
-            $minutes = ( $gameTime[0]['timeInMinute'] % 60);
-            if ($minutes == 60) {
-                $heure ++;
-                $minutes = 0;
-            }
-            $html .= $heure. "h".$minutes. " minutes";
-            $html .=' </p>
+        $heure = (int)($gameTime[0]['timeInMinute'] / 60);
+        $minutes = ($gameTime[0]['timeInMinute'] % 60);
+        if ($minutes == 60) {
+            $heure++;
+            $minutes = 0;
+        }
+        $html .= $heure . "h" . $minutes . " minutes";
+        $html .= ' </p>
         </div>
         </div>';
         return $html;
     }
 
+    /**
+     * create the html of the form to update the user's password
+     *
+     * @return void
+     */
     public function htmlFormUpdatePassword()
     {
         $html = '<div class="d-inline-flex p-2 jumbotron  width100 DarkJumbotron " style="background-color: #161b22;" >
@@ -237,6 +280,6 @@ class DashboardController extends mainController implements iController
         </div>
                 </div>
                 </div>';
-                return $html;
+        return $html;
     }
 }

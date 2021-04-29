@@ -16,6 +16,13 @@
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{download_8php_source_l00010}{10}} of file \mbox{\hyperlink{download_8php_source}{download.\+php}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_download_a45580608c7d8ebb4fa0af5f375477b65}\label{class_download_a45580608c7d8ebb4fa0af5f375477b65}} 
 \index{Download@{Download}!downloadCaiman@{downloadCaiman}}
@@ -29,23 +36,27 @@ used to download caiman
 void 
 \end{DoxyReturn}
 
+
+Definition at line \mbox{\hyperlink{download_8php_source_l00020}{20}} of file \mbox{\hyperlink{download_8php_source}{download.\+php}}.
+
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{21     \{}
-\DoxyCodeLine{22         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
-\DoxyCodeLine{23         header(\textcolor{stringliteral}{'Pragma: public'});}
-\DoxyCodeLine{24         header(\textcolor{stringliteral}{'Expires: 0'});}
-\DoxyCodeLine{25         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
-\DoxyCodeLine{26         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
-\DoxyCodeLine{27         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
-\DoxyCodeLine{30         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
-\DoxyCodeLine{31         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33         readfile(\$filename);}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35         exit;}
-\DoxyCodeLine{36     \}}
+\DoxyCodeLine{00021     \{}
+\DoxyCodeLine{00022         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
+\DoxyCodeLine{00023         header(\textcolor{stringliteral}{'Pragma: public'});}
+\DoxyCodeLine{00024         header(\textcolor{stringliteral}{'Expires: 0'});}
+\DoxyCodeLine{00025         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
+\DoxyCodeLine{00026         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
+\DoxyCodeLine{00027         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
+\DoxyCodeLine{00030         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
+\DoxyCodeLine{00031         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         readfile(\$filename);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         exit;}
+\DoxyCodeLine{00036     \}}
 
 \end{DoxyCode}
 

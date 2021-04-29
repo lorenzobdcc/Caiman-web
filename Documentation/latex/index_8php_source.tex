@@ -1,0 +1,70 @@
+\hypertarget{index_8php_source}{}\doxysection{index.\+php}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 \textcolor{comment}{/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *}}
+\DoxyCodeLine{00003 \textcolor{comment}{ * Auteur  : Lorenzo Bauduccio}}
+\DoxyCodeLine{00004 \textcolor{comment}{ * Classe  : tech 2}}
+\DoxyCodeLine{00005 \textcolor{comment}{ * Version : 1.0}}
+\DoxyCodeLine{00006 \textcolor{comment}{ * Date    : 28.04.2021}}
+\DoxyCodeLine{00007 \textcolor{comment}{ * description : page faisant le lien entre toutes les page du site web}}
+\DoxyCodeLine{00008 \textcolor{comment}{ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */}}
+\DoxyCodeLine{00009 include\_once \textcolor{stringliteral}{"{}../HOST.php"{}};}
+\DoxyCodeLine{00010 include\_once \textcolor{stringliteral}{"{}models/class.php"{}};}
+\DoxyCodeLine{00011 include\_once \textcolor{stringliteral}{"{}controllers/controllers.php"{}};}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 session\_start();}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{keywordflow}{if} (!isset(\$\_SESSION[\textcolor{stringliteral}{'user'}])) \{}
+\DoxyCodeLine{00016     \$\_SESSION[\textcolor{stringliteral}{'user'}] = \textcolor{keyword}{new} user(\textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}"{}}, -\/1, \textcolor{stringliteral}{"{}-\/1"{}});}
+\DoxyCodeLine{00017 \}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 \$r\_page = filter\_input(INPUT\_GET, \textcolor{charliteral}{'r'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keywordflow}{switch} (\$r\_page) \{}
+\DoxyCodeLine{00023     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}games"{}}:}
+\DoxyCodeLine{00024         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_games_controller}{GamesController}}();}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}download"{}}:}
+\DoxyCodeLine{00028         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_download_controller}{DownloadController}}();}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}dashboard"{}}:}
+\DoxyCodeLine{00032         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_dashboard_controller}{DashboardController}}();}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}signin"{}}:}
+\DoxyCodeLine{00036         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_signin_controller}{SigninController}}();}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}login"{}}:}
+\DoxyCodeLine{00040         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_login_controller}{LoginController}}();}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}users"{}}:}
+\DoxyCodeLine{00044         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_users_controller}{UsersController}}();}
+\DoxyCodeLine{00045         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}logout"{}}:}
+\DoxyCodeLine{00048         session\_destroy();}
+\DoxyCodeLine{00049         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}administrator"{}}:}
+\DoxyCodeLine{00052         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_administrator_controller}{AdministratorController}}();}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00055         \$controller = \textcolor{keyword}{new} \mbox{\hyperlink{class_index_controller}{IndexController}}();}
+\DoxyCodeLine{00056         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00058 \$controller-\/>formHandler();}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060 \$title = \textcolor{stringliteral}{"{}Caiman"{}};}
+\DoxyCodeLine{00061 include \textcolor{stringliteral}{"{}common/head.php"{}};}
+\DoxyCodeLine{00062 include \textcolor{stringliteral}{"{}common/modal.php"{}};}
+\DoxyCodeLine{00063 include \textcolor{stringliteral}{"{}common/navbar.php"{}};}
+\DoxyCodeLine{00064 \$controller-\/>printHTML();}
+\DoxyCodeLine{00065 include \textcolor{stringliteral}{"{}common/footer.php"{}};}
+
+\end{DoxyCode}

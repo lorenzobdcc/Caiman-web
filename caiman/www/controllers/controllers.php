@@ -1,11 +1,11 @@
 <?php 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a inlure tous les fichiers dans la vue
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief file used to include all the controller of the project
+ */
 include_once "mainController.php";
 include_once "interfaceController.php";
 include_once "dashboardController.php";

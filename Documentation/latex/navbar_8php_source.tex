@@ -1,0 +1,55 @@
+\hypertarget{navbar_8php_source}{}\doxysection{navbar.\+php}
+\label{navbar_8php_source}\index{common/navbar.php@{common/navbar.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 \textcolor{comment}{/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *}}
+\DoxyCodeLine{00003 \textcolor{comment}{ * Auteur  : Lorenzo Bauduccio}}
+\DoxyCodeLine{00004 \textcolor{comment}{ * Classe  : tech 2}}
+\DoxyCodeLine{00005 \textcolor{comment}{ * Version : 1.0}}
+\DoxyCodeLine{00006 \textcolor{comment}{ * Date    : 28.04.2021}}
+\DoxyCodeLine{00007 \textcolor{comment}{ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */}}
+\DoxyCodeLine{00008 ?>}
+\DoxyCodeLine{00009 <nav \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}navbar navbar-\/expand-\/lg navbar-\/dark bg-\/dark"{}}>}
+\DoxyCodeLine{00010 <a \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}navbar-\/brand"{}} href=\textcolor{stringliteral}{"{}index.php"{}}><span \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}greenTexte"{}}>Caiman</span></a>}
+\DoxyCodeLine{00011   <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}navbar-\/toggler"{}} type=\textcolor{stringliteral}{"{}button"{}} data-\/toggle=\textcolor{stringliteral}{"{}collapse"{}} data-\/target=\textcolor{stringliteral}{"{}\#navbarTogglerDemo02"{}} aria-\/controls=\textcolor{stringliteral}{"{}navbarTogglerDemo02"{}} aria-\/expanded=\textcolor{stringliteral}{"{}false"{}} aria-\/label=\textcolor{stringliteral}{"{}Toggle navigation"{}}>}
+\DoxyCodeLine{00012     <span \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}navbar-\/toggler-\/icon"{}}></span>}
+\DoxyCodeLine{00013   </button>}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015   <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}collapse navbar-\/collapse"{}} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}navbarTogglerDemo02"{}}>}
+\DoxyCodeLine{00016     <ul \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}navbar-\/nav mr-\/auto mt-\/2 mt-\/lg-\/0"{}}>}
+\DoxyCodeLine{00017     <li><a href=\textcolor{stringliteral}{"{}index.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/link px-\/2 text-\/white"{}}>Home</a></li>}
+\DoxyCodeLine{00018         <li><a href=\textcolor{stringliteral}{"{}?r=games"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/link px-\/2 text-\/white"{}}>\mbox{\hyperlink{class_games}{Games}}</a></li>}
+\DoxyCodeLine{00019         <li><a href=\textcolor{stringliteral}{"{}?r=download"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/link px-\/2 text-\/white"{}}>\mbox{\hyperlink{class_download}{Download}}</a></li>}
+\DoxyCodeLine{00020         <li><a href=\textcolor{stringliteral}{"{}?r=users"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}nav-\/link px-\/2 text-\/white"{}}>Users</a></li>}
+\DoxyCodeLine{00021     </ul>}
+\DoxyCodeLine{00022     <form \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/inline my-\/2 my-\/lg-\/0"{}} action=\textcolor{stringliteral}{"{}?r=games\&e=requestGame"{}} method=\textcolor{stringliteral}{"{}post"{}}>}
+\DoxyCodeLine{00023       <input \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}form-\/control mr-\/sm-\/2"{}} type=\textcolor{stringliteral}{"{}search"{}} placeholder=\textcolor{stringliteral}{"{}Search games"{}} name=\textcolor{stringliteral}{"{}gameName"{}}>}
+\DoxyCodeLine{00024     </form>}
+\DoxyCodeLine{00025     <?php}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>role == -\/1) \{}
+\DoxyCodeLine{00027       ?>}
+\DoxyCodeLine{00028         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}text-\/end"{}}>}
+\DoxyCodeLine{00029           <button type=\textcolor{stringliteral}{"{}button"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn btn-\/outline-\/light me-\/2"{}} data-\/toggle=\textcolor{stringliteral}{"{}modal"{}} data-\/target=\textcolor{stringliteral}{"{}\#modalLogin"{}}>\mbox{\hyperlink{class_login}{Login}}</button>}
+\DoxyCodeLine{00030           <button type=\textcolor{stringliteral}{"{}button"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn btn-\/warning"{}} data-\/toggle=\textcolor{stringliteral}{"{}modal"{}} data-\/target=\textcolor{stringliteral}{"{}\#modalSign"{}}>Sign-\/up</button>}
+\DoxyCodeLine{00031         </div>}
+\DoxyCodeLine{00032       <?php}
+\DoxyCodeLine{00033       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00034       ?>}
+\DoxyCodeLine{00035         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}text-\/end"{}}>}
+\DoxyCodeLine{00036         <?php}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>role == 1) \{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039           echo \textcolor{stringliteral}{'<a href="{}?r=administrator"{}> <button type="{}button"{} class="{}btn btn-\/outline-\/warning me-\/2"{}>Dashboard admin</button></a>'};}
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041         ?>}
+\DoxyCodeLine{00042           <a href=\textcolor{stringliteral}{"{}?r=dashboard"{}}> <button type=\textcolor{stringliteral}{"{}button"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn btn-\/outline-\/warning me-\/2"{}}>Dashboard</button></a>}
+\DoxyCodeLine{00043           <a href=\textcolor{stringliteral}{"{}?r=logout"{}}> <button type=\textcolor{stringliteral}{"{}button"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}btn btn-\/outline-\/danger me-\/2"{}}>Logout</button></a>}
+\DoxyCodeLine{00044         </div>}
+\DoxyCodeLine{00045       <?php}
+\DoxyCodeLine{00046       \}}
+\DoxyCodeLine{00047       ?>}
+\DoxyCodeLine{00048   </div>}
+\DoxyCodeLine{00049 </nav>}
+
+\end{DoxyCode}

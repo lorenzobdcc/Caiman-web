@@ -1,11 +1,11 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a la gestion de l'utilisateur du site que ce soit un visiteur ou un utilisateur autentifié
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request of the user of the website
+ */
 include_once "./models/class.php";
 class UsersController implements iController
 {
@@ -15,7 +15,11 @@ class UsersController implements iController
     private $idUser = null;
     private $game = null;
 
-
+  /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
     public function formHandler()
     {
 
@@ -41,32 +45,21 @@ class UsersController implements iController
         }
     }
 
-    public function errorHandler()
-    {
-        if (isset($_SESSion['error'])) {
-            switch ($i) {
-                case 0:
-                    echo "i égal 0";
-                    break;
-                case 1:
-                    echo "i égal 1";
-                    break;
-                case 2:
-                    echo "i égal 2";
-                    break;
-                default:
-                   echo "i n'est ni égal à 2, ni à 1, ni à 0.";
-            }
-        }
-    }
-
+/**
+ * default constructor
+ */
     public function __construct()
     {
         $this->userData = new UserData();
         $this->game = new Games();
     }
 
-
+  /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
     public function printHTML()
     {
 
@@ -93,6 +86,11 @@ class UsersController implements iController
         echo $html;
     }
 
+    /**
+     * create the form to search users
+     *
+     * @return void
+     */
     public function htmlrecherchUsers()
     {
         $html = "";
@@ -116,6 +114,11 @@ class UsersController implements iController
       return $html;
     }
 
+    /**
+     * create the list of user requested by their username
+     *
+     * @return void
+     */
     public function htmlrequestUser()
     {
         $html = "";
@@ -140,6 +143,11 @@ class UsersController implements iController
       return $html;
     }
 
+    /**
+     * create a page with the details of a user
+     *
+     * @return html
+     */
     public function htmlDetailUser()
     {
         $html = "";
@@ -164,6 +172,11 @@ class UsersController implements iController
       return $html;
     }
 
+    /**
+     * crate html of the info on a user
+     *
+     * @return html
+     */
     private function htmlDataUser()
     {
         $html = "";
@@ -196,6 +209,11 @@ class UsersController implements iController
       return $html;
     }
 
+    /**
+     * create a list of the user's favorite games
+     *
+     * @return html
+     */
     private function htmlFavoriteGameUser()
     {
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
@@ -218,6 +236,11 @@ class UsersController implements iController
         return $html;
     }
 
+    /**
+     * create a list of the games who as been played by the user and display the number of hours and minutes
+     *
+     * @return void
+     */
     private function htmlTimeInGameUser()
     {
         $html = '<div class="d-inline-flex  jumbotron DarkJumbotron  width100" style="background-color: #161b22;" >
@@ -241,7 +264,12 @@ class UsersController implements iController
 
 
 
-
+/**
+ * diplay a game
+ *
+ * @param int $game
+ * @return void
+ */
     private function createCardHTML($game)
     {
         $html = '
@@ -263,7 +291,12 @@ class UsersController implements iController
         </div>';
         return $html;
     }
-
+/**
+     * create the view of a game with the time played
+     *
+     * @param int $game
+     * @return void
+     */
     private function createCardHTMLTime($game)
     {
         $gameDetail = $this->game->getGameDetail($game);

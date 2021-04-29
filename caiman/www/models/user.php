@@ -126,7 +126,7 @@ class User
     /**
      * user to get the user password
      *
-     * @return void
+     * @return string
      */
     private function getUserPassword()
     {

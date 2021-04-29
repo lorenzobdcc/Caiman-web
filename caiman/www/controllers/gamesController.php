@@ -1,11 +1,12 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model games
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the games pages
+ */
 class GamesController extends mainController implements iController
 {
     public $games;
@@ -16,12 +17,20 @@ class GamesController extends mainController implements iController
     private $idGame;
     private $idcategory;
 
-
+    /**
+     * default constructor
+     */
     public function __construct()
     {
         $this->games  = new Games();
         $this->categorie = new Categories();
     }
+
+    /**
+     * used to handle if the user has resquest something
+     *
+     * @return void
+     */
     public function formHandler()
     {
         $requestGame = null;
@@ -62,15 +71,15 @@ class GamesController extends mainController implements iController
             }
         }
 
-        
+
         if ($this->e == "addFavoris") {
             if (isset($_GET['idGame'])) {
                 $idGame = filter_input(INPUT_GET, 'idGame', FILTER_SANITIZE_NUMBER_INT);
             }
 
             if (isset($idGame)) {
-                $result = $this->games->addGameToFavoris($_SESSION['user']->idUser,$idGame);
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+                $result = $this->games->addGameToFavoris($_SESSION['user']->idUser, $idGame);
+                header('Location:' . $_SERVER['HTTP_REFERER']);
                 $_SESSION['error'] = "Favorite added";
             }
         }
@@ -81,8 +90,8 @@ class GamesController extends mainController implements iController
             }
 
             if (isset($idGame)) {
-                $result = $this->games->removeGameFromFavoris($_SESSION['user']->idUser,$idGame);
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+                $result = $this->games->removeGameFromFavoris($_SESSION['user']->idUser, $idGame);
+                header('Location:' . $_SERVER['HTTP_REFERER']);
                 $_SESSION['error'] = "Favorite removed";
             }
         }
@@ -90,7 +99,12 @@ class GamesController extends mainController implements iController
         $this->requestedgame = $result;
     }
 
-
+  /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
     public function printHTML()
     {
         $html = '<main style="margin-top:20px">
@@ -120,6 +134,11 @@ class GamesController extends mainController implements iController
         echo $html;
     }
 
+    /**
+     * create the html of the list of all the games
+     *
+     * @return void
+     */
     public function getListAllGames()
     {
         $html = '<div class="cardGameBox box">';
@@ -136,6 +155,11 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
+    /**
+     * create a list of the requested games
+     *
+     * @return void
+     */
     public function getRequestedGames()
     {
 
@@ -151,6 +175,11 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
+    /**
+     * create the page of a specific game
+     *
+     * @return void
+     */
     public function getGameDetail()
     {
 
@@ -168,20 +197,19 @@ class GamesController extends mainController implements iController
                     <p class="card-title">' . $gameDetail[0]['description'] . '</p>
                     </br>
         <div class="list-group">';
-            if ($_SESSION['user']->idUser != -1) {
-                if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $gameDetail[0]['id'])) {
-                    $html.= '<a class="btn btn-outline-success " href="?r=games&e=addFavoris&idGame=' . $gameDetail[0]['id'] . '" role="button">Add to favorite</a>';
-                }else {
-                    $html.= '<a class="btn btn-outline-warning " href="?r=games&e=removeFavoris&idGame=' . $gameDetail[0]['id'] . '" role="button">Remove favorite</a>';
-                }
+        if ($_SESSION['user']->idUser != -1) {
+            if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $gameDetail[0]['id'])) {
+                $html .= '<a class="btn btn-outline-success " href="?r=games&e=addFavoris&idGame=' . $gameDetail[0]['id'] . '" role="button">Add to favorite</a>';
+            } else {
+                $html .= '<a class="btn btn-outline-warning " href="?r=games&e=removeFavoris&idGame=' . $gameDetail[0]['id'] . '" role="button">Remove favorite</a>';
             }
-            if ($_SESSION['user']->role == 1) {
-                    $html.= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=updateGame&id=' . $gameDetail[0]['id'] . '" role="button">Update game</a>';
-                    $html.= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=addGameCategorie&id=' . $gameDetail[0]['id'] . '" role="button">Update/add categories</a>';
+        }
+        if ($_SESSION['user']->role == 1) {
+            $html .= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=updateGame&id=' . $gameDetail[0]['id'] . '" role="button">Update game</a>';
+            $html .= '</br> <a class="btn btn-outline-danger " href="?r=administrator&e=addGameCategorie&id=' . $gameDetail[0]['id'] . '" role="button">Update/add categories</a>';
+        }
 
-            }
-
-            $html .= '</div>
+        $html .= '</div>
                     <h3 class="card-title">Categories</h3>
                     <div class="list-group">';
 
@@ -202,6 +230,11 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
+/**
+ * crate a list of game of a specific categorie
+ *
+ * @return void
+ */
     public function getGamesFromCategorie()
     {
 
@@ -217,6 +250,12 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
+  /**
+   * print the html of a game
+   * 
+   *
+   * @return void
+   */
     private function createCardHTML($game)
     {
         $html = '
@@ -228,21 +267,26 @@ class GamesController extends mainController implements iController
             
         </div>
         <div class="card-body"> ';
-            if ($_SESSION['user']->idUser != -1) {
-                if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $game['id'])) {
-                    $html.= '<a class="btn btn-outline-light cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';
-                }else {
-                    $html.= '<a class="btn btn-outline-light cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart"></i></a>';
-                }
+        if ($_SESSION['user']->idUser != -1) {
+            if ($this->games->checkIfGameIsAlreadyInFavoris($_SESSION['user']->idUser, $game['id'])) {
+                $html .= '<a class="btn btn-outline-light cardContent" href="?r=games&e=addFavoris&idGame=' . $game['id'] . '" role="button"><i class="far fa-heart"></i></a>';
+            } else {
+                $html .= '<a class="btn btn-outline-light cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart"></i></a>';
             }
+        }
 
-            $html .= '
+        $html .= '
         </div>
         </a>
         </div>';
         return $html;
     }
 
+    /**
+     * create the html of a form to research game and to display the list of categorie
+     *
+     * @return void
+     */
     public function recherchFull()
     {
         $html = "";
@@ -264,17 +308,22 @@ class GamesController extends mainController implements iController
           <p>
 
           ';
-          foreach ($this->categorie->getListAllCategories() as $key => $cat) {
-              $html .= '<a class="btn btn-outline-success btnCategorie " href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '" role="button">'.$cat['name'].'</a>';
-          }
-          $html.= '
+        foreach ($this->categorie->getListAllCategories() as $key => $cat) {
+            $html .= '<a class="btn btn-outline-success btnCategorie " href="?r=games&e=categorie&idCategorie=' . $cat['id'] . '" role="button">' . $cat['name'] . '</a>';
+        }
+        $html .= '
         </p>
           </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
+        /**
+     * create the html of a form to research game 
+     *
+     * @return void
+     */
     public function recherchNotFull()
     {
         $html = "";
@@ -295,8 +344,6 @@ class GamesController extends mainController implements iController
           </div>
       </div>';
 
-      return $html;
+        return $html;
     }
-
-
 }

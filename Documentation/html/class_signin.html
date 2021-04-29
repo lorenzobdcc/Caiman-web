@@ -95,7 +95,10 @@ Data Fields</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$insert_email</b> = null</td></tr>
 <tr class="separator:a90a6cdc7a78b2c4b1b34836e898d4a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="signin_8php_source.html#l00009">9</a> of file <a class="el" href="signin_8php_source.html">signin.php</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a095c5d389db211932136b53f25f39685"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a095c5d389db211932136b53f25f39685">&#9670;&nbsp;</a></span>__construct()</h2>
 
@@ -111,6 +114,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>default constructor </p>
+
+<p class="definition">Definition at line <a class="el" href="signin_8php_source.html#l00030">30</a> of file <a class="el" href="signin_8php_source.html">signin.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;dbh == <span class="keyword">null</span>) {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">try</span> {</div>
@@ -159,6 +164,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>check that the email is not already taken</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="signin_8php_source.html#l00112">112</a> of file <a class="el" href="signin_8php_source.html">signin.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        $istaken = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">try</span> {</div>
@@ -201,6 +208,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>check that the username is not already taken</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="signin_8php_source.html#l00092">92</a> of file <a class="el" href="signin_8php_source.html">signin.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        $istaken = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">try</span> {</div>
@@ -234,6 +243,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>add a mew user in the database</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="signin_8php_source.html#l00064">64</a> of file <a class="el" href="signin_8php_source.html">signin.php</a>.</p>
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        $isValid = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="class_signin.html#af943e6d90301a30c50f3fe502d363016">checkIfEmailAlreadyTaken</a>()) {</div>
@@ -256,7 +267,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="ttc" id="aclass_signin_html_af943e6d90301a30c50f3fe502d363016"><div class="ttname"><a href="class_signin.html#af943e6d90301a30c50f3fe502d363016">Signin\checkIfEmailAlreadyTaken</a></div><div class="ttdeci">checkIfEmailAlreadyTaken()</div><div class="ttdef"><b>Definition:</b> signin.php:112</div></div>
+<div class="ttc" id="aclass_signin_html_af943e6d90301a30c50f3fe502d363016"><div class="ttname"><a href="class_signin.html#af943e6d90301a30c50f3fe502d363016">Signin\checkIfEmailAlreadyTaken</a></div><div class="ttdeci">checkIfEmailAlreadyTaken()</div><div class="ttdef"><b>Definition:</b> <a href="signin_8php_source.html#l00112">signin.php:112</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -270,7 +281,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>models/<a class="el" href="signin_8php.html">signin.php</a></li>
+<li>models/<a class="el" href="signin_8php_source.html">signin.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

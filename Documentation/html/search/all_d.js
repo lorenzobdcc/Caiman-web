@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['printhtml_97',['printHTML',['../class_administrator_controller.html#a03f6a7d5e2795c5e997aa0c27215010c',1,'AdministratorController\printHTML()'],['../class_dashboard_controller.html#a4798d3f47e1b29e573658cf7e065b50c',1,'DashboardController\printHTML()'],['../class_download_controller.html#a1e53b36c6ee6df0e63e870ad52ec0702',1,'DownloadController\printHTML()'],['../class_games_controller.html#a43c6beaa4b164caa4125bfd2eda9f8b1',1,'GamesController\printHTML()'],['../class_index_controller.html#ad081bc7d33b5d33beb8e78e5a9e65315',1,'IndexController\printHTML()'],['../interfacei_controller.html#a4eb31403a3b09863739a24b696061a0c',1,'iController\printHTML()'],['../class_login_controller.html#a56a2e94c8cda28852d58db29f2a73355',1,'LoginController\printHTML()'],['../class_signin_controller.html#a888d25dd3e494fa5044832eee0ae6a1a',1,'SigninController\printHTML()'],['../class_users_controller.html#a90548d38a69dcf4e4770fff65708b235',1,'UsersController\printHTML()']]]
+  ['recherchfull_65',['recherchFull',['../class_games_controller.html#a4c9def4089531a13c269e6e6b094ea7a',1,'GamesController']]],
+  ['recherchnotfull_66',['recherchNotFull',['../class_games_controller.html#a0519b3d4cfe849b0177ee41849911cc4',1,'GamesController']]],
+  ['removegamefromfavoris_67',['removeGameFromFavoris',['../class_games.html#a3d66aa5ff1ff3a5a202c63e14da4cb7f',1,'Games']]]
 ];

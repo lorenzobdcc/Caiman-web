@@ -1,0 +1,119 @@
+\hypertarget{user_8php_source}{}\doxysection{user.\+php}
+\label{user_8php_source}\index{models/user.php@{models/user.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{user_8php_source_l00010}\mbox{\hyperlink{class_user}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_user}{User}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \textcolor{keyword}{public} \$username;}
+\DoxyCodeLine{00014     \textcolor{keyword}{public} \$email;}
+\DoxyCodeLine{00015     \textcolor{keyword}{public} \$role;}
+\DoxyCodeLine{00016     \textcolor{keyword}{public} \$idUser;}
+\DoxyCodeLine{\Hypertarget{user_8php_source_l00025}\mbox{\hyperlink{class_user_a33a494666535d427dd8a1e157d926c12}{00025}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_user_a33a494666535d427dd8a1e157d926c12}{\_\_construct}}(\textcolor{keywordtype}{string} \$usernamep, \textcolor{keywordtype}{string} \$emailp, \textcolor{keywordtype}{string} \$idRolep, \textcolor{keywordtype}{int} \$idUserp)}
+\DoxyCodeLine{00026     \{}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \$this-\/>username = \$usernamep;}
+\DoxyCodeLine{00029         \$this-\/>email = \$emailp;}
+\DoxyCodeLine{00030         \$this-\/>role = \$idRolep;}
+\DoxyCodeLine{00031         \$this-\/>idUser = \$idUserp;}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{\Hypertarget{user_8php_source_l00042}\mbox{\hyperlink{class_user_a0cd589276a2e526192db261f0813f244}{00042}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_user_a0cd589276a2e526192db261f0813f244}{updatePassword}}(\textcolor{keywordtype}{string} \$newPassword, \textcolor{keywordtype}{string} \$newPasswordRepeat, \textcolor{keywordtype}{string} \$oldPassword)}
+\DoxyCodeLine{00043     \{}
+\DoxyCodeLine{00044         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00045             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00046             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00047         ));}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \$hasBeenUpdated = 1;}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{if} (password\_verify(\$oldPassword, \$this-\/>getUserPassword())) \{}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (\$newPasswordRepeat == \$newPassword) \{}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00054                     \$sqlUpdatePassword = \textcolor{stringliteral}{"{}UPDATE user  SET password = :update\_password WHERE id = :id\_user"{}};}
+\DoxyCodeLine{00055                     \$psUpdatePassword = \$dbh-\/>prepare(\$sqlUpdatePassword);}
+\DoxyCodeLine{00056                     \$psUpdatePassword-\/>execute(array(\textcolor{stringliteral}{':update\_password'} => password\_hash(\$newPassword, PASSWORD\_DEFAULT), \textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058                     \$hasBeenUpdated = 0;}
+\DoxyCodeLine{00059                 \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00060                     print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00061                     die();}
+\DoxyCodeLine{00062                 \}}
+\DoxyCodeLine{00063             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00064                 \$hasBeenUpdated = 2;}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00067             \$hasBeenUpdated = 4;}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         \textcolor{keywordflow}{return} \$hasBeenUpdated;}
+\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{\Hypertarget{user_8php_source_l00077}\mbox{\hyperlink{class_user_a187c3c585763cb6bc4364bfda2874381}{00077}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_user_a187c3c585763cb6bc4364bfda2874381}{updatePrivateAccount}}()}
+\DoxyCodeLine{00078     \{}
+\DoxyCodeLine{00079         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00080             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00081             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00082         ));}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084         \$userisPrivate = \$this-\/>\mbox{\hyperlink{class_user_a7ee23f234f605d5e172d7bb660d2e837}{getPrivateAccount}}();}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         \textcolor{keywordflow}{if} (\$userisPrivate == 0) \{}
+\DoxyCodeLine{00087             \$userSetPrivateTo = 1;}
+\DoxyCodeLine{00088         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00089             \$userSetPrivateTo = 0;}
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00093             \$sqlUpdatePrivateAccount = \textcolor{stringliteral}{"{}UPDATE user  SET privateAccount = :update\_private\_account WHERE id = :id\_user"{}};}
+\DoxyCodeLine{00094             \$psUpdatePrivateAccount = \$dbh-\/>prepare(\$sqlUpdatePrivateAccount);}
+\DoxyCodeLine{00095             \$psUpdatePrivateAccount-\/>execute(array(\textcolor{stringliteral}{':update\_private\_account'} => \$userSetPrivateTo, \textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
+\DoxyCodeLine{00096         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00097             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00098             die();}
+\DoxyCodeLine{00099         \}}
+\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{\Hypertarget{user_8php_source_l00106}\mbox{\hyperlink{class_user_a7ee23f234f605d5e172d7bb660d2e837}{00106}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_user_a7ee23f234f605d5e172d7bb660d2e837}{getPrivateAccount}}()}
+\DoxyCodeLine{00107     \{}
+\DoxyCodeLine{00108         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00109             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00110             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00111         ));}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00114             \$sqlGetPrivateAccount = \textcolor{stringliteral}{"{}SELECT privateAccount FROM user WHERE id = :id\_user"{}};}
+\DoxyCodeLine{00115             \$psGetPrivateAccount = \$dbh-\/>prepare(\$sqlGetPrivateAccount);}
+\DoxyCodeLine{00116             \$psGetPrivateAccount-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00117             \$psGetPrivateAccount-\/>execute(array(\textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
+\DoxyCodeLine{00118             \$result = \$psGetPrivateAccount-\/>fetchAll();}
+\DoxyCodeLine{00119         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00120             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00121             die();}
+\DoxyCodeLine{00122         \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124         \textcolor{keywordflow}{return} \$result[0][\textcolor{stringliteral}{'privateAccount'}];}
+\DoxyCodeLine{00125     \}}
+\DoxyCodeLine{00131     \textcolor{keyword}{private} \textcolor{keyword}{function} getUserPassword()}
+\DoxyCodeLine{00132     \{}
+\DoxyCodeLine{00133         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00134             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00135             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00136         ));}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00139             \$sqlGetUserPassword = \textcolor{stringliteral}{"{}SELECT password FROM user WHERE id = :id\_user"{}};}
+\DoxyCodeLine{00140             \$psGetUserPassword = \$dbh-\/>prepare(\$sqlGetUserPassword);}
+\DoxyCodeLine{00141             \$psGetUserPassword-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00142             \$psGetUserPassword-\/>execute(array(\textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
+\DoxyCodeLine{00143             \$result = \$psGetUserPassword-\/>fetchAll();}
+\DoxyCodeLine{00144         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00145             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00146             die();}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keywordflow}{return} \$result[0][\textcolor{stringliteral}{'password'}];}
+\DoxyCodeLine{00150     \}}
+\DoxyCodeLine{00151 \}}
+
+\end{DoxyCode}

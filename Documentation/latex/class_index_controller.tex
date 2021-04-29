@@ -21,14 +21,100 @@ Collaboration diagram for Index\+Controller\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
-{\bfseries form\+Handler} ()
+\mbox{\hyperlink{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
 \item 
-\mbox{\Hypertarget{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
-{\bfseries print\+HTML} ()
+\mbox{\hyperlink{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{index_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{index_controller_8php_source}{index\+Controller.\+php}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\index{IndexController@{IndexController}!formHandler@{formHandler}}
+\index{formHandler@{formHandler}!IndexController@{IndexController}}
+\doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
+{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+used to handle if the user has resquest something
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{index_controller_8php_source_l00018}{18}} of file \mbox{\hyperlink{index_controller_8php_source}{index\+Controller.\+php}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019   \{}
+\DoxyCodeLine{00020   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\index{IndexController@{IndexController}!printHTML@{printHTML}}
+\index{printHTML@{printHTML}!IndexController@{IndexController}}
+\doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
+{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+print the html for the resquested content
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{index_controller_8php_source_l00028}{28}} of file \mbox{\hyperlink{index_controller_8php_source}{index\+Controller.\+php}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029   \{}
+\DoxyCodeLine{00030     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00034 \textcolor{stringliteral}{    <main style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{00035 \textcolor{stringliteral}{      <div class="{}container-\/md"{}>}}
+\DoxyCodeLine{00036 \textcolor{stringliteral}{      '};}
+\DoxyCodeLine{00037     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{00038     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00039 \textcolor{stringliteral}{        <div class="{}jumbotron jumbotron-\/fluid DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}>}}
+\DoxyCodeLine{00040 \textcolor{stringliteral}{            <div class="{}row py-\/lg-\/5"{}>}}
+\DoxyCodeLine{00041 \textcolor{stringliteral}{              <div class="{}col-\/lg-\/6 col-\/md-\/8 mx-\/auto"{}>}}
+\DoxyCodeLine{00042 \textcolor{stringliteral}{                <h1 class="{}fw-\/light greenTexte"{}>Caiman</h1>}}
+\DoxyCodeLine{00043 \textcolor{stringliteral}{                <p class="{}lead text-\/muted"{}>The easiest way to use emulators.</p>}}
+\DoxyCodeLine{00044 \textcolor{stringliteral}{                <p>}}
+\DoxyCodeLine{00045 \textcolor{stringliteral}{                  <a href="{}?r=download"{} class="{}btn btn-\/success my-\/2"{}>Download</a>}}
+\DoxyCodeLine{00046 \textcolor{stringliteral}{                  <a href="{}?r=login"{} class="{}btn btn-\/success my-\/2"{}>Create acount</a>}}
+\DoxyCodeLine{00047 \textcolor{stringliteral}{                  <a href="{}?r=games"{} class="{}btn btn-\/success my-\/2"{}>Watch games list</a>}}
+\DoxyCodeLine{00048 \textcolor{stringliteral}{                </p>}}
+\DoxyCodeLine{00049 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00050 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00051 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00052 \textcolor{stringliteral}{      </div>}}
+\DoxyCodeLine{00053 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00054 \textcolor{stringliteral}{    </main>}}
+\DoxyCodeLine{00055 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00056 \textcolor{stringliteral}{'};}
+\DoxyCodeLine{00057     echo \$html;}
+\DoxyCodeLine{00058   \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-controllers/index\+Controller.\+php\end{DoxyCompactItemize}
+controllers/\mbox{\hyperlink{index_controller_8php}{index\+Controller.\+php}}\end{DoxyCompactItemize}

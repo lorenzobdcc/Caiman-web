@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['removegamefromfavoris_45',['removeGameFromFavoris',['../class_games.html#a3d66aa5ff1ff3a5a202c63e14da4cb7f',1,'Games']]]
+  ['login_57',['Login',['../class_login.html',1,'']]],
+  ['login_2ephp_58',['login.php',['../login_8php.html',1,'']]],
+  ['logincontroller_59',['LoginController',['../class_login_controller.html',1,'']]],
+  ['logincontroller_2ephp_60',['loginController.php',['../login_controller_8php.html',1,'']]]
 ];

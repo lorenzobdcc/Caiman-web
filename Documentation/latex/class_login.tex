@@ -19,6 +19,13 @@
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{login_8php_source_l00009}{9}} of file \mbox{\hyperlink{login_8php_source}{login.\+php}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_login_ab8e90adf3e4b15eea283c4ea450a4288}\label{class_login_ab8e90adf3e4b15eea283c4ea450a4288}} 
 \index{Login@{Login}!checkLogin@{checkLogin}}
@@ -32,28 +39,32 @@ check if there is a match
 bool 
 \end{DoxyReturn}
 
+
+Definition at line \mbox{\hyperlink{login_8php_source_l00047}{47}} of file \mbox{\hyperlink{login_8php_source}{login.\+php}}.
+
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{48     \{}
-\DoxyCodeLine{49         \$returnArray = \textcolor{keyword}{null};}
-\DoxyCodeLine{50         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{51             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
-\DoxyCodeLine{52             \$result = \$this-\/>psLogin-\/>fetchAll();}
-\DoxyCodeLine{53             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{54                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
-\DoxyCodeLine{55                     \$returnArray = \$result;}
-\DoxyCodeLine{56                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
-\DoxyCodeLine{57                 \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{58                 \{}
-\DoxyCodeLine{59                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
-\DoxyCodeLine{60                 \}}
-\DoxyCodeLine{61             \}}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{64             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{65             die();}
-\DoxyCodeLine{66         \}}
-\DoxyCodeLine{67         \textcolor{keywordflow}{return} \$returnArray;}
-\DoxyCodeLine{68     \}}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00051             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
+\DoxyCodeLine{00052             \$result = \$this-\/>psLogin-\/>fetchAll();}
+\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
+\DoxyCodeLine{00055                     \$returnArray = \$result;}
+\DoxyCodeLine{00056                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
+\DoxyCodeLine{00057                 \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00058                 \{}
+\DoxyCodeLine{00059                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
+\DoxyCodeLine{00060                 \}}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00064             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00065             die();}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} \$returnArray;}
+\DoxyCodeLine{00068     \}}
 
 \end{DoxyCode}
 

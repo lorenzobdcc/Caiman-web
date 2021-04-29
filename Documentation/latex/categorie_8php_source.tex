@@ -1,0 +1,136 @@
+\hypertarget{categorie_8php_source}{}\doxysection{categorie.\+php}
+\label{categorie_8php_source}\index{models/categorie.php@{models/categorie.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00010}\mbox{\hyperlink{class_categories}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_categories}{Categories}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \textcolor{keyword}{private} \$dbh = \textcolor{keyword}{null};}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keyword}{private} \$psGetAllCategories = \textcolor{keyword}{null};}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keyword}{private} \$psGameCategorie = \textcolor{keyword}{null};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{keyword}{private} \$psAddCategorieToGame = \textcolor{keyword}{null};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{keyword}{private} \$psCheckIfGameHasCategorie = \textcolor{keyword}{null};}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keyword}{private} \$psDelCategorieFromGame = \textcolor{keyword}{null};}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00031}\mbox{\hyperlink{class_categories_a095c5d389db211932136b53f25f39685}{00031}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00032     \{}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00034             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00035                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00036                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00037                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00038                 ));}
+\DoxyCodeLine{00039                 \textcolor{comment}{//get all categories}}
+\DoxyCodeLine{00040                 \$sqlGetAllCategories = \textcolor{stringliteral}{"{}SELECT * FROM categorie"{}};}
+\DoxyCodeLine{00041                 \$this-\/>psGetAllCategories = \$this-\/>dbh-\/>prepare(\$sqlGetAllCategories);}
+\DoxyCodeLine{00042                 \$this-\/>psGetAllCategories-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044                 \textcolor{comment}{//add categorie}}
+\DoxyCodeLine{00045                 \$sqlAddCategorie = \textcolor{stringliteral}{"{}INSERT INTO categorie (name) VALUES (:categorie\_name)"{}};}
+\DoxyCodeLine{00046                 \$this-\/>psAddCategorie = \$this-\/>dbh-\/>prepare(\$sqlAddCategorie);}
+\DoxyCodeLine{00047                 \$this-\/>psAddCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049                 \textcolor{comment}{//add categorie to game}}
+\DoxyCodeLine{00050                 \$sqlAddCategorieToGame = \textcolor{stringliteral}{"{}INSERT INTO gamehascategorie (idGame,idCategorie) VALUES (:insert\_idGame, :insert\_idCategorie)"{}};}
+\DoxyCodeLine{00051                 \$this-\/>psAddCategorieToGame = \$this-\/>dbh-\/>prepare(\$sqlAddCategorieToGame);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053                 \textcolor{comment}{//check if game has a specific categorie}}
+\DoxyCodeLine{00054                 \$sqlCheckIfGameHasCategorie = \textcolor{stringliteral}{"{}SELECT * FROM gamehascategorie WHERE idCategorie = :insert\_idCategorie AND idGame = :insert\_idGame"{}};}
+\DoxyCodeLine{00055                 \$this-\/>psCheckIfGameHasCategorie = \$this-\/>dbh-\/>prepare(\$sqlCheckIfGameHasCategorie);}
+\DoxyCodeLine{00056                 \$this-\/>psCheckIfGameHasCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058                 \textcolor{comment}{//del categorie from game}}
+\DoxyCodeLine{00059                 \$sqlDelCategorieFromGame = \textcolor{stringliteral}{"{}DELETE FROM gamehascategorie  WHERE idCategorie = :del\_idCategorie AND idGame = :del\_idGame"{}};}
+\DoxyCodeLine{00060                 \$this-\/>psDelCategorieFromGame = \$this-\/>dbh-\/>prepare(\$sqlDelCategorieFromGame);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062                 \textcolor{comment}{//get categories of a game}}
+\DoxyCodeLine{00063                 \$sqlGameCategorie = \textcolor{stringliteral}{"{}SELECT c.name, c.id FROM `gamehascategorie` as ghc}}
+\DoxyCodeLine{00064 \textcolor{stringliteral}{                LEFT JOIN categorie as c}}
+\DoxyCodeLine{00065 \textcolor{stringliteral}{                ON ghc.idCategorie = c.id}}
+\DoxyCodeLine{00066 \textcolor{stringliteral}{                LEFT JOIN game as g}}
+\DoxyCodeLine{00067 \textcolor{stringliteral}{                ON ghc.idGame = g.id}}
+\DoxyCodeLine{00068 \textcolor{stringliteral}{                WHERE idGame = :search\_id"{}};}
+\DoxyCodeLine{00069                 \$this-\/>psGameCategorie = \$this-\/>dbh-\/>prepare(\$sqlGameCategorie);}
+\DoxyCodeLine{00070                 \$this-\/>psGameCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00071             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00072                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00073                 die();}
+\DoxyCodeLine{00074             \}}
+\DoxyCodeLine{00075         \}}
+\DoxyCodeLine{00076     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00082}\mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{00082}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{getListAllCategories}}()}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00086             \$this-\/>psGetAllCategories-\/>execute();}
+\DoxyCodeLine{00087             \$result = \$this-\/>psGetAllCategories-\/>fetchAll();}
+\DoxyCodeLine{00088         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00089             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00090             die();}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00093     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00100}\mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{00100}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{getCategoriesOfGame}}(\textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00101     \{}
+\DoxyCodeLine{00102         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00103             \$this-\/>psGameCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
+\DoxyCodeLine{00104             \$result = \$this-\/>psGameCategorie-\/>fetchAll();}
+\DoxyCodeLine{00105         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00106             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00107             die();}
+\DoxyCodeLine{00108         \}}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00110     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00117}\mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{00117}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{addCategorie}}(\textcolor{keywordtype}{string} \$categorieName)}
+\DoxyCodeLine{00118     \{}
+\DoxyCodeLine{00119         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00120             \$this-\/>psAddCategorie-\/>execute(array(\textcolor{stringliteral}{':categorie\_name'} => \$categorieName));}
+\DoxyCodeLine{00121             \$result = \$this-\/>psAddCategorie-\/>fetchAll();}
+\DoxyCodeLine{00122         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00123             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00124             die();}
+\DoxyCodeLine{00125         \}}
+\DoxyCodeLine{00126         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00127     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00135}\mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{00135}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{addCategorieToGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
+\DoxyCodeLine{00136     \{}
+\DoxyCodeLine{00137         \$result = \textcolor{keyword}{null};}
+\DoxyCodeLine{00138         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00139             \$this-\/>psCheckIfGameHasCategorie-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
+\DoxyCodeLine{00140             \$result = \$this-\/>psCheckIfGameHasCategorie-\/>fetchAll();}
+\DoxyCodeLine{00141         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00142             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00143             die();}
+\DoxyCodeLine{00144         \}}
+\DoxyCodeLine{00145         \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00146             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00147                 \$this-\/>psAddCategorieToGame-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
+\DoxyCodeLine{00148             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00149                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00150                 die();}
+\DoxyCodeLine{00151             \}}
+\DoxyCodeLine{00152         \}}
+\DoxyCodeLine{00153     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00161}\mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{00161}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{delCategorieFromGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
+\DoxyCodeLine{00162     \{}
+\DoxyCodeLine{00163         \$result = \textcolor{keyword}{null};}
+\DoxyCodeLine{00164         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00165             \$this-\/>psDelCategorieFromGame-\/>execute(array(\textcolor{stringliteral}{':del\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':del\_idGame'} => \$idGame));}
+\DoxyCodeLine{00166         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00167             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00168             die();}
+\DoxyCodeLine{00169         \}}
+\DoxyCodeLine{00170     \}}
+\DoxyCodeLine{00171 \}}
+
+\end{DoxyCode}

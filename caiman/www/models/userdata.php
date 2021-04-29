@@ -42,11 +42,12 @@ class UserData
             }
         }
     }
+
     /**
      * get users by their username
      *
-     * @param [type] $username
-     * @return void
+     * @param string $username
+     * @return array of game
      */
     public function getUsersByUsername($username)
     {
@@ -59,6 +60,7 @@ class UserData
         }
         return $result;
     }
+
     /**
      * get data of a specific user
      *

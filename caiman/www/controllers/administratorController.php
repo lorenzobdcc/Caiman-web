@@ -1,11 +1,12 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model administrator
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the administrator page
+ */
 class AdministratorController extends mainController implements iController
 {
   public $administrator;
@@ -14,7 +15,11 @@ class AdministratorController extends mainController implements iController
   private $e = null;
   private $idGameToUpdate;
 
-
+  /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
   public function formHandler()
   {
     $result = null;
@@ -181,7 +186,9 @@ class AdministratorController extends mainController implements iController
   }
 
 
-
+  /**
+   * default constructor
+   */
   public function __construct()
   {
     $this->administrator  = new Administrator();
@@ -189,7 +196,12 @@ class AdministratorController extends mainController implements iController
     $this->categorie = new Categories();
   }
 
-
+  /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
   public function printHTML()
   {
 
@@ -222,6 +234,11 @@ class AdministratorController extends mainController implements iController
     echo $html;
   }
 
+  /**
+   * create the homepage of the administrator dashboard
+   *
+   * @return html
+   */
   private function htmlAdministratorHome()
   {
 
@@ -251,6 +268,11 @@ class AdministratorController extends mainController implements iController
     return $html;
   }
 
+  /**
+   * create the form to add a new game
+   *
+   * @return html
+   */
   private function htmlNewGame()
   {
     $html = "";
@@ -317,6 +339,11 @@ class AdministratorController extends mainController implements iController
     return $html;
   }
 
+  /**
+   * create the form to add a categorie to a specific game
+   *
+   * @return html
+   */
   private function htmlAddCategorieToGame()
   {
     $gameData = $this->game->getGameDetail($this->idGameToUpdate);
@@ -370,6 +397,12 @@ class AdministratorController extends mainController implements iController
 
     return $html;
   }
+
+  /**
+   * create the form to update a specific game
+   *
+   * @return html
+   */
   private function htmlUpdateGame()
   {
     $gameData = $this->game->getGameDetail($this->idGameToUpdate);
@@ -420,6 +453,11 @@ class AdministratorController extends mainController implements iController
     return $html;
   }
 
+  /**
+   * create an list of option fill with the name of the console
+   *
+   * @return html
+   */
   private function htmlgetListConsole()
   {
     $html = "";
@@ -431,6 +469,11 @@ class AdministratorController extends mainController implements iController
     return $html;
   }
 
+  /**
+   * create the form to add a categorie
+   *
+   * @return html
+   */
   private function htmlAddCategorie()
   {
 

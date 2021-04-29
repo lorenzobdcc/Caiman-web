@@ -1,0 +1,135 @@
+\hypertarget{login_controller_8php_source}{}\doxysection{login\+Controller.\+php}
+\label{login_controller_8php_source}\index{controllers/loginController.php@{controllers/loginController.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00010}\mbox{\hyperlink{class_login_controller}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_login_controller}{LoginController}} \textcolor{keyword}{extends} mainController implements \mbox{\hyperlink{interfacei_controller}{iController}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012   \textcolor{keyword}{public} \$login;}
+\DoxyCodeLine{00013   \textcolor{keyword}{private} \$e = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00014   \textcolor{keyword}{private} \$errorMessage = \textcolor{keyword}{null};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00019}\mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{00019}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00020   \{}
+\DoxyCodeLine{00021     \$this-\/>login  = \textcolor{keyword}{new} \mbox{\hyperlink{class_login}{Login}}();}
+\DoxyCodeLine{00022   \}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00029}\mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00029}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
+\DoxyCodeLine{00030   \{}
+\DoxyCodeLine{00031     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00032       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00033     \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}login"{}}) \{}
+\DoxyCodeLine{00036       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
+\DoxyCodeLine{00037         \$username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00038       \}}
+\DoxyCodeLine{00039       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'password'}])) \{}
+\DoxyCodeLine{00040         \$password = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'password'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00041       \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043       \textcolor{keywordflow}{if} (isset(\$password) \&\& isset(\$username)) \{}
+\DoxyCodeLine{00044         \$this-\/>login-\/>search\_username = \$username;}
+\DoxyCodeLine{00045         \$this-\/>login-\/>search\_password = \$password;}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \$usersInfos = \$this-\/>login-\/>checkLogin();}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{keywordflow}{if} (isset(\$usersInfos)) \{}
+\DoxyCodeLine{00050           \$\_SESSION[\textcolor{stringliteral}{'user'}] = \textcolor{keyword}{new} \mbox{\hyperlink{class_user}{User}}(\$usersInfos[0][\textcolor{stringliteral}{'username'}], \$usersInfos[0][\textcolor{stringliteral}{'email'}], \$usersInfos[0][\textcolor{stringliteral}{'idRole'}], \$usersInfos[0][\textcolor{stringliteral}{'id'}]);}
+\DoxyCodeLine{00051           header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00052           exit;}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054       \}}
+\DoxyCodeLine{00055     \}}
+\DoxyCodeLine{00056   \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00065}\mbox{\hyperlink{class_login_controller_a67e219b27b5c39ef06f85381a378c2f9}{00065}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a67e219b27b5c39ef06f85381a378c2f9}{printHTML}}()}
+\DoxyCodeLine{00066   \{}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{00069 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{00070     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{00071     \$html .= \$this-\/>htmlFormHead();}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     echo \$html;}
+\DoxyCodeLine{00076   \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00083   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormLogin()}
+\DoxyCodeLine{00084   \{}
+\DoxyCodeLine{00085     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \$html = \textcolor{stringliteral}{' }}
+\DoxyCodeLine{00088 \textcolor{stringliteral}{        <div style="{}width: 70\%; margin: auto;"{}>}}
+\DoxyCodeLine{00089 \textcolor{stringliteral}{        <h2>Login</h2>}}
+\DoxyCodeLine{00090 \textcolor{stringliteral}{        <form action="{}?r=login\&e=login"{} method="{}post"{}>}}
+\DoxyCodeLine{00091 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00092 \textcolor{stringliteral}{                <label for="{}username"{}>Username</label>}}
+\DoxyCodeLine{00093 \textcolor{stringliteral}{                <input type="{}texte"{} name="{}username"{} class="{}form-\/control"{} id="{}username"{} aria-\/describedby="{}username"{} placeholder="{}Enter username"{}>}}
+\DoxyCodeLine{00094 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00095 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00096 \textcolor{stringliteral}{                <label for="{}password"{}>Password</label>}}
+\DoxyCodeLine{00097 \textcolor{stringliteral}{                <input type="{}password"{} name="{}password"{} class="{}form-\/control"{} id="{}password"{} placeholder="{}Password"{}>}}
+\DoxyCodeLine{00098 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00099 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00100 \textcolor{stringliteral}{              <button type="{}submit"{} class="{}btn btn-\/success"{}>Log in</button>}}
+\DoxyCodeLine{00101 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00102 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00103 \textcolor{stringliteral}{              <a href="{}?r=login\&e=forgot"{} class="{}btn btn-\/success my-\/2"{}>Forgot password?</a>}}
+\DoxyCodeLine{00104 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00105 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00106 \textcolor{stringliteral}{          </form>}}
+\DoxyCodeLine{00107 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00110   \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00117   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormSignin()}
+\DoxyCodeLine{00118   \{}
+\DoxyCodeLine{00119     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \$html = \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00122 \textcolor{stringliteral}{        <div style="{}width: 70\%; margin: auto;"{}>}}
+\DoxyCodeLine{00123 \textcolor{stringliteral}{        <h2>Sign In</h2>}}
+\DoxyCodeLine{00124 \textcolor{stringliteral}{        <p>Sign-\/Up to Caiman to play and discover old games.</p>}}
+\DoxyCodeLine{00125 \textcolor{stringliteral}{        <button type="{}button"{} class="{}btn btn-\/warning"{} data-\/toggle="{}modal"{} data-\/target="{}\#modalSign"{}>Sign-\/up</button>}}
+\DoxyCodeLine{00126 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00129   \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00136   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormHead()}
+\DoxyCodeLine{00137   \{}
+\DoxyCodeLine{00138     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     \$html .= \textcolor{stringliteral}{'<div class="{}jumbotron jumbotron-\/fluid DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}"{}>}}
+\DoxyCodeLine{00141 \textcolor{stringliteral}{        <div class="{}container"{}>'};}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     \$html .= \textcolor{stringliteral}{'<div class="{}container"{}>}}
+\DoxyCodeLine{00144 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{00145 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00146 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{00147     \$html .= \$this-\/>htmlFormLogin();}
+\DoxyCodeLine{00148     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00149 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00150 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00151 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{00152     \$html .= \$this-\/>htmlFormSignin();}
+\DoxyCodeLine{00153     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00154 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00155 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00156 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00159 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00160 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00161 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00164   \}}
+\DoxyCodeLine{00165 \}}
+
+\end{DoxyCode}

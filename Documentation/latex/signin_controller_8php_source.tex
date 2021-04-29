@@ -1,0 +1,63 @@
+\hypertarget{signin_controller_8php_source}{}\doxysection{signin\+Controller.\+php}
+\label{signin_controller_8php_source}\index{controllers/signinController.php@{controllers/signinController.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{signin_controller_8php_source_l00010}\mbox{\hyperlink{class_signin_controller}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_signin_controller}{SigninController}} \textcolor{keyword}{extends} mainController implements \mbox{\hyperlink{interfacei_controller}{iController}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012     \textcolor{keyword}{public} \$signin;}
+\DoxyCodeLine{00013     \textcolor{keyword}{private} \$e = \textcolor{keyword}{null};}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{signin_controller_8php_source_l00018}\mbox{\hyperlink{class_signin_controller_a095c5d389db211932136b53f25f39685}{00018}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_signin_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         \$this-\/>signin = \textcolor{keyword}{new} \mbox{\hyperlink{class_signin}{Signin}}();}
+\DoxyCodeLine{00021     \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{signin_controller_8php_source_l00028}\mbox{\hyperlink{class_signin_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00028}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_signin_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
+\DoxyCodeLine{00029     \{}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00031             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}signin"{}}) \{}
+\DoxyCodeLine{00034             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
+\DoxyCodeLine{00035                 \$this-\/>signin-\/>insert\_username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00036             \}}
+\DoxyCodeLine{00037             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'password'}])) \{}
+\DoxyCodeLine{00038                 \$this-\/>signin-\/>insert\_password = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'password'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'passwordRepeat'}])) \{}
+\DoxyCodeLine{00041                 \$this-\/>signin-\/>insert\_password\_repeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'passwordRepeat'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00042             \}}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'email'}])) \{}
+\DoxyCodeLine{00044                 \$this-\/>signin-\/>insert\_email = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'email'}, FILTER\_SANITIZE\_EMAIL);}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048             \textcolor{keywordflow}{if} (isset(\$this-\/>signin-\/>insert\_password) \&\& isset(\$this-\/>signin-\/>insert\_username) \&\& isset(\$this-\/>signin-\/>insert\_password\_repeat) \&\& isset(\$this-\/>signin-\/>insert\_email)) \{}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{if} (\$this-\/>signin-\/>insert\_password != \$this-\/>signin-\/>insert\_password\_repeat) \{}
+\DoxyCodeLine{00051                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Password does not match"{}};}
+\DoxyCodeLine{00052                     header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00053                     exit;}
+\DoxyCodeLine{00054                 \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057                 \$this-\/>signin-\/>newUser();}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00060                 exit;}
+\DoxyCodeLine{00061             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00062                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}form not completed"{}};}
+\DoxyCodeLine{00063                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00064                 exit;}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067     \}}
+\DoxyCodeLine{00068     }
+\DoxyCodeLine{\Hypertarget{signin_controller_8php_source_l00075}\mbox{\hyperlink{class_signin_controller_a67e219b27b5c39ef06f85381a378c2f9}{00075}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_signin_controller_a67e219b27b5c39ef06f85381a378c2f9}{printHTML}}()}
+\DoxyCodeLine{00076     \{}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078 \}}
+
+\end{DoxyCode}

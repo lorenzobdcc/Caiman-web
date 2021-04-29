@@ -1,17 +1,27 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Classe de base pour les controller sert a inclure diverse fonction commune a tous les controllers
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief main class of the controller used to implement basic function
+ */
 class MainController {
 
+    /**
+     * default constructor
+     */
     public function __construct()
     {
     }
 
+    /**
+     * used to set the acces of a page you need to give the the list of role who can acces the page
+     *
+     * @param [type] $allowAccessToId
+     * @return void
+     */
     public function allowAccessTo($allowAccessToId)
     {
         
@@ -29,6 +39,11 @@ class MainController {
         }
     }
 
+    /**
+     * create the html of an error
+     *
+     * @return void
+     */
     public function errorHandler()
     {
       $html = "";

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['updategame_113',['updateGame',['../class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631',1,'Administrator']]],
-  ['updatepassword_114',['updatePassword',['../class_user.html#a0cd589276a2e526192db261f0813f244',1,'User']]],
-  ['updateprivateaccount_115',['updatePrivateAccount',['../class_user.html#a187c3c585763cb6bc4364bfda2874381',1,'User']]],
-  ['uploadgame_116',['uploadGame',['../class_administrator.html#a50c924aafa709b3032fedb0c41a944bf',1,'Administrator']]],
-  ['uploadgameimage_117',['uploadGameImage',['../class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3',1,'Administrator']]]
+  ['htmldetailuser_152',['htmlDetailUser',['../class_users_controller.html#a2b7af63f66945ec98a0dd16093de4946',1,'UsersController']]],
+  ['htmlformupdatepassword_153',['htmlFormUpdatePassword',['../class_dashboard_controller.html#a98965834f052e1bd149e88ebbea149ac',1,'DashboardController']]],
+  ['htmlrecherchusers_154',['htmlrecherchUsers',['../class_users_controller.html#a5e7298affa43d61253618cbc64a43419',1,'UsersController']]],
+  ['htmlrequestuser_155',['htmlrequestUser',['../class_users_controller.html#ade2c49eb9bacaeab279debfd1dc88955',1,'UsersController']]]
 ];

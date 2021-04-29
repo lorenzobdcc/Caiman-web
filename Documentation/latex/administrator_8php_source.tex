@@ -1,0 +1,178 @@
+\hypertarget{administrator_8php_source}{}\doxysection{administrator.\+php}
+\label{administrator_8php_source}\index{models/administrator.php@{models/administrator.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00009}\mbox{\hyperlink{class_administrator}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{class_administrator}{Administrator}}}
+\DoxyCodeLine{00010 \{}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012     \textcolor{keyword}{private} \$dbh = \textcolor{keyword}{null};}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keyword}{private} \$psLogin = \textcolor{keyword}{null};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     \textcolor{keyword}{public} \$search\_username = \textcolor{keyword}{null};}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     \textcolor{keyword}{public} \$search\_password = \textcolor{keyword}{null};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keyword}{public} \$arrayInfo = \textcolor{keyword}{null};}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keyword}{public} \$psUploadGame = \textcolor{keyword}{null};}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024     \textcolor{keyword}{public} \$psUploadFile = \textcolor{keyword}{null};}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keyword}{public} \$psUpdateGame = \textcolor{keyword}{null};}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00032}\mbox{\hyperlink{class_administrator_a095c5d389db211932136b53f25f39685}{00032}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00033     \{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00035             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00036                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00037                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00038                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00039                 ));}
+\DoxyCodeLine{00040                 \textcolor{comment}{// get list of console}}
+\DoxyCodeLine{00041                 \$sqlGetListConsole = \textcolor{stringliteral}{"{}SELECT * FROM consol"{}};}
+\DoxyCodeLine{00042                 \$this-\/>psGetListConsole = \$this-\/>dbh-\/>prepare(\$sqlGetListConsole);}
+\DoxyCodeLine{00043                 \$this-\/>psGetListConsole-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045                 \textcolor{comment}{// upload game}}
+\DoxyCodeLine{00046                 \$sqlUploadGame = \textcolor{stringliteral}{"{}INSERT INTO game  (name, description, imageName, idConsole, idFile)}}
+\DoxyCodeLine{00047 \textcolor{stringliteral}{                VALUES (:insert\_name, :insert\_description, :insert\_imageName, :insert\_idConsole, :insert\_idFile)"{}};}
+\DoxyCodeLine{00048                 \$this-\/>psUploadGame = \$this-\/>dbh-\/>prepare(\$sqlUploadGame);}
+\DoxyCodeLine{00049                 \$this-\/>psUploadGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051                 \textcolor{comment}{// upload file}}
+\DoxyCodeLine{00052                 \$sqlUploadFile = \textcolor{stringliteral}{"{}INSERT INTO file  (filename, dateUpdate)}}
+\DoxyCodeLine{00053 \textcolor{stringliteral}{                VALUES (:insert\_filename, NOW() )"{}};}
+\DoxyCodeLine{00054                 \$this-\/>psUploadFile = \$this-\/>dbh-\/>prepare(\$sqlUploadFile);}
+\DoxyCodeLine{00055                 \$this-\/>psUploadFile-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057                 \textcolor{comment}{// update game}}
+\DoxyCodeLine{00058                 \$sqlUpdateGane = \textcolor{stringliteral}{"{}UPDATE game  SET name = :update\_name, description = :update\_description, idConsole = :update\_idConsole WHERE id = :update\_id"{}};}
+\DoxyCodeLine{00059                 \$this-\/>psUpdateGame = \$this-\/>dbh-\/>prepare(\$sqlUpdateGane);}
+\DoxyCodeLine{00060                 \$this-\/>psUpdateGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062                 \textcolor{comment}{// get folder name of console}}
+\DoxyCodeLine{00063                 \$sqlGetNameConsoleFolder = \textcolor{stringliteral}{"{}SELECT folderName FROM consol WHERE id = :console\_id"{}};}
+\DoxyCodeLine{00064                 \$this-\/>psGetNameConsoleFolder = \$this-\/>dbh-\/>prepare(\$sqlGetNameConsoleFolder);}
+\DoxyCodeLine{00065                 \$this-\/>psGetNameConsoleFolder-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00066             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00067                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00068                 die();}
+\DoxyCodeLine{00069             \}}
+\DoxyCodeLine{00070         \}}
+\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00082}\mbox{\hyperlink{class_administrator_abbed68c25b9bdf4505486f191818dc7e}{00082}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_abbed68c25b9bdf4505486f191818dc7e}{addGame}}(\textcolor{keywordtype}{string} \$name, \textcolor{keywordtype}{string} \$description, \textcolor{keywordtype}{string} \$imageName, \textcolor{keywordtype}{int} \$consoleId, \$gameFileName)}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_administrator_a50c924aafa709b3032fedb0c41a944bf}{uploadGame}}(\$gameFileName, \$consoleId) \&\& \$this-\/>\mbox{\hyperlink{class_administrator_a73706dbcb06c2ae9ffc11033ad1266c3}{uploadGameImage}}(\$imageName)) \{}
+\DoxyCodeLine{00086             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00087                 \$this-\/>psUploadFile-\/>execute(array(\textcolor{stringliteral}{':insert\_filename'} => \$gameFileName));}
+\DoxyCodeLine{00088             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00089                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00090                 die();}
+\DoxyCodeLine{00091             \}}
+\DoxyCodeLine{00092             \$lastInsertId = \$this-\/>dbh-\/>lastInsertId();}
+\DoxyCodeLine{00093             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00094                 \$this-\/>psUploadGame-\/>execute(array(\textcolor{stringliteral}{':insert\_name'} => \$name, \textcolor{stringliteral}{':insert\_description'} => \$description, \textcolor{stringliteral}{':insert\_imageName'} => \$imageName, \textcolor{stringliteral}{':insert\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':insert\_idFile'} => \$lastInsertId));}
+\DoxyCodeLine{00095             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00096                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00097                 die();}
+\DoxyCodeLine{00098             \}}
+\DoxyCodeLine{00099         \}}
+\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00108}\mbox{\hyperlink{class_administrator_a50c924aafa709b3032fedb0c41a944bf}{00108}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_a50c924aafa709b3032fedb0c41a944bf}{uploadGame}}(\$gameFileName, \$consoleId)}
+\DoxyCodeLine{00109     \{}
+\DoxyCodeLine{00110         \$uploadIsValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{00111         \$target\_dir = \textcolor{stringliteral}{"{}../games/"{}} . \$this-\/>\mbox{\hyperlink{class_administrator_aa81b23c6aa225a1278e699194a441cd3}{getConsoleFolderName}}(\$consoleId) . \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{00114         \$uploadOk = 1;}
+\DoxyCodeLine{00115         \$fileType = strtolower(pathinfo(\$target\_file, PATHINFO\_EXTENSION));}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117         \textcolor{comment}{//rename file}}
+\DoxyCodeLine{00118         \$newfilename = \$gameFileName . \textcolor{charliteral}{'.'} . \$fileType;}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121         \textcolor{comment}{// Check if file already exists}}
+\DoxyCodeLine{00122         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
+\DoxyCodeLine{00123             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
+\DoxyCodeLine{00124             \$uploadOk = 0;}
+\DoxyCodeLine{00125         \}}
+\DoxyCodeLine{00126         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
+\DoxyCodeLine{00127             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
+\DoxyCodeLine{00128             \textcolor{comment}{// if everything is ok, try to upload file}}
+\DoxyCodeLine{00129         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00130             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
+\DoxyCodeLine{00131                 \$uploadIsValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{00132             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00133                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
+\DoxyCodeLine{00134             \}}
+\DoxyCodeLine{00135         \}}
+\DoxyCodeLine{00136         \textcolor{keywordflow}{return} \$uploadIsValid;}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00147}\mbox{\hyperlink{class_administrator_abde4a60dbae06284e393b4b2c3d6c631}{00147}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_abde4a60dbae06284e393b4b2c3d6c631}{updateGame}}(\$idGame, \$name, \$description, \$consoleId)}
+\DoxyCodeLine{00148     \{}
+\DoxyCodeLine{00149         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00150             \$this-\/>psUpdateGame-\/>execute(array(\textcolor{stringliteral}{':update\_name'} => \$name, \textcolor{stringliteral}{':update\_description'} => \$description, \textcolor{stringliteral}{':update\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':update\_id'} => \$idGame));}
+\DoxyCodeLine{00151         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00152             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00153             die();}
+\DoxyCodeLine{00154         \}}
+\DoxyCodeLine{00155     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00162}\mbox{\hyperlink{class_administrator_a73706dbcb06c2ae9ffc11033ad1266c3}{00162}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_a73706dbcb06c2ae9ffc11033ad1266c3}{uploadGameImage}}(\$imageFileName)}
+\DoxyCodeLine{00163     \{}
+\DoxyCodeLine{00164         \$uploadIsValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{00165         \$target\_dir = \textcolor{stringliteral}{"{}img/games/"{}};}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{00168         \$uploadOk = 1;}
+\DoxyCodeLine{00169         \$fileType = strtolower(pathinfo(\$target\_file, PATHINFO\_EXTENSION));}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171         \textcolor{comment}{//rename file}}
+\DoxyCodeLine{00172         \$newfilename = \$imageFileName;}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174         \textcolor{comment}{// Check if file already exists}}
+\DoxyCodeLine{00175         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
+\DoxyCodeLine{00176             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
+\DoxyCodeLine{00177             \$uploadOk = 0;}
+\DoxyCodeLine{00178         \}}
+\DoxyCodeLine{00179         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
+\DoxyCodeLine{00180             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
+\DoxyCodeLine{00181             \textcolor{comment}{// if everything is ok, try to upload file}}
+\DoxyCodeLine{00182         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00183             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
+\DoxyCodeLine{00184                 \$uploadIsValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{00185             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00186                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
+\DoxyCodeLine{00187             \}}
+\DoxyCodeLine{00188         \}}
+\DoxyCodeLine{00189         \textcolor{keywordflow}{return} \$uploadIsValid;}
+\DoxyCodeLine{00190     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00197}\mbox{\hyperlink{class_administrator_aa81b23c6aa225a1278e699194a441cd3}{00197}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_aa81b23c6aa225a1278e699194a441cd3}{getConsoleFolderName}}(\$id)}
+\DoxyCodeLine{00198     \{}
+\DoxyCodeLine{00199         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{00200         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00201             \$this-\/>psGetNameConsoleFolder-\/>execute(array(\textcolor{stringliteral}{':console\_id'} => \$id));}
+\DoxyCodeLine{00202             \$returnArray = \$this-\/>psGetNameConsoleFolder-\/>fetchAll();}
+\DoxyCodeLine{00203         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00204             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00205             die();}
+\DoxyCodeLine{00206         \}}
+\DoxyCodeLine{00207         \textcolor{keywordflow}{return} \$returnArray[0][\textcolor{stringliteral}{'folderName'}];}
+\DoxyCodeLine{00208     \}}
+\DoxyCodeLine{\Hypertarget{administrator_8php_source_l00214}\mbox{\hyperlink{class_administrator_ab81ef116a91497c1ed1018f502c1d25c}{00214}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_administrator_ab81ef116a91497c1ed1018f502c1d25c}{getListConsole}}()}
+\DoxyCodeLine{00215     \{}
+\DoxyCodeLine{00216         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{00217         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00218             \$this-\/>psGetListConsole-\/>execute();}
+\DoxyCodeLine{00219             \$returnArray = \$this-\/>psGetListConsole-\/>fetchAll();}
+\DoxyCodeLine{00220         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00221             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00222             die();}
+\DoxyCodeLine{00223         \}}
+\DoxyCodeLine{00224         \textcolor{keywordflow}{return} \$returnArray;}
+\DoxyCodeLine{00225     \}}
+\DoxyCodeLine{00226 \}}
+
+\end{DoxyCode}

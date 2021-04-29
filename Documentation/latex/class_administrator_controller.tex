@@ -21,11 +21,11 @@ Collaboration diagram for Administrator\+Controller\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_administrator_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_administrator_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
-{\bfseries form\+Handler} ()
+\mbox{\hyperlink{class_administrator_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
 \item 
-\mbox{\Hypertarget{class_administrator_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_administrator_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
-{\bfseries print\+HTML} ()
+\mbox{\hyperlink{class_administrator_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_administrator_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
@@ -41,6 +41,277 @@ Collaboration diagram for Administrator\+Controller\+:\nopagebreak
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{administrator_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{administrator_controller_8php_source}{administrator\+Controller.\+php}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_administrator_controller_a095c5d389db211932136b53f25f39685}\label{class_administrator_controller_a095c5d389db211932136b53f25f39685}} 
+\index{AdministratorController@{AdministratorController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!AdministratorController@{AdministratorController}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+default constructor 
+
+Definition at line \mbox{\hyperlink{administrator_controller_8php_source_l00192}{192}} of file \mbox{\hyperlink{administrator_controller_8php_source}{administrator\+Controller.\+php}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193   \{}
+\DoxyCodeLine{00194     \$this-\/>administrator  = \textcolor{keyword}{new} \mbox{\hyperlink{class_administrator}{Administrator}}();}
+\DoxyCodeLine{00195     \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
+\DoxyCodeLine{00196     \$this-\/>categorie = \textcolor{keyword}{new} \mbox{\hyperlink{class_categories}{Categories}}();}
+\DoxyCodeLine{00197   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_administrator_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_administrator_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\index{AdministratorController@{AdministratorController}!formHandler@{formHandler}}
+\index{formHandler@{formHandler}!AdministratorController@{AdministratorController}}
+\doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
+{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+used to handle if the user has resquest something
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{administrator_controller_8php_source_l00023}{23}} of file \mbox{\hyperlink{administrator_controller_8php_source}{administrator\+Controller.\+php}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024   \{}
+\DoxyCodeLine{00025     \$result = \textcolor{keyword}{null};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00029       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00030       \textcolor{comment}{//redirige l'utilisateur qui n'a pas les bon droits}}
+\DoxyCodeLine{00031       \$this-\/>allowAccessTo(array(1));}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     \textcolor{comment}{// update game}}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updateGame"{}}) \{}
+\DoxyCodeLine{00035       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'id'}])) \{}
+\DoxyCodeLine{00036         \$requestGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'id'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00037         \$this-\/>idGameToUpdate = \$requestGame;}
+\DoxyCodeLine{00038       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00039         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00040         exit;}
+\DoxyCodeLine{00041       \}}
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// add game categorie}}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addGameCategorie"{}}) \{}
+\DoxyCodeLine{00046       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'id'}])) \{}
+\DoxyCodeLine{00047         \$requestGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'id'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00048         \$this-\/>idGameToUpdate = \$requestGame;}
+\DoxyCodeLine{00049       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00050         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00051         exit;}
+\DoxyCodeLine{00052       \}}
+\DoxyCodeLine{00053     \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{comment}{// add categorie to game}}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addGameCategorieAdd"{}}) \{}
+\DoxyCodeLine{00057       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{00058         \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00059       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00060         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00061         exit;}
+\DoxyCodeLine{00062       \}}
+\DoxyCodeLine{00063       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idCategorie'}])) \{}
+\DoxyCodeLine{00064         \$idCategorie = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idCategorie'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00065       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00066         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00067         exit;}
+\DoxyCodeLine{00068       \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070       \$this-\/>categorie-\/>addCategorieToGame(\$idGame, \$idCategorie);}
+\DoxyCodeLine{00071       header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00072       exit;}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// delete categorie from a game}}
+\DoxyCodeLine{00076     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}delGameCategorie"{}}) \{}
+\DoxyCodeLine{00077       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{00078         \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00079       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00080         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00081         exit;}
+\DoxyCodeLine{00082       \}}
+\DoxyCodeLine{00083       \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idCategorie'}])) \{}
+\DoxyCodeLine{00084         \$idCategorie = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idCategorie'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00085       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00086         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00087         exit;}
+\DoxyCodeLine{00088       \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090       \$this-\/>categorie-\/>delCategorieFromGame(\$idGame, \$idCategorie);}
+\DoxyCodeLine{00091       header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00092       exit;}
+\DoxyCodeLine{00093     \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{comment}{//add game}}
+\DoxyCodeLine{00096     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addGameUpload"{}}) \{}
+\DoxyCodeLine{00097       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'name'}])) \{}
+\DoxyCodeLine{00098         \$name = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'name'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00099       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00100         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00101         exit;}
+\DoxyCodeLine{00102       \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'description'}])) \{}
+\DoxyCodeLine{00105         \$description = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'description'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00106       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00107         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00108         exit;}
+\DoxyCodeLine{00109       \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'imageName'}])) \{}
+\DoxyCodeLine{00112         \$imageName = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'imageName'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00113       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00114         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00115         exit;}
+\DoxyCodeLine{00116       \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'console'}])) \{}
+\DoxyCodeLine{00119         \$consoleId = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'console'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00120       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00121         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00122         exit;}
+\DoxyCodeLine{00123       \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'gameFileName'}])) \{}
+\DoxyCodeLine{00126         \$gameFileName = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'gameFileName'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00127       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00128         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00129         exit;}
+\DoxyCodeLine{00130       \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133       \$this-\/>administrator-\/>addGame(\$name, \$description, \$imageName, \$consoleId, \$gameFileName);}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135       header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00136       exit;}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \textcolor{comment}{//add game}}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updateGameUpdate"{}}) \{}
+\DoxyCodeLine{00141       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'name'}])) \{}
+\DoxyCodeLine{00142         \$name = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'name'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00143       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00144         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00145         exit;}
+\DoxyCodeLine{00146       \}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'description'}])) \{}
+\DoxyCodeLine{00149         \$description = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'description'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00150       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00151         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00152         exit;}
+\DoxyCodeLine{00153       \}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'console'}])) \{}
+\DoxyCodeLine{00156         \$consoleId = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'console'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00157       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00158         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00159         exit;}
+\DoxyCodeLine{00160       \}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{00163         \$idGame = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00164       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00165         header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00166         exit;}
+\DoxyCodeLine{00167       \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170       \$this-\/>administrator-\/>updateGame(\$idGame, \$name, \$description, \$consoleId);}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172       header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00173       exit;}
+\DoxyCodeLine{00174     \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addCategorie"{}}) \{}
+\DoxyCodeLine{00178       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'name'}])) \{}
+\DoxyCodeLine{00179         \$name = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'name'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00180       \}}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182       \textcolor{keywordflow}{if} (isset(\$name)) \{}
+\DoxyCodeLine{00183         \$result = \$this-\/>categorie-\/>addCategorie(\$name);}
+\DoxyCodeLine{00184       \}}
+\DoxyCodeLine{00185     \}}
+\DoxyCodeLine{00186   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_administrator_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_administrator_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\index{AdministratorController@{AdministratorController}!printHTML@{printHTML}}
+\index{printHTML@{printHTML}!AdministratorController@{AdministratorController}}
+\doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
+{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+print the html for the resquested content
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
+
+
+
+Definition at line \mbox{\hyperlink{administrator_controller_8php_source_l00205}{205}} of file \mbox{\hyperlink{administrator_controller_8php_source}{administrator\+Controller.\+php}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206   \{}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208     \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
+\DoxyCodeLine{00209 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{00210     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{00211     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00212       \$html .= \$this-\/>htmlAdministratorHome();}
+\DoxyCodeLine{00213     \}}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addGame"{}}) \{}
+\DoxyCodeLine{00216       \$html .= \$this-\/>htmlNewGame();}
+\DoxyCodeLine{00217     \}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updateGame"{}}) \{}
+\DoxyCodeLine{00220       \$html .= \$this-\/>htmlUpdateGame();}
+\DoxyCodeLine{00221     \}}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addCategorie"{}}) \{}
+\DoxyCodeLine{00224       \$html .= \$this-\/>htmlAddCategorie();}
+\DoxyCodeLine{00225     \}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addGameCategorie"{}}) \{}
+\DoxyCodeLine{00228       \$html .= \$this-\/>htmlAddCategorieToGame();}
+\DoxyCodeLine{00229     \}}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{00233     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{00234     echo \$html;}
+\DoxyCodeLine{00235   \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-controllers/administrator\+Controller.\+php\end{DoxyCompactItemize}
+controllers/\mbox{\hyperlink{administrator_controller_8php}{administrator\+Controller.\+php}}\end{DoxyCompactItemize}

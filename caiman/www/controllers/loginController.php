@@ -1,72 +1,90 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model login
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the login page
+ */
 class LoginController extends mainController implements iController
- {
-    public $login;
-    private $e = "";
-    private $errorMessage = null;
+{
+  public $login;
+  private $e = "";
+  private $errorMessage = null;
 
-    public function __construct()
-    {
-        $this->login  = new Login();
+  /**
+   * default constructor
+   */
+  public function __construct()
+  {
+    $this->login  = new Login();
+  }
+
+  /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
+  public function formHandler()
+  {
+    if (isset($_GET['e'])) {
+      $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
     }
 
-    public function formHandler()
-    {
-        if (isset($_GET['e'])) {
-            $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
-        }
+    if ($this->e == "login") {
+      if (isset($_POST['username'])) {
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+      }
+      if (isset($_POST['password'])) {
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+      }
 
-        if ($this->e == "login") {
-            if (isset($_POST['username'])) {
-                $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            }
-            if (isset($_POST['password'])) {
-                $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-            }
-            
-            if (isset($password) && isset( $username)) {
-                $this->login->search_username = $username;
-                $this->login->search_password = $password;
-            
-                $usersInfos = $this->login->checkLogin();
-            
-            if (isset($usersInfos)) {
-                $_SESSION['user'] = new User($usersInfos[0]['username'],$usersInfos[0]['email'],$usersInfos[0]['idRole'],$usersInfos[0]['id']);
-                header('Location:'.$_SERVER['HTTP_REFERER']);
-                exit;
-            }
-            }
+      if (isset($password) && isset($username)) {
+        $this->login->search_username = $username;
+        $this->login->search_password = $password;
+
+        $usersInfos = $this->login->checkLogin();
+
+        if (isset($usersInfos)) {
+          $_SESSION['user'] = new User($usersInfos[0]['username'], $usersInfos[0]['email'], $usersInfos[0]['idRole'], $usersInfos[0]['id']);
+          header('Location:' . $_SERVER['HTTP_REFERER']);
+          exit;
         }
+      }
     }
+  }
 
 
-   
-    public function printHTML()
-    {
+ /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
+  public function printHTML()
+  {
 
-        $html = '<main  style="margin-top:20px ">
+    $html = '<main  style="margin-top:20px ">
         <div class="container-md">';
-        $html .= $this->errorHandler();
-        $html .= $this->htmlFormHead();
+    $html .= $this->errorHandler();
+    $html .= $this->htmlFormHead();
 
-        $html .= "</div></main> ";
+    $html .= "</div></main> ";
 
-        echo $html;
-    }
+    echo $html;
+  }
 
+/**
+ * create the form of login
+ *
+ * @return void
+ */
+  private function htmlFormLogin()
+  {
+    $html = "";
 
-    private function htmlFormLogin()
-    {
-        $html = "";
-
-        $html = ' 
+    $html = ' 
         <div style="width: 70%; margin: auto;">
         <h2>Login</h2>
         <form action="?r=login&e=login" method="post">
@@ -88,51 +106,60 @@ class LoginController extends mainController implements iController
           </form>
       </div>';
 
-      return $html;
-    }
+    return $html;
+  }
 
-    private function htmlFormSignin()
-    {
-        $html = "";
+  /**
+   * create the form of sign in
+   *
+   * @return void
+   */
+  private function htmlFormSignin()
+  {
+    $html = "";
 
-        $html = '
+    $html = '
         <div style="width: 70%; margin: auto;">
         <h2>Sign In</h2>
         <p>Sign-Up to Caiman to play and discover old games.</p>
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalSign">Sign-up</button>
       </div>';
 
-      return $html;
-    }
+    return $html;
+  }
 
-    private function htmlFormHead()
-    {
-        $html = "";
+  /**
+   * create the head of the page
+   *
+   * @return void
+   */
+  private function htmlFormHead()
+  {
+    $html = "";
 
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
-          
-          $html .= '<div class="container">
+
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           ';
-          $html .= $this->htmlFormLogin();
-          $html .='
+    $html .= $this->htmlFormLogin();
+    $html .= '
           </div>
           <div class="col-sm">
           ';
-          $html .= $this->htmlFormSignin();
-          $html .='
+    $html .= $this->htmlFormSignin();
+    $html .= '
           </div>
         </div>
       </div>';
 
-      $html.='
+    $html .= '
           
         </div>
       </div>';
 
-      return $html;
-    }
-    
+    return $html;
+  }
 }

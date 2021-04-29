@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['recherchfull_201',['recherchFull',['../class_games_controller.html#aef2cd8e0cc88f5f0ea326a01bf0c0e1b',1,'GamesController']]],
-  ['recherchnotfull_202',['recherchNotFull',['../class_games_controller.html#a9a1d2b547b4417fd1c67f3146fd6b204',1,'GamesController']]],
-  ['removegamefromfavoris_203',['removeGameFromFavoris',['../class_games.html#a242ef0ca96fa5fed83ebb6f40b53d1b7',1,'Games']]]
+  ['recherchfull_158',['recherchFull',['../class_games_controller.html#a4c9def4089531a13c269e6e6b094ea7a',1,'GamesController']]],
+  ['recherchnotfull_159',['recherchNotFull',['../class_games_controller.html#a0519b3d4cfe849b0177ee41849911cc4',1,'GamesController']]],
+  ['removegamefromfavoris_160',['removeGameFromFavoris',['../class_games.html#a3d66aa5ff1ff3a5a202c63e14da4cb7f',1,'Games']]]
 ];

@@ -69,6 +69,7 @@ class Administrator
             }
         }
     }
+
     /**
      * add a game to the database
      *
@@ -76,7 +77,7 @@ class Administrator
      * @param string $description
      * @param string $imageName
      * @param integer $consoleId
-     * @param [type] $gameFileName
+     * @param string $gameFileName
      * @return void
      */
     public function addGame(string $name, string $description, string $imageName, int $consoleId, $gameFileName)
@@ -98,11 +99,12 @@ class Administrator
             }
         }
     }
+
     /**
      * upload a game 
      *
-     * @param [type] $gameFileName
-     * @param [type] $consoleId
+     * @param int $gameFileName
+     * @param int $consoleId
      * @return void
      */
     public function uploadGame($gameFileName, $consoleId)
@@ -135,13 +137,14 @@ class Administrator
         }
         return $uploadIsValid;
     }
+    
 /**
  * update da of a game
  *
- * @param [type] $idGame
- * @param [type] $name
- * @param [type] $description
- * @param [type] $consoleId
+ * @param int $idGame
+ * @param string $name
+ * @param string $description
+ * @param int $consoleId
  * @return void
  */
     public function updateGame($idGame, $name, $description, $consoleId)
@@ -153,10 +156,11 @@ class Administrator
             die();
         }
     }
+
 /**
  * upload an image
  *
- * @param [type] $imageFileName
+ * @param string $imageFileName
  * @return void
  */
     public function uploadGameImage($imageFileName)
@@ -188,11 +192,12 @@ class Administrator
         }
         return $uploadIsValid;
     }
+
 /**
  * get the path name of an console
  *
- * @param [type] $id
- * @return void
+ * @param int $id
+ * @return array of game
  */
     public function getConsoleFolderName($id)
     {
@@ -209,7 +214,7 @@ class Administrator
 /**
  * returns list of all consoles
  *
- * @return void
+ * @return array of game
  */
     public function getListConsole()
     {

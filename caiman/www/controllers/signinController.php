@@ -1,22 +1,30 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model signin
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request to create an account
+ */
 class SigninController extends mainController implements iController
 {
     public $signin;
     private $e = null;
 
-
+/**
+ * default contructor
+ */
     public function __construct()
     {
         $this->signin = new Signin();
     }
 
+      /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
     public function formHandler()
     {
         if (isset($_GET['e'])) {
@@ -57,7 +65,13 @@ class SigninController extends mainController implements iController
             }
         }
     }
-
+    
+ /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
     public function printHTML()
     {
     }

@@ -72,6 +72,23 @@
 </li>
 <li><a href="#analyse-fonctionnelle">Analyse fonctionnelle</a>
 <ul>
+<li><a href="#base-de-donn%C3%A9es">Base de données</a>
+<ul>
+<li><a href="#sch%C3%A9ma">Schéma</a></li>
+<li><a href="#table-categorie">Table categorie</a></li>
+<li><a href="#table-console">Table console</a></li>
+<li><a href="#table-emulator">Table emulator</a></li>
+<li><a href="#table-favoritegame">Table favoritegame</a></li>
+<li><a href="#table-file">Table file</a></li>
+<li><a href="#table-filesave">Table filesave</a></li>
+<li><a href="#table-game">Table game</a></li>
+<li><a href="#table-gamehascategorie">Table gamehascategorie</a></li>
+<li><a href="#table-r%C3%B4le">Table rôle</a></li>
+<li><a href="#table-timeingame">Table timeingame</a></li>
+<li><a href="#table-user">Table user</a></li>
+<li><a href="#table-userconfigfile">Table userconfigfile</a></li>
+</ul>
+</li>
 <li><a href="#site-web-caiman">Site web Caiman</a>
 <ul>
 <li><a href="#cr%C3%A9ation-de-compte">Création de compte</a></li>
@@ -79,8 +96,6 @@
 <li><a href="#modification-des-informations-dun-utilisateur">modification des informations d’un utilisateur</a></li>
 <li><a href="#affichage-des-jeux">affichage des jeux</a></li>
 <li><a href="#affichage-dun-profil-utilisateur">affichage d’un profil utilisateur</a></li>
-<li><a href="#affichage-des-jeux-1">affichage des jeux</a></li>
-<li><a href="#affichage-dun-profil-utilisateur-1">affichage d’un profil utilisateur</a></li>
 <li><a href="#ajout-dun-jeu-%C3%A0-la-base-de-donn%C3%A9es--sur-le-bunker-pour-le-fichier-iso">ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO</a></li>
 <li><a href="#modification-dun-jeu">modification d’un jeu</a></li>
 <li><a href="#administration">Administration</a></li>
@@ -246,11 +261,39 @@
 <p>Il existe un grand nombre de frontend pour émulateur permettant de simplifier l'utilisation pour l’utilisateur mais je n’en ai pas trouvé qui essaie d’atteindre le même but que moi. Le but de Caiman est de permettre de simplifier l’utilisation d'émulateurs et de permettre de synchroniser des sauvegardes tout en fournissant la possibilité de télécharger des jeux.</p>
 <p>Steam représente un niveau de finition dans son interface BigPicture que j’aimerais atteindre. La synchronisation des sauvegardes sur steam est peut être la plus performante si l’on compare avec d’autres boutiques comme l'Epic Game Store ou Origin.</p>
 <h1 id="analyse-fonctionnelle">Analyse fonctionnelle</h1>
+<h2 id="base-de-données">Base de données</h2>
+<h3 id="schéma">Schéma</h3>
+<p>Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l'application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.</p>
+<h3 id="table-categorie">Table categorie</h3>
+<p>Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.</p>
+<h3 id="table-console">Table console</h3>
+<p>Cette table sert à stocker les différentes consoles prises en charge par l'application Caiman. Chaque console doit être reliée à un émulateur.</p>
+<h3 id="table-emulator">Table emulator</h3>
+<p>La table émulateur sert à lister les différents émulateurs disponible pour l'application Ill est possible qu' un émulateur soit compatible avec plusieurs consoles.</p>
+<h3 id="table-favoritegame">Table favoritegame</h3>
+<p>Sert à lister les jeux favoris des utilisateurs.</p>
+<h3 id="table-file">Table file</h3>
+<p>La table file sert à lister le nom d’un fichier ca peut etre un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur.</p>
+<h3 id="table-filesave">Table filesave</h3>
+<p>Sert  faire le lien entre un jeu, un utilisateur, et un fichier de sauvegarde. Permet donc de connaître la sauvegarde d’un jeu particulier d'un utilisateur.</p>
+<h3 id="table-game">Table game</h3>
+<p>Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console sert à faire savoir à l'application quel émulateur doit être utilisé.</p>
+<h3 id="table-gamehascategorie">Table gamehascategorie</h3>
+<p>Sert à assigner des catégorie a des jeux.</p>
+<h3 id="table-rôle">Table rôle</h3>
+<p>Sert à lister les différents rôles (utilisateur, administrateur) ne sert que pour le site web sachant que toute la partie administration est sur le site.</p>
+<h3 id="table-timeingame">Table timeingame</h3>
+<p>Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu.</p>
+<h3 id="table-user">Table user</h3>
+<p>Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l'application.</p>
+<h3 id="table-userconfigfile">Table userconfigfile</h3>
+<p>Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration</p>
 <h2 id="site-web-caiman">Site web Caiman</h2>
 <h3 id="création-de-compte">Création de compte</h3>
 <p>L’utilisateur du site a la possibilité de créer un compte qui sera commun au site et à l'application. La création de compte nécessite de renseigner son email, de donner un nom d’utilisateur ainsi que un mot de passe.</p>
 <h3 id="connexion">connexion</h3>
 <p>La connexion à son compte utilisateur permet de modifier nos informations de compte et d’ajouter ou de supprimer des jeux à la liste de favoris.</p>
+<p>Si l’utilisateur oublie son mot de passe il a la possibilité de le réinitialiser. L’utilisateur qui décide de réinitialiser son mot de passe reçoit un mail contenant un lien de réinitialisation.</p>
 <h3 id="modification-des-informations-dun-utilisateur">modification des informations d’un utilisateur</h3>
 <p>Un utilisateur connecté a la possibilité de modifier ces informations:</p>
 <ul>
@@ -260,28 +303,13 @@
 </ul>
 <h3 id="affichage-des-jeux">affichage des jeux</h3>
 <p>Tous les utilisateurs ont la possibilité d’afficher la liste de jeux disponible. Il n’y a pas de restriction particulière.</p>
-<p>Les informations disponible pour chaque jeux sont les suivantes:</p>
-<ul>
-<li>Nom</li>
-<li>Description</li>
-<li>Catégories du jeu</li>
-</ul>
-<h3 id="affichage-dun-profil-utilisateur">affichage d’un profil utilisateur</h3>
-<p>Il est possible de consulter la page personnelle d'un utilisateur si celui-ci a rendu son compte publique. Les informations disponibles sont celle ci:</p>
-<ul>
-<li>Nom d’utilisateurs</li>
-<li>Jeux favoris</li>
-<li>Nombres d’heures de jeux sur chaque jeux</li>
-</ul>
-<h3 id="affichage-des-jeux-1">affichage des jeux</h3>
-<p>Tous les utilisateurs ont la possibilité d’afficher la liste de jeux disponible. Il n’y a pas de restriction particulière.</p>
 <p>Les information disponible pour chaque jeux sont les suivant:</p>
 <ul>
 <li>Nom</li>
 <li>Description</li>
 <li>Catégories du jeu</li>
 </ul>
-<h3 id="affichage-dun-profil-utilisateur-1">affichage d’un profil utilisateur</h3>
+<h3 id="affichage-dun-profil-utilisateur">affichage d’un profil utilisateur</h3>
 <p>Il est possible de consulter la page personnelle d'un utilisateur si celui-ci a rendu son compte publique. Les informations disponibles sont celle ci:</p>
 <ul>
 <li>Nom d’utilisateurs</li>

@@ -1,0 +1,63 @@
+\hypertarget{login_8php_source}{}\doxysection{login.\+php}
+\label{login_8php_source}\index{models/login.php@{models/login.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00009}\mbox{\hyperlink{class_login}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{class_login}{Login}} \{}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     \textcolor{keyword}{private} \$dbh = \textcolor{keyword}{null};}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013     \textcolor{keyword}{private} \$psLogin = \textcolor{keyword}{null};}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keyword}{public} \$search\_username = \textcolor{keyword}{null};}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keyword}{public} \$search\_password = \textcolor{keyword}{null};}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{keyword}{public} \$arrayInfo = \textcolor{keyword}{null};}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{keyword}{public} \textcolor{keyword}{function} \_\_construct()}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00024             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00025                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{00026                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{00027                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{00028                 )); }
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030                 \$sqllogin = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username = :search\_username "{}};}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032                 \$this-\/>psLogin = \$this-\/>dbh-\/>prepare(\$sqllogin);}
+\DoxyCodeLine{00033                 \$this-\/>psLogin-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00037                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00038                 die();}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00047}\mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{00047}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{checkLogin}}()}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00051             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
+\DoxyCodeLine{00052             \$result = \$this-\/>psLogin-\/>fetchAll();}
+\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
+\DoxyCodeLine{00055                     \$returnArray = \$result;}
+\DoxyCodeLine{00056                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
+\DoxyCodeLine{00057                 \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00058                 \{}
+\DoxyCodeLine{00059                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
+\DoxyCodeLine{00060                 \}}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00064             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00065             die();}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} \$returnArray;}
+\DoxyCodeLine{00068     \}}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}

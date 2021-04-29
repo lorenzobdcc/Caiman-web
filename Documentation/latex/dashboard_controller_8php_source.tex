@@ -1,0 +1,238 @@
+\hypertarget{dashboard_controller_8php_source}{}\doxysection{dashboard\+Controller.\+php}
+\label{dashboard_controller_8php_source}\index{controllers/dashboardController.php@{controllers/dashboardController.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00010 include\_once \textcolor{stringliteral}{"{}./models/class.php"{}};}
+\DoxyCodeLine{\Hypertarget{dashboard_controller_8php_source_l00011}\mbox{\hyperlink{class_dashboard_controller}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{class_dashboard_controller}{DashboardController}} \textcolor{keyword}{extends} mainController implements \mbox{\hyperlink{interfacei_controller}{iController}}}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013     \textcolor{keyword}{public} \$game;}
+\DoxyCodeLine{00014     \textcolor{keyword}{private} \$e = \textcolor{keyword}{null};}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{\Hypertarget{dashboard_controller_8php_source_l00021}\mbox{\hyperlink{class_dashboard_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00021}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_dashboard_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023         \$this-\/>allowAccessTo(array(1, 3));}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \$oldPassword = \textcolor{keyword}{null};}
+\DoxyCodeLine{00026         \$newPasswordRepeat = \textcolor{keyword}{null};}
+\DoxyCodeLine{00027         \$newPassword = \textcolor{keyword}{null};}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00030             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032         \textcolor{comment}{// form update}}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
+\DoxyCodeLine{00034             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'oldPassword'}])) \{}
+\DoxyCodeLine{00035                 \$oldPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'oldPassword'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00036             \}}
+\DoxyCodeLine{00037             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPassword'}])) \{}
+\DoxyCodeLine{00038                 \$newPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPassword'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPasswordRepeat'}])) \{}
+\DoxyCodeLine{00041                 \$newPasswordRepeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPasswordRepeat'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00042             \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{keywordflow}{if} (isset(\$oldPassword) \&\& isset(\$newPassword) \&\& isset(\$newPasswordRepeat)) \{}
+\DoxyCodeLine{00045                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePassword(\$newPassword, \$newPasswordRepeat, \$oldPassword);}
+\DoxyCodeLine{00046             \}}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{comment}{// update if account if visible or not}}
+\DoxyCodeLine{00050         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePrivateAccount"{}}) \{}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{00053                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePrivateAccount();}
+\DoxyCodeLine{00054                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{\Hypertarget{dashboard_controller_8php_source_l00062}\mbox{\hyperlink{class_dashboard_controller_a095c5d389db211932136b53f25f39685}{00062}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_dashboard_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
+\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{\Hypertarget{dashboard_controller_8php_source_l00073}\mbox{\hyperlink{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9}{00073}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9}{printHTML}}()}
+\DoxyCodeLine{00074     \{}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{00077 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{00078         echo \$\_SESSION[\textcolor{stringliteral}{'error'}];}
+\DoxyCodeLine{00079         \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00082             \$html .= \$this-\/>htmlFormHead();}
+\DoxyCodeLine{00083             \$html .= \$this-\/>htmlFavoriteGames();}
+\DoxyCodeLine{00084             \$html .= \$this-\/>htmlGameTime();}
+\DoxyCodeLine{00085         \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
+\DoxyCodeLine{00088             \$html .= \$this-\/>\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{htmlFormUpdatePassword}}();}
+\DoxyCodeLine{00089         \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         echo \$html;}
+\DoxyCodeLine{00094     \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00101     \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormHead()}
+\DoxyCodeLine{00102     \{}
+\DoxyCodeLine{00103         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         \$html .= \textcolor{stringliteral}{'<div class="{} jumbotron DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}>'};}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \$html .= \textcolor{stringliteral}{'<div class="{}container"{}>}}
+\DoxyCodeLine{00108 \textcolor{stringliteral}{        <div class="{}row"{}><h2>User\(\backslash\)'s Informations</h2></div>}}
+\DoxyCodeLine{00109 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{00110 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00111 \textcolor{stringliteral}{            <ul class="{}list-\/group"{}>'};}
+\DoxyCodeLine{00112         \$html .= \textcolor{stringliteral}{'<li class="{}list-\/group-\/item"{}>Username: '} . \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>username . \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{00113         \$html .= \textcolor{stringliteral}{'<li class="{}list-\/group-\/item"{}>Email: '} . \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>email . \textcolor{stringliteral}{'</li>'};}
+\DoxyCodeLine{00114         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>getPrivateAccount() == 1) \{}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116             \$html .= \textcolor{stringliteral}{'<li class="{}list-\/group-\/item"{}>Your account is not visible for other users</li>'};}
+\DoxyCodeLine{00117         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00118             \$html .= \textcolor{stringliteral}{'<li class="{}list-\/group-\/item"{}>Your account is visible for other users</li>'};}
+\DoxyCodeLine{00119         \}}
+\DoxyCodeLine{00120         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00121 \textcolor{stringliteral}{            </ul>}}
+\DoxyCodeLine{00122 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00123 \textcolor{stringliteral}{            <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00124 \textcolor{stringliteral}{            <div style="{}width: 70\%; margin: auto;"{}>}}
+\DoxyCodeLine{00125 \textcolor{stringliteral}{            <a href="{}?r=dashboard\&e=updatePassword"{} class="{}btn btn-\/warning my-\/2"{}>Update password</a>}}
+\DoxyCodeLine{00126 \textcolor{stringliteral}{            <a href="{}?r=dashboard\&e=updatePrivateAccount"{} class="{}btn btn-\/warning my-\/2"{}>Update if account is private</a>}}
+\DoxyCodeLine{00127 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00128 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00129 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00132 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00133 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00134 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00144     \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFavoriteGames()}
+\DoxyCodeLine{00145     \{}
+\DoxyCodeLine{00146         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex  jumbotron DarkJumbotron  width100"{} style="{}background-\/color: \#161b22;"{} >}}
+\DoxyCodeLine{00147 \textcolor{stringliteral}{        <div class="{}container"{}>}}
+\DoxyCodeLine{00148 \textcolor{stringliteral}{        <div class="{}row"{}><h2>User\(\backslash\)'s favorites games</h2></div>}}
+\DoxyCodeLine{00149 \textcolor{stringliteral}{        <div class="{}row cardGameBox box"{}>}}
+\DoxyCodeLine{00150 \textcolor{stringliteral}{        '};}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152         \$listGamesBrut =  \$this-\/>game-\/>getFavoriteGamesOfUser(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser);}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157             \$html .= \$this-\/>createCardHTML(\$games);}
+\DoxyCodeLine{00158         \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160         \$html .= \textcolor{stringliteral}{'</div>}}
+\DoxyCodeLine{00161 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00162 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00163         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00164     \}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00171     \textcolor{keyword}{private} \textcolor{keyword}{function} htmlGameTime()}
+\DoxyCodeLine{00172     \{}
+\DoxyCodeLine{00173         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex  jumbotron DarkJumbotron  width100"{} style="{}background-\/color: \#161b22;"{} >}}
+\DoxyCodeLine{00174 \textcolor{stringliteral}{        <div class="{}container"{}>}}
+\DoxyCodeLine{00175 \textcolor{stringliteral}{        <div class="{}row"{}><h2>User\(\backslash\)'s time in games</h2></div>}}
+\DoxyCodeLine{00176 \textcolor{stringliteral}{        <div class="{}row cardGameBox box"{}>}}
+\DoxyCodeLine{00177 \textcolor{stringliteral}{        '};}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179         \$listGamesBrut =  \$this-\/>game-\/>getListOfGameWithTimeUser(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser);}
+\DoxyCodeLine{00180         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183             \$html .= \$this-\/>createCardHTMLTime(\$games[\textcolor{stringliteral}{'idGame'}]);}
+\DoxyCodeLine{00184         \}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186         \$html .= \textcolor{stringliteral}{'</div>}}
+\DoxyCodeLine{00187 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00188 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00189         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00190     \}}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00199     \textcolor{keyword}{private} \textcolor{keyword}{function} createCardHTML(\$game)}
+\DoxyCodeLine{00200     \{}
+\DoxyCodeLine{00201         \$html = \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00202 \textcolor{stringliteral}{        <div class="{}card cardBootstarp"{} style="{} max-\/width: 15rem;  margin:10px; padding:0; background-\/color: \#161b22; border:2px solid \#28a745;"{}>}}
+\DoxyCodeLine{00203 \textcolor{stringliteral}{        <a href="{}?r=games\&e=detail\&idGame='} . \$game[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{}>}}
+\DoxyCodeLine{00204 \textcolor{stringliteral}{        <img src="{}./img/games/'} . \$game[\textcolor{stringliteral}{'imageName'}] . \textcolor{stringliteral}{'."{} class="{}card-\/img-\/top imageCard"{}  >}}
+\DoxyCodeLine{00205 \textcolor{stringliteral}{        <div class="{}card-\/body "{}>}}
+\DoxyCodeLine{00206 \textcolor{stringliteral}{        <h6 class="{}card-\/title whiteTexte"{}>'} . \$game[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</h5>}}
+\DoxyCodeLine{00207 \textcolor{stringliteral}{        <div class="{}card-\/body "{}>}}
+\DoxyCodeLine{00208 \textcolor{stringliteral}{            '};}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210         \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success cardContent"{} href="{}?r=games\&e=removeFavoris\&idGame='} . \$game[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}><i class="{}fa fa-\/heart "{}></i></a>'};}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00214 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00215 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00216 \textcolor{stringliteral}{        </a>}}
+\DoxyCodeLine{00217 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00218         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00219     \}}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00227     \textcolor{keyword}{private} \textcolor{keyword}{function} createCardHTMLTime(\$game)}
+\DoxyCodeLine{00228     \{}
+\DoxyCodeLine{00229         \$gameDetail = \$this-\/>game-\/>getGameDetail(\$game);}
+\DoxyCodeLine{00230         \$gameDetail = \$gameDetail[0];}
+\DoxyCodeLine{00231         \$gameTime = \$this-\/>game-\/>getTimeInGameUser(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$game);}
+\DoxyCodeLine{00232         \$html = \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00233 \textcolor{stringliteral}{        <div class="{}card cardBootstarp"{} style="{} max-\/width: 15rem; margin:10px; padding:0; background-\/color: \#161b22; border:2px solid \#28a745;"{}>}}
+\DoxyCodeLine{00234 \textcolor{stringliteral}{        <img src="{}./img/games/'} . \$gameDetail[\textcolor{stringliteral}{'imageName'}] . \textcolor{stringliteral}{'."{} class="{}card-\/img-\/top imageCard"{}  >}}
+\DoxyCodeLine{00235 \textcolor{stringliteral}{        <div class="{}card-\/body "{}>}}
+\DoxyCodeLine{00236 \textcolor{stringliteral}{        <h6 class="{}card-\/title whiteTexte"{}>'} . \$gameDetail[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</h5>}}
+\DoxyCodeLine{00237 \textcolor{stringliteral}{            <p class="{}greenTexte"{}>'};}
+\DoxyCodeLine{00238         \$heure = (int)(\$gameTime[0][\textcolor{stringliteral}{'timeInMinute'}] / 60);}
+\DoxyCodeLine{00239         \$minutes = (\$gameTime[0][\textcolor{stringliteral}{'timeInMinute'}] \% 60);}
+\DoxyCodeLine{00240         \textcolor{keywordflow}{if} (\$minutes == 60) \{}
+\DoxyCodeLine{00241             \$heure++;}
+\DoxyCodeLine{00242             \$minutes = 0;}
+\DoxyCodeLine{00243         \}}
+\DoxyCodeLine{00244         \$html .= \$heure . \textcolor{stringliteral}{"{}h"{}} . \$minutes . \textcolor{stringliteral}{"{} minutes"{}};}
+\DoxyCodeLine{00245         \$html .= \textcolor{stringliteral}{' </p>}}
+\DoxyCodeLine{00246 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00247 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00248         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00249     \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{\Hypertarget{dashboard_controller_8php_source_l00256}\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{00256}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{htmlFormUpdatePassword}}()}
+\DoxyCodeLine{00257     \{}
+\DoxyCodeLine{00258         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex p-\/2 jumbotron  width100 DarkJumbotron "{} style="{}background-\/color: \#161b22;"{} >}}
+\DoxyCodeLine{00259 \textcolor{stringliteral}{        <div class="{}container"{}>}}
+\DoxyCodeLine{00260 \textcolor{stringliteral}{        <div class="{}row"{}><h2>Update your password</h2></div>}}
+\DoxyCodeLine{00261 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{00262 \textcolor{stringliteral}{        }}
+\DoxyCodeLine{00263 \textcolor{stringliteral}{        }}
+\DoxyCodeLine{00264 \textcolor{stringliteral}{        <form action="{}?r=dashboard\&e=updatePassword"{} method="{}post"{}>}}
+\DoxyCodeLine{00265 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00266 \textcolor{stringliteral}{                <label for="{}oldPassword"{}>Old password</label>}}
+\DoxyCodeLine{00267 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}oldPassword"{} name="{}oldPassword"{} placeholder="{}Old password"{}>}}
+\DoxyCodeLine{00268 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00269 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00270 \textcolor{stringliteral}{                <label for="{}newPassword"{}>Password</label>}}
+\DoxyCodeLine{00271 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPassword"{} name="{}newPassword"{} placeholder="{}New password"{}>}}
+\DoxyCodeLine{00272 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00273 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00274 \textcolor{stringliteral}{                <label for="{}newPasswordRepeat"{}>Password</label>}}
+\DoxyCodeLine{00275 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPasswordRepeat"{} name="{}newPasswordRepeat"{} placeholder="{}New password repeat"{}>}}
+\DoxyCodeLine{00276 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00277 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00278 \textcolor{stringliteral}{            <button type="{}submit"{} class="{}btn btn-\/primary"{}>Submit</button>}}
+\DoxyCodeLine{00279 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{00280 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00281 \textcolor{stringliteral}{                </div>}}
+\DoxyCodeLine{00282 \textcolor{stringliteral}{                </div>'};}
+\DoxyCodeLine{00283         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00284     \}}
+\DoxyCodeLine{00285 \}}
+
+\end{DoxyCode}

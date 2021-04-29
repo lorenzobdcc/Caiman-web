@@ -1,67 +1,88 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model download
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-class DownloadController extends mainController implements iController {
-    public $download;
-    private $e = null;
 
-    public function __construct()
-    {
-        $this->download  = new Download();
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle the page of download
+ */
+class DownloadController extends mainController implements iController
+{
+  public $download;
+  private $e = null;
+
+  /**
+   * default constructor
+   */
+  public function __construct()
+  {
+    $this->download  = new Download();
+  }
+
+  /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
+  public function formHandler()
+  {
+    if (isset($_GET['e'])) {
+      $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
     }
-    public function formHandler()
-    {
-        if (isset($_GET['e'])) {
-            $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
-        }
 
-        if ($this->e == null) {
+    if ($this->e == null) {
 
-            if ($_SESSION['user']->idUser != -1) {
-                $this->e = "user";
-            }else {
-                $this->e = "visitor";
-            } 
-        }
-
-        if ($this->e == "download") {
-
-            if ($_SESSION['user']->idUser != -1) {
-                $this->download->downloadCaiman();
-            }else {
-                header('?r=login');
-            } 
-        }
+      if ($_SESSION['user']->idUser != -1) {
+        $this->e = "user";
+      } else {
+        $this->e = "visitor";
+      }
     }
-   
+
+    if ($this->e == "download") {
+
+      if ($_SESSION['user']->idUser != -1) {
+        $this->download->downloadCaiman();
+      } else {
+        header('?r=login');
+      }
+    }
+  }
 
 
-    public function printHTML()
-    {
-        $html = '<main style="margin-top:20px">
+  /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
+  public function printHTML()
+  {
+    $html = '<main style="margin-top:20px">
         <div class="container-md">';
-        $html .= $this->errorHandler();
-        if ($this->e == "user") {
-            $html .= $this->htmlUserDownload();
-        }
-
-        if ($this->e == "visitor") {
-            $html .= $this->htmlVisitorDownload();
-        }
-        $html .= "</div></main> ";
-        echo $html;
+    $html .= $this->errorHandler();
+    if ($this->e == "user") {
+      $html .= $this->htmlUserDownload();
     }
 
-    private function htmlUserDownload()
-    {
-        $html = "";
+    if ($this->e == "visitor") {
+      $html .= $this->htmlVisitorDownload();
+    }
+    $html .= "</div></main> ";
+    echo $html;
+  }
 
-        $html .= '
+  /**
+   * create the html to download Caiman
+   *
+   * @return void
+   */
+  private function htmlUserDownload()
+  {
+    $html = "";
+
+    $html .= '
         <div class="jumbotron jumbotron-fluid DarkJumbotron " style="background-color: #161b22;">
             <div class="row py-lg-5">
               <div class="col-lg-6 col-md-8 mx-auto">
@@ -74,17 +95,22 @@ class DownloadController extends mainController implements iController {
             </div>
         </div>';
 
-      return $html;
-    }
+    return $html;
+  }
 
-    private function htmlHeadVisitor()
-    {
-        $html = "";
+/**
+ * create the html to explian to the user that he has to log in
+ *
+ * @return void
+ */
+  private function htmlHeadVisitor()
+  {
+    $html = "";
 
-        $html .= '<div class="jumbotron  DarkJumbotron width100" style="background-color: #161b22;">
+    $html .= '<div class="jumbotron  DarkJumbotron width100" style="background-color: #161b22;">
         <div class="container">';
-          
-          $html .= '<div class="container">
+
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           <p>To download the application you must create an account or log in.</p>
@@ -92,62 +118,78 @@ class DownloadController extends mainController implements iController {
         </div>
       </div>';
 
-      $html.='
+    $html .= '
           
         </div>
       </div>';
 
-      return $html;
-    }
-    private function htmlVisitorDownload()
-    {
-        $html = $this->htmlHeadVisitor();
+    return $html;
+  }
 
-        $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
+  /**
+   * create the html of download to a visitor
+   *
+   * @return void
+   */
+  private function htmlVisitorDownload()
+  {
+    $html = $this->htmlHeadVisitor();
+
+    $html .= '<div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;"">
         <div class="container">';
-          
-          $html .= '<div class="container">
+
+    $html .= '<div class="container">
         <div class="row">
           <div class="col-sm">
           ';
-          $html .= $this->htmlFormLogin();
-          $html .='
+    $html .= $this->htmlFormLogin();
+    $html .= '
           </div>
           <div class="col-sm">
           ';
-          $html .= $this->htmlFormSignin();
-          $html .='
+    $html .= $this->htmlFormSignin();
+    $html .= '
           </div>
         </div>
       </div>';
 
-      $html.='
+    $html .= '
           
         </div>
       </div>';
 
-      return $html;
-    }
+    return $html;
+  }
 
-    private function htmlFormSignin()
-    {
-        $html = "";
+  /**
+   * create the form to create an account
+   *
+   * @return void
+   */
+  private function htmlFormSignin()
+  {
+    $html = "";
 
-        $html = '
+    $html = '
         <div style="width: 70%; margin: auto;">
         <h2>Sign In</h2>
         <p>Sign-Up to Caiman to play and discover old games.</p>
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalSign">Sign-up</button>
       </div>';
 
-      return $html;
-    }
+    return $html;
+  }
 
-    private function htmlFormLogin()
-    {
-        $html = "";
+  /**
+   * create the form to log in
+   *
+   * @return void
+   */
+  private function htmlFormLogin()
+  {
+    $html = "";
 
-        $html = ' 
+    $html = ' 
         <div style="width: 70%; margin: auto;">
         <h2>Login</h2>
         <form action="?r=login&e=login" method="post">
@@ -169,7 +211,6 @@ class DownloadController extends mainController implements iController {
           </form>
       </div>';
 
-      return $html;
-    }
-
+    return $html;
+  }
 }

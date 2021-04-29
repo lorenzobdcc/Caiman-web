@@ -91,11 +91,11 @@ Collaboration diagram for SigninController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a16fd2e4964fca2fd2d6ca03cf3653bb8"><td class="memItemLeft" align="right" valign="top"><a id="a16fd2e4964fca2fd2d6ca03cf3653bb8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>formHandler</b> ()</td></tr>
+<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_signin_controller.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
+<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16fd2e4964fca2fd2d6ca03cf3653bb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_signin_controller.html#a16fd2e4964fca2fd2d6ca03cf3653bb8">formHandler</a> ()</td></tr>
 <tr class="separator:a16fd2e4964fca2fd2d6ca03cf3653bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67e219b27b5c39ef06f85381a378c2f9"><td class="memItemLeft" align="right" valign="top"><a id="a67e219b27b5c39ef06f85381a378c2f9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>printHTML</b> ()</td></tr>
+<tr class="memitem:a67e219b27b5c39ef06f85381a378c2f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_signin_controller.html#a67e219b27b5c39ef06f85381a378c2f9">printHTML</a> ()</td></tr>
 <tr class="separator:a67e219b27b5c39ef06f85381a378c2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -104,8 +104,124 @@ Data Fields</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$signin</b></td></tr>
 <tr class="separator:a5f47d15ead4fec4af6a5743c863014d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="signin_controller_8php_source.html#l00010">10</a> of file <a class="el" href="signin_controller_8php_source.html">signinController.php</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a095c5d389db211932136b53f25f39685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095c5d389db211932136b53f25f39685">&#9670;&nbsp;</a></span>__construct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default contructor </p>
+
+<p class="definition">Definition at line <a class="el" href="signin_controller_8php_source.html#l00018">18</a> of file <a class="el" href="signin_controller_8php_source.html">signinController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        $this-&gt;signin = <span class="keyword">new</span> <a class="code" href="class_signin.html">Signin</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="ttc" id="aclass_signin_html"><div class="ttname"><a href="class_signin.html">Signin</a></div><div class="ttdef"><b>Definition:</b> <a href="signin_8php_source.html#l00009">signin.php:10</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a16fd2e4964fca2fd2d6ca03cf3653bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fd2e4964fca2fd2d6ca03cf3653bb8">&#9670;&nbsp;</a></span>formHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">formHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>used to handle if the user has resquest something</p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interfacei_controller.html">iController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="signin_controller_8php_source.html#l00028">28</a> of file <a class="el" href="signin_controller_8php_source.html">signinController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (isset($_GET[<span class="charliteral">&#39;e&#39;</span>])) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            $this-&gt;e = filter_input(INPUT_GET, <span class="charliteral">&#39;e&#39;</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;e == <span class="stringliteral">&quot;signin&quot;</span>) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;username&#39;</span>])) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                $this-&gt;signin-&gt;insert_username = filter_input(INPUT_POST, <span class="stringliteral">&#39;username&#39;</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;password&#39;</span>])) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                $this-&gt;signin-&gt;insert_password = filter_input(INPUT_POST, <span class="stringliteral">&#39;password&#39;</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;passwordRepeat&#39;</span>])) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                $this-&gt;signin-&gt;insert_password_repeat = filter_input(INPUT_POST, <span class="stringliteral">&#39;passwordRepeat&#39;</span>, FILTER_SANITIZE_SPECIAL_CHARS);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (isset($_POST[<span class="stringliteral">&#39;email&#39;</span>])) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                $this-&gt;signin-&gt;insert_email = filter_input(INPUT_POST, <span class="stringliteral">&#39;email&#39;</span>, FILTER_SANITIZE_EMAIL);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (isset($this-&gt;signin-&gt;insert_password) &amp;&amp; isset($this-&gt;signin-&gt;insert_username) &amp;&amp; isset($this-&gt;signin-&gt;insert_password_repeat) &amp;&amp; isset($this-&gt;signin-&gt;insert_email)) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> ($this-&gt;signin-&gt;insert_password != $this-&gt;signin-&gt;insert_password_repeat) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    $_SESSION[<span class="stringliteral">&#39;error&#39;</span>] = <span class="stringliteral">&quot;Password does not match&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    header(<span class="stringliteral">&#39;Location:&#39;</span> . $_SERVER[<span class="stringliteral">&#39;HTTP_REFERER&#39;</span>]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    exit;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                $this-&gt;signin-&gt;newUser();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                header(<span class="stringliteral">&#39;Location:&#39;</span> . $_SERVER[<span class="stringliteral">&#39;HTTP_REFERER&#39;</span>]);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                exit;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                $_SESSION[<span class="stringliteral">&#39;error&#39;</span>] = <span class="stringliteral">&quot;form not completed&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                header(<span class="stringliteral">&#39;Location:&#39;</span> . $_SERVER[<span class="stringliteral">&#39;HTTP_REFERER&#39;</span>]);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                exit;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a67e219b27b5c39ef06f85381a378c2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e219b27b5c39ef06f85381a378c2f9">&#9670;&nbsp;</a></span>printHTML()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">printHTML </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>print the html for the resquested content</p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interfacei_controller.html">iController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="signin_controller_8php_source.html#l00075">75</a> of file <a class="el" href="signin_controller_8php_source.html">signinController.php</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>controllers/signinController.php</li>
+<li>controllers/<a class="el" href="signin_controller_8php_source.html">signinController.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,176 @@
+\hypertarget{download_controller_8php_source}{}\doxysection{download\+Controller.\+php}
+\label{download_controller_8php_source}\index{controllers/downloadController.php@{controllers/downloadController.php}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 <?php}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{download_controller_8php_source_l00010}\mbox{\hyperlink{class_download_controller}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_download_controller}{DownloadController}} \textcolor{keyword}{extends} mainController implements \mbox{\hyperlink{interfacei_controller}{iController}}}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012   \textcolor{keyword}{public} \$download;}
+\DoxyCodeLine{00013   \textcolor{keyword}{private} \$e = \textcolor{keyword}{null};}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{download_controller_8php_source_l00018}\mbox{\hyperlink{class_download_controller_a095c5d389db211932136b53f25f39685}{00018}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_download_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00019   \{}
+\DoxyCodeLine{00020     \$this-\/>download  = \textcolor{keyword}{new} \mbox{\hyperlink{class_download}{Download}}();}
+\DoxyCodeLine{00021   \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{download_controller_8php_source_l00028}\mbox{\hyperlink{class_download_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00028}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_download_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
+\DoxyCodeLine{00029   \{}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00031       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{00037         \$this-\/>e = \textcolor{stringliteral}{"{}user"{}};}
+\DoxyCodeLine{00038       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00039         \$this-\/>e = \textcolor{stringliteral}{"{}visitor"{}};}
+\DoxyCodeLine{00040       \}}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}download"{}}) \{}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{00046         \$this-\/>download-\/>downloadCaiman();}
+\DoxyCodeLine{00047       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00048         header(\textcolor{stringliteral}{'?r=login'});}
+\DoxyCodeLine{00049       \}}
+\DoxyCodeLine{00050     \}}
+\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{\Hypertarget{download_controller_8php_source_l00060}\mbox{\hyperlink{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}{00060}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}{printHTML}}()}
+\DoxyCodeLine{00061   \{}
+\DoxyCodeLine{00062     \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
+\DoxyCodeLine{00063 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{00064     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}user"{}}) \{}
+\DoxyCodeLine{00066       \$html .= \$this-\/>htmlUserDownload();}
+\DoxyCodeLine{00067     \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}visitor"{}}) \{}
+\DoxyCodeLine{00070       \$html .= \$this-\/>htmlVisitorDownload();}
+\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{00072     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{00073     echo \$html;}
+\DoxyCodeLine{00074   \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00081   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlUserDownload()}
+\DoxyCodeLine{00082   \{}
+\DoxyCodeLine{00083     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00086 \textcolor{stringliteral}{        <div class="{}jumbotron jumbotron-\/fluid DarkJumbotron "{} style="{}background-\/color: \#161b22;"{}>}}
+\DoxyCodeLine{00087 \textcolor{stringliteral}{            <div class="{}row py-\/lg-\/5"{}>}}
+\DoxyCodeLine{00088 \textcolor{stringliteral}{              <div class="{}col-\/lg-\/6 col-\/md-\/8 mx-\/auto"{}>}}
+\DoxyCodeLine{00089 \textcolor{stringliteral}{                <h1 class="{}fw-\/light greenTexte"{}>Caiman</h1>}}
+\DoxyCodeLine{00090 \textcolor{stringliteral}{                <p class="{}lead text-\/muted"{}>The easiest way to use emulators.</p>}}
+\DoxyCodeLine{00091 \textcolor{stringliteral}{                <p>}}
+\DoxyCodeLine{00092 \textcolor{stringliteral}{                  <a href="{}?r=download\&e=download"{} class="{}btn btn-\/success my-\/2"{}>Download for Windows (64bit)</a>}}
+\DoxyCodeLine{00093 \textcolor{stringliteral}{                </p>}}
+\DoxyCodeLine{00094 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00095 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00096 \textcolor{stringliteral}{        </div>'};}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00099   \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00106   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlHeadVisitor()}
+\DoxyCodeLine{00107   \{}
+\DoxyCodeLine{00108     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \$html .= \textcolor{stringliteral}{'<div class="{}jumbotron  DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}>}}
+\DoxyCodeLine{00111 \textcolor{stringliteral}{        <div class="{}container"{}>'};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \$html .= \textcolor{stringliteral}{'<div class="{}container"{}>}}
+\DoxyCodeLine{00114 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{00115 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00116 \textcolor{stringliteral}{          <p>To download the application you must create an account or log in.</p>}}
+\DoxyCodeLine{00117 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00118 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00119 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00122 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00123 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00124 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00127   \}}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00134   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlVisitorDownload()}
+\DoxyCodeLine{00135   \{}
+\DoxyCodeLine{00136     \$html = \$this-\/>htmlHeadVisitor();}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     \$html .= \textcolor{stringliteral}{'<div class="{}jumbotron jumbotron-\/fluid DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}"{}>}}
+\DoxyCodeLine{00139 \textcolor{stringliteral}{        <div class="{}container"{}>'};}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \$html .= \textcolor{stringliteral}{'<div class="{}container"{}>}}
+\DoxyCodeLine{00142 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{00143 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00144 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{00145     \$html .= \$this-\/>htmlFormLogin();}
+\DoxyCodeLine{00146     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00147 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00148 \textcolor{stringliteral}{          <div class="{}col-\/sm"{}>}}
+\DoxyCodeLine{00149 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{00150     \$html .= \$this-\/>htmlFormSignin();}
+\DoxyCodeLine{00151     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00152 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{00153 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00154 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00157 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00158 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{00159 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00162   \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00169   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormSignin()}
+\DoxyCodeLine{00170   \{}
+\DoxyCodeLine{00171     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     \$html = \textcolor{stringliteral}{'}}
+\DoxyCodeLine{00174 \textcolor{stringliteral}{        <div style="{}width: 70\%; margin: auto;"{}>}}
+\DoxyCodeLine{00175 \textcolor{stringliteral}{        <h2>Sign In</h2>}}
+\DoxyCodeLine{00176 \textcolor{stringliteral}{        <p>Sign-\/Up to Caiman to play and discover old games.</p>}}
+\DoxyCodeLine{00177 \textcolor{stringliteral}{        <button type="{}button"{} class="{}btn btn-\/warning"{} data-\/toggle="{}modal"{} data-\/target="{}\#modalSign"{}>Sign-\/up</button>}}
+\DoxyCodeLine{00178 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00181   \}}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00188   \textcolor{keyword}{private} \textcolor{keyword}{function} htmlFormLogin()}
+\DoxyCodeLine{00189   \{}
+\DoxyCodeLine{00190     \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192     \$html = \textcolor{stringliteral}{' }}
+\DoxyCodeLine{00193 \textcolor{stringliteral}{        <div style="{}width: 70\%; margin: auto;"{}>}}
+\DoxyCodeLine{00194 \textcolor{stringliteral}{        <h2>Login</h2>}}
+\DoxyCodeLine{00195 \textcolor{stringliteral}{        <form action="{}?r=login\&e=login"{} method="{}post"{}>}}
+\DoxyCodeLine{00196 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00197 \textcolor{stringliteral}{                <label for="{}username"{}>Username</label>}}
+\DoxyCodeLine{00198 \textcolor{stringliteral}{                <input type="{}texte"{} name="{}username"{} class="{}form-\/control"{} id="{}username"{} aria-\/describedby="{}username"{} placeholder="{}Enter username"{}>}}
+\DoxyCodeLine{00199 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00200 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00201 \textcolor{stringliteral}{                <label for="{}password"{}>Password</label>}}
+\DoxyCodeLine{00202 \textcolor{stringliteral}{                <input type="{}password"{} name="{}password"{} class="{}form-\/control"{} id="{}password"{} placeholder="{}Password"{}>}}
+\DoxyCodeLine{00203 \textcolor{stringliteral}{              </div>}}
+\DoxyCodeLine{00204 \textcolor{stringliteral}{              <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00205 \textcolor{stringliteral}{              <button type="{}submit"{} class="{}btn btn-\/success"{}>Log in</button>}}
+\DoxyCodeLine{00206 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00207 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{00208 \textcolor{stringliteral}{              <a href="{}?r=login\&e=forgot"{} class="{}btn btn-\/success my-\/2"{}>Forgot password?</a>}}
+\DoxyCodeLine{00209 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{00210 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{00211 \textcolor{stringliteral}{          </form>}}
+\DoxyCodeLine{00212 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214     \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{00215   \}}
+\DoxyCodeLine{00216 \}}
+
+\end{DoxyCode}

@@ -1,6 +1,24 @@
 var searchData=
 [
-  ['login_40',['Login',['../class_login.html',1,'']]],
-  ['login_2ephp_41',['login.php',['../login_8php.html',1,'']]],
-  ['logincontroller_42',['LoginController',['../class_login_controller.html',1,'']]]
+  ['games_28',['Games',['../class_games.html',1,'']]],
+  ['games_2ephp_29',['games.php',['../games_8php.html',1,'']]],
+  ['gamescontroller_30',['GamesController',['../class_games_controller.html',1,'']]],
+  ['gamescontroller_2ephp_31',['gamesController.php',['../games_controller_8php.html',1,'']]],
+  ['getallgames_32',['getAllGames',['../class_games.html#adb126d2fb743e7fb704f2e59273a296c',1,'Games']]],
+  ['getcategoriesofgame_33',['getCategoriesOfGame',['../class_categories.html#a09134696b110db5b208f20ca5e8dbb9d',1,'Categories']]],
+  ['getconsolefoldername_34',['getConsoleFolderName',['../class_administrator.html#aa81b23c6aa225a1278e699194a441cd3',1,'Administrator']]],
+  ['getfavoritegamesofuser_35',['getFavoriteGamesOfUser',['../class_games.html#a8cba71e901169a660cced6ff8a641a18',1,'Games']]],
+  ['getgamedetail_36',['getGameDetail',['../class_games_controller.html#a4e1195117477d379758d389ef69aef43',1,'GamesController\getGameDetail()'],['../class_games.html#ac93fbd51775fb58ab532190551781db2',1,'Games\getGameDetail()']]],
+  ['getgamesfromcategorie_37',['getGamesFromCategorie',['../class_games_controller.html#a23bb4a3786e0ba0583abb5b8c94992f3',1,'GamesController']]],
+  ['getgamesincategorie_38',['getGamesInCategorie',['../class_games.html#afaab8fc4d0ea92cdc8fd0e9c6308e386',1,'Games']]],
+  ['getlistallcategories_39',['getListAllCategories',['../class_categories.html#a11e3e7b054202fc69b60fd6c97ab200f',1,'Categories']]],
+  ['getlistallgames_40',['getListAllGames',['../class_games_controller.html#a49d3832a5e05f423ff1a2a604cd18adc',1,'GamesController']]],
+  ['getlistconsole_41',['getListConsole',['../class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c',1,'Administrator']]],
+  ['getlistofgamewithtimeuser_42',['getListOfGameWithTimeUser',['../class_games.html#aacf088ae2dcfffda5886ad9e2ee56d05',1,'Games']]],
+  ['getprivateaccount_43',['getPrivateAccount',['../class_user.html#a7ee23f234f605d5e172d7bb660d2e837',1,'User']]],
+  ['getrequestedgames_44',['getRequestedGames',['../class_games_controller.html#a275f1088a40996e2c543d67942511fed',1,'GamesController']]],
+  ['getrequestgames_45',['getRequestGames',['../class_games.html#a27486dee021b3817233f345384231b97',1,'Games']]],
+  ['gettimeingameuser_46',['getTimeInGameUser',['../class_games.html#a356d840419cd8ea2c581533d269d34d7',1,'Games']]],
+  ['getuserdata_47',['getUserData',['../class_user_data.html#a92295d3642657257bdd3d8f2ed4e6814',1,'UserData']]],
+  ['getusersbyusername_48',['getUsersByUsername',['../class_user_data.html#aa1c09d341f215095745d3603e12b1fbd',1,'UserData']]]
 ];

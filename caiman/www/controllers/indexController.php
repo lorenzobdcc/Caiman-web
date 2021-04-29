@@ -1,34 +1,41 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : Sert a faire le lien entre l'affichage et le model index
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to handle request for the index
+ */
 class IndexController extends mainController implements iController
 {
 
-
-  public function __construct()
-  {
-  }
+  /**
+   * used to handle if the user has resquest something
+   *
+   * @return void
+   */
   public function formHandler()
   {
   }
 
-
+  /**
+   * print the html for the resquested content
+   * 
+   *
+   * @return void
+   */
   public function printHTML()
   {
     $html = "";
-   
+
 
     $html .= '
     <main style="margin-top:20px ">
       <div class="container-md">
       ';
-      $html .= $this->errorHandler();
-      $html .= '
+    $html .= $this->errorHandler();
+    $html .= '
         <div class="jumbotron jumbotron-fluid DarkJumbotron width100" style="background-color: #161b22;">
             <div class="row py-lg-5">
               <div class="col-lg-6 col-md-8 mx-auto">
