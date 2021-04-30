@@ -17,13 +17,14 @@ class IndexController extends mainController implements iController
    */
   public function formHandler()
   {
+    $_SESSION['title'] = "Caiman: Home";
   }
 
   /**
    * print the html for the resquested content
    * 
    *
-   * @return void
+   * @return html
    */
   public function printHTML()
   {

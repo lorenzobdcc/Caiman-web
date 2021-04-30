@@ -38,7 +38,7 @@ Collaboration diagram for Login\+Controller\+:\nopagebreak
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{login_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{login_controller_8php_source}{login\+Controller.\+php}}.
+Definition at line 10 of file login\+Controller.\+php.
 
 
 
@@ -51,13 +51,13 @@ Definition at line \mbox{\hyperlink{login_controller_8php_source_l00010}{10}} of
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{login_controller_8php_source_l00019}{19}} of file \mbox{\hyperlink{login_controller_8php_source}{login\+Controller.\+php}}.
+Definition at line 18 of file login\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020   \{}
-\DoxyCodeLine{00021     \$this-\/>login  = \textcolor{keyword}{new} \mbox{\hyperlink{class_login}{Login}}();}
-\DoxyCodeLine{00022   \}}
+\DoxyCodeLine{19   \{}
+\DoxyCodeLine{20     \$this-\/>login  = \textcolor{keyword}{new} \mbox{\hyperlink{class_login}{Login}}();}
+\DoxyCodeLine{21   \}}
 
 \end{DoxyCode}
 
@@ -80,37 +80,38 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{login_controller_8php_source_l00029}{29}} of file \mbox{\hyperlink{login_controller_8php_source}{login\+Controller.\+php}}.
+Definition at line 28 of file login\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030   \{}
-\DoxyCodeLine{00031     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00032       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00033     \}}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}login"{}}) \{}
-\DoxyCodeLine{00036       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
-\DoxyCodeLine{00037         \$username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00038       \}}
-\DoxyCodeLine{00039       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'password'}])) \{}
-\DoxyCodeLine{00040         \$password = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'password'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00041       \}}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043       \textcolor{keywordflow}{if} (isset(\$password) \&\& isset(\$username)) \{}
-\DoxyCodeLine{00044         \$this-\/>login-\/>search\_username = \$username;}
-\DoxyCodeLine{00045         \$this-\/>login-\/>search\_password = \$password;}
-\DoxyCodeLine{00046 }
-\DoxyCodeLine{00047         \$usersInfos = \$this-\/>login-\/>checkLogin();}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049         \textcolor{keywordflow}{if} (isset(\$usersInfos)) \{}
-\DoxyCodeLine{00050           \$\_SESSION[\textcolor{stringliteral}{'user'}] = \textcolor{keyword}{new} \mbox{\hyperlink{class_user}{User}}(\$usersInfos[0][\textcolor{stringliteral}{'username'}], \$usersInfos[0][\textcolor{stringliteral}{'email'}], \$usersInfos[0][\textcolor{stringliteral}{'idRole'}], \$usersInfos[0][\textcolor{stringliteral}{'id'}]);}
-\DoxyCodeLine{00051           header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{00052           exit;}
-\DoxyCodeLine{00053         \}}
-\DoxyCodeLine{00054       \}}
-\DoxyCodeLine{00055     \}}
-\DoxyCodeLine{00056   \}}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{31       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}login"{}}) \{}
+\DoxyCodeLine{35       \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Login"{}};}
+\DoxyCodeLine{36       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
+\DoxyCodeLine{37         \$username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{38       \}}
+\DoxyCodeLine{39       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'password'}])) \{}
+\DoxyCodeLine{40         \$password = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'password'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{41       \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43       \textcolor{keywordflow}{if} (isset(\$password) \&\& isset(\$username)) \{}
+\DoxyCodeLine{44         \$this-\/>login-\/>search\_username = \$username;}
+\DoxyCodeLine{45         \$this-\/>login-\/>search\_password = \$password;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \$usersInfos = \$this-\/>login-\/>checkLogin();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keywordflow}{if} (isset(\$usersInfos)) \{}
+\DoxyCodeLine{50           \$\_SESSION[\textcolor{stringliteral}{'user'}] = \textcolor{keyword}{new} \mbox{\hyperlink{class_user}{User}}(\$usersInfos[0][\textcolor{stringliteral}{'username'}], \$usersInfos[0][\textcolor{stringliteral}{'email'}], \$usersInfos[0][\textcolor{stringliteral}{'idRole'}], \$usersInfos[0][\textcolor{stringliteral}{'id'}]);}
+\DoxyCodeLine{51           header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{52           exit;}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54       \}}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56   \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_login_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_login_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
@@ -130,21 +131,21 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{login_controller_8php_source_l00065}{65}} of file \mbox{\hyperlink{login_controller_8php_source}{login\+Controller.\+php}}.
+Definition at line 65 of file login\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00066   \{}
-\DoxyCodeLine{00067 }
-\DoxyCodeLine{00068     \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{00069 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{00070     \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{00071     \$html .= \$this-\/>htmlFormHead();}
-\DoxyCodeLine{00072 }
-\DoxyCodeLine{00073     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{00074 }
-\DoxyCodeLine{00075     echo \$html;}
-\DoxyCodeLine{00076   \}}
+\DoxyCodeLine{66   \{}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{69 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{70     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{71     \$html .= \$this-\/>htmlFormHead();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     echo \$html;}
+\DoxyCodeLine{76   \}}
 
 \end{DoxyCode}
 

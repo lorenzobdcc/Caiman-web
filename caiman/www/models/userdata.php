@@ -64,8 +64,8 @@ class UserData
     /**
      * get data of a specific user
      *
-     * @param [type] $iduser
-     * @return void
+     * @param int $iduser
+     * @return array
      */
     public function getUserData($iduser)
     {

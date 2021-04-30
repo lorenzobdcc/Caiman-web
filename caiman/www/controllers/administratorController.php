@@ -22,8 +22,6 @@ class AdministratorController extends mainController implements iController
    */
   public function formHandler()
   {
-    $result = null;
-
 
     if (isset($_GET['e'])) {
       $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
@@ -180,7 +178,7 @@ class AdministratorController extends mainController implements iController
       }
 
       if (isset($name)) {
-        $result = $this->categorie->addCategorie($name);
+        $this->categorie->addCategorie($name);
       }
     }
   }
@@ -200,7 +198,7 @@ class AdministratorController extends mainController implements iController
    * print the html for the resquested content
    * 
    *
-   * @return void
+   * @return html
    */
   public function printHTML()
   {

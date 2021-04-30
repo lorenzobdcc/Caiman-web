@@ -4,10 +4,17 @@
     \subitem {Administrator}, \hyperpage{7}
     \subitem {AdministratorController}, \hyperpage{14}
     \subitem {Categories}, \hyperpage{18}
-    \subitem {Games}, \hyperpage{25}
-    \subitem {Signin}, \hyperpage{37}
-    \subitem {User}, \hyperpage{42}
-    \subitem {UserData}, \hyperpage{45}
+    \subitem {DashboardController}, \hyperpage{22}
+    \subitem {DownloadController}, \hyperpage{27}
+    \subitem {Games}, \hyperpage{29}
+    \subitem {GamesController}, \hyperpage{36}
+    \subitem {LoginController}, \hyperpage{49}
+    \subitem {MainController}, \hyperpage{50}
+    \subitem {Signin}, \hyperpage{52}
+    \subitem {SigninController}, \hyperpage{56}
+    \subitem {User}, \hyperpage{58}
+    \subitem {UserData}, \hyperpage{61}
+    \subitem {UsersController}, \hyperpage{64}
 
   \indexspace
 
@@ -18,7 +25,7 @@
   \item {addGame}
     \subitem {Administrator}, \hyperpage{8}
   \item {addGameToFavoris}
-    \subitem {Games}, \hyperpage{26}
+    \subitem {Games}, \hyperpage{30}
   \item {Administrator}, \hyperpage{7}
     \subitem {\_\_construct}, \hyperpage{7}
     \subitem {addGame}, \hyperpage{8}
@@ -31,6 +38,8 @@
     \subitem {\_\_construct}, \hyperpage{14}
     \subitem {formHandler}, \hyperpage{15}
     \subitem {printHTML}, \hyperpage{17}
+  \item {allowAccessTo}
+    \subitem {MainController}, \hyperpage{51}
 
   \indexspace
 
@@ -42,146 +51,231 @@
     \subitem {getCategoriesOfGame}, \hyperpage{20}
     \subitem {getListAllCategories}, \hyperpage{21}
   \item {checkIfEmailAlreadyTaken}
-    \subitem {Signin}, \hyperpage{38}
+    \subitem {Signin}, \hyperpage{53}
   \item {checkIfGameIsAlreadyInFavoris}
-    \subitem {Games}, \hyperpage{27}
+    \subitem {Games}, \hyperpage{31}
   \item {checkIfUsernameAlreadyTaken}
-    \subitem {Signin}, \hyperpage{39}
+    \subitem {Signin}, \hyperpage{53}
   \item {checkLogin}
-    \subitem {Login}, \hyperpage{35}
-  \item {controllers/administratorController.php}, \hyperpage{49, 50}
-  \item {controllers/controllers.php}, \hyperpage{55, 56}
-  \item {controllers/dashboardController.php}, \hyperpage{56}
+    \subitem {Login}, \hyperpage{47}
+  \item {common/head.php}, \hyperpage{69}
+  \item {common/navbar.php}, \hyperpage{69}
+  \item {controllers/administratorController.php}, \hyperpage{70}
+  \item {controllers/controllers.php}, \hyperpage{70}
+  \item {controllers/dashboardController.php}, \hyperpage{71}
+  \item {controllers/downloadController.php}, \hyperpage{71}
+  \item {controllers/gamesController.php}, \hyperpage{72}
+  \item {controllers/indexController.php}, \hyperpage{72}
+  \item {controllers/interfaceController.php}, \hyperpage{73}
+  \item {controllers/loginController.php}, \hyperpage{73}
+  \item {controllers/mainController.php}, \hyperpage{74}
+  \item {controllers/signinController.php}, \hyperpage{74}
+  \item {controllers/usersController.php}, \hyperpage{75}
 
   \indexspace
 
-  \item {DashboardController}, \hyperpage{22}
+  \item {DashboardController}, \hyperpage{21}
+    \subitem {\_\_construct}, \hyperpage{22}
+    \subitem {formHandler}, \hyperpage{22}
+    \subitem {htmlFormUpdatePassword}, \hyperpage{23}
+    \subitem {printHTML}, \hyperpage{24}
   \item {delCategorieFromGame}
     \subitem {Categories}, \hyperpage{20}
-  \item {Download}, \hyperpage{23}
-    \subitem {downloadCaiman}, \hyperpage{23}
+  \item {Download}, \hyperpage{25}
+    \subitem {downloadCaiman}, \hyperpage{25}
   \item {downloadCaiman}
-    \subitem {Download}, \hyperpage{23}
-  \item {DownloadController}, \hyperpage{24}
+    \subitem {Download}, \hyperpage{25}
+  \item {DownloadController}, \hyperpage{26}
+    \subitem {\_\_construct}, \hyperpage{27}
+    \subitem {formHandler}, \hyperpage{27}
+    \subitem {printHTML}, \hyperpage{28}
+
+  \indexspace
+
+  \item {errorHandler}
+    \subitem {MainController}, \hyperpage{51}
 
   \indexspace
 
   \item {formHandler}
     \subitem {AdministratorController}, \hyperpage{15}
+    \subitem {DashboardController}, \hyperpage{22}
+    \subitem {DownloadController}, \hyperpage{27}
+    \subitem {GamesController}, \hyperpage{37}
+    \subitem {IndexController}, \hyperpage{46}
+    \subitem {LoginController}, \hyperpage{49}
+    \subitem {SigninController}, \hyperpage{56}
+    \subitem {UsersController}, \hyperpage{64}
 
   \indexspace
 
-  \item {Games}, \hyperpage{25}
-    \subitem {\_\_construct}, \hyperpage{25}
-    \subitem {addGameToFavoris}, \hyperpage{26}
-    \subitem {checkIfGameIsAlreadyInFavoris}, \hyperpage{27}
-    \subitem {getAllGames}, \hyperpage{27}
-    \subitem {getFavoriteGamesOfUser}, \hyperpage{28}
-    \subitem {getGameDetail}, \hyperpage{28}
-    \subitem {getGamesInCategorie}, \hyperpage{28}
-    \subitem {getListOfGameWithTimeUser}, \hyperpage{29}
-    \subitem {getRequestGames}, \hyperpage{29}
-    \subitem {getTimeInGameUser}, \hyperpage{30}
-    \subitem {removeGameFromFavoris}, \hyperpage{30}
-  \item {GamesController}, \hyperpage{31}
+  \item {Games}, \hyperpage{29}
+    \subitem {\_\_construct}, \hyperpage{29}
+    \subitem {addGameToFavoris}, \hyperpage{30}
+    \subitem {checkIfGameIsAlreadyInFavoris}, \hyperpage{31}
+    \subitem {getAllGames}, \hyperpage{31}
+    \subitem {getFavoriteGamesOfUser}, \hyperpage{31}
+    \subitem {getGameDetail}, \hyperpage{32}
+    \subitem {getGamesInCategorie}, \hyperpage{32}
+    \subitem {getListOfGameWithTimeUser}, \hyperpage{33}
+    \subitem {getRequestGames}, \hyperpage{33}
+    \subitem {getTimeInGameUser}, \hyperpage{34}
+    \subitem {removeGameFromFavoris}, \hyperpage{34}
+  \item {GamesController}, \hyperpage{35}
+    \subitem {\_\_construct}, \hyperpage{36}
+    \subitem {formHandler}, \hyperpage{37}
+    \subitem {getGameDetail}, \hyperpage{38}
+    \subitem {getGamesFromCategorie}, \hyperpage{39}
+    \subitem {getListAllGames}, \hyperpage{39}
+    \subitem {getRequestedGames}, \hyperpage{40}
+    \subitem {printHTML}, \hyperpage{41}
+    \subitem {recherchFull}, \hyperpage{42}
+    \subitem {recherchNotFull}, \hyperpage{43}
   \item {getAllGames}
-    \subitem {Games}, \hyperpage{27}
+    \subitem {Games}, \hyperpage{31}
   \item {getCategoriesOfGame}
     \subitem {Categories}, \hyperpage{20}
   \item {getConsoleFolderName}
     \subitem {Administrator}, \hyperpage{9}
   \item {getFavoriteGamesOfUser}
-    \subitem {Games}, \hyperpage{28}
+    \subitem {Games}, \hyperpage{31}
   \item {getGameDetail}
-    \subitem {Games}, \hyperpage{28}
+    \subitem {Games}, \hyperpage{32}
+    \subitem {GamesController}, \hyperpage{38}
+  \item {getGamesFromCategorie}
+    \subitem {GamesController}, \hyperpage{39}
   \item {getGamesInCategorie}
-    \subitem {Games}, \hyperpage{28}
+    \subitem {Games}, \hyperpage{32}
   \item {getListAllCategories}
     \subitem {Categories}, \hyperpage{21}
+  \item {getListAllGames}
+    \subitem {GamesController}, \hyperpage{39}
   \item {getListConsole}
     \subitem {Administrator}, \hyperpage{10}
   \item {getListOfGameWithTimeUser}
-    \subitem {Games}, \hyperpage{29}
+    \subitem {Games}, \hyperpage{33}
   \item {getPrivateAccount}
-    \subitem {User}, \hyperpage{42}
+    \subitem {User}, \hyperpage{58}
+  \item {getRequestedGames}
+    \subitem {GamesController}, \hyperpage{40}
   \item {getRequestGames}
-    \subitem {Games}, \hyperpage{29}
+    \subitem {Games}, \hyperpage{33}
   \item {getTimeInGameUser}
-    \subitem {Games}, \hyperpage{30}
+    \subitem {Games}, \hyperpage{34}
   \item {getUserData}
-    \subitem {UserData}, \hyperpage{46}
+    \subitem {UserData}, \hyperpage{61}
   \item {getUsersByUsername}
-    \subitem {UserData}, \hyperpage{46}
+    \subitem {UserData}, \hyperpage{62}
 
   \indexspace
 
-  \item {iController}, \hyperpage{33}
-  \item {IndexController}, \hyperpage{34}
+  \item {htmlDetailUser}
+    \subitem {UsersController}, \hyperpage{64}
+  \item {htmlFormUpdatePassword}
+    \subitem {DashboardController}, \hyperpage{23}
+  \item {htmlrecherchUsers}
+    \subitem {UsersController}, \hyperpage{65}
+  \item {htmlrequestUser}
+    \subitem {UsersController}, \hyperpage{66}
 
   \indexspace
 
-  \item {Login}, \hyperpage{35}
-    \subitem {checkLogin}, \hyperpage{35}
-  \item {LoginController}, \hyperpage{36}
+  \item {iController}, \hyperpage{44}
+  \item {index.php}, \hyperpage{75}
+  \item {IndexController}, \hyperpage{45}
+    \subitem {formHandler}, \hyperpage{46}
+    \subitem {printHTML}, \hyperpage{46}
 
   \indexspace
 
-  \item {MainController}, \hyperpage{37}
-  \item {models/administrator.php}, \hyperpage{59, 60}
-  \item {models/categorie.php}, \hyperpage{62, 63}
-  \item {models/class.php}, \hyperpage{64, 65}
-  \item {models/download.php}, \hyperpage{65}
-  \item {models/games.php}, \hyperpage{66}
-  \item {models/login.php}, \hyperpage{69, 70}
-  \item {models/signin.php}, \hyperpage{70, 71}
-  \item {models/user.php}, \hyperpage{72, 73}
-  \item {models/userdata.php}, \hyperpage{74, 75}
+  \item {Login}, \hyperpage{47}
+    \subitem {checkLogin}, \hyperpage{47}
+  \item {LoginController}, \hyperpage{48}
+    \subitem {\_\_construct}, \hyperpage{49}
+    \subitem {formHandler}, \hyperpage{49}
+    \subitem {printHTML}, \hyperpage{49}
+
+  \indexspace
+
+  \item {MainController}, \hyperpage{50}
+    \subitem {\_\_construct}, \hyperpage{50}
+    \subitem {allowAccessTo}, \hyperpage{51}
+    \subitem {errorHandler}, \hyperpage{51}
+  \item {models/administrator.php}, \hyperpage{76}
+  \item {models/categorie.php}, \hyperpage{76}
+  \item {models/class.php}, \hyperpage{77}
+  \item {models/download.php}, \hyperpage{77}
+  \item {models/games.php}, \hyperpage{78}
+  \item {models/login.php}, \hyperpage{78}
+  \item {models/signin.php}, \hyperpage{79}
+  \item {models/user.php}, \hyperpage{79}
+  \item {models/userdata.php}, \hyperpage{80}
 
   \indexspace
 
   \item {newUser}
-    \subitem {Signin}, \hyperpage{39}
+    \subitem {Signin}, \hyperpage{53}
 
   \indexspace
 
   \item {printHTML}
     \subitem {AdministratorController}, \hyperpage{17}
+    \subitem {DashboardController}, \hyperpage{24}
+    \subitem {DownloadController}, \hyperpage{28}
+    \subitem {GamesController}, \hyperpage{41}
+    \subitem {IndexController}, \hyperpage{46}
+    \subitem {LoginController}, \hyperpage{49}
+    \subitem {SigninController}, \hyperpage{57}
+    \subitem {UsersController}, \hyperpage{67}
 
   \indexspace
 
+  \item {recherchFull}
+    \subitem {GamesController}, \hyperpage{42}
+  \item {recherchNotFull}
+    \subitem {GamesController}, \hyperpage{43}
   \item {removeGameFromFavoris}
-    \subitem {Games}, \hyperpage{30}
+    \subitem {Games}, \hyperpage{34}
 
   \indexspace
 
-  \item {Signin}, \hyperpage{37}
-    \subitem {\_\_construct}, \hyperpage{37}
-    \subitem {checkIfEmailAlreadyTaken}, \hyperpage{38}
-    \subitem {checkIfUsernameAlreadyTaken}, \hyperpage{39}
-    \subitem {newUser}, \hyperpage{39}
-  \item {SigninController}, \hyperpage{40}
+  \item {Signin}, \hyperpage{52}
+    \subitem {\_\_construct}, \hyperpage{52}
+    \subitem {checkIfEmailAlreadyTaken}, \hyperpage{53}
+    \subitem {checkIfUsernameAlreadyTaken}, \hyperpage{53}
+    \subitem {newUser}, \hyperpage{53}
+  \item {SigninController}, \hyperpage{55}
+    \subitem {\_\_construct}, \hyperpage{56}
+    \subitem {formHandler}, \hyperpage{56}
+    \subitem {printHTML}, \hyperpage{57}
 
   \indexspace
 
   \item {updateGame}
     \subitem {Administrator}, \hyperpage{10}
   \item {updatePassword}
-    \subitem {User}, \hyperpage{43}
+    \subitem {User}, \hyperpage{59}
   \item {updatePrivateAccount}
-    \subitem {User}, \hyperpage{44}
+    \subitem {User}, \hyperpage{60}
   \item {uploadGame}
     \subitem {Administrator}, \hyperpage{11}
   \item {uploadGameImage}
     \subitem {Administrator}, \hyperpage{12}
-  \item {User}, \hyperpage{41}
-    \subitem {\_\_construct}, \hyperpage{42}
-    \subitem {getPrivateAccount}, \hyperpage{42}
-    \subitem {updatePassword}, \hyperpage{43}
-    \subitem {updatePrivateAccount}, \hyperpage{44}
-  \item {UserData}, \hyperpage{45}
-    \subitem {\_\_construct}, \hyperpage{45}
-    \subitem {getUserData}, \hyperpage{46}
-    \subitem {getUsersByUsername}, \hyperpage{46}
-  \item {UsersController}, \hyperpage{47}
+  \item {User}, \hyperpage{57}
+    \subitem {\_\_construct}, \hyperpage{58}
+    \subitem {getPrivateAccount}, \hyperpage{58}
+    \subitem {updatePassword}, \hyperpage{59}
+    \subitem {updatePrivateAccount}, \hyperpage{60}
+  \item {UserData}, \hyperpage{61}
+    \subitem {\_\_construct}, \hyperpage{61}
+    \subitem {getUserData}, \hyperpage{61}
+    \subitem {getUsersByUsername}, \hyperpage{62}
+  \item {UsersController}, \hyperpage{63}
+    \subitem {\_\_construct}, \hyperpage{64}
+    \subitem {formHandler}, \hyperpage{64}
+    \subitem {htmlDetailUser}, \hyperpage{64}
+    \subitem {htmlrecherchUsers}, \hyperpage{65}
+    \subitem {htmlrequestUser}, \hyperpage{66}
+    \subitem {printHTML}, \hyperpage{67}
 
 \end{theindex}

@@ -31,7 +31,7 @@
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{signin_8php_source_l00009}{9}} of file \mbox{\hyperlink{signin_8php_source}{signin.\+php}}.
+Definition at line 9 of file signin.\+php.
 
 
 
@@ -44,38 +44,38 @@ Definition at line \mbox{\hyperlink{signin_8php_source_l00009}{9}} of file \mbox
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{signin_8php_source_l00030}{30}} of file \mbox{\hyperlink{signin_8php_source}{signin.\+php}}.
+Definition at line 31 of file signin.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031     \{}
-\DoxyCodeLine{00032         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00033             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00034                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{00035                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{00036                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{00037                 ));}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039                 \textcolor{comment}{// check if email alredy used}}
-\DoxyCodeLine{00040                 \$sqlrequestEmail = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE email = :search\_email "{}};}
-\DoxyCodeLine{00041                 \$this-\/>psCheckEmail = \$this-\/>dbh-\/>prepare(\$sqlrequestEmail);}
-\DoxyCodeLine{00042                 \$this-\/>psCheckEmail-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044                 \textcolor{comment}{// check if username alredy used}}
-\DoxyCodeLine{00045                 \$sqlRequestUsername = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username = :search\_username "{}};}
-\DoxyCodeLine{00046                 \$this-\/>psCheckUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsername);}
-\DoxyCodeLine{00047                 \$this-\/>psCheckUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049                 \$sqlInsert = \textcolor{stringliteral}{"{}INSERT INTO user  (username, password, email)}}
-\DoxyCodeLine{00050 \textcolor{stringliteral}{                              VALUES (:insert\_username, :insert\_password, :insert\_email)"{}};}
-\DoxyCodeLine{00051                 \$this-\/>psInsert = \$this-\/>dbh-\/>prepare(\$sqlInsert);}
-\DoxyCodeLine{00052                 \$this-\/>psInsert-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00053             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00054                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00055                 die();}
-\DoxyCodeLine{00056             \}}
-\DoxyCodeLine{00057         \}}
-\DoxyCodeLine{00058     \}}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{34             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{35                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{36                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{37                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{38                 ));}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40                 \textcolor{comment}{// check if email alredy used}}
+\DoxyCodeLine{41                 \$sqlrequestEmail = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE email = :search\_email "{}};}
+\DoxyCodeLine{42                 \$this-\/>psCheckEmail = \$this-\/>dbh-\/>prepare(\$sqlrequestEmail);}
+\DoxyCodeLine{43                 \$this-\/>psCheckEmail-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45                 \textcolor{comment}{// check if username alredy used}}
+\DoxyCodeLine{46                 \$sqlRequestUsername = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username = :search\_username "{}};}
+\DoxyCodeLine{47                 \$this-\/>psCheckUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsername);}
+\DoxyCodeLine{48                 \$this-\/>psCheckUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50                 \$sqlInsert = \textcolor{stringliteral}{"{}INSERT INTO user  (username, password, email)}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{                              VALUES (:insert\_username, :insert\_password, :insert\_email)"{}};}
+\DoxyCodeLine{52                 \$this-\/>psInsert = \$this-\/>dbh-\/>prepare(\$sqlInsert);}
+\DoxyCodeLine{53                 \$this-\/>psInsert-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{54             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{55                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{56                 die();}
+\DoxyCodeLine{57             \}}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59     \}}
 
 \end{DoxyCode}
 
@@ -90,28 +90,28 @@ Definition at line \mbox{\hyperlink{signin_8php_source_l00030}{30}} of file \mbo
 check that the email is not already taken
 
 \begin{DoxyReturn}{Returns}
-void 
+bool 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{signin_8php_source_l00112}{112}} of file \mbox{\hyperlink{signin_8php_source}{signin.\+php}}.
+Definition at line 116 of file signin.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00113     \{}
-\DoxyCodeLine{00114         \$istaken = \textcolor{keyword}{true};}
-\DoxyCodeLine{00115         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00116             \$this-\/>psCheckEmail-\/>execute(array(\textcolor{stringliteral}{':search\_email'} => \$this-\/>insert\_email));}
-\DoxyCodeLine{00117             \$result = \$this-\/>psCheckEmail-\/>fetchAll();}
-\DoxyCodeLine{00118             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00119                 \$istaken = \textcolor{keyword}{false};}
-\DoxyCodeLine{00120             \}}
-\DoxyCodeLine{00121         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00122             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00123             die();}
-\DoxyCodeLine{00124         \}}
-\DoxyCodeLine{00125         \textcolor{keywordflow}{return} \$istaken;}
-\DoxyCodeLine{00126     \}}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118         \$istaken = \textcolor{keyword}{true};}
+\DoxyCodeLine{119         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{120             \$this-\/>psCheckEmail-\/>execute(array(\textcolor{stringliteral}{':search\_email'} => \$this-\/>insert\_email));}
+\DoxyCodeLine{121             \$result = \$this-\/>psCheckEmail-\/>fetchAll();}
+\DoxyCodeLine{122             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{123                 \$istaken = \textcolor{keyword}{false};}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{126             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{127             die();}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129         \textcolor{keywordflow}{return} \$istaken;}
+\DoxyCodeLine{130     \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:\nopagebreak
@@ -130,28 +130,28 @@ Here is the caller graph for this function\+:\nopagebreak
 check that the username is not already taken
 
 \begin{DoxyReturn}{Returns}
-void 
+bool 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{signin_8php_source_l00092}{92}} of file \mbox{\hyperlink{signin_8php_source}{signin.\+php}}.
+Definition at line 95 of file signin.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093     \{}
-\DoxyCodeLine{00094         \$istaken = \textcolor{keyword}{true};}
-\DoxyCodeLine{00095         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00096             \$this-\/>psCheckUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>insert\_username));}
-\DoxyCodeLine{00097             \$result = \$this-\/>psCheckUsername-\/>fetchAll();}
-\DoxyCodeLine{00098             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00099                 \$istaken = \textcolor{keyword}{false};}
-\DoxyCodeLine{00100             \}}
-\DoxyCodeLine{00101         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00102             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00103             die();}
-\DoxyCodeLine{00104         \}}
-\DoxyCodeLine{00105         \textcolor{keywordflow}{return} \$istaken;}
-\DoxyCodeLine{00106     \}}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         \$istaken = \textcolor{keyword}{true};}
+\DoxyCodeLine{98         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{99             \$this-\/>psCheckUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>insert\_username));}
+\DoxyCodeLine{100             \$result = \$this-\/>psCheckUsername-\/>fetchAll();}
+\DoxyCodeLine{101             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{102                 \$istaken = \textcolor{keyword}{false};}
+\DoxyCodeLine{103             \}}
+\DoxyCodeLine{104         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{105             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{106             die();}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108         \textcolor{keywordflow}{return} \$istaken;}
+\DoxyCodeLine{109     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_signin_acfc95ed63fd1e8b5631b2079f42099ae}\label{class_signin_acfc95ed63fd1e8b5631b2079f42099ae}} 
@@ -167,32 +167,32 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{signin_8php_source_l00064}{64}} of file \mbox{\hyperlink{signin_8php_source}{signin.\+php}}.
+Definition at line 66 of file signin.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00065     \{}
-\DoxyCodeLine{00066         \$isValid = \textcolor{keyword}{true};}
-\DoxyCodeLine{00067         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_signin_af943e6d90301a30c50f3fe502d363016}{checkIfEmailAlreadyTaken}}()) \{}
-\DoxyCodeLine{00068             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Email already used"{}};}
-\DoxyCodeLine{00069             \$isValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{00070         \}}
-\DoxyCodeLine{00071         \textcolor{keywordflow}{if} (\$this-\/>checkifUsernameAlreadyTaken()) \{}
-\DoxyCodeLine{00072             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Username alredy used"{}};}
-\DoxyCodeLine{00073             \$isValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{00074         \}}
-\DoxyCodeLine{00075         \textcolor{keywordflow}{if} (\$isValid) \{}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00079                 \$this-\/>psInsert-\/>execute(array(\textcolor{stringliteral}{':insert\_username'} => \$this-\/>insert\_username, \textcolor{stringliteral}{':insert\_password'} => password\_hash(\$this-\/>insert\_password, PASSWORD\_DEFAULT), \textcolor{stringliteral}{':insert\_email'} => \$this-\/>insert\_email));}
-\DoxyCodeLine{00080                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Acount created"{}};}
-\DoxyCodeLine{00081             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00082                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00083                 die();}
-\DoxyCodeLine{00084             \}}
-\DoxyCodeLine{00085         \}}
-\DoxyCodeLine{00086     \}}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \$isValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{69         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_signin_af943e6d90301a30c50f3fe502d363016}{checkIfEmailAlreadyTaken}}()) \{}
+\DoxyCodeLine{70             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Email already used"{}};}
+\DoxyCodeLine{71             \$isValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (\$this-\/>checkifUsernameAlreadyTaken()) \{}
+\DoxyCodeLine{74             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Username alredy used"{}};}
+\DoxyCodeLine{75             \$isValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77         \textcolor{keywordflow}{if} (\$isValid) \{}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{81                 \$this-\/>psInsert-\/>execute(array(\textcolor{stringliteral}{':insert\_username'} => \$this-\/>insert\_username, \textcolor{stringliteral}{':insert\_password'} => password\_hash(\$this-\/>insert\_password, PASSWORD\_DEFAULT), \textcolor{stringliteral}{':insert\_email'} => \$this-\/>insert\_email));}
+\DoxyCodeLine{82                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Acount created"{}};}
+\DoxyCodeLine{83             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{84                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{85                 die();}
+\DoxyCodeLine{86             \}}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88     \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak

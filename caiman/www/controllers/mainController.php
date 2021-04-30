@@ -7,7 +7,8 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief main class of the controller used to implement basic function
  */
-class MainController {
+class MainController
+{
 
     /**
      * default constructor
@@ -24,7 +25,7 @@ class MainController {
      */
     public function allowAccessTo($allowAccessToId)
     {
-        
+
         $isValid = false;
         foreach ($allowAccessToId as $key => $validId) {
             if ($validId == $_SESSION['user']->role) {
@@ -42,23 +43,21 @@ class MainController {
     /**
      * create the html of an error
      *
-     * @return void
+     * @return html
      */
     public function errorHandler()
     {
-      $html = "";
-      if (isset($_SESSION['error']) && $_SESSION['error'] != null) {
+        $html = "";
+        if (isset($_SESSION['error']) && $_SESSION['error'] != null) {
 
-          $html .= '
+            $html .= '
           <div class=" warningJumbotron errorMessageDiv" style="background-color: #161b22; ">
 
-                  <h5>'.$_SESSION['error'].'</h5>
+                  <h5>' . $_SESSION['error'] . '</h5>
 
           </div>';
-          $_SESSION['error'] = null;
-      }
+            $_SESSION['error'] = null;
+        }
         return $html;
- 
     }
-   
 }

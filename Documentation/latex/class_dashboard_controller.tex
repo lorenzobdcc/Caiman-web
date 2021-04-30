@@ -40,7 +40,7 @@ Collaboration diagram for Dashboard\+Controller\+:\nopagebreak
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00011}{11}} of file \mbox{\hyperlink{dashboard_controller_8php_source}{dashboard\+Controller.\+php}}.
+Definition at line 11 of file dashboard\+Controller.\+php.
 
 
 
@@ -53,13 +53,13 @@ Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00011}{11}
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00062}{62}} of file \mbox{\hyperlink{dashboard_controller_8php_source}{dashboard\+Controller.\+php}}.
+Definition at line 64 of file dashboard\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00063     \{}
-\DoxyCodeLine{00064         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
-\DoxyCodeLine{00065     \}}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
+\DoxyCodeLine{67     \}}
 
 \end{DoxyCode}
 
@@ -82,46 +82,48 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00021}{21}} of file \mbox{\hyperlink{dashboard_controller_8php_source}{dashboard\+Controller.\+php}}.
+Definition at line 21 of file dashboard\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022     \{}
-\DoxyCodeLine{00023         \$this-\/>allowAccessTo(array(1, 3));}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025         \$oldPassword = \textcolor{keyword}{null};}
-\DoxyCodeLine{00026         \$newPasswordRepeat = \textcolor{keyword}{null};}
-\DoxyCodeLine{00027         \$newPassword = \textcolor{keyword}{null};}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00030             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{00031         \}}
-\DoxyCodeLine{00032         \textcolor{comment}{// form update}}
-\DoxyCodeLine{00033         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
-\DoxyCodeLine{00034             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'oldPassword'}])) \{}
-\DoxyCodeLine{00035                 \$oldPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'oldPassword'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00036             \}}
-\DoxyCodeLine{00037             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPassword'}])) \{}
-\DoxyCodeLine{00038                 \$newPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPassword'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00039             \}}
-\DoxyCodeLine{00040             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPasswordRepeat'}])) \{}
-\DoxyCodeLine{00041                 \$newPasswordRepeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPasswordRepeat'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00042             \}}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044             \textcolor{keywordflow}{if} (isset(\$oldPassword) \&\& isset(\$newPassword) \&\& isset(\$newPasswordRepeat)) \{}
-\DoxyCodeLine{00045                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePassword(\$newPassword, \$newPasswordRepeat, \$oldPassword);}
-\DoxyCodeLine{00046             \}}
-\DoxyCodeLine{00047         \}}
-\DoxyCodeLine{00048 }
-\DoxyCodeLine{00049         \textcolor{comment}{// update if account if visible or not}}
-\DoxyCodeLine{00050         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePrivateAccount"{}}) \{}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{00053                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePrivateAccount();}
-\DoxyCodeLine{00054                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{00055             \}}
-\DoxyCodeLine{00056         \}}
-\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Dashboard"{}};}
+\DoxyCodeLine{24         \$this-\/>allowAccessTo(array(1, 3));}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \$oldPassword = \textcolor{keyword}{null};}
+\DoxyCodeLine{27         \$newPasswordRepeat = \textcolor{keyword}{null};}
+\DoxyCodeLine{28         \$newPassword = \textcolor{keyword}{null};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{31             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33         \textcolor{comment}{// form update}}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
+\DoxyCodeLine{35             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Update password"{}};}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'oldPassword'}])) \{}
+\DoxyCodeLine{37                 \$oldPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'oldPassword'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{38             \}}
+\DoxyCodeLine{39             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPassword'}])) \{}
+\DoxyCodeLine{40                 \$newPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPassword'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPasswordRepeat'}])) \{}
+\DoxyCodeLine{43                 \$newPasswordRepeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPasswordRepeat'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{44             \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46             \textcolor{keywordflow}{if} (isset(\$oldPassword) \&\& isset(\$newPassword) \&\& isset(\$newPasswordRepeat)) \{}
+\DoxyCodeLine{47                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePassword(\$newPassword, \$newPasswordRepeat, \$oldPassword);}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{comment}{// update if account if visible or not}}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePrivateAccount"{}}) \{}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54             \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{55                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePrivateAccount();}
+\DoxyCodeLine{56                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{57             \}}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}\label{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}} 
@@ -133,46 +135,45 @@ Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00021}{21}
 create the html of the form to update the user\textquotesingle{}s password
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00256}{256}} of file \mbox{\hyperlink{dashboard_controller_8php_source}{dashboard\+Controller.\+php}}.
+Definition at line 258 of file dashboard\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00257     \{}
-\DoxyCodeLine{00258         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex p-\/2 jumbotron  width100 DarkJumbotron "{} style="{}background-\/color: \#161b22;"{} >}}
-\DoxyCodeLine{00259 \textcolor{stringliteral}{        <div class="{}container"{}>}}
-\DoxyCodeLine{00260 \textcolor{stringliteral}{        <div class="{}row"{}><h2>Update your password</h2></div>}}
-\DoxyCodeLine{00261 \textcolor{stringliteral}{        <div class="{}row"{}>}}
-\DoxyCodeLine{00262 \textcolor{stringliteral}{        }}
-\DoxyCodeLine{00263 \textcolor{stringliteral}{        }}
-\DoxyCodeLine{00264 \textcolor{stringliteral}{        <form action="{}?r=dashboard\&e=updatePassword"{} method="{}post"{}>}}
-\DoxyCodeLine{00265 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{00266 \textcolor{stringliteral}{                <label for="{}oldPassword"{}>Old password</label>}}
-\DoxyCodeLine{00267 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}oldPassword"{} name="{}oldPassword"{} placeholder="{}Old password"{}>}}
-\DoxyCodeLine{00268 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00269 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{00270 \textcolor{stringliteral}{                <label for="{}newPassword"{}>Password</label>}}
-\DoxyCodeLine{00271 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPassword"{} name="{}newPassword"{} placeholder="{}New password"{}>}}
-\DoxyCodeLine{00272 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00273 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{00274 \textcolor{stringliteral}{                <label for="{}newPasswordRepeat"{}>Password</label>}}
-\DoxyCodeLine{00275 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPasswordRepeat"{} name="{}newPasswordRepeat"{} placeholder="{}New password repeat"{}>}}
-\DoxyCodeLine{00276 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00277 \textcolor{stringliteral}{}}
-\DoxyCodeLine{00278 \textcolor{stringliteral}{            <button type="{}submit"{} class="{}btn btn-\/primary"{}>Submit</button>}}
-\DoxyCodeLine{00279 \textcolor{stringliteral}{        </form>}}
-\DoxyCodeLine{00280 \textcolor{stringliteral}{        </div>}}
-\DoxyCodeLine{00281 \textcolor{stringliteral}{                </div>}}
-\DoxyCodeLine{00282 \textcolor{stringliteral}{                </div>'};}
-\DoxyCodeLine{00283         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00284     \}}
+\DoxyCodeLine{259     \{}
+\DoxyCodeLine{260         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex p-\/2 jumbotron  width100 DarkJumbotron "{} style="{}background-\/color: \#161b22;"{} >}}
+\DoxyCodeLine{261 \textcolor{stringliteral}{        <div class="{}container"{}>}}
+\DoxyCodeLine{262 \textcolor{stringliteral}{        <div class="{}row"{}><h2>Update your password</h2></div>}}
+\DoxyCodeLine{263 \textcolor{stringliteral}{        <div class="{}row"{}>}}
+\DoxyCodeLine{264 \textcolor{stringliteral}{        }}
+\DoxyCodeLine{265 \textcolor{stringliteral}{        }}
+\DoxyCodeLine{266 \textcolor{stringliteral}{        <form action="{}?r=dashboard\&e=updatePassword"{} method="{}post"{}>}}
+\DoxyCodeLine{267 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{268 \textcolor{stringliteral}{                <label for="{}oldPassword"{}>Old password</label>}}
+\DoxyCodeLine{269 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}oldPassword"{} name="{}oldPassword"{} placeholder="{}Old password"{}>}}
+\DoxyCodeLine{270 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{271 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{272 \textcolor{stringliteral}{                <label for="{}newPassword"{}>Password</label>}}
+\DoxyCodeLine{273 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPassword"{} name="{}newPassword"{} placeholder="{}New password"{}>}}
+\DoxyCodeLine{274 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{275 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
+\DoxyCodeLine{276 \textcolor{stringliteral}{                <label for="{}newPasswordRepeat"{}>Password</label>}}
+\DoxyCodeLine{277 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPasswordRepeat"{} name="{}newPasswordRepeat"{} placeholder="{}New password repeat"{}>}}
+\DoxyCodeLine{278 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{279 \textcolor{stringliteral}{}}
+\DoxyCodeLine{280 \textcolor{stringliteral}{            <button type="{}submit"{} class="{}btn btn-\/primary"{}>Submit</button>}}
+\DoxyCodeLine{281 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{282 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{283 \textcolor{stringliteral}{                </div>}}
+\DoxyCodeLine{284 \textcolor{stringliteral}{                </div>'};}
+\DoxyCodeLine{285         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{286     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -188,7 +189,7 @@ Here is the caller graph for this function\+:
 print the html for the resquested content
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
@@ -196,35 +197,34 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{dashboard_controller_8php_source_l00073}{73}} of file \mbox{\hyperlink{dashboard_controller_8php_source}{dashboard\+Controller.\+php}}.
+Definition at line 75 of file dashboard\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00074     \{}
-\DoxyCodeLine{00075 }
-\DoxyCodeLine{00076         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{00077 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{00078         echo \$\_SESSION[\textcolor{stringliteral}{'error'}];}
-\DoxyCodeLine{00079         \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{00080 }
-\DoxyCodeLine{00081         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00082             \$html .= \$this-\/>htmlFormHead();}
-\DoxyCodeLine{00083             \$html .= \$this-\/>htmlFavoriteGames();}
-\DoxyCodeLine{00084             \$html .= \$this-\/>htmlGameTime();}
-\DoxyCodeLine{00085         \}}
-\DoxyCodeLine{00086 }
-\DoxyCodeLine{00087         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
-\DoxyCodeLine{00088             \$html .= \$this-\/>\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{htmlFormUpdatePassword}}();}
-\DoxyCodeLine{00089         \}}
-\DoxyCodeLine{00090 }
-\DoxyCodeLine{00091         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{00092 }
-\DoxyCodeLine{00093         echo \$html;}
-\DoxyCodeLine{00094     \}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{79 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{80         echo \$\_SESSION[\textcolor{stringliteral}{'error'}];}
+\DoxyCodeLine{81         \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{84             \$html .= \$this-\/>htmlFormHead();}
+\DoxyCodeLine{85             \$html .= \$this-\/>htmlFavoriteGames();}
+\DoxyCodeLine{86             \$html .= \$this-\/>htmlGameTime();}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
+\DoxyCodeLine{90             \$html .= \$this-\/>\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{htmlFormUpdatePassword}}();}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         echo \$html;}
+\DoxyCodeLine{96     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

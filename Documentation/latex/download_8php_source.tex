@@ -6,26 +6,24 @@
 \DoxyCodeLine{00002 }
 \DoxyCodeLine{\Hypertarget{download_8php_source_l00010}\mbox{\hyperlink{class_download}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_download}{Download}}}
 \DoxyCodeLine{00011 \{}
-\DoxyCodeLine{00012     \textcolor{keyword}{public} \$aMemberVar = \textcolor{stringliteral}{'aMemberVar Member Variable'};}
-\DoxyCodeLine{00013     \textcolor{keyword}{public} \$aFuncName = \textcolor{stringliteral}{'aMemberFunc'};}
-\DoxyCodeLine{00014 }
-\DoxyCodeLine{\Hypertarget{download_8php_source_l00020}\mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{00020}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{downloadCaiman}}()}
-\DoxyCodeLine{00021     \{}
-\DoxyCodeLine{00022         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
-\DoxyCodeLine{00023         header(\textcolor{stringliteral}{'Pragma: public'});}
-\DoxyCodeLine{00024         header(\textcolor{stringliteral}{'Expires: 0'});}
-\DoxyCodeLine{00025         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
-\DoxyCodeLine{00026         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
-\DoxyCodeLine{00027         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
-\DoxyCodeLine{00030         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
-\DoxyCodeLine{00031         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{download_8php_source_l00018}\mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{00018}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{downloadCaiman}}()}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
+\DoxyCodeLine{00021         header(\textcolor{stringliteral}{'Pragma: public'});}
+\DoxyCodeLine{00022         header(\textcolor{stringliteral}{'Expires: 0'});}
+\DoxyCodeLine{00023         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
+\DoxyCodeLine{00024         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
+\DoxyCodeLine{00025         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
+\DoxyCodeLine{00028         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
+\DoxyCodeLine{00029         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         readfile(\$filename);}
 \DoxyCodeLine{00032 }
-\DoxyCodeLine{00033         readfile(\$filename);}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035         exit;}
-\DoxyCodeLine{00036     \}}
-\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00033         exit;}
+\DoxyCodeLine{00034     \}}
+\DoxyCodeLine{00035 \}}
 
 \end{DoxyCode}

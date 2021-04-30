@@ -16,7 +16,7 @@ Création du git
 
 ### 9h30
 
-je réflechi a ce par quoi je vais commencer j'hésite entre commencer entre le site web ou les téléchargement
+je réfléchi à ce par quoi je vais commencer j'hésite entre commencé entre le site web ou les téléchargement
 
 ### 9h40
 
@@ -39,7 +39,7 @@ Création de la structure du site web
 
 ### 14h35
 
-Création des diférente pages et mise en place de bootstrap
+Création des différente pages et mise en place de bootstrap
 
 ### résumé
 
@@ -51,13 +51,13 @@ j'ai créer la base de donnée et le site web
 
 ### 8h05
 
-je continue a créer le site web je crée les formulaires pour la connexion
+je continue à créer le site web je crée les formulaires pour la connexion
 
 ### 15h20
 
-J'ai implémenter la création de compte et la connexion le mail doit étre unique et le username aussi.
+J'ai impliqué la création de compte et la connexion, le mail doit être unique et le username aussi.
 
-j'ai selon les idication de M. Schmid utilisé les fonctions
+j'ai selon les indication de M. Schmid utilisé les fonctions
 
 password_hash et password_verify de php.
 
@@ -79,7 +79,7 @@ Modification de la structure du site et ajout de l'update de mots de passe
 
 ### 13h00
 
-l'affichage des jeux est disponible ainsi que une recherche sur les jeux grace a leurs noms.
+l'affichage des jeux est disponible ainsi qu'une recherche sur les jeux grâce à leurs noms.
 
 ### 13h20
 
@@ -89,7 +89,7 @@ Ajout de champs dans la table game
 
 ### 15h00
 
-l'affichage de la recherche et du détail d'un jeu fonctionne mais n'est pas belle.
+l'affichage de la recherche et du détail d'un jeu fonctionne mais n'est pas beau.
 
 ------------
 
@@ -97,11 +97,11 @@ l'affichage de la recherche et du détail d'un jeu fonctionne mais n'est pas bel
 
 ### 8h05
 
-Ajout de laffichage des categories de chaque jeu
+Ajout de l'affichage des catégories de chaque jeu
 
 ### 9h00
 
-Affichage des jeux qui appartienne a une catégorie.
+Affichage des jeux qui appartiennent à une catégorie.
 
 ### 10h20
 
@@ -110,7 +110,7 @@ modification de l'interface de recherche
 ### notes personnelles
 
 - je dois ajouter une table pour savoir le nombre d'heure de jeu de chaque utilisateurs
-- je dois ajouter une gestion des message d'erreurs.
+- je dois ajouter une gestion des messages d'erreurs.
 - je peux ajouter une photo de profil
   
 
@@ -120,7 +120,7 @@ modification de l'interface de connexion et de d'inscription
 
 ### 11h50
 
-supression de la page de création de compte
+suppression de la page de création de compte
 
 ### 12h40
 
@@ -128,7 +128,7 @@ Ajout d'un jeux en favoris
 
 ### 15h00
 
-suppresion d'un jeu en favoris
+suppression d'un jeu en favoris
 
 ### a faire demain
 
@@ -145,11 +145,11 @@ modification de la l'interface du Dashboard
 ### 8h40
 
 Ajout d'un champ dans la table utilisateur pour spécifier si l'utilisateur est privé ou non
-si l'utilisateur n'est pas privé tous le monde va pouvoir voir son profils
+si l'utilisateur n'est pas privé tout le monde va pouvoir voir son profils
 
 ### 9h30
 
-la modifivation du paramétre pour savoir si le compte est privé ou non
+la modification du paramètre pour savoir si le compte est privé ou non
 
 ### 12h20
 
@@ -161,15 +161,15 @@ modification de l'interface theme blanc -> dark
 
 ### 15h20
 
-test de téléchargement de fichiers deouis le poste utilisateur
+test de téléchargement de fichiers depuis le poste utilisateur
 
 ### notes pour la prochaine fois
 
 - Je dois créer la partie Administrateur du site
-- Je dois créer un une fonctionnalité qui me permet de gerer les messages d'erreurs
-- Je dois sécuriser l'acces au pages
+- Je dois créer un une fonctionnalité qui me permet de gérer les messages d'erreurs
+- Je dois sécuriser l'accès au pages
 - je dois sécuriser les différents formulaires
-- je dois je dois me reinseigner comment uploader des gros fichier depuis un poste clients
+- je dois je dois me renseigner comment uploader des gros fichier depuis un poste clients
 - je dois changer de navbar
 
 ----------
@@ -178,14 +178,14 @@ test de téléchargement de fichiers deouis le poste utilisateur
 
 ### 8h05
 
-notes personneles:
+notes personnelles:
 
-- je dois ajouter la posibilité d'afficher la page d'un utilisateur
+- je dois ajouter la possibilité d'afficher la page d'un utilisateur
 - je dois corriger mon script d'export de base de données
 
 ### 8h10
 
-Creation de la page dédie aux administrateurs.
+Création de la page dédiée aux administrateurs.
 
 ### 8h30 
 
@@ -197,7 +197,7 @@ Ajout de jeu
 
 ### notes personnels
 
-j'ai regarder plusieurs méthodes pour envoyer un fichier depuis un formulaire en php. Pour l'instant jutilise les fonctions de base de php et elle fonctionne donc je vais faire des tests une fois le site uploadé sur le Bunker.
+j'ai regardé plusieurs méthodes pour envoyer un fichier depuis un formulaire en php. Pour l'instant j'utilise les fonctions de base de php et elle fonctionne donc je vais faire des tests une fois le site uploadé sur le Bunker.
 
 ### 11h00 
 
@@ -205,11 +205,11 @@ le fichier .iso est uploadé avec le bon nom mais pas encore dans la base de don
 
 ### 15h00
 
-Le jeu est bien ajouté ave le bon nom ainsi que la bonne image.
+Le jeu est bien ajouté avec le bon nom ainsi que la bonne image.
 
 ### 15h45
 
-il est maintenant possible de mettre a jour le nom, la description ou la console d'un jeu.
+il est maintenant possible de mettre à jour le nom, la description ou la console d'un jeu.
 
 ### 15h50
 
@@ -243,16 +243,16 @@ modification de l'interface pour que les jeux s'affiche correctement
 
 Le site est fonctionnel mais il manque des détail comme les message d'erreur et les droit sur les pages
 
-### notes personelles
+### notes personnelles
 
 pour finir le site il me reste les choses suivante a faire:
 - Sécuriser les pages
 - afficher des messages d'erreur
-- suppresion de catégories
-- suppresion de jeu
+- suppression de catégories
+- suppression de jeu
 - mot de passe oublié
 - commenter mon code
-- pagination pout les recherches
+- pagination pour les recherches
 
 ### 13h40
 
@@ -272,7 +272,7 @@ correction d'un bogue sur le nombre d'heure de jeu et riage des jeux par heure d
 
 ### 11h00
 
-gestion des droit d'acces au page
+gestion des droit d'accès au page
 
 ### 13h10
 
@@ -292,8 +292,28 @@ Documentation
 
 ### 10h20
 
-Mr. Garcia m'a aidé a mettre en place ma documentation doxyygen
+Mr. Garcia m'a aidé à mettre en place ma documentation doxygen
 
 ### 11h00
 
 documentation
+
+---------
+
+## 30.04.2021
+
+### 8h05
+
+Correction du logbook
+
+### 8h20
+
+supression de code inutile sur le site et mis a jour de la doccumentation
+
+### 9h30
+
+ajout de contrainte dans la base de données
+
+### 10h45
+
+Création du planning effectif

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 28 avr. 2021 à 13:54
+-- Généré le : ven. 30 avr. 2021 à 09:20
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.11
 
@@ -41,6 +41,7 @@ INSERT INTO `categorie` (`id`, `name`) VALUES
 (4, 'Fight'),
 (3, 'Kingdom Hearts'),
 (2, 'Mario'),
+(9, 'Metroid'),
 (5, 'Multiplayer'),
 (6, 'Rpg'),
 (7, 'Sport'),
@@ -214,7 +215,8 @@ INSERT INTO `gamehascategorie` (`id`, `idGame`, `idCategorie`) VALUES
 (31, 15, 8),
 (32, 5, 6),
 (33, 16, 2),
-(34, 16, 7);
+(34, 16, 7),
+(35, 18, 9);
 
 -- --------------------------------------------------------
 
@@ -397,7 +399,7 @@ ALTER TABLE `userconfigfile`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `consol`
@@ -439,7 +441,7 @@ ALTER TABLE `game`
 -- AUTO_INCREMENT pour la table `gamehascategorie`
 --
 ALTER TABLE `gamehascategorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `role`
@@ -487,7 +489,8 @@ ALTER TABLE `favoritegame`
 --
 ALTER TABLE `filesave`
   ADD CONSTRAINT `filesave_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `filesave_ibfk_2` FOREIGN KEY (`idGame`) REFERENCES `game` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `filesave_ibfk_2` FOREIGN KEY (`idGame`) REFERENCES `game` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `filesave_ibfk_3` FOREIGN KEY (`idFile`) REFERENCES `file` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `game`
@@ -509,6 +512,12 @@ ALTER TABLE `gamehascategorie`
 ALTER TABLE `timeingame`
   ADD CONSTRAINT `timeingame_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `timeingame_ibfk_2` FOREIGN KEY (`idGame`) REFERENCES `game` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Contraintes pour la table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`idRole`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `userconfigfile`

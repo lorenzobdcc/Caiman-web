@@ -113,6 +113,7 @@ class Games {
             }
         }
     }
+
     /**
      * returns all games from the database
      *
@@ -239,24 +240,24 @@ class Games {
         }
         return $result;
     }
+
     /**
      * returns add a game to a user's favorites
      *
-     * @return void
+     * @return array
      */
     public function addGameToFavoris(int $idUser, int $idGame)
     {
         
         try{
             $this->psAddGameToFavori->execute(array(':search_idUser' => $idUser,':search_idGame' => $idGame));
-            $result = $this->psAddGameToFavori->fetchAll();
 
         }catch (PDOException $e) {
             print "Erreur !: " . $e->getMessage() . "<br>";
             die();
         }
-        return $result;
     }
+
     /**
      * returns remove a game to a user's favorites
      *
@@ -274,6 +275,7 @@ class Games {
             die();
         }
     }
+    
     /**
      * returns if a game is already in favorite
      *

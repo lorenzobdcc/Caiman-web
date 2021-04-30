@@ -43,7 +43,7 @@
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00009}{9}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 10 of file administrator.\+php.
 
 
 
@@ -56,49 +56,49 @@ Definition at line \mbox{\hyperlink{administrator_8php_source_l00009}{9}} of fil
 
 default contructor 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00032}{32}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 33 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00033     \{}
-\DoxyCodeLine{00034         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00035             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00036                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{00037                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{00038                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{00039                 ));}
-\DoxyCodeLine{00040                 \textcolor{comment}{// get list of console}}
-\DoxyCodeLine{00041                 \$sqlGetListConsole = \textcolor{stringliteral}{"{}SELECT * FROM consol"{}};}
-\DoxyCodeLine{00042                 \$this-\/>psGetListConsole = \$this-\/>dbh-\/>prepare(\$sqlGetListConsole);}
-\DoxyCodeLine{00043                 \$this-\/>psGetListConsole-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045                 \textcolor{comment}{// upload game}}
-\DoxyCodeLine{00046                 \$sqlUploadGame = \textcolor{stringliteral}{"{}INSERT INTO game  (name, description, imageName, idConsole, idFile)}}
-\DoxyCodeLine{00047 \textcolor{stringliteral}{                VALUES (:insert\_name, :insert\_description, :insert\_imageName, :insert\_idConsole, :insert\_idFile)"{}};}
-\DoxyCodeLine{00048                 \$this-\/>psUploadGame = \$this-\/>dbh-\/>prepare(\$sqlUploadGame);}
-\DoxyCodeLine{00049                 \$this-\/>psUploadGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00050 }
-\DoxyCodeLine{00051                 \textcolor{comment}{// upload file}}
-\DoxyCodeLine{00052                 \$sqlUploadFile = \textcolor{stringliteral}{"{}INSERT INTO file  (filename, dateUpdate)}}
-\DoxyCodeLine{00053 \textcolor{stringliteral}{                VALUES (:insert\_filename, NOW() )"{}};}
-\DoxyCodeLine{00054                 \$this-\/>psUploadFile = \$this-\/>dbh-\/>prepare(\$sqlUploadFile);}
-\DoxyCodeLine{00055                 \$this-\/>psUploadFile-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00056 }
-\DoxyCodeLine{00057                 \textcolor{comment}{// update game}}
-\DoxyCodeLine{00058                 \$sqlUpdateGane = \textcolor{stringliteral}{"{}UPDATE game  SET name = :update\_name, description = :update\_description, idConsole = :update\_idConsole WHERE id = :update\_id"{}};}
-\DoxyCodeLine{00059                 \$this-\/>psUpdateGame = \$this-\/>dbh-\/>prepare(\$sqlUpdateGane);}
-\DoxyCodeLine{00060                 \$this-\/>psUpdateGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00061 }
-\DoxyCodeLine{00062                 \textcolor{comment}{// get folder name of console}}
-\DoxyCodeLine{00063                 \$sqlGetNameConsoleFolder = \textcolor{stringliteral}{"{}SELECT folderName FROM consol WHERE id = :console\_id"{}};}
-\DoxyCodeLine{00064                 \$this-\/>psGetNameConsoleFolder = \$this-\/>dbh-\/>prepare(\$sqlGetNameConsoleFolder);}
-\DoxyCodeLine{00065                 \$this-\/>psGetNameConsoleFolder-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00066             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00067                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00068                 die();}
-\DoxyCodeLine{00069             \}}
-\DoxyCodeLine{00070         \}}
-\DoxyCodeLine{00071     \}}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{36             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{37                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{38                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{39                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{40                 ));}
+\DoxyCodeLine{41                 \textcolor{comment}{// get list of console}}
+\DoxyCodeLine{42                 \$sqlGetListConsole = \textcolor{stringliteral}{"{}SELECT * FROM consol"{}};}
+\DoxyCodeLine{43                 \$this-\/>psGetListConsole = \$this-\/>dbh-\/>prepare(\$sqlGetListConsole);}
+\DoxyCodeLine{44                 \$this-\/>psGetListConsole-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46                 \textcolor{comment}{// upload game}}
+\DoxyCodeLine{47                 \$sqlUploadGame = \textcolor{stringliteral}{"{}INSERT INTO game  (name, description, imageName, idConsole, idFile)}}
+\DoxyCodeLine{48 \textcolor{stringliteral}{                VALUES (:insert\_name, :insert\_description, :insert\_imageName, :insert\_idConsole, :insert\_idFile)"{}};}
+\DoxyCodeLine{49                 \$this-\/>psUploadGame = \$this-\/>dbh-\/>prepare(\$sqlUploadGame);}
+\DoxyCodeLine{50                 \$this-\/>psUploadGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52                 \textcolor{comment}{// upload file}}
+\DoxyCodeLine{53                 \$sqlUploadFile = \textcolor{stringliteral}{"{}INSERT INTO file  (filename, dateUpdate)}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{                VALUES (:insert\_filename, NOW() )"{}};}
+\DoxyCodeLine{55                 \$this-\/>psUploadFile = \$this-\/>dbh-\/>prepare(\$sqlUploadFile);}
+\DoxyCodeLine{56                 \$this-\/>psUploadFile-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58                 \textcolor{comment}{// update game}}
+\DoxyCodeLine{59                 \$sqlUpdateGane = \textcolor{stringliteral}{"{}UPDATE game  SET name = :update\_name, description = :update\_description, idConsole = :update\_idConsole WHERE id = :update\_id"{}};}
+\DoxyCodeLine{60                 \$this-\/>psUpdateGame = \$this-\/>dbh-\/>prepare(\$sqlUpdateGane);}
+\DoxyCodeLine{61                 \$this-\/>psUpdateGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63                 \textcolor{comment}{// get folder name of console}}
+\DoxyCodeLine{64                 \$sqlGetNameConsoleFolder = \textcolor{stringliteral}{"{}SELECT folderName FROM consol WHERE id = :console\_id"{}};}
+\DoxyCodeLine{65                 \$this-\/>psGetNameConsoleFolder = \$this-\/>dbh-\/>prepare(\$sqlGetNameConsoleFolder);}
+\DoxyCodeLine{66                 \$this-\/>psGetNameConsoleFolder-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{67             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{68                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{69                 die();}
+\DoxyCodeLine{70             \}}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72     \}}
 
 \end{DoxyCode}
 
@@ -122,7 +122,7 @@ string & {\em \$image\+Name} & \\
 \hline
 integer & {\em \$console\+Id} & \\
 \hline
- & {\em \mbox{[}type\mbox{]}} & \$game\+File\+Name \\
+string & {\em \$game\+File\+Name} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -130,28 +130,28 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00082}{82}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 84 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00083     \{}
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_administrator_a50c924aafa709b3032fedb0c41a944bf}{uploadGame}}(\$gameFileName, \$consoleId) \&\& \$this-\/>\mbox{\hyperlink{class_administrator_a73706dbcb06c2ae9ffc11033ad1266c3}{uploadGameImage}}(\$imageName)) \{}
-\DoxyCodeLine{00086             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00087                 \$this-\/>psUploadFile-\/>execute(array(\textcolor{stringliteral}{':insert\_filename'} => \$gameFileName));}
-\DoxyCodeLine{00088             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00089                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00090                 die();}
-\DoxyCodeLine{00091             \}}
-\DoxyCodeLine{00092             \$lastInsertId = \$this-\/>dbh-\/>lastInsertId();}
-\DoxyCodeLine{00093             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00094                 \$this-\/>psUploadGame-\/>execute(array(\textcolor{stringliteral}{':insert\_name'} => \$name, \textcolor{stringliteral}{':insert\_description'} => \$description, \textcolor{stringliteral}{':insert\_imageName'} => \$imageName, \textcolor{stringliteral}{':insert\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':insert\_idFile'} => \$lastInsertId));}
-\DoxyCodeLine{00095             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00096                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00097                 die();}
-\DoxyCodeLine{00098             \}}
-\DoxyCodeLine{00099         \}}
-\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_administrator_a50c924aafa709b3032fedb0c41a944bf}{uploadGame}}(\$gameFileName, \$consoleId) \&\& \$this-\/>\mbox{\hyperlink{class_administrator_a73706dbcb06c2ae9ffc11033ad1266c3}{uploadGameImage}}(\$imageName)) \{}
+\DoxyCodeLine{88             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{89                 \$this-\/>psUploadFile-\/>execute(array(\textcolor{stringliteral}{':insert\_filename'} => \$gameFileName));}
+\DoxyCodeLine{90             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{91                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{92                 die();}
+\DoxyCodeLine{93             \}}
+\DoxyCodeLine{94             \$lastInsertId = \$this-\/>dbh-\/>lastInsertId();}
+\DoxyCodeLine{95             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{96                 \$this-\/>psUploadGame-\/>execute(array(\textcolor{stringliteral}{':insert\_name'} => \$name, \textcolor{stringliteral}{':insert\_description'} => \$description, \textcolor{stringliteral}{':insert\_imageName'} => \$imageName, \textcolor{stringliteral}{':insert\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':insert\_idFile'} => \$lastInsertId));}
+\DoxyCodeLine{97             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{98                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{99                 die();}
+\DoxyCodeLine{100             \}}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102     \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -170,30 +170,30 @@ Here is the call graph for this function\+:\nopagebreak
 get the path name of an console
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$id \\
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+array of game 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00197}{197}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 202 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00198     \{}
-\DoxyCodeLine{00199         \$returnArray = \textcolor{keyword}{null};}
-\DoxyCodeLine{00200         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00201             \$this-\/>psGetNameConsoleFolder-\/>execute(array(\textcolor{stringliteral}{':console\_id'} => \$id));}
-\DoxyCodeLine{00202             \$returnArray = \$this-\/>psGetNameConsoleFolder-\/>fetchAll();}
-\DoxyCodeLine{00203         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00204             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00205             die();}
-\DoxyCodeLine{00206         \}}
-\DoxyCodeLine{00207         \textcolor{keywordflow}{return} \$returnArray[0][\textcolor{stringliteral}{'folderName'}];}
-\DoxyCodeLine{00208     \}}
+\DoxyCodeLine{203     \{}
+\DoxyCodeLine{204         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{205         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{206             \$this-\/>psGetNameConsoleFolder-\/>execute(array(\textcolor{stringliteral}{':console\_id'} => \$id));}
+\DoxyCodeLine{207             \$returnArray = \$this-\/>psGetNameConsoleFolder-\/>fetchAll();}
+\DoxyCodeLine{208         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{209             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{210             die();}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{keywordflow}{return} \$returnArray[0][\textcolor{stringliteral}{'folderName'}];}
+\DoxyCodeLine{213     \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:\nopagebreak
@@ -212,25 +212,25 @@ Here is the caller graph for this function\+:\nopagebreak
 returns list of all consoles
 
 \begin{DoxyReturn}{Returns}
-void 
+array of game 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00214}{214}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 220 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00215     \{}
-\DoxyCodeLine{00216         \$returnArray = \textcolor{keyword}{null};}
-\DoxyCodeLine{00217         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00218             \$this-\/>psGetListConsole-\/>execute();}
-\DoxyCodeLine{00219             \$returnArray = \$this-\/>psGetListConsole-\/>fetchAll();}
-\DoxyCodeLine{00220         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00221             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00222             die();}
-\DoxyCodeLine{00223         \}}
-\DoxyCodeLine{00224         \textcolor{keywordflow}{return} \$returnArray;}
-\DoxyCodeLine{00225     \}}
+\DoxyCodeLine{221     \{}
+\DoxyCodeLine{222         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{223         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{224             \$this-\/>psGetListConsole-\/>execute();}
+\DoxyCodeLine{225             \$returnArray = \$this-\/>psGetListConsole-\/>fetchAll();}
+\DoxyCodeLine{226         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{227             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{228             die();}
+\DoxyCodeLine{229         \}}
+\DoxyCodeLine{230         \textcolor{keywordflow}{return} \$returnArray;}
+\DoxyCodeLine{231     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_administrator_abde4a60dbae06284e393b4b2c3d6c631}\label{class_administrator_abde4a60dbae06284e393b4b2c3d6c631}} 
@@ -242,14 +242,14 @@ Definition at line \mbox{\hyperlink{administrator_8php_source_l00214}{214}} of f
 update da of a game
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$id\+Game \\
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id\+Game} & \\
 \hline
-{\em \mbox{[}type\mbox{]}} & \$name \\
+string & {\em \$name} & \\
 \hline
-{\em \mbox{[}type\mbox{]}} & \$description \\
+string & {\em \$description} & \\
 \hline
-{\em \mbox{[}type\mbox{]}} & \$console\+Id \\
+int & {\em \$console\+Id} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -257,18 +257,18 @@ void
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00147}{147}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 151 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00148     \{}
-\DoxyCodeLine{00149         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00150             \$this-\/>psUpdateGame-\/>execute(array(\textcolor{stringliteral}{':update\_name'} => \$name, \textcolor{stringliteral}{':update\_description'} => \$description, \textcolor{stringliteral}{':update\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':update\_id'} => \$idGame));}
-\DoxyCodeLine{00151         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00152             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00153             die();}
-\DoxyCodeLine{00154         \}}
-\DoxyCodeLine{00155     \}}
+\DoxyCodeLine{152     \{}
+\DoxyCodeLine{153         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{154             \$this-\/>psUpdateGame-\/>execute(array(\textcolor{stringliteral}{':update\_name'} => \$name, \textcolor{stringliteral}{':update\_description'} => \$description, \textcolor{stringliteral}{':update\_idConsole'} => \$consoleId, \textcolor{stringliteral}{':update\_id'} => \$idGame));}
+\DoxyCodeLine{155         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{156             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{157             die();}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_administrator_a50c924aafa709b3032fedb0c41a944bf}\label{class_administrator_a50c924aafa709b3032fedb0c41a944bf}} 
@@ -280,50 +280,50 @@ Definition at line \mbox{\hyperlink{administrator_8php_source_l00147}{147}} of f
 upload a game
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$game\+File\+Name \\
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$game\+File\+Name} & \\
 \hline
-{\em \mbox{[}type\mbox{]}} & \$console\+Id \\
+int & {\em \$console\+Id} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+bool 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00108}{108}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 111 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00109     \{}
-\DoxyCodeLine{00110         \$uploadIsValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{00111         \$target\_dir = \textcolor{stringliteral}{"{}../games/"{}} . \$this-\/>\mbox{\hyperlink{class_administrator_aa81b23c6aa225a1278e699194a441cd3}{getConsoleFolderName}}(\$consoleId) . \textcolor{stringliteral}{"{}/"{}};}
-\DoxyCodeLine{00112 }
-\DoxyCodeLine{00113         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
-\DoxyCodeLine{00114         \$uploadOk = 1;}
-\DoxyCodeLine{00115         \$fileType = strtolower(pathinfo(\$target\_file, PATHINFO\_EXTENSION));}
-\DoxyCodeLine{00116 }
-\DoxyCodeLine{00117         \textcolor{comment}{//rename file}}
-\DoxyCodeLine{00118         \$newfilename = \$gameFileName . \textcolor{charliteral}{'.'} . \$fileType;}
-\DoxyCodeLine{00119 }
-\DoxyCodeLine{00120 }
-\DoxyCodeLine{00121         \textcolor{comment}{// Check if file already exists}}
-\DoxyCodeLine{00122         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
-\DoxyCodeLine{00123             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
-\DoxyCodeLine{00124             \$uploadOk = 0;}
-\DoxyCodeLine{00125         \}}
-\DoxyCodeLine{00126         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
-\DoxyCodeLine{00127             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
-\DoxyCodeLine{00128             \textcolor{comment}{// if everything is ok, try to upload file}}
-\DoxyCodeLine{00129         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00130             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
-\DoxyCodeLine{00131                 \$uploadIsValid = \textcolor{keyword}{true};}
-\DoxyCodeLine{00132             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00133                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
-\DoxyCodeLine{00134             \}}
-\DoxyCodeLine{00135         \}}
-\DoxyCodeLine{00136         \textcolor{keywordflow}{return} \$uploadIsValid;}
-\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{112     \{}
+\DoxyCodeLine{113         \$uploadIsValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{114         \$target\_dir = \textcolor{stringliteral}{"{}../games/"{}} . \$this-\/>\mbox{\hyperlink{class_administrator_aa81b23c6aa225a1278e699194a441cd3}{getConsoleFolderName}}(\$consoleId) . \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{117         \$uploadOk = 1;}
+\DoxyCodeLine{118         \$fileType = strtolower(pathinfo(\$target\_file, PATHINFO\_EXTENSION));}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120         \textcolor{comment}{//rename file}}
+\DoxyCodeLine{121         \$newfilename = \$gameFileName . \textcolor{charliteral}{'.'} . \$fileType;}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \textcolor{comment}{// Check if file already exists}}
+\DoxyCodeLine{125         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
+\DoxyCodeLine{126             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
+\DoxyCodeLine{127             \$uploadOk = 0;}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
+\DoxyCodeLine{130             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
+\DoxyCodeLine{131             \textcolor{comment}{// if everything is ok, try to upload file}}
+\DoxyCodeLine{132         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{133             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}fileGame"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
+\DoxyCodeLine{134                 \$uploadIsValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{135             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{136                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
+\DoxyCodeLine{137             \}}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139         \textcolor{keywordflow}{return} \$uploadIsValid;}
+\DoxyCodeLine{140     \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -349,47 +349,46 @@ Here is the caller graph for this function\+:\nopagebreak
 upload an image
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$image\+File\+Name \\
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$image\+File\+Name} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+bool 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{administrator_8php_source_l00162}{162}} of file \mbox{\hyperlink{administrator_8php_source}{administrator.\+php}}.
+Definition at line 167 of file administrator.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00163     \{}
-\DoxyCodeLine{00164         \$uploadIsValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{00165         \$target\_dir = \textcolor{stringliteral}{"{}img/games/"{}};}
-\DoxyCodeLine{00166 }
-\DoxyCodeLine{00167         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
-\DoxyCodeLine{00168         \$uploadOk = 1;}
-\DoxyCodeLine{00169         \$fileType = strtolower(pathinfo(\$target\_file, PATHINFO\_EXTENSION));}
-\DoxyCodeLine{00170 }
-\DoxyCodeLine{00171         \textcolor{comment}{//rename file}}
-\DoxyCodeLine{00172         \$newfilename = \$imageFileName;}
-\DoxyCodeLine{00173 }
-\DoxyCodeLine{00174         \textcolor{comment}{// Check if file already exists}}
-\DoxyCodeLine{00175         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
-\DoxyCodeLine{00176             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
-\DoxyCodeLine{00177             \$uploadOk = 0;}
-\DoxyCodeLine{00178         \}}
-\DoxyCodeLine{00179         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
-\DoxyCodeLine{00180             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
-\DoxyCodeLine{00181             \textcolor{comment}{// if everything is ok, try to upload file}}
-\DoxyCodeLine{00182         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00183             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
-\DoxyCodeLine{00184                 \$uploadIsValid = \textcolor{keyword}{true};}
-\DoxyCodeLine{00185             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00186                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
-\DoxyCodeLine{00187             \}}
-\DoxyCodeLine{00188         \}}
-\DoxyCodeLine{00189         \textcolor{keywordflow}{return} \$uploadIsValid;}
-\DoxyCodeLine{00190     \}}
+\DoxyCodeLine{168     \{}
+\DoxyCodeLine{169         \$uploadIsValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{170         \$target\_dir = \textcolor{stringliteral}{"{}img/games/"{}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \$target\_file =  basename(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{173         \$uploadOk = 1;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175         \textcolor{comment}{//rename file}}
+\DoxyCodeLine{176         \$newfilename = \$imageFileName;}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178         \textcolor{comment}{// Check if file already exists}}
+\DoxyCodeLine{179         \textcolor{keywordflow}{if} (file\_exists(\$target\_file)) \{}
+\DoxyCodeLine{180             echo \textcolor{stringliteral}{"{}Sorry, file already exists."{}};}
+\DoxyCodeLine{181             \$uploadOk = 0;}
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183         \textcolor{keywordflow}{if} (\$uploadOk == 0) \{}
+\DoxyCodeLine{184             echo \textcolor{stringliteral}{"{}Sorry, your file was not uploaded."{}};}
+\DoxyCodeLine{185             \textcolor{comment}{// if everything is ok, try to upload file}}
+\DoxyCodeLine{186         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{187             \textcolor{keywordflow}{if} (move\_uploaded\_file(\$\_FILES[\textcolor{stringliteral}{"{}image"{}}][\textcolor{stringliteral}{"{}tmp\_name"{}}], \$target\_dir . \$newfilename)) \{}
+\DoxyCodeLine{188                 \$uploadIsValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{189             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{190                 \textcolor{comment}{//Sorry, there was an error uploading your file}}
+\DoxyCodeLine{191             \}}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193         \textcolor{keywordflow}{return} \$uploadIsValid;}
+\DoxyCodeLine{194     \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:\nopagebreak

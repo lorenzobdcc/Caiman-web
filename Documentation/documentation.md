@@ -73,6 +73,21 @@ Table des matières
     - [Réception des input des manettes connecté](#réception-des-input-des-manettes-connecté)
     - [Envoie des input a la form active dans l’application](#envoie-des-input-a-la-form-active-dans-lapplication)
     - [Transformation des input de la manette en événement](#transformation-des-input-de-la-manette-en-événement)
+- [Analyse organique](#analyse-organique)
+  - [Technologies utilisées](#technologies-utilisées)
+    - [PHP](#php)
+    - [C](#c)
+  - [Architecture du projet](#architecture-du-projet)
+  - [Description technique: Site web](#description-technique-site-web)
+  - [Description technique: Application Caiman](#description-technique-application-caiman)
+  - [Tests](#tests)
+  - [Estimation de l’apport personnel](#estimation-de-lapport-personnel)
+  - [Conclusion et perspectives](#conclusion-et-perspectives)
+    - [Problème rencontrés](#problème-rencontrés)
+    - [Expérience acquise durant le travail](#expérience-acquise-durant-le-travail)
+    - [Amélioration envisageable](#amélioration-envisageable)
+    - [Intérêt personnel](#intérêt-personnel)
+- [Sources](#sources)
 
 # Résumé
 
@@ -505,3 +520,48 @@ L’un des intérêts du site est de pouvoir télécharger l'application Caiman.
 
 
 ### Transformation des input de la manette en événement 
+
+
+# Analyse organique
+
+
+## Technologies utilisées
+
+
+### PHP
+
+
+### C#
+
+
+## Architecture du projet
+
+
+## Description technique: Site web
+
+
+## Description technique: Application Caiman
+
+
+## Tests
+
+
+## Estimation de l’apport personnel
+
+
+## Conclusion et perspectives
+
+
+### Problème rencontrés
+
+
+### Expérience acquise durant le travail
+
+
+### Amélioration envisageable
+
+
+### Intérêt personnel
+
+
+# Sources

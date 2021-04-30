@@ -1,11 +1,12 @@
 <?php
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Auteur  : Lorenzo Bauduccio
- * Classe  : tech 2
- * Version : 1.0
- * Date    : 28.04.2021
- * description : page faisant le lien entre toutes les page du site web
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief index of the website 
+ */
 include_once "../HOST.php";
 include_once "models/class.php";
 include_once "controllers/controllers.php";
@@ -14,6 +15,7 @@ session_start();
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = new user("", "", -1, "-1");
+    $_SESSION['title'] = "Caiman";
 }
 
 
@@ -55,9 +57,9 @@ switch ($r_page) {
         $controller = new IndexController();
         break;
 }
+
 $controller->formHandler();
 
-$title = "Caiman";
 include "common/head.php";
 include "common/modal.php";
 include "common/navbar.php";

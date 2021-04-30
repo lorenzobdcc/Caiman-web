@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -15,22 +16,22 @@ class UsersController implements iController
     private $idUser = null;
     private $game = null;
 
-  /**
-   * used to handle if the user has resquest something
-   *
-   * @return void
-   */
+    /**
+     * used to handle if the user has resquest something
+     *
+     * @return void
+     */
     public function formHandler()
     {
+        $_SESSION['title'] = "Caiman: Users";
 
-        
         if (isset($_GET['e'])) {
             $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_SPECIAL_CHARS);
         }
 
         // request user by their username
         if ($this->e == "researchUser") {
-
+            $_SESSION['title'] = "Caiman: Search";
             if (isset($_POST['username'])) {
                 $this->requestUsername = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             }
@@ -38,28 +39,28 @@ class UsersController implements iController
 
         // show detail of a user
         if ($this->e == "detailUser") {
-
+            $_SESSION['title'] = "Caiman: User detail";
             if (isset($_GET['idUser'])) {
                 $this->idUser = filter_input(INPUT_GET, 'idUser', FILTER_SANITIZE_STRING);
             }
         }
     }
 
-/**
- * default constructor
- */
+    /**
+     * default constructor
+     */
     public function __construct()
     {
         $this->userData = new UserData();
         $this->game = new Games();
     }
 
-  /**
-   * print the html for the resquested content
-   * 
-   *
-   * @return void
-   */
+    /**
+     * print the html for the resquested content
+     * 
+     *
+     * @return void
+     */
     public function printHTML()
     {
 
@@ -89,7 +90,7 @@ class UsersController implements iController
     /**
      * create the form to search users
      *
-     * @return void
+     * @return html
      */
     public function htmlrecherchUsers()
     {
@@ -111,13 +112,13 @@ class UsersController implements iController
           </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
     /**
      * create the list of user requested by their username
      *
-     * @return void
+     * @return html
      */
     public function htmlrequestUser()
     {
@@ -128,19 +129,18 @@ class UsersController implements iController
           <h2 class="card-title ">Results</h2>
           <div class="list-group">
           ';
-          
-          foreach ($this->userData->getUsersByUsername($this->requestUsername) as $key => $user) {
 
-              $html .= '<a class="btn btn-outline-success btnCategorie margintop10 " href="?r=users&e=detailUser&idUser=' . $user['id'] . '" role="button">'.$user['username'].'</a>';
+        foreach ($this->userData->getUsersByUsername($this->requestUsername) as $key => $user) {
 
-          }
+            $html .= '<a class="btn btn-outline-success btnCategorie margintop10 " href="?r=users&e=detailUser&idUser=' . $user['id'] . '" role="button">' . $user['username'] . '</a>';
+        }
 
-            $html .= '
+        $html .= '
             </div>
           </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
     /**
@@ -157,19 +157,18 @@ class UsersController implements iController
           <h2 class="card-title ">Results</h2>
           <div class="list-group">
           ';
-          
-          foreach ($this->userData->getUsersByUsername($this->requestUsername) as $key => $user) {
 
-              $html .= '<a class="btn btn-outline-success btnCategorie margintop10 " href="?r=users&e=detailUser&idUser=' . $user['id'] . '" role="button">'.$user['username'].'</a>';
+        foreach ($this->userData->getUsersByUsername($this->requestUsername) as $key => $user) {
 
-          }
+            $html .= '<a class="btn btn-outline-success btnCategorie margintop10 " href="?r=users&e=detailUser&idUser=' . $user['id'] . '" role="button">' . $user['username'] . '</a>';
+        }
 
-            $html .= '
+        $html .= '
             </div>
           </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
     /**
@@ -184,16 +183,16 @@ class UsersController implements iController
         $dataUser = $dataUser[0];
 
         $html .= '<div class=" jumbotron DarkJumbotron width100" style="background-color: #161b22;">';
-          
+
         $html .= '<div class="container">
         <div class="row"><h2>User\'s Informations</h2></div>
         <div class="row ">
           <div class="col-sm">
             <ul class="list-group">';
-                $html .= '<li class="list-group-item">Username: '.$dataUser['username'].'</li>';
-                
-                
-                $html .='
+        $html .= '<li class="list-group-item">Username: ' . $dataUser['username'] . '</li>';
+
+
+        $html .= '
             </ul>
           </div>
             <div class="col-sm">
@@ -201,12 +200,12 @@ class UsersController implements iController
             </div>
         </div>';
 
-      $html.='
+        $html .= '
           
         </div>
       </div>';
 
-      return $html;
+        return $html;
     }
 
     /**
@@ -239,7 +238,7 @@ class UsersController implements iController
     /**
      * create a list of the games who as been played by the user and display the number of hours and minutes
      *
-     * @return void
+     * @return html
      */
     private function htmlTimeInGameUser()
     {
@@ -264,12 +263,12 @@ class UsersController implements iController
 
 
 
-/**
- * diplay a game
- *
- * @param int $game
- * @return void
- */
+    /**
+     * diplay a game
+     *
+     * @param int $game
+     * @return html
+     */
     private function createCardHTML($game)
     {
         $html = '
@@ -281,21 +280,22 @@ class UsersController implements iController
         <div class="card-body ">
             ';
 
-                    $html.= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
+        $html .= '<a class="btn btn-outline-success cardContent" href="?r=games&e=removeFavoris&idGame=' . $game['id'] . '" role="button"><i class="fa fa-heart "></i></a>';
 
 
-            $html .= '
+        $html .= '
         </div>
         </div>
         </a>
         </div>';
         return $html;
     }
-/**
+
+    /**
      * create the view of a game with the time played
      *
      * @param int $game
-     * @return void
+     * @return html
      */
     private function createCardHTMLTime($game)
     {
@@ -308,18 +308,16 @@ class UsersController implements iController
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
             <p class="greenTexte">';
-            $heure = (int)($gameTime[0]['timeInMinute'] / 60 );
-            $minutes = ( $gameTime[0]['timeInMinute'] % 60);
-            if ($minutes == 60) {
-                $heure ++;
-                $minutes = 0;
-            }
-            $html .= $heure. "h".$minutes. " minutes";
-            $html .=' </p>
+        $heure = (int)($gameTime[0]['timeInMinute'] / 60);
+        $minutes = ($gameTime[0]['timeInMinute'] % 60);
+        if ($minutes == 60) {
+            $heure++;
+            $minutes = 0;
+        }
+        $html .= $heure . "h" . $minutes . " minutes";
+        $html .= ' </p>
         </div>
         </div>';
         return $html;
     }
-
-    
 }

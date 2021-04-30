@@ -38,7 +38,7 @@ Collaboration diagram for Download\+Controller\+:\nopagebreak
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{download_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{download_controller_8php_source}{download\+Controller.\+php}}.
+Definition at line 10 of file download\+Controller.\+php.
 
 
 
@@ -51,13 +51,13 @@ Definition at line \mbox{\hyperlink{download_controller_8php_source_l00010}{10}}
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{download_controller_8php_source_l00018}{18}} of file \mbox{\hyperlink{download_controller_8php_source}{download\+Controller.\+php}}.
+Definition at line 18 of file download\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019   \{}
-\DoxyCodeLine{00020     \$this-\/>download  = \textcolor{keyword}{new} \mbox{\hyperlink{class_download}{Download}}();}
-\DoxyCodeLine{00021   \}}
+\DoxyCodeLine{19   \{}
+\DoxyCodeLine{20     \$this-\/>download  = \textcolor{keyword}{new} \mbox{\hyperlink{class_download}{Download}}();}
+\DoxyCodeLine{21   \}}
 
 \end{DoxyCode}
 
@@ -80,33 +80,34 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{download_controller_8php_source_l00028}{28}} of file \mbox{\hyperlink{download_controller_8php_source}{download\+Controller.\+php}}.
+Definition at line 28 of file download\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029   \{}
-\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00031       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00035 }
-\DoxyCodeLine{00036       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{00037         \$this-\/>e = \textcolor{stringliteral}{"{}user"{}};}
-\DoxyCodeLine{00038       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00039         \$this-\/>e = \textcolor{stringliteral}{"{}visitor"{}};}
-\DoxyCodeLine{00040       \}}
-\DoxyCodeLine{00041     \}}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}download"{}}) \{}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00045       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{00046         \$this-\/>download-\/>downloadCaiman();}
-\DoxyCodeLine{00047       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00048         header(\textcolor{stringliteral}{'?r=login'});}
-\DoxyCodeLine{00049       \}}
-\DoxyCodeLine{00050     \}}
-\DoxyCodeLine{00051   \}}
+\DoxyCodeLine{29   \{}
+\DoxyCodeLine{30     \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Download"{}};}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{32       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{38         \$this-\/>e = \textcolor{stringliteral}{"{}user"{}};}
+\DoxyCodeLine{39       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{40         \$this-\/>e = \textcolor{stringliteral}{"{}visitor"{}};}
+\DoxyCodeLine{41       \}}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}download"{}}) \{}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{47         \$this-\/>download-\/>downloadCaiman();}
+\DoxyCodeLine{48       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{49         header(\textcolor{stringliteral}{'?r=login'});}
+\DoxyCodeLine{50       \}}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52   \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
@@ -118,7 +119,7 @@ Definition at line \mbox{\hyperlink{download_controller_8php_source_l00028}{28}}
 print the html for the resquested content
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
@@ -126,24 +127,24 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{download_controller_8php_source_l00060}{60}} of file \mbox{\hyperlink{download_controller_8php_source}{download\+Controller.\+php}}.
+Definition at line 61 of file download\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00061   \{}
-\DoxyCodeLine{00062     \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
-\DoxyCodeLine{00063 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{00064     \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}user"{}}) \{}
-\DoxyCodeLine{00066       \$html .= \$this-\/>htmlUserDownload();}
-\DoxyCodeLine{00067     \}}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}visitor"{}}) \{}
-\DoxyCodeLine{00070       \$html .= \$this-\/>htmlVisitorDownload();}
-\DoxyCodeLine{00071     \}}
-\DoxyCodeLine{00072     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{00073     echo \$html;}
-\DoxyCodeLine{00074   \}}
+\DoxyCodeLine{62   \{}
+\DoxyCodeLine{63     \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
+\DoxyCodeLine{64 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{65     \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}user"{}}) \{}
+\DoxyCodeLine{67       \$html .= \$this-\/>htmlUserDownload();}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}visitor"{}}) \{}
+\DoxyCodeLine{71       \$html .= \$this-\/>htmlVisitorDownload();}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{74     echo \$html;}
+\DoxyCodeLine{75   \}}
 
 \end{DoxyCode}
 

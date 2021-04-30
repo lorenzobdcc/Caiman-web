@@ -76,43 +76,44 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_index_controller.html#a16fd2e4964fca2fd2d6ca03cf3653bb8">   18</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_index_controller.html#a16fd2e4964fca2fd2d6ca03cf3653bb8">formHandler</a>()</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">   28</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">printHTML</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    $html = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    $_SESSION[<span class="stringliteral">&#39;title&#39;</span>] = <span class="stringliteral">&quot;Caiman: Home&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">   29</a></span>&#160;  <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">printHTML</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    $html = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    $html .= <span class="stringliteral">&#39;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">    &lt;main style=&quot;margin-top:20px &quot;&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">      &lt;div class=&quot;container-md&quot;&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">      &#39;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    $html .= $this-&gt;errorHandler();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $html .= <span class="stringliteral">&#39;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">        &lt;div class=&quot;jumbotron jumbotron-fluid DarkJumbotron width100&quot; style=&quot;background-color: #161b22;&quot;&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">            &lt;div class=&quot;row py-lg-5&quot;&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">              &lt;div class=&quot;col-lg-6 col-md-8 mx-auto&quot;&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">                &lt;h1 class=&quot;fw-light greenTexte&quot;&gt;Caiman&lt;/h1&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">                &lt;p class=&quot;lead text-muted&quot;&gt;The easiest way to use emulators.&lt;/p&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">                &lt;p&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=download&quot; class=&quot;btn btn-success my-2&quot;&gt;Download&lt;/a&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=login&quot; class=&quot;btn btn-success my-2&quot;&gt;Create acount&lt;/a&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=games&quot; class=&quot;btn btn-success my-2&quot;&gt;Watch games list&lt;/a&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">                &lt;/p&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">              &lt;/div&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">            &lt;/div&gt;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">      &lt;/div&gt;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral">    &lt;/main&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral">&#39;</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    echo $html;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    $html .= <span class="stringliteral">&#39;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">    &lt;main style=&quot;margin-top:20px &quot;&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">      &lt;div class=&quot;container-md&quot;&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">      &#39;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    $html .= $this-&gt;errorHandler();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    $html .= <span class="stringliteral">&#39;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">        &lt;div class=&quot;jumbotron jumbotron-fluid DarkJumbotron width100&quot; style=&quot;background-color: #161b22;&quot;&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">            &lt;div class=&quot;row py-lg-5&quot;&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">              &lt;div class=&quot;col-lg-6 col-md-8 mx-auto&quot;&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">                &lt;h1 class=&quot;fw-light greenTexte&quot;&gt;Caiman&lt;/h1&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">                &lt;p class=&quot;lead text-muted&quot;&gt;The easiest way to use emulators.&lt;/p&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">                &lt;p&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=download&quot; class=&quot;btn btn-success my-2&quot;&gt;Download&lt;/a&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=login&quot; class=&quot;btn btn-success my-2&quot;&gt;Create acount&lt;/a&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">                  &lt;a href=&quot;?r=games&quot; class=&quot;btn btn-success my-2&quot;&gt;Watch games list&lt;/a&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">                &lt;/p&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">              &lt;/div&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">            &lt;/div&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">      &lt;/div&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral">    &lt;/main&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral">&#39;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    echo $html;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="aclass_index_controller_html"><div class="ttname"><a href="class_index_controller.html">IndexController</a></div><div class="ttdef"><b>Definition:</b> <a href="index_controller_8php_source.html#l00010">indexController.php:11</a></div></div>
 <div class="ttc" id="aclass_index_controller_html_a16fd2e4964fca2fd2d6ca03cf3653bb8"><div class="ttname"><a href="class_index_controller.html#a16fd2e4964fca2fd2d6ca03cf3653bb8">IndexController\formHandler</a></div><div class="ttdeci">formHandler()</div><div class="ttdef"><b>Definition:</b> <a href="index_controller_8php_source.html#l00018">indexController.php:18</a></div></div>
-<div class="ttc" id="aclass_index_controller_html_a67e219b27b5c39ef06f85381a378c2f9"><div class="ttname"><a href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">IndexController\printHTML</a></div><div class="ttdeci">printHTML()</div><div class="ttdef"><b>Definition:</b> <a href="index_controller_8php_source.html#l00028">indexController.php:28</a></div></div>
+<div class="ttc" id="aclass_index_controller_html_a67e219b27b5c39ef06f85381a378c2f9"><div class="ttname"><a href="class_index_controller.html#a67e219b27b5c39ef06f85381a378c2f9">IndexController\printHTML</a></div><div class="ttdeci">printHTML()</div><div class="ttdef"><b>Definition:</b> <a href="index_controller_8php_source.html#l00029">indexController.php:29</a></div></div>
 <div class="ttc" id="ainterfacei_controller_html"><div class="ttname"><a href="interfacei_controller.html">iController</a></div><div class="ttdef"><b>Definition:</b> <a href="interface_controller_8php_source.html#l00010">interfaceController.php:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

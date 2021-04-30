@@ -70,185 +70,191 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="administrator_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_administrator.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_administrator.html">Administrator</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">private</span> $dbh = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">private</span> $psLogin = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span> $search_username = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span> $search_password = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span> $arrayInfo = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span> $psUploadGame = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span> $psUploadFile = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span> $psUpdateGame = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_administrator.html#a095c5d389db211932136b53f25f39685">   32</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a095c5d389db211932136b53f25f39685">__construct</a>()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;dbh == <span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                $this-&gt;dbh = <span class="keyword">new</span> PDO(<span class="stringliteral">&#39;mysql:host=&#39;</span> . HOST . <span class="stringliteral">&#39;;dbname=&#39;</span> . DBNAME, USER, PASSWORD, array(</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    PDO::MYSQL_ATTR_INIT_COMMAND =&gt; <span class="stringliteral">&quot;SET NAMES utf8&quot;</span>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    PDO::ATTR_PERSISTENT =&gt; <span class="keyword">true</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                ));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment">// get list of console</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                $sqlGetListConsole = <span class="stringliteral">&quot;SELECT * FROM consol&quot;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                $this-&gt;psGetListConsole = $this-&gt;dbh-&gt;prepare($sqlGetListConsole);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                $this-&gt;psGetListConsole-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="comment">// upload game</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                $sqlUploadGame = <span class="stringliteral">&quot;INSERT INTO game  (name, description, imageName, idConsole, idFile)</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">                VALUES (:insert_name, :insert_description, :insert_imageName, :insert_idConsole, :insert_idFile)&quot;</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                $this-&gt;psUploadGame = $this-&gt;dbh-&gt;prepare($sqlUploadGame);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                $this-&gt;psUploadGame-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="comment">// upload file</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                $sqlUploadFile = <span class="stringliteral">&quot;INSERT INTO file  (filename, dateUpdate)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">                VALUES (:insert_filename, NOW() )&quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                $this-&gt;psUploadFile = $this-&gt;dbh-&gt;prepare($sqlUploadFile);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                $this-&gt;psUploadFile-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="comment">// update game</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                $sqlUpdateGane = <span class="stringliteral">&quot;UPDATE game  SET name = :update_name, description = :update_description, idConsole = :update_idConsole WHERE id = :update_id&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                $this-&gt;psUpdateGame = $this-&gt;dbh-&gt;prepare($sqlUpdateGane);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                $this-&gt;psUpdateGame-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="comment">// get folder name of console</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                $sqlGetNameConsoleFolder = <span class="stringliteral">&quot;SELECT folderName FROM consol WHERE id = :console_id&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                $this-&gt;psGetNameConsoleFolder = $this-&gt;dbh-&gt;prepare($sqlGetNameConsoleFolder);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                $this-&gt;psGetNameConsoleFolder-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                die();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">   82</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">addGame</a>(<span class="keywordtype">string</span> $name, <span class="keywordtype">string</span> $description, <span class="keywordtype">string</span> $imageName, <span class="keywordtype">int</span> $consoleId, $gameFileName)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">uploadGame</a>($gameFileName, $consoleId) &amp;&amp; $this-&gt;<a class="code" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">uploadGameImage</a>($imageName)) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                $this-&gt;psUploadFile-&gt;execute(array(<span class="stringliteral">&#39;:insert_filename&#39;</span> =&gt; $gameFileName));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                die();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            $lastInsertId = $this-&gt;dbh-&gt;lastInsertId();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                $this-&gt;psUploadGame-&gt;execute(array(<span class="stringliteral">&#39;:insert_name&#39;</span> =&gt; $name, <span class="stringliteral">&#39;:insert_description&#39;</span> =&gt; $description, <span class="stringliteral">&#39;:insert_imageName&#39;</span> =&gt; $imageName, <span class="stringliteral">&#39;:insert_idConsole&#39;</span> =&gt; $consoleId, <span class="stringliteral">&#39;:insert_idFile&#39;</span> =&gt; $lastInsertId));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                die();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">  108</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">uploadGame</a>($gameFileName, $consoleId)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        $uploadIsValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        $target_dir = <span class="stringliteral">&quot;../games/&quot;</span> . $this-&gt;<a class="code" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">getConsoleFolderName</a>($consoleId) . <span class="stringliteral">&quot;/&quot;</span>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        $target_file =  basename($_FILES[<span class="stringliteral">&quot;fileGame&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        $uploadOk = 1;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">//rename file</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        $newfilename = $gameFileName . <span class="charliteral">&#39;.&#39;</span> . $fileType;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_administrator.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_administrator.html">Administrator</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span> $dbh = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span> $psLogin = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span> $search_username = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span> $search_password = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span> $arrayInfo = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span> $psUploadGame = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span> $psUploadFile = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span> $psUpdateGame = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_administrator.html#a095c5d389db211932136b53f25f39685">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a095c5d389db211932136b53f25f39685">__construct</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;dbh == <span class="keyword">null</span>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                $this-&gt;dbh = <span class="keyword">new</span> PDO(<span class="stringliteral">&#39;mysql:host=&#39;</span> . HOST . <span class="stringliteral">&#39;;dbname=&#39;</span> . DBNAME, USER, PASSWORD, array(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    PDO::MYSQL_ATTR_INIT_COMMAND =&gt; <span class="stringliteral">&quot;SET NAMES utf8&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    PDO::ATTR_PERSISTENT =&gt; <span class="keyword">true</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                ));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="comment">// get list of console</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                $sqlGetListConsole = <span class="stringliteral">&quot;SELECT * FROM consol&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                $this-&gt;psGetListConsole = $this-&gt;dbh-&gt;prepare($sqlGetListConsole);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                $this-&gt;psGetListConsole-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="comment">// upload game</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                $sqlUploadGame = <span class="stringliteral">&quot;INSERT INTO game  (name, description, imageName, idConsole, idFile)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">                VALUES (:insert_name, :insert_description, :insert_imageName, :insert_idConsole, :insert_idFile)&quot;</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                $this-&gt;psUploadGame = $this-&gt;dbh-&gt;prepare($sqlUploadGame);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                $this-&gt;psUploadGame-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">// upload file</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                $sqlUploadFile = <span class="stringliteral">&quot;INSERT INTO file  (filename, dateUpdate)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral">                VALUES (:insert_filename, NOW() )&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                $this-&gt;psUploadFile = $this-&gt;dbh-&gt;prepare($sqlUploadFile);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                $this-&gt;psUploadFile-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">// update game</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                $sqlUpdateGane = <span class="stringliteral">&quot;UPDATE game  SET name = :update_name, description = :update_description, idConsole = :update_idConsole WHERE id = :update_id&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                $this-&gt;psUpdateGame = $this-&gt;dbh-&gt;prepare($sqlUpdateGane);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                $this-&gt;psUpdateGame-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// get folder name of console</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                $sqlGetNameConsoleFolder = <span class="stringliteral">&quot;SELECT folderName FROM consol WHERE id = :console_id&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                $this-&gt;psGetNameConsoleFolder = $this-&gt;dbh-&gt;prepare($sqlGetNameConsoleFolder);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                $this-&gt;psGetNameConsoleFolder-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                die();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">   84</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">addGame</a>(<span class="keywordtype">string</span> $name, <span class="keywordtype">string</span> $description, <span class="keywordtype">string</span> $imageName, <span class="keywordtype">int</span> $consoleId, $gameFileName)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;<a class="code" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">uploadGame</a>($gameFileName, $consoleId) &amp;&amp; $this-&gt;<a class="code" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">uploadGameImage</a>($imageName)) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                $this-&gt;psUploadFile-&gt;execute(array(<span class="stringliteral">&#39;:insert_filename&#39;</span> =&gt; $gameFileName));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                die();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            $lastInsertId = $this-&gt;dbh-&gt;lastInsertId();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                $this-&gt;psUploadGame-&gt;execute(array(<span class="stringliteral">&#39;:insert_name&#39;</span> =&gt; $name, <span class="stringliteral">&#39;:insert_description&#39;</span> =&gt; $description, <span class="stringliteral">&#39;:insert_imageName&#39;</span> =&gt; $imageName, <span class="stringliteral">&#39;:insert_idConsole&#39;</span> =&gt; $consoleId, <span class="stringliteral">&#39;:insert_idFile&#39;</span> =&gt; $lastInsertId));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                die();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">  111</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">uploadGame</a>($gameFileName, $consoleId)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        $uploadIsValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        $target_dir = <span class="stringliteral">&quot;../games/&quot;</span> . $this-&gt;<a class="code" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">getConsoleFolderName</a>($consoleId) . <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        $target_file =  basename($_FILES[<span class="stringliteral">&quot;fileGame&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        $uploadOk = 1;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Check if file already exists</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (file_exists($target_file)) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            echo <span class="stringliteral">&quot;Sorry, file already exists.&quot;</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            $uploadOk = 0;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> ($uploadOk == 0) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            echo <span class="stringliteral">&quot;Sorry, your file was not uploaded.&quot;</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="comment">// if everything is ok, try to upload file</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (move_uploaded_file($_FILES[<span class="stringliteral">&quot;fileGame&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>], $target_dir . $newfilename)) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                $uploadIsValid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="comment">//Sorry, there was an error uploading your file</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> $uploadIsValid;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">  147</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">updateGame</a>($idGame, $name, $description, $consoleId)</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            $this-&gt;psUpdateGame-&gt;execute(array(<span class="stringliteral">&#39;:update_name&#39;</span> =&gt; $name, <span class="stringliteral">&#39;:update_description&#39;</span> =&gt; $description, <span class="stringliteral">&#39;:update_idConsole&#39;</span> =&gt; $consoleId, <span class="stringliteral">&#39;:update_id&#39;</span> =&gt; $idGame));</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            die();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">  162</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">uploadGameImage</a>($imageFileName)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        $uploadIsValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        $target_dir = <span class="stringliteral">&quot;img/games/&quot;</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        $target_file =  basename($_FILES[<span class="stringliteral">&quot;image&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        $uploadOk = 1;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">//rename file</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        $newfilename = $imageFileName;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// Check if file already exists</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (file_exists($target_file)) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            echo <span class="stringliteral">&quot;Sorry, file already exists.&quot;</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            $uploadOk = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> ($uploadOk == 0) {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            echo <span class="stringliteral">&quot;Sorry, your file was not uploaded.&quot;</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="comment">// if everything is ok, try to upload file</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (move_uploaded_file($_FILES[<span class="stringliteral">&quot;image&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>], $target_dir . $newfilename)) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                $uploadIsValid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="comment">//Sorry, there was an error uploading your file</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">return</span> $uploadIsValid;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">  197</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">getConsoleFolderName</a>($id)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        $returnArray = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            $this-&gt;psGetNameConsoleFolder-&gt;execute(array(<span class="stringliteral">&#39;:console_id&#39;</span> =&gt; $id));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            $returnArray = $this-&gt;psGetNameConsoleFolder-&gt;fetchAll();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            die();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">return</span> $returnArray[0][<span class="stringliteral">&#39;folderName&#39;</span>];</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">  214</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">getListConsole</a>()</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        $returnArray = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            $this-&gt;psGetListConsole-&gt;execute();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            $returnArray = $this-&gt;psGetListConsole-&gt;fetchAll();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            die();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">return</span> $returnArray;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
-<div class="ttc" id="aclass_administrator_html"><div class="ttname"><a href="class_administrator.html">Administrator</a></div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00009">administrator.php:10</a></div></div>
-<div class="ttc" id="aclass_administrator_html_a095c5d389db211932136b53f25f39685"><div class="ttname"><a href="class_administrator.html#a095c5d389db211932136b53f25f39685">Administrator\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00032">administrator.php:32</a></div></div>
-<div class="ttc" id="aclass_administrator_html_a50c924aafa709b3032fedb0c41a944bf"><div class="ttname"><a href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">Administrator\uploadGame</a></div><div class="ttdeci">uploadGame($gameFileName, $consoleId)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00108">administrator.php:108</a></div></div>
-<div class="ttc" id="aclass_administrator_html_a73706dbcb06c2ae9ffc11033ad1266c3"><div class="ttname"><a href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">Administrator\uploadGameImage</a></div><div class="ttdeci">uploadGameImage($imageFileName)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00162">administrator.php:162</a></div></div>
-<div class="ttc" id="aclass_administrator_html_aa81b23c6aa225a1278e699194a441cd3"><div class="ttname"><a href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">Administrator\getConsoleFolderName</a></div><div class="ttdeci">getConsoleFolderName($id)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00197">administrator.php:197</a></div></div>
-<div class="ttc" id="aclass_administrator_html_ab81ef116a91497c1ed1018f502c1d25c"><div class="ttname"><a href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">Administrator\getListConsole</a></div><div class="ttdeci">getListConsole()</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00214">administrator.php:214</a></div></div>
-<div class="ttc" id="aclass_administrator_html_abbed68c25b9bdf4505486f191818dc7e"><div class="ttname"><a href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">Administrator\addGame</a></div><div class="ttdeci">addGame(string $name, string $description, string $imageName, int $consoleId, $gameFileName)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00082">administrator.php:82</a></div></div>
-<div class="ttc" id="aclass_administrator_html_abde4a60dbae06284e393b4b2c3d6c631"><div class="ttname"><a href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">Administrator\updateGame</a></div><div class="ttdeci">updateGame($idGame, $name, $description, $consoleId)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00147">administrator.php:147</a></div></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">//rename file</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        $newfilename = $gameFileName . <span class="charliteral">&#39;.&#39;</span> . $fileType;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Check if file already exists</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (file_exists($target_file)) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            echo <span class="stringliteral">&quot;Sorry, file already exists.&quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            $uploadOk = 0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">if</span> ($uploadOk == 0) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            echo <span class="stringliteral">&quot;Sorry, your file was not uploaded.&quot;</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="comment">// if everything is ok, try to upload file</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span> (move_uploaded_file($_FILES[<span class="stringliteral">&quot;fileGame&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>], $target_dir . $newfilename)) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                $uploadIsValid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="comment">//Sorry, there was an error uploading your file</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> $uploadIsValid;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">  151</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">updateGame</a>($idGame, $name, $description, $consoleId)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            $this-&gt;psUpdateGame-&gt;execute(array(<span class="stringliteral">&#39;:update_name&#39;</span> =&gt; $name, <span class="stringliteral">&#39;:update_description&#39;</span> =&gt; $description, <span class="stringliteral">&#39;:update_idConsole&#39;</span> =&gt; $consoleId, <span class="stringliteral">&#39;:update_id&#39;</span> =&gt; $idGame));</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            die();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">  167</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">uploadGameImage</a>($imageFileName)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        $uploadIsValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        $target_dir = <span class="stringliteral">&quot;img/games/&quot;</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        $target_file =  basename($_FILES[<span class="stringliteral">&quot;image&quot;</span>][<span class="stringliteral">&quot;name&quot;</span>]);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        $uploadOk = 1;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">//rename file</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        $newfilename = $imageFileName;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// Check if file already exists</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> (file_exists($target_file)) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            echo <span class="stringliteral">&quot;Sorry, file already exists.&quot;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            $uploadOk = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> ($uploadOk == 0) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            echo <span class="stringliteral">&quot;Sorry, your file was not uploaded.&quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">// if everything is ok, try to upload file</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span> (move_uploaded_file($_FILES[<span class="stringliteral">&quot;image&quot;</span>][<span class="stringliteral">&quot;tmp_name&quot;</span>], $target_dir . $newfilename)) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                $uploadIsValid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="comment">//Sorry, there was an error uploading your file</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> $uploadIsValid;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">  202</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">getConsoleFolderName</a>($id)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        $returnArray = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            $this-&gt;psGetNameConsoleFolder-&gt;execute(array(<span class="stringliteral">&#39;:console_id&#39;</span> =&gt; $id));</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            $returnArray = $this-&gt;psGetNameConsoleFolder-&gt;fetchAll();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            die();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> $returnArray[0][<span class="stringliteral">&#39;folderName&#39;</span>];</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">  220</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">getListConsole</a>()</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        $returnArray = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            $this-&gt;psGetListConsole-&gt;execute();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            $returnArray = $this-&gt;psGetListConsole-&gt;fetchAll();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            die();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> $returnArray;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
+<div class="ttc" id="aclass_administrator_html"><div class="ttname"><a href="class_administrator.html">Administrator</a></div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00010">administrator.php:11</a></div></div>
+<div class="ttc" id="aclass_administrator_html_a095c5d389db211932136b53f25f39685"><div class="ttname"><a href="class_administrator.html#a095c5d389db211932136b53f25f39685">Administrator\__construct</a></div><div class="ttdeci">__construct()</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00033">administrator.php:33</a></div></div>
+<div class="ttc" id="aclass_administrator_html_a50c924aafa709b3032fedb0c41a944bf"><div class="ttname"><a href="class_administrator.html#a50c924aafa709b3032fedb0c41a944bf">Administrator\uploadGame</a></div><div class="ttdeci">uploadGame($gameFileName, $consoleId)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00111">administrator.php:111</a></div></div>
+<div class="ttc" id="aclass_administrator_html_a73706dbcb06c2ae9ffc11033ad1266c3"><div class="ttname"><a href="class_administrator.html#a73706dbcb06c2ae9ffc11033ad1266c3">Administrator\uploadGameImage</a></div><div class="ttdeci">uploadGameImage($imageFileName)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00167">administrator.php:167</a></div></div>
+<div class="ttc" id="aclass_administrator_html_aa81b23c6aa225a1278e699194a441cd3"><div class="ttname"><a href="class_administrator.html#aa81b23c6aa225a1278e699194a441cd3">Administrator\getConsoleFolderName</a></div><div class="ttdeci">getConsoleFolderName($id)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00202">administrator.php:202</a></div></div>
+<div class="ttc" id="aclass_administrator_html_ab81ef116a91497c1ed1018f502c1d25c"><div class="ttname"><a href="class_administrator.html#ab81ef116a91497c1ed1018f502c1d25c">Administrator\getListConsole</a></div><div class="ttdeci">getListConsole()</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00220">administrator.php:220</a></div></div>
+<div class="ttc" id="aclass_administrator_html_abbed68c25b9bdf4505486f191818dc7e"><div class="ttname"><a href="class_administrator.html#abbed68c25b9bdf4505486f191818dc7e">Administrator\addGame</a></div><div class="ttdeci">addGame(string $name, string $description, string $imageName, int $consoleId, $gameFileName)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00084">administrator.php:84</a></div></div>
+<div class="ttc" id="aclass_administrator_html_abde4a60dbae06284e393b4b2c3d6c631"><div class="ttname"><a href="class_administrator.html#abde4a60dbae06284e393b4b2c3d6c631">Administrator\updateGame</a></div><div class="ttdeci">updateGame($idGame, $name, $description, $consoleId)</div><div class="ttdef"><b>Definition:</b> <a href="administrator_8php_source.html#l00151">administrator.php:151</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

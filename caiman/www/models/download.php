@@ -9,8 +9,6 @@
  */
 class Download
 {
-    public $aMemberVar = 'aMemberVar Member Variable';
-    public $aFuncName = 'aMemberFunc';
 
     /**
      * used to download caiman

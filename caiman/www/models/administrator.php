@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -105,7 +106,7 @@ class Administrator
      *
      * @param int $gameFileName
      * @param int $consoleId
-     * @return void
+     * @return bool
      */
     public function uploadGame($gameFileName, $consoleId)
     {
@@ -137,16 +138,16 @@ class Administrator
         }
         return $uploadIsValid;
     }
-    
-/**
- * update da of a game
- *
- * @param int $idGame
- * @param string $name
- * @param string $description
- * @param int $consoleId
- * @return void
- */
+
+    /**
+     * update da of a game
+     *
+     * @param int $idGame
+     * @param string $name
+     * @param string $description
+     * @param int $consoleId
+     * @return void
+     */
     public function updateGame($idGame, $name, $description, $consoleId)
     {
         try {
@@ -157,12 +158,12 @@ class Administrator
         }
     }
 
-/**
- * upload an image
- *
- * @param string $imageFileName
- * @return void
- */
+    /**
+     * upload an image
+     *
+     * @param string $imageFileName
+     * @return bool
+     */
     public function uploadGameImage($imageFileName)
     {
         $uploadIsValid = false;
@@ -170,7 +171,6 @@ class Administrator
 
         $target_file =  basename($_FILES["image"]["name"]);
         $uploadOk = 1;
-        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         //rename file
         $newfilename = $imageFileName;
@@ -193,12 +193,12 @@ class Administrator
         return $uploadIsValid;
     }
 
-/**
- * get the path name of an console
- *
- * @param int $id
- * @return array of game
- */
+    /**
+     * get the path name of an console
+     *
+     * @param int $id
+     * @return array of game
+     */
     public function getConsoleFolderName($id)
     {
         $returnArray = null;
@@ -211,11 +211,12 @@ class Administrator
         }
         return $returnArray[0]['folderName'];
     }
-/**
- * returns list of all consoles
- *
- * @return array of game
- */
+
+    /**
+     * returns list of all consoles
+     *
+     * @return array of game
+     */
     public function getListConsole()
     {
         $returnArray = null;

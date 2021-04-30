@@ -68,69 +68,72 @@
 \DoxyCodeLine{00074             \}}
 \DoxyCodeLine{00075         \}}
 \DoxyCodeLine{00076     \}}
-\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00082}\mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{00082}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{getListAllCategories}}()}
-\DoxyCodeLine{00083     \{}
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00086             \$this-\/>psGetAllCategories-\/>execute();}
-\DoxyCodeLine{00087             \$result = \$this-\/>psGetAllCategories-\/>fetchAll();}
-\DoxyCodeLine{00088         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00089             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00090             die();}
-\DoxyCodeLine{00091         \}}
-\DoxyCodeLine{00092         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00093     \}}
-\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00100}\mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{00100}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{getCategoriesOfGame}}(\textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00101     \{}
-\DoxyCodeLine{00102         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00103             \$this-\/>psGameCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
-\DoxyCodeLine{00104             \$result = \$this-\/>psGameCategorie-\/>fetchAll();}
-\DoxyCodeLine{00105         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00106             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00107             die();}
-\DoxyCodeLine{00108         \}}
-\DoxyCodeLine{00109         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00110     \}}
-\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00117}\mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{00117}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{addCategorie}}(\textcolor{keywordtype}{string} \$categorieName)}
-\DoxyCodeLine{00118     \{}
-\DoxyCodeLine{00119         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00120             \$this-\/>psAddCategorie-\/>execute(array(\textcolor{stringliteral}{':categorie\_name'} => \$categorieName));}
-\DoxyCodeLine{00121             \$result = \$this-\/>psAddCategorie-\/>fetchAll();}
-\DoxyCodeLine{00122         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00123             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00124             die();}
-\DoxyCodeLine{00125         \}}
-\DoxyCodeLine{00126         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00127     \}}
-\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00135}\mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{00135}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{addCategorieToGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
-\DoxyCodeLine{00136     \{}
-\DoxyCodeLine{00137         \$result = \textcolor{keyword}{null};}
-\DoxyCodeLine{00138         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00139             \$this-\/>psCheckIfGameHasCategorie-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
-\DoxyCodeLine{00140             \$result = \$this-\/>psCheckIfGameHasCategorie-\/>fetchAll();}
-\DoxyCodeLine{00141         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00142             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00143             die();}
-\DoxyCodeLine{00144         \}}
-\DoxyCodeLine{00145         \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00146             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00147                 \$this-\/>psAddCategorieToGame-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
-\DoxyCodeLine{00148             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00149                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00150                 die();}
-\DoxyCodeLine{00151             \}}
-\DoxyCodeLine{00152         \}}
-\DoxyCodeLine{00153     \}}
-\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00161}\mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{00161}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{delCategorieFromGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
-\DoxyCodeLine{00162     \{}
-\DoxyCodeLine{00163         \$result = \textcolor{keyword}{null};}
-\DoxyCodeLine{00164         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00165             \$this-\/>psDelCategorieFromGame-\/>execute(array(\textcolor{stringliteral}{':del\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':del\_idGame'} => \$idGame));}
-\DoxyCodeLine{00166         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00167             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00168             die();}
-\DoxyCodeLine{00169         \}}
-\DoxyCodeLine{00170     \}}
-\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00083}\mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{00083}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{getListAllCategories}}()}
+\DoxyCodeLine{00084     \{}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00087             \$this-\/>psGetAllCategories-\/>execute();}
+\DoxyCodeLine{00088             \$result = \$this-\/>psGetAllCategories-\/>fetchAll();}
+\DoxyCodeLine{00089         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00090             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00091             die();}
+\DoxyCodeLine{00092         \}}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00094     \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00102}\mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{00102}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{getCategoriesOfGame}}(\textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00103     \{}
+\DoxyCodeLine{00104         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00105             \$this-\/>psGameCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
+\DoxyCodeLine{00106             \$result = \$this-\/>psGameCategorie-\/>fetchAll();}
+\DoxyCodeLine{00107         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00108             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00109             die();}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00112     \}}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00120}\mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{00120}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{addCategorie}}(\textcolor{keywordtype}{string} \$categorieName)}
+\DoxyCodeLine{00121     \{}
+\DoxyCodeLine{00122         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00123             \$this-\/>psAddCategorie-\/>execute(array(\textcolor{stringliteral}{':categorie\_name'} => \$categorieName));}
+\DoxyCodeLine{00124             \$result = \$this-\/>psAddCategorie-\/>fetchAll();}
+\DoxyCodeLine{00125         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00126             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00127             die();}
+\DoxyCodeLine{00128         \}}
+\DoxyCodeLine{00129         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00130     \}}
+\DoxyCodeLine{00131     }
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00139}\mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{00139}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{addCategorieToGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
+\DoxyCodeLine{00140     \{}
+\DoxyCodeLine{00141         \$result = \textcolor{keyword}{null};}
+\DoxyCodeLine{00142         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00143             \$this-\/>psCheckIfGameHasCategorie-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
+\DoxyCodeLine{00144             \$result = \$this-\/>psCheckIfGameHasCategorie-\/>fetchAll();}
+\DoxyCodeLine{00145         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00146             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00147             die();}
+\DoxyCodeLine{00148         \}}
+\DoxyCodeLine{00149         \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00150             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00151                 \$this-\/>psAddCategorieToGame-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
+\DoxyCodeLine{00152             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00153                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00154                 die();}
+\DoxyCodeLine{00155             \}}
+\DoxyCodeLine{00156         \}}
+\DoxyCodeLine{00157     \}}
+\DoxyCodeLine{\Hypertarget{categorie_8php_source_l00165}\mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{00165}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{delCategorieFromGame}}(\textcolor{keywordtype}{int} \$idGame, \textcolor{keywordtype}{int} \$idCategorie)}
+\DoxyCodeLine{00166     \{}
+\DoxyCodeLine{00167         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00168             \$this-\/>psDelCategorieFromGame-\/>execute(array(\textcolor{stringliteral}{':del\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':del\_idGame'} => \$idGame));}
+\DoxyCodeLine{00169         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00170             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00171             die();}
+\DoxyCodeLine{00172         \}}
+\DoxyCodeLine{00173     \}}
+\DoxyCodeLine{00174 \}}
 
 \end{DoxyCode}

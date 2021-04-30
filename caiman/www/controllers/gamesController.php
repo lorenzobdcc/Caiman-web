@@ -33,6 +33,7 @@ class GamesController extends mainController implements iController
      */
     public function formHandler()
     {
+        $_SESSION['title'] = "Caiman: Games";
         $requestGame = null;
         $result = null;
         if (isset($_GET['e'])) {
@@ -40,8 +41,10 @@ class GamesController extends mainController implements iController
         }
 
         if ($this->e == "requestGame") {
+
             if (isset($_POST['gameName'])) {
                 $requestGame = filter_input(INPUT_POST, 'gameName', FILTER_SANITIZE_STRING);
+                $_SESSION['title'] = "Caiman: Search " . $requestGame;
             }
 
             if (isset($requestGame)) {
@@ -50,6 +53,7 @@ class GamesController extends mainController implements iController
         }
 
         if ($this->e == "detail") {
+
             if (isset($_GET['idGame'])) {
                 $idGame = filter_input(INPUT_GET, 'idGame', FILTER_SANITIZE_STRING);
                 $this->idGame = $idGame;
@@ -57,10 +61,12 @@ class GamesController extends mainController implements iController
 
             if (isset($idGame)) {
                 $result = $this->games->getGameDetail($idGame);
+                $_SESSION['title'] = "Caiman: " . $result[0]["name"];
             }
         }
 
         if ($this->e == "categorie") {
+            $_SESSION['title'] = "Caiman: Categorie";
             if (isset($_GET['idCategorie'])) {
                 $idcategory = filter_input(INPUT_GET, 'idCategorie', FILTER_SANITIZE_STRING);
                 $this->idcategory = $idcategory;
@@ -73,6 +79,7 @@ class GamesController extends mainController implements iController
 
 
         if ($this->e == "addFavoris") {
+            $_SESSION['title'] = "Caiman: Favorite";
             if (isset($_GET['idGame'])) {
                 $idGame = filter_input(INPUT_GET, 'idGame', FILTER_SANITIZE_NUMBER_INT);
             }
@@ -99,12 +106,12 @@ class GamesController extends mainController implements iController
         $this->requestedgame = $result;
     }
 
-  /**
-   * print the html for the resquested content
-   * 
-   *
-   * @return void
-   */
+    /**
+     * print the html for the resquested content
+     * 
+     *
+     * @return html
+     */
     public function printHTML()
     {
         $html = '<main style="margin-top:20px">
@@ -137,7 +144,7 @@ class GamesController extends mainController implements iController
     /**
      * create the html of the list of all the games
      *
-     * @return void
+     * @return html
      */
     public function getListAllGames()
     {
@@ -158,7 +165,7 @@ class GamesController extends mainController implements iController
     /**
      * create a list of the requested games
      *
-     * @return void
+     * @return html
      */
     public function getRequestedGames()
     {
@@ -178,7 +185,7 @@ class GamesController extends mainController implements iController
     /**
      * create the page of a specific game
      *
-     * @return void
+     * @return html
      */
     public function getGameDetail()
     {
@@ -230,11 +237,11 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
-/**
- * crate a list of game of a specific categorie
- *
- * @return void
- */
+    /**
+     * crate a list of game of a specific categorie
+     *
+     * @return html
+     */
     public function getGamesFromCategorie()
     {
 
@@ -250,12 +257,12 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
-  /**
-   * print the html of a game
-   * 
-   *
-   * @return void
-   */
+    /**
+     * print the html of a game
+     * 
+     *
+     * @return html
+     */
     private function createCardHTML($game)
     {
         $html = '
@@ -285,7 +292,7 @@ class GamesController extends mainController implements iController
     /**
      * create the html of a form to research game and to display the list of categorie
      *
-     * @return void
+     * @return html
      */
     public function recherchFull()
     {
@@ -319,10 +326,10 @@ class GamesController extends mainController implements iController
         return $html;
     }
 
-        /**
+    /**
      * create the html of a form to research game 
      *
-     * @return void
+     * @return html
      */
     public function recherchNotFull()
     {

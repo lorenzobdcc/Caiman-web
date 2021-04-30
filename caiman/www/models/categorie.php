@@ -74,6 +74,7 @@ class Categories
             }
         }
     }
+
     /**
      * returns list of all categories
      *
@@ -91,6 +92,7 @@ class Categories
         }
         return $result;
     }
+
     /**
      * get the categories of a game
      *
@@ -108,11 +110,12 @@ class Categories
         }
         return $result;
     }
+
     /**
      * add a new categorie in the database
      *
      * @param string $categorieName
-     * @return void
+     * @return html
      */
     public function addCategorie(string $categorieName)
     {
@@ -125,6 +128,7 @@ class Categories
         }
         return $result;
     }
+    
     /**
      * add a categorie to a game
      *
@@ -160,7 +164,6 @@ class Categories
      */
     public function delCategorieFromGame(int $idGame, int $idCategorie)
     {
-        $result = null;
         try {
             $this->psDelCategorieFromGame->execute(array(':del_idCategorie' => $idCategorie, ':del_idGame' => $idGame));
         } catch (PDOException $e) {

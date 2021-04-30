@@ -44,7 +44,7 @@ Collaboration diagram for Users\+Controller\+:\nopagebreak
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 11 of file users\+Controller.\+php.
 
 
 
@@ -57,14 +57,14 @@ Definition at line \mbox{\hyperlink{users_controller_8php_source_l00010}{10}} of
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00051}{51}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 52 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052     \{}
-\DoxyCodeLine{00053         \$this-\/>userData = \textcolor{keyword}{new} \mbox{\hyperlink{class_user_data}{UserData}}();}
-\DoxyCodeLine{00054         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
-\DoxyCodeLine{00055     \}}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         \$this-\/>userData = \textcolor{keyword}{new} \mbox{\hyperlink{class_user_data}{UserData}}();}
+\DoxyCodeLine{55         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
+\DoxyCodeLine{56     \}}
 
 \end{DoxyCode}
 
@@ -87,33 +87,33 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00023}{23}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 24 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024     \{}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026         }
-\DoxyCodeLine{00027         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00028             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{00029         \}}
-\DoxyCodeLine{00030 }
-\DoxyCodeLine{00031         \textcolor{comment}{// request user by their username}}
-\DoxyCodeLine{00032         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
-\DoxyCodeLine{00033 }
-\DoxyCodeLine{00034             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
-\DoxyCodeLine{00035                 \$this-\/>requestUsername = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00036             \}}
-\DoxyCodeLine{00037         \}}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039         \textcolor{comment}{// show detail of a user}}
-\DoxyCodeLine{00040         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
-\DoxyCodeLine{00041 }
-\DoxyCodeLine{00042             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idUser'}])) \{}
-\DoxyCodeLine{00043                 \$this-\/>idUser = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idUser'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00044             \}}
-\DoxyCodeLine{00045         \}}
-\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Users"{}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{29             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{// request user by their username}}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
+\DoxyCodeLine{34             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Search"{}};}
+\DoxyCodeLine{35             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
+\DoxyCodeLine{36                 \$this-\/>requestUsername = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{37             \}}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{comment}{// show detail of a user}}
+\DoxyCodeLine{41         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
+\DoxyCodeLine{42             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: User detail"{}};}
+\DoxyCodeLine{43             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idUser'}])) \{}
+\DoxyCodeLine{44                 \$this-\/>idUser = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idUser'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{45             \}}
+\DoxyCodeLine{46         \}}
+\DoxyCodeLine{47     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}\label{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}} 
@@ -125,40 +125,38 @@ Definition at line \mbox{\hyperlink{users_controller_8php_source_l00023}{23}} of
 create a page with the details of a user
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00151}{151}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 151 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00152     \{}
-\DoxyCodeLine{00153         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00154 }
-\DoxyCodeLine{00155         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{00156 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{00157 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
-\DoxyCodeLine{00158 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
-\DoxyCodeLine{00159 \textcolor{stringliteral}{          '};}
-\DoxyCodeLine{00160           }
-\DoxyCodeLine{00161           \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
-\DoxyCodeLine{00162 }
-\DoxyCodeLine{00163               \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'}.\$user[\textcolor{stringliteral}{'username'}].\textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{00164 }
-\DoxyCodeLine{00165           \}}
-\DoxyCodeLine{00166 }
-\DoxyCodeLine{00167             \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{00168 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00169 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{00170 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{00171 }
-\DoxyCodeLine{00172       \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00173     \}}
+\DoxyCodeLine{152     \{}
+\DoxyCodeLine{153         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
+\DoxyCodeLine{156 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
+\DoxyCodeLine{157 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
+\DoxyCodeLine{158 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
+\DoxyCodeLine{159 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$user[\textcolor{stringliteral}{'username'}] . \textcolor{stringliteral}{'</a>'};}
+\DoxyCodeLine{164         \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{167 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{168 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{169 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{172     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,39 +172,38 @@ Here is the caller graph for this function\+:
 create the form to search users
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00094}{94}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 95 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00095     \{}
-\DoxyCodeLine{00096         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00097 }
-\DoxyCodeLine{00098         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{00099 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{00100 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Research</h2>}}
-\DoxyCodeLine{00101 \textcolor{stringliteral}{          }}
-\DoxyCodeLine{00102 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=users\&e=researchUser"{} method="{}post"{}>}}
-\DoxyCodeLine{00103 \textcolor{stringliteral}{}}
-\DoxyCodeLine{00104 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00105 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}username"{} name="{}username"{} placeholder="{}username"{}>}}
-\DoxyCodeLine{00106 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00107 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00108 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
-\DoxyCodeLine{00109 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00110 \textcolor{stringliteral}{          </form>}}
-\DoxyCodeLine{00111 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{00112 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114       \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
+\DoxyCodeLine{101 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Research</h2>}}
+\DoxyCodeLine{102 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{103 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=users\&e=researchUser"{} method="{}post"{}>}}
+\DoxyCodeLine{104 \textcolor{stringliteral}{}}
+\DoxyCodeLine{105 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{106 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}username"{} name="{}username"{} placeholder="{}username"{}>}}
+\DoxyCodeLine{107 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{108 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{109 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
+\DoxyCodeLine{110 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{111 \textcolor{stringliteral}{          </form>}}
+\DoxyCodeLine{112 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{113 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{116     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -222,36 +219,35 @@ Here is the caller graph for this function\+:
 create the list of user requested by their username
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00122}{122}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 123 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00123     \{}
-\DoxyCodeLine{00124         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00125 }
-\DoxyCodeLine{00126         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{00127 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{00128 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
-\DoxyCodeLine{00129 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
-\DoxyCodeLine{00130 \textcolor{stringliteral}{          '};}
-\DoxyCodeLine{00131           }
-\DoxyCodeLine{00132           \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
-\DoxyCodeLine{00133 }
-\DoxyCodeLine{00134               \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'}.\$user[\textcolor{stringliteral}{'username'}].\textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{00135 }
-\DoxyCodeLine{00136           \}}
-\DoxyCodeLine{00137 }
-\DoxyCodeLine{00138             \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{00139 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00140 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{00141 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{00142 }
-\DoxyCodeLine{00143       \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00144     \}}
+\DoxyCodeLine{124     \{}
+\DoxyCodeLine{125         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
+\DoxyCodeLine{128 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
+\DoxyCodeLine{129 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
+\DoxyCodeLine{130 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
+\DoxyCodeLine{131 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$user[\textcolor{stringliteral}{'username'}] . \textcolor{stringliteral}{'</a>'};}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{139 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{140 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{141 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{144     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
@@ -271,38 +267,37 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{users_controller_8php_source_l00063}{63}} of file \mbox{\hyperlink{users_controller_8php_source}{users\+Controller.\+php}}.
+Definition at line 64 of file users\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064     \{}
-\DoxyCodeLine{00065 }
-\DoxyCodeLine{00066         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{00067 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00070             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
-\DoxyCodeLine{00071         \}}
-\DoxyCodeLine{00072 }
-\DoxyCodeLine{00073         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
-\DoxyCodeLine{00074             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
-\DoxyCodeLine{00075             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}{htmlDetailUser}}();}
-\DoxyCodeLine{00076         \}}
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
-\DoxyCodeLine{00079             \$html .= \$this-\/>htmlDataUser();}
-\DoxyCodeLine{00080             \$html .= \$this-\/>htmlFavoriteGameUser();}
-\DoxyCodeLine{00081             \$html .= \$this-\/>htmlTimeInGameUser();}
-\DoxyCodeLine{00082         \}}
-\DoxyCodeLine{00083 }
-\DoxyCodeLine{00084         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{00085 }
-\DoxyCodeLine{00086         echo \$html;}
-\DoxyCodeLine{00087     \}}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
+\DoxyCodeLine{68 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{71             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
+\DoxyCodeLine{75             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
+\DoxyCodeLine{76             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}{htmlDetailUser}}();}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
+\DoxyCodeLine{80             \$html .= \$this-\/>htmlDataUser();}
+\DoxyCodeLine{81             \$html .= \$this-\/>htmlFavoriteGameUser();}
+\DoxyCodeLine{82             \$html .= \$this-\/>htmlTimeInGameUser();}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         echo \$html;}
+\DoxyCodeLine{88     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

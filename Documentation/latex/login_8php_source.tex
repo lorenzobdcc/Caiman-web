@@ -36,28 +36,29 @@
 \DoxyCodeLine{00039             \}}
 \DoxyCodeLine{00040         \}}
 \DoxyCodeLine{00041     \}}
-\DoxyCodeLine{\Hypertarget{login_8php_source_l00047}\mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{00047}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{checkLogin}}()}
-\DoxyCodeLine{00048     \{}
-\DoxyCodeLine{00049         \$returnArray = \textcolor{keyword}{null};}
-\DoxyCodeLine{00050         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00051             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
-\DoxyCodeLine{00052             \$result = \$this-\/>psLogin-\/>fetchAll();}
-\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00054                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
-\DoxyCodeLine{00055                     \$returnArray = \$result;}
-\DoxyCodeLine{00056                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
-\DoxyCodeLine{00057                 \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{00058                 \{}
-\DoxyCodeLine{00059                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
-\DoxyCodeLine{00060                 \}}
-\DoxyCodeLine{00061             \}}
-\DoxyCodeLine{00062 }
-\DoxyCodeLine{00063         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00064             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00065             die();}
-\DoxyCodeLine{00066         \}}
-\DoxyCodeLine{00067         \textcolor{keywordflow}{return} \$returnArray;}
-\DoxyCodeLine{00068     \}}
-\DoxyCodeLine{00069 \}}
+\DoxyCodeLine{00042     }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00048}\mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{00048}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{checkLogin}}()}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \$returnArray = \textcolor{keyword}{null};}
+\DoxyCodeLine{00051         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00052             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
+\DoxyCodeLine{00053             \$result = \$this-\/>psLogin-\/>fetchAll();}
+\DoxyCodeLine{00054             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00055                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
+\DoxyCodeLine{00056                     \$returnArray = \$result;}
+\DoxyCodeLine{00057                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
+\DoxyCodeLine{00058                 \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059                 \{}
+\DoxyCodeLine{00060                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
+\DoxyCodeLine{00061                 \}}
+\DoxyCodeLine{00062             \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00065             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00066             die();}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068         \textcolor{keywordflow}{return} \$returnArray;}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070 \}}
 
 \end{DoxyCode}

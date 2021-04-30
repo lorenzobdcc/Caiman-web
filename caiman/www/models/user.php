@@ -14,6 +14,7 @@ class User
     public $email;
     public $role;
     public $idUser;
+    
     /**
      * default constructor
      *
@@ -37,7 +38,7 @@ class User
      * @param string $newPassword
      * @param string $newPasswordRepeat
      * @param string $oldPassword
-     * @return void
+     * @return int
      */
     public function updatePassword(string $newPassword, string $newPasswordRepeat, string $oldPassword)
     {
@@ -69,6 +70,7 @@ class User
 
         return $hasBeenUpdated;
     }
+    
     /**
      * update if the account is private or not
      *
@@ -98,10 +100,11 @@ class User
             die();
         }
     }
+
     /**
      * use to know if the account is privat or not
      *
-     * @return void
+     * @return bool
      */
     public function getPrivateAccount()
     {
@@ -123,6 +126,7 @@ class User
 
         return $result[0]['privateAccount'];
     }
+
     /**
      * user to get the user password
      *

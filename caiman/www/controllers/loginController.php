@@ -11,7 +11,6 @@ class LoginController extends mainController implements iController
 {
   public $login;
   private $e = "";
-  private $errorMessage = null;
 
   /**
    * default constructor
@@ -33,6 +32,7 @@ class LoginController extends mainController implements iController
     }
 
     if ($this->e == "login") {
+      $_SESSION['title'] = "Caiman: Login";
       if (isset($_POST['username'])) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
       }
@@ -78,7 +78,7 @@ class LoginController extends mainController implements iController
 /**
  * create the form of login
  *
- * @return void
+ * @return html
  */
   private function htmlFormLogin()
   {
@@ -112,7 +112,7 @@ class LoginController extends mainController implements iController
   /**
    * create the form of sign in
    *
-   * @return void
+   * @return html
    */
   private function htmlFormSignin()
   {
@@ -131,7 +131,7 @@ class LoginController extends mainController implements iController
   /**
    * create the head of the page
    *
-   * @return void
+   * @return html
    */
   private function htmlFormHead()
   {

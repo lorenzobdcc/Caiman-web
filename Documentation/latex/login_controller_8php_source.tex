@@ -8,20 +8,20 @@
 \DoxyCodeLine{00011 \{}
 \DoxyCodeLine{00012   \textcolor{keyword}{public} \$login;}
 \DoxyCodeLine{00013   \textcolor{keyword}{private} \$e = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00014   \textcolor{keyword}{private} \$errorMessage = \textcolor{keyword}{null};}
-\DoxyCodeLine{00015 }
-\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00019}\mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{00019}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
-\DoxyCodeLine{00020   \{}
-\DoxyCodeLine{00021     \$this-\/>login  = \textcolor{keyword}{new} \mbox{\hyperlink{class_login}{Login}}();}
-\DoxyCodeLine{00022   \}}
-\DoxyCodeLine{00023 }
-\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00029}\mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00029}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
-\DoxyCodeLine{00030   \{}
-\DoxyCodeLine{00031     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00032       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00033     \}}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}login"{}}) \{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00018}\mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{00018}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a095c5d389db211932136b53f25f39685}{\_\_construct}}()}
+\DoxyCodeLine{00019   \{}
+\DoxyCodeLine{00020     \$this-\/>login  = \textcolor{keyword}{new} \mbox{\hyperlink{class_login}{Login}}();}
+\DoxyCodeLine{00021   \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{login_controller_8php_source_l00028}\mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{00028}}   \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_login_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{formHandler}}()}
+\DoxyCodeLine{00029   \{}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{00031       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}login"{}}) \{}
+\DoxyCodeLine{00035       \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Login"{}};}
 \DoxyCodeLine{00036       \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
 \DoxyCodeLine{00037         \$username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
 \DoxyCodeLine{00038       \}}

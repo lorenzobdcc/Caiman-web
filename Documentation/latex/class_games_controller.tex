@@ -56,7 +56,7 @@ Collaboration diagram for Games\+Controller\+:\nopagebreak
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00010}{10}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 10 of file games\+Controller.\+php.
 
 
 
@@ -69,14 +69,14 @@ Definition at line \mbox{\hyperlink{games_controller_8php_source_l00010}{10}} of
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00023}{23}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 23 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024     \{}
-\DoxyCodeLine{00025         \$this-\/>games  = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
-\DoxyCodeLine{00026         \$this-\/>categorie = \textcolor{keyword}{new} \mbox{\hyperlink{class_categories}{Categories}}();}
-\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \$this-\/>games  = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
+\DoxyCodeLine{26         \$this-\/>categorie = \textcolor{keyword}{new} \mbox{\hyperlink{class_categories}{Categories}}();}
+\DoxyCodeLine{27     \}}
 
 \end{DoxyCode}
 
@@ -99,76 +99,83 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00034}{34}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 34 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00035     \{}
-\DoxyCodeLine{00036         \$requestGame = \textcolor{keyword}{null};}
-\DoxyCodeLine{00037         \$result = \textcolor{keyword}{null};}
-\DoxyCodeLine{00038         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{00039             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00040         \}}
-\DoxyCodeLine{00041 }
-\DoxyCodeLine{00042         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}requestGame"{}}) \{}
-\DoxyCodeLine{00043             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'gameName'}])) \{}
-\DoxyCodeLine{00044                 \$requestGame = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'gameName'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00045             \}}
-\DoxyCodeLine{00046 }
-\DoxyCodeLine{00047             \textcolor{keywordflow}{if} (isset(\$requestGame)) \{}
-\DoxyCodeLine{00048                 \$result = \$this-\/>games-\/>getRequestGames(\$requestGame);}
-\DoxyCodeLine{00049             \}}
-\DoxyCodeLine{00050         \}}
-\DoxyCodeLine{00051 }
-\DoxyCodeLine{00052         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detail"{}}) \{}
-\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
-\DoxyCodeLine{00054                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00055                 \$this-\/>idGame = \$idGame;}
-\DoxyCodeLine{00056             \}}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
-\DoxyCodeLine{00059                 \$result = \$this-\/>games-\/>getGameDetail(\$idGame);}
-\DoxyCodeLine{00060             \}}
-\DoxyCodeLine{00061         \}}
-\DoxyCodeLine{00062 }
-\DoxyCodeLine{00063         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}categorie"{}}) \{}
-\DoxyCodeLine{00064             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idCategorie'}])) \{}
-\DoxyCodeLine{00065                 \$idcategory = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idCategorie'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{00066                 \$this-\/>idcategory = \$idcategory;}
-\DoxyCodeLine{00067             \}}
-\DoxyCodeLine{00068 }
-\DoxyCodeLine{00069             \textcolor{keywordflow}{if} (isset(\$idcategory)) \{}
-\DoxyCodeLine{00070                 \$result = \$this-\/>games-\/>getGamesInCategorie(\$idcategory);}
-\DoxyCodeLine{00071             \}}
-\DoxyCodeLine{00072         \}}
-\DoxyCodeLine{00073 }
-\DoxyCodeLine{00074 }
-\DoxyCodeLine{00075         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addFavoris"{}}) \{}
-\DoxyCodeLine{00076             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
-\DoxyCodeLine{00077                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_NUMBER\_INT);}
-\DoxyCodeLine{00078             \}}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
-\DoxyCodeLine{00081                 \$result = \$this-\/>games-\/>addGameToFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$idGame);}
-\DoxyCodeLine{00082                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{00083                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Favorite added"{}};}
-\DoxyCodeLine{00084             \}}
-\DoxyCodeLine{00085         \}}
-\DoxyCodeLine{00086 }
-\DoxyCodeLine{00087         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}removeFavoris"{}}) \{}
-\DoxyCodeLine{00088             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
-\DoxyCodeLine{00089                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_NUMBER\_INT);}
-\DoxyCodeLine{00090             \}}
-\DoxyCodeLine{00091 }
-\DoxyCodeLine{00092             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
-\DoxyCodeLine{00093                 \$result = \$this-\/>games-\/>removeGameFromFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$idGame);}
-\DoxyCodeLine{00094                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{00095                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Favorite removed"{}};}
-\DoxyCodeLine{00096             \}}
-\DoxyCodeLine{00097         \}}
-\DoxyCodeLine{00098 }
-\DoxyCodeLine{00099         \$this-\/>requestedgame = \$result;}
-\DoxyCodeLine{00100     \}}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Games"{}};}
+\DoxyCodeLine{37         \$requestGame = \textcolor{keyword}{null};}
+\DoxyCodeLine{38         \$result = \textcolor{keyword}{null};}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
+\DoxyCodeLine{40             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}requestGame"{}}) \{}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'gameName'}])) \{}
+\DoxyCodeLine{46                 \$requestGame = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'gameName'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{47                 \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Search "{}} . \$requestGame;}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50             \textcolor{keywordflow}{if} (isset(\$requestGame)) \{}
+\DoxyCodeLine{51                 \$result = \$this-\/>games-\/>getRequestGames(\$requestGame);}
+\DoxyCodeLine{52             \}}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detail"{}}) \{}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{58                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{59                 \$this-\/>idGame = \$idGame;}
+\DoxyCodeLine{60             \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
+\DoxyCodeLine{63                 \$result = \$this-\/>games-\/>getGameDetail(\$idGame);}
+\DoxyCodeLine{64                 \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: "{}} . \$result[0][\textcolor{stringliteral}{"{}name"{}}];}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}categorie"{}}) \{}
+\DoxyCodeLine{69             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Categorie"{}};}
+\DoxyCodeLine{70             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idCategorie'}])) \{}
+\DoxyCodeLine{71                 \$idcategory = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idCategorie'}, FILTER\_SANITIZE\_STRING);}
+\DoxyCodeLine{72                 \$this-\/>idcategory = \$idcategory;}
+\DoxyCodeLine{73             \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75             \textcolor{keywordflow}{if} (isset(\$idcategory)) \{}
+\DoxyCodeLine{76                 \$result = \$this-\/>games-\/>getGamesInCategorie(\$idcategory);}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}addFavoris"{}}) \{}
+\DoxyCodeLine{82             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Favorite"{}};}
+\DoxyCodeLine{83             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{84                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_NUMBER\_INT);}
+\DoxyCodeLine{85             \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
+\DoxyCodeLine{88                 \$result = \$this-\/>games-\/>addGameToFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$idGame);}
+\DoxyCodeLine{89                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{90                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Favorite added"{}};}
+\DoxyCodeLine{91             \}}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}removeFavoris"{}}) \{}
+\DoxyCodeLine{95             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idGame'}])) \{}
+\DoxyCodeLine{96                 \$idGame = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idGame'}, FILTER\_SANITIZE\_NUMBER\_INT);}
+\DoxyCodeLine{97             \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99             \textcolor{keywordflow}{if} (isset(\$idGame)) \{}
+\DoxyCodeLine{100                 \$result = \$this-\/>games-\/>removeGameFromFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$idGame);}
+\DoxyCodeLine{101                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
+\DoxyCodeLine{102                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Favorite removed"{}};}
+\DoxyCodeLine{103             \}}
+\DoxyCodeLine{104         \}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \$this-\/>requestedgame = \$result;}
+\DoxyCodeLine{107     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_games_controller_a4e1195117477d379758d389ef69aef43}\label{class_games_controller_a4e1195117477d379758d389ef69aef43}} 
@@ -180,66 +187,65 @@ Definition at line \mbox{\hyperlink{games_controller_8php_source_l00034}{34}} of
 create the page of a specific game
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00183}{183}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 190 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00184     \{}
-\DoxyCodeLine{00185 }
-\DoxyCodeLine{00186         \$gameDetail = \$this-\/>games-\/>getGameDetail(\$this-\/>idGame);}
-\DoxyCodeLine{00187         \$category = \$this-\/>categorie-\/>getCategoriesOfGame(\$this-\/>idGame);}
-\DoxyCodeLine{00188         \$html = \textcolor{stringliteral}{''};}
-\DoxyCodeLine{00189 }
-\DoxyCodeLine{00190         \$html .= \textcolor{stringliteral}{'</br>}}
-\DoxyCodeLine{00191 \textcolor{stringliteral}{            <div class="{}row"{}>}}
-\DoxyCodeLine{00192 \textcolor{stringliteral}{                <div class="{}col"{}>}}
-\DoxyCodeLine{00193 \textcolor{stringliteral}{                    <img class="{}detailImage"{} src="{}./img/games/'} . \$gameDetail[0][\textcolor{stringliteral}{'imageName'}] . \textcolor{stringliteral}{'."{}  >}}
-\DoxyCodeLine{00194 \textcolor{stringliteral}{                </div>}}
-\DoxyCodeLine{00195 \textcolor{stringliteral}{                <div class="{}col"{}>}}
-\DoxyCodeLine{00196 \textcolor{stringliteral}{                    <h2 class="{}card-\/title"{}>'} . \$gameDetail[0][\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</h2>}}
-\DoxyCodeLine{00197 \textcolor{stringliteral}{                    <p class="{}card-\/title"{}>'} . \$gameDetail[0][\textcolor{stringliteral}{'description'}] . \textcolor{stringliteral}{'</p>}}
-\DoxyCodeLine{00198 \textcolor{stringliteral}{                    </br>}}
-\DoxyCodeLine{00199 \textcolor{stringliteral}{        <div class="{}list-\/group"{}>'};}
-\DoxyCodeLine{00200         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{00201             \textcolor{keywordflow}{if} (\$this-\/>games-\/>checkIfGameIsAlreadyInFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$gameDetail[0][\textcolor{stringliteral}{'id'}])) \{}
-\DoxyCodeLine{00202                 \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success "{} href="{}?r=games\&e=addFavoris\&idGame='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Add to favorite</a>'};}
-\DoxyCodeLine{00203             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00204                 \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/warning "{} href="{}?r=games\&e=removeFavoris\&idGame='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Remove favorite</a>'};}
-\DoxyCodeLine{00205             \}}
-\DoxyCodeLine{00206         \}}
-\DoxyCodeLine{00207         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>role == 1) \{}
-\DoxyCodeLine{00208             \$html .= \textcolor{stringliteral}{'</br> <a class="{}btn btn-\/outline-\/danger "{} href="{}?r=administrator\&e=updateGame\&id='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Update game</a>'};}
-\DoxyCodeLine{00209             \$html .= \textcolor{stringliteral}{'</br> <a class="{}btn btn-\/outline-\/danger "{} href="{}?r=administrator\&e=addGameCategorie\&id='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Update/add categories</a>'};}
-\DoxyCodeLine{00210         \}}
-\DoxyCodeLine{00211 }
-\DoxyCodeLine{00212         \$html .= \textcolor{stringliteral}{'</div>}}
-\DoxyCodeLine{00213 \textcolor{stringliteral}{                    <h3 class="{}card-\/title"{}>Categories</h3>}}
-\DoxyCodeLine{00214 \textcolor{stringliteral}{                    <div class="{}list-\/group"{}>'};}
-\DoxyCodeLine{00215 }
-\DoxyCodeLine{00216         \textcolor{keywordflow}{foreach} (\$category as \$key => \$cat) \{}
-\DoxyCodeLine{00217             \$html .= \textcolor{stringliteral}{'<a href="{}?r=games\&e=categorie\&idCategorie='} . \$cat[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{}<button type="{}button"{} class="{}btn btn-\/outline-\/success btnCategorie margintop10"{}>'} . \$cat[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</button></a>'};}
-\DoxyCodeLine{00218         \}}
-\DoxyCodeLine{00219 }
-\DoxyCodeLine{00220         \$html .= \textcolor{stringliteral}{'  </div>}}
-\DoxyCodeLine{00221 \textcolor{stringliteral}{                    </div>}}
-\DoxyCodeLine{00222 \textcolor{stringliteral}{                </div>}}
-\DoxyCodeLine{00223 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00224 \textcolor{stringliteral}{            }}
-\DoxyCodeLine{00225 \textcolor{stringliteral}{            }}
-\DoxyCodeLine{00226 \textcolor{stringliteral}{            '};}
-\DoxyCodeLine{00227 }
-\DoxyCodeLine{00228 }
-\DoxyCodeLine{00229         \$html .= \textcolor{stringliteral}{''};}
-\DoxyCodeLine{00230         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00231     \}}
+\DoxyCodeLine{191     \{}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193         \$gameDetail = \$this-\/>games-\/>getGameDetail(\$this-\/>idGame);}
+\DoxyCodeLine{194         \$category = \$this-\/>categorie-\/>getCategoriesOfGame(\$this-\/>idGame);}
+\DoxyCodeLine{195         \$html = \textcolor{stringliteral}{''};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197         \$html .= \textcolor{stringliteral}{'</br>}}
+\DoxyCodeLine{198 \textcolor{stringliteral}{            <div class="{}row"{}>}}
+\DoxyCodeLine{199 \textcolor{stringliteral}{                <div class="{}col"{}>}}
+\DoxyCodeLine{200 \textcolor{stringliteral}{                    <img class="{}detailImage"{} src="{}./img/games/'} . \$gameDetail[0][\textcolor{stringliteral}{'imageName'}] . \textcolor{stringliteral}{'."{}  >}}
+\DoxyCodeLine{201 \textcolor{stringliteral}{                </div>}}
+\DoxyCodeLine{202 \textcolor{stringliteral}{                <div class="{}col"{}>}}
+\DoxyCodeLine{203 \textcolor{stringliteral}{                    <h2 class="{}card-\/title"{}>'} . \$gameDetail[0][\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</h2>}}
+\DoxyCodeLine{204 \textcolor{stringliteral}{                    <p class="{}card-\/title"{}>'} . \$gameDetail[0][\textcolor{stringliteral}{'description'}] . \textcolor{stringliteral}{'</p>}}
+\DoxyCodeLine{205 \textcolor{stringliteral}{                    </br>}}
+\DoxyCodeLine{206 \textcolor{stringliteral}{        <div class="{}list-\/group"{}>'};}
+\DoxyCodeLine{207         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
+\DoxyCodeLine{208             \textcolor{keywordflow}{if} (\$this-\/>games-\/>checkIfGameIsAlreadyInFavoris(\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser, \$gameDetail[0][\textcolor{stringliteral}{'id'}])) \{}
+\DoxyCodeLine{209                 \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success "{} href="{}?r=games\&e=addFavoris\&idGame='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Add to favorite</a>'};}
+\DoxyCodeLine{210             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{211                 \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/warning "{} href="{}?r=games\&e=removeFavoris\&idGame='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Remove favorite</a>'};}
+\DoxyCodeLine{212             \}}
+\DoxyCodeLine{213         \}}
+\DoxyCodeLine{214         \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>role == 1) \{}
+\DoxyCodeLine{215             \$html .= \textcolor{stringliteral}{'</br> <a class="{}btn btn-\/outline-\/danger "{} href="{}?r=administrator\&e=updateGame\&id='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Update game</a>'};}
+\DoxyCodeLine{216             \$html .= \textcolor{stringliteral}{'</br> <a class="{}btn btn-\/outline-\/danger "{} href="{}?r=administrator\&e=addGameCategorie\&id='} . \$gameDetail[0][\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>Update/add categories</a>'};}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         \$html .= \textcolor{stringliteral}{'</div>}}
+\DoxyCodeLine{220 \textcolor{stringliteral}{                    <h3 class="{}card-\/title"{}>Categories</h3>}}
+\DoxyCodeLine{221 \textcolor{stringliteral}{                    <div class="{}list-\/group"{}>'};}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{keywordflow}{foreach} (\$category as \$key => \$cat) \{}
+\DoxyCodeLine{224             \$html .= \textcolor{stringliteral}{'<a href="{}?r=games\&e=categorie\&idCategorie='} . \$cat[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{}<button type="{}button"{} class="{}btn btn-\/outline-\/success btnCategorie margintop10"{}>'} . \$cat[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</button></a>'};}
+\DoxyCodeLine{225         \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227         \$html .= \textcolor{stringliteral}{'  </div>}}
+\DoxyCodeLine{228 \textcolor{stringliteral}{                    </div>}}
+\DoxyCodeLine{229 \textcolor{stringliteral}{                </div>}}
+\DoxyCodeLine{230 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{231 \textcolor{stringliteral}{            }}
+\DoxyCodeLine{232 \textcolor{stringliteral}{            }}
+\DoxyCodeLine{233 \textcolor{stringliteral}{            '};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236         \$html .= \textcolor{stringliteral}{''};}
+\DoxyCodeLine{237         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{238     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,31 +261,30 @@ Here is the caller graph for this function\+:
 crate a list of game of a specific categorie
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00238}{238}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 245 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00239     \{}
-\DoxyCodeLine{00240 }
-\DoxyCodeLine{00241         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
-\DoxyCodeLine{00242         \$listGamesBrut = \$this-\/>requestedgame;}
-\DoxyCodeLine{00243 }
-\DoxyCodeLine{00244         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$game) \{}
-\DoxyCodeLine{00245 }
-\DoxyCodeLine{00246             \$html .= \$this-\/>createCardHTML(\$game);}
-\DoxyCodeLine{00247         \}}
-\DoxyCodeLine{00248 }
-\DoxyCodeLine{00249         \$html .= \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{00250         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00251     \}}
+\DoxyCodeLine{246     \{}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
+\DoxyCodeLine{249         \$listGamesBrut = \$this-\/>requestedgame;}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$game) \{}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253             \$html .= \$this-\/>createCardHTML(\$game);}
+\DoxyCodeLine{254         \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256         \$html .= \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{257         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{258     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -295,32 +300,31 @@ Here is the caller graph for this function\+:
 create the html of the list of all the games
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00142}{142}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 149 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00143     \{}
-\DoxyCodeLine{00144         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
-\DoxyCodeLine{00145 }
-\DoxyCodeLine{00146         \$listGamesBrut = \$this-\/>games-\/>getAllGames();}
-\DoxyCodeLine{00147 }
-\DoxyCodeLine{00148         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
-\DoxyCodeLine{00149 }
-\DoxyCodeLine{00150 }
-\DoxyCodeLine{00151             \$html .= \$this-\/>createCardHTML(\$games);}
-\DoxyCodeLine{00152         \}}
-\DoxyCodeLine{00153 }
-\DoxyCodeLine{00154         \$html .= \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{00155         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00156     \}}
+\DoxyCodeLine{150     \{}
+\DoxyCodeLine{151         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         \$listGamesBrut = \$this-\/>games-\/>getAllGames();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158             \$html .= \$this-\/>createCardHTML(\$games);}
+\DoxyCodeLine{159         \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         \$html .= \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{163     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -336,31 +340,30 @@ Here is the caller graph for this function\+:
 create a list of the requested games
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00163}{163}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 170 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00164     \{}
-\DoxyCodeLine{00165 }
-\DoxyCodeLine{00166         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
-\DoxyCodeLine{00167         \$listGamesBrut = \$this-\/>requestedgame;}
-\DoxyCodeLine{00168         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
-\DoxyCodeLine{00169 }
-\DoxyCodeLine{00170 }
-\DoxyCodeLine{00171             \$html .= \$this-\/>createCardHTML(\$games);}
-\DoxyCodeLine{00172         \}}
-\DoxyCodeLine{00173 }
-\DoxyCodeLine{00174         \$html .= \textcolor{stringliteral}{'</div>'};}
-\DoxyCodeLine{00175         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00176     \}}
+\DoxyCodeLine{171     \{}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173         \$html = \textcolor{stringliteral}{'<div class="{}cardGameBox box"{}>'};}
+\DoxyCodeLine{174         \$listGamesBrut = \$this-\/>requestedgame;}
+\DoxyCodeLine{175         \textcolor{keywordflow}{foreach} (\$listGamesBrut as \$key => \$games) \{}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178             \$html .= \$this-\/>createCardHTML(\$games);}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181         \$html .= \textcolor{stringliteral}{'</div>'};}
+\DoxyCodeLine{182         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{183     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -376,7 +379,7 @@ Here is the caller graph for this function\+:
 print the html for the resquested content
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
@@ -384,41 +387,40 @@ Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00108}{108}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 115 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00109     \{}
-\DoxyCodeLine{00110         \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
-\DoxyCodeLine{00111 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{00112         \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{00113         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00114             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
-\DoxyCodeLine{00115             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a49d3832a5e05f423ff1a2a604cd18adc}{getListAllGames}}();}
-\DoxyCodeLine{00116         \}}
-\DoxyCodeLine{00117 }
-\DoxyCodeLine{00118         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}requestGame"{}}) \{}
-\DoxyCodeLine{00119             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
-\DoxyCodeLine{00120             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a275f1088a40996e2c543d67942511fed}{getRequestedGames}}();}
-\DoxyCodeLine{00121         \}}
-\DoxyCodeLine{00122 }
-\DoxyCodeLine{00123         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detail"{}}) \{}
-\DoxyCodeLine{00124             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a0519b3d4cfe849b0177ee41849911cc4}{recherchNotFull}}();}
-\DoxyCodeLine{00125             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4e1195117477d379758d389ef69aef43}{getGameDetail}}();}
-\DoxyCodeLine{00126         \}}
-\DoxyCodeLine{00127 }
-\DoxyCodeLine{00128         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}categorie"{}}) \{}
-\DoxyCodeLine{00129             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
-\DoxyCodeLine{00130             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a23bb4a3786e0ba0583abb5b8c94992f3}{getGamesFromCategorie}}();}
-\DoxyCodeLine{00131         \}}
-\DoxyCodeLine{00132 }
-\DoxyCodeLine{00133         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{00134         echo \$html;}
-\DoxyCodeLine{00135     \}}
+\DoxyCodeLine{116     \{}
+\DoxyCodeLine{117         \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
+\DoxyCodeLine{118 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
+\DoxyCodeLine{119         \$html .= \$this-\/>errorHandler();}
+\DoxyCodeLine{120         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{121             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
+\DoxyCodeLine{122             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a49d3832a5e05f423ff1a2a604cd18adc}{getListAllGames}}();}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}requestGame"{}}) \{}
+\DoxyCodeLine{126             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
+\DoxyCodeLine{127             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a275f1088a40996e2c543d67942511fed}{getRequestedGames}}();}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detail"{}}) \{}
+\DoxyCodeLine{131             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a0519b3d4cfe849b0177ee41849911cc4}{recherchNotFull}}();}
+\DoxyCodeLine{132             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4e1195117477d379758d389ef69aef43}{getGameDetail}}();}
+\DoxyCodeLine{133         \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}categorie"{}}) \{}
+\DoxyCodeLine{136             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a4c9def4089531a13c269e6e6b094ea7a}{recherchFull}}();}
+\DoxyCodeLine{137             \$html .= \$this-\/>\mbox{\hyperlink{class_games_controller_a23bb4a3786e0ba0583abb5b8c94992f3}{getGamesFromCategorie}}();}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
+\DoxyCodeLine{141         echo \$html;}
+\DoxyCodeLine{142     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -434,48 +436,47 @@ Here is the call graph for this function\+:
 create the html of a form to research game and to display the list of categorie
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00290}{290}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 297 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00291     \{}
-\DoxyCodeLine{00292         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00293 }
-\DoxyCodeLine{00294         \$html .= \textcolor{stringliteral}{'<div class="{}jumbotron DarkJumbotron  "{} style="{}background-\/color: \#161b22;"{}>}}
-\DoxyCodeLine{00295 \textcolor{stringliteral}{        <div class="{}container"{}>}}
-\DoxyCodeLine{00296 \textcolor{stringliteral}{          <h1 class="{}display-\/5"{}>Research</h1>}}
-\DoxyCodeLine{00297 \textcolor{stringliteral}{          }}
-\DoxyCodeLine{00298 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=games\&e=requestGame"{} method="{}post"{}>}}
-\DoxyCodeLine{00299 \textcolor{stringliteral}{}}
-\DoxyCodeLine{00300 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00301 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}gameName"{} name="{}gameName"{} placeholder="{}Mario"{}>}}
-\DoxyCodeLine{00302 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00303 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00304 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
-\DoxyCodeLine{00305 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00306 \textcolor{stringliteral}{          </form>}}
-\DoxyCodeLine{00307 \textcolor{stringliteral}{          <h4>Categories:</h4>}}
-\DoxyCodeLine{00308 \textcolor{stringliteral}{          <p>}}
-\DoxyCodeLine{00309 \textcolor{stringliteral}{}}
-\DoxyCodeLine{00310 \textcolor{stringliteral}{          '};}
-\DoxyCodeLine{00311         \textcolor{keywordflow}{foreach} (\$this-\/>categorie-\/>getListAllCategories() as \$key => \$cat) \{}
-\DoxyCodeLine{00312             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie "{} href="{}?r=games\&e=categorie\&idCategorie='} . \$cat[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$cat[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{00313         \}}
-\DoxyCodeLine{00314         \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{00315 \textcolor{stringliteral}{        </p>}}
-\DoxyCodeLine{00316 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{00317 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{00318 }
-\DoxyCodeLine{00319         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00320     \}}
+\DoxyCodeLine{298     \{}
+\DoxyCodeLine{299         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301         \$html .= \textcolor{stringliteral}{'<div class="{}jumbotron DarkJumbotron  "{} style="{}background-\/color: \#161b22;"{}>}}
+\DoxyCodeLine{302 \textcolor{stringliteral}{        <div class="{}container"{}>}}
+\DoxyCodeLine{303 \textcolor{stringliteral}{          <h1 class="{}display-\/5"{}>Research</h1>}}
+\DoxyCodeLine{304 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{305 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=games\&e=requestGame"{} method="{}post"{}>}}
+\DoxyCodeLine{306 \textcolor{stringliteral}{}}
+\DoxyCodeLine{307 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{308 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}gameName"{} name="{}gameName"{} placeholder="{}Mario"{}>}}
+\DoxyCodeLine{309 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{310 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{311 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
+\DoxyCodeLine{312 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{313 \textcolor{stringliteral}{          </form>}}
+\DoxyCodeLine{314 \textcolor{stringliteral}{          <h4>Categories:</h4>}}
+\DoxyCodeLine{315 \textcolor{stringliteral}{          <p>}}
+\DoxyCodeLine{316 \textcolor{stringliteral}{}}
+\DoxyCodeLine{317 \textcolor{stringliteral}{          '};}
+\DoxyCodeLine{318         \textcolor{keywordflow}{foreach} (\$this-\/>categorie-\/>getListAllCategories() as \$key => \$cat) \{}
+\DoxyCodeLine{319             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie "{} href="{}?r=games\&e=categorie\&idCategorie='} . \$cat[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$cat[\textcolor{stringliteral}{'name'}] . \textcolor{stringliteral}{'</a>'};}
+\DoxyCodeLine{320         \}}
+\DoxyCodeLine{321         \$html .= \textcolor{stringliteral}{'}}
+\DoxyCodeLine{322 \textcolor{stringliteral}{        </p>}}
+\DoxyCodeLine{323 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{324 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{327     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -491,39 +492,38 @@ Here is the caller graph for this function\+:
 create the html of a form to research game
 
 \begin{DoxyReturn}{Returns}
-void 
+html 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{games_controller_8php_source_l00327}{327}} of file \mbox{\hyperlink{games_controller_8php_source}{games\+Controller.\+php}}.
+Definition at line 334 of file games\+Controller.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00328     \{}
-\DoxyCodeLine{00329         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00330 }
-\DoxyCodeLine{00331         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{00332 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{00333 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Research</h2>}}
-\DoxyCodeLine{00334 \textcolor{stringliteral}{          }}
-\DoxyCodeLine{00335 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=games\&e=requestGame"{} method="{}post"{}>}}
-\DoxyCodeLine{00336 \textcolor{stringliteral}{}}
-\DoxyCodeLine{00337 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00338 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}gameName"{} name="{}gameName"{} placeholder="{}Mario"{}>}}
-\DoxyCodeLine{00339 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00340 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{00341 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
-\DoxyCodeLine{00342 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{00343 \textcolor{stringliteral}{          </form>}}
-\DoxyCodeLine{00344 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{00345 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{00346 }
-\DoxyCodeLine{00347         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{00348     \}}
+\DoxyCodeLine{335     \{}
+\DoxyCodeLine{336         \$html = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
+\DoxyCodeLine{339 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
+\DoxyCodeLine{340 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Research</h2>}}
+\DoxyCodeLine{341 \textcolor{stringliteral}{          }}
+\DoxyCodeLine{342 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=games\&e=requestGame"{} method="{}post"{}>}}
+\DoxyCodeLine{343 \textcolor{stringliteral}{}}
+\DoxyCodeLine{344 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{345 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}gameName"{} name="{}gameName"{} placeholder="{}Mario"{}>}}
+\DoxyCodeLine{346 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{347 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
+\DoxyCodeLine{348 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
+\DoxyCodeLine{349 \textcolor{stringliteral}{            </div>}}
+\DoxyCodeLine{350 \textcolor{stringliteral}{          </form>}}
+\DoxyCodeLine{351 \textcolor{stringliteral}{          </div>}}
+\DoxyCodeLine{352 \textcolor{stringliteral}{      </div>'};}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354         \textcolor{keywordflow}{return} \$html;}
+\DoxyCodeLine{355     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

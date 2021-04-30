@@ -14,7 +14,7 @@
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{userdata_8php_source_l00010}{10}} of file \mbox{\hyperlink{userdata_8php_source}{userdata.\+php}}.
+Definition at line 10 of file userdata.\+php.
 
 
 
@@ -27,33 +27,33 @@ Definition at line \mbox{\hyperlink{userdata_8php_source_l00010}{10}} of file \m
 
 default constructor 
 
-Definition at line \mbox{\hyperlink{userdata_8php_source_l00021}{21}} of file \mbox{\hyperlink{userdata_8php_source}{userdata.\+php}}.
+Definition at line 21 of file userdata.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022     \{}
-\DoxyCodeLine{00023         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00024             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00025                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{00026                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{00027                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{00028                 ));}
-\DoxyCodeLine{00029 }
-\DoxyCodeLine{00030                 \textcolor{comment}{// get list of user by username}}
-\DoxyCodeLine{00031                 \$sqlRequestUsers = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username LIKE :search\_username AND privateAccount = 0"{}};}
-\DoxyCodeLine{00032                 \$this-\/>psGetUsersByUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsers);}
-\DoxyCodeLine{00033                 \$this-\/>psGetUsersByUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035                 \textcolor{comment}{// get list of user by username}}
-\DoxyCodeLine{00036                 \$sqlGetDataUser = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE id =:search\_idUser"{}};}
-\DoxyCodeLine{00037                 \$this-\/>psGetDataUser = \$this-\/>dbh-\/>prepare(\$sqlGetDataUser);}
-\DoxyCodeLine{00038                 \$this-\/>psGetDataUser-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{00039             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00040                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00041                 die();}
-\DoxyCodeLine{00042             \}}
-\DoxyCodeLine{00043         \}}
-\DoxyCodeLine{00044     \}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{24             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{25                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
+\DoxyCodeLine{26                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
+\DoxyCodeLine{27                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
+\DoxyCodeLine{28                 ));}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30                 \textcolor{comment}{// get list of user by username}}
+\DoxyCodeLine{31                 \$sqlRequestUsers = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username LIKE :search\_username AND privateAccount = 0"{}};}
+\DoxyCodeLine{32                 \$this-\/>psGetUsersByUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsers);}
+\DoxyCodeLine{33                 \$this-\/>psGetUsersByUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35                 \textcolor{comment}{// get list of user by username}}
+\DoxyCodeLine{36                 \$sqlGetDataUser = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE id =:search\_idUser"{}};}
+\DoxyCodeLine{37                 \$this-\/>psGetDataUser = \$this-\/>dbh-\/>prepare(\$sqlGetDataUser);}
+\DoxyCodeLine{38                 \$this-\/>psGetDataUser-\/>setFetchMode(PDO::FETCH\_ASSOC);}
+\DoxyCodeLine{39             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{40                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{41                 die();}
+\DoxyCodeLine{42             \}}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44     \}}
 
 \end{DoxyCode}
 
@@ -68,29 +68,29 @@ Definition at line \mbox{\hyperlink{userdata_8php_source_l00021}{21}} of file \m
 get data of a specific user
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$iduser \\
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$iduser} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+array 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{userdata_8php_source_l00068}{68}} of file \mbox{\hyperlink{userdata_8php_source}{userdata.\+php}}.
+Definition at line 70 of file userdata.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00069     \{}
-\DoxyCodeLine{00070         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00071             \$this-\/>psGetDataUser-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$iduser));}
-\DoxyCodeLine{00072             \$result = \$this-\/>psGetDataUser-\/>fetchAll();}
-\DoxyCodeLine{00073         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00074             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00075             die();}
-\DoxyCodeLine{00076         \}}
-\DoxyCodeLine{00077         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00078     \}}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{73             \$this-\/>psGetDataUser-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$iduser));}
+\DoxyCodeLine{74             \$result = \$this-\/>psGetDataUser-\/>fetchAll();}
+\DoxyCodeLine{75         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{76             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{77             die();}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{80     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_user_data_aa1c09d341f215095745d3603e12b1fbd}\label{class_user_data_aa1c09d341f215095745d3603e12b1fbd}} 
@@ -102,29 +102,29 @@ Definition at line \mbox{\hyperlink{userdata_8php_source_l00068}{68}} of file \m
 get users by their username
 
 
-\begin{DoxyParams}{Parameters}
-{\em \mbox{[}type\mbox{]}} & \$username \\
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-void 
+array of game 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{userdata_8php_source_l00051}{51}} of file \mbox{\hyperlink{userdata_8php_source}{userdata.\+php}}.
+Definition at line 52 of file userdata.\+php.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052     \{}
-\DoxyCodeLine{00053         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{00054             \$this-\/>psGetUsersByUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \textcolor{charliteral}{'\%'} . \$username . \textcolor{charliteral}{'\%'}));}
-\DoxyCodeLine{00055             \$result = \$this-\/>psGetUsersByUsername-\/>fetchAll();}
-\DoxyCodeLine{00056         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00057             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00058             die();}
-\DoxyCodeLine{00059         \}}
-\DoxyCodeLine{00060         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00061     \}}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{55             \$this-\/>psGetUsersByUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \textcolor{charliteral}{'\%'} . \$username . \textcolor{charliteral}{'\%'}));}
+\DoxyCodeLine{56             \$result = \$this-\/>psGetUsersByUsername-\/>fetchAll();}
+\DoxyCodeLine{57         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{58             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{59             die();}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{62     \}}
 
 \end{DoxyCode}
 

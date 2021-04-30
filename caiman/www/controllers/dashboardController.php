@@ -20,6 +20,7 @@ class DashboardController extends mainController implements iController
      */
     public function formHandler()
     {
+        $_SESSION['title'] = "Caiman: Dashboard";
         $this->allowAccessTo(array(1, 3));
 
         $oldPassword = null;
@@ -31,6 +32,7 @@ class DashboardController extends mainController implements iController
         }
         // form update
         if ($this->e == "updatePassword") {
+            $_SESSION['title'] = "Caiman: Update password";
             if (isset($_POST['oldPassword'])) {
                 $oldPassword = filter_input(INPUT_POST, 'oldPassword', FILTER_SANITIZE_STRING);
             }
@@ -68,7 +70,7 @@ class DashboardController extends mainController implements iController
      * print the html for the resquested content
      * 
      *
-     * @return void
+     * @return html
      */
     public function printHTML()
     {
@@ -96,7 +98,7 @@ class DashboardController extends mainController implements iController
     /**
      * create the html of the head of the dashboard
      *
-     * @return void
+     * @return html
      */
     private function htmlFormHead()
     {
@@ -139,7 +141,7 @@ class DashboardController extends mainController implements iController
     /**
      * create the html of the favorite games of a user
      *
-     * @return void
+     * @return html
      */
     private function htmlFavoriteGames()
     {
@@ -166,7 +168,7 @@ class DashboardController extends mainController implements iController
     /**
      * create the html of the in game in time of each game the user has played
      *
-     * @return void
+     * @return html
      */
     private function htmlGameTime()
     {
@@ -194,7 +196,7 @@ class DashboardController extends mainController implements iController
      * create the view of a game
      *
      * @param int $game
-     * @return void
+     * @return html
      */
     private function createCardHTML($game)
     {
@@ -222,7 +224,7 @@ class DashboardController extends mainController implements iController
      * create the view of a game with the display played by the user
      *
      * @param int $game
-     * @return void
+     * @return html
      */
     private function createCardHTMLTime($game)
     {
@@ -251,7 +253,7 @@ class DashboardController extends mainController implements iController
     /**
      * create the html of the form to update the user's password
      *
-     * @return void
+     * @return html
      */
     public function htmlFormUpdatePassword()
     {

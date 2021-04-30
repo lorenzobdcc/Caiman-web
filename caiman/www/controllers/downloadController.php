@@ -27,6 +27,7 @@ class DownloadController extends mainController implements iController
    */
   public function formHandler()
   {
+    $_SESSION['title'] = "Caiman: Download";
     if (isset($_GET['e'])) {
       $this->e = filter_input(INPUT_GET, 'e', FILTER_SANITIZE_STRING);
     }
@@ -55,7 +56,7 @@ class DownloadController extends mainController implements iController
    * print the html for the resquested content
    * 
    *
-   * @return void
+   * @return html
    */
   public function printHTML()
   {
@@ -76,7 +77,7 @@ class DownloadController extends mainController implements iController
   /**
    * create the html to download Caiman
    *
-   * @return void
+   * @return html
    */
   private function htmlUserDownload()
   {
@@ -101,7 +102,7 @@ class DownloadController extends mainController implements iController
 /**
  * create the html to explian to the user that he has to log in
  *
- * @return void
+ * @return html
  */
   private function htmlHeadVisitor()
   {
@@ -129,7 +130,7 @@ class DownloadController extends mainController implements iController
   /**
    * create the html of download to a visitor
    *
-   * @return void
+   * @return html
    */
   private function htmlVisitorDownload()
   {
@@ -164,7 +165,7 @@ class DownloadController extends mainController implements iController
   /**
    * create the form to create an account
    *
-   * @return void
+   * @return html
    */
   private function htmlFormSignin()
   {
@@ -183,7 +184,7 @@ class DownloadController extends mainController implements iController
   /**
    * create the form to log in
    *
-   * @return void
+   * @return html
    */
   private function htmlFormLogin()
   {

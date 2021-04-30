@@ -107,140 +107,142 @@
 \DoxyCodeLine{00113             \}}
 \DoxyCodeLine{00114         \}}
 \DoxyCodeLine{00115     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00121}\mbox{\hyperlink{class_games_adb126d2fb743e7fb704f2e59273a296c}{00121}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_adb126d2fb743e7fb704f2e59273a296c}{getAllGames}}()}
-\DoxyCodeLine{00122     \{}
-\DoxyCodeLine{00123         }
-\DoxyCodeLine{00124         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00125             \$this-\/>psGetAllGames-\/>execute();}
-\DoxyCodeLine{00126             \$result = \$this-\/>psGetAllGames-\/>fetchAll();}
-\DoxyCodeLine{00127 }
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00122}\mbox{\hyperlink{class_games_adb126d2fb743e7fb704f2e59273a296c}{00122}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_adb126d2fb743e7fb704f2e59273a296c}{getAllGames}}()}
+\DoxyCodeLine{00123     \{}
+\DoxyCodeLine{00124         }
+\DoxyCodeLine{00125         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00126             \$this-\/>psGetAllGames-\/>execute();}
+\DoxyCodeLine{00127             \$result = \$this-\/>psGetAllGames-\/>fetchAll();}
 \DoxyCodeLine{00128 }
-\DoxyCodeLine{00129         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00130             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00131             die();}
-\DoxyCodeLine{00132         \}}
-\DoxyCodeLine{00133         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00134     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00140}\mbox{\hyperlink{class_games_a27486dee021b3817233f345384231b97}{00140}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a27486dee021b3817233f345384231b97}{getRequestGames}}(\textcolor{keywordtype}{string} \$gameName)}
-\DoxyCodeLine{00141     \{}
-\DoxyCodeLine{00142 }
-\DoxyCodeLine{00143         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00144             \$this-\/>psRequestGames-\/>execute(array(\textcolor{stringliteral}{':search\_game'} => \textcolor{charliteral}{'\%'}.\$gameName.\textcolor{charliteral}{'\%'}));}
-\DoxyCodeLine{00145             \$result = \$this-\/>psRequestGames-\/>fetchAll();}
-\DoxyCodeLine{00146 }
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00131             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00132             die();}
+\DoxyCodeLine{00133         \}}
+\DoxyCodeLine{00134         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00135     \}}
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00141}\mbox{\hyperlink{class_games_a27486dee021b3817233f345384231b97}{00141}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a27486dee021b3817233f345384231b97}{getRequestGames}}(\textcolor{keywordtype}{string} \$gameName)}
+\DoxyCodeLine{00142     \{}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00145             \$this-\/>psRequestGames-\/>execute(array(\textcolor{stringliteral}{':search\_game'} => \textcolor{charliteral}{'\%'}.\$gameName.\textcolor{charliteral}{'\%'}));}
+\DoxyCodeLine{00146             \$result = \$this-\/>psRequestGames-\/>fetchAll();}
 \DoxyCodeLine{00147 }
-\DoxyCodeLine{00148         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00149             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00150             die();}
-\DoxyCodeLine{00151         \}}
-\DoxyCodeLine{00152         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00153     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00159}\mbox{\hyperlink{class_games_a356d840419cd8ea2c581533d269d34d7}{00159}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a356d840419cd8ea2c581533d269d34d7}{getTimeInGameUser}}(\textcolor{keywordtype}{int} \$idUser,\textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00160     \{}
-\DoxyCodeLine{00161         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00162             \$this-\/>psGetTimeInGame-\/>execute(array(\textcolor{stringliteral}{':search\_idGame'} => \$idGame, \textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
-\DoxyCodeLine{00163             \$result = \$this-\/>psGetTimeInGame-\/>fetchAll();}
-\DoxyCodeLine{00164         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00165             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00166             die();}
-\DoxyCodeLine{00167         \}}
-\DoxyCodeLine{00168         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00169     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00175}\mbox{\hyperlink{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}{00175}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}{getListOfGameWithTimeUser}}(\textcolor{keywordtype}{int} \$idUser)}
-\DoxyCodeLine{00176     \{}
-\DoxyCodeLine{00177         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00178             \$this-\/>psGetGameWithTime-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
-\DoxyCodeLine{00179             \$result = \$this-\/>psGetGameWithTime-\/>fetchAll();}
-\DoxyCodeLine{00180 }
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00150             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00151             die();}
+\DoxyCodeLine{00152         \}}
+\DoxyCodeLine{00153         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00154     \}}
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00160}\mbox{\hyperlink{class_games_a356d840419cd8ea2c581533d269d34d7}{00160}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a356d840419cd8ea2c581533d269d34d7}{getTimeInGameUser}}(\textcolor{keywordtype}{int} \$idUser,\textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00161     \{}
+\DoxyCodeLine{00162         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00163             \$this-\/>psGetTimeInGame-\/>execute(array(\textcolor{stringliteral}{':search\_idGame'} => \$idGame, \textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
+\DoxyCodeLine{00164             \$result = \$this-\/>psGetTimeInGame-\/>fetchAll();}
+\DoxyCodeLine{00165         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00166             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00167             die();}
+\DoxyCodeLine{00168         \}}
+\DoxyCodeLine{00169         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00170     \}}
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00176}\mbox{\hyperlink{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}{00176}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}{getListOfGameWithTimeUser}}(\textcolor{keywordtype}{int} \$idUser)}
+\DoxyCodeLine{00177     \{}
+\DoxyCodeLine{00178         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00179             \$this-\/>psGetGameWithTime-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
+\DoxyCodeLine{00180             \$result = \$this-\/>psGetGameWithTime-\/>fetchAll();}
 \DoxyCodeLine{00181 }
-\DoxyCodeLine{00182         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00183             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00184             die();}
-\DoxyCodeLine{00185         \}}
-\DoxyCodeLine{00186         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00187     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00193}\mbox{\hyperlink{class_games_ac93fbd51775fb58ab532190551781db2}{00193}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_ac93fbd51775fb58ab532190551781db2}{getGameDetail}}(\textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00194     \{}
-\DoxyCodeLine{00195 }
-\DoxyCodeLine{00196         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00197             \$this-\/>psGameDetail-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
-\DoxyCodeLine{00198             \$result = \$this-\/>psGameDetail-\/>fetchAll();}
-\DoxyCodeLine{00199 }
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00184             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00185             die();}
+\DoxyCodeLine{00186         \}}
+\DoxyCodeLine{00187         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00188     \}}
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00194}\mbox{\hyperlink{class_games_ac93fbd51775fb58ab532190551781db2}{00194}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_ac93fbd51775fb58ab532190551781db2}{getGameDetail}}(\textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00195     \{}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00198             \$this-\/>psGameDetail-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
+\DoxyCodeLine{00199             \$result = \$this-\/>psGameDetail-\/>fetchAll();}
 \DoxyCodeLine{00200 }
-\DoxyCodeLine{00201         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00202             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00203             die();}
-\DoxyCodeLine{00204         \}}
-\DoxyCodeLine{00205         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00206     \}}
-\DoxyCodeLine{00207 }
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00213}\mbox{\hyperlink{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}{00213}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}{getGamesInCategorie}}(\textcolor{keywordtype}{int} \$idCategorie)}
-\DoxyCodeLine{00214     \{}
-\DoxyCodeLine{00215         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00216             \$this-\/>psGameInCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idCategorie));}
-\DoxyCodeLine{00217             \$result = \$this-\/>psGameInCategorie-\/>fetchAll();}
-\DoxyCodeLine{00218         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00219             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00220             die();}
-\DoxyCodeLine{00221         \}}
-\DoxyCodeLine{00222         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00223     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00229}\mbox{\hyperlink{class_games_a8cba71e901169a660cced6ff8a641a18}{00229}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a8cba71e901169a660cced6ff8a641a18}{getFavoriteGamesOfUser}}(\textcolor{keywordtype}{int} \$idUser)}
-\DoxyCodeLine{00230     \{}
-\DoxyCodeLine{00231         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00232             \$this-\/>psFavoriteGameOfUser-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idUser));}
-\DoxyCodeLine{00233             \$result = \$this-\/>psFavoriteGameOfUser-\/>fetchAll();}
-\DoxyCodeLine{00234 }
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00203             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00204             die();}
+\DoxyCodeLine{00205         \}}
+\DoxyCodeLine{00206         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00207     \}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00214}\mbox{\hyperlink{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}{00214}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}{getGamesInCategorie}}(\textcolor{keywordtype}{int} \$idCategorie)}
+\DoxyCodeLine{00215     \{}
+\DoxyCodeLine{00216         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00217             \$this-\/>psGameInCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idCategorie));}
+\DoxyCodeLine{00218             \$result = \$this-\/>psGameInCategorie-\/>fetchAll();}
+\DoxyCodeLine{00219         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00220             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00221             die();}
+\DoxyCodeLine{00222         \}}
+\DoxyCodeLine{00223         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00224     \}}
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00230}\mbox{\hyperlink{class_games_a8cba71e901169a660cced6ff8a641a18}{00230}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a8cba71e901169a660cced6ff8a641a18}{getFavoriteGamesOfUser}}(\textcolor{keywordtype}{int} \$idUser)}
+\DoxyCodeLine{00231     \{}
+\DoxyCodeLine{00232         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00233             \$this-\/>psFavoriteGameOfUser-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idUser));}
+\DoxyCodeLine{00234             \$result = \$this-\/>psFavoriteGameOfUser-\/>fetchAll();}
 \DoxyCodeLine{00235 }
-\DoxyCodeLine{00236         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00237             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00238             die();}
-\DoxyCodeLine{00239         \}}
-\DoxyCodeLine{00240         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{00241     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00247}\mbox{\hyperlink{class_games_a829137ab2be029816c98157cf51605f9}{00247}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a829137ab2be029816c98157cf51605f9}{addGameToFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00248     \{}
-\DoxyCodeLine{00249         }
-\DoxyCodeLine{00250         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00251             \$this-\/>psAddGameToFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{00252             \$result = \$this-\/>psAddGameToFavori-\/>fetchAll();}
-\DoxyCodeLine{00253 }
-\DoxyCodeLine{00254         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00255             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00256             die();}
-\DoxyCodeLine{00257         \}}
-\DoxyCodeLine{00258         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00237         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00238             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00239             die();}
+\DoxyCodeLine{00240         \}}
+\DoxyCodeLine{00241         \textcolor{keywordflow}{return} \$result;}
+\DoxyCodeLine{00242     \}}
+\DoxyCodeLine{00243 }
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00249}\mbox{\hyperlink{class_games_a829137ab2be029816c98157cf51605f9}{00249}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a829137ab2be029816c98157cf51605f9}{addGameToFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00250     \{}
+\DoxyCodeLine{00251         }
+\DoxyCodeLine{00252         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00253             \$this-\/>psAddGameToFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00256             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00257             die();}
+\DoxyCodeLine{00258         \}}
 \DoxyCodeLine{00259     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00265}\mbox{\hyperlink{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}{00265}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}{removeGameFromFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00266     \{}
-\DoxyCodeLine{00267         }
-\DoxyCodeLine{00268         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00269             \$this-\/>psRemoveGameFromFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{00270 }
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00266}\mbox{\hyperlink{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}{00266}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}{removeGameFromFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00267     \{}
+\DoxyCodeLine{00268         }
+\DoxyCodeLine{00269         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00270             \$this-\/>psRemoveGameFromFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
 \DoxyCodeLine{00271 }
-\DoxyCodeLine{00272         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00273             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00274             die();}
-\DoxyCodeLine{00275         \}}
-\DoxyCodeLine{00276     \}}
-\DoxyCodeLine{\Hypertarget{games_8php_source_l00282}\mbox{\hyperlink{class_games_a6f9ef1672bce91a29800ee02215a5d2c}{00282}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a6f9ef1672bce91a29800ee02215a5d2c}{checkIfGameIsAlreadyInFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
-\DoxyCodeLine{00283     \{}
-\DoxyCodeLine{00284         \$boolResult = \textcolor{keyword}{true};}
-\DoxyCodeLine{00285         }
-\DoxyCodeLine{00286         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{00287             \$this-\/>psCheckIfFavoris-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{00288             \$result = \$this-\/>psCheckIfFavoris-\/>fetchAll();}
-\DoxyCodeLine{00289             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{00290                 \$boolResult = \textcolor{keyword}{false};}
-\DoxyCodeLine{00291             \}}
-\DoxyCodeLine{00292 }
-\DoxyCodeLine{00293         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{00294             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{00295             die();}
-\DoxyCodeLine{00296         \}}
-\DoxyCodeLine{00297         \textcolor{keywordflow}{return} \$boolResult;}
-\DoxyCodeLine{00298     \}}
-\DoxyCodeLine{00299 }
-\DoxyCodeLine{00300 \}}
+\DoxyCodeLine{00272 }
+\DoxyCodeLine{00273         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00274             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00275             die();}
+\DoxyCodeLine{00276         \}}
+\DoxyCodeLine{00277     \}}
+\DoxyCodeLine{00278     }
+\DoxyCodeLine{\Hypertarget{games_8php_source_l00284}\mbox{\hyperlink{class_games_a6f9ef1672bce91a29800ee02215a5d2c}{00284}}     \textcolor{keyword}{public} \textcolor{keyword}{function} \mbox{\hyperlink{class_games_a6f9ef1672bce91a29800ee02215a5d2c}{checkIfGameIsAlreadyInFavoris}}(\textcolor{keywordtype}{int} \$idUser, \textcolor{keywordtype}{int} \$idGame)}
+\DoxyCodeLine{00285     \{}
+\DoxyCodeLine{00286         \$boolResult = \textcolor{keyword}{true};}
+\DoxyCodeLine{00287         }
+\DoxyCodeLine{00288         \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{00289             \$this-\/>psCheckIfFavoris-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
+\DoxyCodeLine{00290             \$result = \$this-\/>psCheckIfFavoris-\/>fetchAll();}
+\DoxyCodeLine{00291             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00292                 \$boolResult = \textcolor{keyword}{false};}
+\DoxyCodeLine{00293             \}}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
+\DoxyCodeLine{00296             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
+\DoxyCodeLine{00297             die();}
+\DoxyCodeLine{00298         \}}
+\DoxyCodeLine{00299         \textcolor{keywordflow}{return} \$boolResult;}
+\DoxyCodeLine{00300     \}}
+\DoxyCodeLine{00301 }
+\DoxyCodeLine{00302 \}}
 
 \end{DoxyCode}

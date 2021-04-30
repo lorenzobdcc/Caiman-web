@@ -24,6 +24,7 @@ class Signin
     public $insert_password_repeat = null;
 
     public $insert_email = null;
+
 /**
  * default constructor
  */
@@ -56,6 +57,7 @@ class Signin
             }
         }
     }
+
 /**
  * add a mew user in the database
  *
@@ -84,10 +86,11 @@ class Signin
             }
         }
     }
+
 /**
  * check that the username is not already taken
  *
- * @return void
+ * @return bool
  */
     public function checkIfUsernameAlreadyTaken()
     {
@@ -104,10 +107,11 @@ class Signin
         }
         return $istaken;
     }
+
 /**
  * check that the email is not already taken
  *
- * @return void
+ * @return bool
  */
     public function checkIfEmailAlreadyTaken()
     {
