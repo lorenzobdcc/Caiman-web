@@ -161,7 +161,7 @@ modification de l'interface theme blanc -> dark
 
 ### 15h20
 
-test de téléchargement de fichiers depuis le poste utilisateur
+Création de la page de téléchargement et mise en place de du téléchargement de Caiman depuis le site
 
 ### notes pour la prochaine fois
 
@@ -284,7 +284,7 @@ gestion des erreurs de du login
 
 ----------
 
-## 28.04.2021
+## 29.04.2021
 
 ### 8h30
 
@@ -317,3 +317,22 @@ ajout de contrainte dans la base de données
 ### 10h45
 
 Création du planning effectif
+
+### 13h00
+
+Configuration de debian
+
+user tfp : FTPdiplomant
+password ftp : SuperCfpt@
+
+J’ai pus installer apache, php, et mysql mais je n’arrive pas à me connecter en ftp. A la connexion je bloque sur l’erreur : “Impossible de récupérer le contenu du dossier”. Malgré l’aide de Mr.Schmidt je n’ai toujours pas réussi.
+
+### 15h20
+
+Je n'arrive toujours pas a me connecter au ftp, je ne sais pas si le probléme viens de ma configuration ou du firewall
+
+## notes pour le premier rendu
+
+J’ai durant ces deux premières semaines, créé le site internet de Caiman. Le site n’est pas fini à 100% mais les fonctionnalités de base sont toutes implémentées. Les fonctionnalités actuelles permettent de faire toutes les choses nécessaires au fonctionnement de l'application. J’ai pris plus de temps que prévu à réaliser le site mais durant la création de mon planning prévisionnel j’ai fait des erreurs, j’ai par exemple oublié de planifier la création des fonctionnalités d’administration ( Ajout de jeux, ajout de catégories, assignation de catégories à un jeu, upload de jeux, etc ).
+
+La documentation du site n’est pas forcément touffue mais le site n’est pas particulièrement complexe, il m’a pris du temps dû au nombre de tables à gérer. Il reste à mettre en place la récupération de mot de passe mais j’ai décidé de passer à l'interface graphique de l'application C# dès la semaine prochaine. Étant donné que le projet est la partie la plus importante de l'application, je ne vais pas configurer la récupération de mot de passe maintenant.
