@@ -197,7 +197,7 @@ class GamesController extends mainController implements iController
         $html .= '</br>
             <div class="row">
                 <div class="col">
-                    <img class="detailImage" src="./img/games/' . $gameDetail[0]['imageName'] . '."  >
+                    <img class="detailImage" src="./img/games/' . $gameDetail[0]['imageName'] . '"  >
                 </div>
                 <div class="col">
                     <h2 class="card-title">' . $gameDetail[0]['name'] . '</h2>
@@ -268,7 +268,7 @@ class GamesController extends mainController implements iController
         $html = '
         <div class="card cardBootstarp " style=" max-width: 15rem; margin:10px;  background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
-        <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
+        <img src="./img/games/' . $game['imageName'] . '" class="card-img-top imageCard"  >
         <div class="card-body darkContent">
             <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
             

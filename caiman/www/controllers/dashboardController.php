@@ -203,7 +203,7 @@ class DashboardController extends mainController implements iController
         $html = '
         <div class="card cardBootstarp" style=" max-width: 15rem;  margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
         <a href="?r=games&e=detail&idGame=' . $game['id'] . '">
-        <img src="./img/games/' . $game['imageName'] . '." class="card-img-top imageCard"  >
+        <img src="./img/games/' . $game['imageName'] . '" class="card-img-top imageCard"  >
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $game['name'] . '</h5>
         <div class="card-body ">
@@ -233,7 +233,7 @@ class DashboardController extends mainController implements iController
         $gameTime = $this->game->getTimeInGameUser($_SESSION['user']->idUser, $game);
         $html = '
         <div class="card cardBootstarp" style=" max-width: 15rem; margin:10px; padding:0; background-color: #161b22; border:2px solid #28a745;">
-        <img src="./img/games/' . $gameDetail['imageName'] . '." class="card-img-top imageCard"  >
+        <img src="./img/games/' . $gameDetail['imageName'] . '" class="card-img-top imageCard"  >
         <div class="card-body ">
         <h6 class="card-title whiteTexte">' . $gameDetail['name'] . '</h5>
             <p class="greenTexte">';

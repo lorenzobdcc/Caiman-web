@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 30 avr. 2021 à 09:20
+-- Généré le : lun. 03 mai 2021 à 13:11
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.11
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `caiman`
 --
+CREATE DATABASE IF NOT EXISTS `caiman` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `caiman`;
 
 -- --------------------------------------------------------
 

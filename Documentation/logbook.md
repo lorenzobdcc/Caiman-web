@@ -336,3 +336,37 @@ Je n'arrive toujours pas a me connecter au ftp, je ne sais pas si le probléme v
 J’ai durant ces deux premières semaines, créé le site internet de Caiman. Le site n’est pas fini à 100% mais les fonctionnalités de base sont toutes implémentées. Les fonctionnalités actuelles permettent de faire toutes les choses nécessaires au fonctionnement de l'application. J’ai pris plus de temps que prévu à réaliser le site mais durant la création de mon planning prévisionnel j’ai fait des erreurs, j’ai par exemple oublié de planifier la création des fonctionnalités d’administration ( Ajout de jeux, ajout de catégories, assignation de catégories à un jeu, upload de jeux, etc ).
 
 La documentation du site n’est pas forcément touffue mais le site n’est pas particulièrement complexe, il m’a pris du temps dû au nombre de tables à gérer. Il reste à mettre en place la récupération de mot de passe mais j’ai décidé de passer à l'interface graphique de l'application C# dès la semaine prochaine. Étant donné que le projet est la partie la plus importante de l'application, je ne vais pas configurer la récupération de mot de passe maintenant.
+
+--------
+
+## 03.05.2021
+
+### 8h10
+
+Réflexion sur l’interface graphique et création du projet
+
+### 8h15
+
+Importation de la classe XboxController.cs que j’ai créé précédemment. 
+
+![alt text](images_logbook/schema-form.jpg "Schéma de base de la form")
+
+La table MainForm contient un XboxController() cette classe permet de connaître les manettes connectés au pc et de recevoir leur inputs.
+
+Elle contient aussi une liste de form, ces formes sont les différentes fenêtres de l’application (si possible j’aimerai faire que seul une fenêtre soit active).
+
+Je fais des test avec les usercontrols
+
+### 10h00
+
+je n’arrive pas a afficher dynamiquement quand une action est faite.
+
+### 12h00
+
+Mon problème venait du fait que je n’initialisait pas l 'usercontrol.
+
+### 13h00
+
+Je vais essayer de me baser sur la structure des div en html pour gérer le contenu de l’affichage.
+![alt text](images_logbook/schema-div.jpeg "Schéma de base de la form")
+
