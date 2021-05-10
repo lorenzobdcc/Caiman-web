@@ -47,8 +47,8 @@ class Signin
                 $this->psCheckUsername = $this->dbh->prepare($sqlRequestUsername);
                 $this->psCheckUsername->setFetchMode(PDO::FETCH_ASSOC);
 
-                $sqlInsert = "INSERT INTO user  (username, password, email)
-                              VALUES (:insert_username, :insert_password, :insert_email)";
+                $sqlInsert = "INSERT INTO user  (username, password, email, salt)
+                              VALUES (:insert_username, :insert_password, :insert_email, :insert_salt)";
                 $this->psInsert = $this->dbh->prepare($sqlInsert);
                 $this->psInsert->setFetchMode(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
@@ -76,9 +76,9 @@ class Signin
         }
         if ($isValid) {
 
-
+                $salt = rand(1,10000);
             try {
-                $this->psInsert->execute(array(':insert_username' => $this->insert_username, ':insert_password' => password_hash($this->insert_password, PASSWORD_DEFAULT), ':insert_email' => $this->insert_email));
+                $this->psInsert->execute(array(':insert_username' => $this->insert_username, ':insert_password' => md5($salt.$this->insert_password), ':insert_salt' => $salt, ':insert_email' => $this->insert_email));
                 $_SESSION['error'] = "Acount created";
             } catch (PDOException $e) {
                 print "Erreur !: " . $e->getMessage() . "<br>";

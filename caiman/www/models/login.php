@@ -45,14 +45,42 @@ class Login {
      *
      * @return bool 
      */
-    public function checkLogin()
+    public function checkLogin(string $password_verify)
     {
         $returnArray = null;
         try{
             $this->psLogin->execute(array(':search_username' => $this->search_username));
             $result = $this->psLogin->fetchAll();
             if ($result != null) {
-                if (password_verify( $this->search_password,$result[0]["password"])   ) {
+                if (md5($result[0]["salt"].$password_verify) == $result[0]["password"]  ) {
+                    $returnArray = $result;
+                    $_SESSION['error'] = "Welcome back: ". $result[0]['username'];
+                }else
+                {
+                    $_SESSION['error'] = "Invalid log in";
+                }
+            }
+
+        }catch (PDOException $e) {
+            print "Erreur !: " . $e->getMessage() . "<br>";
+            die();
+        }
+        return $returnArray;
+    }
+
+        /**
+     * check if there is a match
+     *
+     * @return bool 
+     */
+    public function getPasswordOfUser(string $password)
+    {
+        $returnArray = null;
+        try{
+            $this->psLogin->execute(array(':search_username' => $this->search_username));
+            $result = $this->psLogin->fetchAll();
+            if ($result != null) {
+                if (md5($password) == $result[0]["password"]   ) {
                     $returnArray = $result;
                     $_SESSION['error'] = "Welcome back: ". $result[0]['username'];
                 }else

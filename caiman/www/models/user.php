@@ -14,6 +14,7 @@ class User
     public $email;
     public $role;
     public $idUser;
+    public $salt;
     
     /**
      * default constructor
@@ -23,13 +24,14 @@ class User
      * @param string $idRolep
      * @param integer $idUserp
      */
-    public function __construct(string $usernamep, string $emailp, string $idRolep, int $idUserp)
+    public function __construct(string $usernamep, string $emailp, string $idRolep, int $idUserp,string $saltp)
     {
 
         $this->username = $usernamep;
         $this->email = $emailp;
         $this->role = $idRolep;
         $this->idUser = $idUserp;
+        $this->salt = $saltp;
     }
 
     /**
@@ -48,13 +50,14 @@ class User
         ));
 
         $hasBeenUpdated = 1;
-        if (password_verify($oldPassword, $this->getUserPassword())) {
+        if (md5($_SESSION['user']->salt.$oldPassword) == $this->getUserPassword()) {
 
             if ($newPasswordRepeat == $newPassword) {
                 try {
-                    $sqlUpdatePassword = "UPDATE user  SET password = :update_password WHERE id = :id_user";
+                    $salt = rand(1,10000);
+                    $sqlUpdatePassword = "UPDATE user  SET password = :update_password, salt = :update_salt WHERE id = :id_user";
                     $psUpdatePassword = $dbh->prepare($sqlUpdatePassword);
-                    $psUpdatePassword->execute(array(':update_password' => password_hash($newPassword, PASSWORD_DEFAULT), ':id_user' => $this->idUser));
+                    $psUpdatePassword->execute(array(':update_password' => md5($salt.$newPassword), ':id_user' => $this->idUser, ':update_salt' => $salt));
 
                     $hasBeenUpdated = 0;
                 } catch (PDOException $e) {

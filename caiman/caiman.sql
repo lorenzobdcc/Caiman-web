@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 03 mai 2021 à 13:11
+-- Généré le : lun. 10 mai 2021 à 07:55
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.11
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `caiman`
 --
-CREATE DATABASE IF NOT EXISTS `caiman` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `caiman`;
 
 -- --------------------------------------------------------
 
@@ -271,6 +269,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `salt` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `privateAccount` tinyint(1) NOT NULL DEFAULT '0',
   `idRole` int(11) NOT NULL DEFAULT '3'
@@ -280,14 +279,15 @@ CREATE TABLE `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `privateAccount`, `idRole`) VALUES
-(1, 'lorenzo', 'Super2016', 'lorenzo@bdcc.ch', 1, 1),
-(4, 'test2', 'Super', 'test2@test2.test', 0, 3),
-(5, 'antoine', '$2y$10$RE9XFXe8Gu/pglsnSc4/5uP9R0XDA0w7QWms1ZUxiohybbMhYv8sS', 'antoine@eduge.ch', 0, 3),
-(6, 'test3', '$2y$10$Eov2ioucKZSe97q/0Gkco.1i0eN1Jw9PixyWAJK63AsXUZqxWsgPq', 'test2@test3.test', 0, 3),
-(8, 'lorenzo1227', '$2y$10$A4jZ2hPhxnadWFmPkUnI1..I7cpMQFj9bTjhGbLIGaV33xKeaHkIO', 'united4player@gmail.com', 0, 1),
-(9, 'aurelio1227', '$2y$10$snt0hwL6wFp1gUNzSlLxPO/mksgbCnXaZB7mgXGj2Y9kp.4B0kkDO', 'aurelio1227@gmail.com', 0, 3),
-(10, 'lorenzo12277', '$2y$10$ici/H5K1cqVG.sMkxH0yguGd1inB9SVxEX8IcrdvSqFASsL/Y8OFO', 'lorenzo12277@gmail.com', 1, 3);
+INSERT INTO `user` (`id`, `username`, `password`, `salt`, `email`, `privateAccount`, `idRole`) VALUES
+(1, 'lorenzo', 'Super2016', '26', 'lorenzo@bdcc.ch', 1, 1),
+(4, 'test2', 'Super', '', 'test2@test2.test', 0, 3),
+(5, 'antoine', '$2y$10$RE9XFXe8Gu/pglsnSc4/5uP9R0XDA0w7QWms1ZUxiohybbMhYv8sS', '', 'antoine@eduge.ch', 0, 3),
+(6, 'test3', '$2y$10$Eov2ioucKZSe97q/0Gkco.1i0eN1Jw9PixyWAJK63AsXUZqxWsgPq', '', 'test2@test3.test', 0, 3),
+(8, 'lorenzo1227', 'a1fe37822409d32fb5f68d58d292d8fd', '8762', 'united4player@gmail.com', 0, 1),
+(9, 'aurelio1227', '$2y$10$snt0hwL6wFp1gUNzSlLxPO/mksgbCnXaZB7mgXGj2Y9kp.4B0kkDO', '', 'aurelio1227@gmail.com', 0, 3),
+(10, 'lorenzo12277', '$2y$10$ici/H5K1cqVG.sMkxH0yguGd1inB9SVxEX8IcrdvSqFASsL/Y8OFO', '', 'lorenzo12277@gmail.com', 1, 3),
+(16, 'lorenzo1226', '399fc2bd1bd283c345b502d22e3d8598', '2063', 'sd@gmails.com', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -461,7 +461,7 @@ ALTER TABLE `timeingame`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `userconfigfile`

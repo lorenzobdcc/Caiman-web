@@ -44,10 +44,10 @@ class LoginController extends mainController implements iController
         $this->login->search_username = $username;
         $this->login->search_password = $password;
 
-        $usersInfos = $this->login->checkLogin();
-
+        $usersInfos = $this->login->checkLogin($password);
+        
         if (isset($usersInfos)) {
-          $_SESSION['user'] = new User($usersInfos[0]['username'], $usersInfos[0]['email'], $usersInfos[0]['idRole'], $usersInfos[0]['id']);
+          $_SESSION['user'] = new User($usersInfos[0]['username'], $usersInfos[0]['email'], $usersInfos[0]['idRole'], $usersInfos[0]['id'],$usersInfos[0]['salt']);
           header('Location:' . $_SERVER['HTTP_REFERER']);
           exit;
         }
