@@ -12,11 +12,10 @@ class Game {
 
     public ?int $id;
     public ?string $name;
-    public ?string $breed;
-    public ?string $sex;
-    public ?string $picture_serial_id;
-    public ?string $chip_id;
-    public ?int $user_id;
+    public ?string $description;
+    public ?string $imageName;
+    public ?string $idConsole;
+    public ?string $idFile;
 
     /**
      * 
@@ -30,15 +29,14 @@ class Game {
      * @param string $chip_id The chip id of the dog
      * @param int $user_id The user id of the dog's owner
      */
-    public function __construct(int $id = null, string $name = null, string $breed = null,
-     string $sex = null, string $picture_serial_id = null, string $chip_id = null, int $user_id = null)
+    public function __construct(int $id = null, string $name = null, string $description = null,
+     string $imageName = null, string $idConsole = null, string $idFile = null)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->breed = $breed;
-        $this->sex = $sex;
-        $this->picture_serial_id = $picture_serial_id;
-        $this->chip_id = $chip_id;
-        $this->user_id = $user_id;
+        $this->description = $description;
+        $this->imageName = $imageName;
+        $this->idConsole = $idConsole;
+        $this->idFile = $idFile;
     }
 }
