@@ -35,12 +35,9 @@ $category->name = $input["name"] ?? null;
 
 switch ($requestMethod) {
     case 'GET':
-        if (empty($id) || !is_numeric($id)) {
+
             $response = $controller->getAllCategory();
-        }
-        else{
-            $response = $controller->getGame($id);
-        }
+
         break;
 
         

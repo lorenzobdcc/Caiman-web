@@ -20,9 +20,6 @@ use App\System\Constants;
 class UserController {
 
     private DAOUser $DAOUser;
-    private DAODog $DAODog;
-    private DAODocument $DAODocument;
-    private DAOAppoitment $DAOAppoitment;
 
     /**
      * 
@@ -129,7 +126,7 @@ class UserController {
         }
 
         $userAuth = $this->DAOUser->findUserByUsername($username);
-        
+
         if (is_null($userAuth)) {
             return ResponseController::invalidLogin();
         }
