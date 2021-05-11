@@ -43,17 +43,7 @@ class GameController {
     public function getAllGames()
     {
         $headers = apache_request_headers();
-        print_r($headers);
-        if (!isset($headers['Authorizations'])) {
-            return ResponseController::notFoundAuthorizationHeader();
-        }
-
-        $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
-
-        if (is_null($userAuth) || $userAuth->code_role != Constants::USER_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
-        }
-
+        
 
         
         $allGames = $this->DAOGame->findAll();
@@ -94,6 +84,20 @@ class GameController {
 
 
         $game = $this->DAOGame->findFavoriteGameOfUser($id);
+        if (is_null($game)) {
+            return ResponseController::notFoundResponse();
+        }
+
+        return ResponseController::successfulRequest($game);
+    }
+
+    public function getTimeGames(int $id)
+    {
+        $headers = apache_request_headers();
+
+
+
+        $game = $this->DAOGame->findTimesGamesUser($id);
         if (is_null($game)) {
             return ResponseController::notFoundResponse();
         }

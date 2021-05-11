@@ -25,7 +25,8 @@ $controller = new GameController($dbConnection);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
-$name = $pathFragments[4];
+$id = intval(end($pathFragments));
+
 parse_str(file_get_contents('php://input'), $input);
 
 $game = new Game();
@@ -38,18 +39,13 @@ $game->idFile = $input["idFile"] ?? null;
 
 switch ($requestMethod) {
     case 'GET':
-        if (empty($name) ) {
+        if (empty($id) || !is_numeric($id)) {
             //$response = $controller->getAllGames();
         }
         else{
-            $response = $controller->getGamesFromName($name);
+            $response = $controller->getTimeGames($id);
         }
         break;
-        case 'POST':
-            $name = $_REQUEST['name'];
-            $response = $controller->getGamesFromName($name);
-            
-            break;
 
     case 'PATCH':
         if (empty($id) || !is_numeric($id)) {
@@ -57,14 +53,6 @@ switch ($requestMethod) {
             exit();
         }
         $response = $controller->updateGame($dog);
-        break;
-
-    case 'DELETE':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->deleteGame($id);
         break;
         
     default:

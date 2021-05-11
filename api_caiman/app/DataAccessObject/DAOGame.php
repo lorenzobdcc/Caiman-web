@@ -136,6 +136,38 @@ class DAOGame {
         }    
     }
 
+    public function findTimesGamesUser(int $id)
+    {
+        $statement = "
+        SELECT g.name, g.id, g.imageName, g.description, g.idConsole, g.idFile, timeInMinute FROM `timeingame` as tig
+                LEFT JOIN game as g
+                ON tig.idGame = g.id
+                WHERE idUser = :search_id;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':search_id', $id, \PDO::PARAM_INT);
+            $statement->execute();
+            $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            $gameArray = array();
+            foreach ($results as $result) {
+                $game = new game();
+                $game->id = $result["id"];
+                $game->name = $result["name"];
+                $game->description = $result["description"];
+                $game->imageName = $result["imageName"];
+                $game->idConsole = $result["idConsole"];
+                $game->idFile = $result["idFile"];
+                $game->time = $result["timeInMinute"];
+                array_push($gameArray,$game);
+            }
+
+            return $gameArray;
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }    
+    }
+
     public function findFavoriteGameOfUser(int $id)
     {
         $statement = "
@@ -172,7 +204,8 @@ class DAOGame {
     public function findGamesFromName(string $name)
     {
         $statement = "
-        SELECT * FROM game WHERE name LIKE :search_game;";
+        SELECT * FROM game WHERE name LIKE '%".$name."%'
+        ;";
 
         try {
             $statement = $this->db->prepare($statement);
@@ -180,8 +213,7 @@ class DAOGame {
             $statement->bindParam(':search_game',$truename, \PDO::PARAM_INT);
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
-            print_r($results);
-            print_r($statement);
+
             $gameArray = array();
             foreach ($results as $result) {
                 $game = new game();
