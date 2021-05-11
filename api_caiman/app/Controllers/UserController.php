@@ -45,17 +45,7 @@ class UserController {
     {
         $headers = apache_request_headers();
 
-        if (!isset($headers['Authorization'])) {
-            return ResponseController::notFoundAuthorizationHeader();
-        }
 
-        $api_token = $headers['Authorization'];
-
-        $userAuth = $this->DAOUser->findByApiToken($api_token);
-
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
-        }
         
         $allCustomerUsers = $this->DAOUser->findAll();
 
@@ -123,128 +113,7 @@ class UserController {
         return ResponseController::successfulCreatedRessource();
     }
 
-    /**
-     * 
-     * Method to update a user.
-     * 
-     * @param User $user The user model object
-     * @return string The status and the body in JSON format of the response
-     */
-    public function updateUser(User $user)
-    {
-        $headers = apache_request_headers();
-
-        if (!isset($headers['Authorization'])) {
-            return ResponseController::notFoundAuthorizationHeader();
-        }
-
-        $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
-
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
-        }
-
-        $actualUser = $this->DAOUser->find($user->id);
-
-        if (is_null($actualUser)) {
-            return ResponseController::notFoundResponse();
-        }
-
-        $actualUser->email = $user->email ?? $actualUser->email;
-        $actualUser->firstname = $user->firstname ?? $actualUser->firstname;
-        $actualUser->lastname = $user->lastname ?? $actualUser->lastname;
-        $actualUser->phonenumber = $user->phonenumber ?? $actualUser->phonenumber;
-        $actualUser->address = $user->address ?? $actualUser->address;
-
-        if (!HelperController::validateEmailFormat($actualUser->email)) {
-            return ResponseController::invalidEmailFormat();
-        }
-
-        $this->DAOUser->update($actualUser);
-
-        return ResponseController::successfulRequest(null);
-    }
-
-    /**
-     * 
-     * Method to delete a user.
-     * 
-     * @param int  $id The user identifier
-     * @return string The status and the body in JSON format of the response
-     */
-    public function deleteUser(int $id)
-    {
-        $headers = apache_request_headers();
-
-        if (!isset($headers['Authorization'])) {
-            return ResponseController::notFoundAuthorizationHeader();
-        }
-
-        $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
-
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
-        }
-
-        $user = $this->DAOUser->find($id);
-
-        if (is_null($user)) {
-            return ResponseController::notFoundResponse();
-        }
-
-        $dogs = $this->DAODog->findByUserId($user->id);
-
-        foreach ($dogs as $dog) {
-
-            if (!is_null($dog->picture_serial_id)) {
-
-                $filename = HelperController::getDefaultDirectory()."storage/app/dog_picture/".$dog->picture_serial_id.".jpeg";
-
-                if (file_exists($filename)) {
-                    unlink($filename);
-                }
-            }
-        }
-
-        $documents = $this->DAODocument->findByUserId($user->id);
-
-        foreach ($documents as $document) {
-
-            if (!is_null($document->document_serial_id)) {
-
-                if ($document->type == Constants::DOCUMENT_TYPE_CONDTIONS_OF_REGISTRATION) {
-
-                    $filename = HelperController::getDefaultDirectory()."storage/app/conditions_registration/".$document->document_serial_id.".pdf";
-                }
-                else{
-                    $filename = HelperController::getDefaultDirectory()."storage/app/pdf/".$document->document_serial_id.".pdf";
-                }
-                
-                if (file_exists($filename)) {
-
-                    unlink($filename);
-                }
-            }
-        }
-
-        $appoitments = $this->DAOAppoitment->findByUserId($user->id);
-
-        foreach ($appoitments as $appoitment) {
-
-            if (!is_null($appoitment->note_graphical_serial_id)) {
-
-                $filename = HelperController::getDefaultDirectory()."storage/app/graphical_note/".$appoitment->note_graphical_serial_id.".png";
-
-                if (file_exists($filename)) {
-                    unlink($filename);
-                }
-            }
-        }
-
-        $this->DAOUser->delete($user);
-
-        return ResponseController::successfulRequest(null);
-    }
+    
 
     /**
      * 
@@ -253,29 +122,24 @@ class UserController {
      * @param User $user The user model object
      * @return string The status and the body in JSON format of the response
      */
-    public function connection(User $user)
+    public function connection(string $username ,string $password)
     {
-        if (is_null($user->email) || is_null($user->password_hash)) {
+        if (is_null($username) || is_null($password)) {
             return ResponseController::unprocessableEntityResponse();
         }
 
-        $userAuth = $this->DAOUser->findUserByEmail($user->email);
-
+        $userAuth = $this->DAOUser->findUserByUsername($username);
+        
         if (is_null($userAuth)) {
             return ResponseController::invalidLogin();
         }
 
-        if (!password_verify($user->password_hash,$userAuth->password_hash)) {
+        if (md5($userAuth->salt.$password) != $userAuth->password  ) {
             return ResponseController::invalidLogin();
         }
 
-        $userAuth->api_token = HelperController::generateApiToken();
 
-        $this->DAOUser->update($userAuth);
-        
-        $result = array();
-        $result["api_token"] = $userAuth->api_token;
-        return ResponseController::successfulRequest($result);
+        return ResponseController::successfulRequest($userAuth);
     }
 
     /**

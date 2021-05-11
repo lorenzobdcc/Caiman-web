@@ -1,6 +1,8 @@
 RewriteEngine On
 
 RewriteRule ^public/users/([0-9a-zA-Z_-]*)$ public/users/index.php?/$1 [NC,L]
+RewriteRule ^public/users/connexion/([0-9a-zA-Z_-]*)$ public/users/connexion/index.php?/$1 [NC,L]
+
 RewriteRule ^public/games/([0-9a-zA-Z_-]*)$ public/games/index.php?/$1 [NC,L]
 RewriteRule ^public/games/category/([0-9a-zA-Z_-]*)$ public/games/category/index.php?/$1 [NC,L]
 RewriteRule ^public/games/userfavorite/([0-9a-zA-Z_-]*)$ public/games/userfavorite/index.php?/$1 [NC,L]
