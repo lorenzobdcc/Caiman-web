@@ -31,16 +31,14 @@ class DAOUser {
      * 
      * @return User[] A User object array
      */
-    public function findAll(int $code_role)
+    public function findAll()
     {
         $statement = "
-        SELECT id, email, firstname, lastname, phonenumber, address
-        FROM user
-        WHERE code_role = :CODE_ROLE;";
+        SELECT *
+        FROM user";
 
         try {
             $statement = $this->db->prepare($statement);
-            $statement->bindParam(':CODE_ROLE', $code_role, \PDO::PARAM_INT);
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $userArray = array();
@@ -48,11 +46,11 @@ class DAOUser {
             foreach ($results as $result) {
                 $user = new User();
                 $user->id = $result["id"];
+                $user->password = $result["password"];
+                $user->salt = $result["salt"];
+                $user->apitocken = $result["apitocken"];
                 $user->email = $result["email"];
-                $user->firstname = $result["firstname"];
-                $user->lastname = $result["lastname"];
-                $user->phonenumber = $result["phonenumber"];
-                $user->address = $result["address"];
+                $user->idRole = $result["idRole"];
                 array_push($userArray,$user);
             }
             return $userArray;
@@ -72,7 +70,7 @@ class DAOUser {
     public function find(int $id)
     {
         $statement = "
-        SELECT id,email, firstname, lastname, phonenumber, address,api_token, code_role, password_hash
+        SELECT *
         FROM user
         WHERE id = :ID_USER;";
 
@@ -84,15 +82,14 @@ class DAOUser {
 
             if ($statement->rowCount()==1) {
                 $result = $statement->fetch(\PDO::FETCH_ASSOC);
+                $user = new User();
                 $user->id = $result["id"];
+                $user->username = $result["username"];
+                $user->password = $result["password"];
+                $user->salt = $result["salt"];
+                $user->apitocken = $result["apitocken"];
                 $user->email = $result["email"];
-                $user->firstname = $result["firstname"];
-                $user->lastname = $result["lastname"];
-                $user->phonenumber = $result["phonenumber"];
-                $user->address = $result["address"];
-                $user->api_token = $result["api_token"];
-                $user->code_role = $result["code_role"];
-                $user->password_hash = $result["password_hash"];
+                $user->idRole = $result["idRole"];
             }
             else{
                 $user = null; 
@@ -206,9 +203,9 @@ class DAOUser {
     public function findByApiToken(string $api_token)
     {
         $statement = "
-        SELECT id, email, firstname, lastname, phonenumber, address, api_token, code_role,password_hash
+        SELECT *
         FROM user
-        WHERE api_token = :API_TOKEN
+        WHERE apitocken = :API_TOKEN
         LIMIT 1";
 
         try {
@@ -220,13 +217,11 @@ class DAOUser {
             if ($statement->rowCount()==1) {
                 $result = $statement->fetch(\PDO::FETCH_ASSOC);
                 $user->id = $result["id"];
+                $user->password = $result["password"];
+                $user->salt = $result["salt"];
+                $user->apitocken = $result["apitocken"];
                 $user->email = $result["email"];
-                $user->firstname = $result["firstname"];
-                $user->lastname = $result["lastname"];
-                $user->phonenumber = $result["phonenumber"];
-                $user->address = $result["address"];
-                $user->api_token = $result["api_token"];
-                $user->code_role = $result["code_role"];
+                $user->idRole = $result["idRole"];
             }
             else{
                 $user = null;

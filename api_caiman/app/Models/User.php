@@ -11,14 +11,13 @@ namespace App\Models;
 class User {
 
     public ?int $id;
+    public ?string $username;
+    public ?string $password;
+    public ?string $salt;
+    public ?string $apitocken;
     public ?string $email;
-    public ?string $firstname;
-    public ?string $lastname;
-    public ?string $phonenumber;
-    public ?string $address;
-    public ?string $api_token;
-    public ?int $code_role;
-    public ?string $password_hash;
+    public ?int $privateAccount;
+    public ?string $idRole;
 
     /**
      * 
@@ -34,17 +33,17 @@ class User {
      * @param int $code_role The code_role of the user
      * @param string $password_hash The password_hash of the user
      */
-    public function __construct(int $id = null, string $email = null, string $firstname = null,
-     string $lastname = null, string $phonenumber = null, string $address = null, string $api_token = null, int $code_role = null, string $password_hash = null)
+    public function __construct(int $id = null, string $username = null, string $password = null,
+     string $salt = null, string $apitocken = null, string $email = null, string $privateAccount = null, int $idRole = null)
     {
         $this->id = $id;
         $this->email = $email;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->phonenumber = $phonenumber;
-        $this->address = $address;
-        $this->api_token = $api_token;
-        $this->code_role = $code_role;
-        $this->password_hash = $password_hash;
+        $this->username = $username;
+        $this->password = $password;
+        $this->salt = $salt;
+        $this->apitocken = $apitocken;
+        $this->email = $email;
+        $this->privateAccount = $privateAccount;
+        $this->idRole = $idRole;
     }
 }

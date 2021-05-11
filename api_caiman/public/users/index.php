@@ -2,13 +2,14 @@
 /**
  * index.php
  *
- * File being the front controller of the API and allowing to process dog requests.
+ * File being the front controller of the API and allowing to process user requests.
  *
  * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
  */
 
-use App\Controllers\GameController;
-use App\Models\Game;
+use App\Controllers\UserController;
+use App\Models\User;
+
 require "../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
@@ -21,7 +22,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-$controller = new GameController($dbConnection);
+$controller = new UserController($dbConnection);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
@@ -29,22 +30,27 @@ $id = intval(end($pathFragments));
 
 parse_str(file_get_contents('php://input'), $input);
 
-$game = new Game();
-$game->id = $id ?? null;
-$game->name = $input["name"] ?? null;
-$game->description = $input["description"] ?? null;
-$game->imageName = $input["imageName"] ?? null;
-$game->idConsole = $input["idConsole"] ?? null;
-$game->idFile = $input["idFile"] ?? null;
+$user = new User();
+$user->id = $id ?? null;
+$user->password = $input["password"] ?? null;
+$user->salt = $input["salt"] ?? null;
+$user->apitocken = $input["apitocken"] ?? null;
+$user->email = $input["email"] ?? null;
+$user->privateAccount = $input["privateAccount"] ?? null;
+$user->idRole = $input["idRole"] ?? null;
 
 switch ($requestMethod) {
     case 'GET':
         if (empty($id) || !is_numeric($id)) {
-            $response = $controller->getAllGames();
+            $response = $controller->getAllCustomerUsers();
         }
         else{
-            $response = $controller->getGame($id);
+            $response = $controller->getUser($id);
         }
+        break;
+
+    case 'POST':
+        $response = $controller->createUser($user);
         break;
 
     case 'PATCH':
@@ -52,7 +58,7 @@ switch ($requestMethod) {
             header("HTTP/1.1 404 Not Found");
             exit();
         }
-        $response = $controller->updateGame($dog);
+        $response = $controller->updateUser($user);
         break;
 
     case 'DELETE':
@@ -60,7 +66,7 @@ switch ($requestMethod) {
             header("HTTP/1.1 404 Not Found");
             exit();
         }
-        $response = $controller->deleteGame($id);
+        $response = $controller->deleteUser($id);
         break;
         
     default:

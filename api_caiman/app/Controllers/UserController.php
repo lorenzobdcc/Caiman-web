@@ -33,9 +33,6 @@ class UserController {
     public function __construct(\PDO $db)
     {
         $this->DAOUser = new DAOUser($db);
-        $this->DAODog = new DAODog($db);
-        $this->DAODocument = new DAODocument($db);
-        $this->DAOAppoitment = new DAOAppoitment($db);
     }
 
     /**
@@ -60,23 +57,12 @@ class UserController {
             return ResponseController::unauthorizedUser();
         }
         
-        $allCustomerUsers = $this->DAOUser->findAll(Constants::USER_CODE_ROLE);
+        $allCustomerUsers = $this->DAOUser->findAll();
 
         return ResponseController::successfulRequest($allCustomerUsers);  
     }
 
-    /**
-     * 
-     * Method to return all users in JSON format.
-     * 
-     * @return string The status and the body in json format of the response
-     */
-    public function getAllEducatorUsers()
-    { 
-        $allEducatorUsers = $this->DAOUser->findAll(Constants::ADMIN_CODE_ROLE);
 
-        return ResponseController::successfulRequest($allEducatorUsers);  
-    }
 
     /**
      * 
@@ -89,15 +75,7 @@ class UserController {
     {
         $headers = apache_request_headers();
 
-        if (!isset($headers['Authorization'])) {
-            return ResponseController::notFoundAuthorizationHeader();
-        }
-        
-        $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
 
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
-        }
 
         $user = $this->DAOUser->find($id);
 

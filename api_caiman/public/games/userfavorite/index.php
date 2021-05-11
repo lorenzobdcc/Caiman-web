@@ -9,7 +9,7 @@
 
 use App\Controllers\GameController;
 use App\Models\Game;
-require "../../bootstrap.php";
+require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -40,10 +40,10 @@ $game->idFile = $input["idFile"] ?? null;
 switch ($requestMethod) {
     case 'GET':
         if (empty($id) || !is_numeric($id)) {
-            $response = $controller->getAllGames();
+            //$response = $controller->getAllGames();
         }
         else{
-            $response = $controller->getGame($id);
+            $response = $controller->getFavoriteGameOfUser($id);
         }
         break;
 

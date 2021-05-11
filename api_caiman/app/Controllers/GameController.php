@@ -43,14 +43,14 @@ class GameController {
     public function getAllGames()
     {
         $headers = apache_request_headers();
-
-        if (!isset($headers['Authorization'])) {
+        print_r($headers);
+        if (!isset($headers['Authorizations'])) {
             return ResponseController::notFoundAuthorizationHeader();
         }
 
         $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
 
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
+        if (is_null($userAuth) || $userAuth->code_role != Constants::USER_CODE_ROLE) {
             return ResponseController::unauthorizedUser();
         }
 
@@ -68,19 +68,70 @@ class GameController {
      * @param int $id The dog identifier
      * @return string The status and the body in JSON format of the response
      */
-    public function getGame(int $id)
+    public function getGameFromCategory(int $id)
     {
         $headers = apache_request_headers();
 
-        if (!isset($headers['Authorization'])) {
-            return ResponseController::notFoundAuthorizationHeader();
+        $game = $this->DAOGame->findGameFromCategory($id);
+        if (is_null($game)) {
+            return ResponseController::notFoundResponse();
         }
 
-        $userAuth = $this->DAOUser->findByApiToken($headers['Authorization']);
+        return ResponseController::successfulRequest($game);
+    }
 
-        if (is_null($userAuth) || $userAuth->code_role != Constants::ADMIN_CODE_ROLE) {
-            return ResponseController::unauthorizedUser();
+        /**
+     * 
+     * Method to return a dog in JSON format.
+     * 
+     * @param int $id The dog identifier
+     * @return string The status and the body in JSON format of the response
+     */
+    public function getFavoriteGameOfUser(int $id)
+    {
+        $headers = apache_request_headers();
+
+
+
+        $game = $this->DAOGame->findFavoriteGameOfUser($id);
+        if (is_null($game)) {
+            return ResponseController::notFoundResponse();
         }
+
+        return ResponseController::successfulRequest($game);
+    }
+
+            /**
+     * 
+     * Method to return a dog in JSON format.
+     * 
+     * @param int $id The dog identifier
+     * @return string The status and the body in JSON format of the response
+     */
+    public function getGamesFromName(string $name)
+    {
+        $headers = apache_request_headers();
+
+
+
+        $game = $this->DAOGame->findGamesFromName($name);
+        if (is_null($game)) {
+            return ResponseController::notFoundResponse();
+        }
+
+        return ResponseController::successfulRequest($game);
+    }
+
+    /**
+     * 
+     * Method to return a dog in JSON format.
+     * 
+     * @param int $id The dog identifier
+     * @return string The status and the body in JSON format of the response
+     */
+    public function getGame(int $id)
+    {
+        $headers = apache_request_headers();
 
         $game = $this->DAOGame->find($id);
 
@@ -98,7 +149,7 @@ class GameController {
      * @param Dog $dog The dog model object
      * @return string The status and the body in JSON format of the response
      */
-    public function createDog(Game $game)
+    public function createGame(Game $game)
     {
         $headers = apache_request_headers();
 
@@ -112,9 +163,6 @@ class GameController {
             return ResponseController::unauthorizedUser();
         }
 
-        if (!$this->validateGame($game)) {
-            return ResponseController::unprocessableEntityResponse();
-        }
 
         $user = $this->DAOUser->find($game->user_id);
 
@@ -155,7 +203,7 @@ class GameController {
         }
 
         $actualGame->name = $game->name ?? $actualGame->name;
-        $actualGame->breed = $game->description ?? $actualGame->description;
+        $actualGame->description = $game->description ?? $actualGame->description;
 
         $this->DAOGame->update($actualGame);
 
@@ -189,14 +237,9 @@ class GameController {
             return ResponseController::notFoundResponse();
         }
 
-        if (!is_null($game->picture_serial_id)) {
-            $filename = HelperController::getDefaultDirectory()."storage/app/dog_picture/".$game->picture_serial_id.".jpeg";
-            if (file_exists($filename)) {
-                unlink($filename);
-            }
-        }
 
-        $this->DAODog->delete($game);
+
+        $this->DAOGame->delete($game);
 
         return ResponseController::successfulRequest(null);
     }
