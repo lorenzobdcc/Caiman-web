@@ -8,3 +8,5 @@ RewriteRule ^public/games/category/([0-9a-zA-Z_-]*)$ public/games/category/index
 RewriteRule ^public/games/userfavorite/([0-9a-zA-Z_-]*)$ public/games/userfavorite/index.php?/$1 [NC,L]
 RewriteRule ^public/games/byname/([0-9a-zA-Z_-]*)$ public/games/byname/index.php?/$1 [NC,L]
 RewriteRule ^public/games/usertime/([0-9a-zA-Z_-]*)$ public/games/usertime/index.php?/$1 [NC,L]
+
+RewriteRule ^public/category/([0-9a-zA-Z_-]*)$ public/category/index.php?/$1 [NC,L]
