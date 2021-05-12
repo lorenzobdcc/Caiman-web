@@ -1,0 +1,119 @@
+\hypertarget{class_app_1_1_controllers_1_1_game_controller}{}\doxysection{App\textbackslash{}Controllers\textbackslash{}Game\+Controller Class Reference}
+\label{class_app_1_1_controllers_1_1_game_controller}\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}{get\+All\+Games}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}{get\+Game\+From\+Category}} (int \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}{get\+Favorite\+Game\+Of\+User}} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}\label{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}} 
+{\bfseries get\+Time\+Games} (int \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}{get\+Games\+From\+Name}} (string \$name)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}{get\+Game}} (int \$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}\label{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller}{Game\+Controller}} object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+PDO & {\em \$db} & The database connection \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}\label{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getAllGames@{getAllGames}}
+\index{getAllGames@{getAllGames}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getAllGames()}{getAllGames()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to return all games in JSON format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in json format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}\label{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getFavoriteGameOfUser@{getFavoriteGameOfUser}}
+\index{getFavoriteGameOfUser@{getFavoriteGameOfUser}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getFavoriteGameOfUser()}{getFavoriteGameOfUser()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Favorite\+Game\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return all the favorite game of a user
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The dog identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}\label{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGame@{getGame}}
+\index{getGame@{getGame}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getGame()}{getGame()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a game in JSON format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The dog identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}\label{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGameFromCategory@{getGameFromCategory}}
+\index{getGameFromCategory@{getGameFromCategory}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getGameFromCategory()}{getGameFromCategory()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Game\+From\+Category (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a list of games in a catagory
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The dog identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}\label{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGamesFromName@{getGamesFromName}}
+\index{getGamesFromName@{getGamesFromName}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getGamesFromName()}{getGamesFromName()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Games\+From\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
+
+Method to return a dog in JSON format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The dog identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Controllers/\mbox{\hyperlink{_game_controller_8php}{Game\+Controller.\+php}}\end{DoxyCompactItemize}

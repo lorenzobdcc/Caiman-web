@@ -1,0 +1,259 @@
+\hypertarget{class_app_1_1_controllers_1_1_helper_controller}{}\doxysection{App\textbackslash{}Controllers\textbackslash{}Helper\+Controller Class Reference}
+\label{class_app_1_1_controllers_1_1_helper_controller}\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_af549884a69d02475498ccc5d06116d23}{validate\+Date\+Format}} (string \$date)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a0a3d8bed13f0023599c97d1340302ea1}{validate\+Date\+Time\+Format}} (string \$datetime, string \$format=\textquotesingle{}Y-\/m-\/d H\+:i\+:s\textquotesingle{})
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_abee0402b7e26340072a20ed75c4fee89}{validate\+Time\+Format}} (string \$time)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a93ae78e9a3c746cf5285e26646c36b1e}{validate\+Code\+Day\+Format}} (string \$code\+\_\+day)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a5926d7d4d0122ccab42f3dbfc22cf95a}{validate\+Chornological\+Time}} (string \$firsttime, string \$secondtime)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a61cf9f7cfcb8324b37635567dc738823}{generate\+Api\+Token}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a2d0b8f54af50df1a819398b1fcd3ad00}{generate\+Random\+String}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_af54f86d5db9f1b7f7d56dc111807edea}{validate\+Document\+Type\+Format}} (string \$document\+\_\+type)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_ad5a7bd47fb001edc55d841659ae12aa2}{validate\+Email\+Format}} (string \$email)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_afb32d0508e9d42eda8e06609030c38f0}{validate\+Package\+Number}} (int \$package\+\_\+number)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_a89e8d55b4f6091bde077462d28502296}{send\+Mail}} (string \$message, string \$email\+Recipient)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_aad0fe080e35fd20f2cdbddf4935e3c23}{png\+Tojpeg\+Converter}} (string \$filename)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_ab594e62210bc64147a5a74e5fbf1b569}{store\+Conditions\+Registration}} (string \$filename, int \$package\+\_\+number, string \$date, string \$signature\+\_\+base64, string \$userfirstname, string \$userlastname)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_helper_controller_afc348b053d61205c7b03f4971f07d64f}{get\+Default\+Directory}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a61cf9f7cfcb8324b37635567dc738823}\label{class_app_1_1_controllers_1_1_helper_controller_a61cf9f7cfcb8324b37635567dc738823}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!generateApiToken@{generateApiToken}}
+\index{generateApiToken@{generateApiToken}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{generateApiToken()}{generateApiToken()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::generate\+Api\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to generate an api token.
+
+\begin{DoxyReturn}{Returns}
+string The api token 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a2d0b8f54af50df1a819398b1fcd3ad00}\label{class_app_1_1_controllers_1_1_helper_controller_a2d0b8f54af50df1a819398b1fcd3ad00}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!generateRandomString@{generateRandomString}}
+\index{generateRandomString@{generateRandomString}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{generateRandomString()}{generateRandomString()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::generate\+Random\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to generate a random string.
+
+\begin{DoxyReturn}{Returns}
+string The random string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_afc348b053d61205c7b03f4971f07d64f}\label{class_app_1_1_controllers_1_1_helper_controller_afc348b053d61205c7b03f4971f07d64f}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!getDefaultDirectory@{getDefaultDirectory}}
+\index{getDefaultDirectory@{getDefaultDirectory}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{getDefaultDirectory()}{getDefaultDirectory()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::get\+Default\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the default directory of the API.
+
+\begin{DoxyReturn}{Returns}
+string The default directory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_aad0fe080e35fd20f2cdbddf4935e3c23}\label{class_app_1_1_controllers_1_1_helper_controller_aad0fe080e35fd20f2cdbddf4935e3c23}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!pngTojpegConverter@{pngTojpegConverter}}
+\index{pngTojpegConverter@{pngTojpegConverter}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{pngTojpegConverter()}{pngTojpegConverter()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::png\+Tojpeg\+Converter (\begin{DoxyParamCaption}\item[{string}]{\$filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to convert a png image to jpeg image.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a89e8d55b4f6091bde077462d28502296}\label{class_app_1_1_controllers_1_1_helper_controller_a89e8d55b4f6091bde077462d28502296}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!sendMail@{sendMail}}
+\index{sendMail@{sendMail}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{sendMail()}{sendMail()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::send\+Mail (\begin{DoxyParamCaption}\item[{string}]{\$message,  }\item[{string}]{\$email\+Recipient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to send an email.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$message} & Message to send \\
+\hline
+string & {\em \$email\+Recipient} & Recipient\textquotesingle{}s email address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_ab594e62210bc64147a5a74e5fbf1b569}\label{class_app_1_1_controllers_1_1_helper_controller_ab594e62210bc64147a5a74e5fbf1b569}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!storeConditionsRegistration@{storeConditionsRegistration}}
+\index{storeConditionsRegistration@{storeConditionsRegistration}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{storeConditionsRegistration()}{storeConditionsRegistration()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::store\+Conditions\+Registration (\begin{DoxyParamCaption}\item[{string}]{\$filename,  }\item[{int}]{\$package\+\_\+number,  }\item[{string}]{\$date,  }\item[{string}]{\$signature\+\_\+base64,  }\item[{string}]{\$userfirstname,  }\item[{string}]{\$userlastname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to store a conditions of registration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filename} & The filename of conditions of registration \\
+\hline
+string & {\em \$package\+\_\+number} & The package number of conditions of registration \\
+\hline
+string & {\em \$date} & The date of creation of conditions of registration \\
+\hline
+string & {\em \$signature\+\_\+base64} & The signature image in base64 of conditions of registration \\
+\hline
+string & {\em \$userfirstname} & The user firstname of owner of conditions of registration \\
+\hline
+string & {\em \$userlastname} & The user lastname of owner of conditions of registration\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a5926d7d4d0122ccab42f3dbfc22cf95a}\label{class_app_1_1_controllers_1_1_helper_controller_a5926d7d4d0122ccab42f3dbfc22cf95a}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateChornologicalTime@{validateChornologicalTime}}
+\index{validateChornologicalTime@{validateChornologicalTime}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateChornologicalTime()}{validateChornologicalTime()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Chornological\+Time (\begin{DoxyParamCaption}\item[{string}]{\$firsttime,  }\item[{string}]{\$secondtime }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if the first time is smaller or equal to the second one.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$firsttime} & First time to check \\
+\hline
+string & {\em \$secondtime} & Second time to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a93ae78e9a3c746cf5285e26646c36b1e}\label{class_app_1_1_controllers_1_1_helper_controller_a93ae78e9a3c746cf5285e26646c36b1e}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateCodeDayFormat@{validateCodeDayFormat}}
+\index{validateCodeDayFormat@{validateCodeDayFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateCodeDayFormat()}{validateCodeDayFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Code\+Day\+Format (\begin{DoxyParamCaption}\item[{string}]{\$code\+\_\+day }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a code day has the right format (1-\/6).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$time} & code day to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_af549884a69d02475498ccc5d06116d23}\label{class_app_1_1_controllers_1_1_helper_controller_af549884a69d02475498ccc5d06116d23}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateDateFormat@{validateDateFormat}}
+\index{validateDateFormat@{validateDateFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateDateFormat()}{validateDateFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Date\+Format (\begin{DoxyParamCaption}\item[{string}]{\$date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a date has the right format (YYYY-\/\+MM-\/\+DD).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$date} & Date to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_a0a3d8bed13f0023599c97d1340302ea1}\label{class_app_1_1_controllers_1_1_helper_controller_a0a3d8bed13f0023599c97d1340302ea1}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateDateTimeFormat@{validateDateTimeFormat}}
+\index{validateDateTimeFormat@{validateDateTimeFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateDateTimeFormat()}{validateDateTimeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Date\+Time\+Format (\begin{DoxyParamCaption}\item[{string}]{\$datetime,  }\item[{string}]{\$format = {\ttfamily \textquotesingle{}Y-\/m-\/d~H\+:i\+:s\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a date has the right format (YYYY-\/\+MM-\/\+DD).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$date} & Date to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_af54f86d5db9f1b7f7d56dc111807edea}\label{class_app_1_1_controllers_1_1_helper_controller_af54f86d5db9f1b7f7d56dc111807edea}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateDocumentTypeFormat@{validateDocumentTypeFormat}}
+\index{validateDocumentTypeFormat@{validateDocumentTypeFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateDocumentTypeFormat()}{validateDocumentTypeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Document\+Type\+Format (\begin{DoxyParamCaption}\item[{string}]{\$document\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a document type has the right value (conditions\+\_\+inscription,poster).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$document\+\_\+type} & document type to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_ad5a7bd47fb001edc55d841659ae12aa2}\label{class_app_1_1_controllers_1_1_helper_controller_ad5a7bd47fb001edc55d841659ae12aa2}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateEmailFormat@{validateEmailFormat}}
+\index{validateEmailFormat@{validateEmailFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateEmailFormat()}{validateEmailFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Email\+Format (\begin{DoxyParamCaption}\item[{string}]{\$email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a email has the right format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$email} & email to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_afb32d0508e9d42eda8e06609030c38f0}\label{class_app_1_1_controllers_1_1_helper_controller_afb32d0508e9d42eda8e06609030c38f0}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validatePackageNumber@{validatePackageNumber}}
+\index{validatePackageNumber@{validatePackageNumber}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validatePackageNumber()}{validatePackageNumber()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Package\+Number (\begin{DoxyParamCaption}\item[{int}]{\$package\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a package number of conditions of registration document has the right format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$package\+\_\+number} & Package number to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_helper_controller_abee0402b7e26340072a20ed75c4fee89}\label{class_app_1_1_controllers_1_1_helper_controller_abee0402b7e26340072a20ed75c4fee89}} 
+\index{App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}!validateTimeFormat@{validateTimeFormat}}
+\index{validateTimeFormat@{validateTimeFormat}!App\textbackslash{}Controllers\textbackslash{}HelperController@{App\textbackslash{}Controllers\textbackslash{}HelperController}}
+\doxysubsubsection{\texorpdfstring{validateTimeFormat()}{validateTimeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Helper\+Controller\+::validate\+Time\+Format (\begin{DoxyParamCaption}\item[{string}]{\$time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to check if a time has the right format (HH\+:\+MM\+:SS).
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$time} & Time to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Controllers/\mbox{\hyperlink{_helper_controller_8php}{Helper\+Controller.\+php}}\end{DoxyCompactItemize}

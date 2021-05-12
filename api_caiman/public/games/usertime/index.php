@@ -1,12 +1,11 @@
 <?php
-/**
- * index.php
- *
- * File being the front controller of the API and allowing to process dog requests.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief File being the front controller of the API and allowing to process the request to get games a user as already play.
  */
-
 use App\Controllers\GameController;
 use App\Models\Game;
 require "../../../bootstrap.php";

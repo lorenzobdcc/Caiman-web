@@ -7,14 +7,19 @@
  * @link https://developer.mozilla.org/fr/docs/Web/HTTP/Status
  * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
  */
-
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Controller allowing the use of help functions.
+ */
 namespace App\Controllers;
 
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use Dompdf\Dompdf;
-use App\System\cDX;
 
 class HelperController {
 

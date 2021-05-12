@@ -1,0 +1,150 @@
+\hypertarget{class_h_t_m_l5___input_stream}{}\doxysection{HTML5\+\_\+\+Input\+Stream Class Reference}
+\label{class_h_t_m_l5___input_stream}\index{HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a421fc10dfb36e9103c49e2ee9843a337}{\+\_\+\+\_\+construct}} (\$data)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a31ad122f86e086a6b4f05a7e72a5d70f}{get\+Current\+Line}} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_ae1e6e588be5f1cb9d96f3c4478543dbb}{get\+Column\+Offset}} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a37753ecdf69040a92d3bb32e79bf3726}{char}} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a479ed8db759c32ea7a410a4285b714ec}{remaining\+Chars}} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a3dea85cb5c2bd43dd5979f746b75f8f4}{chars\+Until}} (\$bytes, \$max=null)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a5a75ffb7432b88c8108b7a4c6724caf4}{chars\+While}} (\$bytes, \$max=null)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_ac0c2adf9c700b7b2bdff4292853dab87}{unget}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___input_stream_a20e8dc1f2072c2808d02175bba28095a}{\$errors}} = \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a421fc10dfb36e9103c49e2ee9843a337}\label{class_h_t_m_l5___input_stream_a421fc10dfb36e9103c49e2ee9843a337}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$data} & $\vert$ Data to parse \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a37753ecdf69040a92d3bb32e79bf3726}\label{class_h_t_m_l5___input_stream_a37753ecdf69040a92d3bb32e79bf3726}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!char@{char}}
+\index{char@{char}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{char()}{char()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieve the currently consume character. \begin{DoxyNote}{Note}
+This performs bounds checking
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool$\vert$string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a3dea85cb5c2bd43dd5979f746b75f8f4}\label{class_h_t_m_l5___input_stream_a3dea85cb5c2bd43dd5979f746b75f8f4}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!charsUntil@{charsUntil}}
+\index{charsUntil@{charsUntil}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{charsUntil()}{charsUntil()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::chars\+Until (\begin{DoxyParamCaption}\item[{}]{\$bytes,  }\item[{}]{\$max = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Matches as far as possible until we reach a certain set of bytes and returns the matched substring.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \$bytes} & $\vert$ Bytes to match. \\
+\hline
+null & {\em \$max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$\vert$string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a5a75ffb7432b88c8108b7a4c6724caf4}\label{class_h_t_m_l5___input_stream_a5a75ffb7432b88c8108b7a4c6724caf4}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!charsWhile@{charsWhile}}
+\index{charsWhile@{charsWhile}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{charsWhile()}{charsWhile()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::chars\+While (\begin{DoxyParamCaption}\item[{}]{\$bytes,  }\item[{}]{\$max = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Matches as far as possible with a certain set of bytes and returns the matched substring.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \$bytes} & $\vert$ Bytes to match. \\
+\hline
+null & {\em \$max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$\vert$string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_ae1e6e588be5f1cb9d96f3c4478543dbb}\label{class_h_t_m_l5___input_stream_ae1e6e588be5f1cb9d96f3c4478543dbb}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!getColumnOffset@{getColumnOffset}}
+\index{getColumnOffset@{getColumnOffset}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{getColumnOffset()}{getColumnOffset()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::get\+Column\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current column of the current line that the tokenizer is at.
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a31ad122f86e086a6b4f05a7e72a5d70f}\label{class_h_t_m_l5___input_stream_a31ad122f86e086a6b4f05a7e72a5d70f}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!getCurrentLine@{getCurrentLine}}
+\index{getCurrentLine@{getCurrentLine}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{getCurrentLine()}{getCurrentLine()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::get\+Current\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current line that the tokenizer is at.
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a479ed8db759c32ea7a410a4285b714ec}\label{class_h_t_m_l5___input_stream_a479ed8db759c32ea7a410a4285b714ec}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!remainingChars@{remainingChars}}
+\index{remainingChars@{remainingChars}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{remainingChars()}{remainingChars()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::remaining\+Chars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all characters until EOF. \begin{DoxyNote}{Note}
+This performs bounds checking
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+string$\vert$bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_ac0c2adf9c700b7b2bdff4292853dab87}\label{class_h_t_m_l5___input_stream_ac0c2adf9c700b7b2bdff4292853dab87}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!unget@{unget}}
+\index{unget@{unget}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{unget()}{unget()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::unget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Unconsume one character. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___input_stream_a20e8dc1f2072c2808d02175bba28095a}\label{class_h_t_m_l5___input_stream_a20e8dc1f2072c2808d02175bba28095a}} 
+\index{HTML5\_InputStream@{HTML5\_InputStream}!\$errors@{\$errors}}
+\index{\$errors@{\$errors}!HTML5\_InputStream@{HTML5\_InputStream}}
+\doxysubsubsection{\texorpdfstring{\$errors}{$errors}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Input\+Stream\+::\$errors = \mbox{[}$\,$\mbox{]}}
+
+Parse errors. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/lib/html5lib/Input\+Stream.\+php\end{DoxyCompactItemize}

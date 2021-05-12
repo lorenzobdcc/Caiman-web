@@ -1,12 +1,11 @@
 <?php
-/**
- * bootstrap.php
- *
- * Bootable file of the API.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Bootable file of the API.
  */
-
 require 'vendor/autoload.php';
 use Dotenv\Dotenv;
 use App\System\DatabaseConnector;

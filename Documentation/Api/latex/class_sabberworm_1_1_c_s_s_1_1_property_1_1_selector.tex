@@ -1,0 +1,93 @@
+\hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector}{}\doxysection{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector Class Reference}
+\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector}\index{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ac191a3b7368c1c86ecde083408a81042}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ac191a3b7368c1c86ecde083408a81042}} 
+{\bfseries \+\_\+\+\_\+construct} (\$s\+Selector, \$b\+Calculate\+Specificity=false)
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ad7818027d1a046c3f663233854449126}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ad7818027d1a046c3f663233854449126}} 
+{\bfseries get\+Selector} ()
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a109cdcf89fad127d0276955b2009b6a3}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a109cdcf89fad127d0276955b2009b6a3}} 
+{\bfseries set\+Selector} (\$s\+Selector)
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ab501349d55bcd2adf4ad2e7c77e16485}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_ab501349d55bcd2adf4ad2e7c77e16485}} 
+{\bfseries \+\_\+\+\_\+to\+String} ()
+\item 
+\mbox{\hyperlink{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a18bd45d8f2a3dd33c4abc92357b59a41}{get\+Specificity}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bfseries NON\+\_\+\+ID\+\_\+\+ATTRIBUTES\+\_\+\+AND\+\_\+\+PSEUDO\+\_\+\+CLASSES\+\_\+\+RX}
+\item 
+const {\bfseries ELEMENTS\+\_\+\+AND\+\_\+\+PSEUDO\+\_\+\+ELEMENTS\+\_\+\+RX}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a single CSS selector. Selectors have to be split by the comma prior to being passed into this class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a18bd45d8f2a3dd33c4abc92357b59a41}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a18bd45d8f2a3dd33c4abc92357b59a41}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}!getSpecificity@{getSpecificity}}
+\index{getSpecificity@{getSpecificity}!Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}}
+\doxysubsubsection{\texorpdfstring{getSpecificity()}{getSpecificity()}}
+{\footnotesize\ttfamily Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Property\textbackslash{}\+Selector\+::get\+Specificity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]should exclude \# as well as \char`\"{}\#\char`\"{} \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a029602749dd46a7f6bc32b5cb4e15f55}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a029602749dd46a7f6bc32b5cb4e15f55}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}!ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX@{ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX}}
+\index{ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX@{ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX}!Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}}
+\doxysubsubsection{\texorpdfstring{ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX}{ELEMENTS\_AND\_PSEUDO\_ELEMENTS\_RX}}
+{\footnotesize\ttfamily const Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Property\textbackslash{}\+Selector\+::\+ELEMENTS\+\_\+\+AND\+\_\+\+PSEUDO\+\_\+\+ELEMENTS\+\_\+\+RX}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \textcolor{stringliteral}{'/}}
+\DoxyCodeLine{\textcolor{stringliteral}{    ((\string^|[\(\backslash\)s\(\backslash\)+\(\backslash\)>\(\backslash\)\string~]+)[\(\backslash\)w]+   \# elements}}
+\DoxyCodeLine{\textcolor{stringliteral}{    |}}
+\DoxyCodeLine{\textcolor{stringliteral}{    \(\backslash\):\{1,2\}(                \# pseudo-\/elements}}
+\DoxyCodeLine{\textcolor{stringliteral}{        after|before|first-\/letter|first-\/line|selection}}
+\DoxyCodeLine{\textcolor{stringliteral}{    ))}}
+\DoxyCodeLine{\textcolor{stringliteral}{    /ix'}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a6de1dba2e7eb2c051d5fc8f396e0e6ee}\label{class_sabberworm_1_1_c_s_s_1_1_property_1_1_selector_a6de1dba2e7eb2c051d5fc8f396e0e6ee}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}!NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX@{NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX}}
+\index{NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX@{NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX}!Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector@{Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}Selector}}
+\doxysubsubsection{\texorpdfstring{NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX}{NON\_ID\_ATTRIBUTES\_AND\_PSEUDO\_CLASSES\_RX}}
+{\footnotesize\ttfamily const Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Property\textbackslash{}\+Selector\+::\+NON\+\_\+\+ID\+\_\+\+ATTRIBUTES\+\_\+\+AND\+\_\+\+PSEUDO\+\_\+\+CLASSES\+\_\+\+RX}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \textcolor{stringliteral}{'/}}
+\DoxyCodeLine{\textcolor{stringliteral}{    (\(\backslash\).[\(\backslash\)w]+)                   \# classes}}
+\DoxyCodeLine{\textcolor{stringliteral}{    |}}
+\DoxyCodeLine{\textcolor{stringliteral}{    \(\backslash\)[(\(\backslash\)w+)                     \# attributes}}
+\DoxyCodeLine{\textcolor{stringliteral}{    |}}
+\DoxyCodeLine{\textcolor{stringliteral}{    (\(\backslash\):(                        \# pseudo classes}}
+\DoxyCodeLine{\textcolor{stringliteral}{        link|visited|active}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |hover|focus}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |lang}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |target}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |enabled|disabled|checked|indeterminate}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |root}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |nth-\/child|nth-\/last-\/child|nth-\/of-\/type|nth-\/last-\/of-\/type}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |first-\/child|last-\/child|first-\/of-\/type|last-\/of-\/type}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |only-\/child|only-\/of-\/type}}
+\DoxyCodeLine{\textcolor{stringliteral}{        |empty|contains}}
+\DoxyCodeLine{\textcolor{stringliteral}{    ))}}
+\DoxyCodeLine{\textcolor{stringliteral}{    /ix'}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/sabberworm/php-\/css-\/parser/lib/\+Sabberworm/\+CSS/\+Property/Selector.\+php\end{DoxyCompactItemize}

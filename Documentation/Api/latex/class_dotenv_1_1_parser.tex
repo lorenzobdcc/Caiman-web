@@ -1,0 +1,109 @@
+\hypertarget{class_dotenv_1_1_parser}{}\doxysection{Dotenv\textbackslash{}Parser Class Reference}
+\label{class_dotenv_1_1_parser}\index{Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_dotenv_1_1_parser_a38376957b767de41e0bfcf898306c6f0}{parse\+Name}} (\$name)
+\item 
+static \mbox{\hyperlink{class_dotenv_1_1_parser_af7976b3936b179e62005523d93e10f58}{parse\+Value}} (\$value)
+\item 
+static \mbox{\hyperlink{class_dotenv_1_1_parser_ab4c1ce28e3e7ddaabe5ae295be3f3404}{parse\+Quoted\+Value}} (\$value)
+\item 
+static \mbox{\hyperlink{class_dotenv_1_1_parser_ad8192a84049cbc506fb1d20611797bd4}{parse\+Unquoted\+Value}} (\$value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_parser_a42fa2b94316bf732d1072036967e88b5}\label{class_dotenv_1_1_parser_a42fa2b94316bf732d1072036967e88b5}} 
+const {\bfseries INITIAL\+\_\+\+STATE} = 0
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_parser_a2dd971d7675ab50798fc23197dbc15ab}\label{class_dotenv_1_1_parser_a2dd971d7675ab50798fc23197dbc15ab}} 
+const {\bfseries QUOTED\+\_\+\+STATE} = 1
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_parser_aaed324afdd176b320f18c1ff3ff9b990}\label{class_dotenv_1_1_parser_aaed324afdd176b320f18c1ff3ff9b990}} 
+const {\bfseries ESCAPE\+\_\+\+STATE} = 2
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_parser_ac570f757064d6d8f7a522be7e81f28a8}\label{class_dotenv_1_1_parser_ac570f757064d6d8f7a522be7e81f28a8}} 
+const {\bfseries WHITESPACE\+\_\+\+STATE} = 3
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_parser_a2c3e000250a077f20f406be9afbb0456}\label{class_dotenv_1_1_parser_a2c3e000250a077f20f406be9afbb0456}} 
+const {\bfseries COMMENT\+\_\+\+STATE} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dotenv_1_1_parser_a38376957b767de41e0bfcf898306c6f0}\label{class_dotenv_1_1_parser_a38376957b767de41e0bfcf898306c6f0}} 
+\index{Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}!parseName@{parseName}}
+\index{parseName@{parseName}!Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}}
+\doxysubsubsection{\texorpdfstring{parseName()}{parseName()}}
+{\footnotesize\ttfamily static Dotenv\textbackslash{}\+Parser\+::parse\+Name (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parse the given variable name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_parser_ab4c1ce28e3e7ddaabe5ae295be3f3404}\label{class_dotenv_1_1_parser_ab4c1ce28e3e7ddaabe5ae295be3f3404}} 
+\index{Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}!parseQuotedValue@{parseQuotedValue}}
+\index{parseQuotedValue@{parseQuotedValue}!Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}}
+\doxysubsubsection{\texorpdfstring{parseQuotedValue()}{parseQuotedValue()}}
+{\footnotesize\ttfamily static Dotenv\textbackslash{}\+Parser\+::parse\+Quoted\+Value (\begin{DoxyParamCaption}\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parse the given quoted value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_parser_ad8192a84049cbc506fb1d20611797bd4}\label{class_dotenv_1_1_parser_ad8192a84049cbc506fb1d20611797bd4}} 
+\index{Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}!parseUnquotedValue@{parseUnquotedValue}}
+\index{parseUnquotedValue@{parseUnquotedValue}!Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}}
+\doxysubsubsection{\texorpdfstring{parseUnquotedValue()}{parseUnquotedValue()}}
+{\footnotesize\ttfamily static Dotenv\textbackslash{}\+Parser\+::parse\+Unquoted\+Value (\begin{DoxyParamCaption}\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parse the given unquoted value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_parser_af7976b3936b179e62005523d93e10f58}\label{class_dotenv_1_1_parser_af7976b3936b179e62005523d93e10f58}} 
+\index{Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}!parseValue@{parseValue}}
+\index{parseValue@{parseValue}!Dotenv\textbackslash{}Parser@{Dotenv\textbackslash{}Parser}}
+\doxysubsubsection{\texorpdfstring{parseValue()}{parseValue()}}
+{\footnotesize\ttfamily static Dotenv\textbackslash{}\+Parser\+::parse\+Value (\begin{DoxyParamCaption}\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parse the given variable value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/vlucas/phpdotenv/src/Parser.\+php\end{DoxyCompactItemize}

@@ -1,10 +1,10 @@
 <?php
-/**
- * DatabaseConnector.php
- *
- * Class allowing the connection to the database with the environment variables of the .env file.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class allowing the connection to the database with the environment variables of the .env file.
  */
 namespace App\System;
 

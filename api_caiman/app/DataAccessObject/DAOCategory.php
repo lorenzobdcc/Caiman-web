@@ -1,10 +1,10 @@
 <?php
-/**
- * DAOgame$game.php
- *
- * Data access object of the game$game table.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Data access object of the category table.
  */
 namespace App\DataAccessObject;
 
@@ -17,7 +17,7 @@ class DAOCategory {
 
     /**
      * 
-     * Constructor of the DAOgame$game object.
+     * Constructor of the DAOgame object.
      * 
      * @param PDO $db The database connection
      */
@@ -28,9 +28,9 @@ class DAOCategory {
 
     /**
      * 
-     * Method to return all game$games from the database in an array of game$game objects.
+     * Method to return all category from the database in an array of Category objects.
      * 
-     * @return Category[] A game$game object array
+     * @return Category[] A game object array
      */
     public function getAllCategory()
     {

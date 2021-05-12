@@ -1,12 +1,11 @@
 <?php
-/**
- * DogController.php
- *
- * Controller of the Dog model.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Controller of category model
  */
-
 namespace App\Controllers;
 
 use App\DataAccessObject\DAOCategory;
@@ -19,7 +18,7 @@ class CategoryController {
 
     /**
      * 
-     * Constructor of the DogController object.
+     * Constructor of the CategoryController object.
      * 
      * @param PDO $db The database connection
      */
@@ -30,7 +29,7 @@ class CategoryController {
 
     /**
      * 
-     * Method to return all dogs in JSON format.
+     * Method to return all category in JSON format.
      * 
      * @return string The status and the body in json format of the response
      */

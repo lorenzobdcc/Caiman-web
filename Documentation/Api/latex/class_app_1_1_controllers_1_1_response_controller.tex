@@ -1,0 +1,322 @@
+\hypertarget{class_app_1_1_controllers_1_1_response_controller}{}\doxysection{App\textbackslash{}Controllers\textbackslash{}Response\+Controller Class Reference}
+\label{class_app_1_1_controllers_1_1_response_controller}\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_ae8d5264929e0a757ff46b2879b1338cc}{not\+Found\+Authorization\+Header}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_aceea72ffbbc5c8bf83da45cb57f8b57f}{unauthorized\+User}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a646b075b51828ac992a9406e0a091e1e}{not\+Found\+Response}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_abb57af748f83d34dc4073aa2af6557c9}{successful\+Request}} (\$result=null)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_abdef42c3846b195a68a75aba1749a314}{successful\+Request\+Without\+Json}} (\$result)
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a14bab41b8f3922772bb57f4cf29e8ab6}{unprocessable\+Entity\+Response}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a87abaf00cd19f1775a0455a6b09f3dd3}{permanent\+Schedule\+Already\+Exist}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a789720f6c6588fcfdcc697743d291663}{successful\+Created\+Ressource}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a0689682180b58ce92ebb61bcf6ace24f}{invalid\+Date\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_adc4b537048429acf681cd8fd9219160b}{invalid\+Time\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a6e511add8ffca0d4e7301853c226292f}{invalid\+Date\+Time\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a3c287c8d2cbb99e7a8e3cab8717ff8c0}{date\+Overlap\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_aecf5450c7ff999d38605e17d709516f8}{time\+Overlap\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a4d8a51cc1d3232f13cd626f7ae97124b}{chronological\+Date\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_aaf739eea608da5094929429026b64fe1}{invalid\+Code\+Day\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_ae6bd40f97afa015503d1b128f2ba2c16}{invalid\+Document\+Type\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a2e77f7f16717578aa424d4db571900ec}{invalid\+Email\+Format}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a4e008ca8404a6856bdda4d6520d04f0f}{invalid\+Login}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_aa60f00e95981915eea7217fcae0fb6ce}{upload\+Failed}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a7734ddc88597a081897773cc28051677}{image\+File\+Format\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_a5e74e2a9c3c23c723e60d66c0f1e3328}{document\+Type\+Not\+Pdf\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_ad877717b54bacee0a1985a09a7488d58}{package\+Number\+Format\+Problem}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_controllers_1_1_response_controller_ae09b777fd438c5caa345e845d7000630}{invalid\+Appointment}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a4d8a51cc1d3232f13cd626f7ae97124b}\label{class_app_1_1_controllers_1_1_response_controller_a4d8a51cc1d3232f13cd626f7ae97124b}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!chronologicalDateProblem@{chronologicalDateProblem}}
+\index{chronologicalDateProblem@{chronologicalDateProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{chronologicalDateProblem()}{chronologicalDateProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::chronological\+Date\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of chronological problem between two times.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a3c287c8d2cbb99e7a8e3cab8717ff8c0}\label{class_app_1_1_controllers_1_1_response_controller_a3c287c8d2cbb99e7a8e3cab8717ff8c0}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!dateOverlapProblem@{dateOverlapProblem}}
+\index{dateOverlapProblem@{dateOverlapProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{dateOverlapProblem()}{dateOverlapProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::date\+Overlap\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of date overlap problem.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a5e74e2a9c3c23c723e60d66c0f1e3328}\label{class_app_1_1_controllers_1_1_response_controller_a5e74e2a9c3c23c723e60d66c0f1e3328}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!documentTypeNotPdfProblem@{documentTypeNotPdfProblem}}
+\index{documentTypeNotPdfProblem@{documentTypeNotPdfProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{documentTypeNotPdfProblem()}{documentTypeNotPdfProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::document\+Type\+Not\+Pdf\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid image file format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a7734ddc88597a081897773cc28051677}\label{class_app_1_1_controllers_1_1_response_controller_a7734ddc88597a081897773cc28051677}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!imageFileFormatProblem@{imageFileFormatProblem}}
+\index{imageFileFormatProblem@{imageFileFormatProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{imageFileFormatProblem()}{imageFileFormatProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::image\+File\+Format\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid image file format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_ae09b777fd438c5caa345e845d7000630}\label{class_app_1_1_controllers_1_1_response_controller_ae09b777fd438c5caa345e845d7000630}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidAppointment@{invalidAppointment}}
+\index{invalidAppointment@{invalidAppointment}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidAppointment()}{invalidAppointment()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Appointment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid appointment informations.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_aaf739eea608da5094929429026b64fe1}\label{class_app_1_1_controllers_1_1_response_controller_aaf739eea608da5094929429026b64fe1}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidCodeDayFormat@{invalidCodeDayFormat}}
+\index{invalidCodeDayFormat@{invalidCodeDayFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidCodeDayFormat()}{invalidCodeDayFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Code\+Day\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid code day format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a0689682180b58ce92ebb61bcf6ace24f}\label{class_app_1_1_controllers_1_1_response_controller_a0689682180b58ce92ebb61bcf6ace24f}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidDateFormat@{invalidDateFormat}}
+\index{invalidDateFormat@{invalidDateFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidDateFormat()}{invalidDateFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Date\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid date format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a6e511add8ffca0d4e7301853c226292f}\label{class_app_1_1_controllers_1_1_response_controller_a6e511add8ffca0d4e7301853c226292f}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidDateTimeFormat@{invalidDateTimeFormat}}
+\index{invalidDateTimeFormat@{invalidDateTimeFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidDateTimeFormat()}{invalidDateTimeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Date\+Time\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid datetime format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_ae6bd40f97afa015503d1b128f2ba2c16}\label{class_app_1_1_controllers_1_1_response_controller_ae6bd40f97afa015503d1b128f2ba2c16}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidDocumentTypeFormat@{invalidDocumentTypeFormat}}
+\index{invalidDocumentTypeFormat@{invalidDocumentTypeFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidDocumentTypeFormat()}{invalidDocumentTypeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Document\+Type\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid document type format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a2e77f7f16717578aa424d4db571900ec}\label{class_app_1_1_controllers_1_1_response_controller_a2e77f7f16717578aa424d4db571900ec}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidEmailFormat@{invalidEmailFormat}}
+\index{invalidEmailFormat@{invalidEmailFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidEmailFormat()}{invalidEmailFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Email\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid email format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a4e008ca8404a6856bdda4d6520d04f0f}\label{class_app_1_1_controllers_1_1_response_controller_a4e008ca8404a6856bdda4d6520d04f0f}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidLogin@{invalidLogin}}
+\index{invalidLogin@{invalidLogin}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidLogin()}{invalidLogin()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid login.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_adc4b537048429acf681cd8fd9219160b}\label{class_app_1_1_controllers_1_1_response_controller_adc4b537048429acf681cd8fd9219160b}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!invalidTimeFormat@{invalidTimeFormat}}
+\index{invalidTimeFormat@{invalidTimeFormat}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{invalidTimeFormat()}{invalidTimeFormat()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::invalid\+Time\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid time format.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_ae8d5264929e0a757ff46b2879b1338cc}\label{class_app_1_1_controllers_1_1_response_controller_ae8d5264929e0a757ff46b2879b1338cc}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!notFoundAuthorizationHeader@{notFoundAuthorizationHeader}}
+\index{notFoundAuthorizationHeader@{notFoundAuthorizationHeader}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{notFoundAuthorizationHeader()}{notFoundAuthorizationHeader()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::not\+Found\+Authorization\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of undefined authorization header.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a646b075b51828ac992a9406e0a091e1e}\label{class_app_1_1_controllers_1_1_response_controller_a646b075b51828ac992a9406e0a091e1e}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!notFoundResponse@{notFoundResponse}}
+\index{notFoundResponse@{notFoundResponse}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{notFoundResponse()}{notFoundResponse()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::not\+Found\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of not found response.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_ad877717b54bacee0a1985a09a7488d58}\label{class_app_1_1_controllers_1_1_response_controller_ad877717b54bacee0a1985a09a7488d58}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!packageNumberFormatProblem@{packageNumberFormatProblem}}
+\index{packageNumberFormatProblem@{packageNumberFormatProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{packageNumberFormatProblem()}{packageNumberFormatProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::package\+Number\+Format\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid package number of conditions of registration document.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a87abaf00cd19f1775a0455a6b09f3dd3}\label{class_app_1_1_controllers_1_1_response_controller_a87abaf00cd19f1775a0455a6b09f3dd3}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!permanentScheduleAlreadyExist@{permanentScheduleAlreadyExist}}
+\index{permanentScheduleAlreadyExist@{permanentScheduleAlreadyExist}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{permanentScheduleAlreadyExist()}{permanentScheduleAlreadyExist()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::permanent\+Schedule\+Already\+Exist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of a permanent calendar already created.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a789720f6c6588fcfdcc697743d291663}\label{class_app_1_1_controllers_1_1_response_controller_a789720f6c6588fcfdcc697743d291663}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!successfulCreatedRessource@{successfulCreatedRessource}}
+\index{successfulCreatedRessource@{successfulCreatedRessource}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{successfulCreatedRessource()}{successfulCreatedRessource()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::successful\+Created\+Ressource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the POST success message.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_abb57af748f83d34dc4073aa2af6557c9}\label{class_app_1_1_controllers_1_1_response_controller_abb57af748f83d34dc4073aa2af6557c9}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!successfulRequest@{successfulRequest}}
+\index{successfulRequest@{successfulRequest}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{successfulRequest()}{successfulRequest()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::successful\+Request (\begin{DoxyParamCaption}\item[{}]{\$result = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the GET success message.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$result} & The associative array containing all the result rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_abdef42c3846b195a68a75aba1749a314}\label{class_app_1_1_controllers_1_1_response_controller_abdef42c3846b195a68a75aba1749a314}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!successfulRequestWithoutJson@{successfulRequestWithoutJson}}
+\index{successfulRequestWithoutJson@{successfulRequestWithoutJson}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{successfulRequestWithoutJson()}{successfulRequestWithoutJson()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::successful\+Request\+Without\+Json (\begin{DoxyParamCaption}\item[{}]{\$result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the GET success message for data that does not need to be json encoded.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$result} & The associative array containing all the result rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_aecf5450c7ff999d38605e17d709516f8}\label{class_app_1_1_controllers_1_1_response_controller_aecf5450c7ff999d38605e17d709516f8}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!timeOverlapProblem@{timeOverlapProblem}}
+\index{timeOverlapProblem@{timeOverlapProblem}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{timeOverlapProblem()}{timeOverlapProblem()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::time\+Overlap\+Problem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of time overlap problem.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_aceea72ffbbc5c8bf83da45cb57f8b57f}\label{class_app_1_1_controllers_1_1_response_controller_aceea72ffbbc5c8bf83da45cb57f8b57f}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!unauthorizedUser@{unauthorizedUser}}
+\index{unauthorizedUser@{unauthorizedUser}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{unauthorizedUser()}{unauthorizedUser()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::unauthorized\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of no access permission.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_a14bab41b8f3922772bb57f4cf29e8ab6}\label{class_app_1_1_controllers_1_1_response_controller_a14bab41b8f3922772bb57f4cf29e8ab6}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!unprocessableEntityResponse@{unprocessableEntityResponse}}
+\index{unprocessableEntityResponse@{unprocessableEntityResponse}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{unprocessableEntityResponse()}{unprocessableEntityResponse()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::unprocessable\+Entity\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of invalid attributes.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_response_controller_aa60f00e95981915eea7217fcae0fb6ce}\label{class_app_1_1_controllers_1_1_response_controller_aa60f00e95981915eea7217fcae0fb6ce}} 
+\index{App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}!uploadFailed@{uploadFailed}}
+\index{uploadFailed@{uploadFailed}!App\textbackslash{}Controllers\textbackslash{}ResponseController@{App\textbackslash{}Controllers\textbackslash{}ResponseController}}
+\doxysubsubsection{\texorpdfstring{uploadFailed()}{uploadFailed()}}
+{\footnotesize\ttfamily static App\textbackslash{}\+Controllers\textbackslash{}\+Response\+Controller\+::upload\+Failed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method to return the error message in case of upload failed.
+
+\begin{DoxyReturn}{Returns}
+string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Controllers/\mbox{\hyperlink{_response_controller_8php}{Response\+Controller.\+php}}\end{DoxyCompactItemize}

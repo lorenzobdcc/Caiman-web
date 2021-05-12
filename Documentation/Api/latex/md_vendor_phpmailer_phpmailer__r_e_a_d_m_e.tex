@@ -1,0 +1,202 @@
+\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md45}{}\doxysection{PHPMailer – A full-\/featured email creation and transfer class for PHP}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md45}
+\href{https://github.com/PHPMailer/PHPMailer/actions}{\texttt{ }} \href{https://packagist.org/packages/phpmailer/phpmailer}{\texttt{ }} \href{https://packagist.org/packages/phpmailer/phpmailer}{\texttt{ }} \href{https://packagist.org/packages/phpmailer/phpmailer}{\texttt{ }} \href{https://phpmailer.github.io/PHPMailer/}{\texttt{ }}\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md46}{}\doxysubsection{Features}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md46}
+
+\begin{DoxyItemize}
+\item Probably the world\textquotesingle{}s most popular code for sending email from PHP!
+\item Used by many open-\/source projects\+: Word\+Press, Drupal, 1CRM, Sugar\+CRM, Yii, Joomla! and many more
+\item Integrated SMTP support – send without a local mail server
+\item Send emails with multiple To, CC, BCC and Reply-\/to addresses
+\item Multipart/alternative emails for mail clients that do not read HTML email
+\item Add attachments, including inline
+\item Support for UTF-\/8 content and 8bit, base64, binary, and quoted-\/printable encodings
+\item SMTP authentication with LOGIN, PLAIN, CRAM-\/\+MD5, and XOAUTH2 mechanisms over SMTPS and SMTP+\+STARTTLS transports
+\item Validates email addresses automatically
+\item Protects against header injection attacks
+\item Error messages in over 50 languages!
+\item DKIM and S/\+MIME signing support
+\item Compatible with PHP 5.\+5 and later, including PHP 8.\+0
+\item Namespaced to prevent name clashes
+\item Much more!
+\end{DoxyItemize}\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md47}{}\doxysubsection{Why you might need it}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md47}
+Many PHP developers need to send email from their code. The only PHP function that supports this directly is \href{https://www.php.net/manual/en/function.mail.php}{\texttt{ {\ttfamily mail()}}}. However, it does not provide any assistance for making use of popular features such as encryption, authentication, HTML messages, and attachments.
+
+Formatting email correctly is surprisingly difficult. There are myriad overlapping (and conflicting) standards, requiring tight adherence to horribly complicated formatting and encoding rules – the vast majority of code that you\textquotesingle{}ll find online that uses the {\ttfamily mail()} function directly is just plain wrong, if not unsafe!
+
+The PHP {\ttfamily mail()} function usually sends via a local mail server, typically fronted by a {\ttfamily sendmail} binary on Linux, BSD, and mac\+OS platforms, however, Windows usually doesn\textquotesingle{}t include a local mail server; \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}\textquotesingle{}s integrated SMTP client allows email sending on all platforms without needing a local mail server. Be aware though, that the {\ttfamily mail()} function should be avoided when possible; it\textquotesingle{}s both faster and \href{https://exploitbox.io/paper/Pwning-PHP-Mail-Function-For-Fun-And-RCE.html}{\texttt{ safer}} to use SMTP to localhost.
+
+{\itshape Please} don\textquotesingle{}t be tempted to do it yourself – if you don\textquotesingle{}t use \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}, there are many other excellent libraries that you should look at before rolling your own. Try \href{https://swiftmailer.symfony.com/}{\texttt{ Swift\+Mailer}} , \href{https://docs.laminas.dev/laminas-mail/}{\texttt{ Laminas/\+Mail}}, \href{https://github.com/zetacomponents/Mail}{\texttt{ Zeta\+Components}} etc.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md48}{}\doxysubsection{License}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md48}
+This software is distributed under the \href{http://www.gnu.org/licenses/lgpl-2.1.html}{\texttt{ LGPL 2.\+1}} license, along with the \href{https://gplcc.github.io/gplcc/}{\texttt{ GPL Cooperation Commitment}}. Please read \href{https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE}{\texttt{ LICENSE}} for information on the software availability and distribution.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md49}{}\doxysubsection{Installation \& loading}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md49}
+\mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} is available on \href{https://packagist.org/packages/phpmailer/phpmailer}{\texttt{ Packagist}} (using semantic versioning), and installation via \href{https://getcomposer.org}{\texttt{ Composer}} is the recommended way to install \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}. Just add this line to your {\ttfamily composer.\+json} file\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{"{}phpmailer/phpmailer"{}: "{}\string^6.2"{}}
+
+\end{DoxyCode}
+
+
+or run
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{composer require phpmailer/phpmailer}
+
+\end{DoxyCode}
+
+
+Note that the {\ttfamily vendor} folder and the {\ttfamily vendor/autoload.\+php} script are generated by Composer; they are not part of \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}.
+
+If you want to use the Gmail XOAUTH2 authentication class, you will also need to add a dependency on the {\ttfamily league/oauth2-\/client} package in your {\ttfamily composer.\+json}.
+
+Alternatively, if you\textquotesingle{}re not using Composer, you can \href{https://github.com/PHPMailer/PHPMailer/archive/master.zip}{\texttt{ download PHPMailer as a zip file}}, (note that docs and examples are not included in the zip file), then copy the contents of the \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} folder into one of the {\ttfamily include\+\_\+path} directories specified in your PHP configuration and load each class file manually\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<?\mbox{\hyperlink{namespacephp}{php}}}
+\DoxyCodeLine{use \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer}{PHPMailer\(\backslash\)PHPMailer\(\backslash\)PHPMailer}};}
+\DoxyCodeLine{use \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception}{PHPMailer\(\backslash\)PHPMailer\(\backslash\)Exception}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{require \textcolor{stringliteral}{'path/to/PHPMailer/src/Exception.php'};}
+\DoxyCodeLine{require \textcolor{stringliteral}{'path/to/PHPMailer/src/PHPMailer.php'};}
+\DoxyCodeLine{require \textcolor{stringliteral}{'path/to/PHPMailer/src/SMTP.php'};}
+
+\end{DoxyCode}
+
+
+If you\textquotesingle{}re not using the {\ttfamily SMTP} class explicitly (you\textquotesingle{}re probably not), you don\textquotesingle{}t need a {\ttfamily use} line for the SMTP class. Even if you\textquotesingle{}re not using exceptions, you do still need to load the {\ttfamily Exception} class as it is used internally.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md50}{}\doxysubsection{Legacy versions}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md50}
+\mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} 5.\+2 (which is compatible with PHP 5.\+0 — 7.\+0) is no longer supported, even for security updates. You will find the latest version of 5.\+2 in the \href{https://github.com/PHPMailer/PHPMailer/tree/5.2-stable}{\texttt{ 5.\+2-\/stable branch}}. If you\textquotesingle{}re using PHP 5.\+5 or later (which you should be), switch to the 6.\+x releases.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md51}{}\doxysubsubsection{Upgrading from 5.\+2}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md51}
+The biggest changes are that source files are now in the {\ttfamily src/} folder, and \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} now declares the namespace {\ttfamily \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}\textbackslash{}\mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}}. This has several important effects – \href{https://github.com/PHPMailer/PHPMailer/tree/master/UPGRADING.md}{\texttt{ read the upgrade guide}} for more details.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md52}{}\doxysubsubsection{Minimal installation}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md52}
+While installing the entire package manually or with Composer is simple, convenient, and reliable, you may want to include only vital files in your project. At the very least you will need \href{https://github.com/PHPMailer/PHPMailer/tree/master/src/PHPMailer.php}{\texttt{ src/\+PHPMailer.\+php}}. If you\textquotesingle{}re using SMTP, you\textquotesingle{}ll need \href{https://github.com/PHPMailer/PHPMailer/tree/master/src/SMTP.php}{\texttt{ src/\+SMTP.\+php}}, and if you\textquotesingle{}re using POP-\/before SMTP ({\itshape very} unlikely!), you\textquotesingle{}ll need \href{https://github.com/PHPMailer/PHPMailer/tree/master/src/POP3.php}{\texttt{ src/\+POP3.\+php}}. You can skip the \href{https://github.com/PHPMailer/PHPMailer/tree/master/language/}{\texttt{ language}} folder if you\textquotesingle{}re not showing errors to users and can make do with English-\/only errors. If you\textquotesingle{}re using XOAUTH2 you will need \href{https://github.com/PHPMailer/PHPMailer/tree/master/src/OAuth.php}{\texttt{ src/\+OAuth.\+php}} as well as the Composer dependencies for the services you wish to authenticate with. Really, it\textquotesingle{}s much easier to use Composer!\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md53}{}\doxysubsection{A Simple Example}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<?\mbox{\hyperlink{namespacephp}{php}}}
+\DoxyCodeLine{\textcolor{comment}{//Import PHPMailer classes into the global namespace}}
+\DoxyCodeLine{\textcolor{comment}{//These must be at the top of your script, not inside a function}}
+\DoxyCodeLine{use \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer}{PHPMailer\(\backslash\)PHPMailer\(\backslash\)PHPMailer}};}
+\DoxyCodeLine{use \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p}{PHPMailer\(\backslash\)PHPMailer\(\backslash\)SMTP}};}
+\DoxyCodeLine{use \mbox{\hyperlink{class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception}{PHPMailer\(\backslash\)PHPMailer\(\backslash\)Exception}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Load Composer's autoloader}}
+\DoxyCodeLine{require \textcolor{stringliteral}{'vendor/autoload.php'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Instantiation and passing `true` enables exceptions}}
+\DoxyCodeLine{\$mail = \textcolor{keyword}{new} \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    \textcolor{comment}{//Server settings}}
+\DoxyCodeLine{    \$mail-\/>SMTPDebug = SMTP::DEBUG\_SERVER;                      \textcolor{comment}{//Enable verbose debug output}}
+\DoxyCodeLine{    \$mail-\/>isSMTP();                                            \textcolor{comment}{//Send using SMTP}}
+\DoxyCodeLine{    \$mail-\/>Host       = \textcolor{stringliteral}{'smtp.example.com'};                     \textcolor{comment}{//Set the SMTP server to send through}}
+\DoxyCodeLine{    \$mail-\/>SMTPAuth   = \textcolor{keyword}{true};                                   \textcolor{comment}{//Enable SMTP authentication}}
+\DoxyCodeLine{    \$mail-\/>Username   = \textcolor{stringliteral}{'user@example.com'};                     \textcolor{comment}{//SMTP username}}
+\DoxyCodeLine{    \$mail-\/>Password   = \textcolor{stringliteral}{'secret'};                               \textcolor{comment}{//SMTP password}}
+\DoxyCodeLine{    \$mail-\/>SMTPSecure = PHPMailer::ENCRYPTION\_STARTTLS;         \textcolor{comment}{//Enable TLS encryption; `PHPMailer::ENCRYPTION\_SMTPS` encouraged}}
+\DoxyCodeLine{    \$mail-\/>Port       = 587;                                    \textcolor{comment}{//TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION\_SMTPS` above}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//Recipients}}
+\DoxyCodeLine{    \$mail-\/>setFrom(\textcolor{stringliteral}{'from@example.com'}, \textcolor{stringliteral}{'Mailer'});}
+\DoxyCodeLine{    \$mail-\/>addAddress(\textcolor{stringliteral}{'joe@example.net'}, \textcolor{stringliteral}{'Joe User'});     \textcolor{comment}{//Add a recipient}}
+\DoxyCodeLine{    \$mail-\/>addAddress(\textcolor{stringliteral}{'ellen@example.com'});               \textcolor{comment}{//Name is optional}}
+\DoxyCodeLine{    \$mail-\/>addReplyTo(\textcolor{stringliteral}{'info@example.com'}, \textcolor{stringliteral}{'Information'});}
+\DoxyCodeLine{    \$mail-\/>addCC(\textcolor{stringliteral}{'cc@example.com'});}
+\DoxyCodeLine{    \$mail-\/>addBCC(\textcolor{stringliteral}{'bcc@example.com'});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//Attachments}}
+\DoxyCodeLine{    \$mail-\/>addAttachment(\textcolor{stringliteral}{'/var/tmp/file.tar.gz'});         \textcolor{comment}{//Add attachments}}
+\DoxyCodeLine{    \$mail-\/>addAttachment(\textcolor{stringliteral}{'/tmp/image.jpg'}, \textcolor{stringliteral}{'new.jpg'});    \textcolor{comment}{//Optional name}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{//Content}}
+\DoxyCodeLine{    \$mail-\/>isHTML(\textcolor{keyword}{true});                                  \textcolor{comment}{//Set email format to HTML}}
+\DoxyCodeLine{    \$mail-\/>Subject = \textcolor{stringliteral}{'Here is the subject'};}
+\DoxyCodeLine{    \$mail-\/>Body    = \textcolor{stringliteral}{'This is the HTML message body <b>in bold!</b>'};}
+\DoxyCodeLine{    \$mail-\/>AltBody = \textcolor{stringliteral}{'This is the body in plain text for non-\/HTML mail clients'};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \$mail-\/>send();}
+\DoxyCodeLine{    echo \textcolor{stringliteral}{'Message has been sent'};}
+\DoxyCodeLine{\} \textcolor{keywordflow}{catch} (Exception \$e) \{}
+\DoxyCodeLine{    echo \textcolor{stringliteral}{"{}Message could not be sent. Mailer Error: \{\$mail-\/>ErrorInfo\}"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+You\textquotesingle{}ll find plenty to play with in the \href{https://github.com/PHPMailer/PHPMailer/tree/master/examples}{\texttt{ examples}} folder, which covers many common scenarios including sending through gmail, building contact forms, sending to mailing lists, and more.
+
+If you are re-\/using the instance (e.\+g. when sending to a mailing list), you may need to clear the recipient list to avoid sending duplicate messages. See \href{https://github.com/PHPMailer/PHPMailer/blob/master/examples/mailing_list.phps}{\texttt{ the mailing list example}} for further guidance.
+
+That\textquotesingle{}s it. You should now be ready to use PHPMailer!\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md54}{}\doxysubsection{Localization}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md54}
+\mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} defaults to English, but in the \href{https://github.com/PHPMailer/PHPMailer/tree/master/language/}{\texttt{ language}} folder you\textquotesingle{}ll find many translations for \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} error messages that you may encounter. Their filenames contain \href{http://en.wikipedia.org/wiki/ISO_639-1}{\texttt{ ISO 639-\/1}} language code for the translations, for example {\ttfamily fr} for French. To specify a language, you need to tell \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} which one to use, like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//To load the French version}}
+\DoxyCodeLine{\$mail-\/>setLanguage(\textcolor{stringliteral}{'fr'}, \textcolor{stringliteral}{'/optional/path/to/language/directory/'});}
+
+\end{DoxyCode}
+
+
+We welcome corrections and new languages – if you\textquotesingle{}re looking for corrections, run the \href{https://github.com/PHPMailer/PHPMailer/tree/master/test/PHPMailerLangTest.php}{\texttt{ PHPMailer\+Lang\+Test.\+php}} script in the tests folder and it will show any missing translations.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md55}{}\doxysubsection{Documentation}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md55}
+Start reading at the \href{https://github.com/PHPMailer/PHPMailer/wiki}{\texttt{ Git\+Hub wiki}}. If you\textquotesingle{}re having trouble, head for \href{https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting}{\texttt{ the troubleshooting guide}} as it\textquotesingle{}s frequently updated.
+
+Examples of how to use \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} for common scenarios can be found in the \href{https://github.com/PHPMailer/PHPMailer/tree/master/examples}{\texttt{ examples}} folder. If you\textquotesingle{}re looking for a good starting point, we recommend you start with \href{https://github.com/PHPMailer/PHPMailer/tree/master/examples/gmail.phps}{\texttt{ the Gmail example}}.
+
+To reduce \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}\textquotesingle{}s deployed code footprint, examples are not included if you load \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} via Composer or via \href{https://github.com/PHPMailer/PHPMailer/archive/master.zip}{\texttt{ Git\+Hub\textquotesingle{}s zip file download}}, so you\textquotesingle{}ll need to either clone the git repository or use the above links to get to the examples directly.
+
+Complete generated API documentation is \href{https://phpmailer.github.io/PHPMailer/}{\texttt{ available online}}.
+
+You can generate complete API-\/level documentation by running {\ttfamily phpdoc} in the top-\/level folder, and documentation will appear in the {\ttfamily docs} folder, though you\textquotesingle{}ll need to have \href{http://www.phpdoc.org}{\texttt{ PHPDocumentor}} installed. You may find \href{https://github.com/PHPMailer/PHPMailer/blob/master/test/PHPMailerTest.php}{\texttt{ the unit tests}} a good reference for how to do various operations such as encryption.
+
+If the documentation doesn\textquotesingle{}t cover what you need, search the \href{http://stackoverflow.com/questions/tagged/phpmailer}{\texttt{ many questions on Stack Overflow}}, and before you ask a question about \char`\"{}\+SMTP Error\+: Could not connect to SMTP host.\char`\"{}, \href{https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting}{\texttt{ read the troubleshooting guide}}.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md56}{}\doxysubsection{Tests}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md56}
+\href{https://github.com/PHPMailer/PHPMailer/tree/master/test/}{\texttt{ PHPMailer tests}} use PHPUnit 9, with \href{https://github.com/Yoast/PHPUnit-Polyfills}{\texttt{ a polyfill}} to let 9-\/style tests run on older PHPUnit and PHP versions.
+
+\href{https://github.com/PHPMailer/PHPMailer/actions}{\texttt{ }}
+
+If this isn\textquotesingle{}t passing, is there something you can do to help?\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{Security}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md57}
+Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately.
+
+See \href{https://github.com/PHPMailer/PHPMailer/tree/master/SECURITY.md}{\texttt{ SECURITY}} and \href{https://github.com/PHPMailer/PHPMailer/security}{\texttt{ PHPMailer\textquotesingle{}s security advisories on Git\+Hub}}.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md58}{}\doxysubsection{Contributing}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md58}
+Please submit bug reports, suggestions and pull requests to the \href{https://github.com/PHPMailer/PHPMailer/issues}{\texttt{ Git\+Hub issue tracker}}.
+
+We\textquotesingle{}re particularly interested in fixing edge-\/cases, expanding test coverage and updating translations.
+
+If you found a mistake in the docs, or want to add something, go ahead and amend the wiki – anyone can edit it.
+
+If you have git clones from prior to the move to the \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} Git\+Hub organisation, you\textquotesingle{}ll need to update any remote URLs referencing the old Git\+Hub location with a command like this from within your clone\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git remote set-\/url upstream https://github.com/PHPMailer/PHPMailer.git}
+
+\end{DoxyCode}
+
+
+Please {\itshape don\textquotesingle{}t} use the Source\+Forge or Google Code projects any more; they are obsolete and no longer maintained.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md59}{}\doxysubsection{Sponsorship}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md59}
+Development time and resources for \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} are provided by \href{https://info.smartmessages.net/}{\texttt{ Smartmessages.\+net}}, the world\textquotesingle{}s only privacy-\/first email marketing system.
+
+\href{https://info.smartmessages.net/}{\texttt{ }}
+
+Donations are very welcome, whether in beer 🍺, T-\/shirts 👕, or cold, hard cash 💰. Sponsorship through Git\+Hub is a simple and convenient way to say \char`\"{}thank you\char`\"{} to \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}\textquotesingle{}s maintainers and contributors – just click the \char`\"{}\+Sponsor\char`\"{} button \href{https://github.com/PHPMailer/PHPMailer}{\texttt{ on the project page}}. If your company uses \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}}, consider taking part in Tidelift\textquotesingle{}s enterprise support programme.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md60}{}\doxysubsection{PHPMailer For Enterprise}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md60}
+Available as part of the Tidelift Subscription.
+
+The maintainers of \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. \href{https://tidelift.com/subscription/pkg/packagist-phpmailer-phpmailer?utm_source=packagist-phpmailer-phpmailer&utm_medium=referral&utm_campaign=enterprise&utm_term=repo}{\texttt{ Learn more.}}\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md61}{}\doxysubsection{Changelog}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md61}
+See changelog.\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md62}{}\doxysubsection{History}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md62}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} was originally written in 2001 by Brent R. Matzelle as a \href{http://sourceforge.net/projects/phpmailer/}{\texttt{ Source\+Forge project}}.
+\item \href{https://github.com/Synchro}{\texttt{ Marcus Bointon}} ({\ttfamily coolbru} on SF) and Andy Prevost ({\ttfamily codeworxtech}) took over the project in 2004.
+\item Became an Apache incubator project on Google Code in 2010, managed by Jim Jagielski.
+\item Marcus created \href{https://github.com/Synchro/PHPMailer}{\texttt{ his fork on Git\+Hub}} in 2008.
+\item Jim and Marcus decide to join forces and use Git\+Hub as the canonical and official repo for \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} in 2013.
+\item \mbox{\hyperlink{namespace_p_h_p_mailer}{PHPMailer}} moves to \href{https://github.com/PHPMailer}{\texttt{ the PHPMailer organisation}} on Git\+Hub in 2013.
+\end{DoxyItemize}\hypertarget{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md63}{}\doxysubsubsection{What\textquotesingle{}s changed since moving from Source\+Forge?}\label{md_vendor_phpmailer_phpmailer__r_e_a_d_m_e_autotoc_md63}
+
+\begin{DoxyItemize}
+\item Official successor to the Source\+Forge and Google Code projects.
+\item Test suite.
+\item Continuous integration with Github Actions.
+\item Composer support.
+\item Public development.
+\item Additional languages and language strings.
+\item CRAM-\/\+MD5 authentication support.
+\item Preserves full repo history of authors, commits and branches from the original Source\+Forge project. 
+\end{DoxyItemize}

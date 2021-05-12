@@ -1,0 +1,74 @@
+\hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game}{}\doxysection{App\textbackslash{}Data\+Access\+Object\textbackslash{}DAOGame Class Reference}
+\label{class_app_1_1_data_access_object_1_1_d_a_o_game}\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_ad3a53ed846e5c12751cb33deb5954098}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_a69d49f74b0708cdd916fa3548f46e749}{find\+All}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_aa5476ea4d137fd8a4c4143f6791dfa19}{find}} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}} 
+{\bfseries find\+Game\+From\+Category} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}} 
+{\bfseries find\+Times\+Games\+User} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}} 
+{\bfseries find\+Favorite\+Game\+Of\+User} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}} 
+{\bfseries find\+Games\+From\+Name} (string \$name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_ad3a53ed846e5c12751cb33deb5954098}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_ad3a53ed846e5c12751cb33deb5954098}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+
+Constructor of the DAOgame\$game object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+PDO & {\em \$db} & The database connection \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_aa5476ea4d137fd8a4c4143f6791dfa19}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_aa5476ea4d137fd8a4c4143f6791dfa19}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!find@{find}}
+\index{find@{find}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a game\$game from the database in a game model object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The game\$game identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+game A game model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a69d49f74b0708cdd916fa3548f46e749}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a69d49f74b0708cdd916fa3548f46e749}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!findAll@{findAll}}
+\index{findAll@{findAll}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to return all game\$games from the database in an array of game\$game objects.
+
+\begin{DoxyReturn}{Returns}
+Game\mbox{[}\mbox{]} A game\$game object array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Data\+Access\+Object/\mbox{\hyperlink{_d_a_o_game_8php}{DAOGame.\+php}}\end{DoxyCompactItemize}

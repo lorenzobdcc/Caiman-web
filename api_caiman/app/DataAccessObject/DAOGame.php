@@ -1,10 +1,10 @@
 <?php
-/**
- * DAOgame$game.php
- *
- * Data access object of the game$game table.
- *
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Data access object of the game table.
  */
 namespace App\DataAccessObject;
 
@@ -89,7 +89,7 @@ class DAOGame {
                 $game->id = $result["id"];
                 $game->name = $result["name"];
                 $game->description = $result["description"];
-                $game->imageName = $result["imangeName"];
+                $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
             }
@@ -232,53 +232,5 @@ class DAOGame {
         }    
     }
 
-    /**
-     * 
-     * Method to update a game$game in the database.
-     * 
-     * @param game$game $game The game$game model object
-     * @return int The number of rows affected by the update
-     */
-    public function update(game $game)
-    {
-        $statement = "
-        UPDATE game$game
-        SET name = :NAME, 
-        description = :DESCRIPTION,
 
-        WHERE id = :ID_game;";
-        try {
-            $statement = $this->db->prepare($statement);
-            $statement->bindParam(':NAME', $game->name, \PDO::PARAM_STR);
-            $statement->bindParam(':DESCRIPTION', $game->description, \PDO::PARAM_STR);    
-            $statement->bindParam(':ID_game', $game->id, \PDO::PARAM_STR);
-            $statement->execute();
-            return $statement->rowCount();
-        } catch (\PDOException $e) {
-            exit($e->getMessage());
-        }    
-    }
-
-    /**
-     * 
-     * Method to delete a game$game in the database.
-     * 
-     * @param game$game $game The game$game model object
-     * @return int The number of rows affected by the delete
-     */
-    public function delete(game $game)
-    {
-        $statement = "
-        DELETE FROM game
-        WHERE id = :ID_game;";
-
-        try {
-            $statement = $this->db->prepare($statement);
-            $statement->bindParam(':ID_game', $game->id, \PDO::PARAM_INT);  
-            $statement->execute();
-            return $statement->rowCount();
-        } catch (\PDOException $e) {
-            exit($e->getMessage());
-        }    
-    }
 }

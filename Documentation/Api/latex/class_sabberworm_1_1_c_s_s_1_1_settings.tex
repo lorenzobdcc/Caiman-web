@@ -1,0 +1,63 @@
+\hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings}{}\doxysection{Sabberworm\textbackslash{}CSS\textbackslash{}Settings Class Reference}
+\label{class_sabberworm_1_1_c_s_s_1_1_settings}\index{Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a69eba6dc6b10196922e5e3f876293629}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a69eba6dc6b10196922e5e3f876293629}} 
+{\bfseries with\+Multibyte\+Support} (\$b\+Multibyte\+Support=true)
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a08f7199323bda334637166ee886dd9e4}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a08f7199323bda334637166ee886dd9e4}} 
+{\bfseries with\+Default\+Charset} (\$s\+Default\+Charset)
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a28e692a521b156df52a184e6aea98461}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a28e692a521b156df52a184e6aea98461}} 
+{\bfseries with\+Lenient\+Parsing} (\$b\+Lenient\+Parsing=true)
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a04687a2a0110717cab1cbb76d786e74c}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a04687a2a0110717cab1cbb76d786e74c}} 
+{\bfseries be\+Strict} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_afdb35041a6dcee1432bb0718d94661a1}\label{class_sabberworm_1_1_c_s_s_1_1_settings_afdb35041a6dcee1432bb0718d94661a1}} 
+static {\bfseries create} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sabberworm_1_1_c_s_s_1_1_settings_a8f8d42e7fff3cbeeed6af2492c541fdd}{\$b\+Multibyte\+Support}}
+\item 
+\mbox{\hyperlink{class_sabberworm_1_1_c_s_s_1_1_settings_a99f06f9a9fe904b04c32eefe858a7a56}{\$s\+Default\+Charset}} = \textquotesingle{}utf-\/8\textquotesingle{}
+\item 
+\mbox{\hyperlink{class_sabberworm_1_1_c_s_s_1_1_settings_a81f2189a432c1324b3b88dc4892713d0}{\$b\+Lenient\+Parsing}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sabberworm_1_1_c_s_s_1_1_parser}{Parser}} settings class.
+
+Configure parser behaviour here. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a81f2189a432c1324b3b88dc4892713d0}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a81f2189a432c1324b3b88dc4892713d0}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}!\$bLenientParsing@{\$bLenientParsing}}
+\index{\$bLenientParsing@{\$bLenientParsing}!Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}}
+\doxysubsubsection{\texorpdfstring{\$bLenientParsing}{$bLenientParsing}}
+{\footnotesize\ttfamily Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Settings\+::\$b\+Lenient\+Parsing = true}
+
+Lenient parsing. When used (which is true by default), the parser will not choke on unexpected tokens but simply ignore them. \mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a8f8d42e7fff3cbeeed6af2492c541fdd}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a8f8d42e7fff3cbeeed6af2492c541fdd}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}!\$bMultibyteSupport@{\$bMultibyteSupport}}
+\index{\$bMultibyteSupport@{\$bMultibyteSupport}!Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}}
+\doxysubsubsection{\texorpdfstring{\$bMultibyteSupport}{$bMultibyteSupport}}
+{\footnotesize\ttfamily Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Settings\+::\$b\+Multibyte\+Support}
+
+Multi-\/byte string support. If true (mbstring extension must be enabled), will use (slower) mb\+\_\+strlen, mb\+\_\+convert\+\_\+case, mb\+\_\+substr and mb\+\_\+strpos functions. Otherwise, the normal (ASCII-\/\+Only) functions will be used. \mbox{\Hypertarget{class_sabberworm_1_1_c_s_s_1_1_settings_a99f06f9a9fe904b04c32eefe858a7a56}\label{class_sabberworm_1_1_c_s_s_1_1_settings_a99f06f9a9fe904b04c32eefe858a7a56}} 
+\index{Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}!\$sDefaultCharset@{\$sDefaultCharset}}
+\index{\$sDefaultCharset@{\$sDefaultCharset}!Sabberworm\textbackslash{}CSS\textbackslash{}Settings@{Sabberworm\textbackslash{}CSS\textbackslash{}Settings}}
+\doxysubsubsection{\texorpdfstring{\$sDefaultCharset}{$sDefaultCharset}}
+{\footnotesize\ttfamily Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Settings\+::\$s\+Default\+Charset = \textquotesingle{}utf-\/8\textquotesingle{}}
+
+The default charset for the CSS if no {\ttfamily @charset} rule is found. Defaults to utf-\/8. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/sabberworm/php-\/css-\/parser/lib/\+Sabberworm/\+CSS/Settings.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,178 @@
+\hypertarget{class_dompdf_1_1_frame_reflower_1_1_block}{}\doxysection{Dompdf\textbackslash{}Frame\+Reflower\textbackslash{}Block Class Reference}
+\label{class_dompdf_1_1_frame_reflower_1_1_block}\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+Inheritance diagram for Dompdf\textbackslash{}Frame\+Reflower\textbackslash{}Block\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dompdf_1_1_frame_reflower_1_1_block}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a58e23837584cfb0cd8f4686f24236c9d}\label{class_dompdf_1_1_frame_reflower_1_1_block_a58e23837584cfb0cd8f4686f24236c9d}} 
+{\bfseries \+\_\+\+\_\+construct} (Block\+Frame\+Decorator \$frame)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_a5b0d4950d749dfe887ab217e7f10edae}{vertical\+\_\+align}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_a85c755ea0010b3d5253f170547cabeb7}{process\+\_\+clear}} (\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} \$child)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_aa1c835eafca03086d16ad2737edcca09}{process\+\_\+float}} (\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} \$child, \$cb\+\_\+x, \$cb\+\_\+w)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_aa02837a3109611224791a734ca80daf3}{reflow}} (Block\+Frame\+Decorator \$block=null)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_af31f7797d96543553e20f1fd3ef41f5f}{calculate\+\_\+auto\+\_\+width}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_acfac65f4f4edbd9af93dc417326387a6}\label{class_dompdf_1_1_frame_reflower_1_1_block_acfac65f4f4edbd9af93dc417326387a6}} 
+const {\bfseries MIN\+\_\+\+JUSTIFY\+\_\+\+WIDTH} = 0.\+80
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_a8f12dc191008a5683c195a7d57a850a1}{\+\_\+calculate\+\_\+width}} (\$width)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_ad289a65e7aae5f154fe79b7687d653c9}{\+\_\+calculate\+\_\+restricted\+\_\+width}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_ab6fc247a177dcc95976571b5aec7b599}{\+\_\+calculate\+\_\+content\+\_\+height}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_a6614226494feddbc04027646d32f0c2d}{\+\_\+calculate\+\_\+restricted\+\_\+height}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_block_a703f8dfa7e6dee7ff105090b45f859ea}{\+\_\+text\+\_\+align}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a93e1eaf62ea9548232ec22076a48d5cc}\label{class_dompdf_1_1_frame_reflower_1_1_block_a93e1eaf62ea9548232ec22076a48d5cc}} 
+{\bfseries \$\+\_\+frame}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_ab6fc247a177dcc95976571b5aec7b599}\label{class_dompdf_1_1_frame_reflower_1_1_block_ab6fc247a177dcc95976571b5aec7b599}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!\_calculate\_content\_height@{\_calculate\_content\_height}}
+\index{\_calculate\_content\_height@{\_calculate\_content\_height}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_content\_height()}{\_calculate\_content\_height()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::\+\_\+calculate\+\_\+content\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determine the unrestricted height of content within the block not by adding each line\textquotesingle{}s height, but by getting the last line\textquotesingle{}s position. This because lines could have been pushed lower by a clearing element.
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a6614226494feddbc04027646d32f0c2d}\label{class_dompdf_1_1_frame_reflower_1_1_block_a6614226494feddbc04027646d32f0c2d}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!\_calculate\_restricted\_height@{\_calculate\_restricted\_height}}
+\index{\_calculate\_restricted\_height@{\_calculate\_restricted\_height}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_restricted\_height()}{\_calculate\_restricted\_height()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::\+\_\+calculate\+\_\+restricted\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determine the frame\textquotesingle{}s restricted height
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_ad289a65e7aae5f154fe79b7687d653c9}\label{class_dompdf_1_1_frame_reflower_1_1_block_ad289a65e7aae5f154fe79b7687d653c9}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!\_calculate\_restricted\_width@{\_calculate\_restricted\_width}}
+\index{\_calculate\_restricted\_width@{\_calculate\_restricted\_width}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_restricted\_width()}{\_calculate\_restricted\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::\+\_\+calculate\+\_\+restricted\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Call the above function, but resolve max/min widths
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_dompdf_1_1_exception}{Exception}}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a8f12dc191008a5683c195a7d57a850a1}\label{class_dompdf_1_1_frame_reflower_1_1_block_a8f12dc191008a5683c195a7d57a850a1}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!\_calculate\_width@{\_calculate\_width}}
+\index{\_calculate\_width@{\_calculate\_width}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_width()}{\_calculate\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::\+\_\+calculate\+\_\+width (\begin{DoxyParamCaption}\item[{}]{\$width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calculate the ideal used value for the width property as per\+: \href{http://www.w3.org/TR/CSS21/visudet.html\#Computing_widths_and_margins}{\texttt{ http\+://www.\+w3.\+org/\+TR/\+CSS21/visudet.\+html\#\+Computing\+\_\+widths\+\_\+and\+\_\+margins}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$width} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a703f8dfa7e6dee7ff105090b45f859ea}\label{class_dompdf_1_1_frame_reflower_1_1_block_a703f8dfa7e6dee7ff105090b45f859ea}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!\_text\_align@{\_text\_align}}
+\index{\_text\_align@{\_text\_align}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{\_text\_align()}{\_text\_align()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::\+\_\+text\+\_\+align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Adjust the justification of each of our lines. \href{http://www.w3.org/TR/CSS21/text.html\#propdef-text-align}{\texttt{ http\+://www.\+w3.\+org/\+TR/\+CSS21/text.\+html\#propdef-\/text-\/align}} \mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_af31f7797d96543553e20f1fd3ef41f5f}\label{class_dompdf_1_1_frame_reflower_1_1_block_af31f7797d96543553e20f1fd3ef41f5f}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!calculate\_auto\_width@{calculate\_auto\_width}}
+\index{calculate\_auto\_width@{calculate\_auto\_width}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{calculate\_auto\_width()}{calculate\_auto\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::calculate\+\_\+auto\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Determine current frame width based on contents
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_abstract_frame_reflower_a54f1a89c689ea17fcbc7bbf51b0ed27c}{Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Abstract\+Frame\+Reflower}}.
+
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a85c755ea0010b3d5253f170547cabeb7}\label{class_dompdf_1_1_frame_reflower_1_1_block_a85c755ea0010b3d5253f170547cabeb7}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!process\_clear@{process\_clear}}
+\index{process\_clear@{process\_clear}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{process\_clear()}{process\_clear()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::process\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}}}]{\$child }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} & {\em \$child} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_aa1c835eafca03086d16ad2737edcca09}\label{class_dompdf_1_1_frame_reflower_1_1_block_aa1c835eafca03086d16ad2737edcca09}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!process\_float@{process\_float}}
+\index{process\_float@{process\_float}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{process\_float()}{process\_float()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::process\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}}}]{\$child,  }\item[{}]{\$cb\+\_\+x,  }\item[{}]{\$cb\+\_\+w }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} & {\em \$child} & \\
+\hline
+float & {\em \$cb\+\_\+x} & \\
+\hline
+float & {\em \$cb\+\_\+w} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_aa02837a3109611224791a734ca80daf3}\label{class_dompdf_1_1_frame_reflower_1_1_block_aa02837a3109611224791a734ca80daf3}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!reflow@{reflow}}
+\index{reflow@{reflow}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{reflow()}{reflow()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::reflow (\begin{DoxyParamCaption}\item[{Block\+Frame\+Decorator}]{\$block = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+Block\+Frame\+Decorator & {\em \$block} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed$\vert$void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_block_a5b0d4950d749dfe887ab217e7f10edae}\label{class_dompdf_1_1_frame_reflower_1_1_block_a5b0d4950d749dfe887ab217e7f10edae}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}!vertical\_align@{vertical\_align}}
+\index{vertical\_align@{vertical\_align}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Block@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Block}}
+\doxysubsubsection{\texorpdfstring{vertical\_align()}{vertical\_align()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Block\+::vertical\+\_\+align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Align inline children vertically. Aligns each child vertically after each line is reflowed 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/src/\+Frame\+Reflower/Block.\+php\end{DoxyCompactItemize}

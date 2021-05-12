@@ -1,0 +1,209 @@
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md66}{}\doxysection{8.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md66}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md67}{}\doxysubsection{8.\+0.\+0 (2016-\/06-\/30)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md67}
+
+\begin{DoxyItemize}
+\item Store source CSS line numbers in tokens and parsing exceptions.
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md68}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md68}
+
+\begin{DoxyItemize}
+\item Unrecoverable parser errors throw an exception of type {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Parsing\textbackslash{}Source\+Exception} instead of {\ttfamily \textbackslash{}Exception}.
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md69}{}\doxysubsection{8.\+1.\+0 (2016-\/07-\/19)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md69}
+
+\begin{DoxyItemize}
+\item Comments are no longer silently ignored but stored with the object with which they appear (no render support, though). Thanks to @\+FMCorz.
+\item The IE hacks using {\ttfamily \textbackslash{}0} and {\ttfamily \textbackslash{}9} can now be parsed (and rendered) in lenient mode. Thanks (again) to @\+FMCorz.
+\item Media queries with or without spaces before the query are parsed. Still no {\itshape real} parsing support, though. Sorry…
+\item PHPUnit is now listed as a dev-\/dependency in composer.\+json.
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md70}{}\doxysubsection{8.\+2.\+0 (2018-\/07-\/13)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md70}
+
+\begin{DoxyItemize}
+\item Support parsing {\ttfamily calc()}, thanks to @raxbg.
+\item Support parsing grid-\/lines, again thanks to @raxbg.
+\item Support parsing legacy IE filters ({\ttfamily progid\+:}) in lenient mode, thanks to @\+FMCorz
+\item Performance improvements parsing large files, again thanks to @\+FMCorz
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md71}{}\doxysubsection{8.\+3.\+0 (2019-\/02-\/22)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md71}
+
+\begin{DoxyItemize}
+\item Refactor parsing logic to mostly reside in the class files whose data structure is to be parsed (this should eventually allow us to unit-\/test specific parts of the parsing logic individually).
+\item Fix error in parsing {\ttfamily calc} expessions when the first operand is a negative number, thanks to @raxbg.
+\item Support parsing CSS4 colors in hex notation with alpha values, thanks to @raxbg.
+\item Swallow more errors in lenient mode, thanks to @raxbg.
+\item Allow specifying arbitrary strings to output before and after declaration blocks, thanks to @westonruter.
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md72}{}\doxysection{7.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md72}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md73}{}\doxysubsection{7.\+0.\+0 (2015-\/08-\/24)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md73}
+
+\begin{DoxyItemize}
+\item Compatibility with PHP 7. Well timed, eh?
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md74}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md74}
+
+\begin{DoxyItemize}
+\item The {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Value\textbackslash{}String} class has been renamed to {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Value\textbackslash{}CSSString}.
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md75}{}\doxysubsection{7.\+0.\+1 (2015-\/12-\/25)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md75}
+
+\begin{DoxyItemize}
+\item No more suppressed {\ttfamily E\+\_\+\+NOTICE}
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md76}{}\doxysubsection{7.\+0.\+2 (2016-\/02-\/11)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md76}
+
+\begin{DoxyItemize}
+\item 150 time performance boost thanks to $<$a href=\char`\"{}https\+://github.\+com/ossinkine\char`\"{}$>$ossinkine
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md77}{}\doxysubsection{7.\+0.\+3 (2016-\/04-\/27)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md77}
+
+\begin{DoxyItemize}
+\item Fixed parsing empty CSS when multibyte is off
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md78}{}\doxysection{6.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md78}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md79}{}\doxysubsection{6.\+0.\+0 (2014-\/07-\/03)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md79}
+
+\begin{DoxyItemize}
+\item Format output using Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Output\+Format
+\item {\itshape No backwards-\/incompatible changes}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md80}{}\doxysubsubsection{Deprecations}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md80}
+
+\begin{DoxyItemize}
+\item The parse() method replaces \+\_\+\+\_\+to\+String with an optional argument (instance of the Output\+Format class)
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md81}{}\doxysubsection{6.\+0.\+1 (2015-\/08-\/24)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md81}
+
+\begin{DoxyItemize}
+\item Remove some declarations in interfaces incompatible with PHP 5.\+3 ($<$ 5.\+3.\+9)
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md82}{}\doxysection{5.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md82}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md83}{}\doxysubsection{5.\+0.\+0 (2013-\/03-\/20)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md83}
+
+\begin{DoxyItemize}
+\item Correctly parse all known CSS 3 units (including Hz and k\+Hz).
+\item Output RGB colors in short (\#aaa or \#ababab) notation
+\item Be case-\/insensitive when parsing identifiers.
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md84}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md84}
+
+\begin{DoxyItemize}
+\item {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Value\textbackslash{}Color}’s {\ttfamily \+\_\+\+\_\+to\+String} method overrides {\ttfamily CSSList}’s to maybe return something other than {\ttfamily type(value, …)} (see above).
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md85}{}\doxysubsection{5.\+0.\+1 (2013-\/03-\/20)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md85}
+
+\begin{DoxyItemize}
+\item Internal cleanup
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md86}{}\doxysubsection{5.\+0.\+2 (2013-\/03-\/21)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md86}
+
+\begin{DoxyItemize}
+\item CHANGELOG.\+md file added to distribution
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md87}{}\doxysubsection{5.\+0.\+3 (2013-\/03-\/21)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md87}
+
+\begin{DoxyItemize}
+\item More size units recognized
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md88}{}\doxysubsection{5.\+0.\+4 (2013-\/03-\/21)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md88}
+
+\begin{DoxyItemize}
+\item Don’t output floats with locale-\/aware separator chars
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md89}{}\doxysubsection{5.\+0.\+5 (2013-\/04-\/17)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md89}
+
+\begin{DoxyItemize}
+\item Initial support for lenient parsing (setting this parser option will catch some exceptions internally and recover the parser’s state as neatly as possible).
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md90}{}\doxysubsection{5.\+0.\+6 (2013-\/05-\/31)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md90}
+
+\begin{DoxyItemize}
+\item Fix broken unit test
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md91}{}\doxysubsection{5.\+0.\+7 (2013-\/08-\/04)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md91}
+
+\begin{DoxyItemize}
+\item Fix broken decimal point output optimization
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md92}{}\doxysubsection{5.\+0.\+8 (2013-\/08-\/15)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md92}
+
+\begin{DoxyItemize}
+\item Make default settings’ multibyte parsing option dependent on whether or not the mbstring extension is actually installed.
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md93}{}\doxysubsection{5.\+1.\+0 (2013-\/10-\/24)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md93}
+
+\begin{DoxyItemize}
+\item Performance enhancements by Michael M Slusarz
+\item More rescue entry points for lenient parsing (unexpected tokens between declaration blocks and unclosed comments)
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md94}{}\doxysubsection{5.\+1.\+1 (2013-\/10-\/28)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md94}
+
+\begin{DoxyItemize}
+\item Updated CHANGELOG.\+md to reflect changes since 5.\+0.\+4
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md95}{}\doxysubsection{5.\+1.\+2 (2013-\/10-\/30)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md95}
+
+\begin{DoxyItemize}
+\item Remove the use of consume\+Until in comment parsing. This makes it possible to parse comments such as {\ttfamily /$\ast$$\ast$ Perfectly valid $\ast$$\ast$/}
+\item Add fr relative size unit
+\item Fix some issues with HHVM
+\item {\itshape No backwards-\/incompatible changes}
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md96}{}\doxysubsection{5.\+2.\+0 (2014-\/06-\/30)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md96}
+
+\begin{DoxyItemize}
+\item Support removing a selector from a declaration block using {\ttfamily \$o\+Block-\/$>$remove\+Selector(\$m\+Selector)}
+\item Introduce a specialized exception (Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Parsing\textbackslash{}\+Ouput\+Exception) for exceptions during output rendering
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md97}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md97}
+
+\begin{DoxyItemize}
+\item Outputting a declaration block that has no selectors throws an Ouput\+Exception instead of outputting an invalid {\ttfamily \{…\}} into the CSS document.
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md98}{}\doxysection{4.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md98}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md99}{}\doxysubsection{4.\+0.\+0 (2013-\/03-\/19)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md99}
+
+\begin{DoxyItemize}
+\item Support for more -\/rules
+\item Generic interface {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Property\textbackslash{}At\+Rule}, implemented by all -\/rule classes
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md100}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md100}
+
+\begin{DoxyItemize}
+\item {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set\textbackslash{}At\+Rule} renamed to {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set\textbackslash{}At\+Rule\+Set}
+\item {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}CSSList\textbackslash{}Media\+Query} renamed to {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set\textbackslash{}CSSList\textbackslash{}At\+Rule\+Block\+List} with differing semantics and API (which also works for other block-\/list-\/based -\/rules like {\ttfamily @supports}).
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md101}{}\doxysection{3.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md101}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md102}{}\doxysubsection{3.\+0.\+0 (2013-\/03-\/06)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md102}
+
+\begin{DoxyItemize}
+\item Support for lenient parsing (on by default)
+\item {\itshape No deprecations}
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md103}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md103}
+
+\begin{DoxyItemize}
+\item All properties (like whether or not to use {\ttfamily mb\+\_\+}-\/functions, which default charset to use and – new – whether or not to be forgiving when parsing) are now encapsulated in an instance of {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Settings} which can be passed as the second argument to {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Parser-\/$>$\+\_\+\+\_\+construct()}.
+\item Specifying a charset as the second argument to {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Parser-\/$>$\+\_\+\+\_\+construct()} is no longer supported. Use `Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Settings\+::create()-\/$>$with\+Default\+Charset(\textquotesingle{}some-\/charset'){\ttfamily instead.}
+\item {\ttfamily Setting}Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Parser-\/$>$b\+Use\+Mb\+Functions{\ttfamily has no effect. Use}Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Settings\+::create()-\/$>$with\+Multibyte\+Support(true/false){\ttfamily instead. $\ast$}Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Parser-\/$>$parse(){\ttfamily may throw a}Sabberworm\textbackslash{}\+CSS\textbackslash{}\+Parsing\textbackslash{}\+Unexpected\+Token\+Exception\`{} when in strict parsing mode.
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md104}{}\doxysection{2.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md104}
+\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md105}{}\doxysubsection{2.\+0.\+0 (2013-\/01-\/29)}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md105}
+
+\begin{DoxyItemize}
+\item Allow multiple rules of the same type per rule set
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md106}{}\doxysubsubsection{Backwards-\/incompatible changes}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md106}
+
+\begin{DoxyItemize}
+\item {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set-\/$>$get\+Rules()} returns an index-\/based array instead of an associative array. Use {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set-\/$>$get\+Rules\+Assoc()} (which eliminates duplicate rules and lets the later rule of the same name win).
+\item {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set-\/$>$remove\+Rule()} works as it did before except when passed an instance of {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\textbackslash{}Rule}, in which case it would only remove the exact rule given instead of all the rules of the same type. To get the old behaviour, use {\ttfamily Sabberworm\textbackslash{}CSS\textbackslash{}Rule\+Set-\/$>$remove\+Rule(\$o\+Rule-\/$>$get\+Rule()};
+\end{DoxyItemize}\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md107}{}\doxysection{1.\+0}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md107}
+Initial release of a stable public API.\hypertarget{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md108}{}\doxysection{0.\+9}\label{md_vendor_sabberworm_php_css_parser__c_h_a_n_g_e_l_o_g_autotoc_md108}
+Last version not to use PSR-\/0 project organization semantics. 

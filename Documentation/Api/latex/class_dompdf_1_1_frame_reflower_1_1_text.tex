@@ -1,0 +1,202 @@
+\hypertarget{class_dompdf_1_1_frame_reflower_1_1_text}{}\doxysection{Dompdf\textbackslash{}Frame\+Reflower\textbackslash{}Text Class Reference}
+\label{class_dompdf_1_1_frame_reflower_1_1_text}\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+Inheritance diagram for Dompdf\textbackslash{}Frame\+Reflower\textbackslash{}Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dompdf_1_1_frame_reflower_1_1_text}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a50d35aa673b907d639f526cb2cb98f08}{\+\_\+\+\_\+construct}} (Text\+Frame\+Decorator \$frame, \mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}} \$font\+Metrics)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_aa428021121b06159b461541bbea2b8a4}{reflow}} (Block\+Frame\+Decorator \$block=null)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a546ccbdb1dda15f6a1665c22499a3e35}{get\+\_\+min\+\_\+max\+\_\+width}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a92bf295c245790b7db0175336a1b6513}{set\+Font\+Metrics}} (\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}} \$font\+Metrics)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a5302fedf2a67f36bfcf44b3c299baaf6}{get\+Font\+Metrics}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a80e180a5ebe99045cd52a637f5e4d7ff}{calculate\+\_\+auto\+\_\+width}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_adec86e5a6d087a597c16505d91d41b83}{SOFT\+\_\+\+HYPHEN}} = \char`\"{}\textbackslash{}x\+C2\textbackslash{}x\+AD\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a78d7831d86b9553282ca95b9f73610b9}\label{class_dompdf_1_1_frame_reflower_1_1_text_a78d7831d86b9553282ca95b9f73610b9}} 
+static {\bfseries \$\+\_\+whitespace\+\_\+pattern} = \textquotesingle{}/(\mbox{[}$^\wedge$\textbackslash{}S\textbackslash{}x\+A0\mbox{]}+)/u\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_ab0708561df6e9c7b4046a2f9ff3c10c6}\label{class_dompdf_1_1_frame_reflower_1_1_text_ab0708561df6e9c7b4046a2f9ff3c10c6}} 
+static {\bfseries \$\+\_\+wordbreak\+\_\+pattern} = \textquotesingle{}/(\mbox{[}$^\wedge$\textbackslash{}S\textbackslash{}x\+A0\mbox{]}+$\vert$\textbackslash{}-\/+$\vert$\textbackslash{}x\+AD+)/u\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a7305635fca2f36cf4589e015ca52a650}{\+\_\+collapse\+\_\+white\+\_\+space}} (\$text)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_ad3e68a136ae6df5170ee7d8ef058979a}{\+\_\+line\+\_\+break}} (\$text)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_ad106369a38735614bf9be2ae6b442676}{\+\_\+newline\+\_\+break}} (\$text)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_text_a4d6e78a24f7408a55352c3ed03cbc84d}{\+\_\+layout\+\_\+line}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a68baac058f3aaa302e19f61a5aa96713}\label{class_dompdf_1_1_frame_reflower_1_1_text_a68baac058f3aaa302e19f61a5aa96713}} 
+{\bfseries \$\+\_\+block\+\_\+parent}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a59056e10a37af93429eef12a268fcd92}\label{class_dompdf_1_1_frame_reflower_1_1_text_a59056e10a37af93429eef12a268fcd92}} 
+{\bfseries \$\+\_\+frame}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a50d35aa673b907d639f526cb2cb98f08}\label{class_dompdf_1_1_frame_reflower_1_1_text_a50d35aa673b907d639f526cb2cb98f08}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{Text\+Frame\+Decorator}]{\$frame,  }\item[{\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}}}]{\$font\+Metrics }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+Text\+Frame\+Decorator & {\em \$frame} & \\
+\hline
+\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}} & {\em \$font\+Metrics} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a7305635fca2f36cf4589e015ca52a650}\label{class_dompdf_1_1_frame_reflower_1_1_text_a7305635fca2f36cf4589e015ca52a650}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!\_collapse\_white\_space@{\_collapse\_white\_space}}
+\index{\_collapse\_white\_space@{\_collapse\_white\_space}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{\_collapse\_white\_space()}{\_collapse\_white\_space()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+\_\+collapse\+\_\+white\+\_\+space (\begin{DoxyParamCaption}\item[{}]{\$text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a4d6e78a24f7408a55352c3ed03cbc84d}\label{class_dompdf_1_1_frame_reflower_1_1_text_a4d6e78a24f7408a55352c3ed03cbc84d}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!\_layout\_line@{\_layout\_line}}
+\index{\_layout\_line@{\_layout\_line}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{\_layout\_line()}{\_layout\_line()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+\_\+layout\+\_\+line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+@noinspection Php\+Missing\+Break\+Statement\+Inspection\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_ad3e68a136ae6df5170ee7d8ef058979a}\label{class_dompdf_1_1_frame_reflower_1_1_text_ad3e68a136ae6df5170ee7d8ef058979a}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!\_line\_break@{\_line\_break}}
+\index{\_line\_break@{\_line\_break}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{\_line\_break()}{\_line\_break()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+\_\+line\+\_\+break (\begin{DoxyParamCaption}\item[{}]{\$text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$\vert$int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_ad106369a38735614bf9be2ae6b442676}\label{class_dompdf_1_1_frame_reflower_1_1_text_ad106369a38735614bf9be2ae6b442676}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!\_newline\_break@{\_newline\_break}}
+\index{\_newline\_break@{\_newline\_break}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{\_newline\_break()}{\_newline\_break()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+\_\+newline\+\_\+break (\begin{DoxyParamCaption}\item[{}]{\$text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$\vert$int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a80e180a5ebe99045cd52a637f5e4d7ff}\label{class_dompdf_1_1_frame_reflower_1_1_text_a80e180a5ebe99045cd52a637f5e4d7ff}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!calculate\_auto\_width@{calculate\_auto\_width}}
+\index{calculate\_auto\_width@{calculate\_auto\_width}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{calculate\_auto\_width()}{calculate\_auto\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::calculate\+\_\+auto\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Determine current frame width based on contents
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_abstract_frame_reflower_a54f1a89c689ea17fcbc7bbf51b0ed27c}{Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Abstract\+Frame\+Reflower}}.
+
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a546ccbdb1dda15f6a1665c22499a3e35}\label{class_dompdf_1_1_frame_reflower_1_1_text_a546ccbdb1dda15f6a1665c22499a3e35}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!get\_min\_max\_width@{get\_min\_max\_width}}
+\index{get\_min\_max\_width@{get\_min\_max\_width}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{get\_min\_max\_width()}{get\_min\_max\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::get\+\_\+min\+\_\+max\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Required for table layout\+: Returns an array(0 =$>$ min, 1 =$>$ max, \char`\"{}min\char`\"{} =$>$ min, \char`\"{}max\char`\"{} =$>$ max) of the minimum and maximum widths of this frame. This provides a basic implementation. Child classes should override this if necessary.
+
+\begin{DoxyReturn}{Returns}
+array$\vert$null 
+\end{DoxyReturn}
+@noinspection Php\+Missing\+Break\+Statement\+Inspection
+
+Reimplemented from \mbox{\hyperlink{class_dompdf_1_1_frame_reflower_1_1_abstract_frame_reflower_ab6ef26ff0bd26ab1759b74e0c8906e26}{Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Abstract\+Frame\+Reflower}}.
+
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a5302fedf2a67f36bfcf44b3c299baaf6}\label{class_dompdf_1_1_frame_reflower_1_1_text_a5302fedf2a67f36bfcf44b3c299baaf6}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!getFontMetrics@{getFontMetrics}}
+\index{getFontMetrics@{getFontMetrics}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{getFontMetrics()}{getFontMetrics()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::get\+Font\+Metrics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_aa428021121b06159b461541bbea2b8a4}\label{class_dompdf_1_1_frame_reflower_1_1_text_aa428021121b06159b461541bbea2b8a4}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!reflow@{reflow}}
+\index{reflow@{reflow}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{reflow()}{reflow()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::reflow (\begin{DoxyParamCaption}\item[{Block\+Frame\+Decorator}]{\$block = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+Block\+Frame\+Decorator | null & {\em \$block} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_a92bf295c245790b7db0175336a1b6513}\label{class_dompdf_1_1_frame_reflower_1_1_text_a92bf295c245790b7db0175336a1b6513}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!setFontMetrics@{setFontMetrics}}
+\index{setFontMetrics@{setFontMetrics}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{setFontMetrics()}{setFontMetrics()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::set\+Font\+Metrics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}}}]{\$font\+Metrics }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\hyperlink{class_dompdf_1_1_font_metrics}{Font\+Metrics}} & {\em \$font\+Metrics} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dompdf_1_1_frame_reflower_1_1_text_adec86e5a6d087a597c16505d91d41b83}\label{class_dompdf_1_1_frame_reflower_1_1_text_adec86e5a6d087a597c16505d91d41b83}} 
+\index{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}!SOFT\_HYPHEN@{SOFT\_HYPHEN}}
+\index{SOFT\_HYPHEN@{SOFT\_HYPHEN}!Dompdf\textbackslash{}FrameReflower\textbackslash{}Text@{Dompdf\textbackslash{}FrameReflower\textbackslash{}Text}}
+\doxysubsubsection{\texorpdfstring{SOFT\_HYPHEN}{SOFT\_HYPHEN}}
+{\footnotesize\ttfamily const Dompdf\textbackslash{}\+Frame\+Reflower\textbackslash{}\+Text\+::\+SOFT\+\_\+\+HYPHEN = \char`\"{}\textbackslash{}x\+C2\textbackslash{}x\+AD\char`\"{}}
+
+PHP string represantation of HTML entity $<$shy$>$ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/src/\+Frame\+Reflower/Text.\+php\end{DoxyCompactItemize}

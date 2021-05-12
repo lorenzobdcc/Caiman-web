@@ -1,0 +1,286 @@
+\hypertarget{class_h_t_m_l5___tree_builder}{}\doxysection{HTML5\+\_\+\+Tree\+Builder Class Reference}
+\label{class_h_t_m_l5___tree_builder}\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a78cbe9f562bc01c3a10513a6db73f54d}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a0aa9ce4387af074106c9412d52532dcd}\label{class_h_t_m_l5___tree_builder_a0aa9ce4387af074106c9412d52532dcd}} 
+{\bfseries get\+Quirks\+Mode} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a21881d360e259235bbf4f1b6946b55ab}{emit\+Token}} (\$token, \$mode=null)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a7217444f6badbf82a10ca179fb94d310}{foster\+Parent}} (\$node)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a44957b35543d27c1c111f005f49b7f73}{current\+Table\+Is\+Tainted}} ()
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a46b3e1efef967d9835b37b62d7740d0b}{setup\+Context}} (\$context=null)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a60b58b0d7b504636ac86f5c599fa35c2}{adjust\+Math\+MLAttributes}} (\$token)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a425c51994f52df62ccd3d1df3ccdde9d}{adjust\+SVGAttributes}} (\$token)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a05c8623a0192b866beee164d5c901943}{adjust\+Foreign\+Attributes}} (\$token)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_a5bab99b22596c96c7d9dcbec705ff6cc}{insert\+Foreign\+Element}} (\$token, \$namespace\+URI)
+\item 
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder_aef76a439c79659903e8a78176d5a972c}{save}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a527209215a4c1cc607b01f4fd6dc41ec}\label{class_h_t_m_l5___tree_builder_a527209215a4c1cc607b01f4fd6dc41ec}} 
+{\bfseries \$stack} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_aa4c9b1e248813ebc2501226b3ef69092}\label{class_h_t_m_l5___tree_builder_aa4c9b1e248813ebc2501226b3ef69092}} 
+{\bfseries \$content\+\_\+model}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_af15c8fc91c159362f8419876633e1ed6}\label{class_h_t_m_l5___tree_builder_af15c8fc91c159362f8419876633e1ed6}} 
+const {\bfseries INITIAL} = 0
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_af43344e757a7f96339f59002911e74bb}\label{class_h_t_m_l5___tree_builder_af43344e757a7f96339f59002911e74bb}} 
+const {\bfseries BEFORE\+\_\+\+HTML} = 1
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ac80ecc42b5d13b6656240caf906f5cfc}\label{class_h_t_m_l5___tree_builder_ac80ecc42b5d13b6656240caf906f5cfc}} 
+const {\bfseries BEFORE\+\_\+\+HEAD} = 2
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ad058f0c17d28074cd497820529f18e18}\label{class_h_t_m_l5___tree_builder_ad058f0c17d28074cd497820529f18e18}} 
+const {\bfseries IN\+\_\+\+HEAD} = 3
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a1a9002aed437fde3eb5f4fc6ce3788e8}\label{class_h_t_m_l5___tree_builder_a1a9002aed437fde3eb5f4fc6ce3788e8}} 
+const {\bfseries IN\+\_\+\+HEAD\+\_\+\+NOSCRIPT} = 4
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a26f33eb439ac3fa1c2625889466a9ca0}\label{class_h_t_m_l5___tree_builder_a26f33eb439ac3fa1c2625889466a9ca0}} 
+const {\bfseries AFTER\+\_\+\+HEAD} = 5
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a010d7e75103decaa656b2c38ca9c313c}\label{class_h_t_m_l5___tree_builder_a010d7e75103decaa656b2c38ca9c313c}} 
+const {\bfseries IN\+\_\+\+BODY} = 6
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a687e3b2648eb693ebfef1332531aa689}\label{class_h_t_m_l5___tree_builder_a687e3b2648eb693ebfef1332531aa689}} 
+const {\bfseries IN\+\_\+\+CDATA\+\_\+\+RCDATA} = 7
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_abbde8aa71102a1a3460d2e43fe756f83}\label{class_h_t_m_l5___tree_builder_abbde8aa71102a1a3460d2e43fe756f83}} 
+const {\bfseries IN\+\_\+\+TABLE} = 8
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a821ae48f85f2809bdf4bd8519a8f3383}\label{class_h_t_m_l5___tree_builder_a821ae48f85f2809bdf4bd8519a8f3383}} 
+const {\bfseries IN\+\_\+\+TABLE\+\_\+\+TEXT} = 9
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a2af13c674ab92d7c6f5df4c1baca1b3a}\label{class_h_t_m_l5___tree_builder_a2af13c674ab92d7c6f5df4c1baca1b3a}} 
+const {\bfseries IN\+\_\+\+CAPTION} = 10
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ad54fa5fd6897b26db38c1b299ee0f99b}\label{class_h_t_m_l5___tree_builder_ad54fa5fd6897b26db38c1b299ee0f99b}} 
+const {\bfseries IN\+\_\+\+COLUMN\+\_\+\+GROUP} = 11
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ae9ce6e199773c414055a173884668278}\label{class_h_t_m_l5___tree_builder_ae9ce6e199773c414055a173884668278}} 
+const {\bfseries IN\+\_\+\+TABLE\+\_\+\+BODY} = 12
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a7c8a9b0adea0dbd0bbbd7c6aaa94bd9e}\label{class_h_t_m_l5___tree_builder_a7c8a9b0adea0dbd0bbbd7c6aaa94bd9e}} 
+const {\bfseries IN\+\_\+\+ROW} = 13
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ac3f07644354839a5203c91506906dbbc}\label{class_h_t_m_l5___tree_builder_ac3f07644354839a5203c91506906dbbc}} 
+const {\bfseries IN\+\_\+\+CELL} = 14
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ae1df2fe64fd5fa2092bd6b6121d1bdf6}\label{class_h_t_m_l5___tree_builder_ae1df2fe64fd5fa2092bd6b6121d1bdf6}} 
+const {\bfseries IN\+\_\+\+SELECT} = 15
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a65e171da3de1505ec12a2b7548fa5b41}\label{class_h_t_m_l5___tree_builder_a65e171da3de1505ec12a2b7548fa5b41}} 
+const {\bfseries IN\+\_\+\+SELECT\+\_\+\+IN\+\_\+\+TABLE} = 16
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ab30f4f07c91017bbc88cfd59f3cdd6c6}\label{class_h_t_m_l5___tree_builder_ab30f4f07c91017bbc88cfd59f3cdd6c6}} 
+const {\bfseries IN\+\_\+\+FOREIGN\+\_\+\+CONTENT} = 17
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a1850c0646d267ec6aee2042593f35f5b}\label{class_h_t_m_l5___tree_builder_a1850c0646d267ec6aee2042593f35f5b}} 
+const {\bfseries AFTER\+\_\+\+BODY} = 18
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a737dce85b278e22e9e1943419d088988}\label{class_h_t_m_l5___tree_builder_a737dce85b278e22e9e1943419d088988}} 
+const {\bfseries IN\+\_\+\+FRAMESET} = 19
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a4e55bf9e5529f79e3b6de0b2db83a5b0}\label{class_h_t_m_l5___tree_builder_a4e55bf9e5529f79e3b6de0b2db83a5b0}} 
+const {\bfseries AFTER\+\_\+\+FRAMESET} = 20
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ad3e48e0581d74f8df033baec2f2aac42}\label{class_h_t_m_l5___tree_builder_ad3e48e0581d74f8df033baec2f2aac42}} 
+const {\bfseries AFTER\+\_\+\+AFTER\+\_\+\+BODY} = 21
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ab922d97630eca193ee479c1558d73db8}\label{class_h_t_m_l5___tree_builder_ab922d97630eca193ee479c1558d73db8}} 
+const {\bfseries AFTER\+\_\+\+AFTER\+\_\+\+FRAMESET} = 22
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a49af286e7fe51f6482b263b49edea773}\label{class_h_t_m_l5___tree_builder_a49af286e7fe51f6482b263b49edea773}} 
+const {\bfseries SPECIAL} = 100
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a1b800dcd2f2063bb9af43a6ed73aa605}\label{class_h_t_m_l5___tree_builder_a1b800dcd2f2063bb9af43a6ed73aa605}} 
+const {\bfseries SCOPING} = 101
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ad6a286a2784aaa0fd0a61d2c325e7805}\label{class_h_t_m_l5___tree_builder_ad6a286a2784aaa0fd0a61d2c325e7805}} 
+const {\bfseries FORMATTING} = 102
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a340d0ec4f71b6b0f137d97d55cd5b9db}\label{class_h_t_m_l5___tree_builder_a340d0ec4f71b6b0f137d97d55cd5b9db}} 
+const {\bfseries PHRASING} = 103
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a6a7b1b67429ed6c71c46b33aeb5e88f3}\label{class_h_t_m_l5___tree_builder_a6a7b1b67429ed6c71c46b33aeb5e88f3}} 
+const {\bfseries NO\+\_\+\+QUIRKS} = 200
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_afc5313ad73023fdc4379a4522cb4ca0e}\label{class_h_t_m_l5___tree_builder_afc5313ad73023fdc4379a4522cb4ca0e}} 
+const {\bfseries QUIRKS\+\_\+\+MODE} = 201
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ab3b1d5c8df18b9c390cfd645b283614d}\label{class_h_t_m_l5___tree_builder_ab3b1d5c8df18b9c390cfd645b283614d}} 
+const {\bfseries LIMITED\+\_\+\+QUIRKS\+\_\+\+MODE} = 202
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a9748dab7f6847ec1e940c59dea399a81}\label{class_h_t_m_l5___tree_builder_a9748dab7f6847ec1e940c59dea399a81}} 
+const {\bfseries MARKER} = 300
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_aa24fa23daba8c92d4aa93546ca02dca8}\label{class_h_t_m_l5___tree_builder_aa24fa23daba8c92d4aa93546ca02dca8}} 
+const {\bfseries NS\+\_\+\+HTML} = null
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_ad329a41cf5f2455b2417a181782003af}\label{class_h_t_m_l5___tree_builder_ad329a41cf5f2455b2417a181782003af}} 
+const {\bfseries NS\+\_\+\+MATHML} = \textquotesingle{}http\+://www.\+w3.\+org/1998/Math/Math\+ML\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_af2cbbc17ae9290d51813b19f5453bbc7}\label{class_h_t_m_l5___tree_builder_af2cbbc17ae9290d51813b19f5453bbc7}} 
+const {\bfseries NS\+\_\+\+SVG} = \textquotesingle{}http\+://www.\+w3.\+org/2000/svg\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_acdfb1e1dca60ef712e6ce2ced68cb0cf}\label{class_h_t_m_l5___tree_builder_acdfb1e1dca60ef712e6ce2ced68cb0cf}} 
+const {\bfseries NS\+\_\+\+XLINK} = \textquotesingle{}http\+://www.\+w3.\+org/1999/xlink\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a88bbf88af75d670898ee7abc2b2343e1}\label{class_h_t_m_l5___tree_builder_a88bbf88af75d670898ee7abc2b2343e1}} 
+const {\bfseries NS\+\_\+\+XML} = \textquotesingle{}http\+://www.\+w3.\+org/XML/1998/namespace\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a6cffc584f0d15270369d52535b96b990}\label{class_h_t_m_l5___tree_builder_a6cffc584f0d15270369d52535b96b990}} 
+const {\bfseries NS\+\_\+\+XMLNS} = \textquotesingle{}http\+://www.\+w3.\+org/2000/xmlns/\textquotesingle{}
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_aa0faceced7ad1baf062ba77c43ca1017}\label{class_h_t_m_l5___tree_builder_aa0faceced7ad1baf062ba77c43ca1017}} 
+const {\bfseries SCOPE} = 0
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a1b0978356058fa1034d7070e052b5d89}\label{class_h_t_m_l5___tree_builder_a1b0978356058fa1034d7070e052b5d89}} 
+const {\bfseries SCOPE\+\_\+\+LISTITEM} = 1
+\item 
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a49bcc9ca41ae8a08e934b08d713e49be}\label{class_h_t_m_l5___tree_builder_a49bcc9ca41ae8a08e934b08d713e49be}} 
+const {\bfseries SCOPE\+\_\+\+TABLE} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a78cbe9f562bc01c3a10513a6db73f54d}\label{class_h_t_m_l5___tree_builder_a78cbe9f562bc01c3a10513a6db73f54d}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_h_t_m_l5___tree_builder}{HTML5\+\_\+\+Tree\+Builder}} constructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a05c8623a0192b866beee164d5c901943}\label{class_h_t_m_l5___tree_builder_a05c8623a0192b866beee164d5c901943}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!adjustForeignAttributes@{adjustForeignAttributes}}
+\index{adjustForeignAttributes@{adjustForeignAttributes}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{adjustForeignAttributes()}{adjustForeignAttributes()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::adjust\+Foreign\+Attributes (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a60b58b0d7b504636ac86f5c599fa35c2}\label{class_h_t_m_l5___tree_builder_a60b58b0d7b504636ac86f5c599fa35c2}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!adjustMathMLAttributes@{adjustMathMLAttributes}}
+\index{adjustMathMLAttributes@{adjustMathMLAttributes}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{adjustMathMLAttributes()}{adjustMathMLAttributes()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::adjust\+Math\+MLAttributes (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a425c51994f52df62ccd3d1df3ccdde9d}\label{class_h_t_m_l5___tree_builder_a425c51994f52df62ccd3d1df3ccdde9d}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!adjustSVGAttributes@{adjustSVGAttributes}}
+\index{adjustSVGAttributes@{adjustSVGAttributes}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{adjustSVGAttributes()}{adjustSVGAttributes()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::adjust\+SVGAttributes (\begin{DoxyParamCaption}\item[{}]{\$token }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a44957b35543d27c1c111f005f49b7f73}\label{class_h_t_m_l5___tree_builder_a44957b35543d27c1c111f005f49b7f73}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!currentTableIsTainted@{currentTableIsTainted}}
+\index{currentTableIsTainted@{currentTableIsTainted}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{currentTableIsTainted()}{currentTableIsTainted()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::current\+Table\+Is\+Tainted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a21881d360e259235bbf4f1b6946b55ab}\label{class_h_t_m_l5___tree_builder_a21881d360e259235bbf4f1b6946b55ab}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!emitToken@{emitToken}}
+\index{emitToken@{emitToken}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{emitToken()}{emitToken()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::emit\+Token (\begin{DoxyParamCaption}\item[{}]{\$token,  }\item[{}]{\$mode = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Process tag tokens
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \$token} & \\
+\hline
+null & {\em \$mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a7217444f6badbf82a10ca179fb94d310}\label{class_h_t_m_l5___tree_builder_a7217444f6badbf82a10ca179fb94d310}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!fosterParent@{fosterParent}}
+\index{fosterParent@{fosterParent}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{fosterParent()}{fosterParent()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::foster\+Parent (\begin{DoxyParamCaption}\item[{}]{\$node }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$node} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a5bab99b22596c96c7d9dcbec705ff6cc}\label{class_h_t_m_l5___tree_builder_a5bab99b22596c96c7d9dcbec705ff6cc}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!insertForeignElement@{insertForeignElement}}
+\index{insertForeignElement@{insertForeignElement}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{insertForeignElement()}{insertForeignElement()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::insert\+Foreign\+Element (\begin{DoxyParamCaption}\item[{}]{\$token,  }\item[{}]{\$namespace\+URI }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$token} & \\
+\hline
+{\em \$namespace\+URI} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_aef76a439c79659903e8a78176d5a972c}\label{class_h_t_m_l5___tree_builder_aef76a439c79659903e8a78176d5a972c}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!save@{save}}
+\index{save@{save}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+DOMDocument$\vert$\+DOMNode\+List 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___tree_builder_a46b3e1efef967d9835b37b62d7740d0b}\label{class_h_t_m_l5___tree_builder_a46b3e1efef967d9835b37b62d7740d0b}} 
+\index{HTML5\_TreeBuilder@{HTML5\_TreeBuilder}!setupContext@{setupContext}}
+\index{setupContext@{setupContext}!HTML5\_TreeBuilder@{HTML5\_TreeBuilder}}
+\doxysubsubsection{\texorpdfstring{setupContext()}{setupContext()}}
+{\footnotesize\ttfamily HTML5\+\_\+\+Tree\+Builder\+::setup\+Context (\begin{DoxyParamCaption}\item[{}]{\$context = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Sets up the tree constructor for building a fragment.
+
+
+\begin{DoxyParams}[1]{Parameters}
+null & {\em \$context} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/lib/html5lib/Tree\+Builder.\+php\end{DoxyCompactItemize}

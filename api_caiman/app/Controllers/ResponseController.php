@@ -1,15 +1,12 @@
 <?php
-/**
- * ResponseController.php
- *
- * Controller allowing to return different type of HTTP response.
- *
- * @link https://developer.mozilla.org/fr/docs/Web/HTTP/Status
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
+/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Controller allowing to return different type of HTTP response.
  */
-
 namespace App\Controllers;
-
 
 class ResponseController {
 

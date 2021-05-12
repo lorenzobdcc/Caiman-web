@@ -1,0 +1,83 @@
+\hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user}{}\doxysection{App\textbackslash{}Data\+Access\+Object\textbackslash{}DAOUser Class Reference}
+\label{class_app_1_1_data_access_object_1_1_d_a_o_user}\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}{find\+All}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}{find}} (int \$id)
+\item 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a2a8bbc9aa98be3938111a28957b108b1}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a2a8bbc9aa98be3938111a28957b108b1}} 
+{\bfseries find\+User\+By\+Username} (string \$username)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}{find\+By\+Api\+Token}} (string \$api\+\_\+token)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user}{DAOUser}} object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+PDO & {\em \$db} & The database connection \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!find@{find}}
+\index{find@{find}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a user from the database in a user model object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The user identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User A User model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!findAll@{findAll}}
+\index{findAll@{findAll}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method to return all users with the selected role from the database in an array of user objects.
+
+\begin{DoxyReturn}{Returns}
+User\mbox{[}\mbox{]} A User object array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!findByApiToken@{findByApiToken}}
+\index{findByApiToken@{findByApiToken}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\doxysubsubsection{\texorpdfstring{findByApiToken()}{findByApiToken()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find\+By\+Api\+Token (\begin{DoxyParamCaption}\item[{string}]{\$api\+\_\+token }\end{DoxyParamCaption})}
+
+Method to return a user from the database user from his api token.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$api\+\_\+token} & The user api token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User A User model object containing all the result rows of the query 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/\+Data\+Access\+Object/\mbox{\hyperlink{_d_a_o_user_8php}{DAOUser.\+php}}\end{DoxyCompactItemize}

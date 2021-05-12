@@ -1,0 +1,54 @@
+\hypertarget{class_h_t_m_l5___parser}{}\doxysection{HTML5\+\_\+\+Parser Class Reference}
+\label{class_h_t_m_l5___parser}\index{HTML5\_Parser@{HTML5\_Parser}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_h_t_m_l5___parser_adbc4cc7bedb8faf1b12e0ba68e95558a}{parse}} (\$text, \$builder=null)
+\item 
+static \mbox{\hyperlink{class_h_t_m_l5___parser_a8bfc92c2b164a16df6a260f6c0421d10}{parse\+Fragment}} (\$text, \$context=null, \$builder=null)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Outwards facing interface for HTML5. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_h_t_m_l5___parser_adbc4cc7bedb8faf1b12e0ba68e95558a}\label{class_h_t_m_l5___parser_adbc4cc7bedb8faf1b12e0ba68e95558a}} 
+\index{HTML5\_Parser@{HTML5\_Parser}!parse@{parse}}
+\index{parse@{parse}!HTML5\_Parser@{HTML5\_Parser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily static HTML5\+\_\+\+Parser\+::parse (\begin{DoxyParamCaption}\item[{}]{\$text,  }\item[{}]{\$builder = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parses a full HTML document. 
+\begin{DoxyParams}{Parameters}
+{\em \$text} & $\vert$ HTML text to parse \\
+\hline
+{\em \$builder} & $\vert$ Custom builder implementation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+DOMDocument$\vert$\+DOMNode\+List Parsed HTML as DOMDocument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_h_t_m_l5___parser_a8bfc92c2b164a16df6a260f6c0421d10}\label{class_h_t_m_l5___parser_a8bfc92c2b164a16df6a260f6c0421d10}} 
+\index{HTML5\_Parser@{HTML5\_Parser}!parseFragment@{parseFragment}}
+\index{parseFragment@{parseFragment}!HTML5\_Parser@{HTML5\_Parser}}
+\doxysubsubsection{\texorpdfstring{parseFragment()}{parseFragment()}}
+{\footnotesize\ttfamily static HTML5\+\_\+\+Parser\+::parse\+Fragment (\begin{DoxyParamCaption}\item[{}]{\$text,  }\item[{}]{\$context = {\ttfamily null},  }\item[{}]{\$builder = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parses an HTML fragment. 
+\begin{DoxyParams}{Parameters}
+{\em \$text} & $\vert$ HTML text to parse \\
+\hline
+{\em \$context} & String name of context element to pretend parsing is in. \\
+\hline
+{\em \$builder} & $\vert$ Custom builder implementation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+DOMDocument$\vert$\+DOMNode\+List Parsed HTML as DOMDocument 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/lib/html5lib/Parser.\+php\end{DoxyCompactItemize}

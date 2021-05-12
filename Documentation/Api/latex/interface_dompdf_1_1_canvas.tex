@@ -1,0 +1,924 @@
+\hypertarget{interface_dompdf_1_1_canvas}{}\doxysection{Dompdf\textbackslash{}Canvas Interface Reference}
+\label{interface_dompdf_1_1_canvas}\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+Inheritance diagram for Dompdf\textbackslash{}Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_dompdf_1_1_canvas}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a35b124328a7b90edd9eaea30f8ff4a81}\label{interface_dompdf_1_1_canvas_a35b124328a7b90edd9eaea30f8ff4a81}} 
+{\bfseries \+\_\+\+\_\+construct} (\$paper=\char`\"{}letter\char`\"{}, \$orientation=\char`\"{}portrait\char`\"{}, Dompdf \$dompdf=null)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a0b9d47c5d5660d76a7d03441055a4ff3}{get\+\_\+dompdf}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a6699c7ecd0bd9320e57cc68e399426af}{get\+\_\+page\+\_\+number}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ac18d5d61f77c5f436c6743bbaf083b8a}{get\+\_\+page\+\_\+count}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a502644a527f828db4b34c332aae66c7e}{set\+\_\+page\+\_\+count}} (\$count)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a20189485f4d9c9bf07ded3864bc532d4}{line}} (\$x1, \$y1, \$x2, \$y2, \$color, \$width, \$style=null)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_aedb91b28d3b475ab5d84f3c6c81b5b77}{rectangle}} (\$x1, \$y1, \$w, \$h, \$color, \$width, \$style=null)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a3bbdc1ee04b74007b9dff857cf3d8832}{filled\+\_\+rectangle}} (\$x1, \$y1, \$w, \$h, \$color)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_abf9e875afaf70f0fcc266e090be11e1a}{clipping\+\_\+rectangle}} (\$x1, \$y1, \$w, \$h)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_aecc26c8a1b87987f83081c065e336943}{clipping\+\_\+roundrectangle}} (\$x1, \$y1, \$w, \$h, \$tl, \$tr, \$br, \$bl)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a1053ddc40309cdd8d8534f843ac72ecf}{clipping\+\_\+end}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_aec7f78293a5a1c780b35dcf99e803d1c}{page\+\_\+text}} (\$x, \$y, \$\mbox{\hyperlink{interface_dompdf_1_1_canvas_af6ef2b9e3a40607cda24514f9691519d}{text}}, \$font, \$size, \$color=\mbox{[}0, 0, 0\mbox{]}, \$word\+\_\+space=0.\+0, \$char\+\_\+space=0.\+0, \$angle=0.\+0)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a718afe77a2baec58dc4ee91500920f2f}{save}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_abe2ae0a0c7aa357966f1138593102f60}{restore}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ad44e01b9d0b050a91372e68758990322}{rotate}} (\$angle, \$x, \$y)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a20659c1d206916c6d40755e89df5d2b3}{skew}} (\$angle\+\_\+x, \$angle\+\_\+y, \$x, \$y)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a5480e7eb376f26a10b4444c143e5d8b0}{scale}} (\$s\+\_\+x, \$s\+\_\+y, \$x, \$y)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ad09f83cb97ad129d89bbe00fdf2067ea}{translate}} (\$t\+\_\+x, \$t\+\_\+y)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a6e762f88f56753a2b4970f2bbaa8b6d2}{transform}} (\$a, \$b, \$c, \$d, \$e, \$f)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ac5787df10a6b77d23bf5cfb14da3b4e1}{polygon}} (\$points, \$color, \$width=null, \$style=null, \$fill=false)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a779a805309bdff9c9ce928de115ac1d5}{circle}} (\$x, \$y, \$r, \$color, \$width=null, \$style=null, \$fill=false)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a6c7fab7e30f6d3ec0c9dcdf1ce833c9a}{image}} (\$img\+\_\+url, \$x, \$y, \$w, \$h, \$resolution=\char`\"{}normal\char`\"{})
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_abbe4a6b80ea45256c0ab407ad2605f01}{arc}} (\$x, \$y, \$r1, \$r2, \$astart, \$aend, \$color, \$width, \$style=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_af6ef2b9e3a40607cda24514f9691519d}{text}} (\$x, \$y, \$text, \$font, \$size, \$color=\mbox{[}0, 0, 0\mbox{]}, \$word\+\_\+space=0.\+0, \$char\+\_\+space=0.\+0, \$angle=0.\+0)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a34d321119b13dfce4b9c2ca3dadc865f}{add\+\_\+named\+\_\+dest}} (\$anchorname)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a36194744faf32b23a4e519d4daba2e37}{add\+\_\+link}} (\$url, \$x, \$y, \$width, \$height)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_aab14aebb29fccb569e082aa29fe5772f}{add\+\_\+info}} (\$name, \$value)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_aaba474c70003a253433dce51f6dd3a09}{get\+\_\+text\+\_\+width}} (\$\mbox{\hyperlink{interface_dompdf_1_1_canvas_af6ef2b9e3a40607cda24514f9691519d}{text}}, \$font, \$size, \$word\+\_\+spacing=0.\+0, \$char\+\_\+spacing=0.\+0)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ac5ae74d540910cfd172559c64eb57c38}{get\+\_\+font\+\_\+height}} (\$font, \$size)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a48d18c27311267cec48cf181a67679f7}{get\+\_\+font\+\_\+baseline}} (\$font, \$size)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a0acf2b17ca9fa83725be806136479fc6}{get\+\_\+width}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a076a9d9bd0fe101767b32069c06a4fb2}{get\+\_\+height}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_acb94cb5293ec4e79bf914199596564aa}{set\+\_\+opacity}} (\$opacity, \$mode=\char`\"{}Normal\char`\"{})
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_ab0843407ca8b60ca5937db3c9d0ddc6b}{set\+\_\+default\+\_\+view}} (\$view, \$options=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a2aa03d43db85ec8e78b42753aac7b38e}{javascript}} (\$script)
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a43662a2fe1991e4e4b9de8f99c5d3726}{new\+\_\+page}} ()
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a2122f5f8c56b12e7a9b54c6a97eaf5b3}{stream}} (\$filename, \$options=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{interface_dompdf_1_1_canvas_a45ea4899eda420efa4e711b837f08c5a}{output}} (\$options=\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_aab14aebb29fccb569e082aa29fe5772f}\label{interface_dompdf_1_1_canvas_aab14aebb29fccb569e082aa29fe5772f}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!add\_info@{add\_info}}
+\index{add\_info@{add\_info}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{add\_info()}{add\_info()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::add\+\_\+info (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+Add meta information to the pdf
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & Label of the value (Creator, Producer, etc.) \\
+\hline
+string & {\em \$value} & The text to set \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a8408765034e259bf3e76a439c48d1a01}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a949c944798926d14ea80c980346f5284}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a3d5eb60010979d07b89e4239e45740e5}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a36194744faf32b23a4e519d4daba2e37}\label{interface_dompdf_1_1_canvas_a36194744faf32b23a4e519d4daba2e37}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!add\_link@{add\_link}}
+\index{add\_link@{add\_link}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{add\_link()}{add\_link()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::add\+\_\+link (\begin{DoxyParamCaption}\item[{}]{\$url,  }\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$width,  }\item[{}]{\$height }\end{DoxyParamCaption})}
+
+Add a link to the pdf
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The url to link to \\
+\hline
+float & {\em \$x} & The x position of the link \\
+\hline
+float & {\em \$y} & The y position of the link \\
+\hline
+float & {\em \$width} & The width of the link \\
+\hline
+float & {\em \$height} & The height of the link \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a1dd08d7275694413458988db2e67fcd6}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_aaef250b181b078ee1ee81dc16877c809}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a2c6dac8bfb5cb0dcc09c766f83b5d2ee}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a34d321119b13dfce4b9c2ca3dadc865f}\label{interface_dompdf_1_1_canvas_a34d321119b13dfce4b9c2ca3dadc865f}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!add\_named\_dest@{add\_named\_dest}}
+\index{add\_named\_dest@{add\_named\_dest}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{add\_named\_dest()}{add\_named\_dest()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::add\+\_\+named\+\_\+dest (\begin{DoxyParamCaption}\item[{}]{\$anchorname }\end{DoxyParamCaption})}
+
+Add a named destination (similar to \label{_foo}%
+... in html)
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$anchorname} & The name of the named destination \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_aed7745ee88caf14fef5349c4044d9440}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a570e7393d15ab4298aa53573b504d976}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac527adb611ff7df066f7ec32519fa63d}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_abbe4a6b80ea45256c0ab407ad2605f01}\label{interface_dompdf_1_1_canvas_abbe4a6b80ea45256c0ab407ad2605f01}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!arc@{arc}}
+\index{arc@{arc}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{arc()}{arc()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::arc (\begin{DoxyParamCaption}\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$r1,  }\item[{}]{\$r2,  }\item[{}]{\$astart,  }\item[{}]{\$aend,  }\item[{}]{\$color,  }\item[{}]{\$width,  }\item[{}]{\$style = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Add an arc to the PDF See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x} & X coordinate of the arc \\
+\hline
+float & {\em \$y} & Y coordinate of the arc \\
+\hline
+float & {\em \$r1} & Radius 1 \\
+\hline
+float & {\em \$r2} & Radius 2 \\
+\hline
+float & {\em \$astart} & Start angle in degrees \\
+\hline
+float & {\em \$aend} & End angle in degrees \\
+\hline
+array & {\em \$color} & Color \\
+\hline
+float & {\em \$width} & \\
+\hline
+array & {\em \$style} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a23f6b48dfc65140a9298fef142a6ff08}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_ad7a35fe40844362e7c47f244dc2d1be6}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a8e6b5ebe9eb3ca40245cc4ce5691cbd5}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a779a805309bdff9c9ce928de115ac1d5}\label{interface_dompdf_1_1_canvas_a779a805309bdff9c9ce928de115ac1d5}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!circle@{circle}}
+\index{circle@{circle}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{circle()}{circle()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::circle (\begin{DoxyParamCaption}\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$r,  }\item[{}]{\$color,  }\item[{}]{\$width = {\ttfamily null},  }\item[{}]{\$style = {\ttfamily null},  }\item[{}]{\$fill = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Draws a circle at \$x,\$y with radius \$r
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array. See \mbox{\hyperlink{}{Cpdf\+::set\+Line\+Style()}} for a description of the \$style parameter (aka dash)
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x} & \\
+\hline
+float & {\em \$y} & \\
+\hline
+float & {\em \$r} & \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$width} & \\
+\hline
+array & {\em \$style} & \\
+\hline
+bool & {\em \$fill} & Fills the circle if true \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a07716abc148ec811bc2cc8908eb26176}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a2b1ed863a191c0f0f6086d653eec394a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_afa5b6970ea14693a6aad3948633dd0db}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a1053ddc40309cdd8d8534f843ac72ecf}\label{interface_dompdf_1_1_canvas_a1053ddc40309cdd8d8534f843ac72ecf}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!clipping\_end@{clipping\_end}}
+\index{clipping\_end@{clipping\_end}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{clipping\_end()}{clipping\_end()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::clipping\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ends the last clipping shape 
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_ab2b949bb70fcb15afa80aeea8fc4359e}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_adf3d0231d46c17bc19f6284dc1802a4b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a0b74bd82df0d1fee33d416b938bd49b3}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_abf9e875afaf70f0fcc266e090be11e1a}\label{interface_dompdf_1_1_canvas_abf9e875afaf70f0fcc266e090be11e1a}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!clipping\_rectangle@{clipping\_rectangle}}
+\index{clipping\_rectangle@{clipping\_rectangle}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{clipping\_rectangle()}{clipping\_rectangle()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::clipping\+\_\+rectangle (\begin{DoxyParamCaption}\item[{}]{\$x1,  }\item[{}]{\$y1,  }\item[{}]{\$w,  }\item[{}]{\$h }\end{DoxyParamCaption})}
+
+Starts a clipping rectangle at x1,y1 with width w and height h
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x1} & \\
+\hline
+float & {\em \$y1} & \\
+\hline
+float & {\em \$w} & \\
+\hline
+float & {\em \$h} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a2f7b598600fefe2ec2cfabc6ff1f6f7b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a6a497adb070e51c09d200c4f56e6acb9}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a383e0df660a68bfa7ff096ccb1cf3aaa}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_aecc26c8a1b87987f83081c065e336943}\label{interface_dompdf_1_1_canvas_aecc26c8a1b87987f83081c065e336943}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!clipping\_roundrectangle@{clipping\_roundrectangle}}
+\index{clipping\_roundrectangle@{clipping\_roundrectangle}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{clipping\_roundrectangle()}{clipping\_roundrectangle()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::clipping\+\_\+roundrectangle (\begin{DoxyParamCaption}\item[{}]{\$x1,  }\item[{}]{\$y1,  }\item[{}]{\$w,  }\item[{}]{\$h,  }\item[{}]{\$tl,  }\item[{}]{\$tr,  }\item[{}]{\$br,  }\item[{}]{\$bl }\end{DoxyParamCaption})}
+
+Starts a rounded clipping rectangle at x1,y1 with width w and height h
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x1} & \\
+\hline
+float & {\em \$y1} & \\
+\hline
+float & {\em \$w} & \\
+\hline
+float & {\em \$h} & \\
+\hline
+float & {\em \$tl} & \\
+\hline
+float & {\em \$tr} & \\
+\hline
+float & {\em \$br} & \\
+\hline
+float & {\em \$bl} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_ae4ee6b66db3efd105b760f922fa513d5}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a4c8ceefdd5f2a1fd480b5375bc9f5fbf}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a57d6708e4973997d8e0d81fbaa5942bc}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a3bbdc1ee04b74007b9dff857cf3d8832}\label{interface_dompdf_1_1_canvas_a3bbdc1ee04b74007b9dff857cf3d8832}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!filled\_rectangle@{filled\_rectangle}}
+\index{filled\_rectangle@{filled\_rectangle}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{filled\_rectangle()}{filled\_rectangle()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::filled\+\_\+rectangle (\begin{DoxyParamCaption}\item[{}]{\$x1,  }\item[{}]{\$y1,  }\item[{}]{\$w,  }\item[{}]{\$h,  }\item[{}]{\$color }\end{DoxyParamCaption})}
+
+Draws a filled rectangle at x1,y1 with width w and height h
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x1} & \\
+\hline
+float & {\em \$y1} & \\
+\hline
+float & {\em \$w} & \\
+\hline
+float & {\em \$h} & \\
+\hline
+array & {\em \$color} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a98a9464812aeeceb317b21d0b3ed4801}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a99aaaac97f5d1f8d72daedb0f78c6ccd}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a356dd8a42e847eba723f157e7f534f01}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a0b9d47c5d5660d76a7d03441055a4ff3}\label{interface_dompdf_1_1_canvas_a0b9d47c5d5660d76a7d03441055a4ff3}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_dompdf@{get\_dompdf}}
+\index{get\_dompdf@{get\_dompdf}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_dompdf()}{get\_dompdf()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+dompdf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_dompdf_1_1_dompdf}{Dompdf}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_afabbfc82a43a33a083f694cc8a218240}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a8afb2406e68de642c668ca49bbad57f1}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac6b74dcd29ef132c721ead6979a5f30c}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a48d18c27311267cec48cf181a67679f7}\label{interface_dompdf_1_1_canvas_a48d18c27311267cec48cf181a67679f7}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_font\_baseline@{get\_font\_baseline}}
+\index{get\_font\_baseline@{get\_font\_baseline}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_font\_baseline()}{get\_font\_baseline()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+font\+\_\+baseline (\begin{DoxyParamCaption}\item[{}]{\$font,  }\item[{}]{\$size }\end{DoxyParamCaption})}
+
+Calculates font baseline, in points
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$font} & \\
+\hline
+float & {\em \$size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a23f803f1c5a4dab32015cc84497c8281}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a275b487a61579d70b03122409593a068}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_afd17d9a4657c00063bd2e728b25cab1f}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ac5ae74d540910cfd172559c64eb57c38}\label{interface_dompdf_1_1_canvas_ac5ae74d540910cfd172559c64eb57c38}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_font\_height@{get\_font\_height}}
+\index{get\_font\_height@{get\_font\_height}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_font\_height()}{get\_font\_height()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+font\+\_\+height (\begin{DoxyParamCaption}\item[{}]{\$font,  }\item[{}]{\$size }\end{DoxyParamCaption})}
+
+Calculates font height, in points
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$font} & \\
+\hline
+float & {\em \$size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a21377e3faccce66339519fea1d9ebd3b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a6a5cee9ed5cc972d4a8d6eee9987657a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac13d885321b32d67f2d5b94e3d0a9c66}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a076a9d9bd0fe101767b32069c06a4fb2}\label{interface_dompdf_1_1_canvas_a076a9d9bd0fe101767b32069c06a4fb2}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the image\textquotesingle{}s height in pixels
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a3027b1d44d87e593f98401ea81db6895}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a6f74fd1bf4e89b77ef24d2d5a8dfaceb}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a1cb2c6195a458442be066cb55c9b6aab}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ac18d5d61f77c5f436c6743bbaf083b8a}\label{interface_dompdf_1_1_canvas_ac18d5d61f77c5f436c6743bbaf083b8a}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_page\_count@{get\_page\_count}}
+\index{get\_page\_count@{get\_page\_count}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_page\_count()}{get\_page\_count()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+page\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the total number of pages
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a31d770e3d5dcdc39422c41f53589a5c1}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a707701c734cff585a3b6cd819beec8e6}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a454a6ab531dfd8e377d875e7458b8ce3}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a6699c7ecd0bd9320e57cc68e399426af}\label{interface_dompdf_1_1_canvas_a6699c7ecd0bd9320e57cc68e399426af}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_page\_number@{get\_page\_number}}
+\index{get\_page\_number@{get\_page\_number}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_page\_number()}{get\_page\_number()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+page\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current page number
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_add4489c50356c4f249a0b339b1ef1f1f}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a7983e6ef97ee7b8c00abfff0ab6f4d6d}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a74e0991c81dae7605cca61197099e26e}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_aaba474c70003a253433dce51f6dd3a09}\label{interface_dompdf_1_1_canvas_aaba474c70003a253433dce51f6dd3a09}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_text\_width@{get\_text\_width}}
+\index{get\_text\_width@{get\_text\_width}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_text\_width()}{get\_text\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+text\+\_\+width (\begin{DoxyParamCaption}\item[{}]{\$text,  }\item[{}]{\$font,  }\item[{}]{\$size,  }\item[{}]{\$word\+\_\+spacing = {\ttfamily 0.0},  }\item[{}]{\$char\+\_\+spacing = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Calculates text size, in points
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$text} & the text to be sized \\
+\hline
+string & {\em \$font} & the desired font \\
+\hline
+float & {\em \$size} & the desired font size \\
+\hline
+float & {\em \$word\+\_\+spacing} & word spacing, if any \\
+\hline
+float & {\em \$char\+\_\+spacing} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a24f68a68ec236a593f88b4382689112b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a51c522b85d8857cb39304e98a03ee875}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_aa93dd75c62971185ab3b456b353d4a82}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a0acf2b17ca9fa83725be806136479fc6}\label{interface_dompdf_1_1_canvas_a0acf2b17ca9fa83725be806136479fc6}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the PDF\textquotesingle{}s width in points
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a955be01aa94a8a276da315ee1f82cdb6}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a6752b78e25fa02280b2045d579c51165}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_aa790bda9fdc2203181c927a9b0bb5cdd}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a6c7fab7e30f6d3ec0c9dcdf1ce833c9a}\label{interface_dompdf_1_1_canvas_a6c7fab7e30f6d3ec0c9dcdf1ce833c9a}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!image@{image}}
+\index{image@{image}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::image (\begin{DoxyParamCaption}\item[{}]{\$img\+\_\+url,  }\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$w,  }\item[{}]{\$h,  }\item[{}]{\$resolution = {\ttfamily \char`\"{}normal\char`\"{}} }\end{DoxyParamCaption})}
+
+Add an image to the pdf.
+
+The image is placed at the specified x and y coordinates with the given width and height.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$img\+\_\+url} & the path to the image \\
+\hline
+float & {\em \$x} & x position \\
+\hline
+float & {\em \$y} & y position \\
+\hline
+int & {\em \$w} & width (in pixels) \\
+\hline
+int & {\em \$h} & height (in pixels) \\
+\hline
+string & {\em \$resolution} & The resolution of the image \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a660214f65ff0e301fbb018a0af136c19}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a859d43d62f6abf781e675044b4a160da}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_abd630933a894085b59e94794fc102654}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a2aa03d43db85ec8e78b42753aac7b38e}\label{interface_dompdf_1_1_canvas_a2aa03d43db85ec8e78b42753aac7b38e}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!javascript@{javascript}}
+\index{javascript@{javascript}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{javascript()}{javascript()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::javascript (\begin{DoxyParamCaption}\item[{}]{\$script }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$script} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a20f49acc02f2cb2ec5f86f8e506c1d04}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a8ced18f4bee6a761a7dfabed2dc097ed}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac59a209490e28ced0999a317953d44d7}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a20189485f4d9c9bf07ded3864bc532d4}\label{interface_dompdf_1_1_canvas_a20189485f4d9c9bf07ded3864bc532d4}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!line@{line}}
+\index{line@{line}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{line()}{line()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::line (\begin{DoxyParamCaption}\item[{}]{\$x1,  }\item[{}]{\$y1,  }\item[{}]{\$x2,  }\item[{}]{\$y2,  }\item[{}]{\$color,  }\item[{}]{\$width,  }\item[{}]{\$style = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Draws a line from x1,y1 to x2,y2
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array. See \mbox{\hyperlink{}{Cpdf\+::set\+Line\+Style()}} for a description of the format of the \$style parameter (aka dash).
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x1} & \\
+\hline
+float & {\em \$y1} & \\
+\hline
+float & {\em \$x2} & \\
+\hline
+float & {\em \$y2} & \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$width} & \\
+\hline
+array & {\em \$style} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_af0b0f7d796bee6e99f93015bd6fe5fb4}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a75b658015e676868747709454a3056e7}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a30b2427fe245922603e01bd430346ed2}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a43662a2fe1991e4e4b9de8f99c5d3726}\label{interface_dompdf_1_1_canvas_a43662a2fe1991e4e4b9de8f99c5d3726}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!new\_page@{new\_page}}
+\index{new\_page@{new\_page}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{new\_page()}{new\_page()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::new\+\_\+page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts a new page
+
+Subsequent drawing operations will appear on the new page. 
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a168982c8d138e2f03d913082dda663cc}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a8d0bb39e3466cef9332c7ee6e967ba87}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_aafc79448c4a81e396ca2770ee1f18966}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a45ea4899eda420efa4e711b837f08c5a}\label{interface_dompdf_1_1_canvas_a45ea4899eda420efa4e711b837f08c5a}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!output@{output}}
+\index{output@{output}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::output (\begin{DoxyParamCaption}\item[{}]{\$options = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Returns the PDF as a string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$options} & Associative array\+: \textquotesingle{}compress\textquotesingle{} =$>$ 1 or 0 (default 1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a2ad04753a10a4b33e87076f3aaeeba21}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a2612e0b808f0c9e2071117107384f950}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a86a26d6562e264a0d3cd7bf7182be505}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_aec7f78293a5a1c780b35dcf99e803d1c}\label{interface_dompdf_1_1_canvas_aec7f78293a5a1c780b35dcf99e803d1c}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!page\_text@{page\_text}}
+\index{page\_text@{page\_text}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{page\_text()}{page\_text()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::page\+\_\+text (\begin{DoxyParamCaption}\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$text,  }\item[{}]{\$font,  }\item[{}]{\$size,  }\item[{}]{\$color = {\ttfamily \mbox{[}0},  }\item[{0}]{,  }\item[{0\mbox{]}}]{,  }\item[{}]{\$word\+\_\+space = {\ttfamily 0.0},  }\item[{}]{\$char\+\_\+space = {\ttfamily 0.0},  }\item[{}]{\$angle = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Writes text at the specified x and y coordinates on every page
+
+The strings \textquotesingle{}\{PAGE\+\_\+\+NUM\}\textquotesingle{} and \textquotesingle{}\{PAGE\+\_\+\+COUNT\}\textquotesingle{} are automatically replaced with their current values.
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x} & \\
+\hline
+float & {\em \$y} & \\
+\hline
+string & {\em \$text} & the text to write \\
+\hline
+string & {\em \$font} & the font file to use \\
+\hline
+float & {\em \$size} & the font size, in points \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$word\+\_\+space} & word spacing adjustment \\
+\hline
+float & {\em \$char\+\_\+space} & char spacing adjustment \\
+\hline
+float & {\em \$angle} & angle to write the text at, measured CW starting from the x-\/axis \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_af95081693569fe60a9de8386ebdc85ba}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_ac01006b19e242e7ff459f161f2118621}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a27c0e6adbf30b490897badfaf0fb5043}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ac5787df10a6b77d23bf5cfb14da3b4e1}\label{interface_dompdf_1_1_canvas_ac5787df10a6b77d23bf5cfb14da3b4e1}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!polygon@{polygon}}
+\index{polygon@{polygon}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{polygon()}{polygon()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::polygon (\begin{DoxyParamCaption}\item[{}]{\$points,  }\item[{}]{\$color,  }\item[{}]{\$width = {\ttfamily null},  }\item[{}]{\$style = {\ttfamily null},  }\item[{}]{\$fill = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Draws a polygon
+
+The polygon is formed by joining all the points stored in the \$points array. \$points has the following structure\+: {\ttfamily  array(0 =$>$ x1, 1 =$>$ y1, 2 =$>$ x2, 3 =$>$ y2, ... ); }
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array. See \mbox{\hyperlink{}{Cpdf\+::set\+Line\+Style()}} for a description of the \$style parameter (aka dash)
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$points} & \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$width} & \\
+\hline
+array & {\em \$style} & \\
+\hline
+bool & {\em \$fill} & Fills the polygon if true \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_aa007fc499e39909ed643cff59f19e280}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a4f259a18ddc258c48a6eccd6b781150c}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a42c8c6179fc1b3f13dfcc39653216756}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_aedb91b28d3b475ab5d84f3c6c81b5b77}\label{interface_dompdf_1_1_canvas_aedb91b28d3b475ab5d84f3c6c81b5b77}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{rectangle()}{rectangle()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::rectangle (\begin{DoxyParamCaption}\item[{}]{\$x1,  }\item[{}]{\$y1,  }\item[{}]{\$w,  }\item[{}]{\$h,  }\item[{}]{\$color,  }\item[{}]{\$width,  }\item[{}]{\$style = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Draws a rectangle at x1,y1 with width w and height h
+
+See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array. See \mbox{\hyperlink{}{Cpdf\+::set\+Line\+Style()}} for a description of the \$style parameter (aka dash)
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x1} & \\
+\hline
+float & {\em \$y1} & \\
+\hline
+float & {\em \$w} & \\
+\hline
+float & {\em \$h} & \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$width} & \\
+\hline
+array & {\em \$style} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a86963752012fef58c6bcc2ed524da04a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_aead040a7c60ef244e1fb5f18422d98c5}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a0d6ff7493bc417f24eebbbf185f7e898}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_abe2ae0a0c7aa357966f1138593102f60}\label{interface_dompdf_1_1_canvas_abe2ae0a0c7aa357966f1138593102f60}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!restore@{restore}}
+\index{restore@{restore}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Restore last state 
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_ad2c15b7049e51ebd5df95514175da586}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a59e0108168cbcc7e0c4d8ca502d2d22a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac479264d0d6f460f98c87b2ed51c702b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ad44e01b9d0b050a91372e68758990322}\label{interface_dompdf_1_1_canvas_ad44e01b9d0b050a91372e68758990322}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!rotate@{rotate}}
+\index{rotate@{rotate}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::rotate (\begin{DoxyParamCaption}\item[{}]{\$angle,  }\item[{}]{\$x,  }\item[{}]{\$y }\end{DoxyParamCaption})}
+
+Rotate
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$angle} & angle in degrees for counter-\/clockwise rotation \\
+\hline
+float & {\em \$x} & Origin abscissa \\
+\hline
+float & {\em \$y} & Origin ordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_ace4b3fc82455dc3449f4a5e7d83bdd1a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a5d42d362c1d16ccbe1cb000198275fc4}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ac7cebe0f33da0b26db9af23cc9cb60df}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a718afe77a2baec58dc4ee91500920f2f}\label{interface_dompdf_1_1_canvas_a718afe77a2baec58dc4ee91500920f2f}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!save@{save}}
+\index{save@{save}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save current state 
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a21bc39aed509bf7a861715ca92dc895a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a9c2c43405ff386155583ed6ac092b886}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a55a7f63350dbf1ad953ef83ebc8ceb06}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a5480e7eb376f26a10b4444c143e5d8b0}\label{interface_dompdf_1_1_canvas_a5480e7eb376f26a10b4444c143e5d8b0}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!scale@{scale}}
+\index{scale@{scale}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::scale (\begin{DoxyParamCaption}\item[{}]{\$s\+\_\+x,  }\item[{}]{\$s\+\_\+y,  }\item[{}]{\$x,  }\item[{}]{\$y }\end{DoxyParamCaption})}
+
+Scale
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$s\+\_\+x} & scaling factor for width as percent \\
+\hline
+float & {\em \$s\+\_\+y} & scaling factor for height as percent \\
+\hline
+float & {\em \$x} & Origin abscissa \\
+\hline
+float & {\em \$y} & Origin ordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_ac5d9d8391434b44788c66c7f27ec575d}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a21de912addf1f13bacbee7ecb3756181}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a97b875c32e99745b3d103cbd69f69c39}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ab0843407ca8b60ca5937db3c9d0ddc6b}\label{interface_dompdf_1_1_canvas_ab0843407ca8b60ca5937db3c9d0ddc6b}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!set\_default\_view@{set\_default\_view}}
+\index{set\_default\_view@{set\_default\_view}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{set\_default\_view()}{set\_default\_view()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::set\+\_\+default\+\_\+view (\begin{DoxyParamCaption}\item[{}]{\$view,  }\item[{}]{\$options = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Sets the default view
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$view} & \textquotesingle{}XYZ\textquotesingle{} left, top, zoom \textquotesingle{}Fit\textquotesingle{} \textquotesingle{}FitH\textquotesingle{} top \textquotesingle{}FitV\textquotesingle{} left \textquotesingle{}FitR\textquotesingle{} left,bottom,right \textquotesingle{}FitB\textquotesingle{} \textquotesingle{}Fit\+BH\textquotesingle{} top \textquotesingle{}Fit\+BV\textquotesingle{} left \\
+\hline
+array & {\em \$options} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a7bd02c7d6f5f7d42311546dcc675f341}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_ab8feb3257a78aa2d69400d76763399ec}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a3d96128a4b0a6a98fab17c10e6217366}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_acb94cb5293ec4e79bf914199596564aa}\label{interface_dompdf_1_1_canvas_acb94cb5293ec4e79bf914199596564aa}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!set\_opacity@{set\_opacity}}
+\index{set\_opacity@{set\_opacity}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{set\_opacity()}{set\_opacity()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::set\+\_\+opacity (\begin{DoxyParamCaption}\item[{}]{\$opacity,  }\item[{}]{\$mode = {\ttfamily \char`\"{}Normal\char`\"{}} }\end{DoxyParamCaption})}
+
+Returns the font x-\/height, in points
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$font} & \\
+\hline
+float & {\em \$size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Sets the opacity
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$opacity} & \\
+\hline
+string & {\em \$mode} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a67e3fef43902a18b5b3958ae3025981b}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_af8bdb0f1b8a124e2acfa893b92203965}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a19a1dc7c69def9f68088278f6de26f75}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a502644a527f828db4b34c332aae66c7e}\label{interface_dompdf_1_1_canvas_a502644a527f828db4b34c332aae66c7e}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!set\_page\_count@{set\_page\_count}}
+\index{set\_page\_count@{set\_page\_count}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{set\_page\_count()}{set\_page\_count()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::set\+\_\+page\+\_\+count (\begin{DoxyParamCaption}\item[{}]{\$count }\end{DoxyParamCaption})}
+
+Sets the total number of pages
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$count} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_af01a2213ea9832d07feec293c06f3bd7}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a0c2139f1134b6d56b6a187f4eb259903}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_ad468e33451cf0adc1e62d9a6d481d001}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a20659c1d206916c6d40755e89df5d2b3}\label{interface_dompdf_1_1_canvas_a20659c1d206916c6d40755e89df5d2b3}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!skew@{skew}}
+\index{skew@{skew}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{skew()}{skew()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::skew (\begin{DoxyParamCaption}\item[{}]{\$angle\+\_\+x,  }\item[{}]{\$angle\+\_\+y,  }\item[{}]{\$x,  }\item[{}]{\$y }\end{DoxyParamCaption})}
+
+Skew
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$angle\+\_\+x} & \\
+\hline
+float & {\em \$angle\+\_\+y} & \\
+\hline
+float & {\em \$x} & Origin abscissa \\
+\hline
+float & {\em \$y} & Origin ordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a75d2488de3c6ad3dc59bdc9a510745fb}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_ac08a07865b7846da086ade6748301c8a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a9d4ea6138a0cb662119d3e9abcf5033e}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a2122f5f8c56b12e7a9b54c6a97eaf5b3}\label{interface_dompdf_1_1_canvas_a2122f5f8c56b12e7a9b54c6a97eaf5b3}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!stream@{stream}}
+\index{stream@{stream}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{stream()}{stream()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::stream (\begin{DoxyParamCaption}\item[{}]{\$filename,  }\item[{}]{\$options = {\ttfamily \mbox{[}\mbox{]}} }\end{DoxyParamCaption})}
+
+Streams the PDF directly to the browser.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filename} & The filename to present to the browser. \\
+\hline
+array & {\em \$options} & Associative array\+: \textquotesingle{}compress\textquotesingle{} =$>$ 1 or 0 (default 1); \textquotesingle{}Attachment\textquotesingle{} =$>$ 1 or 0 (default 1). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a9f9cc4c98c051a911e5ac1837b6af061}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a68012032d45a4ff8eb3a941590998d74}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a584742b1790439c469e28eabdabdecde}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_af6ef2b9e3a40607cda24514f9691519d}\label{interface_dompdf_1_1_canvas_af6ef2b9e3a40607cda24514f9691519d}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!text@{text}}
+\index{text@{text}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::text (\begin{DoxyParamCaption}\item[{}]{\$x,  }\item[{}]{\$y,  }\item[{}]{\$text,  }\item[{}]{\$font,  }\item[{}]{\$size,  }\item[{}]{\$color = {\ttfamily \mbox{[}0},  }\item[{0}]{,  }\item[{0\mbox{]}}]{,  }\item[{}]{\$word\+\_\+space = {\ttfamily 0.0},  }\item[{}]{\$char\+\_\+space = {\ttfamily 0.0},  }\item[{}]{\$angle = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Writes text at the specified x and y coordinates See \mbox{\hyperlink{class_dompdf_1_1_css_1_1_style_acd2c80a90f03b59908e4d7aecad314d3}{Style\+::munge\+\_\+color()}} for the format of the color array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$x} & \\
+\hline
+float & {\em \$y} & \\
+\hline
+string & {\em \$text} & the text to write \\
+\hline
+string & {\em \$font} & the font file to use \\
+\hline
+float & {\em \$size} & the font size, in points \\
+\hline
+array & {\em \$color} & \\
+\hline
+float & {\em \$word\+\_\+space} & word spacing adjustment \\
+\hline
+float & {\em \$char\+\_\+space} & char spacing adjustment \\
+\hline
+float & {\em \$angle} & angle \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a69556b61f21f82792aa22cc20c6e3f33}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a60f5f48b595fe172bc259ec937b4f5c3}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a5eb6faa4a1fd413998bc0240ff3e011e}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_a6e762f88f56753a2b4970f2bbaa8b6d2}\label{interface_dompdf_1_1_canvas_a6e762f88f56753a2b4970f2bbaa8b6d2}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!transform@{transform}}
+\index{transform@{transform}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::transform (\begin{DoxyParamCaption}\item[{}]{\$a,  }\item[{}]{\$b,  }\item[{}]{\$c,  }\item[{}]{\$d,  }\item[{}]{\$e,  }\item[{}]{\$f }\end{DoxyParamCaption})}
+
+Transform
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$a} & \\
+\hline
+{\em \$b} & \\
+\hline
+{\em \$c} & \\
+\hline
+{\em \$d} & \\
+\hline
+{\em \$e} & \\
+\hline
+{\em \$f} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a558c402ae23a521d78b303cde344116c}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_aa7fb1b0a2f1e99b93a70daa2972785eb}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a39f006de8f72ba9c557609390e45579a}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+\mbox{\Hypertarget{interface_dompdf_1_1_canvas_ad09f83cb97ad129d89bbe00fdf2067ea}\label{interface_dompdf_1_1_canvas_ad09f83cb97ad129d89bbe00fdf2067ea}} 
+\index{Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}!translate@{translate}}
+\index{translate@{translate}!Dompdf\textbackslash{}Canvas@{Dompdf\textbackslash{}Canvas}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Canvas\+::translate (\begin{DoxyParamCaption}\item[{}]{\$t\+\_\+x,  }\item[{}]{\$t\+\_\+y }\end{DoxyParamCaption})}
+
+Translate
+
+
+\begin{DoxyParams}[1]{Parameters}
+float & {\em \$t\+\_\+x} & movement to the right \\
+\hline
+float & {\em \$t\+\_\+y} & movement to the bottom \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_p_d_f_lib_a48d64119b3b61aa3443ed8f19127b3fd}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+PDFLib}}, \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_g_d_a476365de873d10631ef9f4007f49748c}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+GD}}, and \mbox{\hyperlink{class_dompdf_1_1_adapter_1_1_c_p_d_f_a87e949d9b56a45bea8a2a0089f69380e}{Dompdf\textbackslash{}\+Adapter\textbackslash{}\+CPDF}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/src/Canvas.\+php\end{DoxyCompactItemize}

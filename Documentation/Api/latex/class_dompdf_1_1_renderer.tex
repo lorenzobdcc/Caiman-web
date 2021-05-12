@@ -1,0 +1,91 @@
+\hypertarget{class_dompdf_1_1_renderer}{}\doxysection{Dompdf\textbackslash{}Renderer Class Reference}
+\label{class_dompdf_1_1_renderer}\index{Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}}
+Inheritance diagram for Dompdf\textbackslash{}Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dompdf_1_1_renderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_renderer_a5bc44bc0a31708c7b6ace6f3dc005acf}{new\+\_\+page}} ()
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_renderer_a72ff9b356b94460e970f6e2e696fac7d}{render}} (\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} \$frame)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_renderer_a7b7fb32de61deac7cb76894516203b25}{\+\_\+check\+\_\+callbacks}} (\$event, \$frame)
+\item 
+\mbox{\hyperlink{class_dompdf_1_1_renderer_a10ce8ac75f5367de00df2226be5de3cc}{\+\_\+render\+\_\+frame}} (\$type, \$frame)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dompdf_1_1_renderer_a08b072f7dd39c5f4b7203af29b78d906}\label{class_dompdf_1_1_renderer_a08b072f7dd39c5f4b7203af29b78d906}} 
+{\bfseries \$\+\_\+renderers}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dompdf_1_1_renderer_a7b7fb32de61deac7cb76894516203b25}\label{class_dompdf_1_1_renderer_a7b7fb32de61deac7cb76894516203b25}} 
+\index{Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}!\_check\_callbacks@{\_check\_callbacks}}
+\index{\_check\_callbacks@{\_check\_callbacks}!Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}}
+\doxysubsubsection{\texorpdfstring{\_check\_callbacks()}{\_check\_callbacks()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Renderer\+::\+\_\+check\+\_\+callbacks (\begin{DoxyParamCaption}\item[{}]{\$event,  }\item[{}]{\$frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Check for callbacks that need to be performed when a given event gets triggered on a frame
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$event} & the type of event \\
+\hline
+\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} & {\em \$frame} & the frame that event is triggered on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dompdf_1_1_renderer_a10ce8ac75f5367de00df2226be5de3cc}\label{class_dompdf_1_1_renderer_a10ce8ac75f5367de00df2226be5de3cc}} 
+\index{Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}!\_render\_frame@{\_render\_frame}}
+\index{\_render\_frame@{\_render\_frame}!Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}}
+\doxysubsubsection{\texorpdfstring{\_render\_frame()}{\_render\_frame()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Renderer\+::\+\_\+render\+\_\+frame (\begin{DoxyParamCaption}\item[{}]{\$type,  }\item[{}]{\$frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Render a single frame
+
+Creates \mbox{\hyperlink{class_dompdf_1_1_renderer}{Renderer}} objects on demand
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & type of renderer to use \\
+\hline
+\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} & {\em \$frame} & the frame to render \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dompdf_1_1_renderer_a5bc44bc0a31708c7b6ace6f3dc005acf}\label{class_dompdf_1_1_renderer_a5bc44bc0a31708c7b6ace6f3dc005acf}} 
+\index{Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}!new\_page@{new\_page}}
+\index{new\_page@{new\_page}!Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}}
+\doxysubsubsection{\texorpdfstring{new\_page()}{new\_page()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Renderer\+::new\+\_\+page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Advance the canvas to the next page \mbox{\Hypertarget{class_dompdf_1_1_renderer_a72ff9b356b94460e970f6e2e696fac7d}\label{class_dompdf_1_1_renderer_a72ff9b356b94460e970f6e2e696fac7d}} 
+\index{Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}!render@{render}}
+\index{render@{render}!Dompdf\textbackslash{}Renderer@{Dompdf\textbackslash{}Renderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily Dompdf\textbackslash{}\+Renderer\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}}}]{\$frame }\end{DoxyParamCaption})}
+
+Render frames recursively
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\hyperlink{class_dompdf_1_1_frame}{Frame}} & {\em \$frame} & the frame to render \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_dompdf_1_1_renderer_1_1_abstract_renderer_abf91dd432e08a691607fa8f6776f8e86}{Dompdf\textbackslash{}\+Renderer\textbackslash{}\+Abstract\+Renderer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/dompdf/dompdf/src/Renderer.\+php\end{DoxyCompactItemize}

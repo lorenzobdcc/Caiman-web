@@ -1,0 +1,77 @@
+\hypertarget{class_svg_1_1_tag_1_1_path}{}\doxysection{Svg\textbackslash{}Tag\textbackslash{}Path Class Reference}
+\label{class_svg_1_1_tag_1_1_path}\index{Svg\textbackslash{}Tag\textbackslash{}Path@{Svg\textbackslash{}Tag\textbackslash{}Path}}
+Inheritance diagram for Svg\textbackslash{}Tag\textbackslash{}Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_svg_1_1_tag_1_1_path}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_a8abd7a2f875176f74f157b74820d3e0d}\label{class_svg_1_1_tag_1_1_path_a8abd7a2f875176f74f157b74820d3e0d}} 
+{\bfseries start} (\$attributes)
+\item 
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_ae7fd65be0ea9f2ddfc4f558e5654991b}\label{class_svg_1_1_tag_1_1_path_ae7fd65be0ea9f2ddfc4f558e5654991b}} 
+{\bfseries draw\+Arc} (\mbox{\hyperlink{interface_svg_1_1_surface_1_1_surface_interface}{Surface\+Interface}} \$surface, \$fx, \$fy, \$coords)
+\item 
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_a374cfabadacad147b783d6e1e4099c78}\label{class_svg_1_1_tag_1_1_path_a374cfabadacad147b783d6e1e4099c78}} 
+{\bfseries arc\+To\+Segments} (\$toX, \$toY, \$rx, \$ry, \$large, \$sweep, \$rotateX)
+\item 
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_a32bc78ad5836f2378a0b17796d690f48}\label{class_svg_1_1_tag_1_1_path_a32bc78ad5836f2378a0b17796d690f48}} 
+{\bfseries segment\+To\+Bezier} (\$th2, \$th3, \$cos\+Th, \$sin\+Th, \$rx, \$ry, \$cx1, \$cy1, \$mT, \$fromX, \$fromY)
+\item 
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_a22fcbceafe67ae7b864e7425a15ea90b}\label{class_svg_1_1_tag_1_1_path_a22fcbceafe67ae7b864e7425a15ea90b}} 
+{\bfseries calc\+Vector\+Angle} (\$ux, \$uy, \$vx, \$vy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bfseries \$command\+Lengths}
+\item 
+static {\bfseries \$repeated\+Commands}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_aa386f0c374a9368c7486e8bed6552d78}\label{class_svg_1_1_tag_1_1_path_aa386f0c374a9368c7486e8bed6552d78}} 
+\index{Svg\textbackslash{}Tag\textbackslash{}Path@{Svg\textbackslash{}Tag\textbackslash{}Path}!\$commandLengths@{\$commandLengths}}
+\index{\$commandLengths@{\$commandLengths}!Svg\textbackslash{}Tag\textbackslash{}Path@{Svg\textbackslash{}Tag\textbackslash{}Path}}
+\doxysubsubsection{\texorpdfstring{\$commandLengths}{$commandLengths}}
+{\footnotesize\ttfamily Svg\textbackslash{}\+Tag\textbackslash{}\+Path\+::\$command\+Lengths\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= array(}
+\DoxyCodeLine{        \textcolor{charliteral}{'m'} => 2,}
+\DoxyCodeLine{        \textcolor{charliteral}{'l'} => 2,}
+\DoxyCodeLine{        \textcolor{charliteral}{'h'} => 1,}
+\DoxyCodeLine{        \textcolor{charliteral}{'v'} => 1,}
+\DoxyCodeLine{        \textcolor{charliteral}{'c'} => 6,}
+\DoxyCodeLine{        \textcolor{charliteral}{'s'} => 4,}
+\DoxyCodeLine{        \textcolor{charliteral}{'q'} => 4,}
+\DoxyCodeLine{        \textcolor{charliteral}{'t'} => 2,}
+\DoxyCodeLine{        \textcolor{charliteral}{'a'} => 7,}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_svg_1_1_tag_1_1_path_ab81698c76adc515bf029a4ee5d17cef1}\label{class_svg_1_1_tag_1_1_path_ab81698c76adc515bf029a4ee5d17cef1}} 
+\index{Svg\textbackslash{}Tag\textbackslash{}Path@{Svg\textbackslash{}Tag\textbackslash{}Path}!\$repeatedCommands@{\$repeatedCommands}}
+\index{\$repeatedCommands@{\$repeatedCommands}!Svg\textbackslash{}Tag\textbackslash{}Path@{Svg\textbackslash{}Tag\textbackslash{}Path}}
+\doxysubsubsection{\texorpdfstring{\$repeatedCommands}{$repeatedCommands}}
+{\footnotesize\ttfamily Svg\textbackslash{}\+Tag\textbackslash{}\+Path\+::\$repeated\+Commands\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= array(}
+\DoxyCodeLine{        \textcolor{charliteral}{'m'} => \textcolor{charliteral}{'l'},}
+\DoxyCodeLine{        \textcolor{charliteral}{'M'} => \textcolor{charliteral}{'L'},}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/phenx/php-\/svg-\/lib/src/\+Svg/\+Tag/Path.\+php\end{DoxyCompactItemize}

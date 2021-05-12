@@ -1,0 +1,394 @@
+\hypertarget{class_dotenv_1_1_loader}{}\doxysection{Dotenv\textbackslash{}Loader Class Reference}
+\label{class_dotenv_1_1_loader}\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a8c963bcba9c7efd2e149b5a24893a366}{\+\_\+\+\_\+construct}} (\$file\+Path, \$immutable=false)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a0592e26fc63c6fdc320c12f8f96e6733}{set\+Immutable}} (\$immutable=false)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a03005ebbab8c92908f6fe74259bd60a9}{get\+Immutable}} ()
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a4185d770b12b6b3820e0d167461f0e74}{load}} ()
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a55bc02d9e7950b3173462ce3c3b38292}{process\+Filters}} (\$name, \$value)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a44802d71c4bc9b1a6c1aaff46d68a7dd}{get\+Environment\+Variable}} (\$name)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a4a6e9207d0bb966bb1fbb9ac35916673}{set\+Environment\+Variable}} (\$name, \$value=null)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a742da8e234dfb66e6247b1b2db7a2fd0}{clear\+Environment\+Variable}} (\$name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a0ce8bd1ab7e629aa5d1eb7185c1c2790}\label{class_dotenv_1_1_loader_a0ce8bd1ab7e629aa5d1eb7185c1c2790}} 
+{\bfseries \$variable\+Names} = array()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a637a43827d81485c785660b88274776a}{ensure\+File\+Is\+Readable}} ()
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a6fa3f2372dd5421d3808516a2915057b}{normalise\+Environment\+Variable}} (\$name, \$value)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_aca1e1e12de4cd45633748c883dc628c4}{read\+Lines\+From\+File}} (\$file\+Path)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a2cfd06b8d1438dfb55b97262e7d0ac33}{is\+Comment}} (\$line)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_ac9f9954f3d93b29d7f24fd76226f7d18}{looks\+Like\+Setter}} (\$line)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a8dc93bdf0282562d03c17df84a62124d}{split\+Compound\+String\+Into\+Parts}} (\$name, \$value)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_ace9865683b9827fba9ca3ae16d7695f3}{sanitise\+Variable\+Value}} (\$name, \$value)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_ace650bbfa68d45568d0b7c74965711a8}{resolve\+Nested\+Variables}} (\$value)
+\item 
+\mbox{\hyperlink{class_dotenv_1_1_loader_a6c294629748729cba78e40766675d654}{sanitise\+Variable\+Name}} (\$name, \$value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_loader_ab2b6797c8d50e408d4eb95c6c62db251}\label{class_dotenv_1_1_loader_ab2b6797c8d50e408d4eb95c6c62db251}} 
+{\bfseries \$file\+Path}
+\item 
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a0fa083d79ae69e7030268bf757a06c8a}\label{class_dotenv_1_1_loader_a0fa083d79ae69e7030268bf757a06c8a}} 
+{\bfseries \$immutable}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the loaded class.
+
+It\textquotesingle{}s responsible for loading variables by reading a file from disk and\+:
+\begin{DoxyItemize}
+\item stripping comments beginning with a {\ttfamily \#},
+\item parsing lines that look shell variable setters, e.\+g {\ttfamily export key = value}, {\ttfamily key=\char`\"{}value\char`\"{}}. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a8c963bcba9c7efd2e149b5a24893a366}\label{class_dotenv_1_1_loader_a8c963bcba9c7efd2e149b5a24893a366}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$file\+Path,  }\item[{}]{\$immutable = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Create a new loader instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Path} & \\
+\hline
+bool & {\em \$immutable} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a742da8e234dfb66e6247b1b2db7a2fd0}\label{class_dotenv_1_1_loader_a742da8e234dfb66e6247b1b2db7a2fd0}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!clearEnvironmentVariable@{clearEnvironmentVariable}}
+\index{clearEnvironmentVariable@{clearEnvironmentVariable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{clearEnvironmentVariable()}{clearEnvironmentVariable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::clear\+Environment\+Variable (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})}
+
+Clear an environment variable.
+
+This is not (currently) used by \mbox{\hyperlink{class_dotenv_1_1_dotenv}{Dotenv}} but is provided as a utility method for 3rd party code.
+
+This is done using\+:
+\begin{DoxyItemize}
+\item putenv,
+\item unset(\$\+\_\+\+ENV, \$\+\_\+\+SERVER).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_dotenv_1_1_loader_a4a6e9207d0bb966bb1fbb9ac35916673}{set\+Environment\+Variable()}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a637a43827d81485c785660b88274776a}\label{class_dotenv_1_1_loader_a637a43827d81485c785660b88274776a}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!ensureFileIsReadable@{ensureFileIsReadable}}
+\index{ensureFileIsReadable@{ensureFileIsReadable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{ensureFileIsReadable()}{ensureFileIsReadable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::ensure\+File\+Is\+Readable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Ensures the given file\+Path is readable.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a44802d71c4bc9b1a6c1aaff46d68a7dd}\label{class_dotenv_1_1_loader_a44802d71c4bc9b1a6c1aaff46d68a7dd}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!getEnvironmentVariable@{getEnvironmentVariable}}
+\index{getEnvironmentVariable@{getEnvironmentVariable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{getEnvironmentVariable()}{getEnvironmentVariable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::get\+Environment\+Variable (\begin{DoxyParamCaption}\item[{}]{\$name }\end{DoxyParamCaption})}
+
+Search the different places for environment variables and return first value found.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string$\vert$null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a03005ebbab8c92908f6fe74259bd60a9}\label{class_dotenv_1_1_loader_a03005ebbab8c92908f6fe74259bd60a9}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!getImmutable@{getImmutable}}
+\index{getImmutable@{getImmutable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{getImmutable()}{getImmutable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::get\+Immutable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get immutable value.
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a2cfd06b8d1438dfb55b97262e7d0ac33}\label{class_dotenv_1_1_loader_a2cfd06b8d1438dfb55b97262e7d0ac33}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!isComment@{isComment}}
+\index{isComment@{isComment}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{isComment()}{isComment()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::is\+Comment (\begin{DoxyParamCaption}\item[{}]{\$line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determine if the line in the file is a comment, e.\+g. begins with a \#.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a4185d770b12b6b3820e0d167461f0e74}\label{class_dotenv_1_1_loader_a4185d770b12b6b3820e0d167461f0e74}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!load@{load}}
+\index{load@{load}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load {\ttfamily .env} file in given directory.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_ac9f9954f3d93b29d7f24fd76226f7d18}\label{class_dotenv_1_1_loader_ac9f9954f3d93b29d7f24fd76226f7d18}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!looksLikeSetter@{looksLikeSetter}}
+\index{looksLikeSetter@{looksLikeSetter}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{looksLikeSetter()}{looksLikeSetter()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::looks\+Like\+Setter (\begin{DoxyParamCaption}\item[{}]{\$line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Determine if the given line looks like it\textquotesingle{}s setting a variable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a6fa3f2372dd5421d3808516a2915057b}\label{class_dotenv_1_1_loader_a6fa3f2372dd5421d3808516a2915057b}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!normaliseEnvironmentVariable@{normaliseEnvironmentVariable}}
+\index{normaliseEnvironmentVariable@{normaliseEnvironmentVariable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{normaliseEnvironmentVariable()}{normaliseEnvironmentVariable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::normalise\+Environment\+Variable (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Normalise the given environment variable.
+
+Takes value as passed in by developer and\+:
+\begin{DoxyItemize}
+\item ensures we\textquotesingle{}re dealing with a separate name and value, breaking apart the name string if needed,
+\item cleaning the value of quotes,
+\item cleaning the name of quotes,
+\item resolving nested variables.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a55bc02d9e7950b3173462ce3c3b38292}\label{class_dotenv_1_1_loader_a55bc02d9e7950b3173462ce3c3b38292}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!processFilters@{processFilters}}
+\index{processFilters@{processFilters}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{processFilters()}{processFilters()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::process\+Filters (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})}
+
+Process the runtime filters.
+
+Called from {\ttfamily normalise\+Environment\+Variable} and the {\ttfamily Variable\+Factory}, passed as a callback in {\ttfamily \$this-\/$>$load\+From\+File()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_aca1e1e12de4cd45633748c883dc628c4}\label{class_dotenv_1_1_loader_aca1e1e12de4cd45633748c883dc628c4}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!readLinesFromFile@{readLinesFromFile}}
+\index{readLinesFromFile@{readLinesFromFile}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{readLinesFromFile()}{readLinesFromFile()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::read\+Lines\+From\+File (\begin{DoxyParamCaption}\item[{}]{\$file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Read lines from the file, auto detecting line endings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_ace650bbfa68d45568d0b7c74965711a8}\label{class_dotenv_1_1_loader_ace650bbfa68d45568d0b7c74965711a8}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!resolveNestedVariables@{resolveNestedVariables}}
+\index{resolveNestedVariables@{resolveNestedVariables}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{resolveNestedVariables()}{resolveNestedVariables()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::resolve\+Nested\+Variables (\begin{DoxyParamCaption}\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Resolve the nested variables.
+
+Look for \$\{varname\} patterns in the variable value and replace with an existing environment variable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a6c294629748729cba78e40766675d654}\label{class_dotenv_1_1_loader_a6c294629748729cba78e40766675d654}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!sanitiseVariableName@{sanitiseVariableName}}
+\index{sanitiseVariableName@{sanitiseVariableName}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{sanitiseVariableName()}{sanitiseVariableName()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::sanitise\+Variable\+Name (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Strips quotes and the optional leading \char`\"{}export \char`\"{} from the environment variable name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_ace9865683b9827fba9ca3ae16d7695f3}\label{class_dotenv_1_1_loader_ace9865683b9827fba9ca3ae16d7695f3}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!sanitiseVariableValue@{sanitiseVariableValue}}
+\index{sanitiseVariableValue@{sanitiseVariableValue}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{sanitiseVariableValue()}{sanitiseVariableValue()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::sanitise\+Variable\+Value (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Strips quotes from the environment variable value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a4a6e9207d0bb966bb1fbb9ac35916673}\label{class_dotenv_1_1_loader_a4a6e9207d0bb966bb1fbb9ac35916673}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!setEnvironmentVariable@{setEnvironmentVariable}}
+\index{setEnvironmentVariable@{setEnvironmentVariable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{setEnvironmentVariable()}{setEnvironmentVariable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::set\+Environment\+Variable (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Set an environment variable.
+
+This is done using\+:
+\begin{DoxyItemize}
+\item putenv,
+\item \$\+\_\+\+ENV,
+\item \$\+\_\+\+SERVER.
+\end{DoxyItemize}
+
+The environment variable value is stripped of single and double quotes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string | null & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a0592e26fc63c6fdc320c12f8f96e6733}\label{class_dotenv_1_1_loader_a0592e26fc63c6fdc320c12f8f96e6733}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!setImmutable@{setImmutable}}
+\index{setImmutable@{setImmutable}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{setImmutable()}{setImmutable()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::set\+Immutable (\begin{DoxyParamCaption}\item[{}]{\$immutable = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Set immutable value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$immutable} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dotenv_1_1_loader_a8dc93bdf0282562d03c17df84a62124d}\label{class_dotenv_1_1_loader_a8dc93bdf0282562d03c17df84a62124d}} 
+\index{Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}!splitCompoundStringIntoParts@{splitCompoundStringIntoParts}}
+\index{splitCompoundStringIntoParts@{splitCompoundStringIntoParts}!Dotenv\textbackslash{}Loader@{Dotenv\textbackslash{}Loader}}
+\doxysubsubsection{\texorpdfstring{splitCompoundStringIntoParts()}{splitCompoundStringIntoParts()}}
+{\footnotesize\ttfamily Dotenv\textbackslash{}\+Loader\+::split\+Compound\+String\+Into\+Parts (\begin{DoxyParamCaption}\item[{}]{\$name,  }\item[{}]{\$value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Split the compound string into parts.
+
+If the {\ttfamily \$name} contains an {\ttfamily =} sign, then we split it into 2 parts, a {\ttfamily name} \& {\ttfamily value} disregarding the {\ttfamily \$value} passed in.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+vendor/vlucas/phpdotenv/src/Loader.\+php\end{DoxyCompactItemize}

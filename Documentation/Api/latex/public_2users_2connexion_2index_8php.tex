@@ -1,0 +1,43 @@
+\hypertarget{public_2users_2connexion_2index_8php}{}\doxysection{public/users/connexion/index.php File Reference}
+\label{public_2users_2connexion_2index_8php}\index{public/users/connexion/index.php@{public/users/connexion/index.php}}
+
+
+File being the front controller of the API and allowing to process users connexion.  
+
+
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a37c866e0dd005b2054896f4c4fb88132}\label{public_2users_2connexion_2index_8php_a37c866e0dd005b2054896f4c4fb88132}} 
+{\bfseries \$request\+Method} = \$\+\_\+\+SERVER\mbox{[}\char`\"{}REQUEST\+\_\+\+METHOD\char`\"{}\mbox{]}
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}\label{public_2users_2connexion_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}} 
+{\bfseries \$controller} = new \mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller}{User\+Controller}}(\$db\+Connection)
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}\label{public_2users_2connexion_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}} 
+{\bfseries \$path} = parse\+\_\+url(\$\+\_\+\+SERVER\mbox{[}\textquotesingle{}REQUEST\+\_\+\+URI\textquotesingle{}\mbox{]}, PHP\+\_\+\+URL\+\_\+\+PATH)
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}\label{public_2users_2connexion_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}} 
+{\bfseries \$path\+Fragments} = explode(\textquotesingle{}/\textquotesingle{}, \$path)
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_ae97941710d863131c700f069b109991e}\label{public_2users_2connexion_2index_8php_ae97941710d863131c700f069b109991e}} 
+{\bfseries \$id} = intval(end(\$path\+Fragments))
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a0eb82aa5f81cf845de4b36cd653c42cf}\label{public_2users_2connexion_2index_8php_a0eb82aa5f81cf845de4b36cd653c42cf}} 
+{\bfseries \$username} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{public_2users_2connexion_2index_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}\label{public_2users_2connexion_2index_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}} 
+{\bfseries \$password} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File being the front controller of the API and allowing to process users connexion. 
+
+\hypertarget{public_2users_2connexion_2index_8php_autotoc_md20}{}\doxysubsubsection{BDCC}\label{public_2users_2connexion_2index_8php_autotoc_md20}
+\begin{DoxyAuthor}{Author}
+Lorenzo Bauduccio \href{mailto:lorenzo.bdcc@eduge.ch}{\texttt{ lorenzo.\+bdcc@eduge.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 BDCC 
+\end{DoxyCopyright}
