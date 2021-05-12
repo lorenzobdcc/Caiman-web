@@ -1,0 +1,58 @@
+\hypertarget{games_2category_2index_8php}{}\doxysection{public/games/category/index.php File Reference}
+\label{games_2category_2index_8php}\index{public/games/category/index.php@{public/games/category/index.php}}
+
+
+File being the front controller of the API and allowing to process the request to get games by theire category.  
+
+
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a37c866e0dd005b2054896f4c4fb88132}\label{games_2category_2index_8php_a37c866e0dd005b2054896f4c4fb88132}} 
+{\bfseries \$request\+Method} = \$\+\_\+\+SERVER\mbox{[}\char`\"{}REQUEST\+\_\+\+METHOD\char`\"{}\mbox{]}
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}\label{games_2category_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}} 
+{\bfseries \$controller} = new \mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller}{Game\+Controller}}(\$db\+Connection)
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}\label{games_2category_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}} 
+{\bfseries \$path} = parse\+\_\+url(\$\+\_\+\+SERVER\mbox{[}\textquotesingle{}REQUEST\+\_\+\+URI\textquotesingle{}\mbox{]}, PHP\+\_\+\+URL\+\_\+\+PATH)
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}\label{games_2category_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}} 
+{\bfseries \$path\+Fragments} = explode(\textquotesingle{}/\textquotesingle{}, \$path)
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_ae97941710d863131c700f069b109991e}\label{games_2category_2index_8php_ae97941710d863131c700f069b109991e}} 
+{\bfseries \$id} = intval(end(\$path\+Fragments))
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a7d6a0f063eaff0bfafef87435c31540c}\label{games_2category_2index_8php_a7d6a0f063eaff0bfafef87435c31540c}} 
+{\bfseries \$game} = new \mbox{\hyperlink{class_app_1_1_models_1_1_game}{Game}}()
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a7105166b5a3f6b3e7056da5d3d61522d}\label{games_2category_2index_8php_a7105166b5a3f6b3e7056da5d3d61522d}} 
+\$game {\bfseries id} = \$id ?? null
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a9703dceb6625a97957837d28cb227cab}\label{games_2category_2index_8php_a9703dceb6625a97957837d28cb227cab}} 
+\$game {\bfseries name} = \$input\mbox{[}\char`\"{}name\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a7cd6e0a70cf808028589f00b10672bc0}\label{games_2category_2index_8php_a7cd6e0a70cf808028589f00b10672bc0}} 
+\$game {\bfseries description} = \$input\mbox{[}\char`\"{}description\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a8388a07b30fdfffad9f4088886c6c455}\label{games_2category_2index_8php_a8388a07b30fdfffad9f4088886c6c455}} 
+\$game {\bfseries image\+Name} = \$input\mbox{[}\char`\"{}image\+Name\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_a08d1ed6d5bd70e2e4ca82b80015562c4}\label{games_2category_2index_8php_a08d1ed6d5bd70e2e4ca82b80015562c4}} 
+\$game {\bfseries id\+Console} = \$input\mbox{[}\char`\"{}id\+Console\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{games_2category_2index_8php_acb1fa55b22e4b855c5c259692483a634}\label{games_2category_2index_8php_acb1fa55b22e4b855c5c259692483a634}} 
+\$game {\bfseries id\+File} = \$input\mbox{[}\char`\"{}id\+File\char`\"{}\mbox{]} ?? null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File being the front controller of the API and allowing to process the request to get games by theire category. 
+
+\hypertarget{games_2category_2index_8php_autotoc_md16}{}\doxysubsubsection{BDCC}\label{games_2category_2index_8php_autotoc_md16}
+\begin{DoxyAuthor}{Author}
+Lorenzo Bauduccio \href{mailto:lorenzo.bdcc@eduge.ch}{\texttt{ lorenzo.\+bdcc@eduge.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 BDCC 
+\end{DoxyCopyright}

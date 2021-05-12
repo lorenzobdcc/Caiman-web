@@ -39,27 +39,10 @@ $game->idFile = $input["idFile"] ?? null;
 switch ($requestMethod) {
     case 'GET':
         if (empty($id) || !is_numeric($id)) {
-            //$response = $controller->getAllGames();
         }
         else{
             $response = $controller->getFavoriteGameOfUser($id);
         }
-        break;
-
-    case 'PATCH':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->updateGame($dog);
-        break;
-
-    case 'DELETE':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->deleteGame($id);
         break;
         
     default:

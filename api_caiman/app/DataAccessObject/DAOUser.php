@@ -63,16 +63,16 @@ class DAOUser {
      * @param int $id The user identifier 
      * @return User A User model object containing all the result rows of the query 
      */
-    public function find(int $id)
+    public function find(string $apitocken)
     {
         $statement = "
         SELECT *
         FROM user
-        WHERE id = :ID_USER;";
+        WHERE apitocken = :API_TOCKEN;";
 
         try {
             $statement = $this->db->prepare($statement);
-            $statement->bindParam(':ID_USER', $id, \PDO::PARAM_INT);
+            $statement->bindParam(':API_TOCKEN', $apitocken);
             $statement->execute();
             $user = new User();
 

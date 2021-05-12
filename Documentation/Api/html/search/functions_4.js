@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['data_1606',['data',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#a521b8dadc893ac68f1a3b27e54f7faaa',1,'PHPMailer::PHPMailer::SMTP']]],
-  ['dateoverlapproblem_1607',['dateOverlapProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a3c287c8d2cbb99e7a8e3cab8717ff8c0',1,'App::Controllers::ResponseController']]],
-  ['dec2roman_1608',['dec2roman',['../class_dompdf_1_1_helpers.html#aa7a7303fb7422e38b5bb940ccd77cf5d',1,'Dompdf::Helpers']]],
-  ['decorate_5froot_1609',['decorate_root',['../class_dompdf_1_1_frame_1_1_factory.html#ae2825394f10437fb2efae708ee6b7ca0',1,'Dompdf::Frame::Factory']]],
-  ['decrement_5fcounters_1610',['decrement_counters',['../class_dompdf_1_1_frame_decorator_1_1_abstract_frame_decorator.html#a893b496096f634d4a800d6622728477f',1,'Dompdf::FrameDecorator::AbstractFrameDecorator']]],
-  ['deep_5fcopy_1611',['deep_copy',['../class_dompdf_1_1_frame_decorator_1_1_abstract_frame_decorator.html#a608cbe7874ab6d4afb57bcad778b52eb',1,'Dompdf::FrameDecorator::AbstractFrameDecorator']]],
-  ['delete_5ftext_1612',['delete_text',['../class_dompdf_1_1_frame_decorator_1_1_text.html#a8cc4681f55149889515b839821c0898c',1,'Dompdf::FrameDecorator::Text']]],
-  ['disconnect_1613',['disconnect',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_o_p3.html#a8696c83c33d33a5122b6482abc138c09',1,'PHPMailer::PHPMailer::POP3']]],
-  ['dispose_1614',['dispose',['../class_dompdf_1_1_css_1_1_style.html#ab4eeb753660791ddfb71718a1665b624',1,'Dompdf\Css\Style\dispose()'],['../class_dompdf_1_1_frame.html#a96fd1936706090b34dd9e2f0190bd7c5',1,'Dompdf\Frame\dispose()'],['../class_dompdf_1_1_frame_decorator_1_1_abstract_frame_decorator.html#a0517064cd87e260d10488d09ed7fa5f7',1,'Dompdf\FrameDecorator\AbstractFrameDecorator\dispose()']]],
-  ['dkim_5fadd_1615',['DKIM_Add',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ac345fdb99d3da987acb38c7d4ec9574d',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['dkim_5fbodyc_1616',['DKIM_BodyC',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ac9e49ede06f0fae5d53c3843cc442110',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['dkim_5fheaderc_1617',['DKIM_HeaderC',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ad584c404e1d081ed8ba5a019335a606b',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['dkim_5fqp_1618',['DKIM_QP',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a196685b4b2a4f98988533f7c55b2df43',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['dkim_5fsign_1619',['DKIM_Sign',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a2bead1890dd20b30e1089a65dd44a669',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['docallback_1620',['doCallback',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a0d502e3da4dec7763b468426c11ddfff',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['documenttypenotpdfproblem_1621',['documentTypeNotPdfProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a5e74e2a9c3c23c723e60d66c0f1e3328',1,'App::Controllers::ResponseController']]],
-  ['dompdf_5fdebug_1622',['dompdf_debug',['../class_dompdf_1_1_helpers.html#aa22f53babc7605c722ec55c9093444f1',1,'Dompdf::Helpers']]],
-  ['dompdf_5fgetimagesize_1623',['dompdf_getimagesize',['../class_dompdf_1_1_helpers.html#a8a15b463650c91b904236f8d9c13d398',1,'Dompdf::Helpers']]]
+  ['ensurefileisreadable_217',['ensureFileIsReadable',['../class_dotenv_1_1_loader.html#a637a43827d81485c785660b88274776a',1,'Dotenv::Loader']]]
 ];

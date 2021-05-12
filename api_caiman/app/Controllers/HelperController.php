@@ -1,12 +1,4 @@
 <?php
-/**
- * HelperController.php
- *
- * Controller allowing the use of help functions.
- *
- * @link https://developer.mozilla.org/fr/docs/Web/HTTP/Status
- * @author  Jonathan Borel-Jaquet - CFPT / T.IS-ES2 <jonathan.brljq@eduge.ch>
- */
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>

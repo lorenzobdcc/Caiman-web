@@ -25,8 +25,8 @@ $controller = new UserController($dbConnection);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
-$id = intval(end($pathFragments));
-
+$apitockenget = intval(end($pathFragments));
+$apitockenget = $pathFragments[5];
 parse_str(file_get_contents('php://input'), $input);
 
 $user = new User();
@@ -37,35 +37,14 @@ $user->apitocken = $input["apitocken"] ?? null;
 $user->email = $input["email"] ?? null;
 $user->privateAccount = $input["privateAccount"] ?? null;
 $user->idRole = $input["idRole"] ?? null;
-
 switch ($requestMethod) {
     case 'GET':
-        if (empty($id) || !is_numeric($id)) {
-            $response = $controller->getAllCustomerUsers();
+        if (empty($apitockenget) == 1) {
+            $response = $controller->getAllUsers();
         }
         else{
-            $response = $controller->getUser($id);
+            $response = $controller->getUser($apitockenget);
         }
-        break;
-
-    case 'POST':
-        $response = $controller->createUser($user);
-        break;
-
-    case 'PATCH':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->updateUser($user);
-        break;
-
-    case 'DELETE':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->deleteUser($id);
         break;
         
     default:

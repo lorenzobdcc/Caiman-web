@@ -45,14 +45,6 @@ switch ($requestMethod) {
             $response = $controller->getTimeGames($id);
         }
         break;
-
-    case 'PATCH':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->updateGame($dog);
-        break;
         
     default:
         header("HTTP/1.1 404 Not Found");

@@ -33,7 +33,7 @@ class UserController {
      * 
      * @return string The status and the body in json format of the response
      */
-    public function getAllCustomerUsers()
+    public function getAllUsers()
     {
         $headers = apache_request_headers();
 
@@ -53,13 +53,13 @@ class UserController {
      * @param int $id The user identifier
      * @return string The status and the body in JSON format of the response
      */
-    public function getUser(int $id)
+    public function getUser(string $apitocken)
     {
         $headers = apache_request_headers();
 
 
 
-        $user = $this->DAOUser->find($id);
+        $user = $this->DAOUser->find($apitocken);
 
         if (is_null($user)) {
             return ResponseController::notFoundResponse();

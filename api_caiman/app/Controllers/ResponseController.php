@@ -6,7 +6,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Controller allowing to return different type of HTTP response.
  */
-namespace App\Controllers;
+namespace App\Controllers; 
 
 class ResponseController {
 

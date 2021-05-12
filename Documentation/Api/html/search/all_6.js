@@ -1,27 +1,7 @@
 var searchData=
 [
-  ['edebug_308',['edebug',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a39eadd6ab95a3dc3c7ec249fd694f021',1,'PHPMailer\PHPMailer\PHPMailer\edebug()'],['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#a428c75f1ab137d95c57567459f51e876',1,'PHPMailer\PHPMailer\SMTP\edebug()']]],
-  ['ellipse_309',['Ellipse',['../class_svg_1_1_tag_1_1_ellipse.html',1,'Svg::Tag']]],
-  ['emittoken_310',['emitToken',['../class_h_t_m_l5___tokenizer.html#a01eea7352e05452f7595ecf8a6233c76',1,'HTML5_Tokenizer\emitToken()'],['../class_h_t_m_l5___tree_builder.html#a21881d360e259235bbf4f1b6946b55ab',1,'HTML5_TreeBuilder\emitToken()']]],
-  ['enable_5fcaching_311',['enable_caching',['../class_dompdf_1_1_dompdf.html#aea077e27c4d1c1e115befd4faf558abf',1,'Dompdf::Dompdf']]],
-  ['enablecaching_312',['enableCaching',['../class_dompdf_1_1_dompdf.html#aef9efd2d4f87fb3042e0a33f963f80ea',1,'Dompdf::Dompdf']]],
-  ['encodefile_313',['encodeFile',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ace817a44b755bb05325da297aff54cc9',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['encodeheader_314',['encodeHeader',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a0d2565d7fed06cf340653885436f93cd',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['encodeq_315',['encodeQ',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#a72e2d86d123bd899dd9334c3c464ca28',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['encodeqp_316',['encodeQP',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ac4459516a6631f487743a77c199bd8c3',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['encodestring_317',['encodeString',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#adf1be0fc8f6568fc5e55a5bdef037b15',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['encodeuri_318',['encodeURI',['../class_dompdf_1_1_helpers.html#a76eadac9e551e983e90a92c055c18bcd',1,'Dompdf::Helpers']]],
-  ['encodingmap_319',['EncodingMap',['../class_font_lib_1_1_encoding_map.html',1,'FontLib']]],
-  ['endboundary_320',['endBoundary',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_p_h_p_mailer.html#ad70ecd8d4b18806949f5f19ec4f4aada',1,'PHPMailer::PHPMailer::PHPMailer']]],
-  ['ensurefileisreadable_321',['ensureFileIsReadable',['../class_dotenv_1_1_loader.html#a637a43827d81485c785660b88274776a',1,'Dotenv::Loader']]],
-  ['errorhandler_322',['errorHandler',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_s_m_t_p.html#ab8dc9dad755e8086f5ff1e6358a5cbf1',1,'PHPMailer::PHPMailer::SMTP']]],
-  ['errormessage_323',['errorMessage',['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception.html#aad2f4255c5653a2073812f40733ded4e',1,'PHPMailer::PHPMailer::Exception']]],
-  ['evaluate_324',['evaluate',['../class_dompdf_1_1_php_evaluator.html#a284398c3a890f70e85267839ba16e409',1,'Dompdf::PhpEvaluator']]],
-  ['exception_325',['Exception',['../class_dompdf_1_1_exception.html',1,'Dompdf\Exception'],['../class_p_h_p_mailer_1_1_p_h_p_mailer_1_1_exception.html',1,'PHPMailer\PHPMailer\Exception']]],
-  ['exceptioninterface_326',['ExceptionInterface',['../interface_dotenv_1_1_exception_1_1_exception_interface.html',1,'Dotenv::Exception']]],
-  ['expandbordershorthand_327',['expandBorderShorthand',['../class_sabberworm_1_1_c_s_s_1_1_rule_set_1_1_declaration_block.html#a325a25f62314ad21181707643e14a293',1,'Sabberworm::CSS::RuleSet::DeclarationBlock']]],
-  ['expanddimensionsshorthand_328',['expandDimensionsShorthand',['../class_sabberworm_1_1_c_s_s_1_1_rule_set_1_1_declaration_block.html#ac7ee9902286d4cce7fbf9ccb10cb5575',1,'Sabberworm::CSS::RuleSet::DeclarationBlock']]],
-  ['expandfontshorthand_329',['expandFontShorthand',['../class_sabberworm_1_1_c_s_s_1_1_rule_set_1_1_declaration_block.html#a3e0c5e97460178cc440a100d5c27f58a',1,'Sabberworm::CSS::RuleSet::DeclarationBlock']]],
-  ['expandshorthands_330',['expandShorthands',['../class_sabberworm_1_1_c_s_s_1_1_c_s_s_list_1_1_document.html#ad0f969e13eb02cff7a6995f9156b2feb',1,'Sabberworm\CSS\CSSList\Document\expandShorthands()'],['../class_sabberworm_1_1_c_s_s_1_1_rule_set_1_1_declaration_block.html#a877066534b49970935aa4db3667e036f',1,'Sabberworm\CSS\RuleSet\DeclarationBlock\expandShorthands()']]],
-  ['explode_5furl_331',['explode_url',['../class_dompdf_1_1_helpers.html#a0f7efcd8fd13c4f364c44559f895419b',1,'Dompdf::Helpers']]]
+  ['find_44',['find',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#aa5476ea4d137fd8a4c4143f6791dfa19',1,'App\DataAccessObject\DAOGame\find()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#a594d981c29554a25ebbe1f912b0d1320',1,'App\DataAccessObject\DAOUser\find()']]],
+  ['findall_45',['findAll',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a69d49f74b0708cdd916fa3548f46e749',1,'App\DataAccessObject\DAOGame\findAll()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#a505edb233e919c2b352eaeb6e2f00120',1,'App\DataAccessObject\DAOUser\findAll()']]],
+  ['findbyapitoken_46',['findByApiToken',['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#a196c5c58d7744606e9f7fdb5b1e10b4a',1,'App::DataAccessObject::DAOUser']]],
+  ['findfile_47',['findFile',['../class_composer_1_1_autoload_1_1_class_loader.html#a505e9f4e4a29f6bd47bc694e78ae46c3',1,'Composer::Autoload::ClassLoader']]]
 ];

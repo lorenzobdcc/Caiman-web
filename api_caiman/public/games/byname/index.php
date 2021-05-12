@@ -36,35 +36,11 @@ $game->idConsole = $input["idConsole"] ?? null;
 $game->idFile = $input["idFile"] ?? null;
 
 switch ($requestMethod) {
-    case 'GET':
-        if (empty($name) ) {
-            //$response = $controller->getAllGames();
-        }
-        else{
-            $response = $controller->getGamesFromName($name);
-        }
-        break;
         case 'POST':
             $name = $_REQUEST['name'];
             $response = $controller->getGamesFromName($name);
             
             break;
-
-    case 'PATCH':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->updateGame($dog);
-        break;
-
-    case 'DELETE':
-        if (empty($id) || !is_numeric($id)) {
-            header("HTTP/1.1 404 Not Found");
-            exit();
-        }
-        $response = $controller->deleteGame($id);
-        break;
         
     default:
         header("HTTP/1.1 404 Not Found");
