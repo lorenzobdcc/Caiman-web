@@ -25,8 +25,8 @@ $controller = new GameController($dbConnection);
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
 $id = intval(end($pathFragments));
-
 parse_str(file_get_contents('php://input'), $input);
+
 
 $game = new Game();
 $game->id = $id ?? null;
@@ -35,16 +35,44 @@ $game->description = $input["description"] ?? null;
 $game->imageName = $input["imageName"] ?? null;
 $game->idConsole = $input["idConsole"] ?? null;
 $game->idFile = $input["idFile"] ?? null;
-
 switch ($requestMethod) {
     case 'GET':
-        if (empty($id) || !is_numeric($id)) {
-            $response = $controller->getAllGames();
+        $isSet = 0;
+        if (isset($_GET['byName'])) {
+            $name = str_replace(array('+'),array(' '),$_GET['byName']); 
+            $response = $controller->getGamesFromName($name);
+            $isSet = 1;
         }
-        else{
-            $response = $controller->getGame($id);
+        if (isset($_GET['byCategory'])) {
+            $category = $_GET['byCategory'];
+            $response = $controller->getGameFromCategory($category);
+            $isSet = 1;
+        }
+        if (isset($_GET['byUserFavorite'])) {
+            $user = $_GET['byUserFavorite'];
+            $response = $controller->getFavoriteGameOfUser($user);
+            $isSet = 1;
+        }
+        if (isset($_GET['byUserTime'])) {
+            $user = $_GET['byUserTime'];
+            $response = $controller->getTimeGames($user);
+            $isSet = 1;
+        }
+
+
+        if ($isSet == 0) {
+            if (empty($id) || !is_numeric($id)) {
+                $response = $controller->getAllGames();
+            }
+            else{
+                $response = $controller->getGame($id);
+            }
+            
         }
         break;
+        case 'POST':
+
+            break;
         
     default:
         header("HTTP/1.1 404 Not Found");

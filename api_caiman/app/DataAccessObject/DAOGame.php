@@ -76,7 +76,6 @@ class DAOGame {
         SELECT *
         FROM game
         WHERE id = :ID_game;";
-
         try {
             $statement = $this->db->prepare($statement);
             $statement->bindParam(':ID_game', $id, \PDO::PARAM_INT);
@@ -225,7 +224,6 @@ class DAOGame {
                 $game->idFile = $result["idFile"];
                 array_push($gameArray,$game);
             }
-
             return $gameArray;
         } catch (\PDOException $e) {
             exit($e->getMessage());

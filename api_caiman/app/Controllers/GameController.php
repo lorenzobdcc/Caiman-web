@@ -113,7 +113,6 @@ class GameController {
         $headers = apache_request_headers();
 
 
-
         $game = $this->DAOGame->findGamesFromName($name);
         if (is_null($game)) {
             return ResponseController::notFoundResponse();
