@@ -11,9 +11,6 @@ namespace App\Controllers;
 use App\DataAccessObject\DAOGame;
 use App\DataAccessObject\DAOUser;
 use App\Controllers\ResponseController;
-use App\Controllers\HelperController;
-use App\Models\Game;
-use App\System\Constants;
 
 class GameController {
 

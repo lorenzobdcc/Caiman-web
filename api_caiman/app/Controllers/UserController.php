@@ -11,7 +11,6 @@ namespace App\Controllers;
 use App\DataAccessObject\DAOUser;
 use app\Models\User;
 use App\Controllers\ResponseController;
-use App\System\Constants;
 
 class UserController {
 

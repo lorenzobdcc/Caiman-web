@@ -7,7 +7,6 @@
  *  @brief File being the front controller of the API and allowing to process users connexion.
  */
 use App\Controllers\UserController;
-use App\Models\User;
 
 require "../../../bootstrap.php";
 
