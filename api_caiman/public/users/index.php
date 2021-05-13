@@ -26,7 +26,7 @@ $controller = new UserController($dbConnection);
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
 $apitockenget = intval(end($pathFragments));
-$apitockenget = $pathFragments[5];
+$apitockenget = end($pathFragments);
 parse_str(file_get_contents('php://input'), $input);
 
 $user = new User();
@@ -37,20 +37,14 @@ $user->apitocken = $input["apitocken"] ?? null;
 $user->email = $input["email"] ?? null;
 $user->privateAccount = $input["privateAccount"] ?? null;
 $user->idRole = $input["idRole"] ?? null;
+
 switch ($requestMethod) {
     case 'GET':
-        print_r($_GET);
-        switch ($i) {
-            case 0:
-                echo "i égal 0";
-                break;
-            case 1:
-                echo "i égal 1";
-                break;
-            case 2:
-                echo "i égal 2";
-                break;
-        }
+        
+        if (is_numeric($apitockenget)) {
+            header("HTTP/1.1 404 Not Found");
+            exit();
+            }
 
         if (empty($apitockenget) == 1) {
             $response = $controller->getAllUsers();

@@ -30,13 +30,18 @@ parse_str(file_get_contents('php://input'), $input);
 $username = "";
 $password = "";
 
-
 switch ($requestMethod) {
 
     case 'POST':
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
-        $response = $controller->connection($username,$password);
+        if ($password != "" && $username != "") {
+            $response = $controller->connection($username,$password);
+        }else{
+            header("HTTP/1.1 404 Not Found");
+            exit();
+        }
+        
         break;
       
     default:
