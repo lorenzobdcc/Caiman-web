@@ -11,7 +11,7 @@
 use App\Controllers\UserController;
 use App\Models\User;
 
-require "../../bootstrap.php";
+require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

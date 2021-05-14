@@ -8,7 +8,7 @@
  */
 use App\Controllers\CategoryController;
 use App\Models\Category;
-require "../../bootstrap.php";
+require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

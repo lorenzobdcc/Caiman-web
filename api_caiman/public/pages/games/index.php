@@ -6,9 +6,11 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief File being the front controller of the API and allowing to process games request.
  */
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 use App\Controllers\GameController;
 use App\Models\Game;
-require $_SERVER['DOCUMENT_ROOT'] . "../bootstrap.php";
+require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
