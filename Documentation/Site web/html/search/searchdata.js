@@ -1,24 +1,18 @@
 var indexSectionsWithContent =
 {
-  0: "_acdefghilmnprsu",
-  1: "acdgilmsu",
-  2: "acdghilmnsu",
-  3: "_acdefghnpru"
+  0: "i",
+  1: "i"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "files",
-  3: "functions"
+  1: "files"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Data Structures",
-  2: "Files",
-  3: "Functions"
+  1: "Files"
 };
 

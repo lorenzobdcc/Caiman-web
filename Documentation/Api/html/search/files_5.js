@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['index_2ephp_195',['index.php',['../pages_2categories_2index_8php.html',1,'(Global Namespace)'],['../pages_2games_2index_8php.html',1,'(Global Namespace)'],['../pages_2users_2connection_2index_8php.html',1,'(Global Namespace)'],['../pages_2users_2index_8php.html',1,'(Global Namespace)']]]
+  ['user_2ephp_105',['User.php',['../_user_8php.html',1,'']]],
+  ['usercontroller_2ephp_106',['UserController.php',['../_user_controller_8php.html',1,'']]]
 ];

@@ -1,10 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefghilnoprstuv",
-  1: "cdeghilpruv",
-  2: "bcdghiru",
-  3: "_acdefgilnoprstuv",
-  4: "s"
+  0: "_cdfghinprstuv",
+  1: "cdghru",
+  2: "cdghru",
+  3: "_cdfginpstuv"
 };
 
 var indexSectionNames =
@@ -12,8 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "files",
-  3: "functions",
-  4: "pages"
+  3: "functions"
 };
 
 var indexSectionLabels =
@@ -21,7 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Files",
-  3: "Functions",
-  4: "Pages"
+  3: "Functions"
 };
 

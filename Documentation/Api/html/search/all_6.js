@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['find_44',['find',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#aa5476ea4d137fd8a4c4143f6791dfa19',1,'App\DataAccessObject\DAOGame\find()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#ada65045d591316b7d8a7bc45c565ca9b',1,'App\DataAccessObject\DAOUser\find()']]],
-  ['findall_45',['findAll',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a69d49f74b0708cdd916fa3548f46e749',1,'App\DataAccessObject\DAOGame\findAll()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#a505edb233e919c2b352eaeb6e2f00120',1,'App\DataAccessObject\DAOUser\findAll()']]],
-  ['findfavoritegameofuser_46',['findFavoriteGameOfUser',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8da38dc20656e0e770c355bbe67c9a11',1,'App::DataAccessObject::DAOGame']]],
-  ['findfile_47',['findFile',['../class_composer_1_1_autoload_1_1_class_loader.html#a505e9f4e4a29f6bd47bc694e78ae46c3',1,'Composer::Autoload::ClassLoader']]],
-  ['findgamefromcategory_48',['findGameFromCategory',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a94709b387a6654acbe92f7098ae8689f',1,'App::DataAccessObject::DAOGame']]],
-  ['findgamesfromname_49',['findGamesFromName',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8364fd4facb39d058935f9fb6e36331c',1,'App::DataAccessObject::DAOGame']]],
-  ['findtimesgamesuser_50',['findTimesGamesUser',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a52b75657646858b082ac98c66f879c7c',1,'App::DataAccessObject::DAOGame']]]
+  ['imagefileformatproblem_44',['imageFileFormatProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a7734ddc88597a081897773cc28051677',1,'App::Controllers::ResponseController']]],
+  ['invalidappointment_45',['invalidAppointment',['../class_app_1_1_controllers_1_1_response_controller.html#ae09b777fd438c5caa345e845d7000630',1,'App::Controllers::ResponseController']]],
+  ['invalidcodedayformat_46',['invalidCodeDayFormat',['../class_app_1_1_controllers_1_1_response_controller.html#aaf739eea608da5094929429026b64fe1',1,'App::Controllers::ResponseController']]],
+  ['invaliddateformat_47',['invalidDateFormat',['../class_app_1_1_controllers_1_1_response_controller.html#a0689682180b58ce92ebb61bcf6ace24f',1,'App::Controllers::ResponseController']]],
+  ['invaliddatetimeformat_48',['invalidDateTimeFormat',['../class_app_1_1_controllers_1_1_response_controller.html#a6e511add8ffca0d4e7301853c226292f',1,'App::Controllers::ResponseController']]],
+  ['invaliddocumenttypeformat_49',['invalidDocumentTypeFormat',['../class_app_1_1_controllers_1_1_response_controller.html#ae6bd40f97afa015503d1b128f2ba2c16',1,'App::Controllers::ResponseController']]],
+  ['invalidemailformat_50',['invalidEmailFormat',['../class_app_1_1_controllers_1_1_response_controller.html#a2e77f7f16717578aa424d4db571900ec',1,'App::Controllers::ResponseController']]],
+  ['invalidlogin_51',['invalidLogin',['../class_app_1_1_controllers_1_1_response_controller.html#a4e008ca8404a6856bdda4d6520d04f0f',1,'App::Controllers::ResponseController']]],
+  ['invalidtimeformat_52',['invalidTimeFormat',['../class_app_1_1_controllers_1_1_response_controller.html#adc4b537048429acf681cd8fd9219160b',1,'App::Controllers::ResponseController']]]
 ];

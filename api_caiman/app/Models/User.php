@@ -5,7 +5,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Category model
+ *  @brief User model
  */
 
 namespace App\Models;

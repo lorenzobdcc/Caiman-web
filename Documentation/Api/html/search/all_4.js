@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['daocategory_31',['DAOCategory',['../class_app_1_1_data_access_object_1_1_d_a_o_category.html',1,'App::DataAccessObject']]],
-  ['daocategory_2ephp_32',['DAOCategory.php',['../_d_a_o_category_8php.html',1,'']]],
-  ['daogame_33',['DAOGame',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html',1,'App::DataAccessObject']]],
-  ['daogame_2ephp_34',['DAOGame.php',['../_d_a_o_game_8php.html',1,'']]],
-  ['daouser_35',['DAOUser',['../class_app_1_1_data_access_object_1_1_d_a_o_user.html',1,'App::DataAccessObject']]],
-  ['daouser_2ephp_36',['DAOUser.php',['../_d_a_o_user_8php.html',1,'']]],
-  ['databaseconnector_37',['DatabaseConnector',['../class_app_1_1_system_1_1_database_connector.html',1,'App::System']]],
-  ['databaseconnector_2ephp_38',['DatabaseConnector.php',['../_database_connector_8php.html',1,'']]],
-  ['dateoverlapproblem_39',['dateOverlapProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a3c287c8d2cbb99e7a8e3cab8717ff8c0',1,'App::Controllers::ResponseController']]],
-  ['documenttypenotpdfproblem_40',['documentTypeNotPdfProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a5e74e2a9c3c23c723e60d66c0f1e3328',1,'App::Controllers::ResponseController']]],
-  ['dotenv_41',['Dotenv',['../class_dotenv_1_1_dotenv.html',1,'Dotenv']]]
+  ['game_25',['Game',['../class_app_1_1_models_1_1_game.html',1,'App::Models']]],
+  ['game_2ephp_26',['Game.php',['../_game_8php.html',1,'']]],
+  ['gamecontroller_27',['GameController',['../class_app_1_1_controllers_1_1_game_controller.html',1,'App::Controllers']]],
+  ['gamecontroller_2ephp_28',['GameController.php',['../_game_controller_8php.html',1,'']]],
+  ['generateapitoken_29',['generateApiToken',['../class_app_1_1_controllers_1_1_helper_controller.html#a61cf9f7cfcb8324b37635567dc738823',1,'App::Controllers::HelperController']]],
+  ['generaterandomstring_30',['generateRandomString',['../class_app_1_1_controllers_1_1_helper_controller.html#a2d0b8f54af50df1a819398b1fcd3ad00',1,'App::Controllers::HelperController']]],
+  ['getallcategory_31',['getAllCategory',['../class_app_1_1_controllers_1_1_category_controller.html#ad5bb946ffb0b0216a7aa7fcfb8a1c736',1,'App\Controllers\CategoryController\getAllCategory()'],['../class_app_1_1_data_access_object_1_1_d_a_o_category.html#a638b5edf1bbe6f7231bd0cdc4669eb64',1,'App\DataAccessObject\DAOCategory\getAllCategory()']]],
+  ['getallgames_32',['getAllGames',['../class_app_1_1_controllers_1_1_game_controller.html#aa2593f333fc37c1e28d7ea8b5726469e',1,'App::Controllers::GameController']]],
+  ['getallusers_33',['getAllUsers',['../class_app_1_1_controllers_1_1_user_controller.html#a58df8b576c286304387b3f6fa8cec35b',1,'App::Controllers::UserController']]],
+  ['getconnection_34',['getConnection',['../class_app_1_1_system_1_1_database_connector.html#a8de6ab0c8cba41ef14c9bb3fc55767ed',1,'App::System::DatabaseConnector']]],
+  ['getdefaultdirectory_35',['getDefaultDirectory',['../class_app_1_1_controllers_1_1_helper_controller.html#afc348b053d61205c7b03f4971f07d64f',1,'App::Controllers::HelperController']]],
+  ['getfavoritegameofuser_36',['getFavoriteGameOfUser',['../class_app_1_1_controllers_1_1_game_controller.html#a5b1d49e8c3463fd03333239fbe643a58',1,'App::Controllers::GameController']]],
+  ['getgame_37',['getGame',['../class_app_1_1_controllers_1_1_game_controller.html#a74c35d70fbbf15793a677f59063c2282',1,'App::Controllers::GameController']]],
+  ['getgamefromcategory_38',['getGameFromCategory',['../class_app_1_1_controllers_1_1_game_controller.html#a1ad2ee3c1fe406ba8018d52f2150e14c',1,'App::Controllers::GameController']]],
+  ['getgamesfromname_39',['getGamesFromName',['../class_app_1_1_controllers_1_1_game_controller.html#af8998a2f6895b23f58b9e6078a450126',1,'App::Controllers::GameController']]],
+  ['gettimegames_40',['getTimeGames',['../class_app_1_1_controllers_1_1_game_controller.html#acd53fc5c46d9a3266126c0fe1739ca7d',1,'App::Controllers::GameController']]],
+  ['getuser_41',['getUser',['../class_app_1_1_controllers_1_1_user_controller.html#a6bfbd88c5ba8abd3c86abb78aecf0025',1,'App::Controllers::UserController']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['game_170',['Game',['../class_app_1_1_models_1_1_game.html',1,'App::Models']]],
-  ['gamecontroller_171',['GameController',['../class_app_1_1_controllers_1_1_game_controller.html',1,'App::Controllers']]]
+  ['helpercontroller_90',['HelperController',['../class_app_1_1_controllers_1_1_helper_controller.html',1,'App::Controllers']]]
 ];

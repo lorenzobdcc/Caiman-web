@@ -1,27 +1,9 @@
 var searchData=
 [
-  ['category_7',['Category',['../class_app_1_1_models_1_1_category.html',1,'App::Models']]],
-  ['category_2ephp_8',['Category.php',['../_category_8php.html',1,'']]],
-  ['categorycontroller_9',['CategoryController',['../class_app_1_1_controllers_1_1_category_controller.html',1,'App::Controllers']]],
-  ['categorycontroller_2ephp_10',['CategoryController.php',['../_category_controller_8php.html',1,'']]],
-  ['chronologicaldateproblem_11',['chronologicalDateProblem',['../class_app_1_1_controllers_1_1_response_controller.html#a4d8a51cc1d3232f13cd626f7ae97124b',1,'App::Controllers::ResponseController']]],
-  ['classloader_12',['ClassLoader',['../class_composer_1_1_autoload_1_1_class_loader.html',1,'Composer::Autoload']]],
-  ['clearenvironmentvariable_13',['clearEnvironmentVariable',['../class_dotenv_1_1_loader.html#a742da8e234dfb66e6247b1b2db7a2fd0',1,'Dotenv::Loader']]],
-  ['composerautoloaderinit12d41e5c90a50136bf3faf839b179187_14',['ComposerAutoloaderInit12d41e5c90a50136bf3faf839b179187',['../class_composer_autoloader_init12d41e5c90a50136bf3faf839b179187.html',1,'']]],
-  ['composerstaticinit12d41e5c90a50136bf3faf839b179187_15',['ComposerStaticInit12d41e5c90a50136bf3faf839b179187',['../class_composer_1_1_autoload_1_1_composer_static_init12d41e5c90a50136bf3faf839b179187.html',1,'Composer::Autoload']]],
-  ['connection_16',['connection',['../class_app_1_1_controllers_1_1_user_controller.html#afa067a92b2b2330fae6464625b385bdb',1,'App::Controllers::UserController']]],
-  ['constants_17',['Constants',['../class_app_1_1_system_1_1_constants.html',1,'App::System']]],
-  ['constants_2ephp_18',['Constants.php',['../_constants_8php.html',1,'']]],
-  ['ctype_19',['Ctype',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html',1,'Symfony::Polyfill::Ctype']]],
-  ['ctype_5falnum_20',['ctype_alnum',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a3334585d9ed5548deb5efc7c8ce5c3bc',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5falpha_21',['ctype_alpha',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a82cdb13a35546ea6a82cd146052814aa',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fcntrl_22',['ctype_cntrl',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#ab0e5c6312a4aa53259caf0d574e216df',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fdigit_23',['ctype_digit',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a38736271212757af3b497f3247297e8f',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fgraph_24',['ctype_graph',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a785e6637e90612db37527504b009eb41',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5flower_25',['ctype_lower',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a4675670ae66899c3211842553fe6d6b0',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fprint_26',['ctype_print',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#aac89d387dafeceb8eca049ef15a3a756',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fpunct_27',['ctype_punct',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a1f3c7649a625e9006a989bca726b9e92',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fspace_28',['ctype_space',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a97508652b8b3371885c8a4eb0259bfdc',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fupper_29',['ctype_upper',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#aaaa934d703d7eeb0205184374c720be5',1,'Symfony::Polyfill::Ctype::Ctype']]],
-  ['ctype_5fxdigit_30',['ctype_xdigit',['../class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.html#a5627da06aa2d638b45d7d030341c15d0',1,'Symfony::Polyfill::Ctype::Ctype']]]
+  ['find_19',['find',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#aa5476ea4d137fd8a4c4143f6791dfa19',1,'App\DataAccessObject\DAOGame\find()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#ada65045d591316b7d8a7bc45c565ca9b',1,'App\DataAccessObject\DAOUser\find()']]],
+  ['findall_20',['findAll',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a69d49f74b0708cdd916fa3548f46e749',1,'App\DataAccessObject\DAOGame\findAll()'],['../class_app_1_1_data_access_object_1_1_d_a_o_user.html#a505edb233e919c2b352eaeb6e2f00120',1,'App\DataAccessObject\DAOUser\findAll()']]],
+  ['findfavoritegameofuser_21',['findFavoriteGameOfUser',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8da38dc20656e0e770c355bbe67c9a11',1,'App::DataAccessObject::DAOGame']]],
+  ['findgamefromcategory_22',['findGameFromCategory',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a94709b387a6654acbe92f7098ae8689f',1,'App::DataAccessObject::DAOGame']]],
+  ['findgamesfromname_23',['findGamesFromName',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8364fd4facb39d058935f9fb6e36331c',1,'App::DataAccessObject::DAOGame']]],
+  ['findtimesgamesuser_24',['findTimesGamesUser',['../class_app_1_1_data_access_object_1_1_d_a_o_game.html#a52b75657646858b082ac98c66f879c7c',1,'App::DataAccessObject::DAOGame']]]
 ];

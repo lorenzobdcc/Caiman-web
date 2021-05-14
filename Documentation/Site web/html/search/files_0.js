@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['administrator_2ephp_104',['administrator.php',['../administrator_8php.html',1,'']]],
-  ['administratorcontroller_2ephp_105',['administratorController.php',['../administrator_controller_8php.html',1,'']]]
+  ['index_2ephp_1',['index.php',['../index_8php.html',1,'']]]
 ];
