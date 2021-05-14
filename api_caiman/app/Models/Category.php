@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,9 +7,11 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Category model
  */
+
 namespace App\Models;
 
-class Category {
+class Category
+{
 
     public ?int $id;
     public ?string $name;
@@ -16,16 +19,15 @@ class Category {
 
     /**
      * 
-     * Constructor of the Dog model object.
+     * Constructor of the category model object.
      * 
-     * @param int $id The dog identifier
-     * @param string $name The name of the dog
+     * @param int $id The category identifier
+     * @param string $name The name of the category
 
      */
     public function __construct(int $id = null, string $name = null)
     {
         $this->id = $id;
         $this->name = $name;
-
     }
 }

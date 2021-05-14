@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,12 +7,14 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Data access object of the game table.
  */
+
 namespace App\DataAccessObject;
 
 use App\Models\Game;
 
 
-class DAOGame {
+class DAOGame
+{
 
     private \PDO $db;
 
@@ -28,7 +31,7 @@ class DAOGame {
 
     /**
      * 
-     * Method to return all game$games from the database in an array of game$game objects.
+     * Method to return all game from the database in an array of game$game objects.
      * 
      * @return Game[] A game$game object array
      */
@@ -43,7 +46,7 @@ class DAOGame {
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $gameArray = array();
-            
+
             foreach ($results as $result) {
                 $game = new game();
                 $game->id = $result["id"];
@@ -52,11 +55,10 @@ class DAOGame {
                 $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
-                array_push($gameArray,$game);
+                array_push($gameArray, $game);
             }
 
             return $gameArray;
-
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
@@ -65,7 +67,7 @@ class DAOGame {
 
     /**
      * 
-     * Method to return a game$game from the database in a game model object.
+     * Method to return a game from the database in a game model object.
      * 
      * @param int $id The game$game identifier 
      * @return game A game model object containing all the result rows of the query 
@@ -80,10 +82,10 @@ class DAOGame {
             $statement = $this->db->prepare($statement);
             $statement->bindParam(':ID_game', $id, \PDO::PARAM_INT);
             $statement->execute();
-            
+
             $game = new game();
 
-            if ($statement->rowCount()==1) {
+            if ($statement->rowCount() == 1) {
                 $result = $statement->fetch(\PDO::FETCH_ASSOC);
                 $game->id = $result["id"];
                 $game->name = $result["name"];
@@ -91,17 +93,23 @@ class DAOGame {
                 $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
-            }
-            else{
+            } else {
                 $game = null;
             }
 
             return $game;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 
+    /**
+     * 
+     * Method to return a list of games from the database where the category of the game is spécified
+     * 
+     * @param int $id The category identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
     public function findGameFromCategory(int $id)
     {
         $statement = "
@@ -126,15 +134,22 @@ class DAOGame {
                 $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
-                array_push($gameArray,$game);
+                array_push($gameArray, $game);
             }
 
             return $gameArray;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 
+    /**
+     * 
+     * Method to return the list of games a user has alredy played 
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
     public function findTimesGamesUser(int $id)
     {
         $statement = "
@@ -158,15 +173,22 @@ class DAOGame {
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
                 $game->time = $result["timeInMinute"];
-                array_push($gameArray,$game);
+                array_push($gameArray, $game);
             }
 
             return $gameArray;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 
+    /**
+     * 
+     * Method to return the list of user's favorites games
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
     public function findFavoriteGameOfUser(int $id)
     {
         $statement = "
@@ -191,25 +213,32 @@ class DAOGame {
                 $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
-                array_push($gameArray,$game);
+                array_push($gameArray, $game);
             }
 
             return $gameArray;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 
+    /**
+     * 
+     * Method to return the list of games by theire names
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
     public function findGamesFromName(string $name)
     {
         $statement = "
-        SELECT * FROM game WHERE name LIKE '%".$name."%'
+        SELECT * FROM game WHERE name LIKE '%" . $name . "%'
         ;";
 
         try {
             $statement = $this->db->prepare($statement);
-            $truename = '%'.$name.'%';
-            $statement->bindParam(':search_game',$truename, \PDO::PARAM_INT);
+            $truename = '%' . $name . '%';
+            $statement->bindParam(':search_game', $truename, \PDO::PARAM_INT);
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -222,13 +251,11 @@ class DAOGame {
                 $game->imageName = $result["imageName"];
                 $game->idConsole = $result["idConsole"];
                 $game->idFile = $result["idFile"];
-                array_push($gameArray,$game);
+                array_push($gameArray, $game);
             }
             return $gameArray;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
-
-
 }

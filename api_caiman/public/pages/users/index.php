@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,6 +7,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief File being the front controller of the API and allowing to process games request.
  */
+
 use App\Controllers\UserController;
 use App\Models\User;
 
@@ -25,35 +27,35 @@ $controller = new UserController($dbConnection);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
-$apitockenget = intval(end($pathFragments));
-$apitockenget = end($pathFragments);
 parse_str(file_get_contents('php://input'), $input);
 
+$apikey = "";
 $user = new User();
 $user->id = $id ?? null;
 $user->password = $input["password"] ?? null;
 $user->salt = $input["salt"] ?? null;
-$user->apitocken = $input["apitocken"] ?? null;
+$user->apitocken = $input["apitoken"] ?? null;
 $user->email = $input["email"] ?? null;
 $user->privateAccount = $input["privateAccount"] ?? null;
 $user->idRole = $input["idRole"] ?? null;
 
 switch ($requestMethod) {
     case 'GET':
-        
-        if (is_numeric($apitockenget)) {
+        $response = $controller->getAllUsers();
+
+        break;
+
+    case 'POST':
+        $apikey = $_REQUEST['apikey'];
+        if ($apikey != "") {
+            $response = $controller->getUser($apikey);
+        } else {
             header("HTTP/1.1 404 Not Found");
             exit();
-            }
+        }
 
-        if (empty($apitockenget) == 1) {
-            $response = $controller->getAllUsers();
-        }
-        else{
-            $response = $controller->getUser($apitockenget);
-        }
         break;
-        
+
     default:
         header("HTTP/1.1 404 Not Found");
         exit();

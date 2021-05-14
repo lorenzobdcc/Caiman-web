@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,6 +7,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief File being the front controller of the API and allowing to process users connexion.
  */
+
 use App\Controllers\UserController;
 
 require "../../../bootstrap.php";
@@ -24,7 +26,6 @@ $controller = new UserController($dbConnection);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $pathFragments = explode('/', $path);
-$id = intval(end($pathFragments));
 
 parse_str(file_get_contents('php://input'), $input);
 $username = "";
@@ -36,14 +37,14 @@ switch ($requestMethod) {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
         if ($password != "" && $username != "") {
-            $response = $controller->connection($username,$password);
-        }else{
+            $response = $controller->connection($username, $password);
+        } else {
             header("HTTP/1.1 404 Not Found");
             exit();
         }
-        
+
         break;
-      
+
     default:
         header("HTTP/1.1 404 Not Found");
         exit();

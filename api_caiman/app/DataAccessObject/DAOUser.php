@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,11 +7,13 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Data access object of the User table.
  */
+
 namespace App\DataAccessObject;
 
 use App\Models\User;
 
-class DAOUser {
+class DAOUser
+{
 
     private \PDO $db;
 
@@ -42,12 +45,12 @@ class DAOUser {
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $userArray = array();
-            
+
             foreach ($results as $result) {
                 $user = new User();
                 $user->id = $result["id"];
                 $user->username = $result["username"];
-                array_push($userArray,$user);
+                array_push($userArray, $user);
             }
             return $userArray;
         } catch (\PDOException $e) {
@@ -76,102 +79,23 @@ class DAOUser {
             $statement->execute();
             $user = new User();
 
-            if ($statement->rowCount()==1) {
+            if ($statement->rowCount() == 1) {
                 $result = $statement->fetch(\PDO::FETCH_ASSOC);
                 $user = new User();
                 $user->id = $result["id"];
                 $user->username = $result["username"];
                 $user->password = $result["password"];
                 $user->salt = $result["salt"];
-                $user->apitocken = $result["apitocken"];
+                $user->apitoken = $result["apitocken"];
                 $user->email = $result["email"];
                 $user->idRole = $result["idRole"];
-            }
-            else{
-                $user = null; 
-            }
-
-            return $user;
-        } catch (\PDOException $e) {
-            exit($e->getMessage());
-        }    
-    }
-
-    public function findUserByUsername(string $username)
-    {
-        $statement = "
-        SELECT *
-        FROM user
-        WHERE username = :username
-        LIMIT 1";
-
-        try {
-            $statement = $this->db->prepare($statement);
-            $statement->bindParam(':username', $username, \PDO::PARAM_STR);
-            $statement->execute();
-
-            $user = new User();
-
-            if ($statement->rowCount()==1) {
-                $result = $statement->fetch(\PDO::FETCH_ASSOC);
-                $user = new User();
-                $user->id = $result["id"];
-                $user->username = $result["username"];
-                $user->password = $result["password"];
-                $user->salt = $result["salt"];
-                $user->apitocken = $result["apitocken"];
-                $user->email = $result["email"];
-                $user->idRole = $result["idRole"];
-            }
-            else{
-                $user = null; 
-            }
-
-            return $user;
-        } catch (\PDOException $e) {
-            exit($e->getMessage());
-        }    
-    }
-
-
-
-    /**
-     * 
-     * Method to return a user from the database user from his api token.
-     * 
-     * @param string $api_token The user api token 
-     * @return User A User model object containing all the result rows of the query 
-     */
-    public function findByApiToken(string $api_token)
-    {
-        $statement = "
-        SELECT *
-        FROM user
-        WHERE apitocken = :API_TOKEN
-        LIMIT 1";
-
-        try {
-            $statement = $this->db->prepare($statement);
-            $statement->bindParam(':API_TOKEN', $api_token, \PDO::PARAM_STR);
-            $statement->execute();
-            $user = new User();
-
-            if ($statement->rowCount()==1) {
-                $result = $statement->fetch(\PDO::FETCH_ASSOC);
-                $user->id = $result["id"];
-                $user->password = $result["password"];
-                $user->salt = $result["salt"];
-                $user->apitocken = $result["apitocken"];
-                $user->email = $result["email"];
-                $user->idRole = $result["idRole"];
-            }
-            else{
+            } else {
                 $user = null;
             }
 
             return $user;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 }

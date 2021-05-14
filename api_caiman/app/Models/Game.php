@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,9 +7,11 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Category model
  */
+
 namespace App\Models;
 
-class Game {
+class Game
+{
 
     public ?int $id;
     public ?string $name;
@@ -18,20 +21,23 @@ class Game {
     public ?string $idFile;
 
     /**
-     * 
-     * Constructor of the Dog model object.
-     * 
-     * @param int $id The dog identifier
-     * @param string $name The name of the dog
-     * @param string $breed The breed of the dog
-     * @param string $sex The sex of the dog
-     * @param string $picture_serial_id The picture serial id of the dog
-     * @param string $chip_id The chip id of the dog
-     * @param int $user_id The user id of the dog's owner
+     * contructor of a game
+     *
+     * @param integer $id
+     * @param string $name
+     * @param string $description
+     * @param string $imageName
+     * @param string $idConsole
+     * @param string $idFile
      */
-    public function __construct(int $id = null, string $name = null, string $description = null,
-     string $imageName = null, string $idConsole = null, string $idFile = null)
-    {
+    public function __construct(
+        int $id = null,
+        string $name = null,
+        string $description = null,
+        string $imageName = null,
+        string $idConsole = null,
+        string $idFile = null
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;

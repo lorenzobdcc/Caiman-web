@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,13 +7,15 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Controller of game model
  */
+
 namespace App\Controllers;
 
 use App\DataAccessObject\DAOGame;
 use App\DataAccessObject\DAOUser;
 use App\Controllers\ResponseController;
 
-class GameController {
+class GameController
+{
 
     private DAOGame $DAOGame;
     private DAOUser $DAOUser;
@@ -27,7 +30,7 @@ class GameController {
     public function __construct(\PDO $db)
     {
         $this->DAOGame = new DAOGame($db);
-        $this->DAOUser = new DAOUser($db);       
+        $this->DAOUser = new DAOUser($db);
     }
 
     /**
@@ -39,12 +42,12 @@ class GameController {
     public function getAllGames()
     {
         $headers = apache_request_headers();
-        
 
-        
+
+
         $allGames = $this->DAOGame->findAll();
 
-        return ResponseController::successfulRequest($allGames);  
+        return ResponseController::successfulRequest($allGames);
     }
 
     /**
@@ -66,12 +69,11 @@ class GameController {
         return ResponseController::successfulRequest($game);
     }
 
-        /**
-     * 
-     * Method to return all the favorite game of a user
-     * 
-     * @param int $id The dog identifier
-     * @return string The status and the body in JSON format of the response
+    /**
+     * Method to return a list of games
+     *
+     * @param integer $id
+     * @return void
      */
     public function getFavoriteGameOfUser(int $id)
     {
@@ -87,6 +89,12 @@ class GameController {
         return ResponseController::successfulRequest($game);
     }
 
+    /**
+     * Method to return a list of games
+     *
+     * @param integer $id
+     * @return void
+     */
     public function getTimeGames(int $id)
     {
         $headers = apache_request_headers();
@@ -103,9 +111,9 @@ class GameController {
 
     /**
      * 
-     * Method to return a dog in JSON format.
+     * Method to return a game in JSON format.
      * 
-     * @param int $id The dog identifier
+     * @param int $id The game identifier
      * @return string The status and the body in JSON format of the response
      */
     public function getGamesFromName(string $name)
@@ -125,7 +133,7 @@ class GameController {
      * 
      * Method to return a game in JSON format.
      * 
-     * @param int $id The dog identifier
+     * @param int $id The game identifier
      * @return string The status and the body in JSON format of the response
      */
     public function getGame(int $id)
@@ -140,5 +148,4 @@ class GameController {
 
         return ResponseController::successfulRequest($game);
     }
-
 }

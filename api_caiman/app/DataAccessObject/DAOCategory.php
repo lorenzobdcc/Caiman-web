@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,12 +7,14 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Data access object of the category table.
  */
+
 namespace App\DataAccessObject;
 
 use App\Models\Category;
 
 
-class DAOCategory {
+class DAOCategory
+{
 
     private \PDO $db;
 
@@ -28,7 +31,7 @@ class DAOCategory {
 
     /**
      * 
-     * Method to return all category from the database in an array of Category objects.
+     * Method to return all categories from the database in an array of Category objects.
      * 
      * @return Category[] A game object array
      */
@@ -43,20 +46,17 @@ class DAOCategory {
             $statement->execute();
             $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
             $categoryArray = array();
-            
+
             foreach ($results as $result) {
                 $category = new Category();
                 $category->id = $result["id"];
                 $category->name = $result["name"];
-                array_push($categoryArray,$category);
+                array_push($categoryArray, $category);
             }
 
             return $categoryArray;
-
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
     }
-
-
 }
