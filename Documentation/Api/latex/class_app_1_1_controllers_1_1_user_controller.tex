@@ -5,9 +5,9 @@
 \item 
 \mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a0543ef18dec357e8ed4d55efd69a15d7}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a83e3486b2dd0835aff3924a408ba585f}{get\+All\+Customer\+Users}} ()
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}{get\+All\+Users}} ()
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_abc3c1973fef903f9ba0426b7dff429e5}{get\+User}} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}{get\+User}} (string \$apitocken)
 \item 
 \mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_afa067a92b2b2330fae6464625b385bdb}{connection}} (string \$username, string \$password)
 \end{DoxyCompactItemize}
@@ -46,22 +46,22 @@ User & {\em \$user} & The user model object \\
 \begin{DoxyReturn}{Returns}
 string The status and the body in JSON format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a83e3486b2dd0835aff3924a408ba585f}\label{class_app_1_1_controllers_1_1_user_controller_a83e3486b2dd0835aff3924a408ba585f}} 
-\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!getAllCustomerUsers@{getAllCustomerUsers}}
-\index{getAllCustomerUsers@{getAllCustomerUsers}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
-\doxysubsubsection{\texorpdfstring{getAllCustomerUsers()}{getAllCustomerUsers()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+All\+Customer\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}\label{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}} 
+\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Method to return all users in JSON format.
 
 \begin{DoxyReturn}{Returns}
 string The status and the body in json format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_abc3c1973fef903f9ba0426b7dff429e5}\label{class_app_1_1_controllers_1_1_user_controller_abc3c1973fef903f9ba0426b7dff429e5}} 
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}\label{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}} 
 \index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!getUser@{getUser}}
 \index{getUser@{getUser}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
 \doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+User (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
 
 Method to return a user in JSON format.
 

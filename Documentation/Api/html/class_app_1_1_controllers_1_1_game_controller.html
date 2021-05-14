@@ -83,8 +83,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1ad2ee3c1fe406ba8018d52f2150e14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1d49e8c3463fd03333239fbe643a58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app_1_1_controllers_1_1_game_controller.html#a5b1d49e8c3463fd03333239fbe643a58">getFavoriteGameOfUser</a> (int $id)</td></tr>
 <tr class="separator:a5b1d49e8c3463fd03333239fbe643a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd53fc5c46d9a3266126c0fe1739ca7d"><td class="memItemLeft" align="right" valign="top"><a id="acd53fc5c46d9a3266126c0fe1739ca7d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeGames</b> (int $id)</td></tr>
+<tr class="memitem:acd53fc5c46d9a3266126c0fe1739ca7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app_1_1_controllers_1_1_game_controller.html#acd53fc5c46d9a3266126c0fe1739ca7d">getTimeGames</a> (int $id)</td></tr>
 <tr class="separator:acd53fc5c46d9a3266126c0fe1739ca7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8998a2f6895b23f58b9e6078a450126"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_app_1_1_controllers_1_1_game_controller.html#af8998a2f6895b23f58b9e6078a450126">getGamesFromName</a> (string $name)</td></tr>
 <tr class="separator:af8998a2f6895b23f58b9e6078a450126"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,14 +151,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method to return all the favorite game of a user</p>
+<p>Method to return a list of games</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$id</td><td>The dog identifier </td></tr>
+    <tr><td class="paramtype">integer</td><td class="paramname">$id</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>string The status and the body in JSON format of the response </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -181,7 +180,7 @@ Public Member Functions</h2></td></tr>
 <p>Method to return a game in JSON format.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$id</td><td>The dog identifier </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$id</td><td>The game identifier </td></tr>
   </table>
   </dd>
 </dl>
@@ -230,14 +229,40 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method to return a dog in JSON format.</p>
+<p>Method to return a game in JSON format.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$id</td><td>The dog identifier </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$id</td><td>The game identifier </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string The status and the body in JSON format of the response </dd></dl>
+
+</div>
+</div>
+<a id="acd53fc5c46d9a3266126c0fe1739ca7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd53fc5c46d9a3266126c0fe1739ca7d">&#9670;&nbsp;</a></span>getTimeGames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">App\Controllers\GameController::getTimeGames </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>$id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method to return a list of games</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">integer</td><td class="paramname">$id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

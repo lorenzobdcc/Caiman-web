@@ -73,7 +73,7 @@ $(function() {
 , <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_user.html#ae826a9e0b7581d0f4e0d5350b5c3f7ee">App\DataAccessObject\DAOUser</a>
 , <a class="el" href="class_app_1_1_models_1_1_category.html#a2c4449aa54ee3317ca074fef44983105">App\Models\Category</a>
 , <a class="el" href="class_app_1_1_models_1_1_game.html#ab823ddc258bbbc1037dcd2e9a8563feb">App\Models\Game</a>
-, <a class="el" href="class_app_1_1_models_1_1_user.html#a16cc3a99180c1741802368b123b19cde">App\Models\User</a>
+, <a class="el" href="class_app_1_1_models_1_1_user.html#a5ee79b7ef7aa8120f8e01f32a2c9a410">App\Models\User</a>
 , <a class="el" href="class_app_1_1_system_1_1_database_connector.html#aef91834d56ed0825c83341a13ef1ce03">App\System\DatabaseConnector</a>
 , <a class="el" href="class_dotenv_1_1_dotenv.html#a8b73e703bba98bfcd17de606193b70a8">Dotenv\Dotenv</a>
 , <a class="el" href="class_dotenv_1_1_loader.html#a8c963bcba9c7efd2e149b5a24893a366">Dotenv\Loader</a>
@@ -167,17 +167,26 @@ $(function() {
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>find()
 : <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#aa5476ea4d137fd8a4c4143f6791dfa19">App\DataAccessObject\DAOGame</a>
-, <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_user.html#a594d981c29554a25ebbe1f912b0d1320">App\DataAccessObject\DAOUser</a>
+, <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_user.html#ada65045d591316b7d8a7bc45c565ca9b">App\DataAccessObject\DAOUser</a>
 </li>
 <li>findAll()
 : <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#a69d49f74b0708cdd916fa3548f46e749">App\DataAccessObject\DAOGame</a>
 , <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_user.html#a505edb233e919c2b352eaeb6e2f00120">App\DataAccessObject\DAOUser</a>
 </li>
-<li>findByApiToken()
-: <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_user.html#a196c5c58d7744606e9f7fdb5b1e10b4a">App\DataAccessObject\DAOUser</a>
+<li>findFavoriteGameOfUser()
+: <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8da38dc20656e0e770c355bbe67c9a11">App\DataAccessObject\DAOGame</a>
 </li>
 <li>findFile()
 : <a class="el" href="class_composer_1_1_autoload_1_1_class_loader.html#a505e9f4e4a29f6bd47bc694e78ae46c3">Composer\Autoload\ClassLoader</a>
+</li>
+<li>findGameFromCategory()
+: <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#a94709b387a6654acbe92f7098ae8689f">App\DataAccessObject\DAOGame</a>
+</li>
+<li>findGamesFromName()
+: <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#a8364fd4facb39d058935f9fb6e36331c">App\DataAccessObject\DAOGame</a>
+</li>
+<li>findTimesGamesUser()
+: <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_game.html#a52b75657646858b082ac98c66f879c7c">App\DataAccessObject\DAOGame</a>
 </li>
 </ul>
 
@@ -193,11 +202,11 @@ $(function() {
 : <a class="el" href="class_app_1_1_controllers_1_1_category_controller.html#ad5bb946ffb0b0216a7aa7fcfb8a1c736">App\Controllers\CategoryController</a>
 , <a class="el" href="class_app_1_1_data_access_object_1_1_d_a_o_category.html#a638b5edf1bbe6f7231bd0cdc4669eb64">App\DataAccessObject\DAOCategory</a>
 </li>
-<li>getAllCustomerUsers()
-: <a class="el" href="class_app_1_1_controllers_1_1_user_controller.html#a83e3486b2dd0835aff3924a408ba585f">App\Controllers\UserController</a>
-</li>
 <li>getAllGames()
 : <a class="el" href="class_app_1_1_controllers_1_1_game_controller.html#aa2593f333fc37c1e28d7ea8b5726469e">App\Controllers\GameController</a>
+</li>
+<li>getAllUsers()
+: <a class="el" href="class_app_1_1_controllers_1_1_user_controller.html#a58df8b576c286304387b3f6fa8cec35b">App\Controllers\UserController</a>
 </li>
 <li>getApcuPrefix()
 : <a class="el" href="class_composer_1_1_autoload_1_1_class_loader.html#aca46c66a148234ea06274030062d0cdf">Composer\Autoload\ClassLoader</a>
@@ -238,11 +247,14 @@ $(function() {
 <li>getRegisteredLoaders()
 : <a class="el" href="class_composer_1_1_autoload_1_1_class_loader.html#a58f65ac56ee1bac6415fb758f409fb8f">Composer\Autoload\ClassLoader</a>
 </li>
+<li>getTimeGames()
+: <a class="el" href="class_app_1_1_controllers_1_1_game_controller.html#acd53fc5c46d9a3266126c0fe1739ca7d">App\Controllers\GameController</a>
+</li>
 <li>getUseIncludePath()
 : <a class="el" href="class_composer_1_1_autoload_1_1_class_loader.html#aeb0360ce32c89c3d50cf5b054aef0d59">Composer\Autoload\ClassLoader</a>
 </li>
 <li>getUser()
-: <a class="el" href="class_app_1_1_controllers_1_1_user_controller.html#abc3c1973fef903f9ba0426b7dff429e5">App\Controllers\UserController</a>
+: <a class="el" href="class_app_1_1_controllers_1_1_user_controller.html#a6bfbd88c5ba8abd3c86abb78aecf0025">App\Controllers\UserController</a>
 </li>
 </ul>
 

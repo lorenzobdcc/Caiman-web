@@ -9,17 +9,13 @@
 \item 
 \mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_aa5476ea4d137fd8a4c4143f6791dfa19}{find}} (int \$id)
 \item 
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}} 
-{\bfseries find\+Game\+From\+Category} (int \$id)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}{find\+Game\+From\+Category}} (int \$id)
 \item 
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}} 
-{\bfseries find\+Times\+Games\+User} (int \$id)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}{find\+Times\+Games\+User}} (int \$id)
 \item 
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}} 
-{\bfseries find\+Favorite\+Game\+Of\+User} (int \$id)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}{find\+Favorite\+Game\+Of\+User}} (int \$id)
 \item 
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}} 
-{\bfseries find\+Games\+From\+Name} (string \$name)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}{find\+Games\+From\+Name}} (string \$name)
 \end{DoxyCompactItemize}
 
 
@@ -46,7 +42,7 @@ PDO & {\em \$db} & The database connection \\
 \doxysubsubsection{\texorpdfstring{find()}{find()}}
 {\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
 
-Method to return a game\$game from the database in a game model object.
+Method to return a game from the database in a game model object.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -62,10 +58,74 @@ game A game model object containing all the result rows of the query
 \doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
 {\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Method to return all game\$games from the database in an array of game\$game objects.
+Method to return all game from the database in an array of game\$game objects.
 
 \begin{DoxyReturn}{Returns}
 Game\mbox{[}\mbox{]} A game\$game object array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8da38dc20656e0e770c355bbe67c9a11}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!findFavoriteGameOfUser@{findFavoriteGameOfUser}}
+\index{findFavoriteGameOfUser@{findFavoriteGameOfUser}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{findFavoriteGameOfUser()}{findFavoriteGameOfUser()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+Favorite\+Game\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return the list of user\textquotesingle{}s favorites games
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The user identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of games A game model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a94709b387a6654acbe92f7098ae8689f}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!findGameFromCategory@{findGameFromCategory}}
+\index{findGameFromCategory@{findGameFromCategory}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{findGameFromCategory()}{findGameFromCategory()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+Game\+From\+Category (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a list of games from the database where the category of the game is spécified
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The category identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of games A game model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a8364fd4facb39d058935f9fb6e36331c}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!findGamesFromName@{findGamesFromName}}
+\index{findGamesFromName@{findGamesFromName}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{findGamesFromName()}{findGamesFromName()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+Games\+From\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
+
+Method to return the list of games by theire names
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The user identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of games A game model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}\label{class_app_1_1_data_access_object_1_1_d_a_o_game_a52b75657646858b082ac98c66f879c7c}} 
+\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}!findTimesGamesUser@{findTimesGamesUser}}
+\index{findTimesGamesUser@{findTimesGamesUser}!App\textbackslash{}DataAccessObject\textbackslash{}DAOGame@{App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}}
+\doxysubsubsection{\texorpdfstring{findTimesGamesUser()}{findTimesGamesUser()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOGame\+::find\+Times\+Games\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return the list of games a user has alredy played
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & The user identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of games A game model object containing all the result rows of the query 
 \end{DoxyReturn}
 
 

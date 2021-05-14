@@ -1,0 +1,61 @@
+\hypertarget{pages_2users_2index_8php}{}\doxysection{public/pages/users/index.php File Reference}
+\label{pages_2users_2index_8php}\index{public/pages/users/index.php@{public/pages/users/index.php}}
+
+
+File being the front controller of the API and allowing to process games request.  
+
+
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a37c866e0dd005b2054896f4c4fb88132}\label{pages_2users_2index_8php_a37c866e0dd005b2054896f4c4fb88132}} 
+{\bfseries \$request\+Method} = \$\+\_\+\+SERVER\mbox{[}\char`\"{}REQUEST\+\_\+\+METHOD\char`\"{}\mbox{]}
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}\label{pages_2users_2index_8php_a388ef7b1db5e6f728e63cee704ce6e23}} 
+{\bfseries \$controller} = new \mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller}{User\+Controller}}(\$db\+Connection)
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}\label{pages_2users_2index_8php_a0a4baf0b22973c07685c3981f0d17fc4}} 
+{\bfseries \$path} = parse\+\_\+url(\$\+\_\+\+SERVER\mbox{[}\textquotesingle{}REQUEST\+\_\+\+URI\textquotesingle{}\mbox{]}, PHP\+\_\+\+URL\+\_\+\+PATH)
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}\label{pages_2users_2index_8php_a41dd553fcbfb23da05eb4639929f97a2}} 
+{\bfseries \$path\+Fragments} = explode(\textquotesingle{}/\textquotesingle{}, \$path)
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_ad5ac259ba2a11823839817aa7b2f2f1b}\label{pages_2users_2index_8php_ad5ac259ba2a11823839817aa7b2f2f1b}} 
+{\bfseries \$apikey} = \char`\"{}\char`\"{}
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a598ca4e71b15a1313ec95f0df1027ca5}\label{pages_2users_2index_8php_a598ca4e71b15a1313ec95f0df1027ca5}} 
+{\bfseries \$user} = new \mbox{\hyperlink{class_app_1_1_models_1_1_user}{User}}()
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a05c8de26f1c7f5fd5ee37c83658f1205}\label{pages_2users_2index_8php_a05c8de26f1c7f5fd5ee37c83658f1205}} 
+\$user {\bfseries id} = \$id ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_adb89c0a4809ebeb3a5f602cda0df7d25}\label{pages_2users_2index_8php_adb89c0a4809ebeb3a5f602cda0df7d25}} 
+\$user {\bfseries password} = \$input\mbox{[}\char`\"{}password\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a752fb32498f8b1c0412610ac3082c42e}\label{pages_2users_2index_8php_a752fb32498f8b1c0412610ac3082c42e}} 
+\$user {\bfseries salt} = \$input\mbox{[}\char`\"{}salt\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a55e9a1d1427a1449475749d8d5e2ca8f}\label{pages_2users_2index_8php_a55e9a1d1427a1449475749d8d5e2ca8f}} 
+\$user {\bfseries apitocken} = \$input\mbox{[}\char`\"{}apitoken\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a14ef79b2b01149a6e42f056e82c5d7be}\label{pages_2users_2index_8php_a14ef79b2b01149a6e42f056e82c5d7be}} 
+\$user {\bfseries email} = \$input\mbox{[}\char`\"{}email\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_ad63370f965c25a5acbf882735b070631}\label{pages_2users_2index_8php_ad63370f965c25a5acbf882735b070631}} 
+\$user {\bfseries private\+Account} = \$input\mbox{[}\char`\"{}private\+Account\char`\"{}\mbox{]} ?? null
+\item 
+\mbox{\Hypertarget{pages_2users_2index_8php_a6705c8e55e777d9cdc0b9ac719f77489}\label{pages_2users_2index_8php_a6705c8e55e777d9cdc0b9ac719f77489}} 
+\$user {\bfseries id\+Role} = \$input\mbox{[}\char`\"{}id\+Role\char`\"{}\mbox{]} ?? null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File being the front controller of the API and allowing to process games request. 
+
+\hypertarget{pages_2users_2index_8php_autotoc_md17}{}\doxysubsubsection{BDCC}\label{pages_2users_2index_8php_autotoc_md17}
+\begin{DoxyAuthor}{Author}
+Lorenzo Bauduccio \href{mailto:lorenzo.bdcc@eduge.ch}{\texttt{ lorenzo.\+bdcc@eduge.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 BDCC 
+\end{DoxyCopyright}

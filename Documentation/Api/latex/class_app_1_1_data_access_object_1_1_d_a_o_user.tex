@@ -7,12 +7,7 @@
 \item 
 \mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}{find\+All}} ()
 \item 
-\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}{find}} (int \$id)
-\item 
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a2a8bbc9aa98be3938111a28957b108b1}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a2a8bbc9aa98be3938111a28957b108b1}} 
-{\bfseries find\+User\+By\+Username} (string \$username)
-\item 
-\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}{find\+By\+Api\+Token}} (string \$api\+\_\+token)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}{find}} (string \$apitocken)
 \end{DoxyCompactItemize}
 
 
@@ -33,11 +28,11 @@ PDO & {\em \$db} & The database connection \\
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a594d981c29554a25ebbe1f912b0d1320}} 
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}} 
 \index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!find@{find}}
 \index{find@{find}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
 \doxysubsubsection{\texorpdfstring{find()}{find()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
 
 Method to return a user from the database in a user model object.
 
@@ -59,22 +54,6 @@ Method to return all users with the selected role from the database in an array 
 
 \begin{DoxyReturn}{Returns}
 User\mbox{[}\mbox{]} A User object array 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a196c5c58d7744606e9f7fdb5b1e10b4a}} 
-\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!findByApiToken@{findByApiToken}}
-\index{findByApiToken@{findByApiToken}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
-\doxysubsubsection{\texorpdfstring{findByApiToken()}{findByApiToken()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find\+By\+Api\+Token (\begin{DoxyParamCaption}\item[{string}]{\$api\+\_\+token }\end{DoxyParamCaption})}
-
-Method to return a user from the database user from his api token.
-
-
-\begin{DoxyParams}[1]{Parameters}
-string & {\em \$api\+\_\+token} & The user api token \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-User A User model object containing all the result rows of the query 
 \end{DoxyReturn}
 
 

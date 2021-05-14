@@ -11,8 +11,7 @@
 \item 
 \mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}{get\+Favorite\+Game\+Of\+User}} (int \$id)
 \item 
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}\label{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}} 
-{\bfseries get\+Time\+Games} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}{get\+Time\+Games}} (int \$id)
 \item 
 \mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}{get\+Games\+From\+Name}} (string \$name)
 \item 
@@ -54,15 +53,15 @@ string The status and the body in json format of the response
 \doxysubsubsection{\texorpdfstring{getFavoriteGameOfUser()}{getFavoriteGameOfUser()}}
 {\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Favorite\+Game\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
 
-Method to return all the favorite game of a user
+Method to return a list of games
 
 
 \begin{DoxyParams}[1]{Parameters}
-int & {\em \$id} & The dog identifier \\
+integer & {\em \$id} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-string The status and the body in JSON format of the response 
+void 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}\label{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}} 
 \index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGame@{getGame}}
@@ -74,7 +73,7 @@ Method to return a game in JSON format.
 
 
 \begin{DoxyParams}[1]{Parameters}
-int & {\em \$id} & The dog identifier \\
+int & {\em \$id} & The game identifier \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -102,15 +101,31 @@ string The status and the body in JSON format of the response
 \doxysubsubsection{\texorpdfstring{getGamesFromName()}{getGamesFromName()}}
 {\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Games\+From\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
 
-Method to return a dog in JSON format.
+Method to return a game in JSON format.
 
 
 \begin{DoxyParams}[1]{Parameters}
-int & {\em \$id} & The dog identifier \\
+int & {\em \$id} & The game identifier \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 string The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}\label{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}} 
+\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getTimeGames@{getTimeGames}}
+\index{getTimeGames@{getTimeGames}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\doxysubsubsection{\texorpdfstring{getTimeGames()}{getTimeGames()}}
+{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Time\+Games (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return a list of games
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
 \end{DoxyReturn}
 
 
