@@ -6,7 +6,7 @@ RewriteEngine On
 RewriteRule ^games\/([0-9a-zA-Z_-]*)$ pages/games/index.php [NC,L,QSA]
 RewriteRule ^categories\/([0-9a-zA-Z_-]*)$ pages/categories/index.php [NC,L,QSA]
 RewriteRule ^users\/([0-9a-zA-Z_-]*)$ pages/users/index.php [NC,L,QSA]
-RewriteRule ^users/connection\/([0-9a-zA-Z_-]*)$ pages/users/connections/index.php [NC,L,QSA]
+RewriteRule ^users/connection\/([0-9a-zA-Z_-]*)$ pages/users/connection/index.php [NC,L,QSA]
 
 
 

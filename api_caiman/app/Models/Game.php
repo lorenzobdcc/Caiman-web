@@ -17,8 +17,8 @@ class Game
     public ?string $name;
     public ?string $description;
     public ?string $imageName;
-    public ?string $idConsole;
-    public ?string $idFile;
+    public ?int $idConsole;
+    public ?int $idFile;
 
     /**
      * contructor of a game
@@ -35,8 +35,8 @@ class Game
         string $name = null,
         string $description = null,
         string $imageName = null,
-        string $idConsole = null,
-        string $idFile = null
+        int $idConsole = null,
+        int $idFile = null
     ) {
         $this->id = $id;
         $this->name = $name;
