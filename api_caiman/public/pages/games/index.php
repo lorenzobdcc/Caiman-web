@@ -59,7 +59,6 @@ switch ($requestMethod) {
             $isSet = 1;
         }
 
-
         if ($isSet == 0) {
             if (empty($id) || !is_numeric($id)) {
                 $response = $controller->getAllGames();
@@ -67,11 +66,14 @@ switch ($requestMethod) {
             else{
                 $response = $controller->getGame($id);
             }
-            
         }
         break;
         case 'POST':
-
+            if (isset($_POST['idGame']) && isset($_POST['apiKey'])) {
+                $idGame = $_POST['idGame'];
+                $apiKey = $_POST['apiKey'];
+                $response = $controller->getURL($idGame,$apiKey);
+            }
             break;
         
     default:

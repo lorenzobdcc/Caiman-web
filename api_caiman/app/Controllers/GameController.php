@@ -13,12 +13,18 @@ namespace App\Controllers;
 use App\DataAccessObject\DAOGame;
 use App\DataAccessObject\DAOUser;
 use App\Controllers\ResponseController;
+use App\DataAccessObject\DAOConsole;
+use App\DataAccessObject\DAOFile;
+use App\Models\Console;
+use App\Models\File;
 
 class GameController
 {
 
     private DAOGame $DAOGame;
     private DAOUser $DAOUser;
+    private DAOFile $DAOFile;
+    private DAOConsole $DAOConsole;
 
 
     /**
@@ -31,6 +37,9 @@ class GameController
     {
         $this->DAOGame = new DAOGame($db);
         $this->DAOUser = new DAOUser($db);
+        $this->DAOFile = new DAOFile($db);
+        $this->DAOConsole = new DAOConsole($db);
+
     }
 
     /**
@@ -147,5 +156,48 @@ class GameController
         }
 
         return ResponseController::successfulRequest($game);
+    }
+
+/**
+ * Get the url to a file in the serveur
+ *
+ * @param integer $idGame
+ * @param string $apikey
+ * @return void
+ */
+    public function getURL(int $idGame, string $apikey)
+    {
+        $headers = apache_request_headers();
+
+
+        $user = $this->DAOUser->find($apikey);
+        $fullpath= "";
+        if (is_null($user)) {
+            return ResponseController::notFoundResponse();
+
+        }else
+        {
+            $game = $this->DAOGame->find($idGame);
+            $file = $this->DAOFile->find($game->idFile);
+            $console = $this->DAOConsole->find($game->idConsole);
+            $fullpath = "../../../../caimanWeb/games/". $console->folderName."/".$file->filename;
+
+
+            if (file_exists($fullpath)) {
+                header('Content-Description: File Transfer');
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename='.basename($fullpath));
+                header('Content-Transfer-Encoding: binary');
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($fullpath));
+                $fp = fopen($fullpath, 'rb');
+                fpassthru($fp);
+                exit;
+            }
+        }
+
+        return ResponseController::successfulRequest($fullpath);
     }
 }
