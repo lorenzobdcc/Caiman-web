@@ -98,4 +98,39 @@ class DAOUser
             exit($e->getMessage());
         }
     }
+    public function findUserByUsername(string $username)
+    {
+        $statement = "
+        SELECT *
+        FROM user
+        WHERE username = :username
+        LIMIT 1";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':username', $username, \PDO::PARAM_STR);
+            $statement->execute();
+
+            $user = new User();
+
+            if ($statement->rowCount()==1) {
+                $result = $statement->fetch(\PDO::FETCH_ASSOC);
+                $user = new User();
+                $user->id = $result["id"];
+                $user->username = $result["username"];
+                $user->password = $result["password"];
+                $user->salt = $result["salt"];
+                $user->apitocken = $result["apitocken"];
+                $user->email = $result["email"];
+                $user->idRole = $result["idRole"];
+            }
+            else{
+                $user = null; 
+            }
+
+            return $user;
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }    
+    }
 }
