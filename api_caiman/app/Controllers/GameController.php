@@ -200,4 +200,46 @@ class GameController
 
         return ResponseController::successfulRequest($fullpath);
     }
+
+    /**
+ * Get the url to a file in the serveur
+ *
+ * @param integer $idGame
+ * @param string $apikey
+ * @return void
+ */
+public function getFileName(int $idGame )
+{
+    $headers = apache_request_headers();
+
+    $game = $this->DAOGame->find($idGame);
+    $file = $this->DAOFile->find($game->idFile);
+
+    if (is_null($file)) {
+        return ResponseController::notFoundResponse();
+    }
+
+    return ResponseController::successfulRequest($file);
+}
+
+    /**
+ * Get the url to a file in the serveur
+ *
+ * @param integer $idGame
+ * @param string $apikey
+ * @return void
+ */
+public function getConsole(int $idGame )
+{
+    $headers = apache_request_headers();
+
+    $game = $this->DAOGame->find($idGame);
+    $console = $this->DAOConsole->find($game->idConsole);
+
+    if (is_null($console)) {
+        return ResponseController::notFoundResponse();
+    }
+
+    return ResponseController::successfulRequest($console);
+}
 }

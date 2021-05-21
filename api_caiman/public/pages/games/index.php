@@ -58,6 +58,23 @@ switch ($requestMethod) {
             $response = $controller->getTimeGames($user);
             $isSet = 1;
         }
+        if (isset($_GET['gameFileName'])) {
+            $id = $_GET['gameFileName'];
+            $response = $controller->getFileName($id);
+            $isSet = 1;
+        }
+        if (isset($_GET['gameConsole'])) {
+            $id = $_GET['gameConsole'];
+            $response = $controller->getConsole($id);
+            $isSet = 1;
+        }
+        if (isset($_GET['idGame']) && isset($_GET['apiKey'])) {
+            $idGame = $_GET['idGame'];
+                $apiKey = $_GET['apiKey'];
+                $isSet = 1;
+                $response = $controller->getURL($idGame,$apiKey);
+                
+        }
 
         if ($isSet == 0) {
             if (empty($id) || !is_numeric($id)) {
