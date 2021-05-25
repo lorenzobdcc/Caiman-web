@@ -91,7 +91,23 @@ switch ($requestMethod) {
                 $apiKey = $_POST['apiKey'];
                 $response = $controller->getURL($idGame,$apiKey);
             }
+            if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
+                $idGame = $_POST['idGameAdd'];
+                $idUser = $_POST['idUser'];
+                $response = $controller->addGameToFavorite($idGame,$idUser);
+            }
+            if (isset($_POST['idGameRemove']) && isset($_POST['idUser'])) {
+                $idGame = $_POST['idGameRemove'];
+                $idUser = $_POST['idUser'];
+                $response = $controller->removeGameFromFavorite($idGame,$idUser);
+            }
+            if (isset($_POST['idGameCheck']) && isset($_POST['idUser'])) {
+                $idGame = $_POST['idGameCheck'];
+                $idUser = $_POST['idUser'];
+                $response = $controller->checkIfGameFavorite($idGame,$idUser);
+            }
             break;
+
         
     default:
         header("HTTP/1.1 404 Not Found");

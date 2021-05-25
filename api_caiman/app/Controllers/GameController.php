@@ -39,7 +39,6 @@ class GameController
         $this->DAOUser = new DAOUser($db);
         $this->DAOFile = new DAOFile($db);
         $this->DAOConsole = new DAOConsole($db);
-
     }
 
     /**
@@ -158,35 +157,33 @@ class GameController
         return ResponseController::successfulRequest($game);
     }
 
-/**
- * Get the url to a file in the serveur
- *
- * @param integer $idGame
- * @param string $apikey
- * @return void
- */
+    /**
+     * Get the url to a file in the serveur
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
     public function getURL(int $idGame, string $apikey)
     {
         $headers = apache_request_headers();
 
 
         $user = $this->DAOUser->find($apikey);
-        $fullpath= "";
+        $fullpath = "";
         if (is_null($user)) {
             return ResponseController::notFoundResponse();
-
-        }else
-        {
+        } else {
             $game = $this->DAOGame->find($idGame);
             $file = $this->DAOFile->find($game->idFile);
             $console = $this->DAOConsole->find($game->idConsole);
-            $fullpath = "../../../../caimanWeb/games/". $console->folderName."/".$file->filename;
+            $fullpath = "../../../../caimanWeb/games/" . $console->folderName . "/" . $file->filename;
 
 
             if (file_exists($fullpath)) {
                 header('Content-Description: File Transfer');
                 header('Content-Type: application/octet-stream');
-                header('Content-Disposition: attachment; filename='.basename($fullpath));
+                header('Content-Disposition: attachment; filename=' . basename($fullpath));
                 header('Content-Transfer-Encoding: binary');
                 header('Expires: 0');
                 header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -202,44 +199,98 @@ class GameController
     }
 
     /**
- * Get the url to a file in the serveur
- *
- * @param integer $idGame
- * @param string $apikey
- * @return void
- */
-public function getFileName(int $idGame )
-{
-    $headers = apache_request_headers();
+     * Get the url to a file in the serveur
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function getFileName(int $idGame)
+    {
+        $headers = apache_request_headers();
 
-    $game = $this->DAOGame->find($idGame);
-    $file = $this->DAOFile->find($game->idFile);
+        $game = $this->DAOGame->find($idGame);
+        $file = $this->DAOFile->find($game->idFile);
 
-    if (is_null($file)) {
-        return ResponseController::notFoundResponse();
+        if (is_null($file)) {
+            return ResponseController::notFoundResponse();
+        }
+
+        return ResponseController::successfulRequest($file);
     }
-
-    return ResponseController::successfulRequest($file);
-}
 
     /**
- * Get the url to a file in the serveur
- *
- * @param integer $idGame
- * @param string $apikey
- * @return void
- */
-public function getConsole(int $idGame )
-{
-    $headers = apache_request_headers();
+     * Remove game from favorite
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function removeGameFromFavorite(int $idGame, int $idUser)
+    {
+        $headers = apache_request_headers();
 
-    $game = $this->DAOGame->find($idGame);
-    $console = $this->DAOConsole->find($game->idConsole);
-
-    if (is_null($console)) {
-        return ResponseController::notFoundResponse();
+        if (is_null($idGame) || is_null($idUser)) {
+            return ResponseController::notFoundResponse();
+        }
+        $file = $this->DAOGame->removeGameFromFavorite($idGame, $idUser);
+        return ResponseController::successfulRequest();
     }
 
-    return ResponseController::successfulRequest($console);
-}
+    /**
+     * Add game to favorite
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function addGameToFavorite(int $idGame, int $idUser)
+    {
+        $headers = apache_request_headers();
+
+        if (is_null($idGame) || is_null($idUser)) {
+            return ResponseController::notFoundResponse();
+        }
+        $this->DAOGame->addGameToFavorite($idGame, $idUser);
+        return ResponseController::successfulRequest();
+    }
+
+        /**
+     * Check if game is in favorite
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function checkIfGameFavorite(int $idGame, int $idUser)
+    {
+        $headers = apache_request_headers();
+
+        if (is_null($idGame) || is_null($idUser)) {
+            return ResponseController::notFoundResponse();
+        }
+        $value =$this->DAOGame->checkIfGameFavorite($idGame, $idUser);;
+        return ResponseController::successfulRequest($value);
+    }
+
+    /**
+     * Get the url to a file in the serveur
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function getConsole(int $idGame)
+    {
+        $headers = apache_request_headers();
+
+        $game = $this->DAOGame->find($idGame);
+        $console = $this->DAOConsole->find($game->idConsole);
+
+        if (is_null($console)) {
+            return ResponseController::notFoundResponse();
+        }
+
+        return ResponseController::successfulRequest($console);
+    }
 }

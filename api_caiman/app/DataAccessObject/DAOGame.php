@@ -259,5 +259,86 @@ class DAOGame
         }
     }
 
+        /**
+     * 
+     * add game to favorite
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
+    public function addGameToFavorite(int $idGame, int $idUser)
+    {
+        $statement = "
+        INSERT INTO favoritegame  (idGame, idUser)
+        VALUES (:idGame, :idUser)
+        ;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':idGame', $idGame, \PDO::PARAM_INT);
+            $statement->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
+            $statement->execute();
+            
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+            /**
+     * 
+     * add game to favorite
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
+    public function checkIfGameFavorite(int $idGame, int $idUser)
+    {
+        $statement = "
+        SELECT * FROM favoritegame 
+        WHERE idUser = :idUser AND idGame = :idGame
+        ;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':idGame', $idGame, \PDO::PARAM_INT);
+            $statement->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
+            $statement->execute();
+
+            $result = false;
+            if ($statement->rowCount() > 0) {
+                $result = true;
+            }
+            return $result;
+            
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+            /**
+     * 
+     * Remove game from favorite
+     * 
+     * @param int $id The user identifier 
+     * @return list of games A game model object containing all the result rows of the query 
+     */
+    public function removeGameFromFavorite(int $idGame, int $idUser)
+    {
+        $statement = "
+        DELETE FROM favoritegame 
+        WHERE idUser = :idUser AND idGame = :idGame
+        ;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':idGame', $idGame, \PDO::PARAM_INT);
+            $statement->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
+            $statement->execute();
+
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
     
 }
