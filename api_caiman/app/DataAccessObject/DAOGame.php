@@ -11,7 +11,7 @@
 namespace App\DataAccessObject;
 
 use App\Models\Game;
-
+use App\Models\Timer;
 
 class DAOGame
 {
@@ -98,6 +98,35 @@ class DAOGame
             }
 
             return $game;
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+    
+    public function getTimeUser(int $idGame, int $idUser)
+    {
+        $statement = "
+        SELECT *
+        FROM timeingame
+        WHERE idGame = :ID_game
+        AND idUser = :ID_user;";
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':ID_game', $idGame, \PDO::PARAM_INT);
+            $statement->bindParam(':ID_user', $idUser, \PDO::PARAM_INT);
+            $statement->execute();
+
+            $timer = new timer();
+            if ($statement->rowCount() == 1) {
+                $result = $statement->fetch(\PDO::FETCH_ASSOC);
+                $timer->minutes = $result["timeInMinute"];
+            } else {
+                $timer = new timer();
+                $timer->minutes = 0;
+            }
+
+            return $timer;
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }

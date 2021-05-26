@@ -39,6 +39,7 @@ switch ($requestMethod) {
             $caimanTocken = $_REQUEST['caimanToken'];
             if ($caimanTocken != "") {
                $response = $controller->findByCaimanToken($caimanTocken);
+               
             }
 
             

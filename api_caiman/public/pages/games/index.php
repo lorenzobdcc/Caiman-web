@@ -75,7 +75,12 @@ switch ($requestMethod) {
                 $response = $controller->getURL($idGame,$apiKey);
                 
         }
-
+        if (isset($_GET['idGameTime']) && isset($_GET['idUser'])) {
+            $idGame = $_GET['idGameTime'];
+            $idUser = $_GET['idUser'];
+            $response = $controller->getTimePlayed($idGame,$idUser);
+            $isSet = 1;
+        }
         if ($isSet == 0) {
             if (empty($id) || !is_numeric($id)) {
                 $response = $controller->getAllGames();

@@ -157,6 +157,17 @@ class GameController
         return ResponseController::successfulRequest($game);
     }
 
+    public function getTimePlayed(int $idGame,int $idUser)
+    {
+        $timer = $this->DAOGame->getTimeUser($idGame,$idUser);
+
+        if (is_null($timer)) {
+            return ResponseController::notFoundResponse();
+        }
+
+        return ResponseController::successfulRequest($timer);
+    }
+
     /**
      * Get the url to a file in the serveur
      *
