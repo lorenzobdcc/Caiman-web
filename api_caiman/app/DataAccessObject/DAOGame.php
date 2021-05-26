@@ -103,7 +103,7 @@ class DAOGame
         }
     }
 
-    
+
     public function getTimeUser(int $idGame, int $idUser)
     {
         $statement = "
@@ -127,6 +127,25 @@ class DAOGame
             }
 
             return $timer;
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+    public function addOneMInuteToGameTime(int $idGame, int $idUser)
+    {
+        $statement = "
+        INSERT INTO timeingame
+        (idUser, idGame, timeInMinute)
+        VALUES
+        (:ID_user, :ID_game, 1)
+        ON DUPLICATE KEY UPDATE
+        timeInMinute     = timeInMinute+1;";
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':ID_game', $idGame, \PDO::PARAM_INT);
+            $statement->bindParam(':ID_user', $idUser, \PDO::PARAM_INT);
+            $statement->execute();
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
@@ -288,7 +307,7 @@ class DAOGame
         }
     }
 
-        /**
+    /**
      * 
      * add game to favorite
      * 
@@ -307,13 +326,12 @@ class DAOGame
             $statement->bindParam(':idGame', $idGame, \PDO::PARAM_INT);
             $statement->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
             $statement->execute();
-            
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
     }
 
-            /**
+    /**
      * 
      * add game to favorite
      * 
@@ -338,13 +356,12 @@ class DAOGame
                 $result = true;
             }
             return $result;
-            
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
     }
 
-            /**
+    /**
      * 
      * Remove game from favorite
      * 
@@ -363,11 +380,8 @@ class DAOGame
             $statement->bindParam(':idGame', $idGame, \PDO::PARAM_INT);
             $statement->bindParam(':idUser', $idUser, \PDO::PARAM_INT);
             $statement->execute();
-
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
     }
-
-    
 }

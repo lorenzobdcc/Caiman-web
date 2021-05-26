@@ -12,7 +12,7 @@ namespace App\Models;
 
 class timer
 {
-    public ?string $minutes;
+    public ?int $minutes;
 
 
 /**

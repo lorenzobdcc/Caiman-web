@@ -168,6 +168,13 @@ class GameController
         return ResponseController::successfulRequest($timer);
     }
 
+    public function addOneMInuteToGameTime(int $idGame,int $idUser)
+    {
+        $this->DAOGame->addOneMInuteToGameTime($idGame,$idUser);
+
+        return ResponseController::successfulRequest();
+    }
+
     /**
      * Get the url to a file in the serveur
      *

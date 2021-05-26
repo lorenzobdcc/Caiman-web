@@ -81,6 +81,7 @@ switch ($requestMethod) {
             $response = $controller->getTimePlayed($idGame,$idUser);
             $isSet = 1;
         }
+
         if ($isSet == 0) {
             if (empty($id) || !is_numeric($id)) {
                 $response = $controller->getAllGames();
@@ -110,6 +111,11 @@ switch ($requestMethod) {
                 $idGame = $_POST['idGameCheck'];
                 $idUser = $_POST['idUser'];
                 $response = $controller->checkIfGameFavorite($idGame,$idUser);
+            }
+            if (isset($_POST['idGameTimeAdd']) && isset($_POST['idUser'])) {
+                $idGame = $_POST['idGameTimeAdd'];
+                $idUser = $_POST['idUser'];
+                $response = $controller->addOneMInuteToGameTime($idGame,$idUser);
             }
             break;
 
