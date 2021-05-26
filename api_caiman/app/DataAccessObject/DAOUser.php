@@ -86,9 +86,10 @@ class DAOUser
                 $user->username = $result["username"];
                 $user->password = $result["password"];
                 $user->salt = $result["salt"];
-                $user->apitoken = $result["apitocken"];
+                $user->apitocken = $result["apitocken"];
                 $user->email = $result["email"];
                 $user->idRole = $result["idRole"];
+                $user->caimanToken = $result["caimanToken"];
             } else {
                 $user = null;
             }
@@ -98,8 +99,95 @@ class DAOUser
             exit($e->getMessage());
         }
     }
+
+        /**
+     * 
+     * Method to return a user from the database in a user model object.
+     * 
+     * @param int $id The user identifier 
+     * @return User A User model object containing all the result rows of the query 
+     */
+    public function findByCaimanToken(string $caimanToken)
+    {
+        $caimanTokenNew = md5(microtime());
+        $statement_caimanToken = "
+        UPDATE user
+        SET caimanToken = :CAIMAN_TOKEN_NEW
+        WHERE caimanToken = :CAIMAN_TOKEN
+        LIMIT 1";
+
+        try {
+            $statement_caimanToken = $this->db->prepare($statement_caimanToken);
+            
+            $statement_caimanToken->bindParam(':CAIMAN_TOKEN_NEW', $caimanTokenNew);
+            $statement_caimanToken->bindParam(':CAIMAN_TOKEN', $caimanToken);
+            $statement_caimanToken->execute();
+
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+        }
+
+        $statement = "
+        SELECT *
+        FROM user
+        WHERE caimanToken = :CAIMAN_TOCKEN;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':CAIMAN_TOCKEN', $caimanTokenNew);
+            $statement->execute();
+            $user = new User();
+            if ($statement->rowCount() == 1) {
+                $result = $statement->fetch(\PDO::FETCH_ASSOC);
+                $user = new User();
+                $user->id = $result["id"];
+                $user->username = $result["username"];
+                $user->password = $result["password"];
+                $user->salt = $result["salt"];
+                $user->apitocken = $result["apitocken"];
+                $user->email = $result["email"];
+                $user->idRole = $result["idRole"];
+                $user->caimanToken = $result["caimanToken"];
+            } else {
+                $user = null;
+            }
+
+            return $user;
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
+            /**
+     * 
+     * Method to return a user from the database in a user model object.
+     * 
+     * @param int $id The user identifier 
+     * @return User A User model object containing all the result rows of the query 
+     */
+    public function updateCaimanToken(string $apitocken)
+    {
+        $statement = "
+        UPDATE user
+        SET caimanToken = :CAIMAN_TOKEN
+        WHERE apitocken = :API_TOCKEN;";
+
+        try {
+            $statement = $this->db->prepare($statement);
+            $statement->bindParam(':API_TOCKEN', $apitocken);
+            $caimanTocken = md5(microtime());
+            $statement->bindParam(':CAIMAN_TOKEN', $caimanTocken);
+            $statement->execute();
+
+        } catch (\PDOException $e) {
+            exit($e->getMessage());
+        }
+    }
+
     public function findUserByUsername(string $username)
     {
+
+        $caimanTocken = md5(microtime());
         $statement = "
         SELECT *
         FROM user
@@ -123,6 +211,9 @@ class DAOUser
                 $user->apitocken = $result["apitocken"];
                 $user->email = $result["email"];
                 $user->idRole = $result["idRole"];
+                $user->caimanToken = $result["caimanToken"];
+                
+               
             }
             else{
                 $user = null; 

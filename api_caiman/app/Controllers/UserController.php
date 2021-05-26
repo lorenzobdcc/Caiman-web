@@ -92,9 +92,40 @@ class UserController {
         if (md5($userAuth->salt.$password) != $userAuth->password  ) {
             return ResponseController::invalidLogin();
         }
+        return ResponseController::successfulRequest($userAuth);
+    }
 
+        /**
+     * 
+     * Method to log check the login of a user
+     * 
+     * @param User $user The user model object
+     * @return string The status and the body in JSON format of the response
+     */
+    public function findByCaimanToken(string $caimanToken)
+    {
+
+        $userAuth = $this->DAOUser->findByCaimanToken($caimanToken);
 
         return ResponseController::successfulRequest($userAuth);
+    }
+
+        /**
+     * 
+     * Method to update caimanToken
+     * 
+     * @param User $user The user model object
+     * @return string The status and the body in JSON format of the response
+     */
+    public function updateCaimanToken($apitoken)
+    {
+
+
+        $user = $this->DAOUser->updateCaimanToken($apitoken);
+
+
+
+        return ResponseController::successfulRequest();
     }
 
 
