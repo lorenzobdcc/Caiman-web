@@ -118,7 +118,7 @@ class Administrator
         $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         //rename file
-        $newfilename = $gameFileName . '.' . $fileType;
+        $newfilename = $gameFileName ;
 
 
         // Check if file already exists

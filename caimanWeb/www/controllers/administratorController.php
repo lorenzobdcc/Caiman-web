@@ -7,6 +7,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Class used to handle request for the administrator page
  */
+
 class AdministratorController extends mainController implements iController
 {
   public $administrator;

@@ -92,11 +92,6 @@ switch ($requestMethod) {
         }
         break;
         case 'POST':
-            if (isset($_POST['idGame']) && isset($_POST['apiKey'])) {
-                $idGame = $_POST['idGame'];
-                $apiKey = $_POST['apiKey'];
-                $response = $controller->getURL($idGame,$apiKey);
-            }
             if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
                 $idGame = $_POST['idGameAdd'];
                 $idUser = $_POST['idUser'];
