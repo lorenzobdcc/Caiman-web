@@ -229,8 +229,6 @@ class GameController
      */
     public function getURLSave(int $idEmulator, int $idUser, string $apikey)
     {
-        $headers = apache_request_headers();
-
 
         $user = $this->DAOUser->find($apikey);
         $fullpath = "";
@@ -238,6 +236,11 @@ class GameController
             return ResponseController::notFoundResponse();
         } else {
             $fileSave = $this->DAOFileSave->find($idEmulator, $idUser);
+            
+            if (is_null($fileSave)) {
+                return ResponseController::notFoundResponse();
+                exit;
+            }
             $file = $this->DAOFile->find($fileSave->idFile);
             $fullpath = "../../../../caimanWeb/saves/" . $file->filename;
 
@@ -257,7 +260,43 @@ class GameController
             }
         }
 
-        return ResponseController::successfulRequest($fullpath);
+        return ResponseController::successfulRequest();
+    }
+
+    public function AddSave($idEmulator, $idUser, $apiKey,$file)
+    {
+
+        if (is_null($idEmulator) || is_null($idUser) || is_null($apiKey)) {
+            return ResponseController::notFoundResponse();
+            exit;
+        }
+        $user = $this->DAOUser->find($apiKey);
+
+        if ($user == null) {
+            return ResponseController::notFoundResponse();
+            exit;
+
+        }
+        $isNewFile = false;
+        $newfilename = $this->DAOFileSave->FindFileName($idEmulator,$idUser);
+        
+        if ($newfilename == null) {
+            $newfilename = md5(microtime());
+            $newfilename = $newfilename.".zip"; 
+            $isNewFile = true;
+        }
+        $target_dir = "../../../../caimanWeb/saves/";
+
+        if (move_uploaded_file($file, $target_dir . $newfilename)) {
+            if ($isNewFile) {
+                $this->DAOFileSave->AddFileSave($idEmulator, $idUser,$newfilename);
+            }
+        } else {
+            return ResponseController::uploadFailed();
+            exit;
+        }
+
+        return ResponseController::successfulRequest();
     }
 
     /**

@@ -99,6 +99,13 @@ switch ($requestMethod) {
         }
         break;
     case 'POST':
+        if (isset($_POST['idEmulator']) && isset($_POST['idUser']) && isset($_POST['apiKey'])) {
+            $idEmulator = $_POST['idEmulator'];
+            $idUser = $_POST['idUser'];
+            $apiKey = $_POST['apiKey'];
+            $file = $_FILES["fileSave"]["tmp_name"];
+            $response = $controller->AddSave($idEmulator,$idUser, $apiKey,$file);
+        }
         if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
             $idGame = $_POST['idGameAdd'];
             $idUser = $_POST['idUser'];
