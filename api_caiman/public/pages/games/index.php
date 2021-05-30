@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -9,6 +10,7 @@
 
 use App\Controllers\GameController;
 use App\Models\Game;
+
 require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
@@ -39,7 +41,7 @@ switch ($requestMethod) {
     case 'GET':
         $isSet = 0;
         if (isset($_GET['byName'])) {
-            $name = str_replace(array('+'),array(' '),$_GET['byName']); 
+            $name = str_replace(array('+'), array(' '), $_GET['byName']);
             $response = $controller->getGamesFromName($name);
             $isSet = 1;
         }
@@ -70,51 +72,56 @@ switch ($requestMethod) {
         }
         if (isset($_GET['idGame']) && isset($_GET['apiKey'])) {
             $idGame = $_GET['idGame'];
-                $apiKey = $_GET['apiKey'];
-                $isSet = 1;
-                $response = $controller->getURL($idGame,$apiKey);
-                
+            $apiKey = $_GET['apiKey'];
+            $isSet = 1;
+            $response = $controller->getURL($idGame, $apiKey);
+        }
+        if (isset($_GET['idEmulator']) && isset($_GET['idUser']) && isset($_GET['apiKey'])) {
+            $idEmulator = $_GET['idEmulator'];
+            $idUser = $_GET['idUser'];
+            $apiKey = $_GET['apiKey'];
+            $isSet = 1;
+            $response = $controller->getURLSave($idEmulator,$idUser, $apiKey);
         }
         if (isset($_GET['idGameTime']) && isset($_GET['idUser'])) {
             $idGame = $_GET['idGameTime'];
             $idUser = $_GET['idUser'];
-            $response = $controller->getTimePlayed($idGame,$idUser);
+            $response = $controller->getTimePlayed($idGame, $idUser);
             $isSet = 1;
         }
 
         if ($isSet == 0) {
             if (empty($id) || !is_numeric($id)) {
                 $response = $controller->getAllGames();
-            }
-            else{
+            } else {
                 $response = $controller->getGame($id);
             }
         }
         break;
-        case 'POST':
-            if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
-                $idGame = $_POST['idGameAdd'];
-                $idUser = $_POST['idUser'];
-                $response = $controller->addGameToFavorite($idGame,$idUser);
-            }
-            if (isset($_POST['idGameRemove']) && isset($_POST['idUser'])) {
-                $idGame = $_POST['idGameRemove'];
-                $idUser = $_POST['idUser'];
-                $response = $controller->removeGameFromFavorite($idGame,$idUser);
-            }
-            if (isset($_POST['idGameCheck']) && isset($_POST['idUser'])) {
-                $idGame = $_POST['idGameCheck'];
-                $idUser = $_POST['idUser'];
-                $response = $controller->checkIfGameFavorite($idGame,$idUser);
-            }
-            if (isset($_POST['idGameTimeAdd']) && isset($_POST['idUser'])) {
-                $idGame = $_POST['idGameTimeAdd'];
-                $idUser = $_POST['idUser'];
-                $response = $controller->addOneMInuteToGameTime($idGame,$idUser);
-            }
-            break;
+    case 'POST':
+        if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
+            $idGame = $_POST['idGameAdd'];
+            $idUser = $_POST['idUser'];
+            $response = $controller->addGameToFavorite($idGame, $idUser);
+        }
+        if (isset($_POST['idGameRemove']) && isset($_POST['idUser'])) {
+            $idGame = $_POST['idGameRemove'];
+            $idUser = $_POST['idUser'];
+            $response = $controller->removeGameFromFavorite($idGame, $idUser);
+        }
+        if (isset($_POST['idGameCheck']) && isset($_POST['idUser'])) {
+            $idGame = $_POST['idGameCheck'];
+            $idUser = $_POST['idUser'];
+            $response = $controller->checkIfGameFavorite($idGame, $idUser);
+        }
+        if (isset($_POST['idGameTimeAdd']) && isset($_POST['idUser'])) {
+            $idGame = $_POST['idGameTimeAdd'];
+            $idUser = $_POST['idUser'];
+            $response = $controller->addOneMInuteToGameTime($idGame, $idUser);
+        }
+        break;
 
-        
+
     default:
         header("HTTP/1.1 404 Not Found");
         exit();

@@ -15,8 +15,10 @@ use App\DataAccessObject\DAOUser;
 use App\Controllers\ResponseController;
 use App\DataAccessObject\DAOConsole;
 use App\DataAccessObject\DAOFile;
+use App\DataAccessObject\DAOFileSave;
 use App\Models\Console;
 use App\Models\File;
+use App\Models\FileSave;
 
 class GameController
 {
@@ -25,6 +27,7 @@ class GameController
     private DAOUser $DAOUser;
     private DAOFile $DAOFile;
     private DAOConsole $DAOConsole;
+    private DAOFileSave $DAOFileSave;
 
 
     /**
@@ -39,6 +42,7 @@ class GameController
         $this->DAOUser = new DAOUser($db);
         $this->DAOFile = new DAOFile($db);
         $this->DAOConsole = new DAOConsole($db);
+        $this->DAOFileSave = new DAOFileSave($db);
     }
 
     /**
@@ -157,9 +161,9 @@ class GameController
         return ResponseController::successfulRequest($game);
     }
 
-    public function getTimePlayed(int $idGame,int $idUser)
+    public function getTimePlayed(int $idGame, int $idUser)
     {
-        $timer = $this->DAOGame->getTimeUser($idGame,$idUser);
+        $timer = $this->DAOGame->getTimeUser($idGame, $idUser);
 
         if (is_null($timer)) {
             return ResponseController::notFoundResponse();
@@ -168,9 +172,9 @@ class GameController
         return ResponseController::successfulRequest($timer);
     }
 
-    public function addOneMInuteToGameTime(int $idGame,int $idUser)
+    public function addOneMInuteToGameTime(int $idGame, int $idUser)
     {
-        $this->DAOGame->addOneMInuteToGameTime($idGame,$idUser);
+        $this->DAOGame->addOneMInuteToGameTime($idGame, $idUser);
 
         return ResponseController::successfulRequest();
     }
@@ -201,6 +205,46 @@ class GameController
             if (file_exists($fullpath)) {
                 header('Content-Description: File Transfer');
                 header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename=' . basename($fullpath));
+                header('Content-Transfer-Encoding: binary');
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($fullpath));
+                $fp = fopen($fullpath, 'rb');
+                fpassthru($fp);
+                exit;
+            }
+        }
+
+        return ResponseController::successfulRequest($fullpath);
+    }
+
+    /**
+     * Get the url to a file in the serveur
+     *
+     * @param integer $idGame
+     * @param string $apikey
+     * @return void
+     */
+    public function getURLSave(int $idEmulator, int $idUser, string $apikey)
+    {
+        $headers = apache_request_headers();
+
+
+        $user = $this->DAOUser->find($apikey);
+        $fullpath = "";
+        if (is_null($user)) {
+            return ResponseController::notFoundResponse();
+        } else {
+            $fileSave = $this->DAOFileSave->find($idEmulator, $idUser);
+            $file = $this->DAOFile->find($fileSave->idFile);
+            $fullpath = "../../../../caimanWeb/saves/" . $file->filename;
+
+
+            if (file_exists($fullpath)) {
+                header('Content-Description: File Transfer');
+                header('Content-Type: application/zip');
                 header('Content-Disposition: attachment; filename=' . basename($fullpath));
                 header('Content-Transfer-Encoding: binary');
                 header('Expires: 0');
@@ -273,7 +317,7 @@ class GameController
         return ResponseController::successfulRequest();
     }
 
-        /**
+    /**
      * Check if game is in favorite
      *
      * @param integer $idGame
@@ -287,7 +331,7 @@ class GameController
         if (is_null($idGame) || is_null($idUser)) {
             return ResponseController::notFoundResponse();
         }
-        $value =$this->DAOGame->checkIfGameFavorite($idGame, $idUser);;
+        $value = $this->DAOGame->checkIfGameFavorite($idGame, $idUser);;
         return ResponseController::successfulRequest($value);
     }
 
