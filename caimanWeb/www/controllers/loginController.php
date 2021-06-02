@@ -99,9 +99,7 @@ class LoginController extends mainController implements iController
               <div class="form-group">
               <button type="submit" class="btn btn-success">Log in</button>
             </div>
-            <div class="form-group">
-              <a href="?r=login&e=forgot" class="btn btn-success my-2">Forgot password?</a>
-            </div>
+
           
           </form>
       </div>';
