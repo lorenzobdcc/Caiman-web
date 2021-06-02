@@ -21,7 +21,7 @@ class Game
     public ?int $idFile;
 
     /**
-     * contructor of a game
+     * contructor of a game model
      *
      * @param integer $id
      * @param string $name

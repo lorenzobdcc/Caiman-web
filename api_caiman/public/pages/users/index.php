@@ -5,7 +5,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief File being the front controller of the API and allowing to process games request.
+ *  @brief File being the front controller of the API and allowing to process user request.
  */
 
 use App\Controllers\UserController;

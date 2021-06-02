@@ -61,9 +61,9 @@ class DAOUser
 
     /**
      * 
-     * Method to return a user from the database in a user model object.
+     * Method to return a user from the database in a user model object from it's apiToken
      * 
-     * @param int $id The user identifier 
+     * @param string $apitocken
      * @return User A User model object containing all the result rows of the query 
      */
     public function find(string $apitocken)
@@ -100,11 +100,11 @@ class DAOUser
         }
     }
 
-        /**
+    /**
      * 
-     * Method to return a user from the database in a user model object.
+     * Method to return a user from the database in a user model object from a caimanToken
      * 
-     * @param int $id The user identifier 
+     * @param string $caimanToken
      * @return User A User model object containing all the result rows of the query 
      */
     public function findByCaimanToken(string $caimanToken)
@@ -118,11 +118,10 @@ class DAOUser
 
         try {
             $statement_caimanToken = $this->db->prepare($statement_caimanToken);
-            
+
             $statement_caimanToken->bindParam(':CAIMAN_TOKEN_NEW', $caimanTokenNew);
             $statement_caimanToken->bindParam(':CAIMAN_TOKEN', $caimanToken);
             $statement_caimanToken->execute();
-
         } catch (\PDOException $e) {
             //exit($e->getMessage());
         }
@@ -158,12 +157,12 @@ class DAOUser
         }
     }
 
-            /**
+    /**
      * 
-     * Method to return a user from the database in a user model object.
+     * Method to return update the caimanToken of a user
      * 
-     * @param int $id The user identifier 
-     * @return User A User model object containing all the result rows of the query 
+     * @param string $apitocken
+     * @return void 
      */
     public function updateCaimanToken(string $apitocken)
     {
@@ -178,16 +177,21 @@ class DAOUser
             $caimanTocken = md5(microtime());
             $statement->bindParam(':CAIMAN_TOKEN', $caimanTocken);
             $statement->execute();
-
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
     }
 
+    /**
+     * 
+     * Method to return get a user from a username
+     * 
+     * @param string $username
+     * @return User 
+     */
     public function findUserByUsername(string $username)
     {
 
-        $caimanTocken = md5(microtime());
         $statement = "
         SELECT *
         FROM user
@@ -201,7 +205,7 @@ class DAOUser
 
             $user = new User();
 
-            if ($statement->rowCount()==1) {
+            if ($statement->rowCount() == 1) {
                 $result = $statement->fetch(\PDO::FETCH_ASSOC);
                 $user = new User();
                 $user->id = $result["id"];
@@ -212,16 +216,13 @@ class DAOUser
                 $user->email = $result["email"];
                 $user->idRole = $result["idRole"];
                 $user->caimanToken = $result["caimanToken"];
-                
-               
-            }
-            else{
-                $user = null; 
+            } else {
+                $user = null;
             }
 
             return $user;
         } catch (\PDOException $e) {
             exit($e->getMessage());
-        }    
+        }
     }
 }

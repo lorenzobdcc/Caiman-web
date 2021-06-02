@@ -29,6 +29,10 @@ class DAOConsole
         $this->db = $db;
     }
 
+    /**
+     * 
+     * Methode to return the informations of a console
+     */
     public function find(int $id)
     {
         $statement = "

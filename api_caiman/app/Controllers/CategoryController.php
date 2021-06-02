@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,12 +7,14 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Controller of category model
  */
+
 namespace App\Controllers;
 
 use App\DataAccessObject\DAOCategory;
 use App\Controllers\ResponseController;
 
-class CategoryController {
+class CategoryController
+{
 
     private DAOCategory $DAOCategory;
 
@@ -24,7 +27,7 @@ class CategoryController {
      */
     public function __construct(\PDO $db)
     {
-        $this->DAOCategory = new DAOCategory($db); 
+        $this->DAOCategory = new DAOCategory($db);
     }
 
     /**
@@ -38,9 +41,6 @@ class CategoryController {
 
         $allCategory = $this->DAOCategory->getAllCategory();
 
-        return ResponseController::successfulRequest($allCategory);  
+        return ResponseController::successfulRequest($allCategory);
     }
-
-
-
 }

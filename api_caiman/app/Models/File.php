@@ -17,14 +17,14 @@ class File
     public ?string $date;
 
 
-/**
- * Contstructor of the file model
- *
- * @param integer $id
- * @param string $name
- * @param string $filename
- * @param string $date
- */
+    /**
+     * Contstructor of the file model
+     *
+     * @param integer $id
+     * @param string $name
+     * @param string $filename
+     * @param string $date
+     */
     public function __construct(int $id = null, string $name = null, string $filename = null, string $date = null)
     {
         $this->id = $id;

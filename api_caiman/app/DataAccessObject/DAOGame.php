@@ -104,6 +104,14 @@ class DAOGame
     }
 
 
+    /**
+     * 
+     * Method to return the number of minutes played by the user for one game
+     * 
+     * @param int $idUser
+     * @param int $idGame 
+     * @return int
+     */
     public function getTimeUser(int $idGame, int $idUser)
     {
         $statement = "
@@ -131,7 +139,14 @@ class DAOGame
             exit($e->getMessage());
         }
     }
-
+    /**
+     * 
+     * Method to add one minutes of game for a specific game
+     * 
+     * @param int $idUser
+     * @param int $idGame
+     * @return void
+     */
     public function addOneMInuteToGameTime(int $idGame, int $idUser)
     {
         $statement = "
@@ -274,7 +289,7 @@ class DAOGame
      * 
      * Method to return the list of games by theire names
      * 
-     * @param int $id The user identifier 
+     * @param string $name
      * @return list of games A game model object containing all the result rows of the query 
      */
     public function findGamesFromName(string $name)
@@ -309,10 +324,11 @@ class DAOGame
 
     /**
      * 
-     * add game to favorite
+     * Method to add game to favorite
      * 
-     * @param int $id The user identifier 
-     * @return list of games A game model object containing all the result rows of the query 
+     * @param int $idUser The user identifier 
+     * @param int $idGame
+     * @return void
      */
     public function addGameToFavorite(int $idGame, int $idUser)
     {
@@ -333,10 +349,11 @@ class DAOGame
 
     /**
      * 
-     * add game to favorite
+     * Check if a game is already in favorite
      * 
-     * @param int $id The user identifier 
-     * @return list of games A game model object containing all the result rows of the query 
+     * @param int $idUser
+     * @param int $idGame
+     * @return bool
      */
     public function checkIfGameFavorite(int $idGame, int $idUser)
     {
@@ -365,8 +382,9 @@ class DAOGame
      * 
      * Remove game from favorite
      * 
-     * @param int $id The user identifier 
-     * @return list of games A game model object containing all the result rows of the query 
+     * @param int $idUser
+     * @param int $idGame
+     * @return void
      */
     public function removeGameFromFavorite(int $idGame, int $idUser)
     {

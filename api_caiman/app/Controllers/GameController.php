@@ -53,9 +53,6 @@ class GameController
      */
     public function getAllGames()
     {
-        $headers = apache_request_headers();
-
-
 
         $allGames = $this->DAOGame->findAll();
 
@@ -71,7 +68,6 @@ class GameController
      */
     public function getGameFromCategory(int $id)
     {
-        $headers = apache_request_headers();
 
         $game = $this->DAOGame->findGameFromCategory($id);
         if (is_null($game)) {
@@ -82,16 +78,13 @@ class GameController
     }
 
     /**
-     * Method to return a list of games
+     * Method to return the list of the user favorites games
      *
      * @param integer $id
      * @return void
      */
     public function getFavoriteGameOfUser(int $id)
     {
-        $headers = apache_request_headers();
-
-
 
         $game = $this->DAOGame->findFavoriteGameOfUser($id);
         if (is_null($game)) {
@@ -102,17 +95,13 @@ class GameController
     }
 
     /**
-     * Method to return a list of games
+     * Method to return the list of game the user as already played
      *
      * @param integer $id
      * @return void
      */
     public function getTimeGames(int $id)
     {
-        $headers = apache_request_headers();
-
-
-
         $game = $this->DAOGame->findTimesGamesUser($id);
         if (is_null($game)) {
             return ResponseController::notFoundResponse();
@@ -123,15 +112,12 @@ class GameController
 
     /**
      * 
-     * Method to return a game in JSON format.
-     * 
-     * @param int $id The game identifier
-     * @return string The status and the body in JSON format of the response
+     * Method to return a list of game where the name match the given parameters
+     * @param string name
+     * @return list game
      */
     public function getGamesFromName(string $name)
     {
-        $headers = apache_request_headers();
-
 
         $game = $this->DAOGame->findGamesFromName($name);
         if (is_null($game)) {
@@ -150,7 +136,6 @@ class GameController
      */
     public function getGame(int $id)
     {
-        $headers = apache_request_headers();
 
         $game = $this->DAOGame->find($id);
 
@@ -160,7 +145,10 @@ class GameController
 
         return ResponseController::successfulRequest($game);
     }
-
+    /**
+     * 
+     * Method to get the time a user as play a game
+     */
     public function getTimePlayed(int $idGame, int $idUser)
     {
         $timer = $this->DAOGame->getTimeUser($idGame, $idUser);
@@ -171,7 +159,15 @@ class GameController
 
         return ResponseController::successfulRequest($timer);
     }
-
+    /**
+     * Method to update the time played by a user
+     * this method will add one minute in the database
+     * 
+     * @param int idGame
+     * @param int idUser
+     * @return void
+     * 
+     */
     public function addOneMInuteToGameTime(int $idGame, int $idUser)
     {
         $this->DAOGame->addOneMInuteToGameTime($idGame, $idUser);
@@ -180,7 +176,7 @@ class GameController
     }
 
     /**
-     * Get the url to a file in the serveur
+     * Return the game file
      *
      * @param integer $idGame
      * @param string $apikey
@@ -188,8 +184,6 @@ class GameController
      */
     public function getURL(int $idGame, string $apikey)
     {
-        $headers = apache_request_headers();
-
 
         $user = $this->DAOUser->find($apikey);
         $fullpath = "";
@@ -221,7 +215,7 @@ class GameController
     }
 
     /**
-     * Get the url to a file in the serveur
+     * Return the ziped save file of one emulator for one user
      *
      * @param integer $idGame
      * @param string $apikey
@@ -236,7 +230,7 @@ class GameController
             return ResponseController::notFoundResponse();
         } else {
             $fileSave = $this->DAOFileSave->find($idEmulator, $idUser);
-            
+
             if (is_null($fileSave)) {
                 return ResponseController::notFoundResponse();
                 exit;
@@ -263,7 +257,13 @@ class GameController
         return ResponseController::successfulRequest();
     }
 
-    public function AddSave($idEmulator, $idUser, $apiKey,$file)
+    /**
+     * 
+     * Method to upload the saves file 
+     * 
+     * @return void
+     */
+    public function AddSave($idEmulator, $idUser, $apiKey, $file)
     {
 
         if (is_null($idEmulator) || is_null($idUser) || is_null($apiKey)) {
@@ -275,21 +275,20 @@ class GameController
         if ($user == null) {
             return ResponseController::notFoundResponse();
             exit;
-
         }
         $isNewFile = false;
-        $newfilename = $this->DAOFileSave->FindFileName($idEmulator,$idUser);
-        
+        $newfilename = $this->DAOFileSave->FindFileName($idEmulator, $idUser);
+
         if ($newfilename == null) {
             $newfilename = md5(microtime());
-            $newfilename = $newfilename.".zip"; 
+            $newfilename = $newfilename . ".zip";
             $isNewFile = true;
         }
         $target_dir = "../../../../caimanWeb/saves/";
 
         if (move_uploaded_file($file, $target_dir . $newfilename)) {
             if ($isNewFile) {
-                $this->DAOFileSave->AddFileSave($idEmulator, $idUser,$newfilename);
+                $this->DAOFileSave->AddFileSave($idEmulator, $idUser, $newfilename);
             }
         } else {
             return ResponseController::uploadFailed();
@@ -300,15 +299,13 @@ class GameController
     }
 
     /**
-     * Get the url to a file in the serveur
+     * Get the filename of a game
      *
      * @param integer $idGame
-     * @param string $apikey
-     * @return void
+     * @return file
      */
     public function getFileName(int $idGame)
     {
-        $headers = apache_request_headers();
 
         $game = $this->DAOGame->find($idGame);
         $file = $this->DAOFile->find($game->idFile);
@@ -329,12 +326,11 @@ class GameController
      */
     public function removeGameFromFavorite(int $idGame, int $idUser)
     {
-        $headers = apache_request_headers();
 
         if (is_null($idGame) || is_null($idUser)) {
             return ResponseController::notFoundResponse();
         }
-        $file = $this->DAOGame->removeGameFromFavorite($idGame, $idUser);
+        $this->DAOGame->removeGameFromFavorite($idGame, $idUser);
         return ResponseController::successfulRequest();
     }
 
@@ -342,13 +338,11 @@ class GameController
      * Add game to favorite
      *
      * @param integer $idGame
-     * @param string $apikey
+     * @param integer $idUser
      * @return void
      */
     public function addGameToFavorite(int $idGame, int $idUser)
     {
-        $headers = apache_request_headers();
-
         if (is_null($idGame) || is_null($idUser)) {
             return ResponseController::notFoundResponse();
         }
@@ -357,7 +351,7 @@ class GameController
     }
 
     /**
-     * Check if game is in favorite
+     * Method to check if game is already in favorite
      *
      * @param integer $idGame
      * @param string $apikey
@@ -365,7 +359,6 @@ class GameController
      */
     public function checkIfGameFavorite(int $idGame, int $idUser)
     {
-        $headers = apache_request_headers();
 
         if (is_null($idGame) || is_null($idUser)) {
             return ResponseController::notFoundResponse();
@@ -375,15 +368,13 @@ class GameController
     }
 
     /**
-     * Get the url to a file in the serveur
+     * Method to get the console of a game
      *
      * @param integer $idGame
-     * @param string $apikey
      * @return void
      */
     public function getConsole(int $idGame)
     {
-        $headers = apache_request_headers();
 
         $game = $this->DAOGame->find($idGame);
         $console = $this->DAOConsole->find($game->idConsole);

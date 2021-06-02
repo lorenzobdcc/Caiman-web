@@ -1,4 +1,5 @@
 <?php
+
 /** BDCC
  *  -------
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
@@ -6,8 +7,10 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief File being the front controller of the API and allowing to process the request category.
  */
+
 use App\Controllers\CategoryController;
 use App\Models\Category;
+
 require "../../../bootstrap.php";
 
 header("Access-Control-Allow-Origin: *");
@@ -35,11 +38,11 @@ $category->name = $input["name"] ?? null;
 switch ($requestMethod) {
     case 'GET':
 
-            $response = $controller->getAllCategory();
+        $response = $controller->getAllCategory();
 
         break;
 
-        
+
     default:
         header("HTTP/1.1 404 Not Found");
         exit();

@@ -38,27 +38,24 @@ switch ($requestMethod) {
         if (isset($_REQUEST['caimanToken'])) {
             $caimanTocken = $_REQUEST['caimanToken'];
             if ($caimanTocken != "") {
-               $response = $controller->findByCaimanToken($caimanTocken);
-               
+                $response = $controller->findByCaimanToken($caimanTocken);
             }
-
-            
         }
         if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
-        $username = $_REQUEST['username'];
-        $password = $_REQUEST['password'];
+            $username = $_REQUEST['username'];
+            $password = $_REQUEST['password'];
 
 
-        if ($password != "" && $username != "") {
-            $response = $controller->connection($username, $password);
-            $responsePHP = json_decode($response['body']);
-            $controller->updateCaimanToken($responsePHP->apitocken);
-            $response = $controller->connection($username, $password);
-        } else {
-            header("HTTP/1.1 404 Not Found");
-            exit();
+            if ($password != "" && $username != "") {
+                $response = $controller->connection($username, $password);
+                $responsePHP = json_decode($response['body']);
+                $controller->updateCaimanToken($responsePHP->apitocken);
+                $response = $controller->connection($username, $password);
+            } else {
+                header("HTTP/1.1 404 Not Found");
+                exit();
+            }
         }
-    }
 
         break;
 

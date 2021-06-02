@@ -29,12 +29,12 @@ class DAOFile
         $this->db = $db;
     }
 
-/**
- * Return a file frome it's id
- *
- * @param integer $id
- * @return void
- */
+    /**
+     * Return a file frome it's id
+     *
+     * @param integer $id
+     * @return file
+     */
     public function find(int $id)
     {
         $statement = "

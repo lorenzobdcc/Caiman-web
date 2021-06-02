@@ -1,16 +1,19 @@
 <?php
+
 /** BDCC
  *  -------
- *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @author Jonathan Borel-Jaquet, Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Controller allowing to return different type of HTTP response.
  */
-namespace App\Controllers; 
 
-class ResponseController {
+namespace App\Controllers;
 
-    
+class ResponseController
+{
+
+
 
     /**
      * 
@@ -67,7 +70,7 @@ class ResponseController {
     public static function successfulRequest($result = null)
     {
         $response = array();
-        
+
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = (!is_null($result)) ? json_encode($result) : null;
         return $response;
@@ -160,7 +163,7 @@ class ResponseController {
         return $response;
     }
 
-     /**
+    /**
      * 
      * Method to return the error message in case of invalid datetime format.
      * 
@@ -181,7 +184,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function dateOverlapProblem(){
+    public static function dateOverlapProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Les dates chevauchent d\'autres dates déjà existantes.'
@@ -195,7 +199,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function timeOverlapProblem(){
+    public static function timeOverlapProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Les horaires chevauchent d\'autres horaires déjà existants.'
@@ -209,7 +214,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function chronologicalDateProblem(){
+    public static function chronologicalDateProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'La date ou l\'heure de début est plus récente que la date ou l\'heure de fin.'
@@ -223,7 +229,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function invalidCodeDayFormat(){
+    public static function invalidCodeDayFormat()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Format de jour invalide => (1 jusqu\'à 7, dimanche = 1).'
@@ -237,7 +244,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function invalidDocumentTypeFormat(){
+    public static function invalidDocumentTypeFormat()
+    {
         $response['status_code_header'] = 'HTTP/1.1 415 Unsupported Media Type';
         $response['body'] = json_encode([
             'error' => 'Type de document invalide => (conditions_inscription,poster).'
@@ -251,7 +259,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function invalidEmailFormat(){
+    public static function invalidEmailFormat()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Format d\'adresse email invalide.'
@@ -265,7 +274,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function invalidLogin(){
+    public static function invalidLogin()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Identifiants de connexion invalides.'
@@ -279,7 +289,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function uploadFailed(){
+    public static function uploadFailed()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Échec d\'upload.'
@@ -293,7 +304,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function imageFileFormatProblem(){
+    public static function imageFileFormatProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 415 Unsupported Media Type';
         $response['body'] = json_encode([
             'error' => 'Format d\'image par pris en charge.'
@@ -307,7 +319,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function documentTypeNotPdfProblem(){
+    public static function documentTypeNotPdfProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 415 Unsupported Media Type';
         $response['body'] = json_encode([
             'error' => 'Format de document pas pris en charge => Format disponible PDF.'
@@ -321,7 +334,8 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function packageNumberFormatProblem(){
+    public static function packageNumberFormatProblem()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Numéro de Forfait invalide => (1 jusqu\'à 5).'
@@ -335,13 +349,12 @@ class ResponseController {
      * 
      * @return string The status and the body in JSON format of the response
      */
-    public static function invalidAppointment(){
+    public static function invalidAppointment()
+    {
         $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
         $response['body'] = json_encode([
             'error' => 'Impossible de prendre ce rendez-vous.'
         ]);
         return $response;
     }
-
-    
 }

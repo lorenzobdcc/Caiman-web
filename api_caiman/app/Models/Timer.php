@@ -15,11 +15,11 @@ class timer
     public ?int $minutes;
 
 
-/**
- * Contstructor of the file model
- *
- * @param integer $minutes
- */
+    /**
+     * Contstructor of the timer model
+     *
+     * @param integer $minutes
+     */
     public function __construct(int $minutes = null)
     {
         $this->minutes = $minutes;

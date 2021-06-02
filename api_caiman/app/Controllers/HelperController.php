@@ -1,7 +1,7 @@
 <?php
 /** BDCC
  *  -------
- *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @author Jonathan Borel-Jaquet, Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Controller allowing the use of help functions.

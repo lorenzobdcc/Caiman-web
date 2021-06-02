@@ -19,14 +19,14 @@ class Console
     public ?int $idEmulator;
 
 
-/**
- * Constructor of the category model object.
- *
- * @param integer $id
- * @param string $name
- * @param string $folderName
- * @param integer $idEmulator
- */
+    /**
+     * Constructor of the console model object.
+     *
+     * @param integer $id
+     * @param string $name
+     * @param string $folderName
+     * @param integer $idEmulator
+     */
     public function __construct(int $id = null, string $name = null, string $folderName = null, int $idEmulator = null)
     {
         $this->id = $id;

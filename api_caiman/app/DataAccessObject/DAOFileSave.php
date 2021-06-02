@@ -30,7 +30,7 @@ class DAOFileSave
     }
 
     /**
-     * Return a file frome it's id
+     * Return a fileSave frome it's id
      *
      * @param integer $id
      * @return void
@@ -66,7 +66,7 @@ class DAOFileSave
     }
 
     /**
-     * Return a file frome it's id
+     * Return the filename of a fileSave
      *
      * @param integer $id
      * @return void
@@ -96,7 +96,12 @@ class DAOFileSave
             exit($e->getMessage());
         }
     }
-    public function AddFileSave($idEmulator,$idUser,$newFileName)
+    /**
+     * 
+     * Method to upload add a fileSave
+     * @return void
+     */
+    public function AddFileSave($idEmulator, $idUser, $newFileName)
     {
         $statementFile = "
         INSERT INTO file
@@ -117,18 +122,14 @@ class DAOFileSave
                 $statementFileSave = $this->db->prepare($statementFileSave);
                 $statementFileSave->bindParam(':ID_user', $idUser, \PDO::PARAM_INT);
                 $statementFileSave->bindParam(':ID_emulator', $idEmulator, \PDO::PARAM_INT);
-                $lastInsertId= $this->db->lastInsertId();
+                $lastInsertId = $this->db->lastInsertId();
                 $statementFileSave->bindParam(':ID_file', $lastInsertId, \PDO::PARAM_INT);
                 $statementFileSave->execute();
             } catch (\PDOException $e) {
                 exit($e->getMessage());
             }
-
-
         } catch (\PDOException $e) {
             exit($e->getMessage());
         }
-
-
     }
 }

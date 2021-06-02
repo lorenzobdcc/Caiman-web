@@ -81,7 +81,7 @@ switch ($requestMethod) {
             $idUser = $_GET['idUser'];
             $apiKey = $_GET['apiKey'];
             $isSet = 1;
-            $response = $controller->getURLSave($idEmulator,$idUser, $apiKey);
+            $response = $controller->getURLSave($idEmulator, $idUser, $apiKey);
         }
         if (isset($_GET['idGameTime']) && isset($_GET['idUser'])) {
             $idGame = $_GET['idGameTime'];
@@ -104,7 +104,7 @@ switch ($requestMethod) {
             $idUser = $_POST['idUser'];
             $apiKey = $_POST['apiKey'];
             $file = $_FILES["fileSave"]["tmp_name"];
-            $response = $controller->AddSave($idEmulator,$idUser, $apiKey,$file);
+            $response = $controller->AddSave($idEmulator, $idUser, $apiKey, $file);
         }
         if (isset($_POST['idGameAdd']) && isset($_POST['idUser'])) {
             $idGame = $_POST['idGameAdd'];

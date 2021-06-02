@@ -33,7 +33,7 @@ class DAOCategory
      * 
      * Method to return all categories from the database in an array of Category objects.
      * 
-     * @return Category[] A game object array
+     * @return Category[] A Category object array
      */
     public function getAllCategory()
     {
