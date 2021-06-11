@@ -3,46 +3,29 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_main_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_main_controller_a0f36eb87bd843eeb00f04d3a9189e993}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_main_controller_aa6304d70cd5b71dfd65ec3cc7b2854c7}{allow\+Access\+To}} (\$allow\+Access\+To\+Id)
+\mbox{\hyperlink{class_main_controller_a414a441a9e6e00886aafdd1ce8134ab4}{allow\+Access\+To}} (\$allow\+Access\+To\+Id)
 \item 
-\mbox{\hyperlink{class_main_controller_a9382efd62f5e29b28fbbcd9425142b3c}{error\+Handler}} ()
+\mbox{\hyperlink{class_main_controller_a960c55d4f7c70c5a5d2b894132c08495}{error\+Handler}} ()
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file main\+Controller.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_main_controller_a095c5d389db211932136b53f25f39685}\label{class_main_controller_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_main_controller_a0f36eb87bd843eeb00f04d3a9189e993}\label{class_main_controller_a0f36eb87bd843eeb00f04d3a9189e993}} 
 \index{MainController@{MainController}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!MainController@{MainController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Main\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 16 of file main\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{17     \{}
-\DoxyCodeLine{18     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_main_controller_aa6304d70cd5b71dfd65ec3cc7b2854c7}\label{class_main_controller_aa6304d70cd5b71dfd65ec3cc7b2854c7}} 
+\mbox{\Hypertarget{class_main_controller_a414a441a9e6e00886aafdd1ce8134ab4}\label{class_main_controller_a414a441a9e6e00886aafdd1ce8134ab4}} 
 \index{MainController@{MainController}!allowAccessTo@{allowAccessTo}}
 \index{allowAccessTo@{allowAccessTo}!MainController@{MainController}}
 \doxysubsubsection{\texorpdfstring{allowAccessTo()}{allowAccessTo()}}
-{\footnotesize\ttfamily allow\+Access\+To (\begin{DoxyParamCaption}\item[{}]{\$allow\+Access\+To\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Main\+Controller\+::allow\+Access\+To (\begin{DoxyParamCaption}\item[{}]{\$allow\+Access\+To\+Id }\end{DoxyParamCaption})}
 
 used to set the acces of a page you need to give the the list of role who can acces the page
 
@@ -54,62 +37,17 @@ used to set the acces of a page you need to give the the list of role who can ac
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 26 of file main\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{27     \{}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         \$isValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{30         \textcolor{keywordflow}{foreach} (\$allowAccessToId as \$key => \$validId) \{}
-\DoxyCodeLine{31             \textcolor{keywordflow}{if} (\$validId == \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>role) \{}
-\DoxyCodeLine{32                 \$isValid = \textcolor{keyword}{true};}
-\DoxyCodeLine{33             \}}
-\DoxyCodeLine{34         \}}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36         \textcolor{keywordflow}{if} (\$isValid == \textcolor{keyword}{false}) \{}
-\DoxyCodeLine{37             header(\textcolor{stringliteral}{'Location: index.php'});}
-\DoxyCodeLine{38             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}You can't access this page!"{}};}
-\DoxyCodeLine{39             exit;}
-\DoxyCodeLine{40         \}}
-\DoxyCodeLine{41     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_main_controller_a9382efd62f5e29b28fbbcd9425142b3c}\label{class_main_controller_a9382efd62f5e29b28fbbcd9425142b3c}} 
+\mbox{\Hypertarget{class_main_controller_a960c55d4f7c70c5a5d2b894132c08495}\label{class_main_controller_a960c55d4f7c70c5a5d2b894132c08495}} 
 \index{MainController@{MainController}!errorHandler@{errorHandler}}
 \index{errorHandler@{errorHandler}!MainController@{MainController}}
 \doxysubsubsection{\texorpdfstring{errorHandler()}{errorHandler()}}
-{\footnotesize\ttfamily error\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Main\+Controller\+::error\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 create the html of an error
 
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 48 of file main\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{49     \{}
-\DoxyCodeLine{50         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{51         \textcolor{keywordflow}{if} (isset(\$\_SESSION[\textcolor{stringliteral}{'error'}]) \&\& \$\_SESSION[\textcolor{stringliteral}{'error'}] != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53             \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{54 \textcolor{stringliteral}{          <div class="{} warningJumbotron errorMessageDiv"{} style="{}background-\/color: \#161b22; "{}>}}
-\DoxyCodeLine{55 \textcolor{stringliteral}{}}
-\DoxyCodeLine{56 \textcolor{stringliteral}{                  <h5>'} . \$\_SESSION[\textcolor{stringliteral}{'error'}] . \textcolor{stringliteral}{'</h5>}}
-\DoxyCodeLine{57 \textcolor{stringliteral}{}}
-\DoxyCodeLine{58 \textcolor{stringliteral}{          </div>'};}
-\DoxyCodeLine{59             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{keyword}{null};}
-\DoxyCodeLine{60         \}}
-\DoxyCodeLine{61         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{62     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

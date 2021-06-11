@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['user_2ephp_105',['User.php',['../_user_8php.html',1,'']]],
-  ['usercontroller_2ephp_106',['UserController.php',['../_user_controller_8php.html',1,'']]]
+  ['helpercontroller_2ephp_237',['HelperController.php',['../_helper_controller_8php.html',1,'']]]
 ];

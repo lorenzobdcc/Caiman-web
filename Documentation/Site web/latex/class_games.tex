@@ -3,443 +3,150 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_games_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_games_a6caee8aa2cd9d7f9bbe2fe8fd821ed69}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_games_adb126d2fb743e7fb704f2e59273a296c}{get\+All\+Games}} ()
+\mbox{\hyperlink{class_games_a29a19dce844001b67feb5bcdecd543dd}{get\+All\+Games}} ()
 \item 
-\mbox{\hyperlink{class_games_a27486dee021b3817233f345384231b97}{get\+Request\+Games}} (string \$game\+Name)
+\mbox{\hyperlink{class_games_a40e05808bb18bdb7e1709d1d1c7bf913}{get\+Request\+Games}} (string \$game\+Name)
 \item 
-\mbox{\hyperlink{class_games_a356d840419cd8ea2c581533d269d34d7}{get\+Time\+In\+Game\+User}} (int \$id\+User, int \$id\+Game)
+\mbox{\hyperlink{class_games_a85b5bed8b73e3ca28987f5a3a362da9a}{get\+Time\+In\+Game\+User}} (int \$id\+User, int \$id\+Game)
 \item 
-\mbox{\hyperlink{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}{get\+List\+Of\+Game\+With\+Time\+User}} (int \$id\+User)
+\mbox{\hyperlink{class_games_a6aff98b1c52d50b74a4010dc88a2d84a}{get\+List\+Of\+Game\+With\+Time\+User}} (int \$id\+User)
 \item 
-\mbox{\hyperlink{class_games_ac93fbd51775fb58ab532190551781db2}{get\+Game\+Detail}} (int \$id\+Game)
+\mbox{\hyperlink{class_games_af00be67d0389872eb0f58fd20e76c8c3}{get\+Game\+Detail}} (int \$id\+Game)
 \item 
-\mbox{\hyperlink{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}{get\+Games\+In\+Categorie}} (int \$id\+Categorie)
+\mbox{\hyperlink{class_games_af54851d26c8053bd5b35430cdc528427}{get\+Games\+In\+Categorie}} (int \$id\+Categorie)
 \item 
-\mbox{\hyperlink{class_games_a8cba71e901169a660cced6ff8a641a18}{get\+Favorite\+Games\+Of\+User}} (int \$id\+User)
+\mbox{\hyperlink{class_games_a242eb56bdabad11e4da77b08266c818a}{get\+Favorite\+Games\+Of\+User}} (int \$id\+User)
 \item 
-\mbox{\hyperlink{class_games_a829137ab2be029816c98157cf51605f9}{add\+Game\+To\+Favoris}} (int \$id\+User, int \$id\+Game)
+\mbox{\hyperlink{class_games_a48efa0e25f7acc3a8b130220f2142e7a}{add\+Game\+To\+Favoris}} (int \$id\+User, int \$id\+Game)
 \item 
-\mbox{\hyperlink{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}{remove\+Game\+From\+Favoris}} (int \$id\+User, int \$id\+Game)
+\mbox{\hyperlink{class_games_a242ef0ca96fa5fed83ebb6f40b53d1b7}{remove\+Game\+From\+Favoris}} (int \$id\+User, int \$id\+Game)
 \item 
-\mbox{\hyperlink{class_games_a6f9ef1672bce91a29800ee02215a5d2c}{check\+If\+Game\+Is\+Already\+In\+Favoris}} (int \$id\+User, int \$id\+Game)
+\mbox{\hyperlink{class_games_acd38c8f8387189116537cacc9ee98fb3}{check\+If\+Game\+Is\+Already\+In\+Favoris}} (int \$id\+User, int \$id\+Game)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 9 of file games.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_games_a095c5d389db211932136b53f25f39685}\label{class_games_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_games_a6caee8aa2cd9d7f9bbe2fe8fd821ed69}\label{class_games_a6caee8aa2cd9d7f9bbe2fe8fd821ed69}} 
 \index{Games@{Games}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default contructor 
 
-Definition at line 37 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{38     \{}
-\DoxyCodeLine{39         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{40             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{41                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{42                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{43                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{44                 )); }
-\DoxyCodeLine{45                 \textcolor{comment}{//get all games}}
-\DoxyCodeLine{46                 \$sqlGetAllGames = \textcolor{stringliteral}{"{}SELECT * FROM game"{}};}
-\DoxyCodeLine{47                 \$this-\/>psGetAllGames = \$this-\/>dbh-\/>prepare(\$sqlGetAllGames);}
-\DoxyCodeLine{48                 \$this-\/>psGetAllGames-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50                 \textcolor{comment}{//get request games}}
-\DoxyCodeLine{51                 \$sqlRequestGames = \textcolor{stringliteral}{"{}SELECT * FROM game WHERE name LIKE :search\_game"{}};}
-\DoxyCodeLine{52                 \$this-\/>psRequestGames = \$this-\/>dbh-\/>prepare(\$sqlRequestGames);}
-\DoxyCodeLine{53                 \$this-\/>psRequestGames-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55                 \textcolor{comment}{//get Time in game user}}
-\DoxyCodeLine{56                 \$sqlTimeInGame = \textcolor{stringliteral}{"{}SELECT * FROM timeingame WHERE idGame = :search\_idGame AND idUser = :search\_idUser "{}};}
-\DoxyCodeLine{57                 \$this-\/>psGetTimeInGame = \$this-\/>dbh-\/>prepare(\$sqlTimeInGame);}
-\DoxyCodeLine{58                 \$this-\/>psGetTimeInGame-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60                 \textcolor{comment}{//get game with time user}}
-\DoxyCodeLine{61                 \$sqlGetGameWithTime = \textcolor{stringliteral}{"{}SELECT * FROM timeingame WHERE idUser = :search\_idUser ORDER BY timeInMinute DESC"{}};}
-\DoxyCodeLine{62                 \$this-\/>psGetGameWithTime = \$this-\/>dbh-\/>prepare(\$sqlGetGameWithTime);}
-\DoxyCodeLine{63                 \$this-\/>psGetGameWithTime-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65                 \textcolor{comment}{//get detail game}}
-\DoxyCodeLine{66                 \$sqlGameDetail = \textcolor{stringliteral}{"{}SELECT * FROM game WHERE id = :search\_id"{}};}
-\DoxyCodeLine{67                 \$this-\/>psGameDetail = \$this-\/>dbh-\/>prepare(\$sqlGameDetail);}
-\DoxyCodeLine{68                 \$this-\/>psGameDetail-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70                 \textcolor{comment}{//add game to favoris}}
-\DoxyCodeLine{71                 \$sqlAddGameToFavoris = \textcolor{stringliteral}{"{}INSERT INTO favoritegame  (idGame, idUser)}}
-\DoxyCodeLine{72 \textcolor{stringliteral}{                VALUES (:search\_idGame, :search\_idUser)"{}};}
-\DoxyCodeLine{73                 \$this-\/>psAddGameToFavori = \$this-\/>dbh-\/>prepare(\$sqlAddGameToFavoris);}
-\DoxyCodeLine{74                 \$this-\/>psAddGameToFavori-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76                 \textcolor{comment}{//remove game to favoris}}
-\DoxyCodeLine{77                 \$sqlRemoveGameFormFavoris = \textcolor{stringliteral}{"{}DELETE FROM favoritegame }}
-\DoxyCodeLine{78 \textcolor{stringliteral}{                WHERE idUser = :search\_idUser AND idGame = :search\_idGame"{}};}
-\DoxyCodeLine{79                 \$this-\/>psRemoveGameFromFavori = \$this-\/>dbh-\/>prepare(\$sqlRemoveGameFormFavoris);}
-\DoxyCodeLine{80                 \$this-\/>psRemoveGameFromFavori-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82                 \textcolor{comment}{//check if already in favoris}}
-\DoxyCodeLine{83                 \$sqlCheckIfAlreadyFavoris = \textcolor{stringliteral}{"{}SELECT * FROM favoritegame }}
-\DoxyCodeLine{84 \textcolor{stringliteral}{                WHERE iduser = :search\_idUser AND idGame = :search\_idGame"{}};}
-\DoxyCodeLine{85                 \$this-\/>psCheckIfFavoris = \$this-\/>dbh-\/>prepare(\$sqlCheckIfAlreadyFavoris);}
-\DoxyCodeLine{86                 \$this-\/>psCheckIfFavoris-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88                 \textcolor{comment}{//get favorite game of user}}
-\DoxyCodeLine{89                 \$sqlFavoriteGameOfUser = \textcolor{stringliteral}{"{}SELECT g.name, g.id, g.imageName FROM `favoritegame` as fg}}
-\DoxyCodeLine{90 \textcolor{stringliteral}{                LEFT JOIN game as g}}
-\DoxyCodeLine{91 \textcolor{stringliteral}{                ON fg.idGame = g.id}}
-\DoxyCodeLine{92 \textcolor{stringliteral}{                LEFT JOIN user as u}}
-\DoxyCodeLine{93 \textcolor{stringliteral}{                ON fg.iduser = u.id}}
-\DoxyCodeLine{94 \textcolor{stringliteral}{                WHERE iduser = :search\_id"{}};}
-\DoxyCodeLine{95                 \$this-\/>psFavoriteGameOfUser = \$this-\/>dbh-\/>prepare(\$sqlFavoriteGameOfUser);}
-\DoxyCodeLine{96                 \$this-\/>psFavoriteGameOfUser-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98                 }
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100                 \textcolor{comment}{//get list of games in a categorie}}
-\DoxyCodeLine{101                 \$sqlGameInCategorie = \textcolor{stringliteral}{"{}SELECT g.name, g.id, g.imageName FROM `gamehascategorie` as ghc}}
-\DoxyCodeLine{102 \textcolor{stringliteral}{                LEFT JOIN game as g}}
-\DoxyCodeLine{103 \textcolor{stringliteral}{                ON ghc.idGame = g.id}}
-\DoxyCodeLine{104 \textcolor{stringliteral}{                LEFT JOIN categorie as c}}
-\DoxyCodeLine{105 \textcolor{stringliteral}{                ON ghc.idCategorie = c.id}}
-\DoxyCodeLine{106 \textcolor{stringliteral}{                WHERE idCategorie = :search\_id"{}};}
-\DoxyCodeLine{107                 \$this-\/>psGameInCategorie = \$this-\/>dbh-\/>prepare(\$sqlGameInCategorie);}
-\DoxyCodeLine{108                 \$this-\/>psGameInCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{111                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{112                 die();}
-\DoxyCodeLine{113             \}}
-\DoxyCodeLine{114         \}}
-\DoxyCodeLine{115     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_games_a829137ab2be029816c98157cf51605f9}\label{class_games_a829137ab2be029816c98157cf51605f9}} 
+\mbox{\Hypertarget{class_games_a48efa0e25f7acc3a8b130220f2142e7a}\label{class_games_a48efa0e25f7acc3a8b130220f2142e7a}} 
 \index{Games@{Games}!addGameToFavoris@{addGameToFavoris}}
 \index{addGameToFavoris@{addGameToFavoris}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{addGameToFavoris()}{addGameToFavoris()}}
-{\footnotesize\ttfamily add\+Game\+To\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::add\+Game\+To\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 returns add a game to a user\textquotesingle{}s favorites
 
 \begin{DoxyReturn}{Returns}
 array 
 \end{DoxyReturn}
-
-
-Definition at line 249 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{250     \{}
-\DoxyCodeLine{251         }
-\DoxyCodeLine{252         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{253             \$this-\/>psAddGameToFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{255         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{256             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{257             die();}
-\DoxyCodeLine{258         \}}
-\DoxyCodeLine{259     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_a6f9ef1672bce91a29800ee02215a5d2c}\label{class_games_a6f9ef1672bce91a29800ee02215a5d2c}} 
+\mbox{\Hypertarget{class_games_acd38c8f8387189116537cacc9ee98fb3}\label{class_games_acd38c8f8387189116537cacc9ee98fb3}} 
 \index{Games@{Games}!checkIfGameIsAlreadyInFavoris@{checkIfGameIsAlreadyInFavoris}}
 \index{checkIfGameIsAlreadyInFavoris@{checkIfGameIsAlreadyInFavoris}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{checkIfGameIsAlreadyInFavoris()}{checkIfGameIsAlreadyInFavoris()}}
-{\footnotesize\ttfamily check\+If\+Game\+Is\+Already\+In\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::check\+If\+Game\+Is\+Already\+In\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 returns if a game is already in favorite
 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 284 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{285     \{}
-\DoxyCodeLine{286         \$boolResult = \textcolor{keyword}{true};}
-\DoxyCodeLine{287         }
-\DoxyCodeLine{288         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{289             \$this-\/>psCheckIfFavoris-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{290             \$result = \$this-\/>psCheckIfFavoris-\/>fetchAll();}
-\DoxyCodeLine{291             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{292                 \$boolResult = \textcolor{keyword}{false};}
-\DoxyCodeLine{293             \}}
-\DoxyCodeLine{294 }
-\DoxyCodeLine{295         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{296             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{297             die();}
-\DoxyCodeLine{298         \}}
-\DoxyCodeLine{299         \textcolor{keywordflow}{return} \$boolResult;}
-\DoxyCodeLine{300     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_adb126d2fb743e7fb704f2e59273a296c}\label{class_games_adb126d2fb743e7fb704f2e59273a296c}} 
+\mbox{\Hypertarget{class_games_a29a19dce844001b67feb5bcdecd543dd}\label{class_games_a29a19dce844001b67feb5bcdecd543dd}} 
 \index{Games@{Games}!getAllGames@{getAllGames}}
 \index{getAllGames@{getAllGames}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getAllGames()}{getAllGames()}}
-{\footnotesize\ttfamily get\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 returns all games from the database
 
 \begin{DoxyReturn}{Returns}
 array of all games 
 \end{DoxyReturn}
-
-
-Definition at line 122 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{123     \{}
-\DoxyCodeLine{124         }
-\DoxyCodeLine{125         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{126             \$this-\/>psGetAllGames-\/>execute();}
-\DoxyCodeLine{127             \$result = \$this-\/>psGetAllGames-\/>fetchAll();}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{131             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{132             die();}
-\DoxyCodeLine{133         \}}
-\DoxyCodeLine{134         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{135     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_a8cba71e901169a660cced6ff8a641a18}\label{class_games_a8cba71e901169a660cced6ff8a641a18}} 
+\mbox{\Hypertarget{class_games_a242eb56bdabad11e4da77b08266c818a}\label{class_games_a242eb56bdabad11e4da77b08266c818a}} 
 \index{Games@{Games}!getFavoriteGamesOfUser@{getFavoriteGamesOfUser}}
 \index{getFavoriteGamesOfUser@{getFavoriteGamesOfUser}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getFavoriteGamesOfUser()}{getFavoriteGamesOfUser()}}
-{\footnotesize\ttfamily get\+Favorite\+Games\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+Favorite\+Games\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
 
 returns the list of the favorite game of a user
 
 \begin{DoxyReturn}{Returns}
 array of games 
 \end{DoxyReturn}
-
-
-Definition at line 230 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{231     \{}
-\DoxyCodeLine{232         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{233             \$this-\/>psFavoriteGameOfUser-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idUser));}
-\DoxyCodeLine{234             \$result = \$this-\/>psFavoriteGameOfUser-\/>fetchAll();}
-\DoxyCodeLine{235 }
-\DoxyCodeLine{236 }
-\DoxyCodeLine{237         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{238             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{239             die();}
-\DoxyCodeLine{240         \}}
-\DoxyCodeLine{241         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{242     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_ac93fbd51775fb58ab532190551781db2}\label{class_games_ac93fbd51775fb58ab532190551781db2}} 
+\mbox{\Hypertarget{class_games_af00be67d0389872eb0f58fd20e76c8c3}\label{class_games_af00be67d0389872eb0f58fd20e76c8c3}} 
 \index{Games@{Games}!getGameDetail@{getGameDetail}}
 \index{getGameDetail@{getGameDetail}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getGameDetail()}{getGameDetail()}}
-{\footnotesize\ttfamily get\+Game\+Detail (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+Game\+Detail (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 returns details of a specif game
 
 \begin{DoxyReturn}{Returns}
 array with game detail 
 \end{DoxyReturn}
-
-
-Definition at line 194 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{195     \{}
-\DoxyCodeLine{196 }
-\DoxyCodeLine{197         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{198             \$this-\/>psGameDetail-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
-\DoxyCodeLine{199             \$result = \$this-\/>psGameDetail-\/>fetchAll();}
-\DoxyCodeLine{200 }
-\DoxyCodeLine{201 }
-\DoxyCodeLine{202         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{203             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{204             die();}
-\DoxyCodeLine{205         \}}
-\DoxyCodeLine{206         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{207     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}\label{class_games_afaab8fc4d0ea92cdc8fd0e9c6308e386}} 
+\mbox{\Hypertarget{class_games_af54851d26c8053bd5b35430cdc528427}\label{class_games_af54851d26c8053bd5b35430cdc528427}} 
 \index{Games@{Games}!getGamesInCategorie@{getGamesInCategorie}}
 \index{getGamesInCategorie@{getGamesInCategorie}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getGamesInCategorie()}{getGamesInCategorie()}}
-{\footnotesize\ttfamily get\+Games\+In\+Categorie (\begin{DoxyParamCaption}\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+Games\+In\+Categorie (\begin{DoxyParamCaption}\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
 
 returns games of a certain category
 
 \begin{DoxyReturn}{Returns}
 array of games 
 \end{DoxyReturn}
-
-
-Definition at line 214 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{215     \{}
-\DoxyCodeLine{216         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{217             \$this-\/>psGameInCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idCategorie));}
-\DoxyCodeLine{218             \$result = \$this-\/>psGameInCategorie-\/>fetchAll();}
-\DoxyCodeLine{219         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{220             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{221             die();}
-\DoxyCodeLine{222         \}}
-\DoxyCodeLine{223         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{224     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}\label{class_games_aacf088ae2dcfffda5886ad9e2ee56d05}} 
+\mbox{\Hypertarget{class_games_a6aff98b1c52d50b74a4010dc88a2d84a}\label{class_games_a6aff98b1c52d50b74a4010dc88a2d84a}} 
 \index{Games@{Games}!getListOfGameWithTimeUser@{getListOfGameWithTimeUser}}
 \index{getListOfGameWithTimeUser@{getListOfGameWithTimeUser}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getListOfGameWithTimeUser()}{getListOfGameWithTimeUser()}}
-{\footnotesize\ttfamily get\+List\+Of\+Game\+With\+Time\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+List\+Of\+Game\+With\+Time\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
 
 returns returns the games the player has played
 
 \begin{DoxyReturn}{Returns}
 array of games 
 \end{DoxyReturn}
-
-
-Definition at line 176 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{177     \{}
-\DoxyCodeLine{178         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{179             \$this-\/>psGetGameWithTime-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
-\DoxyCodeLine{180             \$result = \$this-\/>psGetGameWithTime-\/>fetchAll();}
-\DoxyCodeLine{181 }
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{184             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{185             die();}
-\DoxyCodeLine{186         \}}
-\DoxyCodeLine{187         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{188     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_a27486dee021b3817233f345384231b97}\label{class_games_a27486dee021b3817233f345384231b97}} 
+\mbox{\Hypertarget{class_games_a40e05808bb18bdb7e1709d1d1c7bf913}\label{class_games_a40e05808bb18bdb7e1709d1d1c7bf913}} 
 \index{Games@{Games}!getRequestGames@{getRequestGames}}
 \index{getRequestGames@{getRequestGames}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getRequestGames()}{getRequestGames()}}
-{\footnotesize\ttfamily get\+Request\+Games (\begin{DoxyParamCaption}\item[{string}]{\$game\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+Request\+Games (\begin{DoxyParamCaption}\item[{string}]{\$game\+Name }\end{DoxyParamCaption})}
 
 returns games whose name matches the search
 
 \begin{DoxyReturn}{Returns}
 array of games 
 \end{DoxyReturn}
-
-
-Definition at line 141 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{142     \{}
-\DoxyCodeLine{143 }
-\DoxyCodeLine{144         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{145             \$this-\/>psRequestGames-\/>execute(array(\textcolor{stringliteral}{':search\_game'} => \textcolor{charliteral}{'\%'}.\$gameName.\textcolor{charliteral}{'\%'}));}
-\DoxyCodeLine{146             \$result = \$this-\/>psRequestGames-\/>fetchAll();}
-\DoxyCodeLine{147 }
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{150             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{151             die();}
-\DoxyCodeLine{152         \}}
-\DoxyCodeLine{153         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{154     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_a356d840419cd8ea2c581533d269d34d7}\label{class_games_a356d840419cd8ea2c581533d269d34d7}} 
+\mbox{\Hypertarget{class_games_a85b5bed8b73e3ca28987f5a3a362da9a}\label{class_games_a85b5bed8b73e3ca28987f5a3a362da9a}} 
 \index{Games@{Games}!getTimeInGameUser@{getTimeInGameUser}}
 \index{getTimeInGameUser@{getTimeInGameUser}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{getTimeInGameUser()}{getTimeInGameUser()}}
-{\footnotesize\ttfamily get\+Time\+In\+Game\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::get\+Time\+In\+Game\+User (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 returns play time of a user for a specific game
 
 \begin{DoxyReturn}{Returns}
 array time in game 
 \end{DoxyReturn}
-
-
-Definition at line 160 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{161     \{}
-\DoxyCodeLine{162         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{163             \$this-\/>psGetTimeInGame-\/>execute(array(\textcolor{stringliteral}{':search\_idGame'} => \$idGame, \textcolor{stringliteral}{':search\_idUser'} => \$idUser));}
-\DoxyCodeLine{164             \$result = \$this-\/>psGetTimeInGame-\/>fetchAll();}
-\DoxyCodeLine{165         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{166             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{167             die();}
-\DoxyCodeLine{168         \}}
-\DoxyCodeLine{169         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{170     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}\label{class_games_a3d66aa5ff1ff3a5a202c63e14da4cb7f}} 
+\mbox{\Hypertarget{class_games_a242ef0ca96fa5fed83ebb6f40b53d1b7}\label{class_games_a242ef0ca96fa5fed83ebb6f40b53d1b7}} 
 \index{Games@{Games}!removeGameFromFavoris@{removeGameFromFavoris}}
 \index{removeGameFromFavoris@{removeGameFromFavoris}!Games@{Games}}
 \doxysubsubsection{\texorpdfstring{removeGameFromFavoris()}{removeGameFromFavoris()}}
-{\footnotesize\ttfamily remove\+Game\+From\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Games\+::remove\+Game\+From\+Favoris (\begin{DoxyParamCaption}\item[{int}]{\$id\+User,  }\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 returns remove a game to a user\textquotesingle{}s favorites
 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 266 of file games.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{267     \{}
-\DoxyCodeLine{268         }
-\DoxyCodeLine{269         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{270             \$this-\/>psRemoveGameFromFavori-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$idUser,\textcolor{stringliteral}{':search\_idGame'} => \$idGame));}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272 }
-\DoxyCodeLine{273         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{274             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{275             die();}
-\DoxyCodeLine{276         \}}
-\DoxyCodeLine{277     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

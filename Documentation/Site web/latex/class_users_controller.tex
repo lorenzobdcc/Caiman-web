@@ -1,80 +1,49 @@
 \hypertarget{class_users_controller}{}\doxysection{Users\+Controller Class Reference}
 \label{class_users_controller}\index{UsersController@{UsersController}}
-
-
-Inheritance diagram for Users\+Controller\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for Users\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=163pt]{class_users_controller__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Users\+Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=163pt]{class_users_controller__coll__graph}
+\includegraphics[height=2.000000cm]{class_users_controller}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_users_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
+\mbox{\hyperlink{class_users_controller_a82d321b71221f2790deede43937be59a}{form\+Handler}} ()
 \item 
-\mbox{\hyperlink{class_users_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_users_controller_a311694f1c457a4353edf1be2884ac601}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
+\mbox{\hyperlink{class_users_controller_a90548d38a69dcf4e4770fff65708b235}{print\+HTML}} ()
 \item 
-\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherch\+Users}} ()
+\mbox{\hyperlink{class_users_controller_a04791e371520861802fb32982e9c0f73}{htmlrecherch\+Users}} ()
 \item 
-\mbox{\hyperlink{class_users_controller_ade2c49eb9bacaeab279debfd1dc88955}{htmlrequest\+User}} ()
+\mbox{\hyperlink{class_users_controller_af87e41f8524c6df13bd755d4ee605502}{htmlrequest\+User}} ()
 \item 
-\mbox{\hyperlink{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}{html\+Detail\+User}} ()
+\mbox{\hyperlink{class_users_controller_af4fe4b1b2221183e2b6f2847d37ebf44}{html\+Detail\+User}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_users_controller_aef429938eb3ebb05718108a84ed3d7ff}\label{class_users_controller_aef429938eb3ebb05718108a84ed3d7ff}} 
+\mbox{\Hypertarget{class_users_controller_a191e734305d6100020a326ed8f108ca1}\label{class_users_controller_a191e734305d6100020a326ed8f108ca1}} 
 {\bfseries \$user\+Data}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 11 of file users\+Controller.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_users_controller_a095c5d389db211932136b53f25f39685}\label{class_users_controller_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_users_controller_a311694f1c457a4353edf1be2884ac601}\label{class_users_controller_a311694f1c457a4353edf1be2884ac601}} 
 \index{UsersController@{UsersController}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 52 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{53     \{}
-\DoxyCodeLine{54         \$this-\/>userData = \textcolor{keyword}{new} \mbox{\hyperlink{class_user_data}{UserData}}();}
-\DoxyCodeLine{55         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
-\DoxyCodeLine{56     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_users_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_users_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\mbox{\Hypertarget{class_users_controller_a82d321b71221f2790deede43937be59a}\label{class_users_controller_a82d321b71221f2790deede43937be59a}} 
 \index{UsersController@{UsersController}!formHandler@{formHandler}}
 \index{formHandler@{formHandler}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
-{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to handle if the user has resquest something
 
@@ -85,176 +54,44 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 24 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{25     \{}
-\DoxyCodeLine{26         \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Users"{}};}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{29             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{30         \}}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32         \textcolor{comment}{// request user by their username}}
-\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
-\DoxyCodeLine{34             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Search"{}};}
-\DoxyCodeLine{35             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
-\DoxyCodeLine{36                 \$this-\/>requestUsername = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{37             \}}
-\DoxyCodeLine{38         \}}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40         \textcolor{comment}{// show detail of a user}}
-\DoxyCodeLine{41         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
-\DoxyCodeLine{42             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: User detail"{}};}
-\DoxyCodeLine{43             \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{'idUser'}])) \{}
-\DoxyCodeLine{44                 \$this-\/>idUser = filter\_input(INPUT\_GET, \textcolor{stringliteral}{'idUser'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{45             \}}
-\DoxyCodeLine{46         \}}
-\DoxyCodeLine{47     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}\label{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}} 
+\mbox{\Hypertarget{class_users_controller_af4fe4b1b2221183e2b6f2847d37ebf44}\label{class_users_controller_af4fe4b1b2221183e2b6f2847d37ebf44}} 
 \index{UsersController@{UsersController}!htmlDetailUser@{htmlDetailUser}}
 \index{htmlDetailUser@{htmlDetailUser}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{htmlDetailUser()}{htmlDetailUser()}}
-{\footnotesize\ttfamily html\+Detail\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::html\+Detail\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 create a page with the details of a user
 
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 151 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{152     \{}
-\DoxyCodeLine{153         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{155         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{156 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{157 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
-\DoxyCodeLine{158 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
-\DoxyCodeLine{159 \textcolor{stringliteral}{          '};}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{161         \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$user[\textcolor{stringliteral}{'username'}] . \textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{164         \}}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166         \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{167 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{168 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{169 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{170 }
-\DoxyCodeLine{171         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{172     \}}
-
-\end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=257pt]{class_users_controller_a2b7af63f66945ec98a0dd16093de4946_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_users_controller_a5e7298affa43d61253618cbc64a43419}\label{class_users_controller_a5e7298affa43d61253618cbc64a43419}} 
+\mbox{\Hypertarget{class_users_controller_a04791e371520861802fb32982e9c0f73}\label{class_users_controller_a04791e371520861802fb32982e9c0f73}} 
 \index{UsersController@{UsersController}!htmlrecherchUsers@{htmlrecherchUsers}}
 \index{htmlrecherchUsers@{htmlrecherchUsers}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{htmlrecherchUsers()}{htmlrecherchUsers()}}
-{\footnotesize\ttfamily htmlrecherch\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::htmlrecherch\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 create the form to search users
 
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 95 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{96     \{}
-\DoxyCodeLine{97         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{100 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{101 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Research</h2>}}
-\DoxyCodeLine{102 \textcolor{stringliteral}{          }}
-\DoxyCodeLine{103 \textcolor{stringliteral}{          <form class="{}row g-\/3"{} action="{}?r=users\&e=researchUser"{} method="{}post"{}>}}
-\DoxyCodeLine{104 \textcolor{stringliteral}{}}
-\DoxyCodeLine{105 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{106 \textcolor{stringliteral}{                <input type="{}texte"{} class="{}form-\/control"{} id="{}username"{} name="{}username"{} placeholder="{}username"{}>}}
-\DoxyCodeLine{107 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{108 \textcolor{stringliteral}{            <div class="{}col-\/auto"{}>}}
-\DoxyCodeLine{109 \textcolor{stringliteral}{                <button type="{}submit"{} class="{}btn btn-\/success mb-\/3"{}>Research</button>}}
-\DoxyCodeLine{110 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{111 \textcolor{stringliteral}{          </form>}}
-\DoxyCodeLine{112 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{113 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{116     \}}
-
-\end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=275pt]{class_users_controller_a5e7298affa43d61253618cbc64a43419_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_users_controller_ade2c49eb9bacaeab279debfd1dc88955}\label{class_users_controller_ade2c49eb9bacaeab279debfd1dc88955}} 
+\mbox{\Hypertarget{class_users_controller_af87e41f8524c6df13bd755d4ee605502}\label{class_users_controller_af87e41f8524c6df13bd755d4ee605502}} 
 \index{UsersController@{UsersController}!htmlrequestUser@{htmlrequestUser}}
 \index{htmlrequestUser@{htmlrequestUser}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{htmlrequestUser()}{htmlrequestUser()}}
-{\footnotesize\ttfamily htmlrequest\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::htmlrequest\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 create the list of user requested by their username
 
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 123 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{124     \{}
-\DoxyCodeLine{125         \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127         \$html .= \textcolor{stringliteral}{'<div class="{}card  "{} style="{}background-\/color: \#0d1117;"{}>}}
-\DoxyCodeLine{128 \textcolor{stringliteral}{        <div class="{}card-\/body container DarkJumbotron"{}>}}
-\DoxyCodeLine{129 \textcolor{stringliteral}{          <h2 class="{}card-\/title "{}>Results</h2>}}
-\DoxyCodeLine{130 \textcolor{stringliteral}{          <div class="{}list-\/group"{}>}}
-\DoxyCodeLine{131 \textcolor{stringliteral}{          '};}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133         \textcolor{keywordflow}{foreach} (\$this-\/>userData-\/>getUsersByUsername(\$this-\/>requestUsername) as \$key => \$user) \{}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{135             \$html .= \textcolor{stringliteral}{'<a class="{}btn btn-\/outline-\/success btnCategorie margintop10 "{} href="{}?r=users\&e=detailUser\&idUser='} . \$user[\textcolor{stringliteral}{'id'}] . \textcolor{stringliteral}{'"{} role="{}button"{}>'} . \$user[\textcolor{stringliteral}{'username'}] . \textcolor{stringliteral}{'</a>'};}
-\DoxyCodeLine{136         \}}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138         \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{139 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{140 \textcolor{stringliteral}{          </div>}}
-\DoxyCodeLine{141 \textcolor{stringliteral}{      </div>'};}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{144     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\mbox{\Hypertarget{class_users_controller_a90548d38a69dcf4e4770fff65708b235}\label{class_users_controller_a90548d38a69dcf4e4770fff65708b235}} 
 \index{UsersController@{UsersController}!printHTML@{printHTML}}
 \index{printHTML@{printHTML}!UsersController@{UsersController}}
 \doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
-{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Users\+Controller\+::print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 print the html for the resquested content
 
@@ -265,45 +102,6 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 64 of file users\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{65     \{}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{68 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{71             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
-\DoxyCodeLine{72         \}}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}researchUser"{}}) \{}
-\DoxyCodeLine{75             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a5e7298affa43d61253618cbc64a43419}{htmlrecherchUsers}}();}
-\DoxyCodeLine{76             \$html .= \$this-\/>\mbox{\hyperlink{class_users_controller_a2b7af63f66945ec98a0dd16093de4946}{htmlDetailUser}}();}
-\DoxyCodeLine{77         \}}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}detailUser"{}}) \{}
-\DoxyCodeLine{80             \$html .= \$this-\/>htmlDataUser();}
-\DoxyCodeLine{81             \$html .= \$this-\/>htmlFavoriteGameUser();}
-\DoxyCodeLine{82             \$html .= \$this-\/>htmlTimeInGameUser();}
-\DoxyCodeLine{83         \}}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87         echo \$html;}
-\DoxyCodeLine{88     \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=275pt]{class_users_controller_a67e219b27b5c39ef06f85381a378c2f9_cgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

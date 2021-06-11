@@ -1,8 +1,202 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
-\contentsline {chapter}{\numberline {1}File Index}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}File List}{1}{section.1.1}%
-\contentsline {chapter}{\numberline {2}File Documentation}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}index.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}php File Reference}{3}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{3}{subsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.1}BDCC}{3}{subsubsection.2.1.1.1}%
-\contentsline {chapter}{Index}{5}{section*.2}%
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Administrator Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Constructor \& Destructor Documentation}{7}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}\_\_construct()}{7}{subsubsection.4.1.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}addGame()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}getConsoleFolderName()}{8}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}getListConsole()}{9}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}updateGame()}{9}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}uploadGame()}{9}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}uploadGameImage()}{10}{subsubsection.4.1.2.6}%
+\contentsline {section}{\numberline {4.2}Administrator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Constructor \& Destructor Documentation}{11}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}\_\_construct()}{11}{subsubsection.4.2.1.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}formHandler()}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}printHTML()}{11}{subsubsection.4.2.2.2}%
+\contentsline {section}{\numberline {4.3}Categories Class Reference}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Constructor \& Destructor Documentation}{12}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}\_\_construct()}{12}{subsubsection.4.3.1.1}%
+\contentsline {subsection}{\numberline {4.3.2}Member Function Documentation}{12}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}addCategorie()}{12}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}addCategorieToGame()}{12}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}delCategorieFromGame()}{13}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}getCategoriesOfGame()}{13}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}getListAllCategories()}{14}{subsubsection.4.3.2.5}%
+\contentsline {section}{\numberline {4.4}Dashboard\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{14}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Constructor \& Destructor Documentation}{14}{subsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.1.1}\_\_construct()}{14}{subsubsection.4.4.1.1}%
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{15}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}formHandler()}{15}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}htmlFormUpdatePassword()}{15}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}printHTML()}{15}{subsubsection.4.4.2.3}%
+\contentsline {section}{\numberline {4.5}Download Class Reference}{16}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Member Function Documentation}{16}{subsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1.1}downloadCaiman()}{16}{subsubsection.4.5.1.1}%
+\contentsline {section}{\numberline {4.6}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{16}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Constructor \& Destructor Documentation}{17}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}\_\_construct()}{17}{subsubsection.4.6.1.1}%
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{17}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}formHandler()}{17}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}printHTML()}{17}{subsubsection.4.6.2.2}%
+\contentsline {section}{\numberline {4.7}Games Class Reference}{18}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Constructor \& Destructor Documentation}{18}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.1.1}\_\_construct()}{18}{subsubsection.4.7.1.1}%
+\contentsline {subsection}{\numberline {4.7.2}Member Function Documentation}{18}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}addGameToFavoris()}{18}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}checkIfGameIsAlreadyInFavoris()}{19}{subsubsection.4.7.2.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.3}getAllGames()}{19}{subsubsection.4.7.2.3}%
+\contentsline {subsubsection}{\numberline {4.7.2.4}getFavoriteGamesOfUser()}{19}{subsubsection.4.7.2.4}%
+\contentsline {subsubsection}{\numberline {4.7.2.5}getGameDetail()}{19}{subsubsection.4.7.2.5}%
+\contentsline {subsubsection}{\numberline {4.7.2.6}getGamesInCategorie()}{20}{subsubsection.4.7.2.6}%
+\contentsline {subsubsection}{\numberline {4.7.2.7}getListOfGameWithTimeUser()}{20}{subsubsection.4.7.2.7}%
+\contentsline {subsubsection}{\numberline {4.7.2.8}getRequestGames()}{20}{subsubsection.4.7.2.8}%
+\contentsline {subsubsection}{\numberline {4.7.2.9}getTimeInGameUser()}{20}{subsubsection.4.7.2.9}%
+\contentsline {subsubsection}{\numberline {4.7.2.10}removeGameFromFavoris()}{21}{subsubsection.4.7.2.10}%
+\contentsline {section}{\numberline {4.8}Games\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{21}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Constructor \& Destructor Documentation}{21}{subsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.1.1}\_\_construct()}{22}{subsubsection.4.8.1.1}%
+\contentsline {subsection}{\numberline {4.8.2}Member Function Documentation}{22}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}formHandler()}{22}{subsubsection.4.8.2.1}%
+\contentsline {subsubsection}{\numberline {4.8.2.2}getGameDetail()}{22}{subsubsection.4.8.2.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.3}getGamesFromCategorie()}{22}{subsubsection.4.8.2.3}%
+\contentsline {subsubsection}{\numberline {4.8.2.4}getListAllGames()}{23}{subsubsection.4.8.2.4}%
+\contentsline {subsubsection}{\numberline {4.8.2.5}getRequestedGames()}{23}{subsubsection.4.8.2.5}%
+\contentsline {subsubsection}{\numberline {4.8.2.6}printHTML()}{23}{subsubsection.4.8.2.6}%
+\contentsline {subsubsection}{\numberline {4.8.2.7}recherchFull()}{23}{subsubsection.4.8.2.7}%
+\contentsline {subsubsection}{\numberline {4.8.2.8}recherchNotFull()}{24}{subsubsection.4.8.2.8}%
+\contentsline {section}{\numberline {4.9}i\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Interface Reference}{24}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Index\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{25}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Member Function Documentation}{25}{subsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.1}formHandler()}{25}{subsubsection.4.10.1.1}%
+\contentsline {subsubsection}{\numberline {4.10.1.2}printHTML()}{25}{subsubsection.4.10.1.2}%
+\contentsline {section}{\numberline {4.11}Login Class Reference}{26}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Member Function Documentation}{26}{subsection.4.11.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.1}checkLogin()}{26}{subsubsection.4.11.1.1}%
+\contentsline {subsubsection}{\numberline {4.11.1.2}getPasswordOfUser()}{26}{subsubsection.4.11.1.2}%
+\contentsline {section}{\numberline {4.12}Login\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{27}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Constructor \& Destructor Documentation}{27}{subsection.4.12.1}%
+\contentsline {subsubsection}{\numberline {4.12.1.1}\_\_construct()}{27}{subsubsection.4.12.1.1}%
+\contentsline {subsection}{\numberline {4.12.2}Member Function Documentation}{27}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}formHandler()}{27}{subsubsection.4.12.2.1}%
+\contentsline {subsubsection}{\numberline {4.12.2.2}printHTML()}{28}{subsubsection.4.12.2.2}%
+\contentsline {section}{\numberline {4.13}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{28}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Constructor \& Destructor Documentation}{28}{subsection.4.13.1}%
+\contentsline {subsubsection}{\numberline {4.13.1.1}\_\_construct()}{28}{subsubsection.4.13.1.1}%
+\contentsline {subsection}{\numberline {4.13.2}Member Function Documentation}{28}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}allowAccessTo()}{28}{subsubsection.4.13.2.1}%
+\contentsline {subsubsection}{\numberline {4.13.2.2}errorHandler()}{29}{subsubsection.4.13.2.2}%
+\contentsline {section}{\numberline {4.14}Signin Class Reference}{29}{section.4.14}%
+\contentsline {subsection}{\numberline {4.14.1}Constructor \& Destructor Documentation}{29}{subsection.4.14.1}%
+\contentsline {subsubsection}{\numberline {4.14.1.1}\_\_construct()}{30}{subsubsection.4.14.1.1}%
+\contentsline {subsection}{\numberline {4.14.2}Member Function Documentation}{30}{subsection.4.14.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.1}checkIfEmailAlreadyTaken()}{30}{subsubsection.4.14.2.1}%
+\contentsline {subsubsection}{\numberline {4.14.2.2}checkIfUsernameAlreadyTaken()}{30}{subsubsection.4.14.2.2}%
+\contentsline {subsubsection}{\numberline {4.14.2.3}newUser()}{30}{subsubsection.4.14.2.3}%
+\contentsline {section}{\numberline {4.15}Signin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{31}{section.4.15}%
+\contentsline {subsection}{\numberline {4.15.1}Constructor \& Destructor Documentation}{31}{subsection.4.15.1}%
+\contentsline {subsubsection}{\numberline {4.15.1.1}\_\_construct()}{31}{subsubsection.4.15.1.1}%
+\contentsline {subsection}{\numberline {4.15.2}Member Function Documentation}{31}{subsection.4.15.2}%
+\contentsline {subsubsection}{\numberline {4.15.2.1}formHandler()}{31}{subsubsection.4.15.2.1}%
+\contentsline {subsubsection}{\numberline {4.15.2.2}printHTML()}{32}{subsubsection.4.15.2.2}%
+\contentsline {section}{\numberline {4.16}User Class Reference}{32}{section.4.16}%
+\contentsline {subsection}{\numberline {4.16.1}Constructor \& Destructor Documentation}{32}{subsection.4.16.1}%
+\contentsline {subsubsection}{\numberline {4.16.1.1}\_\_construct()}{32}{subsubsection.4.16.1.1}%
+\contentsline {subsection}{\numberline {4.16.2}Member Function Documentation}{33}{subsection.4.16.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.1}getPrivateAccount()}{33}{subsubsection.4.16.2.1}%
+\contentsline {subsubsection}{\numberline {4.16.2.2}updatePassword()}{33}{subsubsection.4.16.2.2}%
+\contentsline {subsubsection}{\numberline {4.16.2.3}updatePrivateAccount()}{34}{subsubsection.4.16.2.3}%
+\contentsline {section}{\numberline {4.17}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Class Reference}{34}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Constructor \& Destructor Documentation}{34}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}\_\_construct()}{34}{subsubsection.4.17.1.1}%
+\contentsline {subsection}{\numberline {4.17.2}Member Function Documentation}{34}{subsection.4.17.2}%
+\contentsline {subsubsection}{\numberline {4.17.2.1}getUserData()}{34}{subsubsection.4.17.2.1}%
+\contentsline {subsubsection}{\numberline {4.17.2.2}getUsersByUsername()}{35}{subsubsection.4.17.2.2}%
+\contentsline {section}{\numberline {4.18}Users\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{35}{section.4.18}%
+\contentsline {subsection}{\numberline {4.18.1}Constructor \& Destructor Documentation}{36}{subsection.4.18.1}%
+\contentsline {subsubsection}{\numberline {4.18.1.1}\_\_construct()}{36}{subsubsection.4.18.1.1}%
+\contentsline {subsection}{\numberline {4.18.2}Member Function Documentation}{36}{subsection.4.18.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.1}formHandler()}{36}{subsubsection.4.18.2.1}%
+\contentsline {subsubsection}{\numberline {4.18.2.2}htmlDetailUser()}{36}{subsubsection.4.18.2.2}%
+\contentsline {subsubsection}{\numberline {4.18.2.3}htmlrecherchUsers()}{37}{subsubsection.4.18.2.3}%
+\contentsline {subsubsection}{\numberline {4.18.2.4}htmlrequestUser()}{37}{subsubsection.4.18.2.4}%
+\contentsline {subsubsection}{\numberline {4.18.2.5}printHTML()}{37}{subsubsection.4.18.2.5}%
+\contentsline {chapter}{\numberline {5}File Documentation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}common/head.php File Reference}{39}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{39}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}BDCC}{39}{subsubsection.5.1.1.1}%
+\contentsline {section}{\numberline {5.2}common/navbar.php File Reference}{39}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{39}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}BDCC}{40}{subsubsection.5.2.1.1}%
+\contentsline {section}{\numberline {5.3}controllers/administrator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{40}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{40}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}BDCC}{40}{subsubsection.5.3.1.1}%
+\contentsline {section}{\numberline {5.4}controllers/controllers.php File Reference}{40}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{40}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}BDCC}{41}{subsubsection.5.4.1.1}%
+\contentsline {section}{\numberline {5.5}controllers/dashboard\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{41}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{41}{subsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}BDCC}{41}{subsubsection.5.5.1.1}%
+\contentsline {section}{\numberline {5.6}controllers/download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{41}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{41}{subsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}BDCC}{42}{subsubsection.5.6.1.1}%
+\contentsline {section}{\numberline {5.7}controllers/games\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{42}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{42}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}BDCC}{42}{subsubsection.5.7.1.1}%
+\contentsline {section}{\numberline {5.8}controllers/index\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{42}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{42}{subsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1.1}BDCC}{43}{subsubsection.5.8.1.1}%
+\contentsline {section}{\numberline {5.9}controllers/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{43}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{43}{subsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1.1}BDCC}{43}{subsubsection.5.9.1.1}%
+\contentsline {section}{\numberline {5.10}controllers/login\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{43}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{43}{subsection.5.10.1}%
+\contentsline {subsubsection}{\numberline {5.10.1.1}BDCC}{44}{subsubsection.5.10.1.1}%
+\contentsline {section}{\numberline {5.11}controllers/main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{44}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{44}{subsection.5.11.1}%
+\contentsline {subsubsection}{\numberline {5.11.1.1}BDCC}{44}{subsubsection.5.11.1.1}%
+\contentsline {section}{\numberline {5.12}controllers/signin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{44}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{44}{subsection.5.12.1}%
+\contentsline {subsubsection}{\numberline {5.12.1.1}BDCC}{45}{subsubsection.5.12.1.1}%
+\contentsline {section}{\numberline {5.13}controllers/users\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.php File Reference}{45}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{45}{subsection.5.13.1}%
+\contentsline {subsubsection}{\numberline {5.13.1.1}BDCC}{45}{subsubsection.5.13.1.1}%
+\contentsline {section}{\numberline {5.14}index.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}php File Reference}{45}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{45}{subsection.5.14.1}%
+\contentsline {subsubsection}{\numberline {5.14.1.1}BDCC}{46}{subsubsection.5.14.1.1}%
+\contentsline {section}{\numberline {5.15}models/administrator.php File Reference}{46}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{46}{subsection.5.15.1}%
+\contentsline {subsubsection}{\numberline {5.15.1.1}BDCC}{46}{subsubsection.5.15.1.1}%
+\contentsline {section}{\numberline {5.16}models/categorie.php File Reference}{46}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{46}{subsection.5.16.1}%
+\contentsline {subsubsection}{\numberline {5.16.1.1}BDCC}{47}{subsubsection.5.16.1.1}%
+\contentsline {section}{\numberline {5.17}models/class.php File Reference}{47}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{47}{subsection.5.17.1}%
+\contentsline {subsubsection}{\numberline {5.17.1.1}BDCC}{47}{subsubsection.5.17.1.1}%
+\contentsline {section}{\numberline {5.18}models/download.php File Reference}{47}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{47}{subsection.5.18.1}%
+\contentsline {subsubsection}{\numberline {5.18.1.1}BDCC}{48}{subsubsection.5.18.1.1}%
+\contentsline {section}{\numberline {5.19}models/games.php File Reference}{48}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{48}{subsection.5.19.1}%
+\contentsline {subsubsection}{\numberline {5.19.1.1}BDCC}{48}{subsubsection.5.19.1.1}%
+\contentsline {section}{\numberline {5.20}models/login.php File Reference}{48}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{48}{subsection.5.20.1}%
+\contentsline {subsubsection}{\numberline {5.20.1.1}BDCC}{49}{subsubsection.5.20.1.1}%
+\contentsline {section}{\numberline {5.21}models/signin.php File Reference}{49}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{49}{subsection.5.21.1}%
+\contentsline {subsubsection}{\numberline {5.21.1.1}BDCC}{49}{subsubsection.5.21.1.1}%
+\contentsline {section}{\numberline {5.22}models/user.php File Reference}{49}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{49}{subsection.5.22.1}%
+\contentsline {subsubsection}{\numberline {5.22.1.1}BDCC}{50}{subsubsection.5.22.1.1}%
+\contentsline {section}{\numberline {5.23}models/userdata.php File Reference}{50}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{50}{subsection.5.23.1}%
+\contentsline {subsubsection}{\numberline {5.23.1.1}BDCC}{50}{subsubsection.5.23.1.1}%
+\contentsline {chapter}{Index}{51}{section*.58}%

@@ -3,53 +3,22 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_download_a45580608c7d8ebb4fa0af5f375477b65}{download\+Caiman}} ()
+\mbox{\hyperlink{class_download_ab131e326d0b102fc49a5e0fd39cba452}{download\+Caiman}} ()
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file download.\+php.
-
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_download_a45580608c7d8ebb4fa0af5f375477b65}\label{class_download_a45580608c7d8ebb4fa0af5f375477b65}} 
+\mbox{\Hypertarget{class_download_ab131e326d0b102fc49a5e0fd39cba452}\label{class_download_ab131e326d0b102fc49a5e0fd39cba452}} 
 \index{Download@{Download}!downloadCaiman@{downloadCaiman}}
 \index{downloadCaiman@{downloadCaiman}!Download@{Download}}
 \doxysubsubsection{\texorpdfstring{downloadCaiman()}{downloadCaiman()}}
-{\footnotesize\ttfamily download\+Caiman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Download\+::download\+Caiman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to download caiman
 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 18 of file download.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{19     \{}
-\DoxyCodeLine{20         \$filename = \textcolor{stringliteral}{'../release/caiman.jpg'}; \textcolor{comment}{// of course find the exact filename....        }}
-\DoxyCodeLine{21         header(\textcolor{stringliteral}{'Pragma: public'});}
-\DoxyCodeLine{22         header(\textcolor{stringliteral}{'Expires: 0'});}
-\DoxyCodeLine{23         header(\textcolor{stringliteral}{'Cache-\/Control: must-\/revalidate, post-\/check=0, pre-\/check=0'});}
-\DoxyCodeLine{24         header(\textcolor{stringliteral}{'Cache-\/Control: private'}, \textcolor{keyword}{false}); \textcolor{comment}{// required for certain browsers }}
-\DoxyCodeLine{25         header(\textcolor{stringliteral}{'Content-\/Type: application/jpg'});}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27         header(\textcolor{stringliteral}{'Content-\/Disposition: attachment; filename="{}'} . basename(\$filename) . \textcolor{stringliteral}{'"{};'});}
-\DoxyCodeLine{28         header(\textcolor{stringliteral}{'Content-\/Transfer-\/Encoding: binary'});}
-\DoxyCodeLine{29         header(\textcolor{stringliteral}{'Content-\/Length: '} . filesize(\$filename));}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31         readfile(\$filename);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33         exit;}
-\DoxyCodeLine{34     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

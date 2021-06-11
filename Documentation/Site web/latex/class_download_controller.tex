@@ -1,73 +1,43 @@
 \hypertarget{class_download_controller}{}\doxysection{Download\+Controller Class Reference}
 \label{class_download_controller}\index{DownloadController@{DownloadController}}
-
-
-Inheritance diagram for Download\+Controller\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for Download\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{class_download_controller__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Download\+Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=238pt]{class_download_controller__coll__graph}
+\includegraphics[height=2.000000cm]{class_download_controller}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_download_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_download_controller_abff2419f3b30e5239b46f99cf1963c91}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_download_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
+\mbox{\hyperlink{class_download_controller_a6c8d9d39080dced34362954232da081d}{form\+Handler}} ()
 \item 
-\mbox{\hyperlink{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
+\mbox{\hyperlink{class_download_controller_a1e53b36c6ee6df0e63e870ad52ec0702}{print\+HTML}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_download_controller_a9b165fe829b117bd313942ce29a4ef34}\label{class_download_controller_a9b165fe829b117bd313942ce29a4ef34}} 
+\mbox{\Hypertarget{class_download_controller_a6679ad29362f78a72081f09b576dc9e6}\label{class_download_controller_a6679ad29362f78a72081f09b576dc9e6}} 
 {\bfseries \$download}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file download\+Controller.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_download_controller_a095c5d389db211932136b53f25f39685}\label{class_download_controller_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_download_controller_abff2419f3b30e5239b46f99cf1963c91}\label{class_download_controller_abff2419f3b30e5239b46f99cf1963c91}} 
 \index{DownloadController@{DownloadController}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!DownloadController@{DownloadController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Download\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 18 of file download\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{19   \{}
-\DoxyCodeLine{20     \$this-\/>download  = \textcolor{keyword}{new} \mbox{\hyperlink{class_download}{Download}}();}
-\DoxyCodeLine{21   \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_download_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_download_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\mbox{\Hypertarget{class_download_controller_a6c8d9d39080dced34362954232da081d}\label{class_download_controller_a6c8d9d39080dced34362954232da081d}} 
 \index{DownloadController@{DownloadController}!formHandler@{formHandler}}
 \index{formHandler@{formHandler}!DownloadController@{DownloadController}}
 \doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
-{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Download\+Controller\+::form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to handle if the user has resquest something
 
@@ -78,43 +48,11 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 28 of file download\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{29   \{}
-\DoxyCodeLine{30     \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Download"{}};}
-\DoxyCodeLine{31     \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{32       \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{33     \}}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{38         \$this-\/>e = \textcolor{stringliteral}{"{}user"{}};}
-\DoxyCodeLine{39       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{40         \$this-\/>e = \textcolor{stringliteral}{"{}visitor"{}};}
-\DoxyCodeLine{41       \}}
-\DoxyCodeLine{42     \}}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}download"{}}) \{}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46       \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{47         \$this-\/>download-\/>downloadCaiman();}
-\DoxyCodeLine{48       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{49         header(\textcolor{stringliteral}{'?r=login'});}
-\DoxyCodeLine{50       \}}
-\DoxyCodeLine{51     \}}
-\DoxyCodeLine{52   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_download_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\mbox{\Hypertarget{class_download_controller_a1e53b36c6ee6df0e63e870ad52ec0702}\label{class_download_controller_a1e53b36c6ee6df0e63e870ad52ec0702}} 
 \index{DownloadController@{DownloadController}!printHTML@{printHTML}}
 \index{printHTML@{printHTML}!DownloadController@{DownloadController}}
 \doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
-{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Download\+Controller\+::print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 print the html for the resquested content
 
@@ -125,28 +63,6 @@ html
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 61 of file download\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{62   \{}
-\DoxyCodeLine{63     \$html = \textcolor{stringliteral}{'<main style="{}margin-\/top:20px"{}>}}
-\DoxyCodeLine{64 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{65     \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{66     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}user"{}}) \{}
-\DoxyCodeLine{67       \$html .= \$this-\/>htmlUserDownload();}
-\DoxyCodeLine{68     \}}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}visitor"{}}) \{}
-\DoxyCodeLine{71       \$html .= \$this-\/>htmlVisitorDownload();}
-\DoxyCodeLine{72     \}}
-\DoxyCodeLine{73     \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{74     echo \$html;}
-\DoxyCodeLine{75   \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

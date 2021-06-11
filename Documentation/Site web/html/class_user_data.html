@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Caiman web: UserData Class Reference</title>
+<title>Caiman-web: UserData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Caiman web
+   <div id="projectname">Caiman-web
    </div>
   </td>
  </tr>
@@ -62,7 +62,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="class_user_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UserData Class Reference</div>  </div>
 </div><!--header-->
@@ -70,25 +71,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
-<tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c09d341f215095745d3603e12b1fbd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#aa1c09d341f215095745d3603e12b1fbd">getUsersByUsername</a> ($username)</td></tr>
-<tr class="separator:aa1c09d341f215095745d3603e12b1fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92295d3642657257bdd3d8f2ed4e6814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#a92295d3642657257bdd3d8f2ed4e6814">getUserData</a> ($iduser)</td></tr>
-<tr class="separator:a92295d3642657257bdd3d8f2ed4e6814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145711b9507bbe0e7874856f4e054257"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#a145711b9507bbe0e7874856f4e054257">__construct</a> ()</td></tr>
+<tr class="separator:a145711b9507bbe0e7874856f4e054257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61dd13a090ed7677e9539b11f8e33f36"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#a61dd13a090ed7677e9539b11f8e33f36">getUsersByUsername</a> ($username)</td></tr>
+<tr class="separator:a61dd13a090ed7677e9539b11f8e33f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e178afa647945934984fe014fabee3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_user_data.html#aa1e178afa647945934984fe014fabee3">getUserData</a> ($iduser)</td></tr>
+<tr class="separator:aa1e178afa647945934984fe014fabee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="userdata_8php_source.html#l00010">10</a> of file <a class="el" href="userdata_8php_source.html">userdata.php</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a095c5d389db211932136b53f25f39685"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a095c5d389db211932136b53f25f39685">&#9670;&nbsp;</a></span>__construct()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a145711b9507bbe0e7874856f4e054257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a145711b9507bbe0e7874856f4e054257">&#9670;&nbsp;</a></span>__construct()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__construct </td>
+          <td class="memname">UserData::__construct </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -97,42 +95,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>default constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="userdata_8php_source.html#l00021">21</a> of file <a class="el" href="userdata_8php_source.html">userdata.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;dbh == <span class="keyword">null</span>) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                $this-&gt;dbh = <span class="keyword">new</span> PDO(<span class="stringliteral">&#39;mysql:host=&#39;</span> . HOST . <span class="stringliteral">&#39;;dbname=&#39;</span> . DBNAME, USER, PASSWORD, array(</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    PDO::MYSQL_ATTR_INIT_COMMAND =&gt; <span class="stringliteral">&quot;SET NAMES utf8&quot;</span>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    PDO::ATTR_PERSISTENT =&gt; <span class="keyword">true</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                ));</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="comment">// get list of user by username</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                $sqlRequestUsers = <span class="stringliteral">&quot;SELECT * FROM user WHERE username LIKE :search_username AND privateAccount = 0&quot;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                $this-&gt;psGetUsersByUsername = $this-&gt;dbh-&gt;prepare($sqlRequestUsers);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                $this-&gt;psGetUsersByUsername-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="comment">// get list of user by username</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                $sqlGetDataUser = <span class="stringliteral">&quot;SELECT * FROM user WHERE id =:search_idUser&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                $this-&gt;psGetDataUser = $this-&gt;dbh-&gt;prepare($sqlGetDataUser);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                $this-&gt;psGetDataUser-&gt;setFetchMode(PDO::FETCH_ASSOC);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                die();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a92295d3642657257bdd3d8f2ed4e6814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92295d3642657257bdd3d8f2ed4e6814">&#9670;&nbsp;</a></span>getUserData()</h2>
+<a id="aa1e178afa647945934984fe014fabee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e178afa647945934984fe014fabee3">&#9670;&nbsp;</a></span>getUserData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getUserData </td>
+          <td class="memname">UserData::getUserData </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$iduser</em></td><td>)</td>
@@ -149,28 +122,16 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userdata_8php_source.html#l00070">70</a> of file <a class="el" href="userdata_8php_source.html">userdata.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            $this-&gt;psGetDataUser-&gt;execute(array(<span class="stringliteral">&#39;:search_idUser&#39;</span> =&gt; $iduser));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            $result = $this-&gt;psGetDataUser-&gt;fetchAll();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            die();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> $result;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-</div><!-- fragment -->
 </div>
 </div>
-<a id="aa1c09d341f215095745d3603e12b1fbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1c09d341f215095745d3603e12b1fbd">&#9670;&nbsp;</a></span>getUsersByUsername()</h2>
+<a id="a61dd13a090ed7677e9539b11f8e33f36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61dd13a090ed7677e9539b11f8e33f36">&#9670;&nbsp;</a></span>getUsersByUsername()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">getUsersByUsername </td>
+          <td class="memname">UserData::getUsersByUsername </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>$username</em></td><td>)</td>
@@ -187,22 +148,10 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array of game </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userdata_8php_source.html#l00052">52</a> of file <a class="el" href="userdata_8php_source.html">userdata.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            $this-&gt;psGetUsersByUsername-&gt;execute(array(<span class="stringliteral">&#39;:search_username&#39;</span> =&gt; <span class="charliteral">&#39;%&#39;</span> . $username . <span class="charliteral">&#39;%&#39;</span>));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            $result = $this-&gt;psGetUsersByUsername-&gt;fetchAll();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        } <span class="keywordflow">catch</span> (PDOException $e) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            print <span class="stringliteral">&quot;Erreur !: &quot;</span> . $e-&gt;getMessage() . <span class="stringliteral">&quot;&lt;br&gt;&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            die();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> $result;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>models/<a class="el" href="userdata_8php_source.html">userdata.php</a></li>
+<li>models/<a class="el" href="userdata_8php.html">userdata.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

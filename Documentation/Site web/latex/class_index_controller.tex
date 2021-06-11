@@ -1,45 +1,26 @@
 \hypertarget{class_index_controller}{}\doxysection{Index\+Controller Class Reference}
 \label{class_index_controller}\index{IndexController@{IndexController}}
-
-
-Inheritance diagram for Index\+Controller\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for Index\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{class_index_controller__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Index\+Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=238pt]{class_index_controller__coll__graph}
+\includegraphics[height=2.000000cm]{class_index_controller}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
+\mbox{\hyperlink{class_index_controller_afd72ec232021f6790e9d8051fa8bf947}{form\+Handler}} ()
 \item 
-\mbox{\hyperlink{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
+\mbox{\hyperlink{class_index_controller_ad081bc7d33b5d33beb8e78e5a9e65315}{print\+HTML}} ()
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file index\+Controller.\+php.
-
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_index_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\mbox{\Hypertarget{class_index_controller_afd72ec232021f6790e9d8051fa8bf947}\label{class_index_controller_afd72ec232021f6790e9d8051fa8bf947}} 
 \index{IndexController@{IndexController}!formHandler@{formHandler}}
 \index{formHandler@{formHandler}!IndexController@{IndexController}}
 \doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
-{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Index\+Controller\+::form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to handle if the user has resquest something
 
@@ -50,22 +31,11 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 18 of file index\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{19   \{}
-\DoxyCodeLine{20     \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Home"{}};}
-\DoxyCodeLine{21   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_index_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\mbox{\Hypertarget{class_index_controller_ad081bc7d33b5d33beb8e78e5a9e65315}\label{class_index_controller_ad081bc7d33b5d33beb8e78e5a9e65315}} 
 \index{IndexController@{IndexController}!printHTML@{printHTML}}
 \index{printHTML@{printHTML}!IndexController@{IndexController}}
 \doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
-{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Index\+Controller\+::print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 print the html for the resquested content
 
@@ -76,44 +46,6 @@ html
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 29 of file index\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{30   \{}
-\DoxyCodeLine{31     \$html = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{35 \textcolor{stringliteral}{    <main style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{36 \textcolor{stringliteral}{      <div class="{}container-\/md"{}>}}
-\DoxyCodeLine{37 \textcolor{stringliteral}{      '};}
-\DoxyCodeLine{38     \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{39     \$html .= \textcolor{stringliteral}{'}}
-\DoxyCodeLine{40 \textcolor{stringliteral}{        <div class="{}jumbotron jumbotron-\/fluid DarkJumbotron width100"{} style="{}background-\/color: \#161b22;"{}>}}
-\DoxyCodeLine{41 \textcolor{stringliteral}{            <div class="{}row py-\/lg-\/5"{}>}}
-\DoxyCodeLine{42 \textcolor{stringliteral}{              <div class="{}col-\/lg-\/6 col-\/md-\/8 mx-\/auto"{}>}}
-\DoxyCodeLine{43 \textcolor{stringliteral}{                <h1 class="{}fw-\/light greenTexte"{}>Caiman</h1>}}
-\DoxyCodeLine{44 \textcolor{stringliteral}{                <p class="{}lead text-\/muted"{}>The easiest way to use emulators.</p>}}
-\DoxyCodeLine{45 \textcolor{stringliteral}{                <p>}}
-\DoxyCodeLine{46 \textcolor{stringliteral}{                  <a href="{}?r=download"{} class="{}btn btn-\/success my-\/2"{}>Download</a>}}
-\DoxyCodeLine{47 \textcolor{stringliteral}{                  <a href="{}?r=login"{} class="{}btn btn-\/success my-\/2"{}>Create acount</a>}}
-\DoxyCodeLine{48 \textcolor{stringliteral}{                  <a href="{}?r=games"{} class="{}btn btn-\/success my-\/2"{}>Watch games list</a>}}
-\DoxyCodeLine{49 \textcolor{stringliteral}{                </p>}}
-\DoxyCodeLine{50 \textcolor{stringliteral}{              </div>}}
-\DoxyCodeLine{51 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{52 \textcolor{stringliteral}{        </div>}}
-\DoxyCodeLine{53 \textcolor{stringliteral}{      </div>}}
-\DoxyCodeLine{54 \textcolor{stringliteral}{}}
-\DoxyCodeLine{55 \textcolor{stringliteral}{    </main>}}
-\DoxyCodeLine{56 \textcolor{stringliteral}{}}
-\DoxyCodeLine{57 \textcolor{stringliteral}{'};}
-\DoxyCodeLine{58     echo \$html;}
-\DoxyCodeLine{59   \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

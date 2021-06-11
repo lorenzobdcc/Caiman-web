@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  14 MAY 2021 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  10 JUN 2021 08:43
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -822,6 +822,26 @@ Package hyperref Info: Option `unicode' set `true' on input line 156.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 161.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 161.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 161
+.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 161
+.
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 16
+1.
+
+(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 163.
  [1
 
@@ -834,29 +854,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 169.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 169
-.
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 169
-.
-
-(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 16
-9.
-
-(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/wasysym\uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
- [1] [2]
-[3] [4]
+ [1] [2] [3] [4]
+[5] [6] [7] [8] [9] [10
+
+]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
 
 Chapter 1.
@@ -872,20 +875,31 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 174.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 174.
-(annotated.tex
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 1.
-) [1
+(md_vendor_symfony_polyfill_ctype__r_e_a_d_m_e.tex
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 1.
 
+
+(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 3.
+) [1
 
 ] [2
 
 ]
 Chapter 2.
-(files.tex) [3] [4
+(hierarchy.tex [3]) [4]
+Chapter 3.
+(annotated.tex) [5
+
+] [6
 
 ]
-Chapter 3.
+Chapter 4.
+(files.tex [7]) [8]
+Chapter 5.
 (class_app_1_1_models_1_1_category.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 3.
@@ -899,58 +913,218 @@ LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 24.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24
-.
-
-(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 24.
 )
-(class_app_1_1_controllers_1_1_category_controller.tex [5]
+(class_app_1_1_controllers_1_1_category_controller.tex [9
+
+]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
-) (class_app_1_1_system_1_1_constants.tex)
-(class_app_1_1_data_access_object_1_1_d_a_o_category.tex [6]
+) (class_composer_1_1_autoload_1_1_class_loader.tex [10]
+Underfull \hbox (badness 10000) detected at line 78
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 83
+[][][]
+ []
+
+[11]
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 112.
+ [12]
+Underfull \hbox (badness 10000) detected at line 154
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 165
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 176
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 187
+[][][]
+ []
+
+[13]
+Underfull \hbox (badness 10000) detected at line 198
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 214
+[][][]
+ []
+
+[14] [15]) (class_composer_autoloader_init12d41e5c90a50136bf3faf839b179187.tex
+[16]
+Underfull \hbox (badness 10000) detected at line 20
+[][][]
+ []
+
+)
+(class_composer_1_1_autoload_1_1_composer_static_init12d41e5c90a50136bf3faf839b
+179187.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 28.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 47.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 60.
+
+[17]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 119.
+
+[18]) (class_app_1_1_models_1_1_console.tex [19])
+(class_app_1_1_system_1_1_constants.tex)
+(class_symfony_1_1_polyfill_1_1_ctype_1_1_ctype.tex [20]
+Underfull \hbox (badness 10000) detected at line 42
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 50
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 69
+[][][]
+ []
+
+[21]
+Underfull \hbox (badness 10000) detected at line 80
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 88
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 99
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 107
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 118
+[][][]
+ []
+
+[22]
+Underfull \hbox (badness 10000) detected at line 126
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 137
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 145
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 156
+[][][]
+ []
+
+[23]
+Underfull \hbox (badness 10000) detected at line 164
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 175
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 183
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 194
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 202
+[][][]
+ []
+
+[24]
+Underfull \hbox (badness 10000) detected at line 213
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 232
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 240
+[][][]
+ []
+
+) (class_app_1_1_data_access_object_1_1_d_a_o_category.tex [25]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
-) (class_app_1_1_data_access_object_1_1_d_a_o_game.tex [7]
-Underfull \hbox (badness 10000) detected at line 52
+) (class_app_1_1_data_access_object_1_1_d_a_o_console.tex [26])
+(class_app_1_1_data_access_object_1_1_d_a_o_file.tex [27]
+Underfull \hbox (badness 10000) detected at line 42
 [][][]
  []
 
-[8]
-Underfull \hbox (badness 10000) detected at line 63
-[][][]
- []
+) (class_app_1_1_data_access_object_1_1_d_a_o_file_save.tex
+Overfull \vbox (5.89792pt too high) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) detected at line 79
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 95
-[][][]
- []
-
-[9]
-Underfull \hbox (badness 10000) detected at line 111
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 127
-[][][]
- []
-
-) (class_app_1_1_data_access_object_1_1_d_a_o_user.tex [10]
-Underfull \hbox (badness 10000) detected at line 44
+[28]
+Underfull \hbox (badness 10000) detected at line 39
 [][][]
  []
 
@@ -959,51 +1133,228 @@ Underfull \hbox (badness 10000) detected at line 55
 [][][]
  []
 
-) (class_app_1_1_system_1_1_database_connector.tex [11]
-Underfull \hbox (badness 10000) detected at line 30
+[29]
+Underfull \hbox (badness 10000) detected at line 71
 [][][]
  []
 
-) (class_app_1_1_models_1_1_game.tex
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 36.
- [12])
-(class_app_1_1_controllers_1_1_game_controller.tex [13]
-Underfull \hbox (badness 10000) detected at line 47
+) (class_app_1_1_data_access_object_1_1_d_a_o_game.tex [30]
+Underfull \hbox (badness 10000) detected at line 64
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 63
-[][][]
- []
-
-[14]
-Underfull \hbox (badness 10000) detected at line 79
+Underfull \hbox (badness 10000) detected at line 82
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 95
+Overfull \vbox (13.57626pt too high) has occurred while \output is active []
+
+
+[31]
+Underfull \hbox (badness 10000) detected at line 100
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 111
+Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
 
-[15]
+
 Underfull \hbox (badness 10000) detected at line 127
 [][][]
  []
 
-) (class_app_1_1_controllers_1_1_helper_controller.tex
+[32]
+Underfull \hbox (badness 10000) detected at line 143
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 159
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 175
+[][][]
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 191
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 209
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 227
+[][][]
+ []
+
+) (class_app_1_1_data_access_object_1_1_d_a_o_user.tex [34]
+Underfull \hbox (badness 10000) detected at line 50
+[][][]
+ []
+
+[35]
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 77
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 93
+[][][]
+ []
+
+[36]
+Underfull \hbox (badness 10000) detected at line 109
+[][][]
+ []
+
+) (class_app_1_1_system_1_1_database_connector.tex
+Underfull \hbox (badness 10000) detected at line 30
+[][][]
+ []
+
+) (class_dotenv_1_1_dotenv.tex [37]
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 4
+6.
+
+(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <8> not available
+(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 46.
+ [38]
+Underfull \hbox (badness 10000) detected at line 57
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 89
+[][][]
+ []
+
+[39] [40]
+Underfull \hbox (badness 10000) detected at line 149
+[][][]
+ []
+
+) (interface_dotenv_1_1_exception_1_1_exception_interface.tex
+
+pdfTeX warning: pdflatex (file ./interface_dotenv_1_1_exception_1_1_exception_i
+nterface.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5
+> allowed
+ <./interface_dotenv_1_1_exception_1_1_exception_interface.pdf>
+<interface_dotenv_1_1_exception_1_1_exception_interface.pdf, id=2414, 501.875pt
+ x 63.23625pt>
+File: interface_dotenv_1_1_exception_1_1_exception_interface.pdf Graphic file (
+type pdf)
+<use interface_dotenv_1_1_exception_1_1_exception_interface.pdf>
+Package pdftex.def Info: interface_dotenv_1_1_exception_1_1_exception_interface
+.pdf  used on input line 6.
+(pdftex.def)             Requested size: 392.73215pt x 49.4832pt.
+)
+(class_app_1_1_models_1_1_file.tex [41])
+(class_app_1_1_models_1_1_file_save.tex [42])
+(class_app_1_1_models_1_1_game.tex [43])
+(class_app_1_1_controllers_1_1_game_controller.tex [44]
+Underfull \hbox (badness 10000) detected at line 74
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 92
+[][][]
+ []
+
+[45]
+Underfull \hbox (badness 10000) detected at line 103
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 121
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 132
+[][][]
+ []
+
+[46]
+Underfull \hbox (badness 10000) detected at line 148
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 164
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 180
+[][][]
+ []
+
+[47] [48]
+Underfull \hbox (badness 10000) detected at line 196
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 212
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 226
+[][][]
+ []
+
+[49] [50]
+Underfull \hbox (badness 10000) detected at line 242
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 266
+[][][]
+ []
+
+[51]
+Underfull \hbox (badness 10000) detected at line 284
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 302
+[][][]
+ []
+
+) (class_app_1_1_controllers_1_1_helper_controller.tex [52]
 Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
 
-[16]
+
 Underfull \hbox (badness 10000) detected at line 56
 [][][]
  []
@@ -1018,7 +1369,7 @@ Underfull \hbox (badness 10000) detected at line 78
 [][][]
  []
 
-[17]
+[53]
 Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
@@ -1032,7 +1383,7 @@ Underfull \hbox (badness 10000) detected at line 122
 Overfull \vbox (22.38509pt too high) has occurred while \output is active []
 
 
-[18]
+[54]
 Underfull \hbox (badness 10000) detected at line 140
 [][][]
  []
@@ -1047,14 +1398,7 @@ Underfull \hbox (badness 10000) detected at line 172
 [][][]
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
-79.
-(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <8> not available
-(Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 179.
- [19]
+[55]
 Underfull \hbox (badness 10000) detected at line 188
 [][][]
  []
@@ -1069,7 +1413,7 @@ Underfull \hbox (badness 10000) detected at line 220
 [][][]
  []
 
-[20] [21]
+[56] [57]
 Underfull \hbox (badness 10000) detected at line 236
 [][][]
  []
@@ -1079,7 +1423,118 @@ Underfull \hbox (badness 10000) detected at line 252
 [][][]
  []
 
-) (class_app_1_1_controllers_1_1_response_controller.tex [22]
+) (class_composer_1_1_installed_versions.tex)
+(class_dotenv_1_1_exception_1_1_invalid_callback_exception.tex
+
+pdfTeX warning: pdflatex (file ./class_dotenv_1_1_exception_1_1_invalid_callbac
+k_exception.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+ <./class_dotenv_1_1_exception_1_1_invalid_callback_exception.pdf>
+<class_dotenv_1_1_exception_1_1_invalid_callback_exception.pdf, id=2613, 501.87
+5pt x 121.45375pt>
+File: class_dotenv_1_1_exception_1_1_invalid_callback_exception.pdf Graphic fil
+e (type pdf)
+<use class_dotenv_1_1_exception_1_1_invalid_callback_exception.pdf>
+Package pdftex.def Info: class_dotenv_1_1_exception_1_1_invalid_callback_except
+ion.pdf  used on input line 6.
+(pdftex.def)             Requested size: 235.1461pt x 56.9055pt.
+ [58])
+(class_dotenv_1_1_exception_1_1_invalid_file_exception.tex
+
+pdfTeX warning: pdflatex (file ./class_dotenv_1_1_exception_1_1_invalid_file_ex
+ception.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
+ allowed
+ <./class_dotenv_1_1_exception_1_1_invalid_file_exception.pdf>
+<class_dotenv_1_1_exception_1_1_invalid_file_exception.pdf, id=2636, 501.875pt 
+x 121.45375pt>
+File: class_dotenv_1_1_exception_1_1_invalid_file_exception.pdf Graphic file (t
+ype pdf)
+<use class_dotenv_1_1_exception_1_1_invalid_file_exception.pdf>
+Package pdftex.def Info: class_dotenv_1_1_exception_1_1_invalid_file_exception.
+pdf  used on input line 6.
+(pdftex.def)             Requested size: 235.1461pt x 56.9055pt.
+)
+(class_dotenv_1_1_exception_1_1_invalid_path_exception.tex
+
+pdfTeX warning: pdflatex (file ./class_dotenv_1_1_exception_1_1_invalid_path_ex
+ception.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
+ allowed
+ <./class_dotenv_1_1_exception_1_1_invalid_path_exception.pdf>
+<class_dotenv_1_1_exception_1_1_invalid_path_exception.pdf, id=2642, 501.875pt 
+x 121.45375pt>
+File: class_dotenv_1_1_exception_1_1_invalid_path_exception.pdf Graphic file (t
+ype pdf)
+<use class_dotenv_1_1_exception_1_1_invalid_path_exception.pdf>
+Package pdftex.def Info: class_dotenv_1_1_exception_1_1_invalid_path_exception.
+pdf  used on input line 6.
+(pdftex.def)             Requested size: 235.1461pt x 56.9055pt.
+)
+(class_dotenv_1_1_loader.tex [59] [60]
+Underfull \hbox (badness 10000) detected at line 85
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 112
+[][][]
+ []
+
+[61]
+Underfull \hbox (badness 10000) detected at line 115
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 144
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 155
+[][][]
+ []
+
+[62]
+Underfull \hbox (badness 10000) detected at line 171
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 200
+[][][]
+ []
+
+[63] [64]
+Underfull \hbox (badness 10000) detected at line 266
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 284
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 302
+[][][]
+ []
+
+[65] [66]
+Underfull \hbox (badness 10000) detected at line 367
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 387
+[][][]
+ []
+
+) (class_dotenv_1_1_parser.tex [67]
+Underfull \hbox (badness 10000) detected at line 48
+[][][]
+ []
+
+[68]) (class_app_1_1_controllers_1_1_response_controller.tex [69]
 Underfull \hbox (badness 10000) detected at line 63
 [][][]
  []
@@ -1094,12 +1549,12 @@ Underfull \hbox (badness 10000) detected at line 85
 [][][]
  []
 
-
+[70]
 Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
-[23]
+
 Underfull \hbox (badness 10000) detected at line 107
 [][][]
  []
@@ -1114,12 +1569,12 @@ Underfull \hbox (badness 10000) detected at line 129
 [][][]
  []
 
-
+[71]
 Underfull \hbox (badness 10000) detected at line 140
 [][][]
  []
 
-[24]
+
 Underfull \hbox (badness 10000) detected at line 151
 [][][]
  []
@@ -1134,12 +1589,12 @@ Underfull \hbox (badness 10000) detected at line 173
 [][][]
  []
 
-
+[72]
 Underfull \hbox (badness 10000) detected at line 184
 [][][]
  []
 
-[25]
+
 Underfull \hbox (badness 10000) detected at line 195
 [][][]
  []
@@ -1154,22 +1609,22 @@ Underfull \hbox (badness 10000) detected at line 217
 [][][]
  []
 
-
+[73]
 Underfull \hbox (badness 10000) detected at line 228
 [][][]
  []
 
-[26]
+
 Underfull \hbox (badness 10000) detected at line 239
 [][][]
  []
 
-
+[74]
 Underfull \hbox (badness 10000) detected at line 255
 [][][]
  []
 
-[27]
+
 Underfull \hbox (badness 10000) detected at line 271
 [][][]
  []
@@ -1189,31 +1644,81 @@ Underfull \hbox (badness 10000) detected at line 304
 [][][]
  []
 
-
+[75]
 Underfull \hbox (badness 10000) detected at line 315
 [][][]
  []
 
-) (class_app_1_1_models_1_1_user.tex [28])
-(class_app_1_1_controllers_1_1_user_controller.tex [29]
-Underfull \hbox (badness 10000) detected at line 46
+) (class_app_1_1_models_1_1timer.tex [76]) (class_app_1_1_models_1_1_user.tex)
+(class_app_1_1_controllers_1_1_user_controller.tex [77]
+Underfull \hbox (badness 10000) detected at line 50
 [][][]
  []
 
-[30]
-Underfull \hbox (badness 10000) detected at line 57
+[78]
+Underfull \hbox (badness 10000) detected at line 66
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 73
+Underfull \hbox (badness 10000) detected at line 77
 [][][]
  []
 
-) [31] [32
+
+Underfull \hbox (badness 10000) detected at line 93
+[][][]
+ []
+
+[79]
+Underfull \hbox (badness 10000) detected at line 109
+[][][]
+ []
+
+) (class_dotenv_1_1_exception_1_1_validation_exception.tex
+
+pdfTeX warning: pdflatex (file ./class_dotenv_1_1_exception_1_1_validation_exce
+ption.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
+llowed
+ <./class_dotenv_1_1_exception_1_1_validation_exception.pdf>
+<class_dotenv_1_1_exception_1_1_validation_exception.pdf, id=2915, 501.875pt x 
+153.57375pt>
+File: class_dotenv_1_1_exception_1_1_validation_exception.pdf Graphic file (typ
+e pdf)
+<use class_dotenv_1_1_exception_1_1_validation_exception.pdf>
+Package pdftex.def Info: class_dotenv_1_1_exception_1_1_validation_exception.pd
+f  used on input line 6.
+(pdftex.def)             Requested size: 185.96652pt x 56.9055pt.
+)
+(class_dotenv_1_1_validator.tex [80]
+Underfull \hbox (badness 10000) detected at line 53
+[][][]
+ []
+
+[81]
+Underfull \hbox (badness 10000) detected at line 72
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 103
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 114
+[][][]
+ []
+
+[82]
+Underfull \hbox (badness 10000) detected at line 125
+[][][]
+ []
+
+) [83] [84
 
 ]
-Chapter 4.
+Chapter 6.
 (_category_controller_8php.tex
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
@@ -1224,7 +1729,7 @@ Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
 
-) (_game_controller_8php.tex [33]
+) (_game_controller_8php.tex [85]
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
@@ -1249,7 +1754,7 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[34]
+[86]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1269,7 +1774,37 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[35]
+[87]
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_d_a_o_console_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_d_a_o_file_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+[88]
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_d_a_o_file_save_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1279,7 +1814,7 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-
+[89]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1289,12 +1824,42 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[36]
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
 
 ) (_category_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+[90]
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_console_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_file_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+[91]
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_file_save_8php.tex
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
@@ -1309,7 +1874,17 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[37]
+[92]
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (_timer_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1319,7 +1894,7 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-
+[93]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1329,7 +1904,7 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-[38]
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1339,41 +1914,134 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-
+[94]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
 
-) [39] [40
+) (bootstrap_8php.tex
+Underfull \hbox (badness 10000) detected at line 23
+[][][]
+ []
 
-] (refman.ind [41
+
+Underfull \hbox (badness 10000) detected at line 26
+[][][]
+ []
+
+) (index_8php.tex
+Underfull \hbox (badness 10000) detected at line 14
+[][][]
+ []
 
 
-] [42] [43
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
 
-]) (refman.aux)
+) (pages_2categories_2index_8php.tex [95]
+Underfull \hbox (badness 10000) detected at line 41
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+) (pages_2games_2index_8php.tex [96]
+Underfull \hbox (badness 10000) detected at line 53
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 56
+[][][]
+ []
+
+) (pages_2users_2connection_2index_8php.tex
+Underfull \hbox (badness 10000) detected at line 35
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 38
+[][][]
+ []
+
+) (pages_2users_2index_8php.tex [97]
+Underfull \hbox (badness 10000) detected at line 56
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+) [98] (refman.ind
+Overfull \hbox (27.74641pt too wide) in paragraph at lines 4--6
+[]| \T1/phv/m/n/10 Com-poser-StaticInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+
+Overfull \hbox (27.74641pt too wide) in paragraph at lines 7--9
+[]| \T1/phv/m/n/10 Com-poser-StaticInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+
+Overfull \hbox (27.74641pt too wide) in paragraph at lines 10--12
+[]| \T1/phv/m/n/10 Com-poser-StaticInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+
+Overfull \hbox (27.74641pt too wide) in paragraph at lines 13--15
+[]| \T1/phv/m/n/10 Com-poser-StaticInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+
+Overfull \hbox (27.74641pt too wide) in paragraph at lines 16--18
+[]| \T1/phv/m/n/10 Com-poser-StaticInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+[99
+
+
+
+]
+Overfull \hbox (28.49107pt too wide) in paragraph at lines 118--120
+[]\T1/phv/m/n/10 ComposerAutoloaderInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+[100]
+Overfull \hbox (48.49107pt too wide) in paragraph at lines 320--322
+[]| \T1/phv/m/n/10 Com-poser-Autoload-erInit12d41e5c90a50136bf3faf839b179187,
+ []
+
+[101] [102] [103]) (refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 3799185AEA9EAB546814814822C82135;33384.
+(rerunfilecheck)             Checksum: 96F4D64AD873C4091DB09C90EC62A9AA;75032.
  ) 
 Here is how much of TeX's memory you used:
- 16960 strings out of 479321
- 267263 string characters out of 2866504
- 613626 words of memory out of 3000000
- 33676 multiletter control sequences out of 15000+600000
- 452765 words of font info for 79 fonts, out of 8000000 for 9000
+ 18243 strings out of 479321
+ 314297 string characters out of 2866504
+ 676413 words of memory out of 3000000
+ 34259 multiletter control sequences out of 15000+600000
+ 453064 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 112i,16n,117p,623b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,16n,117p,570b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/u
-crr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/f
-onts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/he
-lvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb
->
-Output written on refman.pdf (49 pages, 355066 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/
+uhvb8ac.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (115 pages, 807633 bytes).
 PDF statistics:
- 1553 PDF objects out of 1728 (max. 8388607)
- 376 named destinations out of 1000 (max. 500000)
- 1161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3826 PDF objects out of 4296 (max. 8388607)
+ 1001 named destinations out of 1200 (max. 500000)
+ 2746 words of extra memory for PDF output out of 10000 (max. 10000000)
 

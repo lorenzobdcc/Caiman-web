@@ -3,67 +3,29 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_user_data_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_user_data_a145711b9507bbe0e7874856f4e054257}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_user_data_aa1c09d341f215095745d3603e12b1fbd}{get\+Users\+By\+Username}} (\$username)
+\mbox{\hyperlink{class_user_data_a61dd13a090ed7677e9539b11f8e33f36}{get\+Users\+By\+Username}} (\$username)
 \item 
-\mbox{\hyperlink{class_user_data_a92295d3642657257bdd3d8f2ed4e6814}{get\+User\+Data}} (\$iduser)
+\mbox{\hyperlink{class_user_data_aa1e178afa647945934984fe014fabee3}{get\+User\+Data}} (\$iduser)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file userdata.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_user_data_a095c5d389db211932136b53f25f39685}\label{class_user_data_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_user_data_a145711b9507bbe0e7874856f4e054257}\label{class_user_data_a145711b9507bbe0e7874856f4e054257}} 
 \index{UserData@{UserData}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!UserData@{UserData}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+Data\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 21 of file userdata.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{22     \{}
-\DoxyCodeLine{23         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{24             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{25                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{26                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{27                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{28                 ));}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30                 \textcolor{comment}{// get list of user by username}}
-\DoxyCodeLine{31                 \$sqlRequestUsers = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username LIKE :search\_username AND privateAccount = 0"{}};}
-\DoxyCodeLine{32                 \$this-\/>psGetUsersByUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsers);}
-\DoxyCodeLine{33                 \$this-\/>psGetUsersByUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35                 \textcolor{comment}{// get list of user by username}}
-\DoxyCodeLine{36                 \$sqlGetDataUser = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE id =:search\_idUser"{}};}
-\DoxyCodeLine{37                 \$this-\/>psGetDataUser = \$this-\/>dbh-\/>prepare(\$sqlGetDataUser);}
-\DoxyCodeLine{38                 \$this-\/>psGetDataUser-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{39             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{40                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{41                 die();}
-\DoxyCodeLine{42             \}}
-\DoxyCodeLine{43         \}}
-\DoxyCodeLine{44     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_user_data_a92295d3642657257bdd3d8f2ed4e6814}\label{class_user_data_a92295d3642657257bdd3d8f2ed4e6814}} 
+\mbox{\Hypertarget{class_user_data_aa1e178afa647945934984fe014fabee3}\label{class_user_data_aa1e178afa647945934984fe014fabee3}} 
 \index{UserData@{UserData}!getUserData@{getUserData}}
 \index{getUserData@{getUserData}!UserData@{UserData}}
 \doxysubsubsection{\texorpdfstring{getUserData()}{getUserData()}}
-{\footnotesize\ttfamily get\+User\+Data (\begin{DoxyParamCaption}\item[{}]{\$iduser }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+Data\+::get\+User\+Data (\begin{DoxyParamCaption}\item[{}]{\$iduser }\end{DoxyParamCaption})}
 
 get data of a specific user
 
@@ -75,29 +37,11 @@ int & {\em \$iduser} & \\
 \begin{DoxyReturn}{Returns}
 array 
 \end{DoxyReturn}
-
-
-Definition at line 70 of file userdata.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{71     \{}
-\DoxyCodeLine{72         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{73             \$this-\/>psGetDataUser-\/>execute(array(\textcolor{stringliteral}{':search\_idUser'} => \$iduser));}
-\DoxyCodeLine{74             \$result = \$this-\/>psGetDataUser-\/>fetchAll();}
-\DoxyCodeLine{75         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{76             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{77             die();}
-\DoxyCodeLine{78         \}}
-\DoxyCodeLine{79         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{80     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_user_data_aa1c09d341f215095745d3603e12b1fbd}\label{class_user_data_aa1c09d341f215095745d3603e12b1fbd}} 
+\mbox{\Hypertarget{class_user_data_a61dd13a090ed7677e9539b11f8e33f36}\label{class_user_data_a61dd13a090ed7677e9539b11f8e33f36}} 
 \index{UserData@{UserData}!getUsersByUsername@{getUsersByUsername}}
 \index{getUsersByUsername@{getUsersByUsername}!UserData@{UserData}}
 \doxysubsubsection{\texorpdfstring{getUsersByUsername()}{getUsersByUsername()}}
-{\footnotesize\ttfamily get\+Users\+By\+Username (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+Data\+::get\+Users\+By\+Username (\begin{DoxyParamCaption}\item[{}]{\$username }\end{DoxyParamCaption})}
 
 get users by their username
 
@@ -109,24 +53,6 @@ string & {\em \$username} & \\
 \begin{DoxyReturn}{Returns}
 array of game 
 \end{DoxyReturn}
-
-
-Definition at line 52 of file userdata.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{53     \{}
-\DoxyCodeLine{54         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{55             \$this-\/>psGetUsersByUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \textcolor{charliteral}{'\%'} . \$username . \textcolor{charliteral}{'\%'}));}
-\DoxyCodeLine{56             \$result = \$this-\/>psGetUsersByUsername-\/>fetchAll();}
-\DoxyCodeLine{57         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{58             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{59             die();}
-\DoxyCodeLine{60         \}}
-\DoxyCodeLine{61         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{62     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['delcategoriefromgame_137',['delCategorieFromGame',['../class_categories.html#a9c5ce287484a09dbf14ddf8115cfc7e2',1,'Categories']]],
-  ['downloadcaiman_138',['downloadCaiman',['../class_download.html#a45580608c7d8ebb4fa0af5f375477b65',1,'Download']]]
+  ['delcategoriefromgame_138',['delCategorieFromGame',['../class_categories.html#a8c088c2c11fff6fdd8e6d2de9311e69d',1,'Categories']]],
+  ['downloadcaiman_139',['downloadCaiman',['../class_download.html#ab131e326d0b102fc49a5e0fd39cba452',1,'Download']]]
 ];

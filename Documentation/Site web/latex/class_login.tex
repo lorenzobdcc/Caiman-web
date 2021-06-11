@@ -3,70 +3,47 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_login_ab8e90adf3e4b15eea283c4ea450a4288}{check\+Login}} ()
+\mbox{\hyperlink{class_login_a60a31680e340d0f3cd29d94ef8bafb74}{check\+Login}} (string \$password\+\_\+verify)
+\item 
+\mbox{\hyperlink{class_login_ae06dd114ea1869e1d751ca1d4f8d6775}{get\+Password\+Of\+User}} (string \$password)
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_login_a9aa97631901e53f65bb77f7bb570d45f}\label{class_login_a9aa97631901e53f65bb77f7bb570d45f}} 
+\mbox{\Hypertarget{class_login_a33053d6e5610252183db126ef4ad712a}\label{class_login_a33053d6e5610252183db126ef4ad712a}} 
 {\bfseries \$search\+\_\+username} = null
 \item 
-\mbox{\Hypertarget{class_login_a1223abf4b13e5f2605d4d8921df5831a}\label{class_login_a1223abf4b13e5f2605d4d8921df5831a}} 
+\mbox{\Hypertarget{class_login_a48506bd0b0819c3f6d43846983159303}\label{class_login_a48506bd0b0819c3f6d43846983159303}} 
 {\bfseries \$search\+\_\+password} = null
 \item 
-\mbox{\Hypertarget{class_login_a3173945582faed6c77a160f39e1dc205}\label{class_login_a3173945582faed6c77a160f39e1dc205}} 
+\mbox{\Hypertarget{class_login_adbf48b05f6b628928200f955cc6b11f3}\label{class_login_adbf48b05f6b628928200f955cc6b11f3}} 
 {\bfseries \$array\+Info} = null
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 9 of file login.\+php.
-
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_login_ab8e90adf3e4b15eea283c4ea450a4288}\label{class_login_ab8e90adf3e4b15eea283c4ea450a4288}} 
+\mbox{\Hypertarget{class_login_a60a31680e340d0f3cd29d94ef8bafb74}\label{class_login_a60a31680e340d0f3cd29d94ef8bafb74}} 
 \index{Login@{Login}!checkLogin@{checkLogin}}
 \index{checkLogin@{checkLogin}!Login@{Login}}
 \doxysubsubsection{\texorpdfstring{checkLogin()}{checkLogin()}}
-{\footnotesize\ttfamily check\+Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Login\+::check\+Login (\begin{DoxyParamCaption}\item[{string}]{\$password\+\_\+verify }\end{DoxyParamCaption})}
 
 check if there is a match
 
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_login_ae06dd114ea1869e1d751ca1d4f8d6775}\label{class_login_ae06dd114ea1869e1d751ca1d4f8d6775}} 
+\index{Login@{Login}!getPasswordOfUser@{getPasswordOfUser}}
+\index{getPasswordOfUser@{getPasswordOfUser}!Login@{Login}}
+\doxysubsubsection{\texorpdfstring{getPasswordOfUser()}{getPasswordOfUser()}}
+{\footnotesize\ttfamily Login\+::get\+Password\+Of\+User (\begin{DoxyParamCaption}\item[{string}]{\$password }\end{DoxyParamCaption})}
 
+check if there is a match
 
-Definition at line 48 of file login.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{49     \{}
-\DoxyCodeLine{50         \$returnArray = \textcolor{keyword}{null};}
-\DoxyCodeLine{51         \textcolor{keywordflow}{try}\{}
-\DoxyCodeLine{52             \$this-\/>psLogin-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>search\_username));}
-\DoxyCodeLine{53             \$result = \$this-\/>psLogin-\/>fetchAll();}
-\DoxyCodeLine{54             \textcolor{keywordflow}{if} (\$result != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{55                 \textcolor{keywordflow}{if} (password\_verify( \$this-\/>search\_password,\$result[0][\textcolor{stringliteral}{"{}password"{}}])   ) \{}
-\DoxyCodeLine{56                     \$returnArray = \$result;}
-\DoxyCodeLine{57                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Welcome back: "{}}. \$result[0][\textcolor{stringliteral}{'username'}];}
-\DoxyCodeLine{58                 \}\textcolor{keywordflow}{else}}
-\DoxyCodeLine{59                 \{}
-\DoxyCodeLine{60                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Invalid log in"{}};}
-\DoxyCodeLine{61                 \}}
-\DoxyCodeLine{62             \}}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64         \}\textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{65             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{66             die();}
-\DoxyCodeLine{67         \}}
-\DoxyCodeLine{68         \textcolor{keywordflow}{return} \$returnArray;}
-\DoxyCodeLine{69     \}}
-
-\end{DoxyCode}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

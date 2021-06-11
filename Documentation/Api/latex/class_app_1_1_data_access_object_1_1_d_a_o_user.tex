@@ -1,22 +1,28 @@
-\hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user}{}\doxysection{App\textbackslash{}Data\+Access\+Object\textbackslash{}DAOUser Class Reference}
-\label{class_app_1_1_data_access_object_1_1_d_a_o_user}\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user}{}\doxysection{DAOUser Class Reference}
+\label{class_app_1_1_data_access_object_1_1_d_a_o_user}\index{DAOUser@{DAOUser}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ab47bde34d6b6bf5545f8d8303affc761}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
 \item 
-\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}{find\+All}} ()
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a73a1b0348919b6755e4f69dcc70eba64}{find\+All}} ()
 \item 
-\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}{find}} (string \$apitocken)
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ad08d09b6393432420c23d0d44806d13d}{find}} (string \$apitocken)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_ad6ec405ed73808fb9ef3e950092c4d1a}{find\+By\+Caiman\+Token}} (string \$caiman\+Token)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_af3e80e4c99875bd5aea4b1a159746869}{update\+Caiman\+Token}} (string \$apitocken)
+\item 
+\mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user_a3d3b8e831cc0039cf6d2c375e0e85eaf}{find\+User\+By\+Username}} (string \$username)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ae826a9e0b7581d0f4e0d5350b5c3f7ee}} 
-\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!\_\_construct@{\_\_construct}}
-\index{\_\_construct@{\_\_construct}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ab47bde34d6b6bf5545f8d8303affc761}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ab47bde34d6b6bf5545f8d8303affc761}} 
+\index{DAOUser@{DAOUser}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!DAOUser@{DAOUser}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
 
 Constructor of the \mbox{\hyperlink{class_app_1_1_data_access_object_1_1_d_a_o_user}{DAOUser}} object.
 
@@ -28,32 +34,80 @@ PDO & {\em \$db} & The database connection \\
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ada65045d591316b7d8a7bc45c565ca9b}} 
-\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!find@{find}}
-\index{find@{find}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ad08d09b6393432420c23d0d44806d13d}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ad08d09b6393432420c23d0d44806d13d}} 
+\index{DAOUser@{DAOUser}!find@{find}}
+\index{find@{find}!DAOUser@{DAOUser}}
 \doxysubsubsection{\texorpdfstring{find()}{find()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily find (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
 
-Method to return a user from the database in a user model object.
+Method to return a user from the database in a user model object from it\textquotesingle{}s api\+Token
 
 
 \begin{DoxyParams}[1]{Parameters}
-int & {\em \$id} & The user identifier \\
+string & {\em \$apitocken} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 User A User model object containing all the result rows of the query 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a505edb233e919c2b352eaeb6e2f00120}} 
-\index{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}!findAll@{findAll}}
-\index{findAll@{findAll}!App\textbackslash{}DataAccessObject\textbackslash{}DAOUser@{App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a73a1b0348919b6755e4f69dcc70eba64}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a73a1b0348919b6755e4f69dcc70eba64}} 
+\index{DAOUser@{DAOUser}!findAll@{findAll}}
+\index{findAll@{findAll}!DAOUser@{DAOUser}}
 \doxysubsubsection{\texorpdfstring{findAll()}{findAll()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Data\+Access\+Object\textbackslash{}\+DAOUser\+::find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily find\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Method to return all users with the selected role from the database in an array of user objects.
 
 \begin{DoxyReturn}{Returns}
 User\mbox{[}\mbox{]} A User object array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_ad6ec405ed73808fb9ef3e950092c4d1a}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_ad6ec405ed73808fb9ef3e950092c4d1a}} 
+\index{DAOUser@{DAOUser}!findByCaimanToken@{findByCaimanToken}}
+\index{findByCaimanToken@{findByCaimanToken}!DAOUser@{DAOUser}}
+\doxysubsubsection{\texorpdfstring{findByCaimanToken()}{findByCaimanToken()}}
+{\footnotesize\ttfamily find\+By\+Caiman\+Token (\begin{DoxyParamCaption}\item[{string}]{\$caiman\+Token }\end{DoxyParamCaption})}
+
+Method to return a user from the database in a user model object from a caiman\+Token
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$caiman\+Token} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User A User model object containing all the result rows of the query 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_a3d3b8e831cc0039cf6d2c375e0e85eaf}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_a3d3b8e831cc0039cf6d2c375e0e85eaf}} 
+\index{DAOUser@{DAOUser}!findUserByUsername@{findUserByUsername}}
+\index{findUserByUsername@{findUserByUsername}!DAOUser@{DAOUser}}
+\doxysubsubsection{\texorpdfstring{findUserByUsername()}{findUserByUsername()}}
+{\footnotesize\ttfamily find\+User\+By\+Username (\begin{DoxyParamCaption}\item[{string}]{\$username }\end{DoxyParamCaption})}
+
+Method to return get a user from a username
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_data_access_object_1_1_d_a_o_user_af3e80e4c99875bd5aea4b1a159746869}\label{class_app_1_1_data_access_object_1_1_d_a_o_user_af3e80e4c99875bd5aea4b1a159746869}} 
+\index{DAOUser@{DAOUser}!updateCaimanToken@{updateCaimanToken}}
+\index{updateCaimanToken@{updateCaimanToken}!DAOUser@{DAOUser}}
+\doxysubsubsection{\texorpdfstring{updateCaimanToken()}{updateCaimanToken()}}
+{\footnotesize\ttfamily update\+Caiman\+Token (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
+
+Method to return update the caiman\+Token of a user
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$apitocken} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
 \end{DoxyReturn}
 
 

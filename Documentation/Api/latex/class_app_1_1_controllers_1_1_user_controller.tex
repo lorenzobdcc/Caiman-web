@@ -1,24 +1,28 @@
-\hypertarget{class_app_1_1_controllers_1_1_user_controller}{}\doxysection{App\textbackslash{}Controllers\textbackslash{}User\+Controller Class Reference}
-\label{class_app_1_1_controllers_1_1_user_controller}\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\hypertarget{class_app_1_1_controllers_1_1_user_controller}{}\doxysection{User\+Controller Class Reference}
+\label{class_app_1_1_controllers_1_1_user_controller}\index{UserController@{UserController}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a0543ef18dec357e8ed4d55efd69a15d7}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_ab47bde34d6b6bf5545f8d8303affc761}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}{get\+All\+Users}} ()
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a48a9c3492291c38e6113e40e04deb2ed}{get\+All\+Users}} ()
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}{get\+User}} (string \$apitocken)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a25c1ab4f38d6c869ef0050aaf7bfd35f}{get\+User}} (string \$apitocken)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_afa067a92b2b2330fae6464625b385bdb}{connection}} (string \$username, string \$password)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_ab80c32be7aeaab0f21196f77254886fb}{connection}} (string \$username, string \$password)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_ad6ec405ed73808fb9ef3e950092c4d1a}{find\+By\+Caiman\+Token}} (string \$caiman\+Token)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller_a72e3543b90937b0ef0709fe14ede15ac}{update\+Caiman\+Token}} (\$apitoken)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a0543ef18dec357e8ed4d55efd69a15d7}\label{class_app_1_1_controllers_1_1_user_controller_a0543ef18dec357e8ed4d55efd69a15d7}} 
-\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!\_\_construct@{\_\_construct}}
-\index{\_\_construct@{\_\_construct}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_ab47bde34d6b6bf5545f8d8303affc761}\label{class_app_1_1_controllers_1_1_user_controller_ab47bde34d6b6bf5545f8d8303affc761}} 
+\index{UserController@{UserController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!UserController@{UserController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
 
 Constructor of the \mbox{\hyperlink{class_app_1_1_controllers_1_1_user_controller}{User\+Controller}} object.
 
@@ -30,11 +34,11 @@ PDO & {\em \$db} & The database connection \\
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_afa067a92b2b2330fae6464625b385bdb}\label{class_app_1_1_controllers_1_1_user_controller_afa067a92b2b2330fae6464625b385bdb}} 
-\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!connection@{connection}}
-\index{connection@{connection}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_ab80c32be7aeaab0f21196f77254886fb}\label{class_app_1_1_controllers_1_1_user_controller_ab80c32be7aeaab0f21196f77254886fb}} 
+\index{UserController@{UserController}!connection@{connection}}
+\index{connection@{connection}!UserController@{UserController}}
 \doxysubsubsection{\texorpdfstring{connection()}{connection()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::connection (\begin{DoxyParamCaption}\item[{string}]{\$username,  }\item[{string}]{\$password }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily connection (\begin{DoxyParamCaption}\item[{string}]{\$username,  }\item[{string}]{\$password }\end{DoxyParamCaption})}
 
 Method to log check the login of a user
 
@@ -44,30 +48,62 @@ User & {\em \$user} & The user model object \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-string The status and the body in JSON format of the response 
+User 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}\label{class_app_1_1_controllers_1_1_user_controller_a58df8b576c286304387b3f6fa8cec35b}} 
-\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!getAllUsers@{getAllUsers}}
-\index{getAllUsers@{getAllUsers}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_ad6ec405ed73808fb9ef3e950092c4d1a}\label{class_app_1_1_controllers_1_1_user_controller_ad6ec405ed73808fb9ef3e950092c4d1a}} 
+\index{UserController@{UserController}!findByCaimanToken@{findByCaimanToken}}
+\index{findByCaimanToken@{findByCaimanToken}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{findByCaimanToken()}{findByCaimanToken()}}
+{\footnotesize\ttfamily find\+By\+Caiman\+Token (\begin{DoxyParamCaption}\item[{string}]{\$caiman\+Token }\end{DoxyParamCaption})}
+
+Method to log check the login of a user by is caiman\+Token
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & caiman\+Token \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User The status and the body in JSON format of the response 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a48a9c3492291c38e6113e40e04deb2ed}\label{class_app_1_1_controllers_1_1_user_controller_a48a9c3492291c38e6113e40e04deb2ed}} 
+\index{UserController@{UserController}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!UserController@{UserController}}
 \doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Method to return all users in JSON format.
 
 \begin{DoxyReturn}{Returns}
 string The status and the body in json format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}\label{class_app_1_1_controllers_1_1_user_controller_a6bfbd88c5ba8abd3c86abb78aecf0025}} 
-\index{App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}!getUser@{getUser}}
-\index{getUser@{getUser}!App\textbackslash{}Controllers\textbackslash{}UserController@{App\textbackslash{}Controllers\textbackslash{}UserController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a25c1ab4f38d6c869ef0050aaf7bfd35f}\label{class_app_1_1_controllers_1_1_user_controller_a25c1ab4f38d6c869ef0050aaf7bfd35f}} 
+\index{UserController@{UserController}!getUser@{getUser}}
+\index{getUser@{getUser}!UserController@{UserController}}
 \doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+User\+Controller\+::get\+User (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+User (\begin{DoxyParamCaption}\item[{string}]{\$apitocken }\end{DoxyParamCaption})}
 
-Method to return a user in JSON format.
+Method to return the informations of one user
 
 
 \begin{DoxyParams}[1]{Parameters}
 int & {\em \$id} & The user identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_user_controller_a72e3543b90937b0ef0709fe14ede15ac}\label{class_app_1_1_controllers_1_1_user_controller_a72e3543b90937b0ef0709fe14ede15ac}} 
+\index{UserController@{UserController}!updateCaimanToken@{updateCaimanToken}}
+\index{updateCaimanToken@{updateCaimanToken}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{updateCaimanToken()}{updateCaimanToken()}}
+{\footnotesize\ttfamily update\+Caiman\+Token (\begin{DoxyParamCaption}\item[{}]{\$apitoken }\end{DoxyParamCaption})}
+
+Method to update caiman\+Token
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

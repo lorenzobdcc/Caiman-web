@@ -3,205 +3,74 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_signin_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_signin_afd55d56ccf56008b00306fa22bbceff0}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_signin_acfc95ed63fd1e8b5631b2079f42099ae}{new\+User}} ()
+\mbox{\hyperlink{class_signin_a7eab4d6e23c513be1b8f1f9f0b30bced}{new\+User}} ()
 \item 
-\mbox{\hyperlink{class_signin_a74db7fa1a1318101eb96a3d2832f2eaa}{check\+If\+Username\+Already\+Taken}} ()
+\mbox{\hyperlink{class_signin_a7907803d53737399c7c8a62687bcaac2}{check\+If\+Username\+Already\+Taken}} ()
 \item 
-\mbox{\hyperlink{class_signin_af943e6d90301a30c50f3fe502d363016}{check\+If\+Email\+Already\+Taken}} ()
+\mbox{\hyperlink{class_signin_a1b18e1747e06b89a275d1b34b7e033e5}{check\+If\+Email\+Already\+Taken}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_signin_a43ff1f2140ecd9b1805b202083a7e19c}\label{class_signin_a43ff1f2140ecd9b1805b202083a7e19c}} 
+\mbox{\Hypertarget{class_signin_a677063643c3b02e628ba53bc935b3e25}\label{class_signin_a677063643c3b02e628ba53bc935b3e25}} 
 {\bfseries \$insert\+\_\+username} = null
 \item 
-\mbox{\Hypertarget{class_signin_a550e775e30fa31a41731565c8d0dbd21}\label{class_signin_a550e775e30fa31a41731565c8d0dbd21}} 
+\mbox{\Hypertarget{class_signin_a987f9aaff6a92b75d845c84f645e54ee}\label{class_signin_a987f9aaff6a92b75d845c84f645e54ee}} 
 {\bfseries \$insert\+\_\+password} = null
 \item 
-\mbox{\Hypertarget{class_signin_a365384bbbadc8939c6935297dc647b44}\label{class_signin_a365384bbbadc8939c6935297dc647b44}} 
+\mbox{\Hypertarget{class_signin_a173d03f9f217dba4e15cce544891b6e9}\label{class_signin_a173d03f9f217dba4e15cce544891b6e9}} 
 {\bfseries \$insert\+\_\+password\+\_\+repeat} = null
 \item 
-\mbox{\Hypertarget{class_signin_a90a6cdc7a78b2c4b1b34836e898d4a6a}\label{class_signin_a90a6cdc7a78b2c4b1b34836e898d4a6a}} 
+\mbox{\Hypertarget{class_signin_ac715f811194134b790d75b866bebad02}\label{class_signin_ac715f811194134b790d75b866bebad02}} 
 {\bfseries \$insert\+\_\+email} = null
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 9 of file signin.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_signin_a095c5d389db211932136b53f25f39685}\label{class_signin_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_signin_afd55d56ccf56008b00306fa22bbceff0}\label{class_signin_afd55d56ccf56008b00306fa22bbceff0}} 
 \index{Signin@{Signin}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!Signin@{Signin}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 31 of file signin.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{32     \{}
-\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{34             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{35                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{36                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{37                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{38                 ));}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40                 \textcolor{comment}{// check if email alredy used}}
-\DoxyCodeLine{41                 \$sqlrequestEmail = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE email = :search\_email "{}};}
-\DoxyCodeLine{42                 \$this-\/>psCheckEmail = \$this-\/>dbh-\/>prepare(\$sqlrequestEmail);}
-\DoxyCodeLine{43                 \$this-\/>psCheckEmail-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45                 \textcolor{comment}{// check if username alredy used}}
-\DoxyCodeLine{46                 \$sqlRequestUsername = \textcolor{stringliteral}{"{}SELECT * FROM user WHERE username = :search\_username "{}};}
-\DoxyCodeLine{47                 \$this-\/>psCheckUsername = \$this-\/>dbh-\/>prepare(\$sqlRequestUsername);}
-\DoxyCodeLine{48                 \$this-\/>psCheckUsername-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50                 \$sqlInsert = \textcolor{stringliteral}{"{}INSERT INTO user  (username, password, email)}}
-\DoxyCodeLine{51 \textcolor{stringliteral}{                              VALUES (:insert\_username, :insert\_password, :insert\_email)"{}};}
-\DoxyCodeLine{52                 \$this-\/>psInsert = \$this-\/>dbh-\/>prepare(\$sqlInsert);}
-\DoxyCodeLine{53                 \$this-\/>psInsert-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{54             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{55                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{56                 die();}
-\DoxyCodeLine{57             \}}
-\DoxyCodeLine{58         \}}
-\DoxyCodeLine{59     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_signin_af943e6d90301a30c50f3fe502d363016}\label{class_signin_af943e6d90301a30c50f3fe502d363016}} 
+\mbox{\Hypertarget{class_signin_a1b18e1747e06b89a275d1b34b7e033e5}\label{class_signin_a1b18e1747e06b89a275d1b34b7e033e5}} 
 \index{Signin@{Signin}!checkIfEmailAlreadyTaken@{checkIfEmailAlreadyTaken}}
 \index{checkIfEmailAlreadyTaken@{checkIfEmailAlreadyTaken}!Signin@{Signin}}
 \doxysubsubsection{\texorpdfstring{checkIfEmailAlreadyTaken()}{checkIfEmailAlreadyTaken()}}
-{\footnotesize\ttfamily check\+If\+Email\+Already\+Taken (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+::check\+If\+Email\+Already\+Taken (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 check that the email is not already taken
 
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-
-
-Definition at line 116 of file signin.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{117     \{}
-\DoxyCodeLine{118         \$istaken = \textcolor{keyword}{true};}
-\DoxyCodeLine{119         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{120             \$this-\/>psCheckEmail-\/>execute(array(\textcolor{stringliteral}{':search\_email'} => \$this-\/>insert\_email));}
-\DoxyCodeLine{121             \$result = \$this-\/>psCheckEmail-\/>fetchAll();}
-\DoxyCodeLine{122             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{123                 \$istaken = \textcolor{keyword}{false};}
-\DoxyCodeLine{124             \}}
-\DoxyCodeLine{125         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{126             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{127             die();}
-\DoxyCodeLine{128         \}}
-\DoxyCodeLine{129         \textcolor{keywordflow}{return} \$istaken;}
-\DoxyCodeLine{130     \}}
-
-\end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=301pt]{class_signin_af943e6d90301a30c50f3fe502d363016_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_signin_a74db7fa1a1318101eb96a3d2832f2eaa}\label{class_signin_a74db7fa1a1318101eb96a3d2832f2eaa}} 
+\mbox{\Hypertarget{class_signin_a7907803d53737399c7c8a62687bcaac2}\label{class_signin_a7907803d53737399c7c8a62687bcaac2}} 
 \index{Signin@{Signin}!checkIfUsernameAlreadyTaken@{checkIfUsernameAlreadyTaken}}
 \index{checkIfUsernameAlreadyTaken@{checkIfUsernameAlreadyTaken}!Signin@{Signin}}
 \doxysubsubsection{\texorpdfstring{checkIfUsernameAlreadyTaken()}{checkIfUsernameAlreadyTaken()}}
-{\footnotesize\ttfamily check\+If\+Username\+Already\+Taken (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+::check\+If\+Username\+Already\+Taken (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 check that the username is not already taken
 
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-
-
-Definition at line 95 of file signin.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{96     \{}
-\DoxyCodeLine{97         \$istaken = \textcolor{keyword}{true};}
-\DoxyCodeLine{98         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{99             \$this-\/>psCheckUsername-\/>execute(array(\textcolor{stringliteral}{':search\_username'} => \$this-\/>insert\_username));}
-\DoxyCodeLine{100             \$result = \$this-\/>psCheckUsername-\/>fetchAll();}
-\DoxyCodeLine{101             \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{102                 \$istaken = \textcolor{keyword}{false};}
-\DoxyCodeLine{103             \}}
-\DoxyCodeLine{104         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{105             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{106             die();}
-\DoxyCodeLine{107         \}}
-\DoxyCodeLine{108         \textcolor{keywordflow}{return} \$istaken;}
-\DoxyCodeLine{109     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_signin_acfc95ed63fd1e8b5631b2079f42099ae}\label{class_signin_acfc95ed63fd1e8b5631b2079f42099ae}} 
+\mbox{\Hypertarget{class_signin_a7eab4d6e23c513be1b8f1f9f0b30bced}\label{class_signin_a7eab4d6e23c513be1b8f1f9f0b30bced}} 
 \index{Signin@{Signin}!newUser@{newUser}}
 \index{newUser@{newUser}!Signin@{Signin}}
 \doxysubsubsection{\texorpdfstring{newUser()}{newUser()}}
-{\footnotesize\ttfamily new\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+::new\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 add a mew user in the database
 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 66 of file signin.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{67     \{}
-\DoxyCodeLine{68         \$isValid = \textcolor{keyword}{true};}
-\DoxyCodeLine{69         \textcolor{keywordflow}{if} (\$this-\/>\mbox{\hyperlink{class_signin_af943e6d90301a30c50f3fe502d363016}{checkIfEmailAlreadyTaken}}()) \{}
-\DoxyCodeLine{70             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Email already used"{}};}
-\DoxyCodeLine{71             \$isValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{72         \}}
-\DoxyCodeLine{73         \textcolor{keywordflow}{if} (\$this-\/>checkifUsernameAlreadyTaken()) \{}
-\DoxyCodeLine{74             \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Username alredy used"{}};}
-\DoxyCodeLine{75             \$isValid = \textcolor{keyword}{false};}
-\DoxyCodeLine{76         \}}
-\DoxyCodeLine{77         \textcolor{keywordflow}{if} (\$isValid) \{}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{81                 \$this-\/>psInsert-\/>execute(array(\textcolor{stringliteral}{':insert\_username'} => \$this-\/>insert\_username, \textcolor{stringliteral}{':insert\_password'} => password\_hash(\$this-\/>insert\_password, PASSWORD\_DEFAULT), \textcolor{stringliteral}{':insert\_email'} => \$this-\/>insert\_email));}
-\DoxyCodeLine{82                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Acount created"{}};}
-\DoxyCodeLine{83             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{84                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{85                 die();}
-\DoxyCodeLine{86             \}}
-\DoxyCodeLine{87         \}}
-\DoxyCodeLine{88     \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=301pt]{class_signin_acfc95ed63fd1e8b5631b2079f42099ae_cgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

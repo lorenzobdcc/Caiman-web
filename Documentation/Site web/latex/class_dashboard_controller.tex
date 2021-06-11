@@ -1,75 +1,45 @@
 \hypertarget{class_dashboard_controller}{}\doxysection{Dashboard\+Controller Class Reference}
 \label{class_dashboard_controller}\index{DashboardController@{DashboardController}}
-
-
-Inheritance diagram for Dashboard\+Controller\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for Dashboard\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{class_dashboard_controller__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Dashboard\+Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=238pt]{class_dashboard_controller__coll__graph}
+\includegraphics[height=2.000000cm]{class_dashboard_controller}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dashboard_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
+\mbox{\hyperlink{class_dashboard_controller_a95e90f8ee4218386006aa060b7746f8e}{form\+Handler}} ()
 \item 
-\mbox{\hyperlink{class_dashboard_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_dashboard_controller_a05bc89894e9669db85a7e9479fe2f2fc}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
+\mbox{\hyperlink{class_dashboard_controller_a4798d3f47e1b29e573658cf7e065b50c}{print\+HTML}} ()
 \item 
-\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{html\+Form\+Update\+Password}} ()
+\mbox{\hyperlink{class_dashboard_controller_afcfda5f10ac62f093e4a3b6078bd6fb2}{html\+Form\+Update\+Password}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_dashboard_controller_a7d6a0f063eaff0bfafef87435c31540c}\label{class_dashboard_controller_a7d6a0f063eaff0bfafef87435c31540c}} 
+\mbox{\Hypertarget{class_dashboard_controller_a17cef1a2c6484254172ae73f83c6fc6b}\label{class_dashboard_controller_a17cef1a2c6484254172ae73f83c6fc6b}} 
 {\bfseries \$game}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 11 of file dashboard\+Controller.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_dashboard_controller_a095c5d389db211932136b53f25f39685}\label{class_dashboard_controller_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_dashboard_controller_a05bc89894e9669db85a7e9479fe2f2fc}\label{class_dashboard_controller_a05bc89894e9669db85a7e9479fe2f2fc}} 
 \index{DashboardController@{DashboardController}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!DashboardController@{DashboardController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dashboard\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 64 of file dashboard\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{65     \{}
-\DoxyCodeLine{66         \$this-\/>game = \textcolor{keyword}{new} \mbox{\hyperlink{class_games}{Games}}();}
-\DoxyCodeLine{67     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_dashboard_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_dashboard_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\mbox{\Hypertarget{class_dashboard_controller_a95e90f8ee4218386006aa060b7746f8e}\label{class_dashboard_controller_a95e90f8ee4218386006aa060b7746f8e}} 
 \index{DashboardController@{DashboardController}!formHandler@{formHandler}}
 \index{formHandler@{formHandler}!DashboardController@{DashboardController}}
 \doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
-{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dashboard\+Controller\+::form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to handle if the user has resquest something
 
@@ -80,111 +50,22 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 21 of file dashboard\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{22     \{}
-\DoxyCodeLine{23         \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Dashboard"{}};}
-\DoxyCodeLine{24         \$this-\/>allowAccessTo(array(1, 3));}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26         \$oldPassword = \textcolor{keyword}{null};}
-\DoxyCodeLine{27         \$newPasswordRepeat = \textcolor{keyword}{null};}
-\DoxyCodeLine{28         \$newPassword = \textcolor{keyword}{null};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{31             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{32         \}}
-\DoxyCodeLine{33         \textcolor{comment}{// form update}}
-\DoxyCodeLine{34         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
-\DoxyCodeLine{35             \$\_SESSION[\textcolor{stringliteral}{'title'}] = \textcolor{stringliteral}{"{}Caiman: Update password"{}};}
-\DoxyCodeLine{36             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'oldPassword'}])) \{}
-\DoxyCodeLine{37                 \$oldPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'oldPassword'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{38             \}}
-\DoxyCodeLine{39             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPassword'}])) \{}
-\DoxyCodeLine{40                 \$newPassword = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPassword'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{41             \}}
-\DoxyCodeLine{42             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'newPasswordRepeat'}])) \{}
-\DoxyCodeLine{43                 \$newPasswordRepeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'newPasswordRepeat'}, FILTER\_SANITIZE\_STRING);}
-\DoxyCodeLine{44             \}}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46             \textcolor{keywordflow}{if} (isset(\$oldPassword) \&\& isset(\$newPassword) \&\& isset(\$newPasswordRepeat)) \{}
-\DoxyCodeLine{47                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePassword(\$newPassword, \$newPasswordRepeat, \$oldPassword);}
-\DoxyCodeLine{48             \}}
-\DoxyCodeLine{49         \}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51         \textcolor{comment}{// update if account if visible or not}}
-\DoxyCodeLine{52         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePrivateAccount"{}}) \{}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54             \textcolor{keywordflow}{if} (\$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>idUser != -\/1) \{}
-\DoxyCodeLine{55                 \$\_SESSION[\textcolor{stringliteral}{'user'}]-\/>updatePrivateAccount();}
-\DoxyCodeLine{56                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{57             \}}
-\DoxyCodeLine{58         \}}
-\DoxyCodeLine{59     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}\label{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}} 
+\mbox{\Hypertarget{class_dashboard_controller_afcfda5f10ac62f093e4a3b6078bd6fb2}\label{class_dashboard_controller_afcfda5f10ac62f093e4a3b6078bd6fb2}} 
 \index{DashboardController@{DashboardController}!htmlFormUpdatePassword@{htmlFormUpdatePassword}}
 \index{htmlFormUpdatePassword@{htmlFormUpdatePassword}!DashboardController@{DashboardController}}
 \doxysubsubsection{\texorpdfstring{htmlFormUpdatePassword()}{htmlFormUpdatePassword()}}
-{\footnotesize\ttfamily html\+Form\+Update\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dashboard\+Controller\+::html\+Form\+Update\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 create the html of the form to update the user\textquotesingle{}s password
 
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 258 of file dashboard\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{259     \{}
-\DoxyCodeLine{260         \$html = \textcolor{stringliteral}{'<div class="{}d-\/inline-\/flex p-\/2 jumbotron  width100 DarkJumbotron "{} style="{}background-\/color: \#161b22;"{} >}}
-\DoxyCodeLine{261 \textcolor{stringliteral}{        <div class="{}container"{}>}}
-\DoxyCodeLine{262 \textcolor{stringliteral}{        <div class="{}row"{}><h2>Update your password</h2></div>}}
-\DoxyCodeLine{263 \textcolor{stringliteral}{        <div class="{}row"{}>}}
-\DoxyCodeLine{264 \textcolor{stringliteral}{        }}
-\DoxyCodeLine{265 \textcolor{stringliteral}{        }}
-\DoxyCodeLine{266 \textcolor{stringliteral}{        <form action="{}?r=dashboard\&e=updatePassword"{} method="{}post"{}>}}
-\DoxyCodeLine{267 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{268 \textcolor{stringliteral}{                <label for="{}oldPassword"{}>Old password</label>}}
-\DoxyCodeLine{269 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}oldPassword"{} name="{}oldPassword"{} placeholder="{}Old password"{}>}}
-\DoxyCodeLine{270 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{271 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{272 \textcolor{stringliteral}{                <label for="{}newPassword"{}>Password</label>}}
-\DoxyCodeLine{273 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPassword"{} name="{}newPassword"{} placeholder="{}New password"{}>}}
-\DoxyCodeLine{274 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{275 \textcolor{stringliteral}{            <div class="{}form-\/group"{}>}}
-\DoxyCodeLine{276 \textcolor{stringliteral}{                <label for="{}newPasswordRepeat"{}>Password</label>}}
-\DoxyCodeLine{277 \textcolor{stringliteral}{                <input type="{}password"{} class="{}form-\/control"{} id="{}newPasswordRepeat"{} name="{}newPasswordRepeat"{} placeholder="{}New password repeat"{}>}}
-\DoxyCodeLine{278 \textcolor{stringliteral}{            </div>}}
-\DoxyCodeLine{279 \textcolor{stringliteral}{}}
-\DoxyCodeLine{280 \textcolor{stringliteral}{            <button type="{}submit"{} class="{}btn btn-\/primary"{}>Submit</button>}}
-\DoxyCodeLine{281 \textcolor{stringliteral}{        </form>}}
-\DoxyCodeLine{282 \textcolor{stringliteral}{        </div>}}
-\DoxyCodeLine{283 \textcolor{stringliteral}{                </div>}}
-\DoxyCodeLine{284 \textcolor{stringliteral}{                </div>'};}
-\DoxyCodeLine{285         \textcolor{keywordflow}{return} \$html;}
-\DoxyCodeLine{286     \}}
-
-\end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=308pt]{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\mbox{\Hypertarget{class_dashboard_controller_a4798d3f47e1b29e573658cf7e065b50c}\label{class_dashboard_controller_a4798d3f47e1b29e573658cf7e065b50c}} 
 \index{DashboardController@{DashboardController}!printHTML@{printHTML}}
 \index{printHTML@{printHTML}!DashboardController@{DashboardController}}
 \doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
-{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dashboard\+Controller\+::print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 print the html for the resquested content
 
@@ -195,42 +76,6 @@ html
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 75 of file dashboard\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{76     \{}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78         \$html = \textcolor{stringliteral}{'<main  style="{}margin-\/top:20px "{}>}}
-\DoxyCodeLine{79 \textcolor{stringliteral}{        <div class="{}container-\/md"{}>'};}
-\DoxyCodeLine{80         echo \$\_SESSION[\textcolor{stringliteral}{'error'}];}
-\DoxyCodeLine{81         \$html .= \$this-\/>errorHandler();}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{84             \$html .= \$this-\/>htmlFormHead();}
-\DoxyCodeLine{85             \$html .= \$this-\/>htmlFavoriteGames();}
-\DoxyCodeLine{86             \$html .= \$this-\/>htmlGameTime();}
-\DoxyCodeLine{87         \}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}updatePassword"{}}) \{}
-\DoxyCodeLine{90             \$html .= \$this-\/>\mbox{\hyperlink{class_dashboard_controller_a98965834f052e1bd149e88ebbea149ac}{htmlFormUpdatePassword}}();}
-\DoxyCodeLine{91         \}}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93         \$html .= \textcolor{stringliteral}{"{}</div></main> "{}};}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95         echo \$html;}
-\DoxyCodeLine{96     \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=308pt]{class_dashboard_controller_a67e219b27b5c39ef06f85381a378c2f9_cgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

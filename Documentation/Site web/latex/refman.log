@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  14 MAY 2021 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.29)  10 JUN 2021 08:45
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -855,7 +855,8 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 169.
- [1] [2
+ [1] [2]
+[3] [4] [5] [6
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 171.
@@ -873,7 +874,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 174.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 22.39185pt on input line 174.
-(files.tex
+(hierarchy.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
@@ -882,58 +883,691 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ]
 Chapter 2.
-(index_8php.tex
+(annotated.tex) [3] [4
+
+]
+Chapter 3.
+(files.tex [5]) [6]
+Chapter 4.
+(class_administrator.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 8.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-1.
+(Font)              scaled to size 10.79993pt on input line 3.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
+.
 
 (C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 11.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 20.
+(Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 48.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 48
+.
 
+(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
+ [7
+
+]
+Underfull \hbox (badness 10000) detected at line 74
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 90
+[][][]
+ []
+
+[8]
+Underfull \hbox (badness 10000) detected at line 101
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 123
+[][][]
+ []
+
+[9]
+Underfull \hbox (badness 10000) detected at line 141
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+) (class_administrator_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_administrator_controller.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+ <./class_administrator_controller.pdf>
+<class_administrator_controller.pdf, id=1253, 501.875pt x 134.5025pt>
+File: class_administrator_controller.pdf Graphic file (type pdf)
+<use class_administrator_controller.pdf>
+Package pdftex.def Info: class_administrator_controller.pdf  used on input line
+ 6.
+(pdftex.def)             Requested size: 212.33296pt x 56.9055pt.
+ [10]
+Underfull \hbox (badness 10000) detected at line 50
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+) (class_categories.tex [11]
+Underfull \hbox (badness 10000) detected at line 43
+[][][]
+ []
+
+[12]
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 79
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 95
+[][][]
+ []
+
+[13]
+Underfull \hbox (badness 10000) detected at line 106
+[][][]
+ []
+
+) (class_dashboard_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_dashboard_controller.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+ <./class_dashboard_controller.pdf>
+<class_dashboard_controller.pdf, id=1310, 501.875pt x 145.54375pt>
+File: class_dashboard_controller.pdf Graphic file (type pdf)
+<use class_dashboard_controller.pdf>
+Package pdftex.def Info: class_dashboard_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 196.22057pt x 56.9055pt.
+ [14]
+Underfull \hbox (badness 10000) detected at line 46
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 61
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 72
+[][][]
+ []
+
+) (class_download.tex [15]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+) (class_download_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_download_controller.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+ <./class_download_controller.pdf>
+<class_download_controller.pdf, id=1341, 501.875pt x 152.57pt>
+File: class_download_controller.pdf Graphic file (type pdf)
+<use class_download_controller.pdf>
+Package pdftex.def Info: class_download_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 187.1918pt x 56.9055pt.
+ [16]
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+) (class_games.tex [17]
+Underfull \hbox (badness 10000) detected at line 48
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+[18]
+Underfull \hbox (badness 10000) detected at line 70
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 81
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 92
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 103
+[][][]
+ []
+
+[19]
+Underfull \hbox (badness 10000) detected at line 114
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 125
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 136
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 147
+[][][]
+ []
+
+[20]) (class_games_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_games_controller.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+ <./class_games_controller.pdf>
+<class_games_controller.pdf, id=1407, 501.875pt x 176.66pt>
+File: class_games_controller.pdf Graphic file (type pdf)
+<use class_games_controller.pdf>
+Package pdftex.def Info: class_games_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 161.66008pt x 56.9055pt.
+ [21]
+Underfull \hbox (badness 10000) detected at line 62
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 77
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 88
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 99
+[][][]
+ []
+
+[22]
+Underfull \hbox (badness 10000) detected at line 110
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 121
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 136
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 147
+[][][]
+ []
+
+) (interfacei_controller.tex
+
+pdfTeX warning: pdflatex (file ./interfacei_controller.pdf): PDF inclusion: fou
+nd PDF version <1.7>, but at most version <1.5> allowed
+ <./interfacei_controller.pdf>
+<interfacei_controller.pdf, id=1448, 501.875pt x 602.25pt>
+File: interfacei_controller.pdf Graphic file (type pdf)
+<use interfacei_controller.pdf>
+Package pdftex.def Info: interfacei_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 213.40509pt x 256.0748pt.
+ [23]) (class_index_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_index_controller.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+ <./class_index_controller.pdf>
+<class_index_controller.pdf, id=1460, 501.875pt x 189.70876pt>
+File: class_index_controller.pdf Graphic file (type pdf)
+<use class_index_controller.pdf>
+Package pdftex.def Info: class_index_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 150.54068pt x 56.9055pt.
+ [24]
+Underfull \hbox (badness 10000) detected at line 27
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 42
+[][][]
+ []
+
+) (class_login.tex [25]
+Underfull \hbox (badness 10000) detected at line 33
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+) (class_login_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_login_controller.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+ <./class_login_controller.pdf>
+<class_login_controller.pdf, id=1490, 501.875pt x 187.70125pt>
+File: class_login_controller.pdf Graphic file (type pdf)
+<use class_login_controller.pdf>
+Package pdftex.def Info: class_login_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 152.14885pt x 56.9055pt.
+ [26]
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+[27]) (class_main_controller.tex [28]
+Underfull \hbox (badness 10000) detected at line 37
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 48
+[][][]
+ []
+
+) (class_signin.tex [29]
+Underfull \hbox (badness 10000) detected at line 49
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 60
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
+
+) (class_signin_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_signin_controller.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+ <./class_signin_controller.pdf>
+<class_signin_controller.pdf, id=1559, 501.875pt x 181.67876pt>
+File: class_signin_controller.pdf Graphic file (type pdf)
+<use class_signin_controller.pdf>
+Package pdftex.def Info: class_signin_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 157.19547pt x 56.9055pt.
+ [30]
+Underfull \hbox (badness 10000) detected at line 44
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 59
+[][][]
+ []
+
+[31]) (class_user.tex [32]
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 85
+[][][]
+ []
+
+[33]
+Underfull \hbox (badness 10000) detected at line 96
+[][][]
+ []
+
+) (class_user_data.tex [34]
+Underfull \hbox (badness 10000) detected at line 37
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 53
+[][][]
+ []
+
+) (class_users_controller.tex
+
+pdfTeX warning: pdflatex (file ./class_users_controller.pdf): PDF inclusion: fo
+und PDF version <1.7>, but at most version <1.5> allowed
+ <./class_users_controller.pdf>
+<class_users_controller.pdf, id=1624, 501.875pt x 372.39125pt>
+File: class_users_controller.pdf Graphic file (type pdf)
+<use class_users_controller.pdf>
+Package pdftex.def Info: class_users_controller.pdf  used on input line 6.
+(pdftex.def)             Requested size: 76.68706pt x 56.9055pt.
+ [35]
+Underfull \hbox (badness 10000) detected at line 50
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 76
+[][][]
+ []
+
+[36]
+Underfull \hbox (badness 10000) detected at line 87
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 98
+[][][]
+ []
+
+) [37] [38
+
+]
+Chapter 5.
+(head_8php.tex
+Underfull \hbox (badness 10000) detected at line 14
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
+
+) (navbar_8php.tex
+Underfull \hbox (badness 10000) detected at line 14
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
+
+) (administrator_controller_8php.tex [39]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (controllers_8php.tex
+Underfull \hbox (badness 10000) detected at line 14
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
+
+) (dashboard_controller_8php.tex [40]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (download_controller_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (games_controller_8php.tex [41]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (index_controller_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (interface_controller_8php.tex [42]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (login_controller_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (main_controller_8php.tex [43]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (signin_controller_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (users_controller_8php.tex [44]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (index_8php.tex
 Underfull \hbox (badness 10000) detected at line 20
 [][][]
  []
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 21
-.
-(C:\Users\BDCC\AppData\Roaming\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+
 Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
 
-) [3] [4
+) (administrator_8php.tex [45]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
 
-] (refman.ind [5
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (categorie_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
 
 
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (class_8php.tex [46]
+Underfull \hbox (badness 10000) detected at line 14
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
+
+) (download_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (games_8php.tex [47]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (login_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (signin_8php.tex [48]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (user_8php.tex
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) (userdata_8php.tex [49]
+Underfull \hbox (badness 10000) detected at line 19
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 22
+[][][]
+ []
+
+) [50] (refman.ind [51
+
+
+
+] [52] [53
 
 ]) (refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: B549BB542DC1B2108D4E587B542EBFBC;986.
+(rerunfilecheck)             Checksum: 6AAC6D29119596DF964E3AC9C1BB9A48;43380.
  ) 
 Here is how much of TeX's memory you used:
- 16169 strings out of 479321
- 240685 string characters out of 2866504
- 566976 words of memory out of 3000000
- 33305 multiletter control sequences out of 15000+600000
- 444169 words of font info for 69 fonts, out of 8000000 for 9000
+ 17236 strings out of 479321
+ 270170 string characters out of 2866504
+ 622516 words of memory out of 3000000
+ 33802 multiletter control sequences out of 15000+600000
+ 452453 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 112i,11n,117p,327b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,16n,117p,427b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX
-/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/he
-lvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb
-><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (9 pages, 51599 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/u
+crr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX/f
+onts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/he
+lvetic/uhvr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb
+>
+Output written on refman.pdf (61 pages, 461885 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2136 PDF objects out of 2487 (max. 8388607)
+ 497 named destinations out of 1000 (max. 500000)
+ 1654 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Caiman web: Download Class Reference</title>
+<title>Caiman-web: Download Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Caiman web
+   <div id="projectname">Caiman-web
    </div>
   </td>
  </tr>
@@ -62,7 +62,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="class_download-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Download Class Reference</div>  </div>
 </div><!--header-->
@@ -70,21 +71,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45580608c7d8ebb4fa0af5f375477b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_download.html#a45580608c7d8ebb4fa0af5f375477b65">downloadCaiman</a> ()</td></tr>
-<tr class="separator:a45580608c7d8ebb4fa0af5f375477b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab131e326d0b102fc49a5e0fd39cba452"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_download.html#ab131e326d0b102fc49a5e0fd39cba452">downloadCaiman</a> ()</td></tr>
+<tr class="separator:ab131e326d0b102fc49a5e0fd39cba452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="download_8php_source.html#l00010">10</a> of file <a class="el" href="download_8php_source.html">download.php</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a45580608c7d8ebb4fa0af5f375477b65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45580608c7d8ebb4fa0af5f375477b65">&#9670;&nbsp;</a></span>downloadCaiman()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab131e326d0b102fc49a5e0fd39cba452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab131e326d0b102fc49a5e0fd39cba452">&#9670;&nbsp;</a></span>downloadCaiman()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">downloadCaiman </td>
+          <td class="memname">Download::downloadCaiman </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -94,28 +92,10 @@ Public Member Functions</h2></td></tr>
 <p>used to download caiman</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="download_8php_source.html#l00018">18</a> of file <a class="el" href="download_8php_source.html">download.php</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        $filename = <span class="stringliteral">&#39;../release/caiman.jpg&#39;</span>; <span class="comment">// of course find the exact filename....        </span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        header(<span class="stringliteral">&#39;Pragma: public&#39;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        header(<span class="stringliteral">&#39;Expires: 0&#39;</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        header(<span class="stringliteral">&#39;Cache-Control: must-revalidate, post-check=0, pre-check=0&#39;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        header(<span class="stringliteral">&#39;Cache-Control: private&#39;</span>, <span class="keyword">false</span>); <span class="comment">// required for certain browsers </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        header(<span class="stringliteral">&#39;Content-Type: application/jpg&#39;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        header(<span class="stringliteral">&#39;Content-Disposition: attachment; filename=&quot;&#39;</span> . basename($filename) . <span class="stringliteral">&#39;&quot;;&#39;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        header(<span class="stringliteral">&#39;Content-Transfer-Encoding: binary&#39;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        header(<span class="stringliteral">&#39;Content-Length: &#39;</span> . filesize($filename));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        readfile($filename);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        exit;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>models/<a class="el" href="download_8php_source.html">download.php</a></li>
+<li>models/<a class="el" href="download_8php.html">download.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

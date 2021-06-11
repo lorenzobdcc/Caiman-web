@@ -3,95 +3,35 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_categories_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_categories_a137a73a9065738dbf7b3f80ed24f37fa}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}{get\+List\+All\+Categories}} ()
+\mbox{\hyperlink{class_categories_ab5598a427dfbbdd515b6054259cc2516}{get\+List\+All\+Categories}} ()
 \item 
-\mbox{\hyperlink{class_categories_a09134696b110db5b208f20ca5e8dbb9d}{get\+Categories\+Of\+Game}} (int \$id\+Game)
+\mbox{\hyperlink{class_categories_af090889e800f1ff73fa91c85f4ad37e1}{get\+Categories\+Of\+Game}} (int \$id\+Game)
 \item 
-\mbox{\hyperlink{class_categories_ab8951194252576f9f6ccdc8cc7364c51}{add\+Categorie}} (string \$categorie\+Name)
+\mbox{\hyperlink{class_categories_a0481363499d3f3a89fef6a84b036636d}{add\+Categorie}} (string \$categorie\+Name)
 \item 
-\mbox{\hyperlink{class_categories_a068278ad777b093229da1da3066fef05}{add\+Categorie\+To\+Game}} (int \$id\+Game, int \$id\+Categorie)
+\mbox{\hyperlink{class_categories_a9a64a39241e1fff7600534decc18d973}{add\+Categorie\+To\+Game}} (int \$id\+Game, int \$id\+Categorie)
 \item 
-\mbox{\hyperlink{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}{del\+Categorie\+From\+Game}} (int \$id\+Game, int \$id\+Categorie)
+\mbox{\hyperlink{class_categories_a8c088c2c11fff6fdd8e6d2de9311e69d}{del\+Categorie\+From\+Game}} (int \$id\+Game, int \$id\+Categorie)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file categorie.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_categories_a095c5d389db211932136b53f25f39685}\label{class_categories_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_categories_a137a73a9065738dbf7b3f80ed24f37fa}\label{class_categories_a137a73a9065738dbf7b3f80ed24f37fa}} 
 \index{Categories@{Categories}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default constructor 
 
-Definition at line 31 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{32     \{}
-\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>dbh == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{34             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{35                 \$this-\/>dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{36                     PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{37                     PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{38                 ));}
-\DoxyCodeLine{39                 \textcolor{comment}{//get all categories}}
-\DoxyCodeLine{40                 \$sqlGetAllCategories = \textcolor{stringliteral}{"{}SELECT * FROM categorie"{}};}
-\DoxyCodeLine{41                 \$this-\/>psGetAllCategories = \$this-\/>dbh-\/>prepare(\$sqlGetAllCategories);}
-\DoxyCodeLine{42                 \$this-\/>psGetAllCategories-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44                 \textcolor{comment}{//add categorie}}
-\DoxyCodeLine{45                 \$sqlAddCategorie = \textcolor{stringliteral}{"{}INSERT INTO categorie (name) VALUES (:categorie\_name)"{}};}
-\DoxyCodeLine{46                 \$this-\/>psAddCategorie = \$this-\/>dbh-\/>prepare(\$sqlAddCategorie);}
-\DoxyCodeLine{47                 \$this-\/>psAddCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49                 \textcolor{comment}{//add categorie to game}}
-\DoxyCodeLine{50                 \$sqlAddCategorieToGame = \textcolor{stringliteral}{"{}INSERT INTO gamehascategorie (idGame,idCategorie) VALUES (:insert\_idGame, :insert\_idCategorie)"{}};}
-\DoxyCodeLine{51                 \$this-\/>psAddCategorieToGame = \$this-\/>dbh-\/>prepare(\$sqlAddCategorieToGame);}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53                 \textcolor{comment}{//check if game has a specific categorie}}
-\DoxyCodeLine{54                 \$sqlCheckIfGameHasCategorie = \textcolor{stringliteral}{"{}SELECT * FROM gamehascategorie WHERE idCategorie = :insert\_idCategorie AND idGame = :insert\_idGame"{}};}
-\DoxyCodeLine{55                 \$this-\/>psCheckIfGameHasCategorie = \$this-\/>dbh-\/>prepare(\$sqlCheckIfGameHasCategorie);}
-\DoxyCodeLine{56                 \$this-\/>psCheckIfGameHasCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58                 \textcolor{comment}{//del categorie from game}}
-\DoxyCodeLine{59                 \$sqlDelCategorieFromGame = \textcolor{stringliteral}{"{}DELETE FROM gamehascategorie  WHERE idCategorie = :del\_idCategorie AND idGame = :del\_idGame"{}};}
-\DoxyCodeLine{60                 \$this-\/>psDelCategorieFromGame = \$this-\/>dbh-\/>prepare(\$sqlDelCategorieFromGame);}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62                 \textcolor{comment}{//get categories of a game}}
-\DoxyCodeLine{63                 \$sqlGameCategorie = \textcolor{stringliteral}{"{}SELECT c.name, c.id FROM `gamehascategorie` as ghc}}
-\DoxyCodeLine{64 \textcolor{stringliteral}{                LEFT JOIN categorie as c}}
-\DoxyCodeLine{65 \textcolor{stringliteral}{                ON ghc.idCategorie = c.id}}
-\DoxyCodeLine{66 \textcolor{stringliteral}{                LEFT JOIN game as g}}
-\DoxyCodeLine{67 \textcolor{stringliteral}{                ON ghc.idGame = g.id}}
-\DoxyCodeLine{68 \textcolor{stringliteral}{                WHERE idGame = :search\_id"{}};}
-\DoxyCodeLine{69                 \$this-\/>psGameCategorie = \$this-\/>dbh-\/>prepare(\$sqlGameCategorie);}
-\DoxyCodeLine{70                 \$this-\/>psGameCategorie-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{71             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{72                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{73                 die();}
-\DoxyCodeLine{74             \}}
-\DoxyCodeLine{75         \}}
-\DoxyCodeLine{76     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_categories_ab8951194252576f9f6ccdc8cc7364c51}\label{class_categories_ab8951194252576f9f6ccdc8cc7364c51}} 
+\mbox{\Hypertarget{class_categories_a0481363499d3f3a89fef6a84b036636d}\label{class_categories_a0481363499d3f3a89fef6a84b036636d}} 
 \index{Categories@{Categories}!addCategorie@{addCategorie}}
 \index{addCategorie@{addCategorie}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{addCategorie()}{addCategorie()}}
-{\footnotesize\ttfamily add\+Categorie (\begin{DoxyParamCaption}\item[{string}]{\$categorie\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::add\+Categorie (\begin{DoxyParamCaption}\item[{string}]{\$categorie\+Name }\end{DoxyParamCaption})}
 
 add a new categorie in the database
 
@@ -103,29 +43,11 @@ string & {\em \$categorie\+Name} & \\
 \begin{DoxyReturn}{Returns}
 html 
 \end{DoxyReturn}
-
-
-Definition at line 120 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{121     \{}
-\DoxyCodeLine{122         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{123             \$this-\/>psAddCategorie-\/>execute(array(\textcolor{stringliteral}{':categorie\_name'} => \$categorieName));}
-\DoxyCodeLine{124             \$result = \$this-\/>psAddCategorie-\/>fetchAll();}
-\DoxyCodeLine{125         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{126             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{127             die();}
-\DoxyCodeLine{128         \}}
-\DoxyCodeLine{129         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{130     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_categories_a068278ad777b093229da1da3066fef05}\label{class_categories_a068278ad777b093229da1da3066fef05}} 
+\mbox{\Hypertarget{class_categories_a9a64a39241e1fff7600534decc18d973}\label{class_categories_a9a64a39241e1fff7600534decc18d973}} 
 \index{Categories@{Categories}!addCategorieToGame@{addCategorieToGame}}
 \index{addCategorieToGame@{addCategorieToGame}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{addCategorieToGame()}{addCategorieToGame()}}
-{\footnotesize\ttfamily add\+Categorie\+To\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::add\+Categorie\+To\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
 
 add a categorie to a game
 
@@ -139,37 +61,11 @@ integer & {\em \$id\+Categorie} & \\
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 139 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{140     \{}
-\DoxyCodeLine{141         \$result = \textcolor{keyword}{null};}
-\DoxyCodeLine{142         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{143             \$this-\/>psCheckIfGameHasCategorie-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
-\DoxyCodeLine{144             \$result = \$this-\/>psCheckIfGameHasCategorie-\/>fetchAll();}
-\DoxyCodeLine{145         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{146             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{147             die();}
-\DoxyCodeLine{148         \}}
-\DoxyCodeLine{149         \textcolor{keywordflow}{if} (\$result == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{150             \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{151                 \$this-\/>psAddCategorieToGame-\/>execute(array(\textcolor{stringliteral}{':insert\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':insert\_idGame'} => \$idGame));}
-\DoxyCodeLine{152             \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{153                 print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{154                 die();}
-\DoxyCodeLine{155             \}}
-\DoxyCodeLine{156         \}}
-\DoxyCodeLine{157     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}\label{class_categories_a9c5ce287484a09dbf14ddf8115cfc7e2}} 
+\mbox{\Hypertarget{class_categories_a8c088c2c11fff6fdd8e6d2de9311e69d}\label{class_categories_a8c088c2c11fff6fdd8e6d2de9311e69d}} 
 \index{Categories@{Categories}!delCategorieFromGame@{delCategorieFromGame}}
 \index{delCategorieFromGame@{delCategorieFromGame}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{delCategorieFromGame()}{delCategorieFromGame()}}
-{\footnotesize\ttfamily del\+Categorie\+From\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::del\+Categorie\+From\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+Categorie }\end{DoxyParamCaption})}
 
 delete a cotegorie of a game
 
@@ -183,27 +79,11 @@ integer & {\em \$id\+Categorie} & \\
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 165 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{166     \{}
-\DoxyCodeLine{167         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{168             \$this-\/>psDelCategorieFromGame-\/>execute(array(\textcolor{stringliteral}{':del\_idCategorie'} => \$idCategorie, \textcolor{stringliteral}{':del\_idGame'} => \$idGame));}
-\DoxyCodeLine{169         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{170             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{171             die();}
-\DoxyCodeLine{172         \}}
-\DoxyCodeLine{173     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_categories_a09134696b110db5b208f20ca5e8dbb9d}\label{class_categories_a09134696b110db5b208f20ca5e8dbb9d}} 
+\mbox{\Hypertarget{class_categories_af090889e800f1ff73fa91c85f4ad37e1}\label{class_categories_af090889e800f1ff73fa91c85f4ad37e1}} 
 \index{Categories@{Categories}!getCategoriesOfGame@{getCategoriesOfGame}}
 \index{getCategoriesOfGame@{getCategoriesOfGame}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{getCategoriesOfGame()}{getCategoriesOfGame()}}
-{\footnotesize\ttfamily get\+Categories\+Of\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::get\+Categories\+Of\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
 get the categories of a game
 
@@ -215,54 +95,17 @@ integer & {\em \$id\+Game} & \\
 \begin{DoxyReturn}{Returns}
 list of categories 
 \end{DoxyReturn}
-
-
-Definition at line 102 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{103     \{}
-\DoxyCodeLine{104         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{105             \$this-\/>psGameCategorie-\/>execute(array(\textcolor{stringliteral}{':search\_id'} => \$idGame));}
-\DoxyCodeLine{106             \$result = \$this-\/>psGameCategorie-\/>fetchAll();}
-\DoxyCodeLine{107         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{108             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{109             die();}
-\DoxyCodeLine{110         \}}
-\DoxyCodeLine{111         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{112     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}\label{class_categories_a11e3e7b054202fc69b60fd6c97ab200f}} 
+\mbox{\Hypertarget{class_categories_ab5598a427dfbbdd515b6054259cc2516}\label{class_categories_ab5598a427dfbbdd515b6054259cc2516}} 
 \index{Categories@{Categories}!getListAllCategories@{getListAllCategories}}
 \index{getListAllCategories@{getListAllCategories}!Categories@{Categories}}
 \doxysubsubsection{\texorpdfstring{getListAllCategories()}{getListAllCategories()}}
-{\footnotesize\ttfamily get\+List\+All\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Categories\+::get\+List\+All\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 returns list of all categories
 
 \begin{DoxyReturn}{Returns}
 array with all list 
 \end{DoxyReturn}
-
-
-Definition at line 83 of file categorie.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{84     \{}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{87             \$this-\/>psGetAllCategories-\/>execute();}
-\DoxyCodeLine{88             \$result = \$this-\/>psGetAllCategories-\/>fetchAll();}
-\DoxyCodeLine{89         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{90             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{91             die();}
-\DoxyCodeLine{92         \}}
-\DoxyCodeLine{93         \textcolor{keywordflow}{return} \$result;}
-\DoxyCodeLine{94     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

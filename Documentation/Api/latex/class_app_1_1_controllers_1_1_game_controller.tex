@@ -1,30 +1,50 @@
-\hypertarget{class_app_1_1_controllers_1_1_game_controller}{}\doxysection{App\textbackslash{}Controllers\textbackslash{}Game\+Controller Class Reference}
-\label{class_app_1_1_controllers_1_1_game_controller}\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\hypertarget{class_app_1_1_controllers_1_1_game_controller}{}\doxysection{Game\+Controller Class Reference}
+\label{class_app_1_1_controllers_1_1_game_controller}\index{GameController@{GameController}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ab47bde34d6b6bf5545f8d8303affc761}{\+\_\+\+\_\+construct}} (\textbackslash{}PDO \$db)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}{get\+All\+Games}} ()
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_adb126d2fb743e7fb704f2e59273a296c}{get\+All\+Games}} ()
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}{get\+Game\+From\+Category}} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ac5b70f2236f66a1af3c2accf0dd2cf2a}{get\+Game\+From\+Category}} (int \$id)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}{get\+Favorite\+Game\+Of\+User}} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a297b9f57daf533236697f8feca4880fd}{get\+Favorite\+Game\+Of\+User}} (int \$id)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}{get\+Time\+Games}} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_adbea4b6102f44b1aa47ed39b9fd35bd0}{get\+Time\+Games}} (int \$id)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}{get\+Games\+From\+Name}} (string \$name)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a1256d0da5d5466cd3ea7a45277ba0360}{get\+Games\+From\+Name}} (string \$name)
 \item 
-\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}{get\+Game}} (int \$id)
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ad325d16bd33ea296f2afc718c3bbf41b}{get\+Game}} (int \$id)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a6c7720dc6615b3d98cda7ba33f16590e}{get\+Time\+Played}} (int \$id\+Game, int \$id\+User)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_aab327a61c60ac1da0629a0e99f10752b}{add\+One\+MInute\+To\+Game\+Time}} (int \$id\+Game, int \$id\+User)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ae8a7467a38af768783b9ee0772a16c0c}{get\+URL}} (int \$id\+Game, string \$apikey)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a6f8933d0ed9c9ee2b53b0a29e90c982b}{get\+URLSave}} (int \$id\+Emulator, int \$id\+User, string \$apikey)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_a59e4dd87c3883e4dd47d8f15154bca09}{Add\+Save}} (\$id\+Emulator, \$id\+User, \$api\+Key, \$file)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_af82c9b71a6862dd0c0c109511dd67b03}{get\+File\+Name}} (int \$id\+Game)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_aaaeef997a097d5d90170411ed8a941de}{remove\+Game\+From\+Favorite}} (int \$id\+Game, int \$id\+User)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ab65da62e219495176dd996d9113ce1e0}{add\+Game\+To\+Favorite}} (int \$id\+Game, int \$id\+User)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_aa8f365f03f3cfb5cdb4d7b7bfbb1e330}{check\+If\+Game\+Favorite}} (int \$id\+Game, int \$id\+User)
+\item 
+\mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller_ae88b88117fed7c6c1327eb4f089883da}{get\+Console}} (int \$id\+Game)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}\label{class_app_1_1_controllers_1_1_game_controller_a6651412ca50b55c884c2b982b1afe6f8}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!\_\_construct@{\_\_construct}}
-\index{\_\_construct@{\_\_construct}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ab47bde34d6b6bf5545f8d8303affc761}\label{class_app_1_1_controllers_1_1_game_controller_ab47bde34d6b6bf5545f8d8303affc761}} 
+\index{GameController@{GameController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\textbackslash{}PDO}]{\$db }\end{DoxyParamCaption})}
 
 Constructor of the \mbox{\hyperlink{class_app_1_1_controllers_1_1_game_controller}{Game\+Controller}} object.
 
@@ -36,24 +56,105 @@ PDO & {\em \$db} & The database connection \\
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}\label{class_app_1_1_controllers_1_1_game_controller_aa2593f333fc37c1e28d7ea8b5726469e}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getAllGames@{getAllGames}}
-\index{getAllGames@{getAllGames}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ab65da62e219495176dd996d9113ce1e0}\label{class_app_1_1_controllers_1_1_game_controller_ab65da62e219495176dd996d9113ce1e0}} 
+\index{GameController@{GameController}!addGameToFavorite@{addGameToFavorite}}
+\index{addGameToFavorite@{addGameToFavorite}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{addGameToFavorite()}{addGameToFavorite()}}
+{\footnotesize\ttfamily add\+Game\+To\+Favorite (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+
+Add game to favorite
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+integer & {\em \$id\+User} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_aab327a61c60ac1da0629a0e99f10752b}\label{class_app_1_1_controllers_1_1_game_controller_aab327a61c60ac1da0629a0e99f10752b}} 
+\index{GameController@{GameController}!addOneMInuteToGameTime@{addOneMInuteToGameTime}}
+\index{addOneMInuteToGameTime@{addOneMInuteToGameTime}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{addOneMInuteToGameTime()}{addOneMInuteToGameTime()}}
+{\footnotesize\ttfamily add\+One\+MInute\+To\+Game\+Time (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+
+Method to update the time played by a user this method will add one minute in the database
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & id\+Game \\
+\hline
+{\em int} & id\+User \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a59e4dd87c3883e4dd47d8f15154bca09}\label{class_app_1_1_controllers_1_1_game_controller_a59e4dd87c3883e4dd47d8f15154bca09}} 
+\index{GameController@{GameController}!AddSave@{AddSave}}
+\index{AddSave@{AddSave}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{AddSave()}{AddSave()}}
+{\footnotesize\ttfamily Add\+Save (\begin{DoxyParamCaption}\item[{}]{\$id\+Emulator,  }\item[{}]{\$id\+User,  }\item[{}]{\$api\+Key,  }\item[{}]{\$file }\end{DoxyParamCaption})}
+
+Method to upload the saves file
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_aa8f365f03f3cfb5cdb4d7b7bfbb1e330}\label{class_app_1_1_controllers_1_1_game_controller_aa8f365f03f3cfb5cdb4d7b7bfbb1e330}} 
+\index{GameController@{GameController}!checkIfGameFavorite@{checkIfGameFavorite}}
+\index{checkIfGameFavorite@{checkIfGameFavorite}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{checkIfGameFavorite()}{checkIfGameFavorite()}}
+{\footnotesize\ttfamily check\+If\+Game\+Favorite (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+
+Method to check if game is already in favorite
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+string & {\em \$apikey} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_adb126d2fb743e7fb704f2e59273a296c}\label{class_app_1_1_controllers_1_1_game_controller_adb126d2fb743e7fb704f2e59273a296c}} 
+\index{GameController@{GameController}!getAllGames@{getAllGames}}
+\index{getAllGames@{getAllGames}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{getAllGames()}{getAllGames()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Method to return all games in JSON format.
 
 \begin{DoxyReturn}{Returns}
 string The status and the body in json format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}\label{class_app_1_1_controllers_1_1_game_controller_a5b1d49e8c3463fd03333239fbe643a58}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getFavoriteGameOfUser@{getFavoriteGameOfUser}}
-\index{getFavoriteGameOfUser@{getFavoriteGameOfUser}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
-\doxysubsubsection{\texorpdfstring{getFavoriteGameOfUser()}{getFavoriteGameOfUser()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Favorite\+Game\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ae88b88117fed7c6c1327eb4f089883da}\label{class_app_1_1_controllers_1_1_game_controller_ae88b88117fed7c6c1327eb4f089883da}} 
+\index{GameController@{GameController}!getConsole@{getConsole}}
+\index{getConsole@{getConsole}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getConsole()}{getConsole()}}
+{\footnotesize\ttfamily get\+Console (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
 
-Method to return a list of games
+Method to get the console of a game
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a297b9f57daf533236697f8feca4880fd}\label{class_app_1_1_controllers_1_1_game_controller_a297b9f57daf533236697f8feca4880fd}} 
+\index{GameController@{GameController}!getFavoriteGameOfUser@{getFavoriteGameOfUser}}
+\index{getFavoriteGameOfUser@{getFavoriteGameOfUser}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getFavoriteGameOfUser()}{getFavoriteGameOfUser()}}
+{\footnotesize\ttfamily get\+Favorite\+Game\+Of\+User (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+
+Method to return the list of the user favorites games
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -63,11 +164,27 @@ integer & {\em \$id} & \\
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}\label{class_app_1_1_controllers_1_1_game_controller_a74c35d70fbbf15793a677f59063c2282}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGame@{getGame}}
-\index{getGame@{getGame}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_af82c9b71a6862dd0c0c109511dd67b03}\label{class_app_1_1_controllers_1_1_game_controller_af82c9b71a6862dd0c0c109511dd67b03}} 
+\index{GameController@{GameController}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily get\+File\+Name (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game }\end{DoxyParamCaption})}
+
+Get the filename of a game
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ad325d16bd33ea296f2afc718c3bbf41b}\label{class_app_1_1_controllers_1_1_game_controller_ad325d16bd33ea296f2afc718c3bbf41b}} 
+\index{GameController@{GameController}!getGame@{getGame}}
+\index{getGame@{getGame}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{getGame()}{getGame()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+Game (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
 
 Method to return a game in JSON format.
 
@@ -79,11 +196,11 @@ int & {\em \$id} & The game identifier \\
 \begin{DoxyReturn}{Returns}
 string The status and the body in JSON format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}\label{class_app_1_1_controllers_1_1_game_controller_a1ad2ee3c1fe406ba8018d52f2150e14c}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGameFromCategory@{getGameFromCategory}}
-\index{getGameFromCategory@{getGameFromCategory}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ac5b70f2236f66a1af3c2accf0dd2cf2a}\label{class_app_1_1_controllers_1_1_game_controller_ac5b70f2236f66a1af3c2accf0dd2cf2a}} 
+\index{GameController@{GameController}!getGameFromCategory@{getGameFromCategory}}
+\index{getGameFromCategory@{getGameFromCategory}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{getGameFromCategory()}{getGameFromCategory()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Game\+From\+Category (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+Game\+From\+Category (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
 
 Method to return a list of games in a catagory
 
@@ -95,33 +212,91 @@ int & {\em \$id} & The dog identifier \\
 \begin{DoxyReturn}{Returns}
 string The status and the body in JSON format of the response 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}\label{class_app_1_1_controllers_1_1_game_controller_af8998a2f6895b23f58b9e6078a450126}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getGamesFromName@{getGamesFromName}}
-\index{getGamesFromName@{getGamesFromName}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a1256d0da5d5466cd3ea7a45277ba0360}\label{class_app_1_1_controllers_1_1_game_controller_a1256d0da5d5466cd3ea7a45277ba0360}} 
+\index{GameController@{GameController}!getGamesFromName@{getGamesFromName}}
+\index{getGamesFromName@{getGamesFromName}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{getGamesFromName()}{getGamesFromName()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Games\+From\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+Games\+From\+Name (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
 
-Method to return a game in JSON format.
-
-
-\begin{DoxyParams}[1]{Parameters}
-int & {\em \$id} & The game identifier \\
+Method to return a list of game where the name match the given parameters 
+\begin{DoxyParams}{Parameters}
+{\em string} & name \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-string The status and the body in JSON format of the response 
+list game 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}\label{class_app_1_1_controllers_1_1_game_controller_acd53fc5c46d9a3266126c0fe1739ca7d}} 
-\index{App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}!getTimeGames@{getTimeGames}}
-\index{getTimeGames@{getTimeGames}!App\textbackslash{}Controllers\textbackslash{}GameController@{App\textbackslash{}Controllers\textbackslash{}GameController}}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_adbea4b6102f44b1aa47ed39b9fd35bd0}\label{class_app_1_1_controllers_1_1_game_controller_adbea4b6102f44b1aa47ed39b9fd35bd0}} 
+\index{GameController@{GameController}!getTimeGames@{getTimeGames}}
+\index{getTimeGames@{getTimeGames}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{getTimeGames()}{getTimeGames()}}
-{\footnotesize\ttfamily App\textbackslash{}\+Controllers\textbackslash{}\+Game\+Controller\+::get\+Time\+Games (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily get\+Time\+Games (\begin{DoxyParamCaption}\item[{int}]{\$id }\end{DoxyParamCaption})}
 
-Method to return a list of games
+Method to return the list of game the user as already played
 
 
 \begin{DoxyParams}[1]{Parameters}
 integer & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a6c7720dc6615b3d98cda7ba33f16590e}\label{class_app_1_1_controllers_1_1_game_controller_a6c7720dc6615b3d98cda7ba33f16590e}} 
+\index{GameController@{GameController}!getTimePlayed@{getTimePlayed}}
+\index{getTimePlayed@{getTimePlayed}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getTimePlayed()}{getTimePlayed()}}
+{\footnotesize\ttfamily get\+Time\+Played (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+
+Method to get the time a user as play a game \mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_ae8a7467a38af768783b9ee0772a16c0c}\label{class_app_1_1_controllers_1_1_game_controller_ae8a7467a38af768783b9ee0772a16c0c}} 
+\index{GameController@{GameController}!getURL@{getURL}}
+\index{getURL@{getURL}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getURL()}{getURL()}}
+{\footnotesize\ttfamily get\+URL (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{string}]{\$apikey }\end{DoxyParamCaption})}
+
+Return the game file
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+string & {\em \$apikey} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_a6f8933d0ed9c9ee2b53b0a29e90c982b}\label{class_app_1_1_controllers_1_1_game_controller_a6f8933d0ed9c9ee2b53b0a29e90c982b}} 
+\index{GameController@{GameController}!getURLSave@{getURLSave}}
+\index{getURLSave@{getURLSave}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{getURLSave()}{getURLSave()}}
+{\footnotesize\ttfamily get\+URLSave (\begin{DoxyParamCaption}\item[{int}]{\$id\+Emulator,  }\item[{int}]{\$id\+User,  }\item[{string}]{\$apikey }\end{DoxyParamCaption})}
+
+Return the ziped save file of one emulator for one user
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+string & {\em \$apikey} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_app_1_1_controllers_1_1_game_controller_aaaeef997a097d5d90170411ed8a941de}\label{class_app_1_1_controllers_1_1_game_controller_aaaeef997a097d5d90170411ed8a941de}} 
+\index{GameController@{GameController}!removeGameFromFavorite@{removeGameFromFavorite}}
+\index{removeGameFromFavorite@{removeGameFromFavorite}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{removeGameFromFavorite()}{removeGameFromFavorite()}}
+{\footnotesize\ttfamily remove\+Game\+From\+Favorite (\begin{DoxyParamCaption}\item[{int}]{\$id\+Game,  }\item[{int}]{\$id\+User }\end{DoxyParamCaption})}
+
+Remove game from favorite
+
+
+\begin{DoxyParams}[1]{Parameters}
+integer & {\em \$id\+Game} & \\
+\hline
+string & {\em \$apikey} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

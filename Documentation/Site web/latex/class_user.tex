@@ -3,44 +3,40 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_user_a33a494666535d427dd8a1e157d926c12}{\+\_\+\+\_\+construct}} (string \$usernamep, string \$emailp, string \$id\+Rolep, int \$id\+Userp)
+\mbox{\hyperlink{class_user_a43825b298d9ca90de26753193f1d3aac}{\+\_\+\+\_\+construct}} (string \$usernamep, string \$emailp, string \$id\+Rolep, int \$id\+Userp, string \$saltp)
 \item 
-\mbox{\hyperlink{class_user_a0cd589276a2e526192db261f0813f244}{update\+Password}} (string \$new\+Password, string \$new\+Password\+Repeat, string \$old\+Password)
+\mbox{\hyperlink{class_user_a6c64b2463a0f7526ce208ea7c2886a13}{update\+Password}} (string \$new\+Password, string \$new\+Password\+Repeat, string \$old\+Password)
 \item 
-\mbox{\hyperlink{class_user_a187c3c585763cb6bc4364bfda2874381}{update\+Private\+Account}} ()
+\mbox{\hyperlink{class_user_aab9348f59e67185f8b8718f120a0b5ee}{update\+Private\+Account}} ()
 \item 
-\mbox{\hyperlink{class_user_a7ee23f234f605d5e172d7bb660d2e837}{get\+Private\+Account}} ()
+\mbox{\hyperlink{class_user_a2d0fe288579444f08e8c158e29c35e75}{get\+Private\+Account}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_user_a0eb82aa5f81cf845de4b36cd653c42cf}\label{class_user_a0eb82aa5f81cf845de4b36cd653c42cf}} 
+\mbox{\Hypertarget{class_user_ad22e19a56691cba5dc54ac38a91b79ff}\label{class_user_ad22e19a56691cba5dc54ac38a91b79ff}} 
 {\bfseries \$username}
 \item 
-\mbox{\Hypertarget{class_user_ad634f418b20382e2802f80532d76d3cd}\label{class_user_ad634f418b20382e2802f80532d76d3cd}} 
+\mbox{\Hypertarget{class_user_a3bef7b70689d1e56cafbf750ff6a4aed}\label{class_user_a3bef7b70689d1e56cafbf750ff6a4aed}} 
 {\bfseries \$email}
 \item 
-\mbox{\Hypertarget{class_user_a1ea903cca285c7c0b4c9203932100309}\label{class_user_a1ea903cca285c7c0b4c9203932100309}} 
+\mbox{\Hypertarget{class_user_ab47cde807f0fcf85932226b162cb4520}\label{class_user_ab47cde807f0fcf85932226b162cb4520}} 
 {\bfseries \$role}
 \item 
-\mbox{\Hypertarget{class_user_a131a1d79576d015b9319cb82c02a97c0}\label{class_user_a131a1d79576d015b9319cb82c02a97c0}} 
+\mbox{\Hypertarget{class_user_a463f6f3de68c7d605185c2d53602e0d0}\label{class_user_a463f6f3de68c7d605185c2d53602e0d0}} 
 {\bfseries \$id\+User}
+\item 
+\mbox{\Hypertarget{class_user_a1ad802941e2a48ade18548f31b53dd2c}\label{class_user_a1ad802941e2a48ade18548f31b53dd2c}} 
+{\bfseries \$salt}
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file user.\+php.
-
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_user_a33a494666535d427dd8a1e157d926c12}\label{class_user_a33a494666535d427dd8a1e157d926c12}} 
+\mbox{\Hypertarget{class_user_a43825b298d9ca90de26753193f1d3aac}\label{class_user_a43825b298d9ca90de26753193f1d3aac}} 
 \index{User@{User}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!User@{User}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{string}]{\$usernamep,  }\item[{string}]{\$emailp,  }\item[{string}]{\$id\+Rolep,  }\item[{int}]{\$id\+Userp }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{string}]{\$usernamep,  }\item[{string}]{\$emailp,  }\item[{string}]{\$id\+Rolep,  }\item[{int}]{\$id\+Userp,  }\item[{string}]{\$saltp }\end{DoxyParamCaption})}
 
 default constructor
 
@@ -57,72 +53,23 @@ integer & {\em \$id\+Userp} & \\
 \end{DoxyParams}
 
 
-Definition at line 26 of file user.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{27     \{}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         \$this-\/>username = \$usernamep;}
-\DoxyCodeLine{30         \$this-\/>email = \$emailp;}
-\DoxyCodeLine{31         \$this-\/>role = \$idRolep;}
-\DoxyCodeLine{32         \$this-\/>idUser = \$idUserp;}
-\DoxyCodeLine{33     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_user_a7ee23f234f605d5e172d7bb660d2e837}\label{class_user_a7ee23f234f605d5e172d7bb660d2e837}} 
+\mbox{\Hypertarget{class_user_a2d0fe288579444f08e8c158e29c35e75}\label{class_user_a2d0fe288579444f08e8c158e29c35e75}} 
 \index{User@{User}!getPrivateAccount@{getPrivateAccount}}
 \index{getPrivateAccount@{getPrivateAccount}!User@{User}}
 \doxysubsubsection{\texorpdfstring{getPrivateAccount()}{getPrivateAccount()}}
-{\footnotesize\ttfamily get\+Private\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+::get\+Private\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 use to know if the account is privat or not
 
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-
-
-Definition at line 109 of file user.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{110     \{}
-\DoxyCodeLine{111         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{112             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{113             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{114         ));}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{117             \$sqlGetPrivateAccount = \textcolor{stringliteral}{"{}SELECT privateAccount FROM user WHERE id = :id\_user"{}};}
-\DoxyCodeLine{118             \$psGetPrivateAccount = \$dbh-\/>prepare(\$sqlGetPrivateAccount);}
-\DoxyCodeLine{119             \$psGetPrivateAccount-\/>setFetchMode(PDO::FETCH\_ASSOC);}
-\DoxyCodeLine{120             \$psGetPrivateAccount-\/>execute(array(\textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
-\DoxyCodeLine{121             \$result = \$psGetPrivateAccount-\/>fetchAll();}
-\DoxyCodeLine{122         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{123             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{124             die();}
-\DoxyCodeLine{125         \}}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127         \textcolor{keywordflow}{return} \$result[0][\textcolor{stringliteral}{'privateAccount'}];}
-\DoxyCodeLine{128     \}}
-
-\end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=322pt]{class_user_a7ee23f234f605d5e172d7bb660d2e837_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_user_a0cd589276a2e526192db261f0813f244}\label{class_user_a0cd589276a2e526192db261f0813f244}} 
+\mbox{\Hypertarget{class_user_a6c64b2463a0f7526ce208ea7c2886a13}\label{class_user_a6c64b2463a0f7526ce208ea7c2886a13}} 
 \index{User@{User}!updatePassword@{updatePassword}}
 \index{updatePassword@{updatePassword}!User@{User}}
 \doxysubsubsection{\texorpdfstring{updatePassword()}{updatePassword()}}
-{\footnotesize\ttfamily update\+Password (\begin{DoxyParamCaption}\item[{string}]{\$new\+Password,  }\item[{string}]{\$new\+Password\+Repeat,  }\item[{string}]{\$old\+Password }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+::update\+Password (\begin{DoxyParamCaption}\item[{string}]{\$new\+Password,  }\item[{string}]{\$new\+Password\+Repeat,  }\item[{string}]{\$old\+Password }\end{DoxyParamCaption})}
 
 update the user password in the database
 
@@ -138,92 +85,17 @@ string & {\em \$old\+Password} & \\
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-
-
-Definition at line 43 of file user.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{44     \{}
-\DoxyCodeLine{45         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{46             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{47             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{48         ));}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50         \$hasBeenUpdated = 1;}
-\DoxyCodeLine{51         \textcolor{keywordflow}{if} (password\_verify(\$oldPassword, \$this-\/>getUserPassword())) \{}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53             \textcolor{keywordflow}{if} (\$newPasswordRepeat == \$newPassword) \{}
-\DoxyCodeLine{54                 \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{55                     \$sqlUpdatePassword = \textcolor{stringliteral}{"{}UPDATE user  SET password = :update\_password WHERE id = :id\_user"{}};}
-\DoxyCodeLine{56                     \$psUpdatePassword = \$dbh-\/>prepare(\$sqlUpdatePassword);}
-\DoxyCodeLine{57                     \$psUpdatePassword-\/>execute(array(\textcolor{stringliteral}{':update\_password'} => password\_hash(\$newPassword, PASSWORD\_DEFAULT), \textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59                     \$hasBeenUpdated = 0;}
-\DoxyCodeLine{60                 \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{61                     print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{62                     die();}
-\DoxyCodeLine{63                 \}}
-\DoxyCodeLine{64             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{65                 \$hasBeenUpdated = 2;}
-\DoxyCodeLine{66             \}}
-\DoxyCodeLine{67         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{68             \$hasBeenUpdated = 4;}
-\DoxyCodeLine{69         \}}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71         \textcolor{keywordflow}{return} \$hasBeenUpdated;}
-\DoxyCodeLine{72     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_user_a187c3c585763cb6bc4364bfda2874381}\label{class_user_a187c3c585763cb6bc4364bfda2874381}} 
+\mbox{\Hypertarget{class_user_aab9348f59e67185f8b8718f120a0b5ee}\label{class_user_aab9348f59e67185f8b8718f120a0b5ee}} 
 \index{User@{User}!updatePrivateAccount@{updatePrivateAccount}}
 \index{updatePrivateAccount@{updatePrivateAccount}!User@{User}}
 \doxysubsubsection{\texorpdfstring{updatePrivateAccount()}{updatePrivateAccount()}}
-{\footnotesize\ttfamily update\+Private\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily User\+::update\+Private\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 update if the account is private or not
 
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
-
-
-Definition at line 79 of file user.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{80     \{}
-\DoxyCodeLine{81         \$dbh = \textcolor{keyword}{new} PDO(\textcolor{stringliteral}{'mysql:host='} . HOST . \textcolor{stringliteral}{';dbname='} . DBNAME, USER, PASSWORD, array(}
-\DoxyCodeLine{82             PDO::MYSQL\_ATTR\_INIT\_COMMAND => \textcolor{stringliteral}{"{}SET NAMES utf8"{}},}
-\DoxyCodeLine{83             PDO::ATTR\_PERSISTENT => \textcolor{keyword}{true}}
-\DoxyCodeLine{84         ));}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86         \$userisPrivate = \$this-\/>\mbox{\hyperlink{class_user_a7ee23f234f605d5e172d7bb660d2e837}{getPrivateAccount}}();}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88         \textcolor{keywordflow}{if} (\$userisPrivate == 0) \{}
-\DoxyCodeLine{89             \$userSetPrivateTo = 1;}
-\DoxyCodeLine{90         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{91             \$userSetPrivateTo = 0;}
-\DoxyCodeLine{92         \}}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94         \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{95             \$sqlUpdatePrivateAccount = \textcolor{stringliteral}{"{}UPDATE user  SET privateAccount = :update\_private\_account WHERE id = :id\_user"{}};}
-\DoxyCodeLine{96             \$psUpdatePrivateAccount = \$dbh-\/>prepare(\$sqlUpdatePrivateAccount);}
-\DoxyCodeLine{97             \$psUpdatePrivateAccount-\/>execute(array(\textcolor{stringliteral}{':update\_private\_account'} => \$userSetPrivateTo, \textcolor{stringliteral}{':id\_user'} => \$this-\/>idUser));}
-\DoxyCodeLine{98         \} \textcolor{keywordflow}{catch} (PDOException \$e) \{}
-\DoxyCodeLine{99             print \textcolor{stringliteral}{"{}Erreur !: "{}} . \$e-\/>getMessage() . \textcolor{stringliteral}{"{}<br>"{}};}
-\DoxyCodeLine{100             die();}
-\DoxyCodeLine{101         \}}
-\DoxyCodeLine{102     \}}
-
-\end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=322pt]{class_user_a187c3c585763cb6bc4364bfda2874381_cgraph}
-\end{center}
-\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

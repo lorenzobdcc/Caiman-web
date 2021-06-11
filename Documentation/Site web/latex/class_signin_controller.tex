@@ -1,73 +1,43 @@
 \hypertarget{class_signin_controller}{}\doxysection{Signin\+Controller Class Reference}
 \label{class_signin_controller}\index{SigninController@{SigninController}}
-
-
-Inheritance diagram for Signin\+Controller\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for Signin\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=238pt]{class_signin_controller__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Signin\+Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=238pt]{class_signin_controller__coll__graph}
+\includegraphics[height=2.000000cm]{class_signin_controller}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_signin_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_signin_controller_a0858eb98e310cb20f335c2daaf19fd14}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_signin_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}{form\+Handler}} ()
+\mbox{\hyperlink{class_signin_controller_a17ba2adc109bb2f40a6ef081a5ff6544}{form\+Handler}} ()
 \item 
-\mbox{\hyperlink{class_signin_controller_a67e219b27b5c39ef06f85381a378c2f9}{print\+HTML}} ()
+\mbox{\hyperlink{class_signin_controller_a888d25dd3e494fa5044832eee0ae6a1a}{print\+HTML}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Data Fields}
+\doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_signin_controller_a5f47d15ead4fec4af6a5743c863014d1}\label{class_signin_controller_a5f47d15ead4fec4af6a5743c863014d1}} 
+\mbox{\Hypertarget{class_signin_controller_a923ec9be5dd5cf798d383fd68d99ecbc}\label{class_signin_controller_a923ec9be5dd5cf798d383fd68d99ecbc}} 
 {\bfseries \$signin}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-
-
-Definition at line 10 of file signin\+Controller.\+php.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_signin_controller_a095c5d389db211932136b53f25f39685}\label{class_signin_controller_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_signin_controller_a0858eb98e310cb20f335c2daaf19fd14}\label{class_signin_controller_a0858eb98e310cb20f335c2daaf19fd14}} 
 \index{SigninController@{SigninController}!\_\_construct@{\_\_construct}}
 \index{\_\_construct@{\_\_construct}!SigninController@{SigninController}}
 \doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+Controller\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 default contructor 
 
-Definition at line 18 of file signin\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{19     \{}
-\DoxyCodeLine{20         \$this-\/>signin = \textcolor{keyword}{new} \mbox{\hyperlink{class_signin}{Signin}}();}
-\DoxyCodeLine{21     \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_signin_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}\label{class_signin_controller_a16fd2e4964fca2fd2d6ca03cf3653bb8}} 
+\mbox{\Hypertarget{class_signin_controller_a17ba2adc109bb2f40a6ef081a5ff6544}\label{class_signin_controller_a17ba2adc109bb2f40a6ef081a5ff6544}} 
 \index{SigninController@{SigninController}!formHandler@{formHandler}}
 \index{formHandler@{formHandler}!SigninController@{SigninController}}
 \doxysubsubsection{\texorpdfstring{formHandler()}{formHandler()}}
-{\footnotesize\ttfamily form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+Controller\+::form\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 used to handle if the user has resquest something
 
@@ -78,58 +48,11 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 28 of file signin\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{29     \{}
-\DoxyCodeLine{30         \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{charliteral}{'e'}])) \{}
-\DoxyCodeLine{31             \$this-\/>e = filter\_input(INPUT\_GET, \textcolor{charliteral}{'e'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{32         \}}
-\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\$this-\/>e == \textcolor{stringliteral}{"{}signin"{}}) \{}
-\DoxyCodeLine{34             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'username'}])) \{}
-\DoxyCodeLine{35                 \$this-\/>signin-\/>insert\_username = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'username'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{36             \}}
-\DoxyCodeLine{37             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'password'}])) \{}
-\DoxyCodeLine{38                 \$this-\/>signin-\/>insert\_password = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'password'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{39             \}}
-\DoxyCodeLine{40             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'passwordRepeat'}])) \{}
-\DoxyCodeLine{41                 \$this-\/>signin-\/>insert\_password\_repeat = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'passwordRepeat'}, FILTER\_SANITIZE\_SPECIAL\_CHARS);}
-\DoxyCodeLine{42             \}}
-\DoxyCodeLine{43             \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'email'}])) \{}
-\DoxyCodeLine{44                 \$this-\/>signin-\/>insert\_email = filter\_input(INPUT\_POST, \textcolor{stringliteral}{'email'}, FILTER\_SANITIZE\_EMAIL);}
-\DoxyCodeLine{45             \}}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48             \textcolor{keywordflow}{if} (isset(\$this-\/>signin-\/>insert\_password) \&\& isset(\$this-\/>signin-\/>insert\_username) \&\& isset(\$this-\/>signin-\/>insert\_password\_repeat) \&\& isset(\$this-\/>signin-\/>insert\_email)) \{}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50                 \textcolor{keywordflow}{if} (\$this-\/>signin-\/>insert\_password != \$this-\/>signin-\/>insert\_password\_repeat) \{}
-\DoxyCodeLine{51                     \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}Password does not match"{}};}
-\DoxyCodeLine{52                     header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{53                     exit;}
-\DoxyCodeLine{54                 \}}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57                 \$this-\/>signin-\/>newUser();}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{60                 exit;}
-\DoxyCodeLine{61             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{62                 \$\_SESSION[\textcolor{stringliteral}{'error'}] = \textcolor{stringliteral}{"{}form not completed"{}};}
-\DoxyCodeLine{63                 header(\textcolor{stringliteral}{'Location:'} . \$\_SERVER[\textcolor{stringliteral}{'HTTP\_REFERER'}]);}
-\DoxyCodeLine{64                 exit;}
-\DoxyCodeLine{65             \}}
-\DoxyCodeLine{66         \}}
-\DoxyCodeLine{67     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_signin_controller_a67e219b27b5c39ef06f85381a378c2f9}\label{class_signin_controller_a67e219b27b5c39ef06f85381a378c2f9}} 
+\mbox{\Hypertarget{class_signin_controller_a888d25dd3e494fa5044832eee0ae6a1a}\label{class_signin_controller_a888d25dd3e494fa5044832eee0ae6a1a}} 
 \index{SigninController@{SigninController}!printHTML@{printHTML}}
 \index{printHTML@{printHTML}!SigninController@{SigninController}}
 \doxysubsubsection{\texorpdfstring{printHTML()}{printHTML()}}
-{\footnotesize\ttfamily print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Signin\+Controller\+::print\+HTML (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 print the html for the resquested content
 
@@ -140,16 +63,6 @@ void
 
 Implements \mbox{\hyperlink{interfacei_controller}{i\+Controller}}.
 
-
-
-Definition at line 75 of file signin\+Controller.\+php.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{76     \{}
-\DoxyCodeLine{77     \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

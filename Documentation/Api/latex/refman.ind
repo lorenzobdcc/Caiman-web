@@ -1,333 +1,595 @@
 \begin{theindex}
 
+  \item {\$classMap}
+    \subitem {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{17}
+  \item {\$files}
+    \subitem {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{17}
+  \item {\$prefixDirsPsr4}
+    \subitem {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{18}
+  \item {\$prefixLengthsPsr4}
+    \subitem {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{18}
+  \item {\$prefixesPsr0}
+    \subitem {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{18}
   \item {\_\_construct}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}CategoryController}, 
-		\hyperpage{6}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{14}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}UserController}, 
-		\hyperpage{30}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOCategory}, 
-		\hyperpage{7}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{8}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}, 
-		\hyperpage{10}
-    \subitem {App\textbackslash{}Models\textbackslash{}Category}, 
-		\hyperpage{5}
-    \subitem {App\textbackslash{}Models\textbackslash{}Game}, 
-		\hyperpage{13}
-    \subitem {App\textbackslash{}Models\textbackslash{}User}, 
-		\hyperpage{29}
-    \subitem {App\textbackslash{}System\textbackslash{}DatabaseConnector}, 
-		\hyperpage{12}
+    \subitem {Category}, \hyperpage{9}
+    \subitem {CategoryController}, \hyperpage{10}
+    \subitem {Console}, \hyperpage{19}
+    \subitem {DAOCategory}, \hyperpage{26}
+    \subitem {DAOConsole}, \hyperpage{26}
+    \subitem {DAOFile}, \hyperpage{27}
+    \subitem {DAOFileSave}, \hyperpage{28}
+    \subitem {DAOGame}, \hyperpage{30}
+    \subitem {DAOUser}, \hyperpage{35}
+    \subitem {DatabaseConnector}, \hyperpage{37}
+    \subitem {Dotenv}, \hyperpage{38}
+    \subitem {File}, \hyperpage{42}
+    \subitem {FileSave}, \hyperpage{42}
+    \subitem {Game}, \hyperpage{43}
+    \subitem {GameController}, \hyperpage{44}
+    \subitem {Loader}, \hyperpage{61}
+    \subitem {timer}, \hyperpage{76}
+    \subitem {User}, \hyperpage{77}
+    \subitem {UserController}, \hyperpage{78}
+    \subitem {Validator}, \hyperpage{81}
 
   \indexspace
 
-  \item {app/Controllers/CategoryController.php}, \hyperpage{33}
-  \item {app/Controllers/GameController.php}, \hyperpage{33}
-  \item {app/Controllers/HelperController.php}, \hyperpage{34}
-  \item {app/Controllers/ResponseController.php}, \hyperpage{34}
-  \item {app/Controllers/UserController.php}, \hyperpage{35}
-  \item {app/DataAccessObject/DAOCategory.php}, \hyperpage{35}
-  \item {app/DataAccessObject/DAOGame.php}, \hyperpage{36}
-  \item {app/DataAccessObject/DAOUser.php}, \hyperpage{36}
-  \item {app/Models/Category.php}, \hyperpage{37}
-  \item {app/Models/Game.php}, \hyperpage{37}
-  \item {app/Models/User.php}, \hyperpage{38}
-  \item {app/System/Constants.php}, \hyperpage{38}
-  \item {app/System/DatabaseConnector.php}, \hyperpage{39}
-  \item {App\textbackslash{}Controllers\textbackslash{}CategoryController}, 
-		\hyperpage{6}
-    \subitem {\_\_construct}, \hyperpage{6}
-    \subitem {getAllCategory}, \hyperpage{6}
-  \item {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{13}
-    \subitem {\_\_construct}, \hyperpage{14}
-    \subitem {getAllGames}, \hyperpage{14}
-    \subitem {getFavoriteGameOfUser}, \hyperpage{14}
-    \subitem {getGame}, \hyperpage{14}
-    \subitem {getGameFromCategory}, \hyperpage{15}
-    \subitem {getGamesFromName}, \hyperpage{15}
-    \subitem {getTimeGames}, \hyperpage{16}
-  \item {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{16}
-    \subitem {generateApiToken}, \hyperpage{16}
-    \subitem {generateRandomString}, \hyperpage{17}
-    \subitem {getDefaultDirectory}, \hyperpage{17}
-    \subitem {pngTojpegConverter}, \hyperpage{17}
-    \subitem {sendMail}, \hyperpage{17}
-    \subitem {storeConditionsRegistration}, \hyperpage{18}
-    \subitem {validateChornologicalTime}, \hyperpage{18}
-    \subitem {validateCodeDayFormat}, \hyperpage{19}
-    \subitem {validateDateFormat}, \hyperpage{19}
-    \subitem {validateDateTimeFormat}, \hyperpage{19}
-    \subitem {validateDocumentTypeFormat}, \hyperpage{20}
-    \subitem {validateEmailFormat}, \hyperpage{20}
-    \subitem {validatePackageNumber}, \hyperpage{20}
-    \subitem {validateTimeFormat}, \hyperpage{22}
-  \item {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{22}
-    \subitem {chronologicalDateProblem}, \hyperpage{23}
-    \subitem {dateOverlapProblem}, \hyperpage{23}
-    \subitem {documentTypeNotPdfProblem}, \hyperpage{23}
-    \subitem {imageFileFormatProblem}, \hyperpage{23}
-    \subitem {invalidAppointment}, \hyperpage{24}
-    \subitem {invalidCodeDayFormat}, \hyperpage{24}
-    \subitem {invalidDateFormat}, \hyperpage{24}
-    \subitem {invalidDateTimeFormat}, \hyperpage{24}
-    \subitem {invalidDocumentTypeFormat}, \hyperpage{25}
-    \subitem {invalidEmailFormat}, \hyperpage{25}
-    \subitem {invalidLogin}, \hyperpage{25}
-    \subitem {invalidTimeFormat}, \hyperpage{25}
-    \subitem {notFoundAuthorizationHeader}, \hyperpage{26}
-    \subitem {notFoundResponse}, \hyperpage{26}
-    \subitem {packageNumberFormatProblem}, \hyperpage{26}
-    \subitem {permanentScheduleAlreadyExist}, \hyperpage{26}
-    \subitem {successfulCreatedRessource}, \hyperpage{27}
-    \subitem {successfulRequest}, \hyperpage{27}
-    \subitem {successfulRequestWithoutJson}, \hyperpage{27}
-    \subitem {timeOverlapProblem}, \hyperpage{28}
-    \subitem {unauthorizedUser}, \hyperpage{28}
-    \subitem {unprocessableEntityResponse}, \hyperpage{28}
-    \subitem {uploadFailed}, \hyperpage{28}
-  \item {App\textbackslash{}Controllers\textbackslash{}UserController}, 
-		\hyperpage{30}
-    \subitem {\_\_construct}, \hyperpage{30}
-    \subitem {connection}, \hyperpage{30}
-    \subitem {getAllUsers}, \hyperpage{30}
-    \subitem {getUser}, \hyperpage{31}
-  \item {App\textbackslash{}DataAccessObject\textbackslash{}DAOCategory}, 
-		\hyperpage{7}
-    \subitem {\_\_construct}, \hyperpage{7}
-    \subitem {getAllCategory}, \hyperpage{7}
-  \item {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{8}
-    \subitem {\_\_construct}, \hyperpage{8}
-    \subitem {find}, \hyperpage{8}
-    \subitem {findAll}, \hyperpage{8}
-    \subitem {findFavoriteGameOfUser}, \hyperpage{9}
-    \subitem {findGameFromCategory}, \hyperpage{9}
-    \subitem {findGamesFromName}, \hyperpage{9}
-    \subitem {findTimesGamesUser}, \hyperpage{10}
-  \item {App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}, 
-		\hyperpage{10}
+  \item {add}
+    \subitem {ClassLoader}, \hyperpage{12}
+  \item {addClassMap}
+    \subitem {ClassLoader}, \hyperpage{12}
+  \item {AddFileSave}
+    \subitem {DAOFileSave}, \hyperpage{29}
+  \item {addGameToFavorite}
+    \subitem {DAOGame}, \hyperpage{30}
+    \subitem {GameController}, \hyperpage{45}
+  \item {addOneMInuteToGameTime}
+    \subitem {DAOGame}, \hyperpage{31}
+    \subitem {GameController}, \hyperpage{45}
+  \item {addPsr4}
+    \subitem {ClassLoader}, \hyperpage{12}
+  \item {AddSave}
+    \subitem {GameController}, \hyperpage{45}
+  \item {allowedValues}
+    \subitem {Validator}, \hyperpage{81}
+  \item {app/Controllers/CategoryController.php}, \hyperpage{85}
+  \item {app/Controllers/GameController.php}, \hyperpage{85}
+  \item {app/Controllers/HelperController.php}, \hyperpage{86}
+  \item {app/Controllers/ResponseController.php}, \hyperpage{86}
+  \item {app/Controllers/UserController.php}, \hyperpage{87}
+  \item {app/DataAccessObject/DAOCategory.php}, \hyperpage{87}
+  \item {app/DataAccessObject/DAOConsole.php}, \hyperpage{88}
+  \item {app/DataAccessObject/DAOFile.php}, \hyperpage{88}
+  \item {app/DataAccessObject/DAOFileSave.php}, \hyperpage{89}
+  \item {app/DataAccessObject/DAOGame.php}, \hyperpage{89}
+  \item {app/DataAccessObject/DAOUser.php}, \hyperpage{90}
+  \item {app/Models/Category.php}, \hyperpage{90}
+  \item {app/Models/Console.php}, \hyperpage{91}
+  \item {app/Models/File.php}, \hyperpage{91}
+  \item {app/Models/FileSave.php}, \hyperpage{92}
+  \item {app/Models/Game.php}, \hyperpage{92}
+  \item {app/Models/Timer.php}, \hyperpage{93}
+  \item {app/Models/User.php}, \hyperpage{93}
+  \item {app/System/Constants.php}, \hyperpage{94}
+  \item {app/System/DatabaseConnector.php}, \hyperpage{94}
+  \item {assertCallback}
+    \subitem {Validator}, \hyperpage{82}
+
+  \indexspace
+
+  \item {bootstrap.php}, \hyperpage{95}
+
+  \indexspace
+
+  \item {Category}, \hyperpage{9}
+    \subitem {\_\_construct}, \hyperpage{9}
+  \item {CategoryController}, \hyperpage{10}
     \subitem {\_\_construct}, \hyperpage{10}
-    \subitem {find}, \hyperpage{11}
-    \subitem {findAll}, \hyperpage{11}
-  \item {App\textbackslash{}Models\textbackslash{}Category}, 
-		\hyperpage{5}
-    \subitem {\_\_construct}, \hyperpage{5}
-  \item {App\textbackslash{}Models\textbackslash{}Game}, \hyperpage{12}
-    \subitem {\_\_construct}, \hyperpage{13}
-  \item {App\textbackslash{}Models\textbackslash{}User}, \hyperpage{29}
-    \subitem {\_\_construct}, \hyperpage{29}
-  \item {App\textbackslash{}System\textbackslash{}Constants}, 
-		\hyperpage{6}
-  \item {App\textbackslash{}System\textbackslash{}DatabaseConnector}, 
-		\hyperpage{12}
-    \subitem {\_\_construct}, \hyperpage{12}
-    \subitem {getConnection}, \hyperpage{12}
-
-  \indexspace
-
+    \subitem {getAllCategory}, \hyperpage{10}
+  \item {checkIfGameFavorite}
+    \subitem {DAOGame}, \hyperpage{31}
+    \subitem {GameController}, \hyperpage{46}
   \item {chronologicalDateProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{23}
+    \subitem {ResponseController}, \hyperpage{70}
+  \item {ClassLoader}, \hyperpage{11}
+    \subitem {add}, \hyperpage{12}
+    \subitem {addClassMap}, \hyperpage{12}
+    \subitem {addPsr4}, \hyperpage{12}
+    \subitem {findFile}, \hyperpage{13}
+    \subitem {getApcuPrefix}, \hyperpage{13}
+    \subitem {getRegisteredLoaders}, \hyperpage{13}
+    \subitem {getUseIncludePath}, \hyperpage{13}
+    \subitem {isClassMapAuthoritative}, \hyperpage{14}
+    \subitem {loadClass}, \hyperpage{14}
+    \subitem {register}, \hyperpage{14}
+    \subitem {set}, \hyperpage{15}
+    \subitem {setApcuPrefix}, \hyperpage{15}
+    \subitem {setClassMapAuthoritative}, \hyperpage{15}
+    \subitem {setPsr4}, \hyperpage{15}
+    \subitem {setUseIncludePath}, \hyperpage{16}
+    \subitem {unregister}, \hyperpage{16}
+  \item {clearEnvironmentVariable}
+    \subitem {Loader}, \hyperpage{61}
+  \item {ComposerAutoloaderInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{16}
+    \subitem {getLoader}, \hyperpage{17}
+  \item {ComposerStaticInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{17}
+    \subitem {\$classMap}, \hyperpage{17}
+    \subitem {\$files}, \hyperpage{17}
+    \subitem {\$prefixDirsPsr4}, \hyperpage{18}
+    \subitem {\$prefixLengthsPsr4}, \hyperpage{18}
+    \subitem {\$prefixesPsr0}, \hyperpage{18}
   \item {connection}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}UserController}, 
-		\hyperpage{30}
+    \subitem {UserController}, \hyperpage{78}
+  \item {Console}, \hyperpage{19}
+    \subitem {\_\_construct}, \hyperpage{19}
+  \item {Constants}, \hyperpage{20}
+  \item {Ctype}, \hyperpage{20}
+    \subitem {ctype\_alnum}, \hyperpage{20}
+    \subitem {ctype\_alpha}, \hyperpage{21}
+    \subitem {ctype\_cntrl}, \hyperpage{21}
+    \subitem {ctype\_digit}, \hyperpage{22}
+    \subitem {ctype\_graph}, \hyperpage{22}
+    \subitem {ctype\_lower}, \hyperpage{23}
+    \subitem {ctype\_print}, \hyperpage{23}
+    \subitem {ctype\_punct}, \hyperpage{24}
+    \subitem {ctype\_space}, \hyperpage{24}
+    \subitem {ctype\_upper}, \hyperpage{24}
+    \subitem {ctype\_xdigit}, \hyperpage{25}
+  \item {ctype\_alnum}
+    \subitem {Ctype}, \hyperpage{20}
+  \item {ctype\_alpha}
+    \subitem {Ctype}, \hyperpage{21}
+  \item {ctype\_cntrl}
+    \subitem {Ctype}, \hyperpage{21}
+  \item {ctype\_digit}
+    \subitem {Ctype}, \hyperpage{22}
+  \item {ctype\_graph}
+    \subitem {Ctype}, \hyperpage{22}
+  \item {ctype\_lower}
+    \subitem {Ctype}, \hyperpage{23}
+  \item {ctype\_print}
+    \subitem {Ctype}, \hyperpage{23}
+  \item {ctype\_punct}
+    \subitem {Ctype}, \hyperpage{24}
+  \item {ctype\_space}
+    \subitem {Ctype}, \hyperpage{24}
+  \item {ctype\_upper}
+    \subitem {Ctype}, \hyperpage{24}
+  \item {ctype\_xdigit}
+    \subitem {Ctype}, \hyperpage{25}
 
   \indexspace
 
+  \item {DAOCategory}, \hyperpage{25}
+    \subitem {\_\_construct}, \hyperpage{26}
+    \subitem {getAllCategory}, \hyperpage{26}
+  \item {DAOConsole}, \hyperpage{26}
+    \subitem {\_\_construct}, \hyperpage{26}
+    \subitem {find}, \hyperpage{27}
+  \item {DAOFile}, \hyperpage{27}
+    \subitem {\_\_construct}, \hyperpage{27}
+    \subitem {find}, \hyperpage{28}
+  \item {DAOFileSave}, \hyperpage{28}
+    \subitem {\_\_construct}, \hyperpage{28}
+    \subitem {AddFileSave}, \hyperpage{29}
+    \subitem {find}, \hyperpage{29}
+    \subitem {findFileName}, \hyperpage{29}
+  \item {DAOGame}, \hyperpage{30}
+    \subitem {\_\_construct}, \hyperpage{30}
+    \subitem {addGameToFavorite}, \hyperpage{30}
+    \subitem {addOneMInuteToGameTime}, \hyperpage{31}
+    \subitem {checkIfGameFavorite}, \hyperpage{31}
+    \subitem {find}, \hyperpage{32}
+    \subitem {findAll}, \hyperpage{32}
+    \subitem {findFavoriteGameOfUser}, \hyperpage{32}
+    \subitem {findGameFromCategory}, \hyperpage{33}
+    \subitem {findGamesFromName}, \hyperpage{33}
+    \subitem {findTimesGamesUser}, \hyperpage{33}
+    \subitem {getTimeUser}, \hyperpage{34}
+    \subitem {removeGameFromFavorite}, \hyperpage{34}
+  \item {DAOUser}, \hyperpage{35}
+    \subitem {\_\_construct}, \hyperpage{35}
+    \subitem {find}, \hyperpage{35}
+    \subitem {findAll}, \hyperpage{35}
+    \subitem {findByCaimanToken}, \hyperpage{36}
+    \subitem {findUserByUsername}, \hyperpage{36}
+    \subitem {updateCaimanToken}, \hyperpage{36}
+  \item {DatabaseConnector}, \hyperpage{37}
+    \subitem {\_\_construct}, \hyperpage{37}
+    \subitem {getConnection}, \hyperpage{37}
   \item {dateOverlapProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{23}
+    \subitem {ResponseController}, \hyperpage{70}
   \item {documentTypeNotPdfProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{23}
+    \subitem {ResponseController}, \hyperpage{70}
+  \item {Dotenv}, \hyperpage{38}
+    \subitem {\_\_construct}, \hyperpage{38}
+    \subitem {getEnvironmentVariableNames}, \hyperpage{39}
+    \subitem {getFilePath}, \hyperpage{39}
+    \subitem {load}, \hyperpage{39}
+    \subitem {loadData}, \hyperpage{40}
+    \subitem {overload}, \hyperpage{40}
+    \subitem {required}, \hyperpage{40}
+    \subitem {safeLoad}, \hyperpage{41}
 
   \indexspace
 
+  \item {ensureFileIsReadable}
+    \subitem {Loader}, \hyperpage{62}
+  \item {ExceptionInterface}, \hyperpage{41}
+
+  \indexspace
+
+  \item {File}, \hyperpage{41}
+    \subitem {\_\_construct}, \hyperpage{42}
+  \item {FileSave}, \hyperpage{42}
+    \subitem {\_\_construct}, \hyperpage{42}
   \item {find}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{8}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}, 
-		\hyperpage{11}
+    \subitem {DAOConsole}, \hyperpage{27}
+    \subitem {DAOFile}, \hyperpage{28}
+    \subitem {DAOFileSave}, \hyperpage{29}
+    \subitem {DAOGame}, \hyperpage{32}
+    \subitem {DAOUser}, \hyperpage{35}
   \item {findAll}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{8}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOUser}, 
-		\hyperpage{11}
+    \subitem {DAOGame}, \hyperpage{32}
+    \subitem {DAOUser}, \hyperpage{35}
+  \item {findByCaimanToken}
+    \subitem {DAOUser}, \hyperpage{36}
+    \subitem {UserController}, \hyperpage{78}
   \item {findFavoriteGameOfUser}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{9}
+    \subitem {DAOGame}, \hyperpage{32}
+  \item {findFile}
+    \subitem {ClassLoader}, \hyperpage{13}
+  \item {findFileName}
+    \subitem {DAOFileSave}, \hyperpage{29}
   \item {findGameFromCategory}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{9}
+    \subitem {DAOGame}, \hyperpage{33}
   \item {findGamesFromName}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{9}
+    \subitem {DAOGame}, \hyperpage{33}
   \item {findTimesGamesUser}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOGame}, 
-		\hyperpage{10}
+    \subitem {DAOGame}, \hyperpage{33}
+  \item {findUserByUsername}
+    \subitem {DAOUser}, \hyperpage{36}
 
   \indexspace
 
+  \item {Game}, \hyperpage{43}
+    \subitem {\_\_construct}, \hyperpage{43}
+  \item {GameController}, \hyperpage{44}
+    \subitem {\_\_construct}, \hyperpage{44}
+    \subitem {addGameToFavorite}, \hyperpage{45}
+    \subitem {addOneMInuteToGameTime}, \hyperpage{45}
+    \subitem {AddSave}, \hyperpage{45}
+    \subitem {checkIfGameFavorite}, \hyperpage{46}
+    \subitem {getAllGames}, \hyperpage{46}
+    \subitem {getConsole}, \hyperpage{46}
+    \subitem {getFavoriteGameOfUser}, \hyperpage{47}
+    \subitem {getFileName}, \hyperpage{47}
+    \subitem {getGame}, \hyperpage{47}
+    \subitem {getGameFromCategory}, \hyperpage{49}
+    \subitem {getGamesFromName}, \hyperpage{49}
+    \subitem {getTimeGames}, \hyperpage{49}
+    \subitem {getTimePlayed}, \hyperpage{51}
+    \subitem {getURL}, \hyperpage{51}
+    \subitem {getURLSave}, \hyperpage{51}
+    \subitem {removeGameFromFavorite}, \hyperpage{52}
   \item {generateApiToken}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{16}
+    \subitem {HelperController}, \hyperpage{53}
   \item {generateRandomString}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{17}
+    \subitem {HelperController}, \hyperpage{53}
   \item {getAllCategory}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}CategoryController}, 
-		\hyperpage{6}
-    \subitem {App\textbackslash{}DataAccessObject\textbackslash{}DAOCategory}, 
-		\hyperpage{7}
+    \subitem {CategoryController}, \hyperpage{10}
+    \subitem {DAOCategory}, \hyperpage{26}
   \item {getAllGames}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{14}
+    \subitem {GameController}, \hyperpage{46}
   \item {getAllUsers}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}UserController}, 
-		\hyperpage{30}
+    \subitem {UserController}, \hyperpage{79}
+  \item {getApcuPrefix}
+    \subitem {ClassLoader}, \hyperpage{13}
   \item {getConnection}
-    \subitem {App\textbackslash{}System\textbackslash{}DatabaseConnector}, 
-		\hyperpage{12}
+    \subitem {DatabaseConnector}, \hyperpage{37}
+  \item {getConsole}
+    \subitem {GameController}, \hyperpage{46}
   \item {getDefaultDirectory}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{17}
+    \subitem {HelperController}, \hyperpage{53}
+  \item {getEnvironmentVariable}
+    \subitem {Loader}, \hyperpage{62}
+  \item {getEnvironmentVariableNames}
+    \subitem {Dotenv}, \hyperpage{39}
   \item {getFavoriteGameOfUser}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{14}
+    \subitem {GameController}, \hyperpage{47}
+  \item {getFileName}
+    \subitem {GameController}, \hyperpage{47}
+  \item {getFilePath}
+    \subitem {Dotenv}, \hyperpage{39}
   \item {getGame}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{14}
+    \subitem {GameController}, \hyperpage{47}
   \item {getGameFromCategory}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{15}
+    \subitem {GameController}, \hyperpage{49}
   \item {getGamesFromName}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{15}
+    \subitem {GameController}, \hyperpage{49}
+  \item {getImmutable}
+    \subitem {Loader}, \hyperpage{62}
+  \item {getLoader}
+    \subitem {ComposerAutoloaderInit12d41e5c90a50136bf3faf839b179187}, 
+		\hyperpage{17}
+  \item {getRegisteredLoaders}
+    \subitem {ClassLoader}, \hyperpage{13}
   \item {getTimeGames}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}GameController}, 
-		\hyperpage{16}
+    \subitem {GameController}, \hyperpage{49}
+  \item {getTimePlayed}
+    \subitem {GameController}, \hyperpage{51}
+  \item {getTimeUser}
+    \subitem {DAOGame}, \hyperpage{34}
+  \item {getURL}
+    \subitem {GameController}, \hyperpage{51}
+  \item {getURLSave}
+    \subitem {GameController}, \hyperpage{51}
+  \item {getUseIncludePath}
+    \subitem {ClassLoader}, \hyperpage{13}
   \item {getUser}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}UserController}, 
-		\hyperpage{31}
+    \subitem {UserController}, \hyperpage{79}
+
+  \indexspace
+
+  \item {HelperController}, \hyperpage{52}
+    \subitem {generateApiToken}, \hyperpage{53}
+    \subitem {generateRandomString}, \hyperpage{53}
+    \subitem {getDefaultDirectory}, \hyperpage{53}
+    \subitem {pngTojpegConverter}, \hyperpage{53}
+    \subitem {sendMail}, \hyperpage{53}
+    \subitem {storeConditionsRegistration}, \hyperpage{54}
+    \subitem {validateChornologicalTime}, \hyperpage{54}
+    \subitem {validateCodeDayFormat}, \hyperpage{55}
+    \subitem {validateDateFormat}, \hyperpage{55}
+    \subitem {validateDateTimeFormat}, \hyperpage{55}
+    \subitem {validateDocumentTypeFormat}, \hyperpage{56}
+    \subitem {validateEmailFormat}, \hyperpage{56}
+    \subitem {validatePackageNumber}, \hyperpage{56}
+    \subitem {validateTimeFormat}, \hyperpage{58}
 
   \indexspace
 
   \item {imageFileFormatProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{23}
+    \subitem {ResponseController}, \hyperpage{71}
+  \item {InstalledVersions}, \hyperpage{58}
   \item {invalidAppointment}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{24}
+    \subitem {ResponseController}, \hyperpage{71}
+  \item {InvalidCallbackException}, \hyperpage{59}
   \item {invalidCodeDayFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{24}
+    \subitem {ResponseController}, \hyperpage{71}
   \item {invalidDateFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{24}
+    \subitem {ResponseController}, \hyperpage{71}
   \item {invalidDateTimeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{24}
+    \subitem {ResponseController}, \hyperpage{72}
   \item {invalidDocumentTypeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{25}
+    \subitem {ResponseController}, \hyperpage{72}
   \item {invalidEmailFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{25}
+    \subitem {ResponseController}, \hyperpage{72}
+  \item {InvalidFileException}, \hyperpage{59}
   \item {invalidLogin}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{25}
+    \subitem {ResponseController}, \hyperpage{72}
+  \item {InvalidPathException}, \hyperpage{59}
   \item {invalidTimeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{25}
+    \subitem {ResponseController}, \hyperpage{73}
+  \item {isBoolean}
+    \subitem {Validator}, \hyperpage{82}
+  \item {isClassMapAuthoritative}
+    \subitem {ClassLoader}, \hyperpage{14}
+  \item {isComment}
+    \subitem {Loader}, \hyperpage{62}
+  \item {isInteger}
+    \subitem {Validator}, \hyperpage{82}
 
   \indexspace
 
+  \item {load}
+    \subitem {Dotenv}, \hyperpage{39}
+    \subitem {Loader}, \hyperpage{63}
+  \item {loadClass}
+    \subitem {ClassLoader}, \hyperpage{14}
+  \item {loadData}
+    \subitem {Dotenv}, \hyperpage{40}
+  \item {Loader}, \hyperpage{60}
+    \subitem {\_\_construct}, \hyperpage{61}
+    \subitem {clearEnvironmentVariable}, \hyperpage{61}
+    \subitem {ensureFileIsReadable}, \hyperpage{62}
+    \subitem {getEnvironmentVariable}, \hyperpage{62}
+    \subitem {getImmutable}, \hyperpage{62}
+    \subitem {isComment}, \hyperpage{62}
+    \subitem {load}, \hyperpage{63}
+    \subitem {looksLikeSetter}, \hyperpage{63}
+    \subitem {normaliseEnvironmentVariable}, \hyperpage{63}
+    \subitem {processFilters}, \hyperpage{64}
+    \subitem {readLinesFromFile}, \hyperpage{64}
+    \subitem {resolveNestedVariables}, \hyperpage{65}
+    \subitem {sanitiseVariableName}, \hyperpage{65}
+    \subitem {sanitiseVariableValue}, \hyperpage{65}
+    \subitem {setEnvironmentVariable}, \hyperpage{66}
+    \subitem {setImmutable}, \hyperpage{66}
+    \subitem {splitCompoundStringIntoParts}, \hyperpage{67}
+  \item {looksLikeSetter}
+    \subitem {Loader}, \hyperpage{63}
+
+  \indexspace
+
+  \item {normaliseEnvironmentVariable}
+    \subitem {Loader}, \hyperpage{63}
+  \item {notEmpty}
+    \subitem {Validator}, \hyperpage{82}
   \item {notFoundAuthorizationHeader}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{26}
+    \subitem {ResponseController}, \hyperpage{73}
   \item {notFoundResponse}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{26}
+    \subitem {ResponseController}, \hyperpage{73}
+
+  \indexspace
+
+  \item {overload}
+    \subitem {Dotenv}, \hyperpage{40}
 
   \indexspace
 
   \item {packageNumberFormatProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{26}
+    \subitem {ResponseController}, \hyperpage{73}
+  \item {parseName}
+    \subitem {Parser}, \hyperpage{68}
+  \item {parseQuotedValue}
+    \subitem {Parser}, \hyperpage{68}
+  \item {Parser}, \hyperpage{67}
+    \subitem {parseName}, \hyperpage{68}
+    \subitem {parseQuotedValue}, \hyperpage{68}
+    \subitem {parseUnquotedValue}, \hyperpage{68}
+    \subitem {parseValue}, \hyperpage{69}
+  \item {parseUnquotedValue}
+    \subitem {Parser}, \hyperpage{68}
+  \item {parseValue}
+    \subitem {Parser}, \hyperpage{69}
   \item {permanentScheduleAlreadyExist}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{26}
+    \subitem {ResponseController}, \hyperpage{74}
   \item {pngTojpegConverter}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{17}
+    \subitem {HelperController}, \hyperpage{53}
+  \item {processFilters}
+    \subitem {Loader}, \hyperpage{64}
+  \item {public/index.php}, \hyperpage{95}
+  \item {public/pages/categories/index.php}, \hyperpage{96}
+  \item {public/pages/games/index.php}, \hyperpage{96}
+  \item {public/pages/users/connection/index.php}, \hyperpage{97}
+  \item {public/pages/users/index.php}, \hyperpage{98}
 
   \indexspace
 
+  \item {readLinesFromFile}
+    \subitem {Loader}, \hyperpage{64}
+  \item {register}
+    \subitem {ClassLoader}, \hyperpage{14}
+  \item {removeGameFromFavorite}
+    \subitem {DAOGame}, \hyperpage{34}
+    \subitem {GameController}, \hyperpage{52}
+  \item {required}
+    \subitem {Dotenv}, \hyperpage{40}
+  \item {resolveNestedVariables}
+    \subitem {Loader}, \hyperpage{65}
+  \item {ResponseController}, \hyperpage{69}
+    \subitem {chronologicalDateProblem}, \hyperpage{70}
+    \subitem {dateOverlapProblem}, \hyperpage{70}
+    \subitem {documentTypeNotPdfProblem}, \hyperpage{70}
+    \subitem {imageFileFormatProblem}, \hyperpage{71}
+    \subitem {invalidAppointment}, \hyperpage{71}
+    \subitem {invalidCodeDayFormat}, \hyperpage{71}
+    \subitem {invalidDateFormat}, \hyperpage{71}
+    \subitem {invalidDateTimeFormat}, \hyperpage{72}
+    \subitem {invalidDocumentTypeFormat}, \hyperpage{72}
+    \subitem {invalidEmailFormat}, \hyperpage{72}
+    \subitem {invalidLogin}, \hyperpage{72}
+    \subitem {invalidTimeFormat}, \hyperpage{73}
+    \subitem {notFoundAuthorizationHeader}, \hyperpage{73}
+    \subitem {notFoundResponse}, \hyperpage{73}
+    \subitem {packageNumberFormatProblem}, \hyperpage{73}
+    \subitem {permanentScheduleAlreadyExist}, \hyperpage{74}
+    \subitem {successfulCreatedRessource}, \hyperpage{74}
+    \subitem {successfulRequest}, \hyperpage{74}
+    \subitem {successfulRequestWithoutJson}, \hyperpage{75}
+    \subitem {timeOverlapProblem}, \hyperpage{75}
+    \subitem {unauthorizedUser}, \hyperpage{75}
+    \subitem {unprocessableEntityResponse}, \hyperpage{75}
+    \subitem {uploadFailed}, \hyperpage{76}
+
+  \indexspace
+
+  \item {safeLoad}
+    \subitem {Dotenv}, \hyperpage{41}
+  \item {sanitiseVariableName}
+    \subitem {Loader}, \hyperpage{65}
+  \item {sanitiseVariableValue}
+    \subitem {Loader}, \hyperpage{65}
   \item {sendMail}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{17}
+    \subitem {HelperController}, \hyperpage{53}
+  \item {set}
+    \subitem {ClassLoader}, \hyperpage{15}
+  \item {setApcuPrefix}
+    \subitem {ClassLoader}, \hyperpage{15}
+  \item {setClassMapAuthoritative}
+    \subitem {ClassLoader}, \hyperpage{15}
+  \item {setEnvironmentVariable}
+    \subitem {Loader}, \hyperpage{66}
+  \item {setImmutable}
+    \subitem {Loader}, \hyperpage{66}
+  \item {setPsr4}
+    \subitem {ClassLoader}, \hyperpage{15}
+  \item {setUseIncludePath}
+    \subitem {ClassLoader}, \hyperpage{16}
+  \item {splitCompoundStringIntoParts}
+    \subitem {Loader}, \hyperpage{67}
   \item {storeConditionsRegistration}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{18}
+    \subitem {HelperController}, \hyperpage{54}
   \item {successfulCreatedRessource}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{27}
+    \subitem {ResponseController}, \hyperpage{74}
   \item {successfulRequest}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{27}
+    \subitem {ResponseController}, \hyperpage{74}
   \item {successfulRequestWithoutJson}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{27}
+    \subitem {ResponseController}, \hyperpage{75}
 
   \indexspace
 
   \item {timeOverlapProblem}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{28}
+    \subitem {ResponseController}, \hyperpage{75}
+  \item {timer}, \hyperpage{76}
+    \subitem {\_\_construct}, \hyperpage{76}
 
   \indexspace
 
   \item {unauthorizedUser}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{28}
+    \subitem {ResponseController}, \hyperpage{75}
   \item {unprocessableEntityResponse}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{28}
+    \subitem {ResponseController}, \hyperpage{75}
+  \item {unregister}
+    \subitem {ClassLoader}, \hyperpage{16}
+  \item {updateCaimanToken}
+    \subitem {DAOUser}, \hyperpage{36}
+    \subitem {UserController}, \hyperpage{79}
   \item {uploadFailed}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}ResponseController}, 
-		\hyperpage{28}
+    \subitem {ResponseController}, \hyperpage{76}
+  \item {User}, \hyperpage{77}
+    \subitem {\_\_construct}, \hyperpage{77}
+  \item {UserController}, \hyperpage{78}
+    \subitem {\_\_construct}, \hyperpage{78}
+    \subitem {connection}, \hyperpage{78}
+    \subitem {findByCaimanToken}, \hyperpage{78}
+    \subitem {getAllUsers}, \hyperpage{79}
+    \subitem {getUser}, \hyperpage{79}
+    \subitem {updateCaimanToken}, \hyperpage{79}
 
   \indexspace
 
   \item {validateChornologicalTime}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{18}
+    \subitem {HelperController}, \hyperpage{54}
   \item {validateCodeDayFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{19}
+    \subitem {HelperController}, \hyperpage{55}
   \item {validateDateFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{19}
+    \subitem {HelperController}, \hyperpage{55}
   \item {validateDateTimeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{19}
+    \subitem {HelperController}, \hyperpage{55}
   \item {validateDocumentTypeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{20}
+    \subitem {HelperController}, \hyperpage{56}
   \item {validateEmailFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{20}
+    \subitem {HelperController}, \hyperpage{56}
   \item {validatePackageNumber}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{20}
+    \subitem {HelperController}, \hyperpage{56}
   \item {validateTimeFormat}
-    \subitem {App\textbackslash{}Controllers\textbackslash{}HelperController}, 
-		\hyperpage{22}
+    \subitem {HelperController}, \hyperpage{58}
+  \item {ValidationException}, \hyperpage{80}
+  \item {Validator}, \hyperpage{80}
+    \subitem {\_\_construct}, \hyperpage{81}
+    \subitem {allowedValues}, \hyperpage{81}
+    \subitem {assertCallback}, \hyperpage{82}
+    \subitem {isBoolean}, \hyperpage{82}
+    \subitem {isInteger}, \hyperpage{82}
+    \subitem {notEmpty}, \hyperpage{82}
 
 \end{theindex}
